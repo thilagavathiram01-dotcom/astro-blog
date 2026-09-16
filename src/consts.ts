@@ -3,4 +3,5 @@
 
 export const SITE_TITLE = 'My Tech Blog';
 export const SITE_DESCRIPTION = 'Clean, modern tech blog powered by Astro. AI-friendly Markdown posts.';
-export const SITE_URL = 'https://your-blog.vercel.app';
+// This is only used for display / fallback. Actual canonical URLs come from astro.config.mjs `site`
+export const SITE_URL = 'https://example.com';
