@@ -1,0 +1,19 @@
+---
+import { SITE_TITLE } from '../consts';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-500">
+        © {year} {SITE_TITLE}. Built with Astro.
+      </p>
+      <div class="flex items-center gap-4 text-sm text-slate-500">
+        <a href="/" class="hover:text-indigo-600 transition-colors">Home</a>
+        <a href="/about" class="hover:text-indigo-600 transition-colors">About</a>
+        <a href="/rss.xml" class="hover:text-indigo-600 transition-colors">RSS</a>
+      </div>
+    </div>
+  </div>
+</footer>
