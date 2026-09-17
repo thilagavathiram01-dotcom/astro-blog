@@ -11,7 +11,7 @@ const staticPaths = [
 
 export async function GET(context) {
   const posts = await getCollection('blog');
-  const site = context.site?.href?.replace(/\/$/, '') || 'https://astro-blog.pages.dev';
+  const site = context.site?.href?.replace(/\/$/, '') || 'https://news.yumpdf.com';
 
   const urls = [
     ...staticPaths.map((path) => ({

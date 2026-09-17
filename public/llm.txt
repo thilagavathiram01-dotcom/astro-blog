@@ -1,10 +1,10 @@
-# TechChronicle
+# Yum News
 
 > Independent technology coverage of AI tools, Android, and practical how-to guides.
 
-Site: https://astro-blog.pages.dev
-RSS: https://astro-blog.pages.dev/rss.xml
-Sitemap: https://astro-blog.pages.dev/sitemap.xml
+Site: https://news.yumpdf.com
+RSS: https://news.yumpdf.com/rss.xml
+Sitemap: https://news.yumpdf.com/sitemap.xml
 
 ## Latest article (2026-09-17)
 

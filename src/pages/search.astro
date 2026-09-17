@@ -20,7 +20,7 @@ const postsData = posts.map(p => ({
 const allTags = [...new Set(posts.flatMap(p => p.data.tags ?? []))];
 ---
 
-<BaseLayout title="Search" description="Search all TechChronicle stories, topics, and guides.">
+<BaseLayout title="Search" description="Search all Yum News stories, topics, and guides.">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
     <!-- Breadcrumb -->
@@ -34,7 +34,7 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags ?? []))];
     <div class="mb-8 bg-white border border-[var(--rule-light)]" style="border-top:4px solid #C8102E">
       <div class="p-6 sm:p-8">
         <h1 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--ink)" class="mb-2">
-          Search TechChronicle
+          Search Yum News
         </h1>
         <p class="text-[var(--ink-light)] text-sm mb-6">
           Search across {posts.length} stories covering AI, Android, Firebase, and developer tools.

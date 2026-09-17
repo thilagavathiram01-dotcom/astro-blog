@@ -1,4 +1,4 @@
-name = "astro-blog"
+name = "yum-news"
 compatibility_date = "2024-01-01"
 
 [env.production]
