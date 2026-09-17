@@ -8,12 +8,14 @@ Sitemap: https://astro-blog.pages.dev/sitemap.xml
 
 ## Latest article (2026-09-17)
 
-- How to Use Sign-to-Text on Pixel 11: ASL to English in Gboard
-  /blog/pixel-11-sign-to-text-asl/
-  Pixel 11 Gboard and Live Transcribe translate American Sign Language to English using DeepMind SL2T. Official setup, framing, privacy (pose landmarks only), and limits.
+- How to Use Gemini Live Guided Vision on Android
+  /blog/gemini-live-guided-vision/
+  Official steps to start Gemini Live, share the camera, and use Guided Vision audio cues for labels, menus, and household objects. Includes screen-share notes and privacy links.
 
 ## Recent guides
 
+- How to Use Sign-to-Text on Pixel 11: ASL to English in Gboard
+  /blog/pixel-11-sign-to-text-asl/
 - How to Use Gemini Intelligence on Android: Widgets, Rambler, and App Automation
   /blog/gemini-intelligence-android/
 - How to Use Android’s September 2026 Drop: Find Hub Memory, Motion Assist, and More
@@ -30,8 +32,6 @@ Sitemap: https://astro-blog.pages.dev/sitemap.xml
   /blog/ml-kit-genai-gemini-nano/
 - Android Studio Panda 4 Planning Mode
   /blog/android-studio-panda-4-planning-mode/
-- Build Android apps in Google AI Studio
-  /blog/build-android-apps-google-ai-studio/
 
 ## Categories
 
