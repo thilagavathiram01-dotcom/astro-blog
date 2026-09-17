@@ -1,73 +1,204 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const related = allPosts.filter(p =>
+  (p.data.tags ?? []).some(t => (tags ?? []).includes(t)) && p.data.title !== title
+).slice(0, 3);
+const recent = allPosts.filter(p => p.data.title !== title).slice(0, 5);
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
-  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-    <!-- Hero Image -->
-    {heroImage && (
-      <div class="mb-8 rounded-2xl overflow-hidden shadow-lg">
-        <img 
-          src={heroImage} 
-          alt={title} 
-          class="w-full h-auto object-cover max-h-[420px]"
-          loading="eager"
-        />
-      </div>
-    )}
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar" class="progress-bar" style="width:0%"></div>
 
-    <!-- Header -->
-    <header class="mb-10">
-      <div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 mb-4">
-        <FormattedDate date={pubDate} />
-        {updatedDate && (
-          <>
-            <span>•</span>
-            <span>Updated <FormattedDate date={updatedDate} /></span>
-          </>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Breadcrumb -->
+    <nav class="text-xs text-[var(--ink-light)] mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-[var(--crimson)] transition-colors font-medium">Home</a>
+      <span class="text-[var(--rule)]">›</span>
+      <span class="text-[var(--ink)]">{title.substring(0, 50)}{title.length > 50 ? '…' : ''}</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- ARTICLE MAIN -->
+      <article class="lg:col-span-2">
+        
+        <!-- Hero Image -->
+        {heroImage && (
+          <div class="mb-6 overflow-hidden border border-[var(--rule-light)]">
+            <img
+              src={heroImage}
+              alt={title}
+              class="w-full h-auto object-cover max-h-[480px]"
+              loading="eager"
+            />
+          </div>
         )}
-      </div>
-      
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
-        {title}
-      </h1>
-      
-      {description && (
-        <p class="mt-4 text-lg text-slate-600 leading-relaxed">
-          {description}
-        </p>
-      )}
 
-      {tags && tags.length > 0 && (
-        <div class="mt-6 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100">
-              {tag}
-            </span>
-          ))}
+        <!-- Article Header -->
+        <header class="mb-8 pb-6 border-b border-[var(--rule)]">
+          <!-- Tags -->
+          {tags && tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-4">
+              {tags.map((tag, i) => (
+                <span class={`tag-pill ${i === 0 ? 'tag-pill-crimson' : ''}`}>{tag}</span>
+              ))}
+            </div>
+          )}
+
+          <!-- Headline -->
+          <h1 class="headline-xl mb-4" style="font-size:clamp(1.8rem,4vw,2.8rem)">
+            {title}
+          </h1>
+
+          {description && (
+            <p class="text-[var(--ink-soft)] text-lg leading-relaxed mb-4 font-['Source_Serif_4'] italic">
+              {description}
+            </p>
+          )}
+
+          <!-- Meta row -->
+          <div class="flex flex-wrap items-center gap-4 text-xs text-[var(--ink-light)]">
+            <span class="dateline"><FormattedDate date={pubDate} format="long" /></span>
+            {updatedDate && (
+              <span class="text-[var(--ink-light)]">
+                Updated: <FormattedDate date={updatedDate} />
+              </span>
+            )}
+          </div>
+        </header>
+
+        <!-- Article Body -->
+        <div class="article-prose bg-white p-6 sm:p-8 border border-[var(--rule-light)]">
+          <slot />
         </div>
-      )}
-    </header>
 
-    <!-- Content -->
-    <div class="prose prose-lg">
-      <slot />
-    </div>
+        <!-- Tags Footer -->
+        {tags && tags.length > 0 && (
+          <div class="mt-6 pt-5 border-t border-[var(--rule)] flex flex-wrap gap-2 items-center">
+            <span class="text-xs font-bold text-[var(--ink-light)] tracking-widest uppercase mr-2">Filed under:</span>
+            {tags.map(tag => (
+              <span class="tag-pill">{tag}</span>
+            ))}
+          </div>
+        )}
 
-    <!-- Back link -->
-    <div class="mt-16 pt-8 border-t border-slate-200">
-      <a 
-        href="/" 
-        class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
-      >
-        ← Back to all posts
-      </a>
+        <!-- Related Articles -->
+        {related.length > 0 && (
+          <div class="mt-10">
+            <div class="section-rule mb-5">
+              <span class="section-flag">Related Stories</span>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-0 bg-white border border-[var(--rule-light)]">
+              {related.map((post, i) => (
+                <a
+                  href={`/blog/${post.slug}/`}
+                  class={`block p-4 group hover:bg-[var(--newsprint)] transition-colors ${i < related.length - 1 ? 'border-b sm:border-b-0 sm:border-r border-[var(--rule-light)]' : ''}`}
+                >
+                  {post.data.heroImage && (
+                    <div class="aspect-[16/9] overflow-hidden mb-3 bg-gray-100">
+                      <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy" />
+                    </div>
+                  )}
+                  <p class="dateline mb-1"><FormattedDate date={post.data.pubDate} /></p>
+                  <h4 class="headline-sm text-sm group-hover:text-[var(--crimson)] transition-colors line-clamp-3">
+                    {post.data.title}
+                  </h4>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Back Link -->
+        <div class="mt-8 pt-6 border-t border-[var(--rule)]">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 text-[var(--crimson)] font-semibold text-sm hover:underline"
+          >
+            ← Back to all stories
+          </a>
+        </div>
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="space-y-6">
+        <!-- Recent Stories -->
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Recent Stories</h3>
+          <div class="space-y-4">
+            {recent.map((post, i) => (
+              <a href={`/blog/${post.slug}/`} class="flex gap-3 group">
+                <span class="flex-shrink-0 font-['Playfair_Display'] font-black text-xl leading-none text-[var(--rule)] group-hover:text-[var(--crimson)] transition-colors" style="line-height:1.1">
+                  {String(i+1).padStart(2,'0')}
+                </span>
+                <div>
+                  <h4 class="text-sm font-semibold text-[var(--ink)] group-hover:text-[var(--crimson)] transition-colors line-clamp-2 leading-snug">
+                    {post.data.title}
+                  </h4>
+                  <p class="byline mt-0.5"><FormattedDate date={post.data.pubDate} /></p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Topics -->
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Topics</h3>
+          <div class="flex flex-wrap gap-2">
+            {(tags ?? []).map(tag => (
+              <span class="tag-pill tag-pill-crimson">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- About -->
+        <div class="widget p-5">
+          <h3 class="widget-title mb-3 pb-2 border-b border-[var(--rule)]">About</h3>
+          <p class="text-sm text-[var(--ink-light)] leading-relaxed mb-3">
+            TechChronicle covers the technology stories that matter to developers, makers, and the curious.
+          </p>
+          <a href="/about" class="text-[var(--crimson)] text-xs font-semibold tracking-wide hover:underline">
+            About TechChronicle →
+          </a>
+        </div>
+
+        <!-- RSS Widget -->
+        <div class="widget p-5" style="border-top-color:var(--crimson)">
+          <h3 class="widget-title mb-2">Stay Informed</h3>
+          <p class="text-xs text-[var(--ink-light)] mb-4 leading-relaxed">Get every new story delivered directly via RSS.</p>
+          <a
+            href="/rss.xml"
+            class="block w-full text-center text-white text-xs font-bold tracking-widest uppercase py-3"
+            style="background:var(--crimson)"
+          >
+            Subscribe via RSS
+          </a>
+        </div>
+      </aside>
     </div>
-  </article>
+  </div>
+
+  <script>
+    // Reading progress bar
+    const bar = document.getElementById('progress-bar');
+    if (bar) {
+      window.addEventListener('scroll', () => {
+        const doc = document.documentElement;
+        const scrolled = doc.scrollTop / (doc.scrollHeight - doc.clientHeight);
+        bar.style.width = `${Math.min(scrolled * 100, 100)}%`;
+      });
+    }
+  </script>
 </BaseLayout>

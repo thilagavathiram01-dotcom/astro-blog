@@ -11,21 +11,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description = SITE_DESCRIPTION, image = '/blog-placeholder.jpg' } = Astro.props;
 ---
 
-<!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Canonical URL -->
+<!-- Preconnect for Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Canonical -->
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Primary Meta Tags -->
+<!-- Primary Meta -->
 <title>{title} | {SITE_TITLE}</title>
 <meta name="title" content={`${title} | ${SITE_TITLE}`} />
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
+<!-- OG -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
@@ -38,3 +41,6 @@ const { title, description = SITE_DESCRIPTION, image = '/blog-placeholder.jpg' }
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Theme color -->
+<meta name="theme-color" content="#0A1628" />

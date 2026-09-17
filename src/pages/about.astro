@@ -1,40 +1,117 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const totalPosts = posts.length;
+const allTags = [...new Set(posts.flatMap(p => p.data.tags ?? []))];
 ---
 
-<BaseLayout title="About" description="About this blog">
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16">
-    <h1 class="text-4xl font-bold text-slate-900 mb-6">About</h1>
-    
-    <div class="prose prose-lg">
-      <p>
-        Welcome to this simple, modern tech blog built with <strong>Astro</strong>.
-      </p>
-      <p>
-        The goal is pure simplicity:
-      </p>
-      <ul>
-        <li>Write posts in Markdown</li>
-        <li>Push to GitHub</li>
-        <li>Vercel or Netlify automatically deploys</li>
-      </ul>
-      <p>
-        Perfect for AI-assisted content creation. Just generate a Markdown file with the right frontmatter and commit it.
-      </p>
-      <h2>How AI can write posts</h2>
-      <p>
-        Give any AI this format and ask it to create a new file in <code>src/content/blog/</code>:
-      </p>
+<BaseLayout title="About" description="About TechChronicle — independent technology journalism">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <div class="lg:col-span-2">
+        <!-- Breadcrumb -->
+        <nav class="text-xs text-[var(--ink-light)] mb-6 flex items-center gap-2">
+          <a href="/" class="hover:text-[var(--crimson)] font-medium">Home</a>
+          <span>›</span>
+          <span class="text-[var(--ink)]">About</span>
+        </nav>
+
+        <div class="section-rule mb-6">
+          <span class="section-flag">About This Publication</span>
+        </div>
+
+        <div class="bg-white border border-[var(--rule-light)] p-8">
+          <h1 class="headline-xl mb-6" style="font-size:2.5rem">
+            About TechChronicle
+          </h1>
+
+          <div class="article-prose">
+            <p>
+              <strong>TechChronicle</strong> is an independent technology publication covering artificial intelligence, 
+              Android development, Google developer tools, and the software ecosystem that surrounds them.
+            </p>
+
+            <p>
+              We cover the stories that matter to engineers, developers, and technologists — from product announcements 
+              to practical tutorials — with the depth and accuracy you'd expect from a specialist publication.
+            </p>
+
+            <h2>What We Cover</h2>
+            <p>
+              Our editorial focus spans AI model releases, developer platform updates, mobile computing, 
+              and the tools that productive engineers rely on daily. We prioritize accuracy and practical usefulness 
+              over speed.
+            </p>
+
+            <h2>Publishing Model</h2>
+            <p>
+              This blog is built with <strong>Astro</strong> — a modern static site generator — and deployed automatically 
+              on every commit. Posts are written in Markdown and managed entirely through GitHub. No CMS, no admin panel: 
+              just files and version control.
+            </p>
+
+            <h2>Follow Our Coverage</h2>
+            <p>
+              The best way to follow TechChronicle is via our RSS feed. Every new story is delivered in full 
+              to your reader of choice.
+            </p>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-[var(--rule)] flex gap-3">
+            <a href="/rss.xml" class="text-white text-xs font-bold tracking-widest uppercase px-5 py-3" style="background:var(--crimson)">
+              RSS Feed
+            </a>
+            <a href="/" class="text-[var(--navy)] text-xs font-bold tracking-widest uppercase px-5 py-3 border-2" style="border-color:var(--navy)">
+              Read Latest Stories
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="space-y-6">
+        <!-- Stats Widget -->
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">By the Numbers</h3>
+          <div class="space-y-3">
+            {[
+              { num: totalPosts, label: 'Stories Published' },
+              { num: allTags.length, label: 'Topics Covered' },
+              { num: '2026', label: 'Year Founded' },
+            ].map(stat => (
+              <div class="flex items-baseline gap-3">
+                <span class="font-['Playfair_Display'] font-black text-2xl text-[var(--crimson)]">{stat.num}</span>
+                <span class="text-sm text-[var(--ink-light)]">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Topics -->
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Topics</h3>
+          <div class="flex flex-wrap gap-2">
+            {allTags.map(tag => (
+              <span class="tag-pill">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Tech Stack Widget -->
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Built With</h3>
+          <ul class="space-y-2 text-sm text-[var(--ink-light)]">
+            {['Astro 5', 'Tailwind CSS', 'TypeScript', 'Markdown / MDX', 'Cloudflare Pages'].map(item => (
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" style="background:var(--crimson)"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
     </div>
-
-    <pre class="mt-6 bg-slate-900 text-slate-100 p-5 rounded-xl overflow-x-auto text-sm"><code>---
-title: "Your Post Title"
-description: "A short description for SEO and cards"
-pubDate: 2026-09-16
-tags: ["astro", "blog", "ai"]
-heroImage: "/images/optional-image.jpg"
----
-
-Your markdown content goes here...</code></pre>
   </div>
 </BaseLayout>

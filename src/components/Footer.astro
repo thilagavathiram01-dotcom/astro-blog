@@ -3,16 +3,60 @@ import { SITE_TITLE } from '../consts';
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200 bg-white">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-slate-500">
-        © {year} {SITE_TITLE}. Built with Astro.
+<footer class="site-footer">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="site-name text-4xl text-white mb-3">{SITE_TITLE}</div>
+        <p class="text-white/50 text-sm leading-relaxed max-w-xs">
+          Your authoritative source for technology news, AI developments, and developer insights. Independently published.
+        </p>
+        <div class="mt-4 flex gap-3">
+          <a href="/rss.xml" class="text-xs font-semibold tracking-widest uppercase text-crimson border border-crimson px-3 py-1.5 hover:bg-crimson hover:text-white transition-colors" style="color:#C8102E;border-color:#C8102E">
+            Subscribe via RSS
+          </a>
+        </div>
+      </div>
+
+      <!-- Sections -->
+      <div>
+        <h4 class="text-white/90 text-xs font-bold tracking-widest uppercase mb-4 border-b border-white/10 pb-2">Sections</h4>
+        <ul class="space-y-2">
+          {['Home', 'AI & Machine Learning', 'Android', 'Tutorials', 'About'].map(item => (
+            <li>
+              <a href={item === 'Home' ? '/' : item === 'About' ? '/about' : '/blog/'} 
+                 class="text-white/50 hover:text-white text-sm transition-colors">
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Topics -->
+      <div>
+        <h4 class="text-white/90 text-xs font-bold tracking-widest uppercase mb-4 border-b border-white/10 pb-2">Topics</h4>
+        <ul class="space-y-2">
+          {['Gemini', 'Firebase', 'Android Dev', 'Productivity', 'AI Tools', 'Developer News'].map(item => (
+            <li>
+              <a href="/blog/" class="text-white/50 hover:text-white text-sm transition-colors">
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="hairline pt-6 flex flex-col sm:flex-row items-center justify-between gap-3" style="border-color:rgba(255,255,255,0.1)">
+      <p class="text-white/30 text-xs tracking-wide">
+        © {year} {SITE_TITLE}. All rights reserved. Built with Astro.
       </p>
-      <div class="flex items-center gap-4 text-sm text-slate-500">
-        <a href="/" class="hover:text-indigo-600 transition-colors">Home</a>
-        <a href="/about" class="hover:text-indigo-600 transition-colors">About</a>
-        <a href="/rss.xml" class="hover:text-indigo-600 transition-colors">RSS</a>
+      <div class="flex items-center gap-6 text-xs text-white/30">
+        <a href="/" class="hover:text-white/60 transition-colors">Home</a>
+        <a href="/about" class="hover:text-white/60 transition-colors">About</a>
+        <a href="/rss.xml" class="hover:text-white/60 transition-colors">RSS</a>
       </div>
     </div>
   </div>
