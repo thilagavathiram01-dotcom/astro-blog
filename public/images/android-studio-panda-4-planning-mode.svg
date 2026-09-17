@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Android Studio Panda 4 Planning Mode featured image</title>
+  <desc id="desc">Editorial graphic of an IDE agent plan, task list, and next-edit suggestions on a dark studio workspace.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#07111f"/>
+      <stop offset="50%" stop-color="#12263a"/>
+      <stop offset="100%" stop-color="#0b1a16"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="180" cy="80" r="160" fill="#34d399" opacity="0.12"/>
+  <circle cx="1080" cy="540" r="200" fill="#38bdf8" opacity="0.12"/>
+  <rect x="72" y="70" width="520" height="490" rx="28" fill="url(#panel)" stroke="#6ee7b7" stroke-opacity="0.35"/>
+  <rect x="96" y="96" width="220" height="28" rx="14" fill="#34d399"/>
+  <text x="118" y="116" fill="#042f24" font-family="Inter, Segoe UI, sans-serif" font-size="14" font-weight="700">PLANNING MODE</text>
+  <rect x="96" y="148" width="472" height="86" rx="16" fill="#042f24" opacity="0.45"/>
+  <text x="116" y="184" fill="#ecfdf5" font-family="Inter, Segoe UI, sans-serif" font-size="20" font-weight="600">Implementation plan</text>
+  <text x="116" y="212" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="15">Review steps before the agent edits files</text>
+  <rect x="96" y="254" width="472" height="44" rx="12" fill="#064e3b" opacity="0.7"/>
+  <text x="116" y="282" fill="#d1fae5" font-family="Inter, Segoe UI, sans-serif" font-size="16">1. Add field to data class</text>
+  <rect x="96" y="310" width="472" height="44" rx="12" fill="#0e7490" opacity="0.45"/>
+  <text x="116" y="338" fill="#e0f2fe" font-family="Inter, Segoe UI, sans-serif" font-size="16">2. Update Compose preview</text>
+  <rect x="96" y="366" width="472" height="44" rx="12" fill="#064e3b" opacity="0.55"/>
+  <text x="116" y="394" fill="#d1fae5" font-family="Inter, Segoe UI, sans-serif" font-size="16">3. Generate unit tests</text>
+  <rect x="96" y="430" width="472" height="96" rx="16" fill="#0b1220" opacity="0.55" stroke="#38bdf8" stroke-opacity="0.35"/>
+  <text x="116" y="470" fill="#e2e8f0" font-family="Inter, Segoe UI, sans-serif" font-size="18">Walkthrough artifact</text>
+  <text x="116" y="500" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="15">Summary of every file the agent touched</text>
+  <text x="640" y="150" fill="#ecfeff" font-family="Inter, Segoe UI, sans-serif" font-size="34" font-weight="700">Android Studio Panda 4</text>
+  <text x="640" y="196" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="22">Plan first. Predict the next edit.</text>
+  <rect x="640" y="250" width="230" height="56" rx="16" fill="url(#accent)"/>
+  <text x="668" y="286" fill="#042f24" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="700">Planning Mode</text>
+  <rect x="890" y="250" width="230" height="56" rx="16" fill="#38bdf8" opacity="0.9"/>
+  <text x="918" y="286" fill="#042f24" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="700">Next Edit (NEP)</text>
+  <rect x="640" y="328" width="230" height="56" rx="16" fill="#34d399" opacity="0.8"/>
+  <text x="678" y="364" fill="#042f24" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="700">Gemini Starter</text>
+  <rect x="890" y="328" width="230" height="56" rx="16" fill="#67e8f9" opacity="0.75"/>
+  <text x="922" y="364" fill="#042f24" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="700">Web Search</text>
+  <rect x="640" y="430" width="480" height="110" rx="20" fill="url(#panel)" stroke="#34d399" stroke-opacity="0.3"/>
+  <text x="668" y="478" fill="#e2e8f0" font-family="Inter, Segoe UI, sans-serif" font-size="20">Stable 2025.3.4 · production ready</text>
+  <text x="668" y="512" fill="#94a3b8" font-family="Inter, Segoe UI, sans-serif" font-size="16">Comment on the plan before code is written</text>
+</svg>
