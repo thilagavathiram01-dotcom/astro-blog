@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Gemini Notebook study tools featured image</title>
+  <desc id="desc">Abstract editorial graphic of a notebook workspace with voice chat, quizzes, and a short video overview.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="80" r="190" fill="#2dd4bf" opacity="0.16"/>
+  <circle cx="120" cy="540" r="170" fill="#818cf8" opacity="0.16"/>
+  <rect x="80" y="110" width="520" height="410" rx="28" fill="url(#card)" stroke="#94a3b8" stroke-opacity="0.35"/>
+  <circle cx="140" cy="170" r="22" fill="#2dd4bf"/>
+  <rect x="178" y="156" width="240" height="14" rx="7" fill="#ccfbf1"/>
+  <rect x="178" y="180" width="160" height="10" rx="5" fill="#64748b"/>
+  <rect x="110" y="230" width="460" height="12" rx="6" fill="#94a3b8"/>
+  <rect x="110" y="254" width="420" height="12" rx="6" fill="#64748b"/>
+  <rect x="110" y="278" width="390" height="12" rx="6" fill="#64748b"/>
+  <rect x="110" y="320" width="140" height="36" rx="18" fill="#2dd4bf" opacity="0.9"/>
+  <rect x="266" y="320" width="150" height="36" rx="18" fill="#818cf8" opacity="0.9"/>
+  <rect x="430" y="320" width="120" height="36" rx="18" fill="#38bdf8" opacity="0.85"/>
+  <rect x="110" y="390" width="70" height="70" rx="16" fill="#0f172a" opacity="0.45"/>
+  <circle cx="145" cy="425" r="14" fill="#5eead4"/>
+  <rect x="198" y="404" width="300" height="10" rx="5" fill="#cbd5e1"/>
+  <rect x="198" y="426" width="340" height="8" rx="4" fill="#64748b"/>
+  <rect x="198" y="444" width="220" height="8" rx="4" fill="#64748b"/>
+  <rect x="660" y="130" width="460" height="160" rx="24" fill="url(#card)" stroke="#94a3b8" stroke-opacity="0.3"/>
+  <rect x="690" y="160" width="90" height="90" rx="18" fill="#312e81"/>
+  <polygon points="718,186 748,205 718,224" fill="#a5b4fc"/>
+  <rect x="800" y="172" width="250" height="14" rx="7" fill="#e0e7ff"/>
+  <rect x="800" y="200" width="280" height="10" rx="5" fill="#64748b"/>
+  <rect x="800" y="222" width="200" height="10" rx="5" fill="#64748b"/>
+  <rect x="660" y="320" width="220" height="180" rx="22" fill="url(#card)" stroke="#94a3b8" stroke-opacity="0.3"/>
+  <rect x="690" y="350" width="160" height="12" rx="6" fill="#99f6e4"/>
+  <rect x="690" y="380" width="160" height="20" rx="8" fill="#334155"/>
+  <rect x="690" y="410" width="160" height="20" rx="8" fill="#334155"/>
+  <rect x="690" y="440" width="160" height="20" rx="8" fill="#115e59"/>
+  <rect x="900" y="320" width="220" height="180" rx="22" fill="url(#card)" stroke="#94a3b8" stroke-opacity="0.3"/>
+  <rect x="930" y="350" width="160" height="12" rx="6" fill="#c7d2fe"/>
+  <rect x="930" y="380" width="70" height="90" rx="10" fill="#312e81"/>
+  <rect x="1012" y="380" width="70" height="90" rx="10" fill="#134e4a"/>
+</svg>
