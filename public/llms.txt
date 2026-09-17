@@ -11,17 +11,21 @@ Privacy: https://news.yumpdf.com/privacy/
 
 ## About
 
-Yum News publishes practical, step-by-step guides for Android, Gemini AI, Firebase, and developer tooling. Coverage focuses on Google's ecosystem — from consumer Android features to SDK-level APIs and AI integrations. Articles are written for developers, makers, and technically curious readers.
+Yum News publishes practical, step-by-step guides for Android, Gemini AI, Firebase, Claude, and developer tooling. Coverage focuses on useful product workflows — from consumer Android features to SDK-level APIs and AI integrations. Articles are written for developers, makers, and technically curious readers.
 
 ## Categories
 
-- **AI Tools & Tutorials** — Gemini, Gemma, ML Kit, Firebase AI Logic, Google AI Studio
+- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Google AI Studio
 - **Android Apps & Updates** — Android 17, Pixel drops, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
 ## Articles (newest first)
 
 ### 2026-09-17
+
+- How to Use Claude After Cowork and Chat Became One App
+  https://news.yumpdf.com/blog/claude-cowork-chat-unified/
+  Use one Claude conversation for chat and Cowork-style tasks, then export Claude Docs and Slides on Pro and Max.
 
 - How to Use the Android 17 Contact Picker Instead of READ_CONTACTS
   https://news.yumpdf.com/blog/android-17-contact-picker/
