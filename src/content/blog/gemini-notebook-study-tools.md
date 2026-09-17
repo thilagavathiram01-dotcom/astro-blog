@@ -1,7 +1,7 @@
 ---
 title: "How to Use Gemini Notebook Voice Chat and Interactive Study Tools"
 description: "A practical guide to Gemini Notebook's September 2026 study update: source-grounded voice chat on mobile, lecture recording, interactive reports, quizzes, and short video overviews."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T17:10:00
 tags: ["ai-tools", "gemini", "tutorials"]
 heroImage: "/images/gemini-notebook-study-tools.svg"
 ---

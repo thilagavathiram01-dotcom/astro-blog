@@ -1,7 +1,7 @@
 ---
 title: "How to Use Sign-to-Text on Pixel 11: ASL to English in Gboard"
 description: "Set up Pixel 11 sign-to-text so American Sign Language becomes English text in Gboard and Live Transcribe. Camera setup, privacy details, and editing tips from official docs."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T17:50:00
 tags: ["android", "tutorials", "pixel"]
 heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
 ---

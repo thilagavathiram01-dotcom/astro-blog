@@ -1,7 +1,7 @@
 ---
 title: "How to Use Android CLI and Official Skills With Any AI Agent"
 description: "A practical tutorial for Android CLI 1.0 and official Android skills: install the CLI, list and add skills, ground Gemini, Claude Code, Codex, or Antigravity in current Android patterns."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T15:50:00
 tags: ["android", "ai-tools", "tutorials"]
 heroImage: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1400&q=80"
 ---

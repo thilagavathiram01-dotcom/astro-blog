@@ -53,10 +53,12 @@ const navPages = [
 
       <!-- Logo block -->
       <div class="flex flex-col items-center lg:items-start">
-        <a href="/"
-          style="font-family:'Playfair Display',serif;font-weight:900;color:#fff;letter-spacing:-0.02em;line-height:1"
-          class="text-5xl sm:text-6xl hover:opacity-90 transition-opacity">
-          {SITE_TITLE}
+        <a href="/" class="hover:opacity-90 transition-opacity flex items-center gap-3">
+          <img src="/logo.png" alt={SITE_TITLE} width="64" height="64" style="border-radius:8px;flex-shrink:0;object-fit:cover" />
+          <span
+            style="font-family:'Playfair Display',serif;font-weight:900;color:#fff;letter-spacing:-0.02em;line-height:1"
+            class="text-4xl sm:text-5xl"
+          >{SITE_TITLE}</span>
         </a>
         <p class="text-white/35 text-[10px] tracking-[0.22em] mt-1.5 uppercase font-light">
           Technology &nbsp;·&nbsp; Artificial Intelligence &nbsp;·&nbsp; Developer Insights

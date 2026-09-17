@@ -1,7 +1,7 @@
 ---
 title: "How to Use Firebase AI Logic Hybrid Inference on Android"
 description: "A practical guide to Google's Firebase AI Logic Hybrid API: route Gemini requests to on-device models when they are available, then fall back to the cloud without rewriting your app."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T16:20:00
 tags: ["android", "ai-tools", "tutorials"]
 heroImage: "/images/firebase-ai-logic-hybrid-inference.svg"
 ---

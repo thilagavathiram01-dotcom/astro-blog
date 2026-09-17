@@ -1,7 +1,7 @@
 ---
 title: "How to Use Planning Mode and Next Edit Prediction in Android Studio Panda 4"
 description: "A practical tutorial for Android Studio Panda 4: Planning Mode, Next Edit Prediction, the Gemini API Starter template, Agent Web Search, and Ask Mode."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T16:00:00
 tags: ["android", "ai-tools", "tutorials"]
 heroImage: "/images/android-studio-panda-4-planning-mode.svg"
 ---

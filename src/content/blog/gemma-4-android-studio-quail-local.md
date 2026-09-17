@@ -1,7 +1,7 @@
 ---
 title: "How to Run Gemma 4 Locally in Android Studio Quail 4"
 description: "Set up Google’s Gemma 4 model inside Android Studio Quail 4 for offline agentic coding: hardware needs, one-click download, Agent Mode, and when to stay on Gemini in the cloud."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T17:20:00
 tags: ["android", "ai-tools", "tutorials"]
 heroImage: "/images/gemma-4-android-studio-quail-local.svg"
 ---

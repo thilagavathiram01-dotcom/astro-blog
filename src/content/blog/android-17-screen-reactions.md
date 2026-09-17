@@ -1,7 +1,7 @@
 ---
 title: "How to Use Android 17 Screen Reactions for Tutorials and Reaction Videos"
 description: "Record your screen and selfie camera together on Android 17. A practical Pixel walkthrough of Screen Reactions: entire-screen capture, background cutout, overlay controls, and when to skip it."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T15:40:00
 tags: ["android", "tutorials", "how-to"]
 heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80"
 ---

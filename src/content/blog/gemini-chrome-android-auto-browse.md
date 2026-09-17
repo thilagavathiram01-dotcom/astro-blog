@@ -1,7 +1,7 @@
 ---
 title: "How to Use Gemini in Chrome on Android: Summaries, Calendar, and Auto Browse"
 description: "A practical Android guide to Gemini in Chrome: open the assistant, summarize pages, send details to Calendar and Keep, and run Auto Browse tasks without leaving the browser."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T16:40:00
 tags: ["android", "chrome", "ai-tools"]
 heroImage: "/images/gemini-chrome-android-auto-browse.svg"
 ---

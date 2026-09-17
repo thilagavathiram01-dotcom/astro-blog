@@ -1,7 +1,7 @@
 ---
 title: "How to Use Gemini Live Guided Vision on Android"
 description: "Turn on Gemini Live camera sharing and Guided Vision for spoken cues when reading labels, scanning a room, or lining up an object. Official Android steps, privacy notes, and practical examples."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T17:00:00
 tags: ["ai-tools", "android", "gemini", "tutorials"]
 heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
 ---

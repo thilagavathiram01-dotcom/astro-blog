@@ -1,7 +1,7 @@
 ---
 title: "How to Use the Android 17 Contact Picker Instead of READ_CONTACTS"
 description: "Replace the broad READ_CONTACTS permission with Android 17's session-based Contact Picker. Launch ACTION_PICK_CONTACTS, request only phone or email fields, and persist the results before the session URI expires."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T15:30:00
 tags: ["android", "tutorials", "how-to"]
 heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1600&q=80"
 ---

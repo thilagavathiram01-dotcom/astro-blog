@@ -1,7 +1,7 @@
 ---
 title: "How to Use Google Photos Video Remix With Gemini Omni"
 description: "A practical Android and iOS guide to Video Remix in Google Photos: eligibility, Create-tab steps, templates for relighting and style, clip limits, and how Gemini Omni powers the edits."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T17:30:00
 tags: ["ai-tools", "google-photos", "tutorials"]
 heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&h=630&q=80"
 ---

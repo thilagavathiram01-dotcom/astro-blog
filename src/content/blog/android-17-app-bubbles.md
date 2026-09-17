@@ -1,7 +1,7 @@
 ---
 title: "How to Use Android 17 App Bubbles for Faster Multitasking"
 description: "Turn any app into a floating bubble on Android 17. Learn how to create, switch, and dismiss App Bubbles on phones, plus the Bubble Bar on foldables and tablets."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T15:20:00
 tags: ["android", "tutorials", "how-to"]
 heroImage: "/images/android-17-app-bubbles.svg"
 ---

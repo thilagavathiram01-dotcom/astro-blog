@@ -1,7 +1,7 @@
 ---
 title: "How to Use Gemini Intelligence on Android: Widgets, Rambler, and App Automation"
 description: "A practical guide to Gemini Intelligence on Android: multi-step app automation, Gemini in Chrome Auto Browse, smarter Autofill, Gboard Rambler, and Create My Widget."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T16:50:00
 tags: ["android", "ai-tools", "tutorials"]
 heroImage: "/images/gemini-intelligence-android.svg"
 ---

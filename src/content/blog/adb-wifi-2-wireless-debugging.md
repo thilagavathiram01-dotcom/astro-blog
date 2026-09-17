@@ -1,7 +1,7 @@
 ---
 title: "How to Set Up ADB Wi-Fi 2.0 Wireless Debugging on Android 17"
 description: "Pair Android 17 devices over Wi-Fi with Platform-Tools 37 and Android Studio. Check mDNS, stay connected across networks, and troubleshoot drops."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T15:10:00
 tags: ["android", "tutorials", "how-to"]
 heroImage: "/images/adb-wifi-2-wireless-debugging.svg"
 ---

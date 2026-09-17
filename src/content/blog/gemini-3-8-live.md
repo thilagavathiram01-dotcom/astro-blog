@@ -1,7 +1,7 @@
 ---
 title: "How to Use Gemini 3.8 Live for Real-Time Voice Conversations"
 description: "A practical guide to Gemini 3.8 Live and Live Extended Thinking: when to use each model, how to try Search Live and Gemini Live, and how developers start with the Live API."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T16:30:00
 tags: ["ai-tools", "gemini", "tutorials"]
 heroImage: "/images/gemini-3-8-live.svg"
 ---

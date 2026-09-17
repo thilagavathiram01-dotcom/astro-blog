@@ -1,7 +1,7 @@
 ---
 title: "How to Use Android’s September 2026 Drop: Find Hub Memory, Motion Assist, and More"
 description: "A practical guide to the September 2026 Android Drop and Pixel Drop: remember items with Gemini and Find Hub, turn on Motion Assist, use Guided vision, and set up Pixel VIP widgets."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T18:00:00
 tags: ["android", "tutorials", "pixel"]
 heroImage: "/images/android-september-2026-drop.svg"
 ---

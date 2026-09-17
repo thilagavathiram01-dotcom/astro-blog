@@ -1,7 +1,7 @@
 ---
 title: "How to Build a Native Android App in Google AI Studio"
 description: "A practical walkthrough of Google AI Studio Build mode: prompt a Kotlin and Jetpack Compose app, test it in the cloud emulator, install it over USB, and publish an internal Play test."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T16:10:00
 tags: ["ai-tools", "android", "tutorials"]
 heroImage: "/images/build-android-apps-google-ai-studio.svg"
 ---

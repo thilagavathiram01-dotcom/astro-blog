@@ -1,7 +1,7 @@
 ---
 title: "How to Use ML Kit GenAI APIs with Gemini Nano on Android"
 description: "A practical guide to Google's on-device ML Kit GenAI APIs: summarization, proofreading, rewriting, image description, speech recognition, and the Prompt API powered by Gemini Nano."
-pubDate: 2026-09-17
+pubDate: 2026-09-17T17:40:00
 tags: ["android", "ai-tools", "tutorials"]
 heroImage: "/images/ml-kit-genai-gemini-nano.svg"
 ---
