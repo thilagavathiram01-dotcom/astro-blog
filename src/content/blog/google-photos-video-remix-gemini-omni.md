@@ -46,7 +46,7 @@ If the tool is absent, you are outside the current rollout, below the age gate, 
 
 Google's official Omni explainer is the best visual preview of the same model family Photos is using. Video Remix is template-driven; Omni in Gemini and Flow is conversational. The underlying idea — restyle a real clip instead of generating from a blank prompt — is the same.
 
-<div class="video-embed" style="position:relative;width:100%;max-width:100%;aspect-ratio:16/9;margin:1.5rem 0;background:#0A1628;border:1px solid #E5DDD0;overflow:hidden;">
+<div class="video-embed">
   <iframe src="https://www.youtube-nocookie.com/embed/uW4B6ziQqvY" title="What is Gemini Omni? — official Google video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
 </div>
 

@@ -83,7 +83,7 @@ Suppose `Recipe` gains a `prepMinutes: Int` field.
 
 That last step is still yours. Panda 4 can [generate unit tests with Gemini](https://developer.android.com/studio/releases/past-releases/as-panda-4-release-notes) from Kotlin or Java sources (setup, mocks, branches), but you still decide which branches matter.
 
-<div class="video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:1.5rem 0;border-radius:12px">
+<div class="video-embed">
 <iframe src="https://www.youtube.com/embed/N4GgGBKnHe4" title="What's new in Android development tools" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 </div>
 

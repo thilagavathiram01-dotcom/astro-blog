@@ -63,7 +63,9 @@ A first-app shape that matches the platform limits is a single-purpose utility: 
 
 The Antigravity agent owns the project files. Follow-up chat edits propagate across Gradle, Compose screens, and resources the same way web Build mode edits a web app.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N4GgGBKnHe4" title="What's new in Android development tools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/N4GgGBKnHe4" title="What's new in Android development tools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
 
 ## Step 3: Test in the browser emulator
 
@@ -120,7 +122,9 @@ When you need multi-module code, real CI, or APIs Build mode cannot generate:
 
 That handoff is the intended ceiling for this workflow: browser for the first running binary, Studio for everything that must survive review.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aqmpZocmR8o" title="Developer Keynote (Google I/O 2026)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/aqmpZocmR8o" title="Developer Keynote (Google I/O 2026)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
 
 ## Prompt patterns that stay inside the product
 

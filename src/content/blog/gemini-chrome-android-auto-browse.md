@@ -22,7 +22,9 @@ Inside Chrome, Gemini sits on the current page instead of opening a separate cha
 
 Google says you open it from the **Gemini icon** or the **three-dot menu** on Chrome’s top bar. If you do not see either control, you are not on the current Android Chrome build or you are outside the U.S. rollout.
 
-<iframe width="100%" height="360" src="https://www.youtube.com/embed/naTvTQ60eoE" title="Automate Tasks with Gemini — Android Developers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/naTvTQ60eoE" title="Automate Tasks with Gemini — Android Developers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
 
 ## Before you start
 
@@ -88,7 +90,9 @@ Pick something cheap and reversible.
 
 Do not start with banking, tax filing, medical portals, or a cart you cannot easily cancel. Google’s own Help text says you are responsible for the agent’s actions, including mistaken purchases.
 
-<iframe width="100%" height="360" src="https://www.youtube.com/embed/TZNu9u9TfN4" title="Top 3 AI on Android updates — Google I/O 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/TZNu9u9TfN4" title="Top 3 AI on Android updates — Google I/O 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
 
 ## 4. Permissions you should know exist
 

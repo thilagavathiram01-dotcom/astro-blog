@@ -59,7 +59,9 @@ Start with `PREFER_ON_DEVICE` for private, short drafts. Use `PREFER_IN_CLOUD` w
 
 The Android Developers talk below is a useful 45-minute pass over on-device, cloud, and hybrid work from Google I/O 2026. Watch the hybrid and Firebase sections after you read the routing table.
 
-<iframe width="100%" height="360" src="https://www.youtube.com/embed/_iuXykdlTkk" title="Build intelligent Android apps with Google's AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/_iuXykdlTkk" title="Build intelligent Android apps with Google's AI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
 
 ## How to implement it
 

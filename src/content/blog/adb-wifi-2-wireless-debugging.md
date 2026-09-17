@@ -131,7 +131,9 @@ Wireless debugging is also not a substitute for Play testing. Studio can upload 
 
 The Android Developers session below covers current Studio and platform tooling, including wireless devices and Device Manager. Use it alongside the official adb page when a UI label differs slightly between Quail stable and Canary.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N4GgGBKnHe4" title="What's new in Android development tools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/N4GgGBKnHe4" title="What's new in Android development tools" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
 
 ## Conclusion
 
