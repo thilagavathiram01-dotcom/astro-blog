@@ -23,6 +23,10 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ### 2026-09-17
 
+- How to Use the Android 17 Contact Picker Instead of READ_CONTACTS
+  https://news.yumpdf.com/blog/android-17-contact-picker/
+  Replace READ_CONTACTS with Android 17's session-based Contact Picker: request phone or email fields, query the session URI, and persist results.
+
 - How to Use Sign-to-Text on Pixel 11: ASL to English in Gboard
   https://news.yumpdf.com/blog/pixel-11-sign-to-text-asl/
   Set up Pixel 11 sign-to-text so American Sign Language becomes English text in Gboard and Live Transcribe.
