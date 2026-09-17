@@ -1,0 +1,46 @@
+# TechChronicle
+
+> Independent technology coverage of AI tools, Android, and practical how-to guides.
+
+Site: https://astro-blog.pages.dev
+RSS: https://astro-blog.pages.dev/rss.xml
+Sitemap: https://astro-blog.pages.dev/sitemap.xml
+
+## Latest article (2026-09-17)
+
+- How to Use Sign-to-Text on Pixel 11: ASL to English in Gboard
+  /blog/pixel-11-sign-to-text-asl/
+  Pixel 11 Gboard and Live Transcribe translate American Sign Language to English using DeepMind SL2T. Official setup, framing, privacy (pose landmarks only), and limits.
+
+## Recent guides
+
+- How to Use Gemini Intelligence on Android: Widgets, Rambler, and App Automation
+  /blog/gemini-intelligence-android/
+- How to Use Android’s September 2026 Drop: Find Hub Memory, Motion Assist, and More
+  /blog/android-september-2026-drop-guide/
+- Gemini in Chrome on Android and Auto Browse
+  /blog/gemini-chrome-android-auto-browse/
+- Android AppFunctions for AI agents
+  /blog/android-appfunctions-agents/
+- Firebase AI Logic hybrid inference
+  /blog/firebase-ai-logic-hybrid-inference/
+- Gemma 4 in Android Studio
+  /blog/gemma-4-android-studio-quail-local/
+- ML Kit GenAI and Gemini Nano
+  /blog/ml-kit-genai-gemini-nano/
+- Android Studio Panda 4 Planning Mode
+  /blog/android-studio-panda-4-planning-mode/
+- Build Android apps in Google AI Studio
+  /blog/build-android-apps-google-ai-studio/
+
+## Categories
+
+- AI Tools & Tutorials
+- Android Apps & Updates
+- Technology How-To Guides
+
+## Optional
+
+Contact: /contact/
+About: /about/
+Privacy: /privacy/
