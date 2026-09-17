@@ -5,8 +5,9 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  // Use Netlify/Vercel provided URL, fallback for local
-  site: process.env.URL || process.env.DEPLOY_PRIME_URL || 'https://example.com',
+  // CF_PAGES_URL is set automatically by Cloudflare Pages
+  // URL is set in the GitHub Actions workflow for preview deploys
+  site: process.env.CF_PAGES_URL || process.env.URL || 'https://astro-blog.pages.dev',
   integrations: [
     mdx(),
     tailwind(),
