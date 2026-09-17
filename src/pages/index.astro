@@ -8,53 +8,95 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const featured = posts[0];
-const secondary = posts.slice(1, 3);
-const tertiary = posts.slice(3, 6);
-const sidebar = posts.slice(6, 10);
-const latest = posts.slice(0, 6);
-
-const tagColors: Record<string,string> = {
-  'ai': '#C8102E', 'gemini': '#1A73E8', 'android': '#3DDC84',
-  'tutorials': '#F4B400', 'firebase': '#FFCA28', 'pixel': '#4285F4',
-  'ai-tools': '#C8102E', 'workflow': '#0F9D58', 'productivity': '#AB47BC',
-};
+const latest5   = posts.slice(0, 5);   // Latest posts strip
+const featured  = posts[0];             // Hero
+const secondary = posts.slice(1, 3);   // Right column
+const tertiary  = posts.slice(3, 6);   // Analysis grid
 ---
 
 <BaseLayout title="Home" description={SITE_DESCRIPTION}>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
-    <!-- TOP SECTION: Featured + Secondary -->
+    <!-- ══════════════════════════════════════════ -->
+    <!-- LATEST POSTS — prominent strip at the top  -->
+    <!-- ══════════════════════════════════════════ -->
     <section class="mb-8">
-      <div class="section-rule mb-5">
-        <span class="section-flag">Today's Top Stories</span>
+      <div class="flex items-center gap-3 mb-0">
+        <div class="section-rule flex-1">
+          <span class="section-flag">Latest Stories</span>
+        </div>
+        <a href="/search/" class="text-[10px] font-bold tracking-widest uppercase text-[var(--crimson)] hover:underline whitespace-nowrap">
+          View all →
+        </a>
+      </div>
+
+      <!-- 5-card horizontal latest strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-0 bg-white border border-[var(--rule-light)] mt-4">
+        {latest5.map((post, i) => (
+          <a
+            href={`/blog/${post.slug}/`}
+            class={`block group p-4 hover:bg-[var(--newsprint)] transition-colors
+              ${i < latest5.length - 1 ? 'border-b lg:border-b-0 lg:border-r border-[var(--rule-light)]' : ''}
+            `}
+          >
+            <!-- Rank badge -->
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                style={`font-size:0.6rem;font-weight:800;letter-spacing:0.12em;color:#fff;padding:2px 6px;border-radius:1px;background:${i === 0 ? '#C8102E' : '#0A1628'}`}
+                class="uppercase"
+              >
+                {i === 0 ? 'New' : `#${i + 1}`}
+              </span>
+              <span class="dateline text-[10px]"><FormattedDate date={post.data.pubDate} /></span>
+            </div>
+            <!-- Thumb -->
+            {post.data.heroImage && (
+              <div class="aspect-[4/3] overflow-hidden mb-2 bg-gray-100">
+                <img
+                  src={post.data.heroImage} alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-300"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                />
+              </div>
+            )}
+            <h3 class="headline-sm text-sm group-hover:text-[var(--crimson)] transition-colors line-clamp-3">
+              {post.data.title}
+            </h3>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- FEATURED HERO + SECONDARY                  -->
+    <!-- ══════════════════════════════════════════ -->
+    <section class="mb-8">
+      <div class="section-rule mb-4">
+        <span class="section-flag">Top Story</span>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-[var(--rule-light)] bg-white">
-        
-        <!-- FEATURED STORY (left 2/3) -->
+
+        <!-- Hero (2/3) -->
         {featured && (
-          <a href={`/blog/${featured.slug}/`} class="lg:col-span-2 col-rule block group relative">
+          <a href={`/blog/${featured.slug}/`} class="lg:col-span-2 col-rule block group">
             {featured.data.heroImage ? (
               <div class="aspect-[16/9] overflow-hidden bg-gray-100">
                 <img
-                  src={featured.data.heroImage}
-                  alt={featured.data.title}
+                  src={featured.data.heroImage} alt={featured.data.title}
                   class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   loading="eager"
                 />
               </div>
             ) : (
-              <div class="aspect-[16/9] bg-gradient-to-br from-[var(--navy)] to-[#1e3a5f] flex items-center justify-center">
-                <span class="text-white/10 font-['Playfair_Display'] font-black" style="font-size:clamp(5rem,15vw,12rem)">
+              <div class="aspect-[16/9] flex items-center justify-center" style="background:linear-gradient(135deg,#0A1628,#1e3a5f)">
+                <span class="text-white/10 font-black" style="font-family:'Playfair Display',serif;font-size:clamp(5rem,15vw,12rem)">
                   {featured.data.title.charAt(0)}
                 </span>
               </div>
             )}
             <div class="p-6 lg:p-8">
-              <div class="dateline mb-2">
-                <FormattedDate date={featured.data.pubDate} />
-              </div>
+              <div class="dateline mb-2"><FormattedDate date={featured.data.pubDate} /></div>
               <h2 class="headline-xl mb-3 group-hover:text-[var(--crimson)] transition-colors">
                 {featured.data.title}
               </h2>
@@ -62,10 +104,10 @@ const tagColors: Record<string,string> = {
                 {featured.data.description}
               </p>
               <div class="flex flex-wrap items-center gap-2">
-                {(featured.data.tags ?? []).slice(0,3).map(tag => (
+                {(featured.data.tags ?? []).slice(0, 3).map(tag => (
                   <span class="tag-pill">{tag}</span>
                 ))}
-                <span class="ml-auto text-[var(--crimson)] text-sm font-semibold tracking-wide group-hover:underline">
+                <span class="ml-auto text-[var(--crimson)] text-sm font-semibold group-hover:underline">
                   Read full story →
                 </span>
               </div>
@@ -73,104 +115,100 @@ const tagColors: Record<string,string> = {
           </a>
         )}
 
-        <!-- SECONDARY STORIES (right 1/3) -->
+        <!-- Secondary (1/3) -->
         <div class="flex flex-col divide-y divide-[var(--rule-light)]">
-          {secondary.map((post) => (
+          {secondary.map(post => (
             <a href={`/blog/${post.slug}/`} class="block p-5 group hover:bg-[var(--newsprint)] transition-colors flex-1">
               {post.data.heroImage && (
                 <div class="aspect-[16/9] overflow-hidden mb-3 bg-gray-100">
-                  <img
-                    src={post.data.heroImage}
-                    alt={post.data.title}
+                  <img src={post.data.heroImage} alt={post.data.title}
                     class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
               )}
-              <div class="dateline mb-1.5">
-                <FormattedDate date={post.data.pubDate} />
-              </div>
-              <h3 class="headline-md mb-2 group-hover:text-[var(--crimson)] transition-colors">
-                {post.data.title}
-              </h3>
-              <p class="text-[var(--ink-light)] text-sm leading-relaxed line-clamp-3">
-                {post.data.description}
-              </p>
+              <div class="dateline mb-1.5"><FormattedDate date={post.data.pubDate} /></div>
+              <h3 class="headline-md mb-2 group-hover:text-[var(--crimson)] transition-colors">{post.data.title}</h3>
+              <p class="text-[var(--ink-light)] text-sm leading-relaxed line-clamp-3">{post.data.description}</p>
             </a>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- MIDDLE: Tertiary Grid + Sidebar -->
+    <!-- ══════════════════════════════════════════ -->
+    <!-- ANALYSIS GRID + SIDEBAR                    -->
+    <!-- ══════════════════════════════════════════ -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-      
-      <!-- Main Column: Tertiary Cards -->
-      <div class="lg:col-span-2 space-y-0">
-        <div class="section-rule mb-5">
-          <span class="section-flag">Latest Analysis</span>
+
+      <!-- Main column -->
+      <div class="lg:col-span-2 space-y-6">
+
+        <!-- Analysis 3-up -->
+        <div>
+          <div class="section-rule mb-4">
+            <span class="section-flag">Latest Analysis</span>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-0 border border-[var(--rule-light)] bg-white">
+            {tertiary.map((post, i) => (
+              <a
+                href={`/blog/${post.slug}/`}
+                class={`block group p-5 hover:bg-[var(--newsprint)] transition-colors
+                  ${i < tertiary.length - 1 ? 'border-b sm:border-b-0 sm:border-r border-[var(--rule-light)]' : ''}
+                `}
+              >
+                {post.data.heroImage && (
+                  <div class="aspect-[4/3] overflow-hidden mb-3 bg-gray-100">
+                    <img src={post.data.heroImage} alt={post.data.title}
+                      class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <div class="dateline mb-1"><FormattedDate date={post.data.pubDate} /></div>
+                <h3 class="headline-sm mb-2 group-hover:text-[var(--crimson)] transition-colors">{post.data.title}</h3>
+                <p class="text-[var(--ink-light)] text-xs leading-relaxed line-clamp-3">{post.data.description}</p>
+                {(post.data.tags ?? []).length > 0 && (
+                  <div class="mt-3"><span class="tag-pill">{(post.data.tags ?? [])[0]}</span></div>
+                )}
+              </a>
+            ))}
+          </div>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-[var(--rule-light)] bg-white">
-          {tertiary.map((post, i) => (
-            <a
-              href={`/blog/${post.slug}/`}
-              class={`block group p-5 hover:bg-[var(--newsprint)] transition-colors ${i < tertiary.length - 1 ? 'border-b sm:border-b-0 sm:border-r border-[var(--rule-light)]' : ''} ${i === 1 ? 'sm:border-r-0 lg:border-r border-[var(--rule-light)]' : ''}`}
-            >
-              {post.data.heroImage && (
-                <div class="aspect-[4/3] overflow-hidden mb-3 bg-gray-100">
-                  <img
-                    src={post.data.heroImage}
-                    alt={post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <div class="dateline mb-1.5">
-                <FormattedDate date={post.data.pubDate} />
-              </div>
-              <h3 class="headline-sm mb-2 group-hover:text-[var(--crimson)] transition-colors">
-                {post.data.title}
-              </h3>
-              <p class="text-[var(--ink-light)] text-xs leading-relaxed line-clamp-3">
-                {post.data.description}
-              </p>
-              {(post.data.tags ?? []).length > 0 && (
-                <div class="mt-3">
-                  <span class="tag-pill">{(post.data.tags ?? [])[0]}</span>
-                </div>
-              )}
-            </a>
-          ))}
-        </div>
-
-        <!-- ALL POSTS LIST (below grid) -->
-        <div class="mt-6">
+        <!-- All posts list -->
+        <div>
           <div class="section-rule mb-4">
             <span class="section-flag">All Stories</span>
           </div>
-          <div class="space-y-0 bg-white border border-[var(--rule-light)]">
+          <div class="bg-white border border-[var(--rule-light)]">
             {posts.map((post, i) => (
               <a
                 href={`/blog/${post.slug}/`}
-                class={`flex gap-4 p-4 group hover:bg-[var(--newsprint)] transition-colors ${i < posts.length - 1 ? 'border-b border-[var(--rule-light)]' : ''}`}
+                class={`flex gap-4 p-4 group hover:bg-[var(--newsprint)] transition-colors
+                  ${i < posts.length - 1 ? 'border-b border-[var(--rule-light)]' : ''}
+                `}
               >
-                <div class="flex-shrink-0 w-6 text-center">
-                  <span class="text-[var(--rule)] font-['Playfair_Display'] font-bold text-lg leading-none">
-                    {String(i+1).padStart(2,'0')}
+                <div class="flex-shrink-0 w-7 text-center pt-0.5">
+                  <span style="font-family:'Playfair Display',serif;font-weight:700;color:var(--rule);font-size:1rem">
+                    {String(i + 1).padStart(2, '0')}
                   </span>
                 </div>
                 <div class="flex-1 min-w-0">
-                  <div class="dateline mb-0.5">
-                    <FormattedDate date={post.data.pubDate} />
-                  </div>
-                  <h3 class="headline-sm group-hover:text-[var(--crimson)] transition-colors line-clamp-2 text-sm">
+                  <div class="dateline mb-0.5"><FormattedDate date={post.data.pubDate} /></div>
+                  <h3 class="headline-sm text-sm group-hover:text-[var(--crimson)] transition-colors line-clamp-2">
                     {post.data.title}
                   </h3>
+                  {(post.data.tags ?? []).length > 0 && (
+                    <div class="mt-1 flex gap-1 flex-wrap">
+                      {(post.data.tags ?? []).slice(0, 2).map(t => (
+                        <span class="tag-pill text-[10px]">{t}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 {post.data.heroImage && (
-                  <div class="flex-shrink-0 w-16 h-16 overflow-hidden bg-gray-100">
+                  <div class="flex-shrink-0 w-16 h-14 overflow-hidden bg-gray-100">
                     <img src={post.data.heroImage} alt="" class="w-full h-full object-cover" loading="lazy" />
                   </div>
                 )}
@@ -180,16 +218,41 @@ const tagColors: Record<string,string> = {
         </div>
       </div>
 
-      <!-- SIDEBAR -->
-      <aside class="space-y-6">
-        
-        <!-- Must Read Widget -->
+      <!-- Sidebar -->
+      <aside class="space-y-5">
+
+        <!-- Search widget -->
+        <div class="widget p-5" style="border-top-color:#C8102E">
+          <h3 class="widget-title mb-3">Search Stories</h3>
+          <form action="/search/" method="get" role="search">
+            <div class="relative">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none" style="color:#C8102E" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+              </svg>
+              <input
+                type="search" name="q"
+                placeholder="Search…"
+                style="font-family:'Inter',sans-serif;font-size:0.82rem;border:1.5px solid var(--rule);color:var(--ink)"
+                class="w-full pl-9 pr-3 py-2.5 bg-[var(--newsprint)] focus:outline-none focus:border-[#C8102E] transition-colors rounded-sm placeholder-[var(--ink-light)]"
+              />
+            </div>
+            <button
+              type="submit"
+              style="background:#0A1628;font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;color:#fff"
+              class="mt-2 w-full py-2.5 uppercase tracking-widest hover:bg-[#C8102E] transition-colors rounded-sm"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+
+        <!-- Must Read -->
         <div class="widget p-5">
           <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Must Read</h3>
           <div class="space-y-4">
             {posts.slice(0, 5).map((post, i) => (
               <a href={`/blog/${post.slug}/`} class="flex gap-3 group">
-                <span class="flex-shrink-0 font-['Playfair_Display'] font-black text-2xl leading-none text-[var(--rule)] group-hover:text-[var(--crimson)] transition-colors" style="line-height:1">
+                <span style="font-family:'Playfair Display',serif;font-weight:900;color:var(--rule);line-height:1;font-size:1.4rem;flex-shrink:0" class="group-hover:text-[var(--crimson)] transition-colors">
                   {i + 1}
                 </span>
                 <div>
@@ -203,40 +266,43 @@ const tagColors: Record<string,string> = {
           </div>
         </div>
 
-        <!-- Topics Widget -->
+        <!-- Topics -->
         <div class="widget p-5">
           <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Browse by Topic</h3>
           <div class="flex flex-wrap gap-2">
             {[...new Set(posts.flatMap(p => p.data.tags ?? []))].map(tag => (
-              <a href="/blog/" class="tag-pill hover:bg-[var(--navy)] hover:text-white hover:border-[var(--navy)] transition-colors cursor-pointer">
+              <a
+                href={`/search/?q=${tag}`}
+                class="tag-pill hover:bg-[var(--navy)] hover:text-white hover:border-[var(--navy)] transition-colors"
+              >
                 {tag}
               </a>
             ))}
           </div>
         </div>
 
-        <!-- Newsletter Widget -->
-        <div class="widget p-5" style="border-top-color:var(--crimson)">
+        <!-- RSS / Subscribe -->
+        <div class="widget p-5" style="border-top-color:#C8102E">
           <h3 class="widget-title mb-2">Daily Briefing</h3>
           <p class="text-xs text-[var(--ink-light)] mb-4 leading-relaxed">
-            Get the top tech stories delivered to your inbox every morning.
+            Get top tech stories delivered instantly via RSS.
           </p>
           <a
             href="/rss.xml"
-            class="block w-full text-center text-white text-xs font-bold tracking-widest uppercase py-3 transition-colors"
-            style="background:var(--crimson)"
+            style="background:#C8102E;font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.12em;color:#fff"
+            class="block w-full text-center uppercase tracking-widest py-3 hover:bg-[#9B0D23] transition-colors"
           >
             Subscribe via RSS
           </a>
         </div>
 
-        <!-- About Widget -->
+        <!-- About -->
         <div class="widget p-5">
           <h3 class="widget-title mb-3 pb-2 border-b border-[var(--rule)]">About TechChronicle</h3>
           <p class="text-sm text-[var(--ink-light)] leading-relaxed mb-3">
-            Independent coverage of technology, AI, and developer tools. Written for builders and curious minds alike.
+            Independent coverage of AI, Android, and developer tools. Written for builders and curious minds.
           </p>
-          <a href="/about" class="text-[var(--crimson)] text-xs font-semibold tracking-wide hover:underline">
+          <a href="/about/" class="text-[var(--crimson)] text-xs font-semibold tracking-wide hover:underline">
             Learn more →
           </a>
         </div>

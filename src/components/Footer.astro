@@ -3,59 +3,75 @@ import { SITE_TITLE } from '../consts';
 const year = new Date().getFullYear();
 ---
 
-<footer class="site-footer">
+<footer style="background:#0A1628;color:rgba(255,255,255,0.6);border-top:4px solid #C8102E">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+
       <!-- Brand -->
-      <div class="md:col-span-2">
-        <div class="site-name text-4xl text-white mb-3">{SITE_TITLE}</div>
-        <p class="text-white/50 text-sm leading-relaxed max-w-xs">
-          Your authoritative source for technology news, AI developments, and developer insights. Independently published.
+      <div class="col-span-2 md:col-span-1">
+        <a href="/" style="font-family:'Playfair Display',serif;font-weight:900;font-size:2rem;color:#fff;letter-spacing:-0.02em">
+          {SITE_TITLE}
+        </a>
+        <p class="text-white/40 text-xs leading-relaxed mt-3 max-w-[200px]">
+          Independent technology journalism covering AI, Android, and developer tools.
         </p>
-        <div class="mt-4 flex gap-3">
-          <a href="/rss.xml" class="text-xs font-semibold tracking-widest uppercase text-crimson border border-crimson px-3 py-1.5 hover:bg-crimson hover:text-white transition-colors" style="color:#C8102E;border-color:#C8102E">
-            Subscribe via RSS
-          </a>
-        </div>
+        <a href="/rss.xml"
+          style="background:#C8102E;font-family:'Inter',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.12em;color:#fff"
+          class="inline-block mt-4 px-4 py-2 uppercase tracking-widest hover:bg-[#9B0D23] transition-colors">
+          RSS Feed
+        </a>
       </div>
 
       <!-- Sections -->
       <div>
-        <h4 class="text-white/90 text-xs font-bold tracking-widest uppercase mb-4 border-b border-white/10 pb-2">Sections</h4>
+        <h4 class="text-white/80 text-[10px] font-bold tracking-widest uppercase mb-4 pb-2 border-b border-white/10">Sections</h4>
         <ul class="space-y-2">
-          {['Home', 'AI & Machine Learning', 'Android', 'Tutorials', 'About'].map(item => (
-            <li>
-              <a href={item === 'Home' ? '/' : item === 'About' ? '/about' : '/blog/'} 
-                 class="text-white/50 hover:text-white text-sm transition-colors">
-                {item}
-              </a>
-            </li>
+          {[
+            { label: 'Home', href: '/' },
+            { label: 'Search', href: '/search/' },
+            { label: 'AI & ML', href: '/search/?q=ai' },
+            { label: 'Android', href: '/search/?q=android' },
+            { label: 'Tutorials', href: '/search/?q=tutorials' },
+          ].map(l => (
+            <li><a href={l.href} class="text-white/45 hover:text-white text-sm transition-colors">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <h4 class="text-white/80 text-[10px] font-bold tracking-widest uppercase mb-4 pb-2 border-b border-white/10">Company</h4>
+        <ul class="space-y-2">
+          {[
+            { label: 'About', href: '/about/' },
+            { label: 'Contact', href: '/contact/' },
+            { label: 'Privacy Policy', href: '/privacy/' },
+          ].map(l => (
+            <li><a href={l.href} class="text-white/45 hover:text-white text-sm transition-colors">{l.label}</a></li>
           ))}
         </ul>
       </div>
 
       <!-- Topics -->
       <div>
-        <h4 class="text-white/90 text-xs font-bold tracking-widest uppercase mb-4 border-b border-white/10 pb-2">Topics</h4>
+        <h4 class="text-white/80 text-[10px] font-bold tracking-widest uppercase mb-4 pb-2 border-b border-white/10">Topics</h4>
         <ul class="space-y-2">
-          {['Gemini', 'Firebase', 'Android Dev', 'Productivity', 'AI Tools', 'Developer News'].map(item => (
+          {['Gemini', 'Firebase', 'Android Dev', 'Productivity', 'AI Tools', 'Developer News'].map(t => (
             <li>
-              <a href="/blog/" class="text-white/50 hover:text-white text-sm transition-colors">
-                {item}
-              </a>
+              <a href={`/search/?q=${t.toLowerCase()}`} class="text-white/45 hover:text-white text-sm transition-colors">{t}</a>
             </li>
           ))}
         </ul>
       </div>
     </div>
 
-    <div class="hairline pt-6 flex flex-col sm:flex-row items-center justify-between gap-3" style="border-color:rgba(255,255,255,0.1)">
-      <p class="text-white/30 text-xs tracking-wide">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-6" style="border-top:1px solid rgba(255,255,255,0.1)">
+      <p class="text-white/25 text-xs tracking-wide">
         © {year} {SITE_TITLE}. All rights reserved. Built with Astro.
       </p>
-      <div class="flex items-center gap-6 text-xs text-white/30">
-        <a href="/" class="hover:text-white/60 transition-colors">Home</a>
-        <a href="/about" class="hover:text-white/60 transition-colors">About</a>
+      <div class="flex items-center gap-5 text-xs text-white/25">
+        <a href="/privacy/" class="hover:text-white/60 transition-colors">Privacy Policy</a>
+        <a href="/contact/" class="hover:text-white/60 transition-colors">Contact</a>
         <a href="/rss.xml" class="hover:text-white/60 transition-colors">RSS</a>
       </div>
     </div>

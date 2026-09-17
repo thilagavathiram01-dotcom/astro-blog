@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Get in touch with TechChronicle — story tips, corrections, and editorial enquiries.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <nav class="text-xs text-[var(--ink-light)] mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-[var(--crimson)] font-medium transition-colors">Home</a>
+      <span>›</span>
+      <span class="text-[var(--ink)]">Contact</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Main form -->
+      <div class="lg:col-span-2">
+        <div class="bg-white border border-[var(--rule-light)] p-8 sm:p-10" style="border-top:4px solid #C8102E">
+          <div class="mb-8 pb-6 border-b border-[var(--rule)]">
+            <p class="section-flag mb-3">Get In Touch</p>
+            <h1 style="font-family:'Playfair Display',serif;font-weight:700;font-size:2.2rem;color:var(--ink)" class="mb-3">
+              Contact TechChronicle
+            </h1>
+            <p class="text-[var(--ink-light)] text-sm leading-relaxed">
+              Have a story tip, spotted an error, or want to get in touch with our editorial team?
+              We read every message and respond to as many as we can.
+            </p>
+          </div>
+
+          <!-- Contact form -->
+          <form id="contact-form" class="space-y-5" novalidate>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label for="name" class="block text-xs font-bold tracking-widest uppercase text-[var(--ink-soft)] mb-1.5">
+                  Full Name <span style="color:#C8102E">*</span>
+                </label>
+                <input
+                  id="name" name="name" type="text" required
+                  placeholder="Your name"
+                  style="font-family:'Inter',sans-serif;font-size:0.9rem;border:1.5px solid var(--rule);color:var(--ink)"
+                  class="w-full px-4 py-3 bg-white focus:outline-none focus:border-[#C8102E] transition-colors rounded-sm placeholder-[var(--ink-light)]"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-xs font-bold tracking-widest uppercase text-[var(--ink-soft)] mb-1.5">
+                  Email Address <span style="color:#C8102E">*</span>
+                </label>
+                <input
+                  id="email" name="email" type="email" required
+                  placeholder="your@email.com"
+                  style="font-family:'Inter',sans-serif;font-size:0.9rem;border:1.5px solid var(--rule);color:var(--ink)"
+                  class="w-full px-4 py-3 bg-white focus:outline-none focus:border-[#C8102E] transition-colors rounded-sm placeholder-[var(--ink-light)]"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="subject" class="block text-xs font-bold tracking-widest uppercase text-[var(--ink-soft)] mb-1.5">
+                Subject <span style="color:#C8102E">*</span>
+              </label>
+              <select
+                id="subject" name="subject" required
+                style="font-family:'Inter',sans-serif;font-size:0.9rem;border:1.5px solid var(--rule);color:var(--ink)"
+                class="w-full px-4 py-3 bg-white focus:outline-none focus:border-[#C8102E] transition-colors rounded-sm"
+              >
+                <option value="">Select a topic…</option>
+                <option value="story-tip">Story tip or press release</option>
+                <option value="correction">Correction or factual error</option>
+                <option value="editorial">Editorial enquiry</option>
+                <option value="advertising">Advertising enquiry</option>
+                <option value="technical">Technical issue</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-bold tracking-widest uppercase text-[var(--ink-soft)] mb-1.5">
+                Message <span style="color:#C8102E">*</span>
+              </label>
+              <textarea
+                id="message" name="message" rows="6" required
+                placeholder="Tell us what's on your mind…"
+                style="font-family:'Inter',sans-serif;font-size:0.9rem;border:1.5px solid var(--rule);color:var(--ink);resize:vertical"
+                class="w-full px-4 py-3 bg-white focus:outline-none focus:border-[#C8102E] transition-colors rounded-sm placeholder-[var(--ink-light)]"
+              ></textarea>
+            </div>
+
+            <div id="form-success" class="hidden p-4 border" style="background:#F0FFF4;border-color:#38A169;color:#276749;border-radius:2px">
+              <strong>Message received.</strong> We'll be in touch as soon as possible. Thank you for reading TechChronicle.
+            </div>
+            <div id="form-error" class="hidden p-4 border" style="background:#FFF5F5;border-color:#C8102E;color:#9B0D23;border-radius:2px">
+              Something went wrong. Please try again or email us directly.
+            </div>
+
+            <button
+              type="submit"
+              id="submit-btn"
+              style="background:#C8102E;font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;color:#fff"
+              class="px-8 py-3.5 uppercase tracking-widest hover:bg-[#9B0D23] transition-colors rounded-sm"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-5">
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Editorial Guidelines</h3>
+          <ul class="space-y-3 text-sm text-[var(--ink-light)]">
+            {[
+              'We cover technology news, AI developments, and developer tools.',
+              'Story tips are reviewed by our editorial team.',
+              'We correct factual errors promptly — please cite the article URL.',
+              'We do not accept guest posts at this time.',
+            ].map(item => (
+              <li class="flex gap-2">
+                <span class="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style="background:#C8102E"></span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Other Links</h3>
+          <ul class="space-y-2">
+            {[
+              { label: 'Privacy Policy', href: '/privacy/' },
+              { label: 'About TechChronicle', href: '/about/' },
+              { label: 'RSS Feed', href: '/rss.xml' },
+              { label: 'Search Stories', href: '/search/' },
+            ].map(link => (
+              <li>
+                <a href={link.href} class="text-sm text-[var(--crimson)] hover:underline font-medium">
+                  {link.label} →
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  const error = document.getElementById('form-error');
+  const btn = document.getElementById('submit-btn');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Simulate submission (replace with real endpoint)
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      success.classList.remove('hidden');
+      error.classList.add('hidden');
+      form.reset();
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }, 1200);
+  });
+</script>

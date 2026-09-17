@@ -1,0 +1,272 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// Serialize posts for client-side search
+const postsData = posts.map(p => ({
+  slug: p.slug,
+  title: p.data.title,
+  description: p.data.description ?? '',
+  tags: p.data.tags ?? [],
+  pubDate: p.data.pubDate.toISOString(),
+  heroImage: p.data.heroImage ?? null,
+}));
+
+const allTags = [...new Set(posts.flatMap(p => p.data.tags ?? []))];
+---
+
+<BaseLayout title="Search" description="Search all TechChronicle stories, topics, and guides.">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Breadcrumb -->
+    <nav class="text-xs text-[var(--ink-light)] mb-6 flex items-center gap-2">
+      <a href="/" class="hover:text-[var(--crimson)] font-medium transition-colors">Home</a>
+      <span class="text-[var(--rule)]">›</span>
+      <span class="text-[var(--ink)]">Search</span>
+    </nav>
+
+    <!-- Search Hero -->
+    <div class="mb-8 bg-white border border-[var(--rule-light)]" style="border-top:4px solid #C8102E">
+      <div class="p-6 sm:p-8">
+        <h1 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);color:var(--ink)" class="mb-2">
+          Search TechChronicle
+        </h1>
+        <p class="text-[var(--ink-light)] text-sm mb-6">
+          Search across {posts.length} stories covering AI, Android, Firebase, and developer tools.
+        </p>
+
+        <!-- Main Search Input -->
+        <div class="relative max-w-2xl">
+          <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 pointer-events-none" style="color:#C8102E" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input
+            id="main-search"
+            type="search"
+            placeholder="Search stories, topics, keywords…"
+            autocomplete="off"
+            style="font-family:'Inter',sans-serif;font-size:1rem;border:2px solid var(--rule);color:var(--ink);background:#fff"
+            class="w-full pl-12 pr-4 py-4 focus:outline-none focus:border-[#C8102E] transition-colors rounded-sm placeholder-[var(--ink-light)]"
+          />
+        </div>
+
+        <!-- Tag filters -->
+        <div class="mt-4 flex flex-wrap gap-2 items-center">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-[var(--ink-light)] mr-1">Filter:</span>
+          <button
+            data-filter="all"
+            class="filter-btn active-filter tag-pill"
+            style="cursor:pointer"
+          >
+            All Topics
+          </button>
+          {allTags.map(tag => (
+            <button
+              data-filter={tag}
+              class="filter-btn tag-pill"
+              style="cursor:pointer"
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Results area -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2">
+
+        <!-- Results header -->
+        <div class="flex items-center justify-between mb-4">
+          <div class="section-rule flex-1 mr-4">
+            <span id="results-label" class="section-flag">All Stories</span>
+          </div>
+          <span id="results-count" class="text-xs text-[var(--ink-light)]">{posts.length} stories</span>
+        </div>
+
+        <!-- Results list -->
+        <div id="results-list" class="space-y-0 bg-white border border-[var(--rule-light)]">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- No results -->
+        <div id="no-results" class="hidden bg-white border border-[var(--rule-light)] p-12 text-center">
+          <svg class="w-12 h-12 mx-auto mb-4 text-[var(--rule)]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <p style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600;color:var(--ink)" class="mb-2">No stories found</p>
+          <p class="text-sm text-[var(--ink-light)]">Try different keywords or browse by topic below.</p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-5">
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Popular Topics</h3>
+          <div class="flex flex-wrap gap-2">
+            {allTags.map(tag => (
+              <button
+                data-filter={tag}
+                class="filter-btn tag-pill hover:bg-[var(--navy)] hover:text-white hover:border-[var(--navy)] transition-colors"
+                style="cursor:pointer"
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div class="widget p-5">
+          <h3 class="widget-title mb-4 pb-2 border-b border-[var(--rule)]">Latest Stories</h3>
+          <div class="space-y-3">
+            {posts.slice(0, 5).map((post, i) => (
+              <a href={`/blog/${post.slug}/`} class="flex gap-3 group">
+                <span style="font-family:'Playfair Display',serif;font-weight:900;color:var(--rule);line-height:1.1" class="text-xl flex-shrink-0 group-hover:text-[var(--crimson)] transition-colors">
+                  {String(i+1).padStart(2,'0')}
+                </span>
+                <h4 class="text-sm font-semibold text-[var(--ink)] group-hover:text-[var(--crimson)] leading-snug transition-colors line-clamp-2">
+                  {post.data.title}
+                </h4>
+              </a>
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<script define:vars={{ postsData }}>
+  const input = document.getElementById('main-search');
+  const list = document.getElementById('results-list');
+  const noResults = document.getElementById('no-results');
+  const countEl = document.getElementById('results-count');
+  const labelEl = document.getElementById('results-label');
+  const filterBtns = document.querySelectorAll('.filter-btn');
+
+  let activeFilter = 'all';
+  let query = '';
+
+  // Read ?q= from URL on load
+  const params = new URLSearchParams(window.location.search);
+  const initQ = params.get('q') || '';
+  if (initQ) { input.value = initQ; query = initQ.toLowerCase(); }
+
+  function formatDate(iso) {
+    return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  function highlight(text, q) {
+    if (!q) return text;
+    const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return text.replace(new RegExp(`(${escaped})`, 'gi'),
+      '<mark style="background:#FFF3B0;color:var(--ink);border-radius:2px;padding:0 2px">$1</mark>');
+  }
+
+  function render(filtered) {
+    list.innerHTML = '';
+    if (filtered.length === 0) {
+      list.classList.add('hidden');
+      noResults.classList.remove('hidden');
+      countEl.textContent = '0 stories';
+      return;
+    }
+    list.classList.remove('hidden');
+    noResults.classList.add('hidden');
+    countEl.textContent = `${filtered.length} ${filtered.length === 1 ? 'story' : 'stories'}`;
+
+    filtered.forEach((post, i) => {
+      const el = document.createElement('a');
+      el.href = `/blog/${post.slug}/`;
+      el.className = `flex gap-4 p-4 group hover:bg-[var(--newsprint)] transition-colors ${i < filtered.length - 1 ? 'border-b border-[var(--rule-light)]' : ''}`;
+      el.style.display = 'flex';
+      el.style.borderBottom = i < filtered.length - 1 ? '1px solid var(--rule-light)' : '';
+
+      const titleHL = highlight(post.title, query);
+      const descHL = highlight(post.description, query);
+      const tag = post.tags[0] ?? '';
+
+      el.innerHTML = `
+        ${post.heroImage ? `
+          <div style="flex-shrink:0;width:80px;height:60px;overflow:hidden;background:#f1f1f1">
+            <img src="${post.heroImage}" alt="" style="width:100%;height:100%;object-fit:cover" loading="lazy"/>
+          </div>` : ''}
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+            ${tag ? `<span style="font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--newsprint-dark);color:var(--ink-soft);border:1px solid var(--rule);padding:2px 6px;border-radius:2px">${tag}</span>` : ''}
+            <span style="font-size:0.65rem;font-weight:600;color:#C8102E;letter-spacing:0.06em;text-transform:uppercase">${formatDate(post.pubDate)}</span>
+          </div>
+          <h3 style="font-family:'Playfair Display',serif;font-weight:600;font-size:0.95rem;color:var(--ink);line-height:1.3;margin-bottom:4px" class="group-hover:text-[var(--crimson)] transition-colors">
+            ${titleHL}
+          </h3>
+          <p style="font-size:0.78rem;color:var(--ink-light);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">
+            ${descHL}
+          </p>
+        </div>
+      `;
+      list.appendChild(el);
+    });
+  }
+
+  function getFiltered() {
+    return postsData.filter(p => {
+      const matchesFilter = activeFilter === 'all' || p.tags.includes(activeFilter);
+      if (!matchesFilter) return false;
+      if (!query) return true;
+      return (
+        p.title.toLowerCase().includes(query) ||
+        p.description.toLowerCase().includes(query) ||
+        p.tags.some(t => t.toLowerCase().includes(query))
+      );
+    });
+  }
+
+  function update() {
+    const filtered = getFiltered();
+    const q = query;
+    labelEl.textContent = q
+      ? `Results for "${q}"`
+      : activeFilter !== 'all'
+        ? `Topic: ${activeFilter}`
+        : 'All Stories';
+    render(filtered);
+  }
+
+  // Filter buttons
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeFilter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active-filter'));
+      document.querySelectorAll(`[data-filter="${activeFilter}"]`).forEach(b => b.classList.add('active-filter'));
+      update();
+    });
+  });
+
+  // Search input
+  input.addEventListener('input', e => {
+    query = e.target.value.toLowerCase().trim();
+    update();
+    // Update URL without reload
+    const url = new URL(window.location);
+    if (query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    history.replaceState({}, '', url);
+  });
+
+  // Initial render
+  update();
+</script>
+
+<style>
+  .active-filter {
+    background: var(--crimson) !important;
+    color: white !important;
+    border-color: var(--crimson) !important;
+  }
+</style>
