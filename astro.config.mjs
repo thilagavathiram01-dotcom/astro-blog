@@ -5,9 +5,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  // CF_PAGES_URL is set automatically by Cloudflare Pages
-  // URL is set in the GitHub Actions workflow for preview deploys
-  site: process.env.CF_PAGES_URL || process.env.URL || 'https://news.yumpdf.com',
+  // Always use the canonical production domain — never let CF_PAGES_URL override it
+  site: 'https://news.yumpdf.com',
   integrations: [
     mdx(),
     tailwind(),

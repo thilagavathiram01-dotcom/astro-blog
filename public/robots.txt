@@ -10,4 +10,11 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://news.yumpdf.com/sitemap.xml
+LLMs: https://news.yumpdf.com/llms.txt
