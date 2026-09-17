@@ -23,6 +23,10 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ### 2026-09-17
 
+- How to Use Pause Point on Pixel: Break Mindless App Opens
+  https://news.yumpdf.com/blog/pixel-pause-point-digital-wellbeing/
+  Set up Pause Point in Digital Wellbeing: a 10-second check before opening apps you flag as distracting.
+
 - How to Use Claude After Cowork and Chat Became One App
   https://news.yumpdf.com/blog/claude-cowork-chat-unified/
   Use one Claude conversation for chat and Cowork-style tasks, then export Claude Docs and Slides on Pro and Max.
