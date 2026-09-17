@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Android September 2026 Drop featured image</title>
+  <desc id="desc">Editorial graphic of a phone home screen with Find Hub pins, a motion-assist bubble, and VIP contact widgets.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="55%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.06"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="70" r="200" fill="#4ade80" opacity="0.16"/>
+  <circle cx="90" cy="560" r="180" fill="#38bdf8" opacity="0.14"/>
+  <rect x="90" y="80" width="360" height="470" rx="42" fill="url(#card)" stroke="#86efac" stroke-opacity="0.35"/>
+  <rect x="118" y="118" width="304" height="54" rx="16" fill="#052e16" opacity="0.45"/>
+  <circle cx="148" cy="145" r="12" fill="#4ade80"/>
+  <rect x="172" y="138" width="160" height="14" rx="7" fill="#bbf7d0"/>
+  <rect x="118" y="196" width="144" height="120" rx="18" fill="#14532d" opacity="0.7"/>
+  <rect x="278" y="196" width="144" height="120" rx="18" fill="#0f766e" opacity="0.7"/>
+  <circle cx="190" cy="244" r="22" fill="#86efac"/>
+  <circle cx="350" cy="244" r="22" fill="#5eead4"/>
+  <rect x="148" y="286" width="84" height="10" rx="5" fill="#dcfce7"/>
+  <rect x="308" y="286" width="84" height="10" rx="5" fill="#ccfbf1"/>
+  <rect x="118" y="336" width="304" height="88" rx="18" fill="#022c22" opacity="0.55"/>
+  <circle cx="270" cy="380" r="18" fill="#4ade80" opacity="0.9"/>
+  <circle cx="270" cy="380" r="8" fill="#052e16"/>
+  <rect x="140" y="448" width="260" height="64" rx="20" fill="#166534" opacity="0.8"/>
+  <rect x="520" y="140" width="560" height="140" rx="24" fill="url(#card)" stroke="#86efac" stroke-opacity="0.3"/>
+  <rect x="552" y="172" width="220" height="18" rx="9" fill="#bbf7d0"/>
+  <rect x="552" y="208" width="420" height="12" rx="6" fill="#86efac" opacity="0.7"/>
+  <rect x="552" y="232" width="360" height="12" rx="6" fill="#86efac" opacity="0.45"/>
+  <rect x="520" y="310" width="270" height="180" rx="24" fill="url(#card)" stroke="#38bdf8" stroke-opacity="0.3"/>
+  <circle cx="655" cy="390" r="36" fill="#38bdf8" opacity="0.35"/>
+  <circle cx="655" cy="390" r="16" fill="#7dd3fc"/>
+  <rect x="560" y="444" width="190" height="12" rx="6" fill="#bae6fd"/>
+  <rect x="810" y="310" width="270" height="180" rx="24" fill="url(#card)" stroke="#facc15" stroke-opacity="0.28"/>
+  <rect x="846" y="348" width="80" height="80" rx="18" fill="#facc15" opacity="0.35"/>
+  <rect x="942" y="360" width="100" height="12" rx="6" fill="#fde68a"/>
+  <rect x="942" y="384" width="80" height="12" rx="6" fill="#fde68a" opacity="0.6"/>
+</svg>
