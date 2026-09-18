@@ -15,13 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemini Spark, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos
+- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemini Spark, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos
 - **Android Apps & Updates** — Android 17, Pixel drops, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance
 
 ## Articles (newest first)
 
 ### 2026-09-18
+
+- How to Create Custom Tools in Google Flow
+  https://news.yumpdf.com/blog/google-flow-custom-tools/
+  Build reusable Google Flow tools with natural language: open the Tools Gallery, remix a partner tool or start from scratch, then save and run it on project assets.
 
 - How to Use Ask Photos in Google Photos with Gemini
   https://news.yumpdf.com/blog/ask-photos-google-photos/
