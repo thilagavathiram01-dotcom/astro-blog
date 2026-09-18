@@ -15,7 +15,7 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Android Computer Control
+- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows
 - **Android Apps & Updates** — Android 17, Pixel drops, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
@@ -23,9 +23,9 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ### 2026-09-18
 
-- How to Prepare Your Android App for Computer Control Automation
-  https://news.yumpdf.com/blog/android-computer-control/
-  Understand Android Computer Control: OEM assistants run target apps on a virtual display after a system permission dialog. Follow adaptive UI and lifecycle practices; no extra integration API.
+- How to Use ChatGPT in Microsoft Word
+  https://news.yumpdf.com/blog/chatgpt-for-word/
+  Install the official ChatGPT add-in in Word, draft and edit from the sidebar, and use OpenAI’s recommended prompts without leaving the document.
 
 - How to Use the Gemini App for Windows
   https://news.yumpdf.com/blog/gemini-app-windows/
