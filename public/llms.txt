@@ -15,7 +15,7 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini 3.8 Flash thinking levels
+- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets
 - **Android Apps & Updates** — Android 17, Pixel drops, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
@@ -23,9 +23,9 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ### 2026-09-18
 
-- How to Use Gemini 3.8 Flash Thinking Levels for Coding and Agents
-  https://news.yumpdf.com/blog/gemini-3-8-flash-thinking-levels/
-  Pick low, medium, or high thinking_level on gemini-3.8-flash, call the Interactions API, and migrate off thinking_budget.
+- How to Use Gemini in Google Sheets on Android
+  https://news.yumpdf.com/blog/gemini-sheets-android/
+  Ask Gemini questions about a spreadsheet on Android: summaries, trends, and charts. Formula work stays on the web.
 
 - How to Generate and Edit Images in Android Apps with Gemini Nano Banana
   https://news.yumpdf.com/blog/gemini-nano-banana-android-image-gen/
