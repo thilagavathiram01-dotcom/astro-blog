@@ -16,12 +16,16 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 ## Categories
 
 - **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemini Spark, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent
-- **Android Apps & Updates** — Android 17, Pixel drops, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard warnings, Motion Assist, new OS features, ADB, debugging
+- **Android Apps & Updates** — Android 17, Pixel drops, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard warnings, Motion Assist, Media3 MiniController, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
 ## Articles (newest first)
 
 ### 2026-09-18
+
+- How to Add a Media3 MiniController Mini Player in Jetpack Compose
+  https://news.yumpdf.com/blog/media3-minicontroller-compose/
+  Add Media3 1.11 MiniController in Jetpack Compose for a compact bar with title, artwork, progress, and play/pause while users browse or Cast.
 
 - How to Use Motion Assist on Android 17 to Reduce Motion Sickness
   https://news.yumpdf.com/blog/android-17-motion-assist/
