@@ -15,13 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows
+- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail
 - **Android Apps & Updates** — Android 17, Pixel drops, Pixel 11 Magic Capture, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
 ## Articles (newest first)
 
 ### 2026-09-18
+
+- How to Use Gemini in Gmail
+  https://news.yumpdf.com/blog/gemini-in-gmail/
+  Open Ask Gemini in Gmail, summarize threads, draft with Help me write, search your inbox in plain language, and confirm inbox actions before they run.
 
 - How to Use Magic Capture on Pixel 11
   https://news.yumpdf.com/blog/pixel-11-magic-capture/
