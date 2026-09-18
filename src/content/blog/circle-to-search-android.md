@@ -105,10 +105,10 @@ Circle to Search can flag whether a photo appears original or modified. Google d
 
 When the overlay is open, tap the musical-note control to identify audio playing around you or through the phone speakers. That control is part of the same Search sheet, not a separate app switch.
 
-A second public walkthrough of the gesture on current Android navigation:
+Official Android how-to of the same gesture:
 
 <div class="video-embed">
-<iframe src="https://www.youtube.com/embed/kQqQ8v3b1lI" title="How to use Circle to Search on Android" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube.com/embed/Z7mSGxe71ZQ" title="How to use Circle to Search with Google — Android" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 </div>
 
 ## Fix “Screen search isn’t available”
@@ -147,3 +147,4 @@ If the gesture does nothing, fix the default assistant and the Google app first.
 - [Google introduces Circle to Search](https://blog.google/products/search/google-circle-to-search-android/) — Google Keyword, January 17, 2024
 - [Circle to Search gets updated to search multiple things at once](https://blog.google/products-and-platforms/products/search/circle-to-search-february-2026/) — Google Keyword, February 25, 2026
 - [Introducing a new way to search | Circle to Search](https://www.youtube.com/watch?v=WdbeqSQjZI8) — Google YouTube
+- [How to use Circle to Search with Google](https://www.youtube.com/watch?v=Z7mSGxe71ZQ) — Android YouTube
