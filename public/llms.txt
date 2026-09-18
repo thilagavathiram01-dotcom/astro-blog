@@ -15,13 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems
+- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows
 - **Android Apps & Updates** — Android 17, Pixel drops, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
 ## Articles (newest first)
 
 ### 2026-09-18
+
+- How to Use the Gemini App for Windows
+  https://news.yumpdf.com/blog/gemini-app-windows/
+  Install the official Gemini desktop app on Windows 10 or 11, use Alt+Space over any window, and connect Gmail, Drive, Spark, and Omni.
 
 - How to Create Custom Gemini Gems With Reusable Instructions
   https://news.yumpdf.com/blog/gemini-gems-custom-instructions/
