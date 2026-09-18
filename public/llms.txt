@@ -11,15 +11,21 @@ Privacy: https://news.yumpdf.com/privacy/
 
 ## About
 
-Yum News publishes practical, step-by-step guides for Android, Gemini AI, Firebase, Claude, and developer tooling. Coverage focuses on useful product workflows — from consumer Android features to SDK-level APIs and AI integrations. Articles are written for developers, makers, and technically curious readers.
+Yum News publishes practical, step-by-step guides for Android, Gemini AI, Firebase, Claude, Google Home, and developer tooling. Coverage focuses on useful product workflows — from consumer Android features to SDK-level APIs and AI integrations. Articles are written for developers, makers, and technically curious readers.
 
 ## Categories
 
-- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Google AI Studio, Firefox Smart Window, Mistral
+- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP
 - **Android Apps & Updates** — Android 17, Pixel drops, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
 ## Articles (newest first)
+
+### 2026-09-18
+
+- How to Connect Claude or Antigravity to Google Home MCP
+  https://news.yumpdf.com/blog/google-home-mcp-ai-agents/
+  Set up Google Home MCP early access with a Cloud project, OAuth, and Claude or Antigravity so an agent can list devices, check state, and run safe commands.
 
 ### 2026-09-17
 
