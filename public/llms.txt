@@ -15,13 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP
+- **AI Tools & Tutorials** — Claude, Gemini, Gemma, ML Kit, Firebase AI Logic, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills
 - **Android Apps & Updates** — Android 17, Pixel drops, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks
 
 ## Articles (newest first)
 
 ### 2026-09-18
+
+- How to Use Notion 3.7 Agent Skills Across Your Team and Local Agents
+  https://news.yumpdf.com/blog/notion-37-agent-skills/
+  Create reusable Notion Agent skills, keep them in a shared library, and download SKILL.md files for Claude Code, Codex, Cursor, Gemini, or Grok.
 
 - How to Connect Claude or Antigravity to Google Home MCP
   https://news.yumpdf.com/blog/google-home-mcp-ai-agents/
