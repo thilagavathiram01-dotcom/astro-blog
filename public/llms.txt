@@ -15,13 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemini Spark, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent
+- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemini Spark, Gemma, ML Kit, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, ChatGPT Images 2.5
 - **Android Apps & Updates** — Android 17, Pixel drops, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance
 
 ## Articles (newest first)
 
 ### 2026-09-18
+
+- How to Use ChatGPT Images 2.5 with Sketch and Precise Edits
+  https://news.yumpdf.com/blog/chatgpt-images-2-5-sketch/
+  Generate and edit images in ChatGPT Images 2.5: use @Sketch, region comments, templates, and choose Flare or Sunburst in the API.
 
 - How to Check Android Device Security State with AndroidX Security State 1.1
   https://news.yumpdf.com/blog/androidx-security-state-libraries/
