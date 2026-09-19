@@ -90,11 +90,7 @@ Manual search paths if passive ID fails:
 
 You will see the system microphone indicator and “Identifying song…” while it runs an on-demand pass.
 
-<div class="video-embed">
-<iframe src="https://www.youtube.com/embed/7BOcX6SBOWk" title="Install and use Google apps on desktop — useful when you later play identified tracks on another device" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-</div>
-
-That clip is a desktop Gemini walkthrough. For Now Playing itself, stay in the Pixel app: identify on the phone, then open the same track in the music service you connected. The Android Show segment earlier in this article is the 2026 platform recap; Google has not posted a standalone Now Playing launch film for the September notification return.
+![Close-up of a smartphone lock screen in low light](https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80)
 
 ## Privacy and limits
 
