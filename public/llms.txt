@@ -16,12 +16,16 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 ## Categories
 
 - **AI Tools & Tutorials** — ChatGPT, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills
-- **Android Apps & Updates** — Android 17, Pixel drops, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, new OS features, ADB, debugging, Android CLI
+- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, new OS features, ADB, debugging, Android CLI
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills
 
 ## Articles (newest first)
 
 ### 2026-09-19
+
+- How to Use Pixel VIP Widgets for One-Tap Calls and Texts
+  https://news.yumpdf.com/blog/pixel-vip-widgets-one-tap/
+  Set up Pixel VIPs on Pixel 6 and newer: add contacts, place the widget, use one-tap call and text, badges, and the floating switcher from the September 2026 Pixel Drop.
 
 - How to Build Android Apps Faster with Android CLI and Agent Skills
   https://news.yumpdf.com/blog/android-cli-agent-skills/
