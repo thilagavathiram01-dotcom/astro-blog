@@ -15,13 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini 3.5 Transcribe, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Gemini in Google Docs, Gemini Google Calendar events, Google Labs CC family agent, Google Labs Dreambeans, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Android Bench, Gemini 3.5 Live Translate, Create My Widget
+- **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini 3.5 Transcribe, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini app for Mac, Apple Messages @messages, Gemini in Gmail, Gemini in Google Docs, Gemini Google Calendar events, Google Labs CC family agent, Google Labs Dreambeans, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Android Bench, Gemini 3.5 Live Translate, Create My Widget
 - **Android Apps & Updates** — Android 17, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, Gmail Copy code 2FA, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0, Create My Widget, Gemini Intelligence
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Gemini Calendar event management, Google Pics in Workspace, choosing an AI coding model with Android Bench, Create My Widget home screen widgets, Gmail Copy code for emailed 2FA
 
 ## Articles (newest first)
 
 ### 2026-09-19
+
+- How to Use Gemini on Mac and Connect Apple Messages
+  https://news.yumpdf.com/blog/gemini-macos-imessage/
+  Install the official Gemini macOS app, use Option + Space and window share, and prepare the @messages connector for Apple Messages when Google finishes the server rollout.
 
 - How to Use Gmail’s Copy Code Shortcut for 2FA on Android and iOS
   https://news.yumpdf.com/blog/gmail-copy-code-2fa/
