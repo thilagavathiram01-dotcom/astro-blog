@@ -15,17 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — ChatGPT, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, NotebookLM Video Overviews
-- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, new OS features, ADB, debugging, Android CLI
-- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills
+- **AI Tools & Tutorials** — ChatGPT, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills
+- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, new OS features, ADB, debugging, Android CLI, Media3 MiniController
+- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI
 
 ## Articles (newest first)
 
 ### 2026-09-19
 
-- How to Create Video Overviews in NotebookLM
-  https://news.yumpdf.com/blog/notebooklm-video-overviews/
-  Turn notebook sources into Explainer, Short, or Cinematic Video Overviews: add files, customize Studio settings, generate in the background, then share or download.
+- How to Add a Media3 MiniController in Jetpack Compose
+  https://news.yumpdf.com/blog/media3-minicontroller-compose/
+  Use Media3 1.11 MiniController and the Player composable in media3-ui-compose-material3 for a compact Dynamic Color mini-player with play/pause, artwork, and progress.
 
 - How to Use Pixel VIP Widgets for One-Tap Calls and Texts
   https://news.yumpdf.com/blog/pixel-vip-widgets-one-tap/
