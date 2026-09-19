@@ -16,12 +16,16 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 ## Categories
 
 - **AI Tools & Tutorials** — ChatGPT, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills
-- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, new OS features, ADB, debugging, Android CLI, Media3 MiniController
-- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI
+- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, new OS features, ADB, debugging, Android CLI, Media3 MiniController, password and passkey transfer, Google Password Manager, 1Password, Bitwarden, Dashlane
+- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, credential transfer between password managers
 
 ## Articles (newest first)
 
 ### 2026-09-19
+
+- How to Transfer Passwords and Passkeys Between Android Password Managers
+  https://news.yumpdf.com/blog/android-passkey-password-manager-transfer/
+  Move passwords and passkeys on Android without a CSV file using the system credential transfer flow with Google Password Manager, 1Password, Bitwarden, or Dashlane.
 
 - How to Add a Media3 MiniController in Jetpack Compose
   https://news.yumpdf.com/blog/media3-minicontroller-compose/
