@@ -16,16 +16,16 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 ## Categories
 
 - **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini 3.5 Transcribe, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini app for Mac, Apple Messages @messages, Gemini in Gmail, Gemini in Google Docs, Gemini Google Calendar events, Google Labs CC family agent, Google Labs Dreambeans, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Android Bench, Gemini 3.5 Live Translate, Create My Widget
-- **Android Apps & Updates** — Android 17, Android 17 QPR2 Beta 5, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, Gmail Copy code 2FA, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0, Create My Widget, Gemini Intelligence
-- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Gemini Calendar event management, Google Pics in Workspace, choosing an AI coding model with Android Bench, Create My Widget home screen widgets, Gmail Copy code for emailed 2FA, installing Android 17 QPR2 betas on Pixel
+- **Android Apps & Updates** — Android 17, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, Gmail Copy code 2FA, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0, Create My Widget, Gemini Intelligence
+- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Gemini Calendar event management, Google Pics in Workspace, choosing an AI coding model with Android Bench, Create My Widget home screen widgets, Gmail Copy code for emailed 2FA, Pixel VIP one-tap widgets
 
 ## Articles (newest first)
 
 ### 2026-09-19
 
-- How to Install Android 17 QPR2 Beta 5 on Pixel and What It Fixes
-  https://news.yumpdf.com/blog/android-17-qpr2-beta-5/
-  Enroll a Pixel 6a–11, match builds CP41.260828.004.A8 or .005.A6, review the eight official fixes, and handle QPR2 call-forwarding USSD restrictions.
+- How to Use Pixel VIP Widgets for One-Tap Calls and Texts
+  https://news.yumpdf.com/blog/pixel-vip-widgets-one-tap/
+  Set up Pixel VIPs on Pixel 6 and newer: add contacts in Google Contacts, place the home screen widget, use one-tap call and text, notification badges, and the floating switcher from the September 2026 Pixel Drop.
 
 - How to Use Gemini on Mac and Connect Apple Messages
   https://news.yumpdf.com/blog/gemini-macos-imessage/
@@ -62,14 +62,6 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 - How to Use Gemini 3.5 Live Translate for Real-Time Speech Translation
   https://news.yumpdf.com/blog/gemini-3-5-live-translate/
   Use Live Translate in the Google Translate app, Android listening mode, Google Meet preview, and the gemini-3.5-live-translate-preview Live API across 70+ languages.
-
-- How to Read Android Bench 2.0 and Pick an AI Coding Agent
-  https://news.yumpdf.com/blog/android-bench-2-long-horizon-tasks/
-  Use Google's long-horizon leaderboard: pass rate vs completion rate, four task streams, and a human review for the last 15% of multi-day Android work.
-
-- How to Create and Edit Images with Google Pics in Workspace
-  https://news.yumpdf.com/blog/google-pics-workspace-image-editor/
-  Generate and refine images with Google Pics on Nano Banana: object edits, in-image text, crop and upscale, then apply results in Docs and Slides from pics.new.
 
 The complete dated catalog of older posts is listed in the sitemap and RSS feed.
 

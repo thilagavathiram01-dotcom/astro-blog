@@ -1,156 +1,127 @@
 ---
 title: "How to Use Pixel VIP Widgets for One-Tap Calls and Texts"
 description: "Set up Pixel VIPs on Pixel 6 and newer: add contacts in Google Contacts, place the home screen widget, use one-tap call and text, notification badges, and the floating switcher from the September 2026 Pixel Drop."
-pubDate: 2026-09-19T10:00:00
+pubDate: 2026-09-19T21:00:00
 tags: ["android", "pixel", "tutorials"]
-heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80"
+heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=80"
 ---
 
-Pixel VIPs is Google's home-screen lane for a short list of people you contact often. The original widget (June 2025 Pixel Drop) showed last calls, messages, shared location, and dates. You still had to open a sheet, then tap again to call or text.
+Pixel VIPs is a Google Contacts feature for Pixel 6 and later phones. You mark a small set of people as VIPs, drop a widget on the home screen, and keep last messages, birthdays, shared location, and quick actions in one place.
 
-The [September 2026 Pixel Drop](https://blog.google/products-and-platforms/devices/pixel/september-2026-pixel-drop/) changes that path. Google's announcement says the updated widgets let you call or text with a single tap, switch VIPs from a floating overlay at the bottom of the sheet, and see notification badges so unread Messages or WhatsApp threads are visible on the tile.
+The [September 2026 Pixel Drop](https://blog.google.com/products-and-platforms/devices/pixel/september-2026-pixel-drop/) updated those widgets. You can call or text a VIP with one tap, switch people with a floating bar at the bottom of the overlay, and see notification badges for unread Messages and WhatsApp chats. This guide follows Pixel Phone Help and that official drop post.
 
-This guide follows Google's official Pixel Phone help article and the September drop post. Availability is Pixel 6 and later, including Fold models, and it depends on current Google Contacts and Pixel VIPs app versions plus a staged server rollout.
-
-![Person holding a smartphone with a home screen full of widgets](https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1200&q=80)
+![Person holding a smartphone with contacts and messaging on screen](https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=1400&q=80)
 
 ## What you need
 
-Google's help page is explicit:
+Pixel Help lists these requirements:
 
-- A **Pixel 6 or later** (including Pixel Fold)
-- Updated **Google Contacts**, **Pixel Weather**, and **WhatsApp** if you want WhatsApp last-message and last-call cards
-- VIPs can use **any iOS or Android phone**; they do not need a Pixel
-- Official cap in current help: **up to 16 people** as Pixel VIPs
+- A **Pixel 6 or later**, including Pixel Fold models
+- Current **Google Contacts** (and, for the 2026 widget refresh, Contacts 4.77 or newer plus Pixel VIPs service 2.0 when Google has enabled it on your account)
+- Updated **Pixel Weather** if you want local time and weather for a VIP
+- Updated **WhatsApp** if you want last WhatsApp messages and calls on the card
 
-September coverage from 9to5Google and Android Authority adds rollout detail that Google's blog does not spell out in the short drop post: the redesign is tied to **Pixel VIPs service 2.0** and **Google Contacts 4.77 or later**, and quick-action buttons are easiest to see on a **full-width** widget. If you add a large VIP list, the tile can fall back to a denser layout without the extra buttons. Treat that as reporting, not a second official spec sheet.
+Your VIPs can use iPhone or Android. They do not need a Pixel. Location on the widget only appears if they already share location with you in Google Maps (or a supported Find Hub flow) using the same email you stored on the contact.
 
-Update apps from Play Store, then wait if the new tile is missing. A staged flag is normal for Pixel Drops.
-
-Official product clip from when VIPs first shipped (Made by Google). The September drop keeps this model and adds one-tap actions and badges:
+Google’s original product clip still shows the idea: a home-screen strip for the people you actually call.
 
 <div class="video-embed">
 <iframe src="https://www.youtube.com/embed/gMpiZitWNes" title="Give the VIP Treatment | June 2025 Pixel Drop — Made by Google" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Step 1. Add Pixel VIPs in Contacts
+## Add people as Pixel VIPs
 
-Do this before you hunt for the widget. The widget is empty until the list exists.
+Pixel Help currently lets you mark **up to 16** people. Earlier write-ups mentioned eight; use the in-app limit you see after Contacts is updated.
 
 1. Open the **Google Contacts** app.
-2. At the bottom right, tap **Organize**, then **Pixel VIPs**.
-3. When prompted, tap suggested people, or tap **Add** to search the full book.
-4. Grant the permissions the onboarding flow asks for (messages, WhatsApp, location suggestions). Skip any permission you do not want; those cards will stay blank.
+2. Tap **Organize** at the bottom right, then **Pixel VIPs**.
+3. Tap suggested people, or tap **Add** and search your address book.
+4. Grant the permissions the setup flow asks for (SMS / Messages, WhatsApp, and location are separate).
+5. Finish onboarding.
 
-Google's help notes two side effects you should know before you tap Add:
+VIPs are added to **Favorite contacts**. Favorites can bypass Do Not Disturb unless you turn that off in Contacts or Sound settings. That is useful for a partner or a parent. It is a problem if you VIP someone you do not want ringing through Focus modes.
 
-- VIPs are added to **Favorite contacts**, so they can **bypass Do Not Disturb**.
-- Location cards only work if that person already shares location with you in **Google Maps**, and the email used for sharing is saved on the contact card.
+You can also manage the list later:
 
-Keep the list short. A widget that tries to represent a dozen people becomes a second Contacts tab. Four or five people you actually call is enough.
+- From the widget: **Settings** → **Manage your VIPs**
+- From the VIP overlay: menu → **Manage your VIPs**
+- From a contact card: tap the VIP tag → **Manage your VIPs**
 
-## Step 2. Put the widget on the home screen
+## Put the widget on the home screen
 
-Google documents this path:
-
-1. Touch and hold an empty spot on the Home screen.
+1. Touch and hold empty space on the home screen.
 2. Tap **Widgets**.
 3. Open **Contacts**.
-4. Choose the Pixel VIPs widget and drop it on the grid.
+4. Choose a **VIPs** widget size and drop it on the grid.
 
-You can also add it from the Pixel VIPs onboarding screen when Contacts offers **Add to Home screen**.
+If setup offered **Add to Home screen**, that places the same widget. After the September drop, the useful sizes are the ones that show faces plus a call and a message action. Reporting on the 2.0 layout notes that packing too many faces onto one row can fall back to a denser, older-looking strip. Prefer four or fewer faces on a single widget if you want the new one-tap buttons to stay visible.
 
-Resize the tile after you place it. Call and text shortcuts from the September redesign are meant for the wide layout. A 2-column sliver will still open the VIP sheet; it just will not give you the one-tap row.
+You can add more than one widget (for example one for family, one for a single person). Adding a single-person widget still uses the same VIP list in Contacts.
 
-![Close-up of a smartphone on a desk, ready for home-screen customization](https://images.unsplash.com/photo-1523206484186-19960e2f1f3f?auto=format&fit=crop&w=1200&q=80)
+![Home screen widgets on an Android phone](https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=1400&q=80)
 
-## Step 3. Call or text from the widget
+## Use one-tap call, text, and the floating switcher
 
-On a current September-drop build:
+This is what the September Pixel Drop changed.
 
-1. Find the VIP face or name on the widget.
-2. Tap the **call** or **text** control on the tile if it is visible.
-3. If you only see the face, tap it to open the VIP sheet, then use call, message, or video from there.
-4. Use the **floating toolbar** at the bottom of the sheet to swipe to the next VIP, or touch and hold the toolbar as Google's help describes.
+**Call or text from the widget.** On the updated layout, tap the call or message control next to a VIP instead of opening the sheet first. The action uses the default phone or messaging app for that number. WhatsApp shortcuts still depend on the WhatsApp permission you granted during setup.
 
-Google's drop post is the source for one-tap call/text, the overlay switcher, and badges. Android Authority's later look at Pixel VIPs **2.0.97** describes the same overlay as a strip of profile photos you can tap to jump, plus a pencil control that opens that person's contact editor. Use the official help for the supported gestures; treat third-party UI notes as a preview of one build.
+**Open the VIP card.** Tap the photo or name to open the overlay. Pixel Help says you will see:
 
-Do not expect RCS, WhatsApp, and carrier SMS to share one button. The text action follows the default messaging app for that number. WhatsApp history on the card is separate and needs the WhatsApp permission.
+- Last connection (last Google Messages or WhatsApp thread, and last call)
+- Significant dates (birthday, anniversary) if those fields exist on the contact
+- A **Memo** field for gift ideas or notes stored on device
+- Notification badges for unread Messages and WhatsApp items from that person
+- Location and safety extras when sharing is on (real-time Maps share, local time and weather, crisis alerts)
 
-## Step 4. Use badges, last connection, and dates
+**Switch VIPs without backing out.** Help now documents a **floating toolbar** at the bottom of the overlay. Swipe it, or touch and hold it, to move to the next VIP. Reporting on version 2.0.97 also describes tapping a face in that strip to jump. You stay in the overlay instead of returning to the home screen between people.
 
-Once the widget is live, Google documents these cards inside the VIP experience:
+If the new toolbar is missing, update Contacts from Play Store, force-stop Contacts once, and confirm the September Pixel Drop / Android 17 QPR1 package is installed under Settings → System → Software update. Google rolled the visual refresh after the 15 September announcement; some phones received QPR1 first and VIPs 2.0 a few days later.
 
-- **Last connection** — last call or message in Google Messages or WhatsApp. Tap the snippet or the icons at the top to reopen that thread.
-- **Notifications** — Messages and WhatsApp alerts for that VIP, now also as glanceable badges on the widget after the September drop.
-- **Significant dates** — birthdays, anniversaries, and other dates saved on the contact.
-- **Memo** — a short private note on that VIP (gift ideas, a school pickup time).
-- **Local updates** — local time and weather where that person is, when location data is available.
-- **Crisis alerts** — emergency or disaster alerts on the widget when Google can attach them to that location.
-- **Location sharing** — live Maps location only if they shared it with the email stored on the contact.
+## Make the card useful
 
-Adding an email to the contact does **not** turn on location sharing. They must share from Google Maps while signed into that address.
+The widget is only as good as the contact record.
 
-Preference chips you type in the VIP sheet (food, books, music) stay **on the device**, according to Google. They are used to suggest activities, not to publish a public profile.
+- Put the **email they use in Google Maps** on the contact if you want shared location. Saving an email does not start sharing; they still have to share in Maps.
+- Fill **birthday** and anniversary fields so the card can remind you.
+- Use the **Memo** tab for details you do not want in a group chat: a clothing size, a school pickup time, a preferred calling window.
+- Keep WhatsApp and the phone number on the same contact. Split numbers produce empty “last connection” rows.
 
-## Step 5. Remove or edit a VIP
+Pixel Help is explicit about data sources: Contacts fields, Phone call history, Android Messages, WhatsApp last message and last call, and Maps location when the other person opted in. Preference prompts (food, books, music) stay on device and may feed local suggestions. They are not a second social network.
 
-Google lists three official exits:
+## Do Not Disturb, badges, and WhatsApp quirks
 
-- From the **widget**: open widget settings → **Manage your VIPs**.
-- From the **VIP overlay**: menu → **Manage your VIPs**.
-- From the **contact** in Google Contacts: VIP tag → **Manage your VIPs**.
+Because VIPs become Favorites, their calls and messages can cut through DND. After you add someone, open that contact and confirm the star / favorite state matches what you want.
 
-Removing someone from VIPs does not delete the contact. It does stop DND bypass that came from the Favorite promotion, and it clears their tile from the widget.
+Notification **badges on the widget** are the September addition. They are glanceable unread markers for Messages and WhatsApp, not a replacement for the notification shade.
 
-## Permissions and data, in plain language
+If WhatsApp priority or last-message rows look wrong, Help points at two common causes:
 
-Google publishes what the feature reads from other apps:
+- **Companion Mode** (WhatsApp Web, a tablet, or a second phone linked to the same account) can skip notification priority on that companion.
+- Contact sync inside WhatsApp. Help’s first fix is WhatsApp → Settings → Privacy → Contacts → turn **WhatsApp contacts** off, then restart the phone. For one person, open their WhatsApp chat → name → Edit → turn off **Sync contact to phone**, then restart.
 
-| Source | What Pixel VIPs can show |
-| --- | --- |
-| Contacts | Numbers, dates, address, saved details |
-| Phone | Last call with that person |
-| Google Messages | Last SMS/RCS thread |
-| WhatsApp | Last message and last call |
-| Google Maps | Shared live location; weather and local time |
+## What this is not
 
-WhatsApp badges can fail in **Companion Mode** (tablet, second phone, or desktop linked session). Google's help says the priority path is built for the **main** phone. If contacts are double-synced, it also documents turning off **WhatsApp contacts** under WhatsApp → Settings → Privacy → Contacts, or turning off **Sync contact to phone** on that chat, then restarting.
+Pixel VIPs is not a family-locator product by itself. Without Maps sharing, you only get last chats and dates. It is not available on non-Pixel Android as a first-party widget. Samsung and other skins have their own favorite-contact widgets; those are separate apps.
 
-Do not grant location just to get a prettier widget. Local time and crisis alerts are the only reason that permission matters.
+Activity carousels such as “things to do together” appeared in the 2025 launch. Do not depend on that row after the 2026 redesign if it is gone on your build. One-tap actions, badges, and the floating switcher are the features Google called out in the September drop.
 
-## If the new widget is missing
+## Troubleshooting
 
-Work the list in order:
-
-1. Confirm the phone is Pixel 6 or newer.
-2. Update Google Contacts, Pixel VIPs / relationships package if it appears in Play Store updates, WhatsApp, and Pixel Weather.
-3. Open Contacts → Organize → Pixel VIPs and finish onboarding.
-4. Add the Contacts → VIPs widget again; delete the old tile first if it is stuck on the pre-September layout.
-5. Stretch the widget to full width and keep the VIP count small if you want the call/text row.
-6. If the controls are still the old sheet-only flow, wait for the server-side flag. That is how this drop has been landing, not a hidden developer option.
-
-Pixel VIP is not on non-Pixel Android as a first-party Contacts feature. Third-party “VIP widget” clones are a different product.
-
-## A compact setup that actually gets used
-
-1. Add three people you call every week.
-2. Place one full-width widget on the primary home screen, not a secondary page.
-3. Confirm each person has the phone number you actually dial, and WhatsApp only if that is how you write to them.
-4. Turn on Maps sharing only for family members who already share location with you.
-5. Write one memo (medication time, gate code, school pickup) instead of treating the sheet as a social feed.
-
-That is the job the September drop is built for: fewer taps to reach the same small set of people, plus a badge when they wrote back.
+- **No Pixel VIPs item in Organize.** Confirm Pixel 6 or newer, update Contacts, and wait for Play Store / server flags. Force-stop Contacts after the update.
+- **Widget still looks like Favorites.** You placed the old Favorites widget. Delete it and add **VIPs** under Contacts widgets.
+- **No call or text buttons on the strip.** You likely have the pre-drop layout or too many faces on one row. Update to VIPs 2.0 / Contacts 4.77+ and try a wider widget with fewer people.
+- **No location.** The VIP must share Maps location to the email on the contact. Check Maps → Location sharing, not only the Contacts email field.
+- **WhatsApp last message empty.** Grant WhatsApp permission again from Pixel VIPs settings and check Companion Mode.
 
 ## Conclusion
 
-Pixel VIPs is still a Contacts feature with a home-screen face, not a new messaging app. The September 2026 Pixel Drop is worth the update if you already keep a short favorite list: one-tap call and text, badges, and a bottom overlay to move between people without backing out to the grid.
-
-Start in **Contacts → Organize → Pixel VIPs**, add the widget from the picker, and keep the list short enough that the wide tile stays useful. For limits, permissions, and the official remove paths, use [Google's Pixel VIPs help article](https://support.google.com/pixelphone/answer/16302790) rather than a screenshot from a single beta build.
+Treat Pixel VIPs as a short list, not a second address book. Add the people you already text every week, put a compact widget on the first home screen, and use the September drop’s one-tap call and text controls instead of opening the phone app. Fill birthdays and the Maps email so the overlay is more than a pretty Favorites row. Then leave everyone else out of the VIP list so Do Not Disturb still means something.
 
 ## Sources
 
-- [September Pixel Drop: New Pixel VIP updates, Pixel Watch features, and more](https://blog.google/products-and-platforms/devices/pixel/september-2026-pixel-drop/) — Google Blog, 15 September 2026
-- [Quickly access your favorite contacts with Pixel VIPs](https://support.google.com/pixelphone/answer/16302790) — Pixel Phone Help
-- [September 2026 Pixel Drop](https://support.google.com/pixelphone/thread/466181739) — Google Pixel Community
-- [Give the VIP Treatment | June ’25 Pixel Drop](https://www.youtube.com/watch?v=gMpiZitWNes) — Made by Google
+- [Quickly access your favorite contacts with Pixel VIPs — Pixel Phone Help](https://support.google.com/pixelphone/answer/16302790)
+- [September Pixel Drop: New Pixel VIP updates, Pixel Watch features, and more — Google](https://blog.google.com/products-and-platforms/devices/pixel/september-2026-pixel-drop/)
+- [Here’s how to get the most out of Pixel VIPs — Google](https://blog.google.com/products/pixel/use-pixel-vips/)
+- [Give the VIP Treatment | June ’25 Pixel Drop — Made by Google (YouTube)](https://www.youtube.com/watch?v=gMpiZitWNes)
+- [Add apps, shortcuts, and widgets to your home screens — Pixel Help](https://support.google.com/pixelphone/answer/2781850)
