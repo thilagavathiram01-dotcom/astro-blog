@@ -27,3 +27,33 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
   https://news.yumpdf.com/blog/gemini-agentic-video-understanding/
   Analyze long lectures and public YouTube videos with Gemini 3.8 Flash: set processing to agentic, mix modes per file, inspect processing_call steps, and stay inside official File API and YouTube limits.
 
+- How to Create and Use ChatGPT Skills for Repeatable Work
+  https://news.yumpdf.com/blog/chatgpt-skills-reusable-workflows/
+- How to Use Gemini in Google Docs to Draft, Edit, and Collaborate
+  https://news.yumpdf.com/blog/gemini-google-docs-help-me-create/
+- How to Build Interactive Mini-Apps with Sheets Canvas in Google Sheets
+  https://news.yumpdf.com/blog/sheets-canvas-google-sheets-mini-apps/
+- How to Share Google Keep Notes Inside Google Messages
+  https://news.yumpdf.com/blog/google-messages-keep-notes/
+- How to Add a Media3 MiniController in Jetpack Compose
+  https://news.yumpdf.com/blog/media3-minicontroller-compose/
+- How to Use Pixel VIP Widgets for One-Tap Calls and Texts
+  https://news.yumpdf.com/blog/pixel-vip-widgets-one-tap/
+- How to Build Android Apps Faster with Android CLI and Agent Skills
+  https://news.yumpdf.com/blog/android-cli-agent-skills/
+- How to Write End-to-End Tests with Journeys in Android Studio
+  https://news.yumpdf.com/blog/journeys-android-studio-gemini/
+- How to Use Claude Code Projects for Parallel Cloud Threads
+  https://news.yumpdf.com/blog/claude-code-projects-parallel-threads/
+
+The complete dated catalog of older posts is listed in the sitemap and RSS feed.
+
+## Static Pages
+
+- Home: https://news.yumpdf.com/
+- About: https://news.yumpdf.com/about/
+- Contact: https://news.yumpdf.com/contact/
+- Privacy Policy: https://news.yumpdf.com/privacy/
+- Search: https://news.yumpdf.com/search/
+- RSS Feed: https://news.yumpdf.com/rss.xml
+- Sitemap: https://news.yumpdf.com/sitemap.xml
