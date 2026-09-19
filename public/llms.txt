@@ -23,6 +23,10 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ### 2026-09-19
 
+- How to Set Up Gemini Daily Brief for a Morning Priority List
+  https://news.yumpdf.com/blog/gemini-daily-brief-setup/
+  Turn on Daily Brief with Personal Intelligence and Memory, then use Top of mind, Looking ahead, Gemini Live, and item-level feedback.
+
 - How to Use Gemini 3.5 Live Translate for Real-Time Speech Translation
   https://news.yumpdf.com/blog/gemini-3-5-live-translate/
   Use Live Translate in the Google Translate app, Android listening mode, Google Meet preview, and the gemini-3.5-live-translate-preview Live API across 70+ languages.
