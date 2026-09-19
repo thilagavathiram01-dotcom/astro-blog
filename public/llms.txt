@@ -15,11 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — ChatGPT, Claude, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler
+- **AI Tools & Tutorials** — ChatGPT, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler
 - **Android Apps & Updates** — Android 17, Pixel drops, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, new OS features, ADB, debugging
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs
 
 ## Articles (newest first)
+
+### 2026-09-19
+
+- How to Use Claude Code Projects for Parallel Cloud Threads
+  https://news.yumpdf.com/blog/claude-code-projects-parallel-threads/
+  Create a Claude Code project, connect GitHub, let the coordinator spawn parallel cloud threads, review PRs in Overview, and stay inside Pro and Max plan limits.
 
 ### 2026-09-18
 
