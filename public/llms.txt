@@ -16,12 +16,16 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 ## Categories
 
 - **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Gemini in Google Docs, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Android Bench, Gemini 3.5 Live Translate
-- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0
+- **Android Apps & Updates** — Android 17, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Google Pics in Workspace, choosing an AI coding model with Android Bench
 
 ## Articles (newest first)
 
 ### 2026-09-19
+
+- How to Install One UI 9 on Galaxy S26 and Use the New Features
+  https://news.yumpdf.com/blog/one-ui-9-galaxy-s26-rollout/
+  Official 16 September 2026 rollout for Galaxy S26, S26+, and S26 Ultra: install the update, then use My FanCam, Now Brief cards, Warranty and Care, Now Nudge, Interpreter Thread View, and Security Brief.
 
 - How to Set Up Gemini Daily Brief for a Morning Priority List
   https://news.yumpdf.com/blog/gemini-daily-brief-setup/
