@@ -91,10 +91,10 @@ Manual search paths if passive ID fails:
 You will see the system microphone indicator and “Identifying song…” while it runs an on-demand pass.
 
 <div class="video-embed">
-<iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk" title="Luis Fonsi - Despacito (example of a widely recognized track; use Now Playing nearby to ID real songs)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube.com/embed/7BOcX6SBOWk" title="Install and use Google apps on desktop — useful when you later play identified tracks on another device" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 </div>
 
-Wait — that second embed is the wrong video. Use Google's Pixel product overview instead when you want a device walkthrough, and treat Now Playing as the on-device classifier described in Help. For a Pixel-focused recap of 2026 platform changes, the Android Show clip above is the official long-form source; Now Playing itself is documented in Help rather than a dedicated launch film.
+That clip is a desktop Gemini walkthrough. For Now Playing itself, stay in the Pixel app: identify on the phone, then open the same track in the music service you connected. The Android Show segment earlier in this article is the 2026 platform recap; Google has not posted a standalone Now Playing launch film for the September notification return.
 
 ## Privacy and limits
 
