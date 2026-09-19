@@ -15,17 +15,17 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 
 ## Categories
 
-- **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Gemini in Google Docs, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Google Workspace Skills
-- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, new OS features, ADB, debugging, Android CLI, Media3 MiniController
-- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Google Pics in Workspace, Workspace Skills
+- **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini in Gmail, Gemini in Google Docs, Google Labs CC family agent, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Android Bench
+- **Android Apps & Updates** — Android 17, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0
+- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Google Pics in Workspace, choosing an AI coding model with Android Bench
 
 ## Articles (newest first)
 
 ### 2026-09-19
 
-- How to Use Skills in Google Workspace with Gemini
-  https://news.yumpdf.com/blog/google-workspace-skills-gemini/
-  Create reusable Gemini skills in Workspace Studio and Docs, turn them on, then @ mention them in Gmail, Docs, Slides, Drive, and Chat.
+- How to Read Android Bench 2.0 and Pick an AI Coding Agent
+  https://news.yumpdf.com/blog/android-bench-2-long-horizon-tasks/
+  Use Google's long-horizon leaderboard: pass rate vs completion rate, four task streams, and a human review for the last 15% of multi-day Android work.
 
 - How to Create and Edit Images with Google Pics in Workspace
   https://news.yumpdf.com/blog/google-pics-workspace-image-editor/
