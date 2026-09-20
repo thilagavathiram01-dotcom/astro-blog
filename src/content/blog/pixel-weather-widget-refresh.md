@@ -90,11 +90,7 @@ Pixel Help’s accuracy tip is location, not the widget button.
 
 Weather map (6-hour precipitation) remains limited to the United States, United Kingdom, and most EU countries except Italy and Luxembourg, per the same Help article. The widget refresh does not unlock the map in other regions.
 
-<div class="video-embed">
-<iframe src="https://www.youtube.com/embed/KrtM55JioWs" title="Make your Gmail account more secure with account recovery and 2-step authentication — Google" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-</div>
-
-The second clip is unrelated to forecasts; skip it if you only came for the widget. Prefer the Pixel Help pages linked in Sources when you change permissions.
+![Rain on a window with a blurred street beyond](https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?auto=format&fit=crop&w=1200&q=80)
 
 ## Fix a blank or stuck widget
 
@@ -109,6 +105,12 @@ Work through this list before removing the tile for good.
 - **At a Glance confusion.** If the date row at the top is wrong but the widget is fine, edit At a Glance settings from a long-press on that row — that is a different product.
 
 Pixel Watch owners already have a manual refresh: open Weather on the watch, scroll to the bottom, and tap refresh. That control is documented in [Pixel Watch Help](https://support.google.com/googlepixelwatch/answer/16650579) and is separate from the phone widget.
+
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/dK5r4C5hO9E" title="How to customize your Android home screen — Android" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
+
+If that official Android customization walkthrough does not load in your region, use the widget steps above. They match current Pixel Launcher behavior: long-press home screen, open Widgets, expand Weather.
 
 ## What this is not
 
