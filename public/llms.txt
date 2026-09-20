@@ -16,12 +16,16 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 ## Categories
 
 - **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini 3.5 Transcribe, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini app for Mac, Apple Messages @messages, Gemini in Gmail, Gemini in Google Docs, Gemini Google Calendar events, Google Labs CC family agent, Google Labs Dreambeans, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Android Bench, Gemini 3.5 Live Translate, Create My Widget, Google Finance AI Key Moments, Google AI Mode travel
-- **Android Apps & Updates** — Android 17, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Pixel Now Playing notifications, Pixel Watch one-handed gestures, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, Gmail Copy code 2FA, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0, Create My Widget, Gemini Intelligence, Google Finance Android app
+- **Android Apps & Updates** — Android 17, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Pixel Now Playing notifications, Pixel Watch one-handed gestures, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, Gmail Copy code 2FA, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0, Create My Widget, Gemini Intelligence, Google Finance Android app, BOOX Android 16 E Ink (Palma 3, Note Air6 C, Note Mini C)
 - **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Gemini Calendar event management, Google Pics in Workspace, choosing an AI coding model with Android Bench, Create My Widget home screen widgets, Gmail Copy code for emailed 2FA, Pixel VIP one-tap widgets, Google Finance watchlists and Key Moments, Pixel Scam Detection notifications, Google AI Mode flight tracking and hotel booking, Pixel Now Playing history and notifications, Pixel Watch double-pinch and Raise to Talk, smart TV ACR and viewing-data opt-outs
 
 ## Articles (newest first)
 
 ### 2026-09-20
+
+- How to Choose and Set Up a BOOX Android 16 E-Ink Device
+  https://news.yumpdf.com/blog/boox-android-16-eink-palma-3/
+  Compare BOOX Note Air6 C, Note Mini C, and Palma 3 after the 15 September 2026 announcement. Android 16, Play Store, prices, and first-run setup.
 
 - How to Turn Off Smart TV ACR and Viewing Data Collection
   https://news.yumpdf.com/blog/smart-tv-disable-acr-tracking/
