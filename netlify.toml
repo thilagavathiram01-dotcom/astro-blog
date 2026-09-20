@@ -4,3 +4,92 @@
 
 [build.environment]
   NODE_VERSION = "20"
+
+# ── HTTP Headers ──────────────────────────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection       = "1; mode=block"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Static assets — 1 year cache
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.woff2"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# JS/CSS — 1 year (content-hashed by Astro)
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML pages — revalidate quickly
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# XML feeds — 1 hour
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, s-maxage=3600"
+    Content-Type  = "application/xml; charset=utf-8"
+
+[[headers]]
+  for = "/rss.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, s-maxage=3600"
+    Content-Type  = "application/rss+xml; charset=utf-8"
+
+# ── Redirects ─────────────────────────────────────────────────────────────────
+
+# Ensure trailing slashes for canonical consistency (helps crawlers)
+[[redirects]]
+  from   = "/blog"
+  to     = "/"
+  status = 301
+
+[[redirects]]
+  from   = "/about"
+  to     = "/about/"
+  status = 301
+  force  = false
+
+[[redirects]]
+  from   = "/contact"
+  to     = "/contact/"
+  status = 301
+  force  = false
+
+[[redirects]]
+  from   = "/search"
+  to     = "/search/"
+  status = 301
+  force  = false

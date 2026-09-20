@@ -1,0 +1,19 @@
+{
+  "name": "Yum News",
+  "short_name": "Yum News",
+  "description": "Independent technology journalism covering AI, Android, and developer tools.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#0A1628",
+  "orientation": "portrait-primary",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "32x32",   "type": "image/png" },
+    { "src": "/logo.png",    "sizes": "512x512",  "type": "image/png", "purpose": "any maskable" }
+  ],
+  "categories": ["news", "technology"],
+  "lang": "en-US",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

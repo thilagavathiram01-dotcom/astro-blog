@@ -20,7 +20,8 @@ const postsData = posts.map(p => ({
 const allTags = [...new Set(posts.flatMap(p => p.data.tags ?? []))];
 ---
 
-<BaseLayout title="Search" description="Search all Yum News stories, topics, and guides.">
+<BaseLayout title="Search" description="Search all Yum News stories, topics, and guides." isArticle={false}>
+  <meta slot="head" name="robots" content="noindex, follow" />
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
     <!-- Breadcrumb -->

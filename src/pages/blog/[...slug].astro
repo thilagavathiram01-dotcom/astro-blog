@@ -17,5 +17,6 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
+  {post.data.noindex && <meta slot="extra-head" name="robots" content="noindex, follow" />}
   <Content />
 </BlogPost>

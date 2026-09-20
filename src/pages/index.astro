@@ -14,7 +14,7 @@ const secondary = posts.slice(1, 3);   // Right column
 const tertiary  = posts.slice(3, 6);   // Analysis grid
 ---
 
-<BaseLayout title="Home" description={SITE_DESCRIPTION}>
+<BaseLayout title="Home" description="Yum News covers the latest in AI tools, Android updates, Gemini, Firebase, and developer guides. Independent tech journalism for builders and curious minds.">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
     <!-- ══════════════════════════════════════════ -->
@@ -209,7 +209,7 @@ const tertiary  = posts.slice(3, 6);   // Analysis grid
                 </div>
                 {post.data.heroImage && (
                   <div class="flex-shrink-0 w-16 h-14 overflow-hidden bg-gray-100">
-                    <img src={post.data.heroImage} alt="" class="w-full h-full object-cover" loading="lazy" />
+                    <img src={post.data.heroImage} alt={post.data.title} class="w-full h-full object-cover" loading="lazy" />
                   </div>
                 )}
               </a>

@@ -3,6 +3,8 @@ title: "How to Install One UI 9 on Galaxy S26 and Use the New Features"
 description: "Samsung started the official One UI 9 rollout on September 16, 2026 for Galaxy S26, S26+, and S26 Ultra. Check for the update, then use My FanCam, Now Brief cards, Warranty and Care, Now Nudge, and Interpreter Thread View."
 pubDate: 2026-09-19T18:30:00
 tags: ["android-apps", "samsung", "tutorials"]
+noindex: true
+canonicaUrl: "https://news.yumpdf.com/blog/samsung-one-ui-9-galaxy-s26-rollout/"
 heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&h=630&q=80"
 ---
 
