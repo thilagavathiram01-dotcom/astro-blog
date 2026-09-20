@@ -1,134 +1,119 @@
 ---
-title: "How to Use Google Keep’s Updated Note Collection Widget on Android"
-description: "Keep 5.26.365 replaces the Note collection sidebar with a circular FAB. Learn how to add, resize, and filter Keep widgets, and when to use Single note or Quick capture instead."
-pubDate: 2026-09-20T09:00:00
+title: "How to Use the Updated Google Keep Note Collection Widget on Android"
+description: "Google Keep 5.26.365 replaces the Note collection sidebar with a circular FAB. Add the widget, pick a label feed, and capture notes from the home screen without wasting grid space."
+pubDate: 2026-09-20T16:15:00
 tags: ["android", "tutorials", "google-keep"]
 heroImage: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&h=630&q=80"
 ---
 
-Google Keep’s largest home-screen widget just lost its right-hand shortcut rail. In Keep for Android **5.26.365.x**, the **Note collection** widget no longer stacks add-text, list, audio, drawing, and photo buttons down the side. Those actions now live behind a circular floating action button, the same pattern as the **Single note** widget and the smaller **Quick capture** pill.
+The Note collection widget is the Keep feed most people actually leave on a home screen: several notes at once, filtered to a label or to pinned items. In mid-September 2026, Keep version **5.26.365.x** changed how you *create* from that widget. The Material You sidebar of add shortcuts is gone. A circular floating action button (FAB) now opens the same pop-up the smaller Quick capture widget already uses.
 
-The change is small, but it is the first meaningful layout update to Note collection since the Material You widgets landed. You get more of each note on screen. Creating a new item takes a second tap. If you still see the old rail, you are either on an older Keep build or Android has not refreshed the widget instance yet.
+The change is small. It is also the difference between a widget that wastes a column of icons and one that shows more of each note edge to edge. This guide walks through adding the right Keep widget, choosing what it displays, and using the new FAB without fighting your launcher.
 
-This guide explains what changed, how to add and filter the three official Keep widgets, and how to use them as a capture inbox rather than a decorative tile.
-
-![Notes and a checklist on a desk next to a phone](https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80)
+![Sticky notes and a notebook on a desk, representing a home-screen note feed](https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80)
 
 ## What changed in Keep 5.26.365
 
-[9to5Google](https://9to5google.com/2026/09/17/google-keep-widget-tweak/) reported the rollout on **17 September 2026**. The Note collection widget is the feed-style tile that shows several notes at once. Previously it reserved a Material You sidebar for create shortcuts. That column ate width on a full-span widget and left empty gutters when you stretched the tile across the home screen.
+[9to5Google](https://9to5google.com/2026/09/17/google-keep-widget-tweak/) reported the rollout on **17 September 2026**. On the **Note collection** widget:
 
-The new layout:
+- The right-hand column of shortcuts (text note, list, audio, drawing, photo) is removed.
+- A circular FAB sits on the widget, matching **Single note**.
+- Tapping the FAB opens a pop-up to pick the capture type — the same second tap Quick capture already required.
+- The note cards themselves run closer to the widget edges, so a full-width layout shows more title and body text.
 
-- Removes the vertical shortcut rail
-- Adds a circular **FAB** that opens a create menu
-- Uses an edge-to-edge card so note titles and list rows get more pixels
-- Matches the create flow already used by **Quick capture** (tap the control, then pick note type)
+Google did not publish a standalone Keep blog for this build. Treat it as an app update on Play Store, not an Android Drop feature. You need Keep **5.26.365.x** or later. If the sidebar is still there, update Keep and remove-then-readd the widget so the launcher reloads the layout.
 
-Google’s public help page still lists the same three widgets. The update is a visual and interaction change inside Note collection, not a fourth widget type.
+Official widget types have not changed. Google’s [Keep Help page](https://support.google.com/keep/answer/13302793) still lists three Android widgets:
 
-Keep Live — voice capture for Google AI Plus, Pro, and Ultra — is a separate product surface. You do not need a paid AI plan for the widget redesign.
-
-## The three Keep widgets, and which one to keep
-
-Google’s [Keep help article](https://support.google.com/keep/answer/13302793) documents three Android-only widgets. iOS does not offer the same home-screen set.
-
-| Widget | Best for | Create flow after this update |
-| --- | --- | --- |
-| **Note collection** | A live stack of all notes, pinned notes, or one label | FAB → pick type |
-| **Single note** | One shopping list or project card you edit in place | FAB on that tile |
-| **Quick capture** | Fast inbox when you do not need to *see* old notes | Tap a type (or the plus) |
-
-Use **Note collection** if the home screen is your review board. Use **Single note** if one list is the thing you open ten times a day. Use **Quick capture** if you only want a dump chute and will triage later in the app.
-
-You can run more than one. A common setup is Quick capture on the first page and a label-filtered Note collection on a second page.
+- **Single note** — one pinned note you can tick or open in the app
+- **Note collection** — a scrollable feed of all notes, pinned notes, or one label
+- **Quick capture** — create-only shortcuts, no feed
 
 <div class="video-embed">
-<iframe src="https://www.youtube.com/embed/-2axrnYS4Co" title="BEST Google Widgets for Android — includes Google Keep widgets" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<iframe src="https://www.youtube.com/embed/-2axrnYS4Co" title="BEST Google Widgets for Android — Keep widget section" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
 </div>
 
-## How to add or replace the Note collection widget
+## Update Keep, then replace the old widget
 
-Do this after Keep updates, or if the old sidebar is still stuck on a tile you placed months ago.
-
-1. Open the Play Store, search **Google Keep**, and update to **5.26.365.x** or newer.
-2. Long-press an empty area on the home screen and tap **Widgets**.
-3. Search **Keep** and open **Keep Notes**.
-4. Drag **Note collection** onto the grid. Resize it so at least two notes are readable.
-5. If Keep asks for an account, pick the Google Account that owns the notes.
+1. Open Play Store → Google Keep → **Update**. Confirm **5.26.365** or newer under Keep → Settings → About.
+2. Long-press the existing Note collection widget → **Remove**.
+3. Long-press an empty home-screen spot → **Widgets** → search **Keep**.
+4. Drag **Note collection** onto the screen and resize it. A 4×2 or 4×3 block is enough to see two or three cards.
+5. If Keep asked which Google account to use, pick the one that holds the notes you want on the home screen.
 6. Choose the feed: **All notes**, **Pinned notes**, or a **label**.
-7. If an old instance still shows the rail, remove that widget and place a fresh one. Force-stopping Keep from App info can also refresh a stale RemoteViews tile.
 
-Android launchers differ. On Pixel Launcher the picker is under the long-press menu. On some OEM launchers, Widgets lives in the app drawer overflow.
+OEM launchers hide Widgets in different places. On Pixel it is long-press home → Widgets. On Samsung it is long-press home → Widgets, or the Widget button in the app drawer for One UI.
 
-![Person writing a list on a smartphone](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80)
+If the FAB never appears after the update, force-stop Keep from App info, then place a *new* Note collection widget. Android caches the old remote-views layout until the widget instance is recreated.
 
-## Filter the feed so the widget stays useful
+## Pick a feed that is worth the pixels
 
-An unfiltered collection of every Keep note is noise. The widget only earns its grid cells if the stack is a working set.
+A collection of *all* notes is noisy. Google’s picker lets you limit the widget when you place it.
 
-Practical filters:
+**Pinned notes.** Use this if the widget is a dashboard: travel packing list, a week’s meal plan, a work “today” checklist. Pin those notes inside Keep first.
 
-- **Pinned notes** for the three lists you actually touch (groceries, packing, weekly agenda).
-- **One label per widget** if you want a work stack and a home stack. Place two Note collection widgets instead of scrolling one mixed feed.
-- **Color plus label** inside the app so the cards are scannable at a glance. The widget inherits note color.
+**One label.** Create labels such as `home`, `errands`, or `school`. Put only short notes on that label. The widget then behaves like a room-specific board instead of a dump of every thought you ever captured.
 
-Avoid dumping photos and voice memos into the same label you pin to the home screen. Those cards waste height.
+**All notes.** Fine as a temporary inbox on a secondary home-screen page. Poor as the only widget on page one.
 
-## Create a note from the new FAB
+You cannot change the feed from the widget chrome after placement on every launcher. If the filter is wrong, remove the widget and add it again.
 
-After the update, creating from Note collection is two taps:
+![Person organizing handwritten notes next to a smartphone](https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80)
 
-1. Tap the circular button on the widget.
-2. Choose text, list, audio, drawing, or photo from the sheet.
-3. Save. The new item should appear in the feed if it matches the widget filter (all / pinned / that label).
+## How to capture from the new FAB
 
-If you pin by label, create the note *with that label* or it will not show on that tile. Single note still lets you edit the chosen note without opening the full app, which is faster for checklists.
+The extra tap is the trade-off for more note preview.
 
-Quick capture remains the better one-handed inbox. The September change made Note collection behave like that smaller widget instead of offering five always-visible create icons.
+1. Tap the circular button on the Note collection widget.
+2. Choose text, list, audio, drawing, or photo from the pop-up.
+3. Finish the note in Keep. It should show up in the widget after Keep syncs — usually a second or two on Wi-Fi.
 
-## Pair the widget with Messages and Gmail
+If you capture many notes a day and hate the extra tap, keep **Quick capture** as a 4×1 strip *and* use Note collection only as a reader. That is the pairing Keep’s three-widget set is built for.
 
-Two other Keep surfaces landed around the same month and work with the widget instead of replacing it.
+Single note is still the right tool for one checklist you tick from the home screen. Google’s help page is explicit: checkboxes on Single note can be toggled without opening Keep; body text edits still open the app.
 
-- **Keep notes in Google Messages** (September 2026 Android Drop) lets you turn a chat snippet into a Keep note. That note will show on a Note collection widget if the filter includes it.
-- **Keep in the Gmail side panel** on desktop is still the place to file a thought without leaving mail. Sync is the same account, so the phone widget updates after the note lands.
+## Use it with Messages and Keep Live
 
-Neither feature needs the new FAB. They just feed the same note graph the widget reads.
+Two nearby Keep features are easy to confuse with the widget change.
 
-## If the new layout does not appear
+- **Keep notes inside Google Messages** arrived with the [September 2026 Android Drop](https://blog.google/products-and-platforms/platforms/android/android-drop-september-2026/). In a chat, tap **+** and attach a Keep list so the thread can edit it. That is not a home-screen widget.
+- **Keep Live** is the Gemini voice inbox for Keep. Google limited the first wave to Google AI Plus, Pro, and Ultra plans when Gmail Live, Docs Live, and Keep Live rolled out in early September 2026. You do not need Live for the FAB widget.
 
-Work through this list before assuming a bug.
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/2bIwZntp38w" title="September 2026 Android Drop – new features including Keep in Messages" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
 
-- **Old APK.** Confirm version 5.26.365.x or later in Play Store → Keep → About.
-- **Stale widget instance.** Delete and re-add. Widgets cache layout until the provider is rebound.
-- **Wrong tile.** Quick capture and Single note already used compact create controls. Only Note collection lost the rail.
-- **Launcher grid.** Some launchers clip FABs. Resize the widget one row taller.
-- **Work profile.** A work Keep account will not show personal notes. Place the widget from the profile that owns the labels you care about.
+## Troubleshooting
 
-Google has not published a dedicated product blog for this tweak. Treat availability as a staged Play Store plus server-side widget refresh.
+**Widget shows a blank card or an old note.** Open Keep, pull to refresh, then wait. If it stays stale, remove and readd the widget. Battery restrictions on Keep (OEM “sleeping apps” lists) also freeze widget updates.
 
-## A 10-minute home-screen setup
+**FAB opens Keep instead of the pop-up.** You tapped a note card, not the button. The cards still open the selected note.
 
-1. Update Keep.
-2. Create or clean two labels, for example `inbox` and `errands`.
-3. Pin only the notes that belong on glass.
-4. Place Quick capture on the primary home screen.
-5. Place Note collection filtered to `errands` or Pinned notes where you have space.
-6. Remove any leftover Note collection tile that still shows the sidebar.
-7. Capture one test list from the FAB and confirm it appears.
+**Wrong account’s notes.** Keep widgets bind to one account at placement. Remove the widget and choose the other account when the picker appears.
 
-![Laptop, notebook, and phone on a wooden table](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80)
+**No Keep entry in the widget picker.** Install Keep from Play Store. Work profiles sometimes hide personal widgets on the personal home screen; add the widget on the profile that owns the Keep data.
+
+**iPhone.** There is no Note collection widget on iOS in Google’s current help article. This update is Android-only.
+
+## A 10-minute setup
+
+1. Update Keep to 5.26.365 or later.
+2. Label five notes you actually glance at daily.
+3. Place Note collection filtered to that label, sized at least 4×2.
+4. Confirm the circular FAB and tap it once so you know the pop-up path.
+5. Add Quick capture on the same page if you jot more than you read.
+6. Pin one checklist as Single note if you tick boxes from the home screen.
 
 ## Conclusion
 
-The Note collection redesign is not a new note-taking model. It is a density fix: Google traded always-visible create shortcuts for more of the notes you already wrote. If you used that sidebar as a five-button launcher, switch those taps to Quick capture and let Note collection be a reader.
+The September 2026 Keep widget tweak is a layout cleanup, not a new notes product. Remove the old Note collection instance after you update, give the new one a label instead of “all notes,” and use the FAB the same way you already use Quick capture. The feed then earns the grid space it occupies.
 
-Update Keep, replace the old tile, filter the feed, and keep create on the smallest widget that still fits your thumb.
+If you already live in Keep plus Messages shared lists, leave those flows alone. The widget is only the home-screen reader and a slightly slower create button.
 
 ## Sources
 
-- [Google Keep update tweaks the homescreen widget on Android](https://9to5google.com/2026/09/17/google-keep-widget-tweak/) — 9to5Google, 17 September 2026
 - [Get notes on your Android home screen](https://support.google.com/keep/answer/13302793) — Google Keep Help
-- [Sept. 2026 Android Drop: Find Hub, Motion Assist, and Keep in Google Messages](https://9to5google.com/2026/09/01/september-2026-android-drop/) — 9to5Google
+- [Google Keep update tweaks the homescreen widget on Android](https://9to5google.com/2026/09/17/google-keep-widget-tweak/) — 9to5Google, 17 September 2026
+- [September Android Drop](https://blog.google/products-and-platforms/platforms/android/android-drop-september-2026/) — Google
+- [Google Keep on Google Play](https://play.google.com/store/apps/details?id=com.google.android.keep)
 - [BEST Google Widgets for Android](https://www.youtube.com/watch?v=-2axrnYS4Co) — 9to5Google
