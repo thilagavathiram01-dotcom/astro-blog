@@ -201,4 +201,55 @@ const recent = allPosts.filter(p => p.data.title !== title).slice(0, 5);
       });
     }
   </script>
+
+  <script is:inline define:vars={{ title }}>
+    // GA4 — Article read event (fires after 10 s on the page)
+    setTimeout(function () {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'article_read', {
+          event_category: 'engagement',
+          article_title: title
+        });
+      }
+    }, 10000);
+
+    // GA4 — Scroll depth milestones (25 / 50 / 75 / 100 %)
+    (function () {
+      const milestones = [25, 50, 75, 100];
+      const fired = new Set();
+
+      window.addEventListener('scroll', function () {
+        const doc = document.documentElement;
+        const pct = Math.round(doc.scrollTop / (doc.scrollHeight - doc.clientHeight) * 100);
+        milestones.forEach(function (m) {
+          if (pct >= m && !fired.has(m)) {
+            fired.add(m);
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'scroll_depth', {
+                event_category: 'engagement',
+                article_title: title,
+                depth_percent: m
+              });
+            }
+          }
+        });
+      }, { passive: true });
+    })();
+
+    // GA4 — Outbound link clicks
+    document.addEventListener('click', function (e) {
+      const anchor = e.target.closest('a');
+      if (!anchor) return;
+      const href = anchor.href || '';
+      if (href && !href.startsWith(window.location.origin) && href.startsWith('http')) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'outbound_link_click', {
+            event_category: 'outbound',
+            link_url: href,
+            article_title: title
+          });
+        }
+      }
+    });
+  </script>
 </BaseLayout>

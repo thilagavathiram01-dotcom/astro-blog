@@ -47,3 +47,17 @@ const { title, description = SITE_DESCRIPTION, image = '/blog-placeholder.jpg' }
 
 <!-- Theme color -->
 <meta name="theme-color" content="#0A1628" />
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EXME5WVJDV"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-EXME5WVJDV', {
+    send_page_view: true,
+    anonymize_ip: false,
+    allow_google_signals: true,
+    allow_ad_personalization_signals: true
+  });
+</script>
