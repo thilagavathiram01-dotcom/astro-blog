@@ -16,12 +16,16 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 ## Categories
 
 - **AI Tools & Tutorials** — ChatGPT, ChatGPT Skills, Claude, Claude Code Projects, Gemini, Gemini Spark, Gemma, ML Kit, Prompt API, LiteRT-LM, Firebase AI Logic, Gemini Nano Banana image models, Google Pics, Google AI Studio, Google Flow, Firefox Smart Window, Mistral, Google Home MCP, Notion Agent Skills, Gemini Daily Brief, Speech Recognition, Gemini 3.5 Transcribe, Gemini in Sheets, Sheets canvas mini-apps, Gemini Gems, Gemini app for Windows, Gemini app for Mac, Apple Messages @messages, Gemini in Gmail, Gemini in Docs, Gemini Google Calendar events, Google Labs CC family agent, Google Labs Dreambeans, Ask Photos, Gemini Omni video, Gemini Spark Google Photos, Gboard Rambler, Android CLI, Android skills, Gemini agentic video understanding, Android Bench, Gemini 3.5 Live Translate, Create My Widget, Google Finance AI Key Moments, Google AI Mode travel
-- **Android Apps & Updates** — Android 17, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Pixel Now Playing notifications, Pixel Watch one-handed gestures, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, Gmail Copy code 2FA, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0, Create My Widget, Gemini Intelligence, Google Finance Android app, BOOX Android 16 E Ink (Palma 3, Note Air6 C, Note Mini C), Google Home Favorites widget
-- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Gemini Calendar event management, Google Pics in Workspace, choosing an AI coding model with Android Bench, Create My Widget home screen widgets, Gmail Copy code for emailed 2FA, Pixel VIP one-tap widgets, Google Finance watchlists and Key Moments, Pixel Scam Detection notifications, Google AI Mode flight tracking and hotel booking, Pixel Now Playing history and notifications, Pixel Watch double-pinch and Raise to Talk, smart TV ACR and viewing-data opt-outs, Google Home Favorites widget battery polling
+- **Android Apps & Updates** — Android 17, One UI 9, Galaxy S26 rollout, Pixel drops, Pixel VIP widgets, Pixel 11 Magic Capture, Pixel Scam Detection, Pixel Now Playing notifications, Pixel Watch one-handed gestures, Gboard Rambler, Gboard warnings, Motion Assist, Find Hub Remembered items, AndroidX Security State, Circle to Search, Google Messages Keep notes, Gmail Copy code 2FA, Google Authenticator transfer, new OS features, ADB, debugging, Android CLI, Media3 MiniController, Android Bench 2.0, Create My Widget, Gemini Intelligence, Google Finance Android app, BOOX Android 16 E Ink (Palma 3, Note Air6 C, Note Mini C), Google Home Favorites widget
+- **Technology How-To Guides** — Step-by-step walkthroughs for real-world tasks, Baseline Profiles, app performance, on-device LLMs, Android Studio Journeys, Android CLI and agent skills, Media3 Compose UI, Sheets canvas, Gemini in Docs, Gemini Calendar event management, Google Pics in Workspace, choosing an AI coding model with Android Bench, Create My Widget home screen widgets, Gmail Copy code for emailed 2FA, transferring Google Authenticator to a new phone, Pixel VIP one-tap widgets, Google Finance watchlists and Key Moments, Pixel Scam Detection notifications, Google AI Mode flight tracking and hotel booking, Pixel Now Playing history and notifications, Pixel Watch double-pinch and Raise to Talk, smart TV ACR and viewing-data opt-outs, Google Home Favorites widget battery polling
 
 ## Articles (newest first)
 
 ### 2026-09-20
+
+- How to Transfer Google Authenticator Codes to a New Phone
+  https://news.yumpdf.com/blog/google-authenticator-transfer-new-phone/
+  Sync Authenticator with a Google Account or export QR codes from the old phone and import them on the new Android or iPhone before you factory-reset.
 
 - How to Use the Battery-Efficient Google Home Favorites Widget
   https://news.yumpdf.com/blog/google-home-widget-battery/
@@ -44,58 +48,6 @@ Yum News publishes practical, step-by-step guides for Android, Gemini AI, Fireba
 - How to Use Pixel Now Playing Notifications and History After the September 2026 Update
   https://news.yumpdf.com/blog/pixel-now-playing-notifications/
   Restore recognized-music notifications in Now Playing 2026.08.27 and Android System Intelligence C.6, use lock-screen search, favorites with timestamps, and the one-handed song sheet.
-
-- How to Track Flight Prices and Book Hotels in Google AI Mode
-  https://news.yumpdf.com/blog/google-ai-mode-travel-flights-hotels/
-  Use Google Search AI Mode to track flight prices in 180+ countries, compare points and miles, and book hotels with Google Pay through Booking.com, Expedia, Hilton, and other partners.
-
-- How to Use Pixel Scam Detection on Chat Notifications After the September 2026 Drop
-  https://news.yumpdf.com/blog/pixel-scam-detection-notifications/
-  Enable Pixel Scam Detection for chat-app notifications and U.S. Gboard warnings on Pixel 6 and newer: countries, languages, Settings path, call vs message toggles, and how to handle a Likely scam chip.
-
-- How to Use the Google Finance Android App and AI Key Moments
-  https://news.yumpdf.com/blog/google-finance-android-app-key-moments/
-  Install the official Google Finance app, build watchlists, read AI Key Moments on charts, use the research tool, and keep portfolios plus scheduled tasks on the web until they reach Android.
-
-- How to Use Pixel VIP Widgets for One-Tap Calls and Texts
-  https://news.yumpdf.com/blog/pixel-vip-widgets-one-tap/
-  Set up Pixel VIPs on Pixel 6 and newer: add contacts in Google Contacts, place the home screen widget, use one-tap call and text, notification badges, and the floating switcher from the September 2026 Pixel Drop.
-
-- How to Use Gemini on Mac and Connect Apple Messages
-  https://news.yumpdf.com/blog/gemini-macos-imessage/
-  Install the official Gemini macOS app, use Option + Space and window share, and prepare the @messages connector for Apple Messages when Google finishes the server rollout.
-
-- How to Use Gmail’s Copy Code Shortcut for 2FA on Android and iOS
-  https://news.yumpdf.com/blog/gmail-copy-code-2fa/
-  Update Gmail 2026.09.07 / iOS 6.0.260907, tap the inbox Copy code chip, paste the 2FA number, and keep emailed codes off your clipboard.
-
-- How to Create and Manage Google Calendar Events with Gemini
-  https://news.yumpdf.com/blog/gemini-google-calendar-events/
-  Connect Workspace to Gemini Apps, create and reschedule events with @Google Calendar, use secondary calendars, and let Gemini suggest meeting times in Calendar and Gmail.
-
-- How to Create Custom Android Widgets with Gemini Create My Widget
-  https://news.yumpdf.com/blog/create-my-widget-gemini-android/
-  Use Gemini Intelligence Create My Widget to describe a home screen or Wear OS panel in plain language, refine it, and keep content grounded in Search and Google apps.
-
-- How to Set Up Google Labs Dreambeans for Personalized Daily Stories
-  https://news.yumpdf.com/blog/google-labs-dreambeans-daily-stories/
-  Install Dreambeans in the U.S. on Android or iOS, connect Calendar, Gmail, Photos, Search, YouTube, and Gemini, then use the finite daily story collection.
-
-- How to Transcribe Audio with Gemini 3.5 Transcribe
-  https://news.yumpdf.com/blog/gemini-3-5-transcribe/
-  Use gemini-3.5-transcribe for files and gemini-3.5-transcribe-live for captions: language detection across 85+ locales, smart vs verbatim mode, speaker labels, word timestamps, and custom vocabulary.
-
-- How to Install One UI 9 on Galaxy S26 and Use the New Features
-  https://news.yumpdf.com/blog/one-ui-9-galaxy-s26-rollout/
-  Official 16 September 2026 rollout for Galaxy S26, S26+, and S26 Ultra: install the update, then use My FanCam, Now Brief cards, Warranty and Care, Now Nudge, Interpreter Thread View, and Security Brief.
-
-- How to Set Up Gemini Daily Brief for a Morning Priority List
-  https://news.yumpdf.com/blog/gemini-daily-brief-setup/
-  Turn on Daily Brief with Personal Intelligence and Memory, then use Top of mind, Looking ahead, Gemini Live, and item-level feedback.
-
-- How to Use Gemini 3.5 Live Translate for Real-Time Speech Translation
-  https://news.yumpdf.com/blog/gemini-3-5-live-translate/
-  Use Live Translate in the Google Translate app, Android listening mode, Google Meet preview, and the gemini-3.5-live-translate-preview Live API across 70+ languages.
 
 The complete dated catalog of older posts is listed in the sitemap and RSS feed.
 
