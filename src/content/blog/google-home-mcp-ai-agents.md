@@ -1,190 +1,186 @@
 ---
-title: "How to Connect Claude or Antigravity to Google Home with Home MCP"
-description: "Google Home MCP is in early access for Premium Advanced users in the US. Learn what the server can control, how to set up OAuth, and how to revoke access safely."
-pubDate: 2026-09-20T22:00:00
-tags: ["ai", "tutorials", "android"]
-heroImage: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1400&h=630&q=80"
+title: "How to Set Up Google Home MCP for AI Agents"
+description: "Connect Claude, Antigravity, or OpenClaw to Google Home MCP, control devices, and review event history with official setup steps."
+pubDate: 2026-09-20T14:00:00
+heroImage: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "tutorials", "google", "developer", "ai"]
+noindex: false
 ---
 
-On 16 September 2026 Google opened **Home MCP**, a Model Context Protocol server that lets a compatible AI agent read your Google Home graph and run approved device actions. It is not a replacement for Gemini for Home on speakers. It is a second control path for tools such as Google Antigravity, Claude Cowork, Hermes, and OpenClaw.
+Google opened early access to **Home MCP** on September 16, 2026. The Model Context Protocol server lets an MCP-capable agent inspect your Google Home structure, read device state and event history, and run approved control actions.
 
-The official developer docs and reporting from The Verge, TechCrunch, and 9to5Google agree on the same limits: early access is for **Google Home Premium Advanced** subscribers in the **United States**, setup needs a Google Cloud project, and sensitive actions such as unlocking doors are blocked. This guide walks through those facts and the official setup path so you can decide whether to connect an agent to a real house.
+This is not a swap of Gemini for Home on speakers. Gemini still owns the built-in voice assistant. Home MCP is a second path: your own agent talks to `home.googleapis.com/mcp` after you complete Google Cloud OAuth.
 
-![Living room smart speaker and lights on a side table](https://images.unsplash.com/photo-1545259741-2ea140eb6ab4?auto=format&fit=crop&w=1200&q=80)
+Early access is limited to **Google Home Premium Advanced** subscribers in the United States, rolling out over the coming weeks. Setup is closer to a developer project than a single toggle in the Home app.
 
-## What Home MCP is (and is not)
+## What Home MCP can and cannot do
 
-[MCP](https://developers.home.google.com/mcp) is an open protocol that exposes tools an LLM can call. Google’s Home MCP server sits between your home graph and the client. The documented tools are:
+Google documents five tool groups on the [Home MCP server](https://developers.home.google.com/mcp/home):
 
-- `list_homes` — homes and structures you can access
+- `list_homes` — homes you can access
 - `list_home_resources` — devices, rooms, traits, and command schemas
 - `list_home_states` — live connectivity and trait state
 - `run_home_actions` — parameterized commands on target devices
-- `list_home_history` — past state changes and event logs
+- `list_home_history` — past state changes and events in a time range
 
-Supported hardware is anything already in the Google Home ecosystem: Nest cameras and doorbells, Nest thermostats, and Works with Google Home / Matter devices such as bulbs.
+Supported hardware is anything already in the Google Home graph: Nest cameras and doorbells, Nest thermostats, and Works with Google Home or Matter devices such as bulbs.
 
-Gemini for Home still owns the speaker wake word. With MCP connected, a third-party agent can send a voice message through a Google Home speaker when a task finishes. It does not become the default “Hey Google” assistant.
+Google also lists things that stay off the table. Home MCP **does not create or manage automations** yet. Rate limits apply. Sensitive actions such as **unlocking doors** are blocked. Some experimental traits can fail. Latency can be higher than the Home app.
 
-Google Product Manager Taylor Lehman described the point of the integration as giving an agent **real-world physical context**: camera summaries across rooms, laundry-cycle or lights-on history, and custom dashboards built in everyday language.
+Tell other people in the household if an agent can move lights, thermostats, or cameras. You can revoke access later in the Google Home app or on the My Accounts page.
 
-<div class="video-embed">
-<iframe src="https://www.youtube.com/embed/1ucAu7lTsmM" title="Grow your smart home business with Gemini for Home — Google for Developers" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-</div>
 
-## Who can use it today
 
-Confirm all four before you create a Cloud project:
+![Living room lights and smart speaker on a side table](https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80)
 
-1. Devices already appear in the Google Home app.
-2. You pay for **Google Home Premium Advanced** in the US (reported as $20 per month or $200 per year).
-3. You can create or own a Google Cloud project.
-4. You have an MCP client Google documents: **Antigravity**, **Claude Cowork**, or **OpenClaw**. Other MCP clients may work if they support OAuth against `https://home.googleapis.com/mcp`.
 
-Access is rolling out over the weeks after 16 September 2026. If the Home API enablement or OAuth consent fails, you are likely outside the early-access cohort.
 
-Do **not** point an experimental agent at the only home a family uses. Google’s own warning says connecting a live home “can result in unexpected or even undesired behavior.” The docs recommend a separate test structure when other people live there.
+## Prerequisites
 
-## Safety limits you should treat as real
+Confirm these before you open Cloud Console:
 
-Home MCP applies rate limits and blocks some sensitive actions. Unlocking doors is the example Google and secondary reports both call out. That is not a full safety guarantee.
+1. Devices already linked in the [Google Home app](https://home.google.com/).
+2. An active **Google Home Premium Advanced** plan (listed at $20 per month or $200 per year on Google’s store).
+3. A Google Cloud project you control.
+4. An MCP client. Google’s docs name **Google Antigravity**, **Claude Cowork**, and **OpenClaw**.
 
-- Experimental traits may be exposed and fail in odd ways.
-- Latency can be higher than Gemini for Home on a speaker.
-- Creating or editing automations through Home MCP is **not** supported yet.
-- Familiar-face camera data needs a **separate** consent link. Do not assume camera identity labels are in scope after the first OAuth grant.
+If you only want to test, Google suggests creating a separate home structure so a prototype agent does not touch the family thermostat.
 
-Revoke access from the Google Home app or the My Accounts connections page if the agent misbehaves. Tell other household members before you connect.
+## Step 1. Create a Cloud project and enable the Home API
 
-![Smart thermostat on a wall in a modern hallway](https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80)
-
-## Step 1 — Create the Cloud project and enable Home API
-
-Follow [Google’s Home MCP setup](https://developers.home.google.com/mcp/home):
-
-1. Open the [Google Cloud console](https://console.cloud.google.com/) and create a project (or pick one you already control).
+1. Open the [Google Cloud console](https://console.cloud.google.com/) and create a project.
 2. Go to **APIs & Services → Enabled APIs & Services**.
 3. Search for **Home API** and click **Enable**.
 
-Without that API, OAuth will succeed in the browser and then fail when the client lists tools.
+You need this API on the same project that will issue OAuth credentials. Do not reuse a random old project unless you know who else has access to it.
 
-## Step 2 — Create a Web OAuth client
+## Step 2. Create OAuth credentials
 
-1. **APIs & Services → Credentials → Create credentials → OAuth client ID**.
-2. Application type: **Web application**.
-3. Add the redirect URI for the client you will use:
+1. Open **APIs & Services → Credentials**.
+2. Choose **+ Create credentials → OAuth client ID**.
+3. Set **Application type** to **Web application**.
+4. Add the redirect URI for the client you will use:
    - Antigravity: `https://antigravity.google/oauth-callback`
    - Claude Cowork: `https://claude.ai/api/mcp/auth_callback`
-   - OpenClaw: the redirect URL from your local install
-4. Create the client and store the **Client ID** and **Client Secret** in a password manager, not in a public gist.
-5. Open **Google Auth Platform → Audience** and **Publish app** so the consent screen is usable outside a tiny test list.
+   - OpenClaw: the redirect URI from your local install
+5. Create the client and store the **Client ID** and **Client Secret**.
+6. In **Google Auth Platform → Audience**, set publishing status to **Publish app**.
 
-## Step 3 — Point the agent at the server
+Treat the client secret like a password. Do not paste it into a public notebook or a shared chat log.
 
-Production endpoint documented in the MCP reference: `https://home.googleapis.com/mcp`.
+## Step 3. Point your agent at the Home MCP server
 
-OAuth scope used in Google’s sample prompt: `https://www.googleapis.com/auth/home.platform.v2`.
+Production endpoint from Google’s reference:
 
-If your client can configure MCP from chat, paste a prompt in this shape (replace the two secrets):
+`https://home.googleapis.com/mcp`
 
-```text
-Please configure the Home MCP server for me with these settings:
-- Name: home_mcp
-- Server URL: https://home.googleapis.com/mcp
-- Transport: sse
-- OAuth Scope: https://www.googleapis.com/auth/home.platform.v2
-- Client ID: YOUR_CLIENT_ID
-- Client Secret: YOUR_CLIENT_SECRET
-```
+OAuth scope used in the official setup prompt:
+
+`https://www.googleapis.com/auth/home.platform.v2`
+
+If the client can configure MCP from chat, Google’s suggested prompt is:
+
+- Name: `home_mcp`
+- Server URL: the Home MCP URL your client documents (Google currently shows both the production host and a preprod sandbox URL in setup copy)
+- Transport: `sse`
+- Scope, Client ID, and Client Secret from the previous step
+
+Then complete the Google sign-in, pick the home structure, and return the authorization code if the client asks for it.
 
 ### Antigravity
 
-Settings → Advanced settings → Customizations → Open MCP Config. Add:
-
-```json
-{
-  "mcpServers": {
-    "home_mcp": {
-      "serverUrl": "https://home.googleapis.com/mcp",
-      "oauth": {
-        "clientId": "YOUR_CLIENT_ID",
-        "clientSecret": "YOUR_CLIENT_SECRET"
-      }
-    }
-  }
-}
-```
-
-Then open **home_mcp → Authentication**, finish the browser consent, pick the home structure, and paste the authorization code back.
+Open **Settings → Advanced settings → Customizations → Open MCP Config**. Add a `home_mcp` entry with `serverUrl` set to `https://home.googleapis.com/mcp` and the OAuth client fields. Finish auth under **Customizations → home_mcp → Authentication**.
 
 ### Claude Cowork
 
-1. Open [Claude Connectors](https://claude.ai/customize/connectors).
-2. Add a custom connector with server URL `https://home.googleapis.com/mcp`.
-3. Enter the Client ID and Client Secret under Advanced settings.
-4. Complete OAuth in the browser.
-5. In a Cowork chat, enable the `home_mcp` connector.
+Open [Claude Connectors](https://claude.ai/customize/connectors), add a custom connector, enter `https://home.googleapis.com/mcp`, then paste the Client ID and secret under Advanced settings. After OAuth, enable `home_mcp` from **Connectors** in a Cowork chat.
 
 ### OpenClaw
 
-Patch the gateway config with SSE transport and the same scope, set `CLIENT_ID` / `CLIENT_SECRET` in env, run `openclaw gateway restart`, then open the generated authorization URL.
+Patch the gateway config with an SSE server at `https://home.googleapis.com/mcp`, `auth: oauth`, the platform scope, and your client env vars. Restart the gateway and open the generated authorization URL.
 
-![Person using a laptop next to a smart display](https://images.unsplash.com/photo-1519558260268-cde7e03a0152?auto=format&fit=crop&w=1200&q=80)
-
-## Step 4 — Prove the connection with read-only prompts first
-
-Google’s verification prompts, in a safe order:
-
-1. **Discovery:** “How many lights do I have in my house?”
-2. **State:** “Is my home secured?”
-3. **History:** “What happened while I was out?”
-4. Only then **control:** “Turn off all the outside lights.”
-
-Approve each tool call in the client. If the model invents a device name, stop and re-run `list_home_resources` instead of guessing an action.
-
-Good early tasks that match Google’s examples:
-
-- Summarize what cameras saw after school pickup (needs camera history on Premium).
-- Count laundry cycles or lights-on hours from `list_home_history`.
-- Ask the agent to draft a dashboard layout in language you can rebuild in the Home app (MCP cannot create automations yet).
+For a short primer on why MCP exists as a connector layer, this Claude API session is a useful watch before you grant home access:
 
 <div class="video-embed">
-<iframe src="https://www.youtube.com/embed/l3BabZJaokU" title="The Android Show 2026 overview — Gemini Intelligence and Home-era AI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+  <iframe src="https://www.youtube.com/embed/aZLr962R6Ag"
+    title="Building with MCP and the Claude API"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Familiar faces and cameras
+## Step 4. Prove the tools work
 
-Face labels are a second consent. Requirements from the docs:
+Google’s verification prompts:
+
+- “How many lights do I have in my house?”
+- “Is my home secured?”
+- “Turn off all the outside lights.”
+- “What happened while I was out?”
+
+Approve each tool call the first time. If `home_mcp` is missing from the tool list, the OAuth flow did not finish or the Home API is not enabled on that project.
+
+Start with read-only questions. Only then send a control command on a low-risk device, such as one outdoor light.
+
+
+
+![Person reviewing a laptop dashboard in a home office](https://images.unsplash.com/photo-1486401899868-0e435ed79727?auto=format&fit=crop&w=800&q=80)
+
+
+
+## Familiar faces need a second consent
+
+Camera summaries that name people use **Familiar face detection**. That is a separate grant.
+
+Requirements from Google:
 
 - You are a **manager** of the structure.
-- At least one compatible Nest camera or doorbell has **Familiar face detection** on.
-- You still have a Premium subscription on those cameras.
+- At least one compatible Nest camera or doorbell.
+- Familiar face detection enabled on **each** camera you want included.
+- A Home Premium subscription that includes the feature.
 
-The agent can build the consent URL after it knows your structure ID. Visit that link yourself. Do not paste household face names into a public chat log.
+The agent can look up the structure UUID and build a consent URL of this form:
 
-## When you should not turn this on
+`https://home.google.com/connections/feature_consent?client_id=CLIENT_ID&structure_id=STRUCTURE_ID&features=1&continue=https%3A%2F%2Fhome.google.com`
 
-Skip Home MCP if any of these are true:
+Visit that link yourself. Do not treat a chat reply as consent.
 
-- You only need “turn off the kitchen lights.” Gemini for Home already does that without Cloud OAuth.
-- Kids or guests share the house and you cannot explain that a laptop agent can flip switches.
-- You are outside the US Premium Advanced early-access list.
-- You cannot store an OAuth client secret safely.
+Familiar face detection is not available for cameras based in Illinois, and local law may require consent from people you identify.
 
-Use the [Home Developer MCP](https://developers.home.google.com/mcp/developer) instead if you only want coding answers from Matter and Home API docs. That server does not control devices.
+## Safety rules worth following
+
+Google’s own warning is blunt: connecting a real home lets the agent act for you. Unexpected behavior depends on the client, not only on Google’s server.
+
+Practical limits:
+
+- Do not give a personal agent lock-unlock work. Unlock is blocked, but other lock-adjacent commands can still surprise you.
+- Keep HVAC and major appliances on confirm-before-run in the client if the client supports that.
+- Revoke the connector if you stop using the agent.
+- File trait bugs in Google’s [public issue tracker](https://issuetracker.google.com/issues/new?component=655104&template=2399599) instead of retrying a broken experimental trait.
+
+If you already use Gemini on Pixel for household memory features, keep those flows separate from Home MCP. The September Android Drop guide on [Find Hub remembered items](/blog/android-september-2026-drop-guide/) is a phone-side inventory tool, not a substitute for Home MCP history queries.
+
+## Tips that save a wasted evening
+
+- Use one Cloud project per household agent. Mixing work and home OAuth clients makes revocation harder.
+- Publish the OAuth app or the consent screen will block anyone who is not listed as a test user.
+- Ask for device counts before you ask for history. If discovery fails, control and history will fail too.
+- Expect automations to stay in the Home app until Google ships MCP automation tools.
+- Speakers remain on Gemini for Home. A third-party agent can send an audio message through a speaker after a task. It does not replace “Hey Google” on that device.
 
 ## Conclusion
 
-Home MCP is a real, documented way to let Claude Cowork or Antigravity query and command a Google Home, with OAuth, a published tool list, and an explicit ban on some lock actions. It is also an early-access product with latency caveats, experimental traits, and no automation authoring yet.
+Home MCP is useful if you already run an MCP client and you want that client to see the same home graph as the Google Home app. The setup cost is a Cloud project, an OAuth client, and a careful first week of read-only prompts.
 
-If you subscribe to Premium Advanced in the US and already live in MCP clients, connect a test structure first, start with list-and-history prompts, and keep the revoke path bookmarked. Speakers can stay on Gemini for Home; treat the agent as a privileged remote, not a new roommate.
+If you do not have Premium Advanced in the U.S., wait. The server is early access, automations are not exposed yet, and Google is still tuning latency.
+
+When access lands on your account, connect one client, test discovery, then decide whether camera history and device control belong in that agent at all.
 
 ## Sources
 
-- [Google Home MCP Server](https://developers.home.google.com/mcp/home) — Google Home Developers (updated 15 September 2026)
-- [Home MCPs overview](https://developers.home.google.com/mcp) — Google Home Developers
+- [Google Home MCP Server](https://developers.home.google.com/mcp/home) — Google Home Developers
 - [MCP Reference: home.googleapis.com](https://developers.home.google.com/reference/home/mcp) — Google Home Developers
-- [Google Home MCP lets Antigravity, Claude, OpenClaw control your smart home](https://9to5google.com/2026/09/16/google-home-mcp/) — 9to5Google (16 September 2026)
-- [Your AI agents can now control your Google Home devices](https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/) — TechCrunch (16 September 2026)
-- [Google Home gets MCP support for third-party AI agents](https://www.theverge.com/tech/996310/google-home-mcp-integration-agentic-ai-smart-home-price-release-date) — The Verge (16 September 2026)
-- [Grow your smart home business with Gemini for Home](https://www.youtube.com/watch?v=1ucAu7lTsmM) — Google for Developers
+- [Home MCPs overview](https://developers.home.google.com/mcp) — Google Home Developers
+- [What’s new in Google Home (September 16, 2026)](https://support.google.com/googlehome/answer/15962877) — Google Help
+- [Learn about familiar face detection](https://support.google.com/googlehome/answer/9268625) — Google Help
+- [Google Home & Nest Community](https://support.google.com/googlehome/community) — Introducing Home MCP post
