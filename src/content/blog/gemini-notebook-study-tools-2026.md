@@ -1,62 +1,114 @@
 ---
-title: "Gemini Notebook Study Tools Guide for Students 2026"
-description: "How to use Gemini Notebook study tools: voice chat, lecture recording, interactive overviews, quizzes, and short video overviews."
+title: "How to Study With Gemini Notebook’s New Tools (2026)"
+description: "Learn Gemini Notebook study tools: voice chat, lecture audio, quizzes, short videos, and interactive learning overviews."
 pubDate: 2026-09-20T14:00:00
-heroImage: "https://images.unsplash.com/photo-14565130808-af504776c6c4?auto=format&fit=crop&w=1200&h=630&q=80"
+heroImage: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["gemini", "tutorials", "ai-tools", "productivity"]
 noindex: false
 ---
 
-Google renamed NotebookLM to Gemini Notebook and, on September 15, 2026, added study tools built for source-grounded learning. You can talk to a notebook in nearly 100 languages, record a lecture on your phone, and pack summaries, quizzes, and short videos into one study pack.
+Google renamed NotebookLM to Gemini Notebook and, on September 15, 2026, added study features that change how you review source-backed notes. The useful part is not a new chat box. It is a loop: capture material, talk through it, then test yourself with formats that stay grounded in what you uploaded.
 
-This guide follows Google’s official rollout notes. Features arrive in waves by plan and region. If a control is missing, check the availability notes at the end before assuming a bug.
+This guide walks through the official September tools and a study workflow you can run on web or the Gemini Notebook mobile app. Availability still depends on plan, age, language, and rollout wave.
 
-## What changed in the September update
+## What Google actually shipped
 
-Director of Product Management Trond Wuellner listed four study-focused additions on the Google blog:
+According to the [Gemini Notebook product post](https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/) by Trond Wuellner, the September wave includes:
 
-- Real-time voice conversations with a notebook on the Android and iOS apps
-- An audio recorder in the mobile app for lectures and spoken notes
-- Interactive learning overviews under Reports that mix summaries with Studio outputs
-- More quiz formats, plus Short Video Overviews in more than 80 languages
+- Real-time spoken conversations with a notebook on Android and iOS, in nearly 100 languages
+- A mobile audio recorder for lectures and voice notes that sit next to your sources
+- Interactive learning overviews under Reports that combine summaries with Studio outputs such as quizzes, flashcards, and infographics
+- Extra quiz formats (short answer, multiple select, fill in the blank) arriving after the first wave
+- Short Video Overviews of about 60 seconds in more than 80 languages
 
-Responses stay grounded in the sources you add. That is the product’s core rule: the model answers from your files, photos, links, and recordings, not from an open web crawl.
-
-College students in the U.S. can claim one year of Google AI Pro at no charge through December 31, 2026. Eligible students in 140+ other markets can claim one year of Google AI Plus. Both offers raise Gemini Notebook usage limits compared with a non-AI subscription.
-
-
-
-![Student desk with notebooks, laptop, and study materials](https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=800&q=80)
+Workspace also documented the same set in its [back-to-school update](https://workspaceupdates.googleblog.com/2026/09/new-back-to-school-features-and-learning-tools-available-in-Gemini-Notebook.html). Treat both posts as the source of truth for rollout caveats.
 
 
 
-## Set up a notebook that can actually teach
+![Student reviewing notes on a laptop at a wooden desk](https://images.unsplash.com/photo-1488190211105-8b44fe85c3e1?auto=format&fit=crop&w=800&q=80)
 
-Start at [notebook.google.com](https://notebook.google/) or install Gemini Notebook from Google Play or the App Store.
 
-1. Create a notebook for one course, exam unit, or project. Keep topics separate so citations stay clean.
-2. Add sources: PDFs, Google Docs, slides, public YouTube URLs, photos of handwritten notes, and worksheets.
-3. Confirm the output language in settings. The new audio recorder currently supports English as the selected output language on web and mobile, including users under 18.
-4. Open Studio and note what you already have: Audio Overview, Video Overview, Mind Map, Flashcards, Quiz, Infographic, Slide Deck, Reports.
 
-Do not dump an entire semester into one notebook on day one. Ten focused sources beat fifty mixed files when you want accurate citations.
+## Who can use which feature
 
-If you also use Android system features from this month’s feature drop, pair this workflow with the Find Hub memory and Messages Keep tips in our [September 2026 Android Drop guide](/blog/android-september-2026-drop-guide/).
+Google split access on purpose. Read this before you assume a missing button is a bug.
 
-## Talk through a concept instead of rereading it
+**Voice chat with notebooks.** Rolling out first to Google AI Ultra subscribers who are 18 or older, then to Google AI Pro and other plans. Use the official Android or iOS Gemini Notebook app.
 
-Voice chat is rolling out first to Google AI Ultra subscribers age 18 and older, then to Google AI Pro and other plans.
+**Audio recorder.** Supported on web and mobile when English is the selected output language. Google says users under 18 can use this path.
 
-On the mobile app:
+**Interactive learning overviews and new quiz formats.** Rolling out to all users over the next few weeks after the September 15 post.
 
-1. Open the notebook that holds the lecture notes or paper you care about.
-2. Start a voice conversation. Speak in any of the nearly 100 supported languages.
-3. Ask for a step-by-step explanation of one idea. Interrupt when the answer drifts.
-4. Follow up with “cite the slide that said that” or “quiz me on this section only.”
+**Student plans.** Eligible U.S. college students can claim one year of Google AI Pro (then $19.99/month unless cancelled). Eligible students in 140+ other markets can claim one year of Google AI Plus. Both offers require a valid payment method at signup and must be redeemed by December 31, 2026. Pro raises Gemini Notebook usage limits 4x versus non-AI subscribers; Plus raises them 2x.
 
-Because answers are source-grounded, a vague prompt still maps back to your material. Tight prompts work better. Name the chapter, formula, or case study you want.
+Confirm current limits in the notebook UI. Do not treat third-party screenshots as official caps.
 
-Use this when a written summary is not enough: you need to hear the argument, stop it, and ask why a step is true.
+## Step 1: Build a source-first notebook
+
+Open [notebook.google.com](https://notebook.google/) or the Gemini Notebook app. Create one notebook per course, exam unit, or project. Mixing three subjects in one notebook makes citations noisier.
+
+Add the materials you will actually be tested on:
+
+1. Lecture slides and PDFs
+2. Photos of handwritten notes or worksheets
+3. Links to assigned readings
+4. Purchased Play Books titles if you use Expert Intelligence
+
+Keep the source list tight. A grounded notebook is only as good as what you feed it. If you dump random web pages, the quizzes will quiz you on those pages.
+
+## Step 2: Record the lecture instead of retyping it
+
+On mobile, use the new audio recorder to capture a class or a voice memo after class. Google places those recordings next to your other sources so you can chat, cite, and edit them later.
+
+Practical rules:
+
+- Ask the instructor whether recording is allowed.
+- Start a new recording per session so citations stay easy to scan.
+- After class, add one short note that names the topic and the exam date.
+
+You can already photograph handwritten pages. Pair a photo of the board with the audio of the same hour. When you ask a question later, the notebook can point at both.
+
+## Step 3: Talk through the hard parts out loud
+
+Voice chat is the feature that most people will notice first. Google says every spoken answer stays grounded in your sources. You can interrupt, ask for a step-by-step walkthrough, and switch among nearly 100 languages in the mobile apps.
+
+A simple drill:
+
+1. Open the course notebook.
+2. Start voice chat.
+3. Ask: “Explain the derivation on slide 14 using only my uploaded slides.”
+4. Interrupt when a term is fuzzy and ask for the citation.
+5. End by asking the notebook which source pages you still have not covered.
+
+Do not use voice chat as a substitute for reading the original paper or problem set. Use it to locate the passage you need to reread.
+
+
+
+![Open textbook, notebook, and coffee on a study table](https://images.unsplash.com/photo-1456513080857-6d24b3808857?auto=format&fit=crop&w=800&q=80)
+
+
+
+## Step 4: Build an interactive learning overview
+
+Under Reports, create an interactive learning overview. Google describes this as a single study object that weaves a summary together with Studio outputs such as infographics, quizzes, and flashcards.
+
+Generate it after you have sources, not before. Then:
+
+- Skim the summary only to find gaps.
+- Open the infographic or mind map if one is attached.
+- Run the quiz the same day you generate it, while the lecture is still fresh.
+
+When extra quiz types arrive (short answer, multiple select, fill in the blank), mix them. Recognition questions hide weak recall. Short answer exposes it.
+
+After a quiz, ask notebook chat about your results. Google explicitly supports that follow-up so you can decide what to study next. Edit or add questions when the auto-generated set misses a formula your instructor cares about.
+
+## Step 5: Use Short Video Overviews as a 60-second recap
+
+Short Video Overviews are roughly one-minute clips with a narrative plus educational animations. Google says they work in more than 80 languages and can be shared.
+
+Use them at the end of a session, not as the first pass. They help with formulas, diagrams, and science terms that benefit from a visual pass. They are not a replacement for working problems by hand.
+
+If you share a clip with a classmate, share the notebook sources too. A 60-second video without the original PDF is a trailer, not a study guide.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/kxi3bGvUnLQ"
@@ -66,85 +118,50 @@ Use this when a written summary is not enough: you need to hear the argument, st
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Record the lecture, then keep editing the note
+## A weekly study loop that fits the new tools
 
-Google says the in-app audio recorder starts the week after the September 15 post. Use it for class audio or a voice memo while you walk between sessions.
+Monday: upload slides and record the lecture.
 
-1. Open Gemini Notebook on Android or iOS.
-2. Start the recorder and capture the lecture or your own recap.
-3. Save the clip so it sits next to your other sources.
-4. Chat against that recording. Ask for timestamps, definitions, or a list of claims you should verify.
-5. Edit the generated notes. Google states you can keep changing them after the first pass.
+Tuesday: voice-chat the two concepts you failed to explain in one sentence.
 
-Do not treat the transcript as the official record. Confirm names, numbers, and assignment dates against the syllabus.
+Wednesday: generate flashcards and take a mixed quiz.
 
-Pair a recording with photos of the whiteboard. The notebook can then answer from both the spoken explanation and the written diagram.
+Thursday: build or refresh the interactive learning overview.
 
+Friday: watch the Short Video Overview, then redo missed quiz items from memory.
 
+Keep one notebook per unit so last month’s midterm does not pollute this week’s citations.
 
-![Laptop and handwritten notes on a wooden desk](https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=800&q=80)
+If you also carry an Android phone, pair this loop with the Find Hub memory habit from our [September 2026 Android Drop guide](/blog/android-september-2026-drop-guide/). A passport in a drawer and a lecture in a notebook are the same idea: store the pointer where you will look later.
 
+## Tips that prevent sloppy answers
 
+Name sources clearly. “Week03-slides.pdf” beats “scan2.pdf.”
 
-## Build an interactive learning overview
+Ask for citations in every chat turn. Click through at least once so you know the model is pointing at the right paragraph.
 
-Interactive learning overviews live under Reports. Google is rolling them out to all users over the weeks after the announcement.
+Set output language in settings before you record. The audio recorder path currently expects English as the selected output language.
 
-The point is one study object instead of five disconnected Studio jobs:
+Do not paste answer keys into the same notebook you use for practice. The quiz generator will learn them.
 
-1. Open Reports and create an interactive learning overview.
-2. Pull in a short summary plus Studio items you already generated: an infographic, a quiz, and a flashcard deck.
-3. Skim the overview once. Then jump into the quiz without leaving the same report.
-4. After you finish the quiz or flashcards, ask chat how you scored and which sources you missed.
+Cancel student-plan trials if you do not want the paid rate after December 31, 2026. Google’s offer terms require a payment method and auto-renew unless you cancel.
 
-New quiz formats arriving for all users include short answer, multiple select, and fill in the blank. You can add or edit questions so the deck matches your exam style.
+## What this is not
 
-Short Video Overviews are separate: about 60 seconds, available in more than 80 languages, with a narrative plus animations for formulas, diagrams, and lab concepts. Share the video with classmates when the notebook permissions allow it.
+Gemini Notebook is not an offline exam proxy. Voice answers can still be wrong even when they cite a page. Interactive overviews are a layout for your sources, not a new curriculum.
 
-## A 45-minute exam prep loop
-
-Use this when you have one unit to cover tonight.
-
-1. **Minutes 0–10:** Add the lecture PDF, two assigned papers or slides, and today’s recording.
-2. **Minutes 10–20:** Generate a Mind Map and one Short Video Overview for the unit’s main claim.
-3. **Minutes 20–30:** Talk through the two ideas you still cannot explain out loud.
-4. **Minutes 30–40:** Run a mixed quiz. Edit any question that does not match how your instructor writes exams.
-5. **Minutes 40–45:** Ask chat which sources you never cited in correct answers. Read only those pages.
-
-Repeat the quiz the next morning. Do not generate a new overview unless the source set changed.
-
-## Limits and plan notes you should not skip
-
-- Voice chat: Ultra first (18+), then Pro and other plans.
-- Audio recorder: web and mobile; English output language in settings; includes users under 18.
-- Interactive overviews and new quiz types: all users, over the following weeks.
-- U.S. student Google AI Pro trial: redeem by December 31, 2026; payment method required; $19.99 per month after the year unless you cancel.
-- Non-U.S. student Google AI Plus trial: 140+ markets except the U.S., Bolivia, Albania, Canada, Macau, Hong Kong, and Tunisia; $4.99 per month or local equivalent after the year unless you cancel.
-
-Google AI Pro raises Gemini Notebook usage to 4x the non-AI subscriber baseline. Google AI Plus raises it to 2x. Exact daily caps still depend on the current product sheet inside the app.
-
-## Tips that keep answers honest
-
-Keep one notebook per assessment. Mixed courses produce mixed citations.
-
-Name sources before you chat. “Explain section 4 of the midterm slides” beats “explain this.”
-
-Edit quizzes. Auto-generated items often test recall. Add one short-answer item that forces a comparison or a proof step.
-
-Share Video Overviews, not the raw notebook, when classmates only need the recap.
-
-If a spoken answer conflicts with a slide, open the citation. Trust the source file.
+It is also not fully rolled out on day one. Ultra-first voice chat, English-first audio notes, and “coming in the next few weeks” quiz formats mean two students in the same class may see different buttons this month.
 
 ## Conclusion
 
-Gemini Notebook is still a source-grounded study desk. The September 2026 tools add a spoken loop, a phone recorder, a single interactive report, and short videos you can hand to a study group.
+The September 2026 Gemini Notebook tools work when you treat the notebook as a closed set of class materials. Record the hour. Talk through the sticky slide. Test yourself in more than one quiz format. Use the short video as a recap, then go back to the source page the citation named.
 
-Set up one unit notebook today. Record the next lecture. Build one overview that includes a quiz you edited. That is the whole system. Extra Studio buttons can wait until that loop feels reliable.
+Start with one course notebook this week. If voice chat is not on your plan yet, the audio recorder and Studio outputs still give you a full study loop.
 
 ## Sources
 
-- [Sharpen your study routine with new Gemini Notebook tools (Google blog, Sept 15, 2026)](https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/)
-- [Gemini Notebook](https://notebook.google/)
-- [Gemini Notebook on Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.labs.language.tailwind)
-- [Gemini Notebook on the App Store](https://apps.apple.com/us/app/gemini-notebook/id6737527615)
-- [Google AI student offer](https://one.google.com/ai-student?plans=1%2C2)
+- [Sharpen your study routine with new Gemini Notebook tools (blog.google)](https://blog.google/innovation-and-ai/products/gemini-notebook/new-study-tools-september-2026/)
+- [New back-to-school features in Gemini Notebook (Workspace Updates)](https://workspaceupdates.googleblog.com/2026/09/new-back-to-school-features-and-learning-tools-available-in-Gemini-Notebook.html)
+- [Notebooks in Gemini for schools and organizations (Workspace Updates)](https://workspaceupdates.googleblog.com/2026/09/notebooks-in-gemini-dedicated-workspace-for-focused-organized-work-now-for-schools-and-organizations.html)
+- [Expert Intelligence in Gemini Notebook (Workspace Updates)](https://workspaceupdates.googleblog.com/2026/09/introducing-expert-intelligence-in-Gemini-Notebook.html)
+- [Gemini Notebook web app](https://notebook.google/)
