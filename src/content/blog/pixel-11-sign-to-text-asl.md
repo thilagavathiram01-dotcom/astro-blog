@@ -1,158 +1,183 @@
 ---
-title: "How to Use Pixel 11 Sign-to-Text for ASL in Gboard"
-description: "Set up Pixel 11 sign-to-text: add the Gboard toolbar button, grant camera access, and translate ASL to English in any app or Live Transcribe."
-pubDate: 2026-09-22T11:00:00
-heroImage: "https://images.unsplash.com/photo-1512947333899-60d450adb2d3?auto=format&fit=crop&w=1200&h=630&q=80"
+title: "How to Use Sign-to-Text ASL Translation on Pixel 11"
+description: "Set up Pixel 11 sign-to-text: add the Gboard button, sign ASL to the front camera, and send English text in chats, Live Transcribe, and Gemini."
+pubDate: 2026-09-22T06:30:00
+heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["pixel", "android", "tutorials", "how-to", "google"]
 noindex: false
 ---
 
-Pixel 11 can turn American Sign Language into English text while you type. Google calls the feature **sign-to-text**. It runs inside Gboard and Live Transcribe, so you can sign into Messages, Search, Docs, or Gemini instead of hunting for keys.
+Pixel 11 can turn American Sign Language into written English while you sign at the front camera. Google ships the feature as **sign-to-text**, powered by a Sign Language-to-Text (SL2T) model that reads hand shapes, facial expressions, and body movement.
 
-The model behind it is **SL2T**, announced by Google DeepMind on 12 August 2026 and documented for Pixel owners in official Help. This guide follows those pages only: what you need, how to pin the toolbar button, how to frame the camera, and what leaves the phone.
+It is an early product. Google and on-stage testers have said as much. Treat it as a daily typing aid for ASL users, not a replacement for an interpreter.
+
+This guide covers setup on Gboard, Live Transcribe, what the model actually does, and how to get cleaner sentences.
 
 ## What sign-to-text is (and is not)
 
-Sign-to-text is machine translation, not a word-for-word gloss of each handshape. DeepMind is explicit: sign languages are independent languages with their own grammar. The model watches hands, arms, torso, head, and face together, then writes English sentences.
+On Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL, and Pixel 11 Pro Fold, sign-to-text sits in two places:
 
-At launch it supports **ASL to English** on **Pixel 11** devices. Gboard language must be **en-US or en-CA**. Google says more devices and more sign languages will follow, at no extra cost.
+- **Gboard**, so you can compose messages, search, or prompt Gemini in English while you sign in ASL
+- **Live Transcribe**, so a signer can contribute English captions in a spoken conversation
 
-It is not a substitute for an interpreter in a medical, legal, or safety-critical setting. Official testers and the AISLAC impact report treat it as an early product. Review the on-screen output before you send it.
+Google’s product posts say the model supports one-handed and two-handed signing. Facial grammar matters. ASL is not English on the hands; brow raise, mouth shape, and body shift change meaning. The SL2T stack is built to use those cues, not only isolated signs.
 
-## What you need before the first session
+Limits to keep in mind:
 
-Google’s Pixel Phone Help lists two hard requirements:
+- Shipping language today is **ASL to written English**. Google says more sign languages are planned.
+- The SL2T research model is trained across **50+ sign languages**, but Pixel 11 dictation starts with ASL.
+- Lighting, framing, and camera angle still matter. The front camera has to see your hands and face.
+- Google describes the feature as early. Expect missed signs and awkward word order on complex sentences.
 
-1. A **Pixel 11** phone (including Pro, Pro XL, and Pro Fold).
-2. The latest **Gboard**, with keyboard language set to English (United States) or English (Canada).
-
-You also need a working front camera and a network connection. Translation runs on Google servers after an on-device pose tracker extracts landmarks. Offline use is not described in the Help article.
-
-On Pixel 11 Pro Fold, translations can appear on the cover display so the other person can read while you sign toward the inner camera. Regular Pixel 11 models show text in the field you already focused.
-
-
-
-![Person holding a smartphone at chest height with both hands visible](https://images.unsplash.com/photo-1556656793-85edba7a875f?auto=format&fit=crop&w=800&q=80)
+For other Pixel accessibility tools that shipped around the same time, see the [September 2026 Android Drop guide](/blog/android-september-2026-drop-guide/).
 
 
 
-## Pin sign-to-text on the Gboard toolbar
+![Person holding a smartphone during a conversation](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
 
-Do this once so you are not digging through the overflow menu in a live conversation.
 
-1. Open any text field so Gboard appears.
-2. On the toolbar, tap **Edit** (or open the Gboard menu).
-3. Touch and hold **Sign-to-text**, then drag it onto the toolbar.
-4. Tap the new **Sign-to-text** button.
-5. Read the onboarding screen. Google includes short videos on how to frame face, upper body, and hands.
-6. Grant **camera** permission when Android asks. Without it, the feature will not start.
 
-If the button is missing, update Gboard from Play Store and confirm the keyboard language is en-US or en-CA. The Help article does not list a toggle under Settings for older Pixels.
+## Before you start
 
-## Sign into any app that uses Gboard
+You need:
 
-1. Open Messages, Gmail, Keep, Chrome, Gemini, or any other app that accepts keyboard input.
-2. Tap the text field and confirm Gboard is the active keyboard.
-3. Tap **Sign-to-text**. A camera preview opens.
-4. Hold the phone so the front camera sees your **hands, upper body, and face**. Landmarks overlay those regions when tracking is healthy.
-5. Sign. English words stream into the text field.
-6. When you finish a phrase, move your hands out of the camera view. That is the official end-of-utterance signal.
-7. Tap **Sign-to-text** again to return to the regular keys.
+1. A **Pixel 11 series** phone with current system and Play updates.
+2. **Gboard** set as the active keyboard.
+3. Camera permission for Gboard or Live Transcribe when the feature asks for it.
+4. Enough light for the front camera to see both hands and your face.
 
-Google’s tips from the same Help page:
+Sign-to-text is a Pixel 11 series feature in Google’s own how-to. Do not expect the same button on older Pixels or other Android brands unless Google later expands it.
 
-- Pick a suggested word from the toolbar while you sign.
-- Tap **Minimize** if you need more of the app on screen.
-- Switch to the standard keyboard at any time to fix a word by typing.
-- Use Gboard writing tools to add punctuation or tidy a sentence after translation.
+Update path:
 
-You can mix signing and typing in the same draft. The cursor stays where you left it.
+1. Open **Settings → System → System update** and install anything pending.
+2. Open Play Store and update **Gboard**, **Live Transcribe & Notifications**, and the **Google** app.
+3. Confirm Gboard is default: **Settings → System → Languages & input → On-screen keyboard**.
 
-## Use Live Transcribe for face-to-face talk
+## Add sign-to-text to the Gboard toolbar
 
-Gboard covers anything you would type. Live Transcribe covers the other half of a spoken conversation: you see the other person’s speech as text, then sign a reply instead of pecking a reply box.
+Google’s official Pixel 11 steps are short: add the control to the Gboard toolbar, then sign to the front camera. Translations show as English text (on Fold models, Google notes the outer display for the translated line).
 
-Google’s examples are everyday: ordering coffee, talking with a colleague, a short exchange when no interpreter is present. Open Live Transcribe from Accessibility settings or your shortcut, start the session, then use sign-to-text for your side of the dialogue.
+Do this once:
 
-Pair this with other Pixel accessibility tools when you need them. If you already set up Guided vision or Motion Assist from the [September 2026 Android Drop](/blog/android-september-2026-drop-guide/), keep those shortcuts on the same Accessibility page so you are not hunting during a conversation.
+1. Open any app with a text field (Messages, Gmail, Chrome, Gemini).
+2. Tap the field so Gboard appears.
+3. Tap the four-square **toolbar** icon on the Gboard strip (the same row as voice typing and the emoji key, depending on your layout).
+4. Find **Sign to text** and add it to the toolbar. If you do not see it, tap edit/customize on that toolbar and enable the item, then drag it into the visible row.
+5. Tap the new **Sign to text** control. A camera preview should open.
+
+The first launch usually asks for camera access. Allow it only for this keyboard feature if you want to keep the permission tight.
+
+Framing tips that match how the demo works on stage and in hands-on clips:
+
+- Hold the phone in landscape or propped so the front camera sees torso, face, and both hands.
+- Stand or sit with light on your face, not behind you.
+- Keep signs inside the preview. If a hand leaves the frame, the model drops that sign.
+- Pause briefly at the end of a phrase so the decoder can commit a sentence.
+
+You can use one hand if that is how you sign that phrase. Google explicitly supports one-handed and two-handed input.
+
+## Use it in chats, search, and Gemini
+
+Once the camera session is open, sign a short phrase, then check the English line before you send it.
+
+Typical flow in Messages:
+
+1. Open the thread and tap the compose box.
+2. Start sign-to-text from the Gboard toolbar.
+3. Sign the message.
+4. Read the English draft. Edit any word the model missed.
+5. Send as usual.
+
+The same draft box works in other Gboard fields. Made by Google 2026 showed ASL used to write, chat, and **prompt Gemini from the keyboard**. That is useful when you want Gemini to draft a reply, look something up, or run a phone task without switching to voice typing.
+
+Keep prompts short at first. “Text Mom I am 10 minutes late” is easier for the model than a long story with role shift and classifiers.
+
+On Pixel 11 Pro Fold, Google says translations can appear on the **outer display** while you sign. That lets you keep the cover screen facing a conversation partner while you check the English line.
+
+
+
+![Laptop and phone on a desk used for writing and messages](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80)
+
+
+
+## Use sign-to-text with Live Transcribe
+
+Live Transcribe already captions speech. Sign-to-text adds the other direction: you sign, the phone writes English into the transcript so a hearing person can read what you said.
+
+Setup pattern:
+
+1. Open **Live Transcribe**.
+2. Start a session in a quiet enough room that speech captions still work for the other person.
+3. Switch to the sign-to-text / camera input when it is your turn (the control sits with the other Live Transcribe input options after the Pixel 11 software is current).
+4. Sign toward the front camera. Confirm the English sentence landed in the transcript before you continue.
+
+This is the mode to use at a counter, clinic check-in, or small meeting when no interpreter is present. It is still a first-generation decoder. For medical, legal, or safety-critical talk, book an interpreter.
+
+## How the SL2T model fits
+
+Google published a wider language note in September 2026: SL2T is trained across more than 50 sign languages and now powers dictation in Gboard and Live Transcribe on Pixel 11, starting with ASL to English. The company frames that as a first step for the estimated 70 million people who use sign languages worldwide.
+
+What that means in practice:
+
+- The research stack is multilingual. The consumer switch on Pixel 11 is ASL first.
+- The model looks at more than handshape. Google’s Pixel post lists facial expressions and body movements because those carry grammar in ASL.
+- Output is written English sentences, not a gloss of each sign. Word order will follow English more than ASL syntax. That is why you should read the draft.
+
+Actor Daniel Durant’s on-stage check at Made by Google 2026 matches those claims: one-handed and two-handed signing, plus facial grammar. He also called it a good start, which is the right bar for a v1 keyboard.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/c84y9gAY90c"
-    title="Made by Google '26"
+  <iframe src="https://www.youtube.com/embed/VC_Ft0stjCM"
+    title="Google Pixel 11 event in 8 minutes"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-The official Made by Google 2026 stream includes the on-stage sign-to-text demo with actor Daniel Durant. Annie Jean-Baptiste introduces the feature as early, built with the Deaf and hard of hearing community, and limited to ASL at launch.
+The Verge recap above includes the sign-to-text demo (chapter around 5:02) from the Made by Google 2026 event.
 
-## How privacy is supposed to work
+## Get cleaner English from the decoder
 
-Two official sources agree on the pipeline.
+These habits cut error rate without waiting for a model update:
 
-On the phone, **MediaPipe Holistic** tracks pose landmarks. DeepMind says only those geometric coordinates go to the server. The camera frames are discarded.
+- **Sign toward the camera, not the other person**, when you need a clean transcript. Then turn the phone or Fold cover so they can read.
+- **Finish the sentence.** Trailing movement helps the model close a clause.
+- **Avoid busy backgrounds.** High-contrast walls beat patterned shirts and moving crowds behind you.
+- **Do not bounce the phone.** A stand, bag, or Fold cover kickstand beats a one-handed hover if you need both hands to sign.
+- **Edit before send.** Treat the English line like speech-to-text: fast first draft, then a two-second proof.
+- **Shorten Gemini prompts.** Task-shaped phrases beat storytelling.
 
-Pixel Help adds: coordinates are a 2D representation of key points, not video. Inputs are not saved, shared, or used to train models. Pose coordinates, videos, and translations are not stored on the device after the session.
+If the button is missing after updates, confirm you are on a Pixel 11 series device, Gboard is default, and the toolbar customization panel is not hiding extra keys.
 
-If Gboard shows a system health warning, close other camera-heavy apps and try again. That notice is in the official privacy section.
+## Privacy and permission notes
 
-Do not assume “on-device only.” Landmark extraction is on-device. Translation is on Google servers. You still need a network path.
+Sign-to-text needs the front camera while the session is open. Close the camera overlay when you finish a message so the preview is not running in the background.
 
+Gboard already handles other dictation modes. Use the same caution you use for voice typing: do not sign passwords, one-time codes, or card numbers into a preview you cannot fully control in public.
 
+Google has not published a Pixel 11-specific “this model runs only on device” claim for SL2T in the short product how-to. If on-device versus networked processing matters for your workplace, check the latest Pixel privacy and Gboard help pages on that phone before you rely on it for restricted data.
 
-![Close-up of a laptop and phone on a desk during a video call](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+## Troubleshooting
 
+**No Sign to text key.** Update Gboard and system software. Open the Gboard toolbar editor and enable the item. Confirm the device is Pixel 11, 11 Pro, 11 Pro XL, or 11 Pro Fold.
 
+**Camera opens but no text appears.** Raise light levels, move your face and both hands into frame, and hold still at the end of a phrase. Restart the overlay.
 
-## Framing, one-handed signing, and left-handed users
+**Text is English words in the wrong order.** That is expected when ASL structure is dense. Split the thought into two shorter signs-and-pauses, then edit.
 
-Poor framing is the most common failure. The camera needs face plus both arms when you use two-handed signs. Sit or stand with light on your face, not behind you. Keep the phone high enough that your torso is in view.
+**Fold outer display stays blank.** Wake the cover screen, keep sign-to-text active, and check that translations are not sitting on the inner display only. Unfold once to confirm the session started.
 
-DeepMind trained for two practical cases that matter on a phone:
-
-- **One-handed signing**, because the other hand often holds the device.
-- **Left-handed signers**, about 10 percent of users in their notes.
-
-The Pixel blog also states that one-handed and two-handed signing are both supported. If tracking boxes jump off your hands, pause, re-center, and start the phrase again instead of signing faster.
-
-When a word is wrong, prefer the suggestion strip or a typed edit. Rapid fingerspelling and rare signs are the error types DeepMind lists on the FLEURS-ASL examples. Do not keep re-signing the same token if the model already committed a nearby English word; correct it on the keyboard.
-
-## What to try first
-
-Use short, real tasks so you learn the end-of-sign gesture.
-
-- Draft a one-line text in Messages.
-- Search Chrome for a place name.
-- Prompt Gemini with a question you would otherwise type.
-- Answer a colleague in Live Transcribe, then read the English line before you send it.
-
-If you use Gboard Rambler for spoken multilingual dictation on the same phone, keep the two modes separate. Rambler is speech-to-polished-text. Sign-to-text is ASL-to-English. They share a toolbar, not a pipeline.
-
-## Limits Google already published
-
-Stay inside the official envelope:
-
-- Pixel 11 family only at launch.
-- ASL to English only.
-- Gboard en-US or en-CA.
-- Camera permission required.
-- Network required for the translation step.
-- Not a certified interpreter, medical device, or courtroom tool.
-
-DeepMind scored SL2T at **70 BLEURT** zero-shot on FLEURS-ASL (sd-test) and trained on more than **100,000 hours** of data across more than **50 sign languages**, with about a quarter of that data in ASL. Those figures come from the 12 August research post. They describe model quality in a benchmark, not guaranteed accuracy on your kitchen lighting.
-
-Google established the AI Sign Language Advisory Committee (AISLAC) and published a joint impact report with community groups for the 1.0 release. Read that report if you are evaluating the feature for an organization.
+**Live Transcribe ignores signing.** Update Live Transcribe, grant camera permission to that app as well as Gboard, and start a fresh session.
 
 ## Conclusion
 
-Sign-to-text puts ASL next to voice typing on Pixel 11. Pin the Gboard button, grant the camera, frame face and hands, and treat the streamed English as a first draft you can edit.
+Sign-to-text gives ASL users a Pixel 11 keyboard that meets them in their language. Add the Gboard control, frame the front camera, sign a short phrase, and read the English line before it goes out. Use Live Transcribe when a hearing person needs to read along.
 
-Start with Messages and Live Transcribe. Those two surfaces match how Google shipped the feature: dictation anywhere you type, plus a reply path in a live spoken conversation. When more sign languages arrive, the same toolbar button is the place to look.
+Keep expectations honest. Google shipped ASL first, called the work early, and is still expanding sign languages. For everyday texts and Gemini prompts, that is already useful. For high-stakes conversations, it is a backup, not the plan.
 
 ## Sources
 
-- [Here's how to use sign-to-text translation on Pixel 11 — Google blog](https://blog.google/products-and-platforms/devices/pixel/american-sign-language-sign-to-text-pixel-11/)
-- [Putting sign language AI into users’ hands — Google DeepMind](https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/)
-- [Use sign-to-text (Pixel Phone Help)](https://support.google.com/pixelphone/answer/17468449)
-- [Live Transcribe (Android Accessibility Help)](https://support.google.com/accessibility/android/answer/9158064)
-- [Made by Google ’26 (YouTube)](https://www.youtube.com/watch?v=c84y9gAY90c)
+- [How to use sign-to-text translation on Pixel 11](https://blog.google/products-and-platforms/devices/pixel/american-sign-language-sign-to-text-pixel-11/) — Google
+- [7 Pixel 11 updates you should know about](https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/) — Google
+- [AI for everyone in every language](https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/) — Google (SL2T trained across 50+ sign languages; Pixel 11 starts with ASL to English)
+- [Introducing new Pixel 11 phones](https://blog.google/products-and-platforms/devices/pixel/new-pixel-devices-2026/) — Google
