@@ -1,164 +1,175 @@
 ---
-title: "How to Set Up Gemini Daily Brief Free in the US"
-description: "Set up Gemini Daily Brief on Android and web for free in the US. Connect Gmail, Calendar, and Memory, then review your morning list."
+title: "How to Set Up Gemini Daily Brief for Free in the US"
+description: "Gemini Daily Brief is now free in the US. Enable Personal Intelligence, Memory, and Workspace to get a morning priority list."
 pubDate: 2026-09-22T08:00:00
-heroImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "productivity", "google", "ai"]
+heroImage: "https://images.unsplash.com/photo-1499750310107-5fef99a99866?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "productivity", "google", "tutorials", "how-to", "ai"]
 noindex: false
 ---
 
-Gemini Daily Brief is no longer limited to paid Google AI plans in the United States. If you are 18 or older and use a personal Google Account, you can get a morning list of emails, calendar events, and follow-ups without a Plus, Pro, or Ultra subscription.
+Google made Gemini Daily Brief free for personal accounts in the United States. The feature used to sit behind Google AI Plus, Pro, or Ultra. As of early September 2026, you can get the same morning digest without a paid plan.
 
-Google announced the free expansion in early September 2026. Daily Brief still needs Personal Intelligence, a Workspace connection, and Memory. This guide walks through those switches, then shows how to read, act on, and silence the brief.
+Daily Brief is not a generic news feed. It reads Gmail, Google Calendar, connected apps, and past Gemini chats, then ranks what needs attention today. You stay in control of which sources it can use.
 
-Availability is gradual. If the menu item is missing, confirm the requirements below before assuming a bug.
+This guide walks through eligibility, the exact settings to flip, how to read each section, and how to shut notifications off if the morning ping is too much.
 
 ## What Daily Brief actually does
 
-Daily Brief is not a news digest. Google’s help page says Gemini summarizes items from connected apps such as Gmail and Google Calendar, plus your Gemini chats, then groups them so you can act or plan ahead.
+Google introduced Daily Brief at I/O 2026 as an out-of-the-box agent in the Gemini app. Once you opt in, Gemini works across connected apps in the background. It pulls urgent items from Gmail, upcoming events from Calendar, and follow-ups from recent chats.
 
-The brief has two main sections:
+The brief is built for skimming. Google organizes items into groups instead of dumping a raw inbox dump. Typical sections include:
 
-- **Top of mind:** timely items, mostly from Gmail, Calendar, and recent chats.
-- **Looking ahead:** longer-term goals with suggested next steps drawn from Personal Intelligence.
+- **Top of mind** — timely, actionable items such as tasks with deadlines.
+- **FYI** — dated items that matter but do not need action this morning.
+- **Looking ahead** — longer-term goals plus suggested next steps.
 
-Google’s product page also describes an FYI-style grouping for dated items that are not urgent. The exact labels can vary as the feature rolls out.
+You can mark an item complete or open a Gemini chat from the same card. Feedback with thumbs up or down trains later briefs.
 
-Google lists example audiences: students tracking classes and applications, parents handling school mail, job seekers watching recruiter threads, and small-business owners who need client emails surfaced first.
-
-
-
-![Person reviewing a morning planner and laptop at a desk](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80)
+Google’s official product page states that Daily Brief curates Gmail, Google Calendar, and Gemini chats. You can open **More** on any item to see the source.
 
 
 
-## Check that you qualify
+![Person planning a workday at a desk with a laptop and notebook](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80)
 
-Google’s official requirements are strict:
 
-1. You must be **18 or over** and **in the US**.
-2. You must sign in with a **personal Google Account**. Work, school, and supervised accounts are blocked.
-3. You must be eligible for **Personal Intelligence**.
-4. You must **connect Google Workspace** (Gmail and Calendar at minimum).
-5. You must **turn on Memory**.
 
-For now, Daily Brief is **English only**. It appears in the Gemini mobile app, at [gemini.google.com](https://gemini.google.com), and in Gemini Live. It is not a separate Android system setting.
+## Who can use it right now
 
-If you only use a Workspace login at work, open Gemini with the Gmail you use for personal mail. Switching accounts in the profile menu is often the missing step.
+Availability is still narrow. Confirm all of these before you hunt through menus:
 
-## Step 1: Turn on Personal Intelligence and Memory
+- Personal Google Account (not Workspace work or school, and not a supervised child account)
+- Age 18 or older
+- United States location
+- English language
+- Personal Intelligence enabled for Workspace **and** Memory
 
-On Android:
+Google is rolling access out gradually. If the Daily Brief entry is missing from the Gemini side panel, wait a few days and check again. The official FAQ still says the feature is rolling out to eligible users in select regions.
 
-1. Open the **Gemini** app.
-2. Open the menu, then tap your profile photo or initial.
-3. Open **Personal Intelligence**.
-4. Connect **Google Workspace** and accept the permission prompts for Gmail and Calendar.
+Paid Google AI plans are no longer required in the US for this feature. That change is what makes this setup worth doing now.
+
+## Step 1: Sign in on the right account
+
+Open the Gemini app on Android or iOS, or go to [gemini.google.com](https://gemini.google.com) on the web. Confirm the avatar is your personal Gmail, not a work profile.
+
+If you use multiple accounts, switch first. Daily Brief will not appear on a Workspace-managed login.
+
+Update the Gemini app from Google Play or the App Store so you have the current side navigation. Older builds hide the Daily Brief item even when your account is eligible.
+
+## Step 2: Turn on Personal Intelligence and Memory
+
+Daily Brief does not start until Personal Intelligence can read the apps you approve.
+
+**On mobile**
+
+1. Open Gemini and tap your profile photo.
+2. Open **Personal Intelligence**.
+3. Enable access for Gmail and Calendar in the connected apps / Google Workspace section.
+4. Accept the permission prompts.
 5. Turn **Memory** on so Gemini can use past chats when it ranks items.
 
-On the web, the same controls live under Settings and help → Personal Intelligence.
+**On the web**
 
-Daily Brief will not appear until both Workspace and Memory are on. Google’s FAQ on [gemini.google/overview/daily-brief](https://gemini.google/overview/daily-brief/) states this explicitly.
+1. Open Settings & help in the lower left.
+2. Choose **Personal Intelligence**.
+3. Connect Gmail and Calendar.
+4. Enable Memory.
 
-Give Gemini a few hours after you flip the switches. The first brief is built from mail and events it can already see, not from a blank slate.
+You can disconnect any source later. Google documents this on the Daily Brief overview page: enable Personal Intelligence for both Workspace and Memory, then look for Daily Brief in the side navigation.
 
-## Step 2: Open the brief from the menu
+Without those two toggles, the menu item stays hidden.
 
-When you are eligible:
+## Step 3: Open Daily Brief and review sources
 
-1. Open the Gemini app or go to gemini.google.com.
-2. Tap **Menu** at the top.
-3. Tap **Daily brief**.
+After the settings save, open the Gemini side panel. Tap **Daily Brief**.
 
-You can also hear it in Gemini Live. Start Live and say “What’s my day look like?” or “Brief me.” Google documents those exact phrases.
+The first brief may take a morning cycle to appear. Google also sends a notification when a new brief is ready. If nothing shows up the same day you flip the switches, check again the next morning.
 
-On a Pixel or other Android phone, pair this with the September 2026 Android Drop tools in our [Android September 2026 Drop guide](/blog/android-september-2026-drop-guide/) if you already ask Gemini to remember physical items in Find Hub. The two features do different jobs: one tracks objects, the other tracks mail and meetings.
+On each card:
 
-## Step 3: Work an item instead of only reading it
+- Tap the item to expand context.
+- Use **More** to see which email, event, or chat produced it.
+- Use **Mark complete** when you finish the task.
+- Use **Chat** if you want Gemini to draft a reply or add a calendar hold.
 
-Each card can be handled without leaving the brief.
+Give a thumbs down on noisy cards. That is the fastest way to stop school-newsletter clutter or low-priority newsletters from dominating Top of mind.
 
-**Chat about an item.** Tap More → Chat under the card. That thread is saved to Gemini Apps Activity. Use it to ask “What is the deadline?” or “Draft a short reply.”
+## Step 4: Hear the brief in Gemini Live
 
-**Mark complete or dismiss.** Tap More → Mark complete when you have handled it, or dismiss noise. You can mark an item incomplete again later from the same card.
+If you would rather listen while you make coffee, Daily Brief also works in Gemini Live. Google added this in the August 2026 Gemini Live productivity update.
 
-**Check the source.** Tap More on a card to see whether it came from Gmail, Calendar, or a prior Gemini chat. Do this once per morning until you trust the ranking.
+Start a Live session and say, “What’s my daily brief?” Gemini reads a spoken summary built from Gmail and Calendar. You can interrupt and ask follow-ups in the same conversation, such as “Draft a reply to the 10 a.m. meeting invite.”
 
-**Rate the card.** Tap Helpful or Not helpful. Google says this feedback changes later briefs.
-
-In Live, you can interrupt the spoken brief if **Interrupt Live responses** is on in Gemini settings. Ask follow-ups such as “Tell me more about the email from Jordan.”
-
-
-
-![Hands typing on a laptop during a focused work session](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+This path is useful when you cannot look at a screen. It uses the same Personal Intelligence connections as the written brief.
 
 
 
-## Hear the brief while you get ready
+![Close-up of a person using a smartphone in the morning near a window](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
 
-Google added Daily Brief to Gemini Live in August 2026. You can ask “What’s my daily brief?” and get a spoken summary of Gmail and Calendar highlights without staring at the phone.
 
-This works well when your hands are busy. Keep the phone unlocked nearby, start Live, and treat the audio as a first pass. Open the written brief only for items that need a tap.
 
-Gemini Live also handles inbox questions in the same session. You do not have to pick a separate “brief tool” first. Ask what the day looks like, then ask about one email in the same conversation.
+## How to stop the morning notification
+
+Google can push a Daily Brief alert each morning. If that ping is not useful:
+
+1. Open Gemini and tap your account menu.
+2. Open **Notifications**.
+3. Disable Daily Brief alerts. Leave other Gemini alerts on if you still want chat replies.
+
+The brief itself stays in the side panel. You are only turning off the interrupt, not the feature.
+
+## Practical ways to use the three sections
+
+Treat Top of mind as a short action queue, not an inbox replacement. Aim to clear or chat those items before noon.
+
+Use FYI as a scan, not a to-do list. Dated items belong there so they do not compete with real deadlines.
+
+Use Looking ahead once or twice a week. Google designed that block for longer goals and suggested next steps. Job seekers can watch recruiter threads. Parents can track school dates. Travelers can keep itinerary follow-ups in view without opening five apps.
+
+If a section stays empty, connect Calendar events with titles that state the outcome, not just “Meeting.” Clear subject lines in Gmail also help the ranker.
+
+Related Android privacy controls live in our [Android Private Space](/blog/android-private-space/) guide if you want a separate profile for personal mail that Daily Brief should never see.
+
+## Limits you should expect
+
+- US-only and English-only at the time of writing.
+- Personal accounts only.
+- Gradual rollout, so two phones on the same account can disagree for a few days.
+- No official lock-screen widget yet. Android Central has reported Google is exploring audio briefs and lock-screen placement; those are not shipping in the free US rollout.
+- Daily Brief is not a replacement for a full task manager. Mark complete inside Gemini does not always sync to every third-party to-do app.
+
+Keep Find Hub and other September Android Drop tools separate. Daily Brief does not store physical item locations. For that feature set, see the [September 2026 Android Drop guide](/blog/android-september-2026-drop-guide/).
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/q8B7z84NZUQ"
-    title="Meet Daily Brief: Your new morning AI agent. Here’s how it works."
+    title="Meet Daily Brief: Your new morning AI agent"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Control notifications and turn the feature off
+## Tips that improve the next brief
 
-Morning alerts are optional.
+Connect only the accounts you check every day. Extra inboxes add noise.
 
-To change the reminder:
+Star or snooze Gmail threads you care about. Daily Brief still reads unstarred mail, but starring is a strong signal.
 
-1. Open Gemini.
-2. Open Menu → Daily brief.
-3. Tap More → Notifications.
-4. Turn Daily brief notifications on or off.
+Put deadlines on Calendar events. “Submit report” with no date is weaker than “Submit report — Friday 5 p.m.”
 
-To stop the feature entirely:
+Ask Gemini in chat to remember a goal in plain language. Memory can surface that goal under Looking ahead.
 
-1. Open the menu and tap your profile photo or initial.
-2. Open Personal Intelligence.
-3. Turn off **Daily brief**.
-
-Turning the brief off does not disconnect Gmail or Calendar. Those stays under Personal Intelligence until you revoke them.
-
-If you share a device, use the personal account that owns the mail you want summarized. Do not leave Daily Brief enabled on a profile that other people open.
-
-## Privacy and limits you should expect
-
-Daily Brief only works if Gemini can read connected mail and calendar data. That is the tradeoff. Review Connected Apps if you do not want every label in Gmail included.
-
-Google still describes the rollout as gradual. English-only, US-only, personal accounts only. A Workspace-managed school or company login will not unlock it, even if you pay for Gemini at work.
-
-The brief can miss mail that sits in a filtered label, or over-rank a thread you already handled in another app. Use Mark complete and Not helpful instead of fighting the same card every morning.
-
-Chats you start from a card are stored in Gemini Apps Activity. Delete that activity if a brief item was sensitive and you do not want it in later context.
-
-## Tips that make the first week useful
-
-- Connect Calendar before Gmail if your mornings are meeting-heavy. The Top of mind list is easier to trust when events are complete.
-- Leave Memory on for at least a few days. Looking ahead uses it for goal suggestions.
-- Open source on any surprising card. If the source is an old chat, rate it Not helpful so it drops.
-- Use Live on commute days and the written list when you need to mark items done.
-- Keep one personal account for Daily Brief. Mixing a work alias into the same Gemini profile muddies the ranking.
+Review sources once a week. Disconnect Photos or YouTube if those apps leak hobby noise into work mornings.
 
 ## Conclusion
 
-Daily Brief is now a free US feature for personal Google Accounts that already use Personal Intelligence and Memory. Set those two controls, wait for the menu item, then treat the list as a short action queue rather than another inbox.
+Daily Brief is now a free morning agent for eligible personal Google accounts in the US. Turn on Personal Intelligence for Workspace and Memory, wait for the side-panel item, then train it with complete and thumbs-down actions.
 
-Spend the first week rating cards and marking them complete. That is how Gemini learns which school emails, recruiter notes, and calendar holds belong at the top. If the list stays noisy, turn notifications off or disable Daily Brief from Personal Intelligence without losing the rest of Gemini.
+The value is the ranking, not the word count. If Top of mind shows three real actions before breakfast, the setup paid for itself.
+
+Check Gemini’s official Daily Brief page when you travel or switch accounts. Region and account type still gate access.
 
 ## Sources
 
-- [Get started with your daily brief in Gemini Apps (Google Support)](https://support.google.com/gemini/answer/17077455)
-- [Daily Brief overview (Gemini)](https://gemini.google/overview/daily-brief/)
-- [The Gemini app becomes more agentic (Google I/O 2026 announcement)](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
+- [Gemini Daily Brief overview](https://gemini.google/overview/daily-brief/)
+- [The Gemini app becomes more agentic (Google I/O 2026)](https://blog.google/innovation-and-ai/products/gemini-app/next-evolution-gemini-app/)
 - [Get more done with Gemini Live](https://blog.google/innovation-and-ai/products/gemini-app/productivity-features-gemini-live/)
-- [Gemini Daily Brief is now free in the US (The Verge)](https://www.theverge.com/tech/991837/geminis-daily-brief-is-now-available-to-everyone-in-the-us)
+- [GeminiApp announcement on Daily Brief going free in the U.S.](https://x.com/GeminiApp/status/2095935548921897013)
