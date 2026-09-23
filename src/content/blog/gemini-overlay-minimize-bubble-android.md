@@ -1,140 +1,124 @@
 ---
-title: "How to Minimize Gemini Overlay Into a Bubble on Android"
-description: "Minimize the Gemini overlay on Android into a floating spark bubble so you can keep using apps while Gemini answers."
-pubDate: 2026-09-22T11:00:00
+title: "How to Minimize the Gemini Overlay Into a Bubble on Android"
+description: "Use Gemini’s new Minimize control on Android to shrink the overlay into a floating bubble so you can keep working while Gemini answers."
+pubDate: 2026-09-23T18:00:00
 heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["gemini", "android", "how-to", "tutorials"]
 noindex: false
 ---
 
-The Gemini overlay on Android used to lock the screen until you finished a chat. In early September 2026, Google began a wide rollout of a **Minimize** control that collapses that overlay into a floating spark bubble so you can keep using other apps while Gemini works.
+The Gemini overlay on Android used to own the screen until you closed it. Ask a long question and you waited, or you dismissed the sheet and lost the thread. In early September 2026, Google started rolling out a **Minimize** control that collapses that overlay into a floating spark bubble so you can switch apps while Gemini keeps working.
 
-Google’s own on-device copy states the point clearly: “Gemini is still available while you multitask. Tap to expand. Drag to move or dismiss.” The change lives in the Google app / Gemini overlay, not as a separate Play Store download.
+The change is small and easy to miss. This guide shows how to open the overlay, find Minimize, park the bubble, and pick when to use it instead of the full Gemini app or Android 17 App Bubbles.
 
-This guide covers how to open the overlay, minimize it, resume the same conversation, and when to use Android 17 App Bubbles instead.
+Reporting from 9to5Google and Android Authority describes a wide Android rollout that began around September 4, 2026. Your phone may still be waiting on a Google app or Gemini app update.
 
-## What the overlay is for
+## What the overlay bubble actually does
 
-Google documents the overlay as the compact assistant surface that appears when you say “Hey Google” or activate Gemini by touch, such as a long press of the power button. It sits on top of the current app instead of launching the full Gemini app.
+The overlay is the compact Gemini sheet you get from a side-button long-press, “Hey Google,” or a swipe shortcut. It is not the full Gemini app and not Gemini Live’s waveform circle.
 
-When the overlay opens over another app, Gemini can use on-screen context. Official help lists two examples: suggestions such as “ask about this screen” or “ask about this video” on YouTube, and drag-and-drop of generated images into apps that accept them.
+When Minimize is on your build:
 
-The overlay is useful for short prompts. It is a poor fit when you need Gems, long chat history, or tools that still require the full app. Minimize does not replace those screens. It keeps the current session alive while you leave the sheet.
+- A **Minimize** control appears above the overlay container after you send a prompt.
+- After the reply lands, the sheet can sit as a pill on the right side of the screen.
+- Minimize (or tapping outside the sheet on some builds) shrinks Gemini into a **spark logo bubble**.
+- Google’s on-device hint reads: “Gemini is still available while you multitask. Tap to expand. Drag to move or dismiss.”
 
-## What you need before Minimize appears
-
-1. Set **Gemini** as the digital assistant. On many Pixels and Galaxy phones this is already the default.
-2. Update the **Google** app and the **Gemini** app from Play Store.
-3. Confirm **Display over other apps** (Appear on top) is on for Google and Gemini. Settings → Apps → Special app access.
-4. Trigger Gemini with **Hey Google**, a **power-button long press**, or the corner swipe on supported Samsung devices.
-
-The Minimize button started rolling out widely on **4 September 2026**, according to multiple Android outlets that matched Google’s in-overlay text. Rollout is server-side. If you do not see the button, force-stop the Google app and try again after an update.
+The conversation stays attached to that bubble. You do not have to reopen the Gemini app and hunt chat history just to add a follow-up.
 
 
 
-![Person holding an Android phone with apps ready for multitasking](https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80)
+![Person holding an Android phone while switching between apps](https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80)
 
 
 
-## Open Gemini and send a prompt
+## How to get the Minimize button
 
-1. Open the app you want to keep using (Messages, Chrome, Gmail, Maps).
-2. Long-press the **power** or **side** button, or say **Hey Google**.
-3. Type or speak a prompt. Example: “Summarize the article on this screen in five bullets.”
-4. Send the prompt. Do not swipe Back yet. Back closes the overlay instead of shrinking it.
+1. Update **Gemini** and the **Google** app from Play Store. Early testers saw the button after Google app builds in the 17.30 range; later September reports describe a wider public roll-out.
+2. Confirm Gemini is your digital assistant: **Settings → Apps → Default apps → Digital assistant app** (wording varies by OEM).
+3. Open the overlay the way you already use it: long-press the power or side button, say “Hey Google,” or use your OEM gesture.
+4. Type or speak a prompt. Look for **Minimize** centered above the container while Gemini generates, and for the pill on the right after the answer.
+5. Tap **Minimize**. The sheet collapses to the spark bubble.
 
-Right after you send the prompt, look above the pill-shaped input. A **Minimize** chip appears, often centered at first, then sitting to the side of the response card.
+If you only see Close or a full-screen Gemini activity, you are not on the overlay build yet. Wait for the app update rather than resetting the assistant.
 
-## Collapse the overlay into a bubble
+## How to use the bubble day to day
 
-Tap **Minimize**. The sheet shrinks to a dark bubble with the Gemini spark.
+**Expand.** Tap the bubble. The same chat returns, including the answer that finished in the background.
 
-The first time you do this, Google shows the hint: tap to expand, drag to move or dismiss. After that, the bubble stays at the edge of the screen.
+**Move.** Drag the bubble. Coverage of the September roll-out says it snaps to a small set of edge slots (often six), not free placement anywhere on the display. Some users also see it jump back to the bottom-right after each minimize. Treat that as a current quirk, not a setting you missed.
 
-Reported behavior from the September rollout:
+**Keep working.** Open Mail, Chrome, Maps, or Messages while Gemini writes. This is the point of the feature: you asked for a summary or a draft and you do not want to stare at a thinking spinner.
 
-- The bubble snaps to a small set of edge positions rather than any pixel on the display.
-- After each minimize, some devices reset the bubble to the **bottom-right** corner. That is a known quirk, not a setting you missed.
-- After the answer loads, tapping **outside** the response sheet can also return you to the bubble.
-- The **Back** gesture still ends the overlay session. Use Minimize when you want to keep the chat.
+**Dismiss.** Drag the bubble to the dismiss target, or use the system Back gesture on the expanded overlay. Back typically closes the overlay instead of shrinking it. If you only wanted to hide Gemini, use Minimize or tap outside the sheet after the reply.
 
-Leave the bubble on screen and switch apps. Gemini can keep generating in the background. Open Messages, copy a code, or scroll a map, then tap the spark when you need the answer.
+**Ask again later.** Expand the bubble and send a follow-up. That is faster than opening the Gemini app, then the side panel, then the last chat.
+
+## Overlay bubble vs Android 17 App Bubbles
+
+Do not mix the two systems.
+
+The **Gemini overlay bubble** is Gemini-only. It keeps one assistant conversation parked while you use other apps.
+
+**Android 17 App Bubbles** turn almost any installed app into a system floating window from the launcher long-press menu. That is the better tool when you want Messages, Keep, or Maps floating, not the assistant. See our walkthrough of [Android 17 App Bubbles](/blog/android-17-app-bubbles/) if you want a stack of apps at the edge rather than a single Gemini spark.
+
+You can use both. Bubble your chat app. Minimize Gemini when you send a long prompt. Close whichever window you are not using so the edges of the screen stay usable.
 
 
 
-![Laptop and phone on a desk for switching between tasks](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80)
+![Laptop and phone on a desk during a focused work session](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80)
 
 
 
-## Resume, move, or dismiss the bubble
+## Four practical uses
 
-- **Expand:** tap the spark bubble. The same overlay and conversation come back. You do not start a new chat.
-- **Move:** drag the bubble along the edge. It parks on allowed snap points.
-- **Dismiss:** drag the bubble toward the dismiss target, or use Back on the expanded overlay if you are done.
+**Draft while you file.** Ask Gemini to turn messy notes into an email. Minimize immediately. File the receipt or attach the PDF. Expand the bubble, copy the draft, paste it.
 
-This is faster than opening the full Gemini app and hunting the side panel for the last thread. Use it when the prompt is still running or when you expect one or two follow-ups.
+**Research in Chrome.** Start a comparison prompt from the overlay. Minimize and keep reading the page. Expand when the table or shortlist is ready.
 
-If bubbles appear when you do not want them, Google’s community support points to two controls: turn off the Gemini overlay toggle in Gemini Settings if your build shows one, or revoke **Appear on top** for Gemini and Google. Restart after changing those permissions.
+**Navigation plus a question.** You are in Maps and need a packing list or a reservation script. Trigger the overlay, send the prompt, Minimize so the map stays full screen.
 
-## Overlay bubble versus Android 17 App Bubbles
+**Voice first, text later.** Speak the prompt, Minimize, then expand to edit the written answer. This avoids holding the overlay open with one hand while you walk.
 
-The Gemini spark bubble is **not** the same feature as system App Bubbles.
-
-Android 17 lets you long-press any launcher icon and choose **Bubble**, which parks that whole app in a floating window. Google documents that flow for phones, foldables, and tablets, with a Bubble Bar on large screens. See our walkthrough of [how to use Android 17 App Bubbles](/blog/android-17-app-bubbles/) if you want Messages or Keep as a persistent window.
-
-Use the **Gemini Minimize bubble** when you started from Hey Google or the power button and only need that chat nearby. Use a **system App Bubble** on the Gemini app itself when you want a richer window with history and tools while you work in another app.
-
-Do not stack both unless you have a reason. Two floating Gemini surfaces fight for the same edge of the screen.
+Skip Minimize for short timers, weather, and yes/no questions. Closing the overlay is faster when you do not need the reply later.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/EjvWewzECzY"
-    title="How to Use Gemini AI Shortcut on Android"
+  <iframe src="https://www.youtube.com/embed/4Rrmx1gMwcM"
+    title="Four ways to open the Gemini on-screen overlay on a Galaxy phone"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Practical ways to use Minimize
+## If Minimize never appears
 
-**Long answers.** Ask Gemini to draft an email, tap Minimize, and keep reading the thread you are answering. Expand when the draft is ready.
+- Update Gemini and the Google app, then force-stop both and reopen the overlay.
+- Confirm you are in the **overlay**, not the standalone Gemini activity. The full app already has its own chat list and does not need this bubble.
+- Check that Gemini is the default assistant. A leftover Google Assistant binding can open a different sheet.
+- Wait. September coverage called the roll-out gradual. A friend on the same Android version may see the button a few days earlier.
+- On Android 17, you can still [bubble the Gemini app itself](/blog/android-17-app-bubbles/) from the launcher if you want a persistent window and the overlay button has not arrived.
 
-**Screen questions.** Open the overlay over YouTube or a PDF, send “ask about this,” then minimize so playback or scrolling is not blocked while the model reads the page.
+Do not uninstall Gemini to “force” the UI. That only delays the server-side flag.
 
-**Codes and confirmations.** Prompt Gemini, jump to Gmail or Messages for a one-time code, then tap the bubble to paste context back into the chat.
+## Limits worth knowing
 
-**Maps and transit.** Start a “what’s nearby” prompt, minimize, and keep the map full screen.
+The bubble is a shortcut to one live overlay chat. It is not a second Gemini account, not a Live camera session, and not a system notification shade widget.
 
-Avoid Minimize for actions that need a visible confirmation in the overlay, such as sending a message or changing a smart-home device, until you have reviewed the preview.
+Positioning is constrained. If you need pixel-perfect placement, you will be frustrated. Park it on the edge opposite your thumb and leave it there.
 
-## If Minimize is missing
+Closing the bubble ends that overlay session on most builds. Save or copy anything you still need before you drag it to dismiss.
 
-- Update Google and Gemini, then **Force stop** the Google app (Settings → Apps → Google).
-- Confirm Gemini is the **default digital assistant** under Settings → Apps → Default apps.
-- Re-enable **Display over other apps** for Google and Gemini.
-- Trigger the overlay from an app, not only from the Gemini home screen. Some builds show Minimize only after a prompt is sent.
-- On work profiles, overlay permission can be blocked by policy.
-
-Google’s help page still describes the overlay as the surface for Hey Google and power-button activation. Minimize is a behavior of that same surface. It is not a separate toggle named “bubbles” in every Settings build.
-
-## Tips
-
-Keep prompts short when you plan to leave the overlay. Long Deep Research jobs still belong in the full app.
-
-Do not treat the spark bubble as a privacy shield. The conversation is the same Gemini session. Lock the phone if you step away.
-
-If the bubble covers a keyboard or a send button, drag it to another snap point before you type.
-
-Use system Back only when you intend to end the overlay. Muscle memory from the old overlay will close chats you meant to keep.
+Gemini Live already had a floating control for voice. Overlay Minimize is for typed and short voice prompts that return a written answer. Use Live when you want a spoken back-and-forth with camera or screen share.
 
 ## Conclusion
 
-Minimize turns Gemini from a modal sheet into a parked assistant. Send the prompt, tap Minimize, finish the thing you were already doing, then expand the spark when the answer is ready.
+Treat Minimize as the missing close-but-keep-it control. Send the prompt, shrink the sheet, finish the thing you were doing, then tap the spark when you want the answer.
 
-Set the overlay shortcut you already use (power button or Hey Google). Practice Minimize on one low-stakes prompt. After that, treat Back as “end session” and Minimize as “keep working.”
+Update the apps, trigger the overlay once, and look for the button above the container. If it is there, use it on the next long draft. If it is not, keep the Android 17 app bubble path in reserve and check again after the next Google app update.
 
 ## Sources
 
-- [Get started with the Gemini mobile app](https://support.google.com/gemini?p=activity_to_mobile) — Gemini Apps Help
 - [Gemini overlay gets bubble minimization and multitasking on Android](https://9to5google.com/2026/09/04/gemini-minimize-bubble/) — 9to5Google
 - [Google's new Gemini feature aimed at multitaskers is starting to roll out](https://www.androidauthority.com/gemini-overlay-minimize-button-rollout-3707874/) — Android Authority
-- [Multitask between apps with bubbles](https://support.google.com/pixelphone/answer/17126710) — Pixel Phone Help
+- [Talk naturally with Gemini Live (Android)](https://support.google.com/gemini/answer/15274899) — Gemini Apps Help
+- [Android 17 is here](https://android-developers.googleblog.com/2026/06/Android-17.html) — Android Developers Blog
