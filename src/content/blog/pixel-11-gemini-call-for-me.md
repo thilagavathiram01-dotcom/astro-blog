@@ -1,155 +1,138 @@
 ---
 title: "How to Use Gemini Call for Me on Pixel 11"
-description: "Set up Gemini Call for Me on Pixel 11: Phone beta, paid Gemini plan, live transcript, take-over, and limits from official Google Help."
+description: "Set up Gemini Call for Me on Pixel 11: eligibility, Phone beta, prompts, live transcript, takeover, and limits from Google Help."
 pubDate: 2026-09-25T10:00:00
 heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "pixel", "how-to", "android", "ai-tools"]
+tags: ["pixel", "gemini", "android", "tutorials"]
 noindex: false
 ---
 
-Google now lets Gemini place some business calls from your own Pixel 11 number. The feature is labeled **Call for Me** in the Gemini app. It is an early preview, not a replacement for every phone call you make.
+Pixel 11 can now place some business calls for you. Google calls the early preview **Call for Me**. You ask Gemini to book a table, check stock, or move an appointment. Gemini dials from your number, identifies itself as a Google AI assistant, and talks on a recorded line.
 
-Official steps live in [Gemini Apps Help](https://support.google.com/gemini/answer/18336420). This guide follows that page and related Phone by Google docs. It does not invent extra capabilities or countries.
+This is not Hold for Me. Hold for Me waits after you already dialed. Call for Me starts the call from the Gemini app and handles menus, hold music, and the conversation until you take over or the task ends.
 
-If you already use Pixel Call Assist tools such as Hold for Me and Direct My Call, treat Call for Me as the next step: Gemini starts the call, speaks first, and you watch or take over.
+Google published the steps in [Gemini Apps Help](https://support.google.com/gemini/answer/18336420). The preview is limited. If a control is missing, you are not in the eligible group yet.
 
-## What Call for Me actually does
 
-Google says you can ask the Gemini mobile app to call businesses to:
 
-- Get hours, product availability, service quotes, and other information
-- Book, confirm, and manage appointments and reservations
-- Navigate phone menus and wait on hold
+![Person holding a smartphone during a conversation](https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80)
 
-Gemini places the call on your device’s mobile network and your phone number. Standard carrier rates apply. For now, it can only call US numbers.
 
-Every call starts with a disclosure. Gemini states that it is an AI assistant from Google calling on a recorded line on your behalf, and it states your name.
 
-That is different from older Duplex-style restaurant booking, which used a separate assistant pipeline. Call for Me runs from the Gemini app plus the Phone by Google public beta on Pixel 11 hardware.
+## What you need before Gemini will dial
 
-## Who can use it today
+Google lists every gate on the same help page. You must meet all of them:
 
-Google lists every gate. You must meet all of them:
+- Be 18 or over and physically in the United States.
+- Use a Pixel 11 series phone with a US SIM card. Coverage reports include Pixel 11, 11 Pro, 11 Pro XL, and 11 Pro Fold.
+- Sign in to the Gemini mobile app.
+- Hold a paid Google AI subscription.
+- Install the **Public Beta** of Phone by Google from the Play testing track.
+- Install the latest Gemini app from Play Store.
+- Set the device language to English.
 
-- Be 18 or over and in the United States
-- Use a Pixel 11 phone with a US SIM card
-- Sign in to the Gemini mobile app
-- Have a Google AI subscription
-- Install the Public Beta of Phone by Google
-- Run the latest Gemini app from Play Store
-- Set the device language to English
+Gemini can only call US phone numbers in this preview. Standard carrier rates apply because the call uses your mobile network and your own number.
 
-Google also notes the feature is rolling out gradually. Meeting the list does not guarantee the **Call for me** button appears the same day.
+Join the Phone beta from [Google Play testing for Phone by Google](https://play.google.com/apps/testing/com.google.android.dialer). Get Gemini from [Play Store](https://play.google.com/store/apps/details?id=com.google.android.apps.bard).
 
-Reporting from 9to5Google and Android Authority adds that the early preview covers Pixel 11, 11 Pro, 11 Pro XL, and 11 Pro Fold. The support page itself names “a Pixel 11 phone.” If your model is in the 11 family and the button is missing, wait for the Gemini and Phone beta updates rather than sideloading random APKs.
+By starting a Call for Me session you accept Google’s Terms of Service, the Generative AI Prohibited Use Policy, and the Gemini Apps Agentic Calling Additional Terms.
 
-By using the feature you accept Google’s Terms of Service, the Generative AI Prohibited Use Policy, and the [Gemini Apps Agentic Calling Additional Terms](https://policies.google.com/terms/generative-ai/gemini-agentic-calling).
+## How Call for Me differs from older Pixel call tools
 
-![Close-up of a person holding a smartphone during a call](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+Pixel already ships Call Assist: Call Screen, Direct My Call, Hold for Me, Call Notes, and Scam Detection. Those tools help after you (or an incoming caller) start a session.
 
-## Install the two apps you need
+Call for Me is an outbound agent. You never tap the green dial button first. You describe the outcome. Gemini picks the number, discloses that it is an AI assistant calling on a recorded line on your behalf, and states your name.
 
-1. Open Play Store and update **Gemini** (`com.google.android.apps.bard`).
-2. Join the **Phone by Google** public beta: [play.google.com/apps/testing/com.google.android.dialer](https://play.google.com/apps/testing/com.google.android.dialer).
-3. Set Phone by Google as the default phone app if it is not already.
-4. Confirm **Settings → System → Languages** is English.
-5. Confirm a paid Google AI plan is active on the same account signed into Gemini.
+Google’s examples on the help page and in press coverage are routine local tasks: reserve patio seating, ask a hardware store if a part is in stock, move a haircut to next Thursday, or get a hem quote from a dry cleaner.
 
-Keep the phone on a US SIM. Google’s help page is explicit that the device must use a US SIM card.
-
-Pixel Call Assist extras still help even when Call for Me is not available. Hold for Me and Direct My Call remain in Phone settings. Pair everyday Pixel Drop tools from our [September 2026 Android Drop guide](/blog/android-september-2026-drop-guide/) if you are setting up a new 11-series device.
-
-Google’s older Call Screen walkthrough is still the clearest official video for how Pixel handles live transcripts on a call:
+If you already use multi-step Gemini tasks on Pixel, treat Call for Me as the voice-channel version of that pattern. For on-device item notes instead of calls, see [How to Use Find Hub Remembered Items with Gemini on Android](/blog/find-hub-remembered-gemini/).
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/V2IyttWHJfs"
-    title="Screen your calls on your Pixel phone"
+    title="Screen your calls on your Pixel phone — Google Help"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Start a Call for Me task
+## Start a call from the Gemini app
 
-Google’s official flow:
-
-1. Open the **Gemini** app on the Pixel.
-2. Ask Gemini to make the call. You can type `@Call for me` in the prompt.
-3. Be specific: dates, times, preferences, and a fallback option.
-4. Read the summary. It should show the number Gemini will dial and the details it will share, such as your name and contact info.
-5. Edit the task in chat if the number or details are wrong.
+1. Open the **Gemini** app on the Pixel 11.
+2. Ask it to place the call. You can type `@Call for me` in the prompt if you want the tool named explicitly.
+3. Be specific. Include the business name, date, time, party size, product name, and a fallback if the first option fails.
+4. Read Gemini’s summary. Confirm the number it will call and the details it plans to share, such as your name and contact info.
+5. Edit the task in chat if the summary is wrong.
 6. Tap **Call for me**.
 
-Google’s own prompt examples:
+Google’s own prompt patterns:
 
-- Call [Restaurant Name] and book a table for two at 7 PM tomorrow.
-- Ask the dry cleaner on Main Street how much they charge to hem pants.
+- Reservation: “Call [Restaurant Name] and book a table for two at 7 PM tomorrow.”
+- Quote: “Ask the dry cleaner on Main Street how much they charge to hem pants.”
 
-Useful extra detail to include: party size, indoor vs patio, a second time window, the exact SKU or color of a part, and whether Gemini may leave a callback number.
+Vague prompts waste a daily call slot. “Call the Italian place” is weaker than the restaurant’s exact name plus seating preference.
 
-Do not ask Gemini to invent a business number. Review the number in the summary before you tap the button.
 
-## Watch the call and take over
 
-While the call is active:
+![Smartphone on a desk next to a notebook](https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80)
 
-- **Cancel** before it connects if you tapped too early.
-- Follow the **live transcript** in Gemini, or listen to live audio.
-- Your microphone stays muted by default.
-- Tap **Audio** to toggle call audio.
-- Tap **Take over** to unmute. Gemini announces that you are taking over, then leaves the call.
 
-After the call ends you get a notification. Tap **View results** for Gemini’s outcome summary in the chat. You can also open the Phone app call history to read the full transcript and listen to the recording.
 
-Give feedback with thumbs up or down on the summary. Phone by Google may also show a survey later.
+## Monitor the line, cancel, or take over
 
-![Notebook and phone on a desk after reviewing a call summary](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80)
+Your microphone stays muted by default. You stay on the transcript instead of on speakerphone.
+
+- **Cancel** before the call connects.
+- **Monitor** with the live transcript in Gemini, or turn audio on with the Audio control if you want to hear the other party.
+- **Take over** when you need to speak. Gemini announces that you are taking over and then leaves the call. Your microphone unmutes.
+
+After the call, you get a notification. Tap **View results** to read Gemini’s outcome summary in the chat. The Phone app keeps the full transcript and the recording in call history.
+
+Give a thumbs up or thumbs down on the summary. Phone by Google may also show a survey later.
 
 ## What Gemini will not do on the phone
 
-Google lists hard blocks. Gemini cannot:
+Google lists hard blocks. Do not plan around them:
 
-- Place emergency calls such as 911
-- Complete payments or share credit card numbers
-- Relay Social Security numbers, passwords, or health information
-- Make telemarketing calls to sell products or services
+- No emergency numbers such as 911.
+- No payments, financial transactions, or credit card numbers.
+- No Social Security numbers, passwords, or health details.
+- No telemarketing or sales calls on your behalf.
 
-There is also a **daily cap** on how many calls Gemini can place for you. Google does not publish the number. If you hit the cap, wait until the next day.
+There is a daily cap on how many calls Gemini can place. When you hit it, wait until the next day.
 
-Businesses can refuse automated callers. Recipients who do not want Gemini-originated calls can opt out at [g.co/gemini/opt-out](https://g.co/gemini/opt-out). The same page lets them opt back in.
+If you do not want other people to reach you through Gemini’s agentic calling, opt out at [g.co/gemini/opt-out](https://g.co/gemini/opt-out). You can opt back in on the same page.
 
-## Privacy and recording notes
+## Practical prompts that match the help examples
 
-The line is recorded. Gemini discloses that at the start of every call. Google points to the [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961) and the agentic-calling section for how call data is handled.
+Write the outcome, constraints, and backup in one message.
 
-Practical rules that follow from the official text:
+- “@Call for me Reserve a patio table for two at River Birch Bistro tomorrow at 7 PM. If patio is full, take indoor near the window. Name on the reservation is Priya Shah.”
+- “Call Oak Street Hardware and ask if they have a 3/8-inch left-handed tap in stock today. If not, ask the next restock date.”
+- “Move my haircut at Northside Cuts from Thursday 4 PM to Friday after 3 PM. If Friday is full, keep Thursday.”
 
-- Only share what you approved in the pre-call summary.
-- Do not put card numbers, government IDs, or medical details in the prompt.
-- If a clerk asks for something Gemini cannot share, take over or end the call.
-- Review the stored recording in Phone history if you need a quote or confirmation number later.
+Review the summary every time. If Gemini picked the wrong location of a chain, fix it before you tap Call for me.
 
-If you keep banking apps or ID scans on the same phone, lock those apps with [Private Space](/blog/android-private-space/) so a recorded business call is not sitting next to unsecured documents.
+## Tips that keep the preview usable
 
-## Tips that keep the call useful
-
-- Write the prompt as a checklist: goal, constraints, backup plan.
-- Confirm the business name and city so Gemini does not dial a chain location across town.
-- Stay near the phone until the human answers. Take-over is instant only if you are watching.
-- Use Hold for Me and Direct My Call yourself when Call for Me is unavailable. Those tools still sit in Phone settings on many Pixels.
-- Do not treat the post-call summary as a legal contract. Check the transcript if a reservation time or price matters.
+- Enroll in the Phone public beta first. The feature lives in that track, not in the stable Phone APK alone.
+- Keep Gemini updated. Google is rolling eligibility in waves.
+- Stay on English and a US SIM. Other locales are out of scope for now.
+- Use Call for Me for shops and desks that expect booking calls. Use Hold for Me when you already started a support call yourself.
+- Read the [agentic calling data notes](https://support.google.com/gemini/answer/13594961) if you need the privacy detail before you approve name and number sharing.
 
 ## Conclusion
 
-Call for Me is a US-only Pixel 11 preview for paid Gemini users on the Phone by Google beta. You ask in the Gemini app, approve the number and the details Gemini will speak, then tap **Call for me**. Watch the transcript. Take over when a human needs you.
+Call for Me is Google’s first wide preview of Gemini placing a live business call from a Pixel 11. You describe the task, approve the number and the facts Gemini will share, then watch a transcript. You can cancel, listen, or take over.
 
-Keep emergency, payment, and medical calls on your own voice. Use the feature for stock checks, quotes, and routine bookings. When Google widens the preview, the same five-step flow in Gemini Help is the checklist to reuse.
+Meet the eligibility list, keep prompts exact, and stay inside the blocks Google published: no emergencies, no money, no sensitive IDs. When the daily limit hits, stop. The Phone app still holds the recording if you need to check what was said.
 
 ## Sources
 
 - [Ask Gemini to handle your everyday phone calls — Gemini Apps Help](https://support.google.com/gemini/answer/18336420)
 - [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961)
+- [Learn about Call Assist on your Pixel phone — Pixel Phone Help](https://support.google.com/pixelphone/answer/13383733)
+- [Use Hold for Me — Pixel Phone Help](https://support.google.com/pixelphone/answer/10071878)
+- [Phone by Google public beta — Google Play](https://play.google.com/apps/testing/com.google.android.dialer)
+- [Gemini app — Google Play](https://play.google.com/store/apps/details?id=com.google.android.apps.bard)
 - [Gemini Apps Agentic Calling Additional Terms](https://policies.google.com/terms/generative-ai/gemini-agentic-calling)
-- [Phone by Google public beta](https://play.google.com/apps/testing/com.google.android.dialer)
-- [Use Hold for Me — Phone app Help](https://support.google.com/phoneapp/answer/10071878)
-- [Screen your calls on your Pixel phone — Google Help (YouTube)](https://www.youtube.com/watch?v=V2IyttWHJfs)
+- [Screen your calls on your Pixel phone — Google Help on YouTube](https://www.youtube.com/watch?v=V2IyttWHJfs)
