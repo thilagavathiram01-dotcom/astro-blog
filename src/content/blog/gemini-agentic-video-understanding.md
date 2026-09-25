@@ -1,109 +1,71 @@
 ---
-title: "How to Use Agentic Video Understanding in the Gemini API"
-description: "Analyze long lectures and YouTube videos with Gemini’s agentic video mode: pick a Flash model, set processing to agentic, mix modes, and read processing_call steps from official docs."
-pubDate: 2026-09-19T15:30:00
-tags: ["ai-tools", "gemini", "tutorials"]
-heroImage: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1600&h=840&q=80"
+title: "How to Analyze Long Videos With Gemini Agentic Mode"
+description: "Turn on Gemini agentic video understanding to cut token use on long clips, find moments, and query YouTube via the Gemini API."
+pubDate: 2026-09-25T12:00:00
+heroImage: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "ai-tools", "tutorials", "developer", "ai"]
+noindex: false
 ---
 
-Static video analysis samples a clip at a fixed rate—usually one frame per second—and dumps those frames into the model’s context. That works for a two-minute demo. It is wasteful on a 90-minute lecture.
+Static video analysis still dumps frames into context at a fixed rate. That works for a two-minute clip. It wastes tokens on a lecture, a keynote, or a multi-hour recording.
 
-**Agentic video understanding** lets Gemini decide *what* to watch, *where* on the timeline, and *which* stream (frames, audio, or transcript) to load. Google announced the mode on 1 September 2026 and documents it on the Gemini API video-understanding pages. This guide stays inside those official steps.
+Google launched **agentic video understanding** on 1 September 2026. Gemini now decides what to watch, at what speed, and through which channel (frames, audio, or transcript). Official figures: up to **88% fewer tokens**, up to **66% lower analysis cost**, and up to **7% higher accuracy** on standard video benchmarks.
 
-<img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=1400&q=80" alt="Film camera and production monitor on a set" width="1400" height="800" loading="lazy" />
+This guide shows when to turn the mode on, how to call it, and what to expect from the response.
 
 ## What agentic mode changes
 
-Google’s product post says agentic processing pairs Gemini’s reasoning with native video tools. Instead of ingesting the whole file at a fixed FPS, the model searches, scans, and inspects target segments. Official claims for supported Flash models:
+Default (static) processing extracts frames at **1 FPS**, adds timestamps each second, and encodes audio at 1 Kbps. Google estimates about **100 tokens per second** of video at low media resolution, or about **300 tokens per second** at high resolution.
 
-- Up to **88%** lower token use
-- Up to **66%** lower analysis cost
-- Up to **7%** higher quality on long-form video
+Agentic mode does not ingest the whole stream first. The model runs an internal loop: it can pull a transcript slice, jump to a timestamp, raise the frame rate on a burst of motion, then answer. Navigation reasoning counts as **thought tokens**. Frames, audio, and transcript loaded on demand count as **tool-use tokens**.
 
-Those numbers come from Google’s own benchmarks on lectures, how-tos, and multi-hour recordings. Treat them as vendor results, not an independent audit.
+Supported models in the current docs:
 
-The same post lists practical jobs this unlocks: sub-second moment retrieval, better anomaly detection, and more precise counting—without you writing a custom frame sampler.
+- Gemini 3.8 Flash
+- Gemini 3.7 Flash
+- Gemini 3.6 Flash
+- Gemini 3.5 Flash-Lite
 
-## Supported models and where it runs
+Google’s blog names 3.7 Flash as the best quality-to-cost mix among the models tested at launch. Docs later added 3.8 Flash to the same list.
 
-Google documents agentic video on:
+Use this when you already ship voice agents with [Gemini 3.8 Live](/blog/gemini-3-8-live/). Live is for conversation. Agentic video is for files and YouTube URLs you already have.
 
-- Gemini **3.8 Flash**
-- Gemini **3.7 Flash**
-- Gemini **3.6 Flash**
-- Gemini **3.5 Flash-Lite**
 
-It is available for **uploaded files** and **public YouTube URLs** through the Gemini API in [Google AI Studio](https://aistudio.google.com/) and the Gemini Enterprise Agent Platform.
 
-Start new work on **`gemini-3.8-flash`**. Older Gemini models still do static video; they do not get the agentic loop.
+![Video editor reviewing a long timeline on a desktop workstation](https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=800&q=80)
 
-## Agentic vs static: when to pick each
 
-Official guidance is simple:
 
-- **Agentic** — Long videos, or questions that target a specific moment (“When does the speaker mention pricing?”). The model loads only what the prompt needs.
-- **Static** (default, 1 FPS) — Short clips under about five minutes, latency-sensitive calls, or cases where you need frame-level coverage of the whole clip.
+## When to use agentic vs static
 
-Clipping intervals (`start_offset` / `end_offset`) and custom frame-rate sampling are **static-only**. If you need a hard crop, use static on that file.
+Google’s developer docs give a simple rule: start with **agentic** unless the clip is short and you need every frame.
 
-For long or complex prompts, Google recommends streaming (`stream=True`) or background execution (`background=True`) so the connection does not time out while the model walks the timeline.
+**Choose agentic for:**
 
-## Try it first in AI Studio
+- Long-form video (how-tos, lectures, meetings, sports, multi-hour recordings)
+- Needle-in-a-haystack questions (“when does the speaker announce pricing?”)
+- Counting repeated actions or objects
+- Anomaly checks that need a higher FPS only on a short window
+- Sub-second moment retrieval that 1 FPS would miss
 
-You do not need a local SDK to see the difference.
+**Stay on static for:**
 
-1. Open [Google AI Studio](https://aistudio.google.com/).
-2. Start a chat with **Gemini 3.8 Flash**.
-3. Attach a lecture file or paste a public YouTube URL.
-4. Ask a targeted question: “What are the three main arguments, with timestamps?”
-5. Enable agentic processing if the UI exposes a processing control (the Interactions API sets `"processing": "agentic"`).
+- Clips under about five minutes where first-token latency matters more than tokens
+- Jobs that must inspect every frame at a fixed rate
 
-Google’s 2024 developer video still shows the Studio video player and in-video search. The API surface has moved to Interactions + agentic mode, but the player is a useful sanity check before you write code.
+Agentic mode can raise **time to first token** on short clips because the model spends a round trip planning what to load. That trade-off is the reason static remains the default.
 
-<div class="video-embed">
-<iframe src="https://www.youtube.com/embed/Mot-JEU26GQ" title="Building with Gemini: Video understanding — Google for Developers" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-</div>
+## Formats and length limits
 
-## Upload a file and run agentic processing
+Gemini accepts `video/mp4`, `mpeg`, `mov`, `avi`, `x-flv`, `mpg`, `webm`, `wmv`, and `3gpp`.
 
-Install a current `google-genai` SDK. Google’s cookbook notes **2.21.0 or later** for agentic video.
+Models with a 1M context window can process videos up to **3 hours** at low media resolution, or up to **1 hour** at high media resolution. YouTube inputs must be **public** (not private or unlisted).
 
-```python
-import time
-from google import genai
+The feature is live for uploads and YouTube URLs in the **Gemini API**, **Google AI Studio**, and the **Gemini Enterprise Agent Platform**. Google says the same efficiency work will reach the Gemini app on Flash and Flash-Lite, and later **Ask YouTube** on the watch page.
 
-client = genai.Client()
+## Call agentic mode in the Interactions API
 
-video_file = client.files.upload(file="path/to/lecture.mp4")
-
-while video_file.state.name == "PROCESSING":
-    time.sleep(2)
-    video_file = client.files.get(name=video_file.name)
-
-interaction = client.interactions.create(
-    model="gemini-3.8-flash",
-    input=[
-        {
-            "type": "video",
-            "uri": video_file.uri,
-            "mime_type": video_file.mime_type,
-            "processing": "agentic",
-        },
-        {"type": "text", "text": "What are the three main arguments presented?"},
-    ],
-)
-print(interaction.output_text)
-```
-
-The important field is `"processing": "agentic"`. Everything else is a normal file upload: wait until the File API reports `ACTIVE`, then send the interaction.
-
-Confirm the loop actually ran by inspecting `interaction.steps`. Official docs say **`processing_call`** and **`processing_result`** steps appear when the model fetched a segment or transcript. If those steps are missing, you likely stayed on static mode.
-
-<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=80" alt="Video camera filming on a wooden tripod" width="1400" height="800" loading="lazy" />
-
-## Analyze a public YouTube video
-
-You can skip the File API when the source is already public on YouTube.
+Google’s launch sample uses the Interactions API. Set `processing` to `"agentic"` on the video part.
 
 ```python
 from google import genai
@@ -111,7 +73,7 @@ from google import genai
 client = genai.Client()
 
 interaction = client.interactions.create(
-    model="gemini-3.8-flash",
+    model="gemini-3.7-flash",
     input=[
         {
             "type": "video",
@@ -124,87 +86,80 @@ interaction = client.interactions.create(
         },
     ],
 )
+
 print(interaction.output_text)
 ```
 
-Limits from the official page:
+Replace the sample URL with a public video you own or have rights to analyze. Keep the prompt specific: name the outcome (three announcements, a timestamp, a count) so the model knows what to hunt for.
 
-- Free tier: no more than **8 hours** of YouTube video per day
-- Paid tier: no length-based YouTube cap in the current docs
-- Gemini 2.5 and later: up to **10 videos** per request
-- Only **public** videos (not private or unlisted)
+When agentic processing is on, the response can include extra parts. Docs describe `tool_call` parts with `tool_type: "MEDIA_PROCESSING"` each time the model requests a segment or transcript. Log those if you need an audit trail of what the model watched.
 
-## Mix modes in one request
+<div class="video-embed">
+  <iframe src="https://www.youtube.com/embed/HyfhaGNVKUA"
+    title="Agentic approaches to processing long videos with Gemini"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen loading="lazy"></iframe>
+</div>
 
-A common pattern is “long reference + short query clip.” Process the long file agentically and the short clip statically.
+## A practical test plan
 
-```python
-interaction = client.interactions.create(
-    model="gemini-3.8-flash",
-    input=[
-        {
-            "type": "video",
-            "uri": lecture.uri,
-            "mime_type": lecture.mime_type,
-            "processing": "agentic",
-        },
-        {
-            "type": "video",
-            "uri": experiment.uri,
-            "mime_type": experiment.mime_type,
-            "processing": "static",
-        },
-        {
-            "type": "text",
-            "text": "Compare the lecture content with the experiment results.",
-        },
-    ],
-)
-```
+Run the same prompt twice—once static, once agentic—on a 20–90 minute file.
 
-Use this when you already know the short clip is dense and you want every frame, while the hour-long source only needs a few minutes of evidence.
+1. Upload the file in AI Studio or pass a public YouTube URL.
+2. Use a model from the supported Flash list.
+3. Ask one retrieval question, one counting question, and one summary question.
+4. Compare answer quality, token totals, and time to first token.
+5. Keep agentic if tokens drop and the answer still cites the right moment.
 
-## Multi-turn follow-ups
+Example prompts that match Google’s stated use cases:
 
-Video context can persist across turns.
+- “Give the timestamp of the first product price mention.”
+- “How many times does the presenter pick up the demo phone?”
+- “List three claims that are shown on screen but not spoken.”
+- “Flag any stretch where the feed freezes or the audio drops.”
 
-- **Stateful mode** (`previous`): the server keeps the video. Send the next question.
-- **Stateless mode** (`step_list`): copy **all** returned steps—including `processing_call` and `processing_result`—into the next request. Official docs warn that dropping those steps does not always error, but quality on follow-ups drops because the video context is gone. Those replayed steps also count toward input tokens.
+Do not ask the model to invent quotes that are not in the file. Ground the task in the video you sent.
 
-Ask timestamps in `MM:SS` form (“What happens at 12:40?”). For a richer dump, ask for audio *and* visual details with timestamps in one prompt.
 
-## Practical prompts that fit the mode
 
-Agentic mode rewards *searchable* questions:
+![Developer workstation with code and analytics on multiple screens](https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80)
 
-- “List every time a slide shows a dollar figure, with timestamps.”
-- “Find the first demo that fails and describe the UI state.”
-- “Count how many times a red warning banner appears.”
-- “Summarize only the Q&A, not the keynote.”
 
-Avoid “describe the whole video frame by frame.” That is a static job, and you will pay for it.
 
-## Limits and safety notes
+## Tips that keep costs down
 
-- File API max size: **20 GB** paid / **2 GB** free (official table).
-- Inline video: under **100 MB** and short clips.
-- YouTube: public URLs only.
-- Do not send private meeting recordings to a public notebook or an unsecured key.
-- Model output can still miss a beat in fast sports or dense UI. Spot-check timestamps before you ship a pipeline.
+**Ask for a moment, not a full recap.** A targeted question lets the model skip most of the file. A “summarize everything” prompt pulls more media than you need.
 
-Google also said agentic video will later power **Ask YouTube** on the watch page. That is a product roadmap item, not something you configure in the API today.
+**Prefer low media resolution first.** High resolution roughly triples the static token rate. Agentic mode still loads frames; start cheap, then raise resolution only on the window that failed.
+
+**Watch thought tokens.** Navigation is not free. If a short clip spends more on planning than on frames, switch that job back to static.
+
+**Keep YouTube public.** Private and unlisted links are rejected. Host a copy if the source cannot be public.
+
+**Treat transcripts as one tool, not the whole answer.** Agentic mode can read audio and frames. Use that when the on-screen slide disagrees with the spoken line.
+
+**Do not send footage you would not store with Google.** Same account and data rules as the rest of the Gemini API apply.
+
+## Limits to plan for
+
+Agentic video understanding is not a live camera stream. For spoken, low-latency sessions with a camera, use the Live models instead.
+
+It is also not video generation. Omni Flash and Veo create new clips. This feature only reads existing media.
+
+Rollout to the consumer Gemini app and Ask YouTube was described as “soon” and “in the coming months” on launch day. API access is the path you can use today.
+
+Accuracy gains in the blog are benchmark averages, not a guarantee on your file. Fast motion still needs the model to resample that window. If a count looks off, ask it to rewatch a tighter timestamp range.
 
 ## Conclusion
 
-Agentic video understanding is a processing flag, not a new product login. Point Gemini 3.8 Flash at a long file or a public YouTube URL, set `"processing": "agentic"`, and let the model fetch the minutes that answer the prompt. Use static mode for short, latency-sensitive clips. Read `processing_call` steps to confirm the loop ran, and keep those steps if you continue the conversation without server-side state.
+Agentic video understanding is a processing flag, not a new product. You point Gemini at a file or a public YouTube URL, set `processing` to `agentic`, and let the model load only the transcript, audio, and frames that answer the prompt.
 
-That is enough to replace a homegrown 1-FPS sampler for most lecture, meeting, and keynote workloads.
+Use it on long videos where static 1 FPS analysis is too expensive or too coarse. Keep static on short, latency-sensitive clips. Measure tokens and answers on your own footage before you change a production pipeline.
 
 ## Sources
 
-- [Introducing Agentic Video in Gemini](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/) — Google, 1 September 2026
+- [Introducing agentic video understanding with Gemini](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/) — Google
 - [Video understanding (Interactions API)](https://ai.google.dev/gemini-api/docs/video-understanding) — Google AI for Developers
-- [Video understanding (generateContent)](https://ai.google.dev/gemini-api/docs/generate-content/video-understanding) — Google AI for Developers
-- [Agentic video understanding developer guide](https://aistudio.google.com/learn/agentic-video-understanding-with-gemini) — Google AI Studio
-- [Gemini cookbook: Video understanding](https://github.com/google-gemini/cookbook/blob/main/quickstarts/Video_understanding.ipynb)
-- [Building with Gemini: Video understanding](https://www.youtube.com/watch?v=Mot-JEU26GQ) — Google for Developers
+- [Video understanding (generateContent API)](https://ai.google.dev/gemini-api/docs/generate-content/video-understanding) — Google AI for Developers
+- [Google AI announcements from August 2026](https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/) — Google
