@@ -1,82 +1,67 @@
 ---
-title: "How to Use Gemini Find Hub Remembered Items"
-description: "Ask Gemini to save item locations in Find Hub, add photos, update spots, and recall passports or keys on Android 16+."
-pubDate: 2026-09-26T10:00:00
-heroImage: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "android", "how-to", "tutorials", "google", "productivity"]
+title: "How to Save Items with Gemini in Find Hub"
+description: "Ask Gemini to remember where you put keys, passports, and tools, then find them later in the Find Hub Remembered tab on Android 16+."
+pubDate: 2026-09-26T06:30:00
+heroImage: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "gemini", "how-to", "tutorials", "productivity", "google"]
 noindex: false
 ---
 
-Passports, spare keys, and tax folders do not need a Bluetooth tag. Google’s September 2026 Android Drop added **Remembered items** in Find Hub so Gemini can store a name, a storage spot, and an optional photo.
+You already know Find Hub for phones, earbuds, and tracker tags. The September 2026 Android Drop added a different use: a private list of **untagged** things you set down and then forget.
 
-You speak a location once. Later you ask “Where is my passport?” or open the Remembered tab. The feature is live on Android 16 and later in countries where both Gemini and Find Hub are available, after you update Find Hub to version 3.1.732-02 or newer.
+Google calls this **remembered items**. You tell Gemini where a passport, spare key, or remote went. Find Hub stores the note. Later you ask Gemini, or you open the Remembered tab and search the list.
 
-This guide follows Google’s official Help Center steps and the September Android Drop announcement. It covers setup, voice save, manual entry, recall, edits, photos, and the limits Google documents.
+This guide follows Google’s official Android Help steps. It covers setup, voice commands, manual entry, photos, updates, and the limits that still apply.
 
-## What Remembered items can and cannot store
 
-Find Hub Remembered items is for **physical objects and places**, not notes in the abstract.
 
-Google lists these examples:
+![Set of house keys on a wooden table](https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80)
+
+
+
+## What remembered items are for
+
+Find Hub still locates devices and tags on a map. Remembered items do not ping a radio. They are a structured memory: name, storage spot, optional address, notes, and up to two photos.
+
+Google’s Help page lists useful categories:
 
 - Important documents: passports, birth certificates, car titles, tax returns
-- Everyday items: glasses, spare house keys, car keys, TV remotes, wallets
+- Everyday items: glasses, spare house keys, car keys, TV remote, wallet
 - Supplies and tools: batteries, medical supplies, screwdrivers, paint cans
 - Specific locations: where you parked, a picnic blanket at a park
-- Lent items: a book or charger you handed to someone else
+- Lent items: a book or charger you handed to someone
 
-You cannot use it for digital files, abstract ideas, or events. Those belong in Keep, Calendar, or Gemini Memory, not Find Hub.
+You cannot use the feature for digital files, abstract ideas, or events. It is for physical things.
 
-Remembered items stay **private to your Google Account**. Family members cannot view or edit them. That is an official limitation, not a setting you missed.
+Remembered items stay in **your** Google Account. Google states they are private. Family members cannot see or edit them.
 
-## Requirements before you start
+## Requirements before you try a command
 
-Confirm all of the following:
+Google lists three hard requirements:
 
-1. The phone runs **Android 16 or later**.
-2. **Find Hub** and **Gemini** are installed from Play Store.
-3. Both apps use the **same Google Account**.
-4. Gemini is the **default digital assistant**.
-5. Find Hub is at least **3.1.732-02** (the build that added the Remembered tab).
-6. You are in a country where Gemini and Find Hub are supported.
+1. An Android phone or tablet on **Android 16 or later**.
+2. The **Find Hub** app and the **Gemini** app, both signed in to the same Google Account.
+3. Gemini set as the device **default digital assistant**.
 
-Voice save and voice recall need an internet connection. After an item is stored, you can usually browse the list in Find Hub if the network drops.
+Update Find Hub from the Play Store. Coverage of the rollout points to version **3.1.732-02** as the build that added the Remembered tab next to Devices and People.
 
-If you also use Gemini Live for camera help, pair this workflow with [Guided vision in Gemini Live](/blog/gemini-live-guided-vision/) when you need a spoken description of what is in front of you rather than a stored drawer location.
+The feature is part of the [September Android Drop](https://blog.google/products-and-platforms/platforms/android/android-drop-september-2026/), not a Pixel-only exclusive. Availability still depends on country support for Gemini and Find Hub, plus the app update reaching your device.
 
+If Gemini is not the default assistant, voice commands will not write to Find Hub. Open Settings, search for digital assistant, and select Gemini.
 
+## Save an item with Gemini
 
-![House keys on a wooden table ready to log in Find Hub](https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80)
+Activate Gemini with “Hey Google,” or press and hold the power button if touch activation is on.
 
-
-
-## Set Gemini as the default assistant
-
-Voice commands fail if another assistant still owns “Hey Google” or the power-button hold.
-
-1. Open **Settings**.
-2. Go to **Apps** → **Default apps** → **Digital assistant app** (wording varies by OEM).
-3. Choose **Gemini**.
-4. In Gemini settings, turn on voice activation if you want “Hey Google.”
-5. Optionally enable power-button hold for Gemini.
-
-Open Find Hub once and accept permissions. If you want the app to attach your current address when you add an item, set Location to **Allow all the time**. Google documents that this lets Find Hub save the address even when the app is closed.
-
-## Save an item with Gemini voice
-
-This is the path Google shows in the official Android Drop clip.
-
-1. Say “Hey Google” or press and hold the power button.
-2. Name the object and the storage spot in one sentence.
-3. Confirm if Gemini asks.
-
-Phrases Google documents:
+State the item and the place in one sentence. Official example phrases:
 
 - “Hey Google, remember in Find Hub that my passport is in the top bedroom drawer.”
 - “Save to Find Hub that the spare house key is under the front porch mat.”
 - “Gemini, my green umbrella is by the front door.”
 
-Name the **exact spot**, not only the room. “Kitchen drawer next to the stove” beats “kitchen.” Use the same item name later so Gemini updates instead of creating a duplicate.
+Speak the real drawer, shelf, or bag. Vague phrases such as “somewhere in the house” give you a weak record later.
+
+Gemini needs an internet connection to save a new item. If the network drops mid-command, wait and try again.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/scZrDWSdd64"
@@ -86,20 +71,26 @@ Name the **exact spot**, not only the room. “Kitchen drawer next to the stove�
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Save an item manually in Find Hub
+## Save an item inside the Find Hub app
 
-Voice is optional. The Remembered tab has its own add flow.
+Voice is optional. Google documents a manual path:
 
 1. Open **Find Hub**.
-2. Tap **Remembered** (bookmark icon with the Gemini spark).
+2. Tap **Remembered** (bottom right in the current layout).
 3. Tap **Add**.
-4. Fill in:
-   - **Name** — what the item is (Passport)
-   - **Storage spot** — the exact place (Top bedroom drawer)
-   - **Location** — Home, or a street address
-5. Tap **Save**.
+4. Fill in **Name** (for example, “Passport”) and **Storage spot** (for example, “Top bedroom drawer”).
+5. Add **Location** if you want a place name or street address.
+6. Tap **Save**.
 
-If Location permission is granted, Find Hub can detect the current address while you add or edit the item. You can type a place name and an address.
+If you grant Find Hub location permission, the app can fill the current address when you add or update an item. To let it do that while the app is closed, set location access to **Allow all the time**.
+
+Use Manual entry when you are standing at the drawer and do not want to talk out loud.
+
+
+
+![Paper documents and a pen on a desk](https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80)
+
+
 
 ## Find an item later
 
@@ -109,82 +100,77 @@ Ask Gemini in plain language:
 - “Where did I put the AA batteries?”
 - “Where’s my car key?”
 
-Or open Find Hub → **Remembered** and scan the list. Use the search bar when the list grows.
+Or skip voice and open the app:
 
-Saved rows stay in the app if you go offline. New voice saves still need a connection.
+1. Open Find Hub.
+2. Tap **Remembered**.
+3. Browse the list, or use the search bar.
 
+Once an item is saved, Google says you can usually read it in the Find Hub app even if the phone is briefly offline. New voice saves still need a network.
 
+## Update a storage spot without creating a duplicate
 
-![Person holding an Android phone to check a saved item location](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Update a storage spot or address
-
-When you move the object, tell Gemini to update or move it.
-
-Google’s examples:
+Items move. Google’s Help page tells you to say **update** or **move**:
 
 - “Hey Google, update in Find Hub that my passport is now in the home safe.”
 - “Move my spare house key to the kitchen drawer in Find Hub.”
 
-If you reuse the **exact existing name**, Gemini updates that row instead of adding a second passport.
+If you reuse the **exact name** of an existing item when you save a new spot, Gemini updates that record instead of making a second one.
 
-Manual edit:
+In the app:
 
-1. Open Find Hub → **Remembered**.
+1. Open Remembered.
 2. Tap the item.
 3. Change **Storage spot** or **Location**.
 
-## Add photos and notes
+Add extra context the same way:
 
-Photos are a Find Hub edit, not a required voice step. Google allows up to **two photos** per item.
+- **Add a photo** — up to two photos per item.
+- **Notes** — a short hint such as “blue folder behind the manuals.”
 
-1. Open the item in **Remembered**.
-2. Tap **Add a photo**.
-3. Tap **Notes** and add a short hint (“red envelope behind winter scarves”).
+Photos help when two drawers look the same. Notes help when the spot is a bag inside a bag.
 
-A photo of the closed drawer is often more useful than a photo of the passport itself. You already know what the document looks like. You forget which piece of furniture hides it.
-
-## Remove an item
+## Remove an item you no longer need
 
 1. Open Find Hub → **Remembered**.
 2. Tap the item.
-3. Tap **Remove from Find Hub**, then confirm **Remove**.
+3. Choose **Remove from Find Hub**, then confirm **Remove**.
 
-Clear rows after you return a borrowed tool or after a trip so the list stays searchable.
-
-## Troubleshooting
-
-**Gemini does not save to Find Hub.** Check Android 16+, matching accounts, default assistant, Find Hub version, and network. Say “in Find Hub” or “save to Find Hub” in the first command so the request is routed to the right app.
-
-**You cannot share the list.** Remembered items are account-private. There is no family sharing toggle in the current Help article.
-
-**Voice fails offline.** Gemini needs the network to write a new item. Browse existing rows in the app instead.
-
-**Duplicates appear.** Use one consistent name (“passport”, not “blue passport” then “US passport”) so updates attach to the same row.
-
-**Feature missing.** Update Find Hub from Play Store. The Remembered tab shipped in 3.1.732-02 and rolled out widely in mid-September 2026. Availability still follows Gemini and Find Hub country support.
+Clear old records so “where are my keys?” does not match a drawer you emptied last month.
 
 ## Practical habits that keep the list useful
 
-Save the item **as you put it down**, not later from memory. Voice is faster than unlocking the app if Gemini is already the default assistant.
+Save at the moment you put the object down, not hours later. Memory of “which drawer” fades fast.
 
-Limit the list to objects that are costly or painful to replace: documents, spare keys, medicines, tools you lend. Do not catalog every cable.
+Use stable names. If you save “passport” once, keep saying “passport,” not “travel booklet.”
 
-Use Location for items that leave the house (parked car, picnic kit). Use Storage spot for furniture-level detail at home.
+Add a photo for documents and look-alike tools. Add a Location field when the same item can live at home or at work.
 
-Treat Remembered items as a catalog, not a tracker. It will not ping a bag on a train. Pair tagged hardware in the Devices tab when you need a live signal.
+Do not treat this as a live tracker. A stolen wallet will not appear on a map unless it has a tag or is a Find Hub device.
+
+The same September drop also shipped [Motion Assist on Android 17](/blog/android-17-motion-assist/) for passengers who get sick while reading, and Guided vision in Gemini Live. Remembered items is the one to set up the next time you file a passport or hide a spare key.
+
+## Troubleshooting
+
+**Gemini does not save to Find Hub.** Confirm Android 16+, both apps, the same account, and Gemini as the default assistant. Update Find Hub, then retry with an explicit “remember in Find Hub” phrase.
+
+**The Remembered tab is missing.** The tab arrived with the Find Hub app update after the drop post. Install Play Store updates and reopen the app.
+
+**You cannot share the list with family.** That is expected. Google currently stores remembered items privately on one account.
+
+**A command failed offline.** Connect to the network to create or change items. Open the app to read items that already exist.
+
+**Gemini created a duplicate.** Use the exact existing name and the words “update” or “move,” or edit the original row in the app and delete the extra one.
 
 ## Conclusion
 
-Remembered items fills the gap between a Bluetooth tag and a forgotten note. Gemini writes the row. Find Hub holds the name, storage spot, address, photos, and notes. You ask once and get the drawer back.
+Remembered items will not replace a tracker tag on a bag you lose outside the house. They do replace the sticky note you never write when you drop a passport into a drawer.
 
-Set Gemini as the default assistant, update Find Hub, and save one real object today. The next time you ask where the passport is, the answer should already be in the Remembered tab.
+Set Gemini as the assistant, update Find Hub, and save one real item today. The next time you ask “where is it,” you want that answer already sitting in the Remembered tab.
 
 ## Sources
 
-- [Remembered items in Find Hub — Android Help](https://support.google.com/android/answer/18132896)
-- [September Android Drop — blog.google](https://blog.google/products-and-platforms/platforms/android/android-drop-september-2026/)
-- [Find Hub Remembered tab rollout — 9to5Google](https://9to5google.com/2026/09/11/find-hub-remembered/)
-- [Official Android Drop video — YouTube](https://www.youtube.com/watch?v=scZrDWSdd64)
+- [Remembered items in Find Hub (Android Help)](https://support.google.com/android/answer/18132896)
+- [September Android Drop (Google)](https://blog.google/products-and-platforms/platforms/android/android-drop-september-2026/)
+- [Find Hub Remembered tab rollout (9to5Google)](https://9to5google.com/2026/09/11/find-hub-remembered/)
+- [Stash it and remember it | Android Drop (YouTube)](https://www.youtube.com/watch?v=scZrDWSdd64)
