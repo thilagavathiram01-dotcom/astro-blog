@@ -1,204 +1,153 @@
 ---
-title: "How to Use Google Flow’s Six New Creative Tools"
-description: "Learn how to open, remix, and run Google Flow’s six new tools for audio, captions, thumbnails, materials, and motion graphics."
+title: "How to Use Google Flow’s 6 New Creative Tools"
+description: "Use Google Flow’s six new tools for sound, captions, thumbnails, textures, and motion graphics, then remix each workflow."
 pubDate: 2026-09-26T10:00:00
-heroImage: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "tutorials", "google", "ai", "productivity"]
+heroImage: "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "tutorials", "how-to", "google", "ai", "productivity"]
 noindex: false
 ---
 
-Google Flow is Google Labs’ AI creative studio. On 23 September 2026, Google published six new partner-built tools you can open, duplicate, and change with a prompt instead of writing an app.
+Google Flow now ships six ready-made tools built with working creatives in sound, architecture, and digital content. Each tool is a reusable workflow you can open, duplicate, and change with a written description.
 
-The tools cover sound design, captions, social thumbnails, architectural materials, animated collages, and Swiss-style motion graphics. This guide shows how to find them, run a first job, remix a tool, and build one of your own.
+Google Labs published the set on 23 September 2026. The tools live at [flow.google.com](https://flow.google.com/). You do not write code. You describe the job, run the tool, then export stems, captions, images, or motion clips.
 
-Official source: the [Google Labs post on six new Flow tools](https://blog.google/innovation-and-ai/models-and-research/google-labs/six-new-tools-built-by-creatives/). Flow itself lives at [flow.google.com](https://flow.google.com/).
+This guide lists what each tool does, who built it, and a first-run checklist that stays inside official product claims.
+
+## What Flow Tools actually are
+
+At Google I/O 2026, Labs added **Flow Tools**: custom workflows created in natural language inside Flow. Partners could share a tool. Other users could remix it. Gemini Omni Flash sits under video generation and editing in the same product family.
+
+The September drop is not a new model. It is six public templates aimed at work that used to take a stack of apps: ambience and foley, captions, social covers, material studies, mixed-media collages, and Swiss-style motion graphics.
+
+Open Flow with the same Google account you use for a Google AI plan. Availability still follows plan and region rules that Google lists on its AI subscription pages. If a tool link asks you to sign in, that is expected.
+
+## The six tools at a glance
+
+| Tool | Built by | Job |
+| --- | --- | --- |
+| Mondo Sónico | Ricardo Villavicencio and Sebastián Carvallo | Background ambience, foley, and effects on separate editable tracks |
+| CaptionCast | Jay Pirabakaran | Transcribe, style, and animate multilingual captions in one pass |
+| ThumbnailForge | Jay Pirabakaran | Turn one image, a headline, and a prompt into social thumbnails |
+| Surface | Vojtek Morsztyn | Generate textures and map them onto 3D walls, ceilings, and floors |
+| CollageMotion Pro | Hashem Al-Ghaili | Animated mixed-media collages from text prompts |
+| SwissFlow Studio | Hashem Al-Ghaili | Convert scripts into Swiss-style motion graphics |
+
+Google’s post names those authors and those jobs. Treat extra claims you see on third-party blogs as unverified until Labs repeats them.
 
 
 
-![Video timeline and color grading workspace on a desktop display](https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80)
+![Video editor reviewing clips on a desktop timeline](https://images.unsplash.com/photo-1574717024653-61fd2cf4dcd6?auto=format&fit=crop&w=800&q=80)
 
 
 
-## What Google Flow tools actually are
+## How to open and remix a tool
 
-A Flow tool is a saved workflow. You describe the job in natural language. Flow turns that description into a reusable pipeline you can run on a project.
+1. Sign in at [flow.google.com](https://flow.google.com/).
+2. Open one of the six shared links from the Labs post (each tool has its own URL).
+3. Run the default example so you see inputs, outputs, and export options.
+4. Duplicate the tool before you change it. Remixing a copy keeps the original template intact.
+5. Rewrite the description in plain language. Example: “Keep CaptionCast’s single-pass captions, but force all titles into a 16:9 YouTube safe area.”
+6. Export. Mondo Sónico is documented as stem-capable. Other tools return media you then drop into Flow’s timeline or an external editor.
 
-Google’s own tutorial lists typical jobs: image edits, script brainstorming, and text overlays. The September 2026 set is more specific. Partners in architecture, sound design, and digital content built tools they already needed in production.
+Google’s own closing advice is short: try the tools, duplicate and remix them, or describe a new task from scratch. Stay inside that loop on the first day.
 
-You do not have to start from a blank prompt. Open a shared tool link, run it, then duplicate it and change the instructions.
+## Mondo Sónico: sound beds you can split
+
+Creative director Ricardo Villavicencio and sound designer Sebastián Carvallo built Mondo Sónico after years of shared projects. The tool generates custom background ambience, foley, and contextual effects.
+
+Tracks stay separate and editable. You can export individual stems for post-production. That matters if a mixer needs the room tone without the footsteps.
+
+**First prompt pattern:** name the space, the action, and the length. “Rain on a tin roof, 20 seconds, plus distant traffic, no music, stems for rain and traffic.” Then listen before you drop the bed under a Flow clip.
+
+Do not treat generated audio as cleared music. Check your own license and platform rules before you publish.
+
+## CaptionCast and ThumbnailForge: the social pair
+
+Digital storyteller Jay Pirabakaran shipped two tools.
+
+**CaptionCast** removes a manual subtitle pass. It transcribes, styles, and animates multilingual captions in seconds. Use it when the spoken track is already locked and you need on-screen type that survives phone speakers on mute.
+
+**ThumbnailForge** takes one image, a headline, and a prompt and produces photorealistic social thumbnails. That is a cover-art job, not a full campaign system. Generate three variants, pick one, and resize in your usual publisher.
+
+Pair them with a Flow video pass if you already use Gemini Omni for picture. Caption after picture is locked. Thumbnail last, from a still that actually appears in the cut.
+
+If you also draft copy in Workspace, keep voice drafting in [Docs Live with Gemini 3.8](/blog/docs-live-gemini-3-8/) and keep visual work in Flow. The products do different jobs.
+
+## Surface: materials on 3D planes
+
+Interior designer and technologist Vojtek Morsztyn built Surface to speed early material studies. The tool generates custom textures — Google cites examples from Minimalist patterns to Art Deco tiling — and maps them in real time onto 3D walls, ceilings, and floors.
+
+Use Surface when you need options, not a final render for a client bid. Export stills of two or three mappings. Then take the winner into CAD or a lighting tool you already trust.
+
+Name the finish and the plane. “Matte lime plaster on the long wall, honed limestone on the floor, no gold leaf.” Vague style words produce vague maps.
+
+
+
+![Architect reviewing material samples and drawings on a studio table](https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80)
+
+
+
+## CollageMotion Pro and SwissFlow Studio
+
+Filmmaker and science communicator Hashem Al-Ghaili contributed two motion tools.
+
+**CollageMotion Pro** targets mixed-media documentary looks that are slow to assemble by hand. It generates dynamic, animated collages from text prompts. Feed it a short list of subjects and a duration, not a novel.
+
+**SwissFlow Studio** turns scripts into Swiss-style motion graphics. Google frames it as a way to skip traditional keyframing so designers and marketers can focus on the story. Write the on-screen copy first. Then let the tool set type and motion.
+
+Both tools are starting points. Review timing, type size, and claims on screen before you publish. Generated motion can crowd small phone frames.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/ECquAokER_8"
-    title="How to use Tools in Google Flow | Find Your Flow"
+  <iframe src="https://www.youtube.com/embed/NL7izhdQ7vk"
+    title="Introducing your Agent and Gemini Omni in Google Flow"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Open Flow and reach the Tools Gallery
-
-1. Sign in at [flow.google.com](https://flow.google.com/) with the Google account that has Flow access.
-2. Open an existing project or start a new one.
-3. Select **Tools** in the left navigation. That opens the Tools Gallery.
-4. Browse Google-built tools and partner tools, or paste one of the shared links below.
-
-Google’s walkthrough also shows remixing from the gallery and creating a tool from the gallery homepage with **Create Tool**.
-
-Availability still follows Google Labs and subscription rules. If a tool link asks you to join a waitlist or upgrade, finish that step before you expect exports to work.
-
-## The six new tools, one by one
-
-Use the official shared links. Each page is the live tool, not a screenshot.
-
-### 1. Mondo Sónico — layered sound for a scene
-
-Creators: Ricardo Villavicencio and Sebastián Carvallo.
-
-[Mondo Sónico](https://flow.google.com/shared/tool/3bc30441-f559-4ab8-a1b7-6e7046613ad2) builds background ambiance, foley, and contextual effects. Tracks stay separate and editable so you can export stems for a DAW or a video timeline.
-
-How to run a first pass:
-
-1. Open the shared tool and attach the clip or scene description you already have in the project.
-2. State the space, time of day, and what should stay quiet. Example: “Night street, distant traffic, footsteps on wet pavement, no music.”
-3. Generate, then solo each stem. Mute anything that fights dialogue.
-4. Export stems if your next step is Premiere, DaVinci, or a sound session.
-
-Keep music out of this tool unless you want it. The point is syncable beds and effects, not a finished score.
-
-### 2. CaptionCast — captions in one pass
-
-Creator: Jay Pirabakaran.
-
-[CaptionCast](https://flow.google.com/shared/tool/cd1f4c6f-3364-45cd-9940-af9d6e6f4e48) transcribes, styles, and animates multilingual captions. Google describes it as a single-pass pipeline.
-
-How to run a first pass:
-
-1. Drop in the video that needs captions.
-2. Name the spoken language and the on-screen language if they differ.
-3. Specify style once: weight, placement, and whether words should animate with speech.
-4. Review timing on a short section before you run a long cut.
-
-Treat the output as a draft. Check names, numbers, and any line that sits over a face.
-
-### 3. ThumbnailForge — social covers from one still
-
-Creator: Jay Pirabakaran.
-
-[ThumbnailForge](https://flow.google.com/shared/tool/1dbfa3aa-8bf1-466d-b0fe-43a1d4534aff) takes one image, a headline, and a prompt, then builds photorealistic social thumbnails.
-
-How to run a first pass:
-
-1. Upload a still that already matches the video or article.
-2. Write the headline you will actually publish, not a placeholder.
-3. Add platform constraints in the prompt: YouTube 16:9, Shorts 9:16, or a square post.
-4. Generate two or three variants and pick contrast first, not extra decoration.
-
-Do not invent clickbait the source does not support. The tool formats a cover. You still own the claim on the thumbnail.
-
-
-
-![Headphones and audio controls on a studio desk](https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80)
-
-
-
-### 4. Surface — materials on walls, ceilings, and floors
-
-Creator: Vojtek Morsztyn.
-
-[Surface](https://flow.google.com/shared/tool/2359f20e-edbc-4bff-b346-c6f5ca501937) generates custom textures and maps them onto 3D surfaces. Google cites styles from Minimalist patterns to Art Deco tiling.
-
-How to run a first pass:
-
-1. Load a room or massing view from the project.
-2. Name the material family: lime plaster, terrazzo, oak slats, glazed tile.
-3. Generate, then swap only one plane at a time so you can compare options.
-4. Export stills for a client deck before you commit to a render farm job.
-
-Use this in ideation. It is not a substitute for a specification sheet or a physical sample.
-
-### 5. CollageMotion Pro — mixed-media collages from text
-
-Creator: Hashem Al-Ghaili.
-
-[CollageMotion Pro](https://flow.google.com/shared/tool/a86bf42e-55e3-415d-8440-3ab4e1c8776a) builds animated collages from text prompts. The stated goal is documentary-style mixed media without a manual After Effects stack for every beat.
-
-How to run a first pass:
-
-1. Write the beat, not a mood board. Example: “1950s lab stills, modern satellite map, slow push on a handwritten note.”
-2. Limit the first run to one sequence.
-3. Replace any generated still that you do not have rights to use in the final cut.
-4. Export and drop the clip on the timeline as a B-roll layer.
-
-Rights still matter. A generated collage can look finished and still be unusable in a commercial if source images are not cleared.
-
-### 6. SwissFlow Studio — script to Swiss-style motion graphics
-
-Creator: Hashem Al-Ghaili.
-
-[SwissFlow Studio](https://flow.google.com/shared/tool/565b778b-5332-49a0-a3e6-829eaaca5f88) converts scripts into Swiss-style motion graphics. Google positions it for creators, designers, and marketers who want motion design without a full keyframe session for every title card.
-
-How to run a first pass:
-
-1. Paste a short script or title list, one idea per line.
-2. State duration and aspect ratio up front.
-3. Generate, then tighten type size and contrast before you add more motion.
-4. Export and replace placeholder type with brand fonts in your editor if the client has a kit.
-
-## Remix a tool so it matches your pipeline
-
-Google’s post is explicit: duplicate and remix any tool. The official How to use Tools video shows the same path.
-
-1. Open the tool from the gallery or shared link.
-2. Duplicate it into your project so you do not edit the public original.
-3. Rewrite the instruction block. Keep inputs and outputs named the way your team talks.
-4. Run one short asset. If the output format is wrong, change the instruction, do not add a second tool yet.
-5. Save the remix with a team name, for example `CaptionCast — EN to TA news`.
-
-A good remix is narrow. “Captions for 15-second product clips, Tamil plus English, lower-third only” beats “make my videos better.”
+Google’s official Flow video above covers the agent and Gemini Omni Flash that sit under this product line: multi-step actions, conversational edits, and custom tools. The September templates reuse that same Tools surface.
 
 ## Build a tool from scratch
 
-From the Tools Gallery homepage, choose **Create Tool**. Describe the job the same way you would brief an editor.
+If none of the six match the job, open Flow and describe the task. Labs said at I/O that you can ask for a particular image editor, video resizer, or custom shader in language, then share the result.
 
-A prompt that works:
+Keep the first description narrow:
 
-> Create a tool that takes one product photo and a 12-word headline, then outputs a 1080×1920 end card with a safe zone for platform UI and a flat background that matches the product color.
+- One input type (clip, still, or script).
+- One output type (stems, captions, still, or motion clip).
+- One constraint (aspect ratio, duration, or language).
 
-Then:
+Run it twice. If the second run drifts, add a negative instruction: “No logo. No extra text. Keep the same character wardrobe.” Then duplicate the working version so you do not overwrite it.
 
-1. Name inputs: photo, headline, brand hex if you have one.
-2. Name outputs: resolution, file type, and whether you need a transparent layer.
-3. Run two tests on different products.
-4. Share the tool with the people who will actually run it.
-
-Flow also lets you vibe-code smaller utilities inside a project. Keep those experiments in a sandbox project so a bad prompt does not clutter a client folder.
-
-Related reading on this site: [how Android App Functions expose actions to agents](/blog/android-appfunctions-agents/). The same habit applies here. Name the action, constrain the output, then let the model fill the steps.
+August 2026 Flow updates also added start and end frames, 1080p or 4K export, and a low-credit 360p draft path that you can later upscale. Use the cheap draft size while you tune a new tool.
 
 ## Practical limits
 
-- Flow is a Labs creative studio. Quotas, model versions, and export resolutions change when Google ships updates such as the [August 2026 creative control pass](https://blog.google/innovation-and-ai/models-and-research/google-labs/new-creative-controls-google-flow/) (start and end frames, 1080p and 4K export, 360p drafts).
-- Partner tools are starting points. They are not locked production specs.
-- Audio stems from Mondo Sónico still need a human pass if the show has legal music or trademarked sonic logos.
-- Captions and thumbnails can be wrong. Read them before publish.
-- Architectural materials from Surface are concept art until a specifier signs off.
+- **Plans and regions.** Flow and Gemini Omni Flash follow Google AI plan rules. Confirm the account before you promise a client a same-day render.
+- **Credits and resolution.** Draft at 360p when the product offers it. Spend full-resolution credits after the cut is right.
+- **Rights.** Generated audio, faces, and type still need your review. Do not assume a stem is cleared for ads.
+- **Accuracy.** CaptionCast is fast. It is not a legal transcript. Read every line.
+- **Remix ethics.** Credit the original tool authors when you publish a walkthrough of their template.
 
-If you already use Gemini for multi-step phone tasks, keep that work on-device or in the Gemini app. Flow is for media projects, not for [Motion Assist](/blog/android-17-motion-assist/) or system settings.
+## A 20-minute first session
 
-## A 20-minute practice plan
+1. Open Mondo Sónico. Generate a 15-second room tone and export stems if the UI offers them.
+2. Open CaptionCast on a short clip you own. Fix two caption errors by hand.
+3. Open ThumbnailForge with a still from that clip and one headline.
+4. Duplicate CaptionCast and change only the aspect-ratio rule.
+5. If architecture is your work, run Surface on one wall and one floor finish.
+6. Stop. Do not stack all six tools on one video on day one.
 
-1. Open Flow and create a project named `Flow tools lab`.
-2. Run Mondo Sónico on a 10-second silent clip.
-3. Run CaptionCast on the same clip.
-4. Run ThumbnailForge with the first frame and a real headline.
-5. Duplicate CaptionCast, pin the language pair you use every week, and save the remix.
+## Conclusion
 
-That is enough to learn the gallery, the shared links, and the remix path without burning a full day of credits.
+The September Flow drop is a set of shared recipes, not a replacement for your editor of record. Pick the one tool that matches today’s bottleneck — sound, type, covers, materials, collage, or motion titles — and remix that copy.
+
+Google published the six tools so working creatives can start from a peer’s workflow instead of a blank prompt. Use that shortcut, then put your name on the export only after you have watched and listened all the way through.
 
 ## Sources
 
-- [6 new Google Flow Tools built by industry creatives (Google Labs)](https://blog.google/innovation-and-ai/models-and-research/google-labs/six-new-tools-built-by-creatives/)
-- [Google Flow](https://flow.google.com/)
-- [Google Flow creative control updates, August 2026](https://blog.google/innovation-and-ai/models-and-research/google-labs/new-creative-controls-google-flow/)
-- [How to use Tools in Google Flow (YouTube, Google)](https://www.youtube.com/watch?v=ECquAokER_8)
-- [Create with Flow | How to use Google’s AI Creative Studio (YouTube, Google)](https://www.youtube.com/watch?v=oKjDeMtBZ4g)
+- [See six new tools in Google Flow](https://blog.google/innovation-and-ai/models-and-research/google-labs/six-new-tools-built-by-creatives/) — Google Labs, 23 September 2026
+- [Introducing Gemini Omni for Google Flow and Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/flow-updates/) — Google Labs, 19 May 2026
+- [Google Flow brings new creative control features](https://blog.google/innovation-and-ai/models-and-research/google-labs/new-creative-controls-google-flow/) — Google Labs, 27 August 2026
+- [Introducing your Agent and Gemini Omni in Google Flow](https://www.youtube.com/watch?v=NL7izhdQ7vk) — Google
+- [Google Flow](https://flow.google.com/) — product site
