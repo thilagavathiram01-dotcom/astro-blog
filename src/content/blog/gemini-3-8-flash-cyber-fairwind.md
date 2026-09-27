@@ -1,127 +1,138 @@
 ---
-title: "How to Apply for Fairwind and Use Gemini 3.8 Flash Cyber"
-description: "Apply for Google's Fairwind Program, compare Gemini 3.8 Flash and Flash Cyber, and request the allowlisted model in Gemini Enterprise."
-pubDate: 2026-09-22T10:00:00
+title: "How to Apply for Gemini 3.8 Flash Cyber via Fairwind"
+description: "Apply to Google’s Fairwind Program, request Gemini 3.8 Flash Cyber, and use CodeMender with public models while you wait."
+pubDate: 2026-09-20T14:00:00
 heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "gemini", "security", "developer"]
+tags: ["ai", "gemini", "security", "developer"]
 noindex: false
 ---
 
-Gemini 3.8 Flash is the public workhorse Google shipped on 2 September 2026. **Gemini 3.8 Flash Cyber** is the sibling that is not for everyone. It is a post-trained model for vulnerability discovery and patch generation, and Google only issues it to trusted defenders through the **Fairwind Program**.
+Google split Gemini 3.8 Flash into two products on 2 September 2026. The public model is a general coding and agent workhorse. The second model, **Gemini 3.8 Flash Cyber**, is a defender-only variant for vulnerability discovery and automated patching.
 
-This guide stays on the official path: who can apply, what Google says the model is for, how Cloud customers request the allowlist, and what everyone else should use instead. It does not cover offensive techniques.
+You cannot pick Cyber from the open Gemini API catalog. Access sits behind the **Fairwind Program**, a limited track for governments, critical-infrastructure operators, and trusted security partners. This guide covers who qualifies, how to apply, what Google published about the model, and what you can ship today without an allowlist.
 
-## What Google actually shipped
-
-Google announced two 3.8 Flash variants the same day.
-
-**Gemini 3.8 Flash** (`gemini-3.8-flash`) is the general model. Google lists an introductory price of **$0.75 per million input tokens** and **$3.75 per million output tokens** through 31 December 2026, then **$1.50 / $7.50** from 1 January 2027. It is available to developers in the Gemini API and AI Studio, to enterprises in Gemini Enterprise, and to Google AI Pro and Ultra users in the Gemini app, AI Mode in Search, and Gemini in Sheets.
-
-**Gemini 3.8 Flash Cyber** (`gemini-3.8-flash-cyber`) is a post-training variant of that same Flash line. Google Cloud documents it as tailored for cybersecurity use cases. Modalities: text in and out, plus image, audio, and video as input only. Context window: **1,048,576** tokens. Maximum output: **65,536** tokens. Live API is not supported. Access is **GA behind an allowlist**.
-
-Google is explicit about why the rails differ. Standard 3.8 Flash ships with safeguards against misuse in CBRN and cyber offense, following the Frontier Safety Framework. Flash Cyber ships with a more permissive set of mitigations for cybersecurity, so it is limited to trusted defenders.
+This is a product and access walkthrough from official Google posts. It is not a vulnerability research tutorial.
 
 
 
-![Close-up of a laptop showing code on a desk](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
+![Server racks in a data center used for enterprise security work](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80)
 
 
+
+## What Gemini 3.8 Flash Cyber is
+
+Google describes Gemini 3.8 Flash Cyber as a post-training version of Gemini 3.8 Flash tailored for cybersecurity. The model ID on Gemini Enterprise Agent Platform is `gemini-3.8-flash-cyber`.
+
+Official specs published for the enterprise surface include:
+
+- Text in and out; image, audio, and video as input only
+- 1,048,576-token context window
+- 65,536 maximum output tokens
+- Thinking, system instructions, structured output, and context caching supported
+- Gemini Live API not supported
+
+Google says the model is generally available **behind an allowlist**. Request access through your Google team or apply on the [Fairwind Program](https://deepmind.google/fairwind-program/) site.
+
+The public sibling, Gemini 3.8 Flash, stays on the open developer path at the introductory price of $0.75 per million input tokens and $3.75 per million output tokens through 31 December 2026. That model is the right default for coding agents. Cyber is the extra, gated stack.
+
+## Why Google gates the cyber variant
+
+Google is explicit about the safety split. Standard 3.8 Flash ships with safeguards against misuse in CBRN domains and cyber offense, under the Frontier Safety Framework. Flash Cyber ships with a **more permissive set of mitigations for cybersecurity**, so it is limited to trusted defenders who need a broader set of cyber capabilities.
+
+Google also states that it invested in vulnerability **fixing** from the start and prioritized that work over offensive capabilities such as exploitation. Treat that as the product intent: discovery plus patching inside a vetted org, not a public red-team toy.
+
+Fairwind partners must agree to operational standards. Google lists limits such as restricting use to employees on internal cybersecurity, incident response, or penetration testing teams, plus multi-factor authentication.
 
 ## Who Fairwind is for
 
-Fairwind is not a public API key upgrade. Google describes it as a limited program for governments and trusted partners that need advanced cyber defense tools.
+Google is staging first access to groups it calls most critical to resilience:
 
-Eligible groups in the official posts:
+- Governments and national cyber authorities
+- Critical infrastructure operators in healthcare, telecommunications, energy, and finance
+- Core technology platforms that underpin many downstream products
 
-- Trusted government authorities
-- Critical infrastructure operators
-- Software maintainers
-- A set of Google Cloud customers and cybersecurity partners
+DeepMind says the program already works with **over 650 partners** globally. Featured quotes on the Fairwind site include security teams such as Wiz. Membership is not a consumer Google AI Pro perk.
 
-DeepMind’s Fairwind page says the program currently works with **over 650 partners** globally. Partners get prioritized access to Gemini 3.8 Flash Cyber and can use the model with **CodeMender**, Google’s harness for finding, verifying, and generating patches inside an organization’s secure cloud environment.
+If you are an independent researcher, a student, or a product engineer without a defender mandate, expect a no. Use 3.8 Flash, CodeMender with public models, and your existing review process instead.
 
-If you are an independent researcher, a student, or a product team that only needs stronger coding agents, you do not apply for Cyber. Use 3.8 Flash and the thinking-level controls covered in [our Gemini 3.8 Flash thinking levels guide](/blog/gemini-3-8-flash-thinking-levels/).
+## How to apply
 
-## How to apply for Fairwind
+Google points applicants to one public form and one enterprise path.
 
-1. Read Google’s program post: [Proactive cyber defense for governments and enterprises](https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/).
-2. Open the application surface at [deepmind.google/fairwind-program](https://deepmind.google/fairwind-program/).
-3. Apply as an organization, not a personal Gmail hobby account. Expect to describe your defensive role (SOC, product security, national CERT, maintainer of widely used software).
-4. If you already have a Google Cloud or Gemini Enterprise relationship, also contact your Google account team. Cloud docs say access is allowlisted; you can request it through your team **or** Fairwind.
-5. Wait for approval before you treat `gemini-3.8-flash-cyber` as a model string you can call. Unapproved projects will not see it.
+### 1. Open the official Fairwind page
 
-Google does not publish a public SLA for review time. Plan as if this is a vendor security review, not an instant toggle.
+Go to [deepmind.google/fairwind-program](https://deepmind.google/fairwind-program/). Read the partner description and the Gemini 3.8 Flash Cyber summary before you submit anything. The same apply link is repeated on the [3.8 Flash launch post](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/).
 
-## How approved teams use Flash Cyber
+### 2. Use your Google Cloud relationship if you have one
 
-Once the project is allowlisted, Cloud documents the model ID as **`gemini-3.8-flash-cyber`** on the Gemini Enterprise Agent Platform. Typical official surfaces:
+Enterprise docs say Flash Cyber is GA behind an allowlist. Contact your Google account team and ask for `gemini-3.8-flash-cyber` on Gemini Enterprise Agent Platform. Cloud customers who are not in Fairwind can still run **CodeMender with publicly available models** on that platform, plus tools in [AI Threat Defense](https://cloud.google.com/security/ai-threat-defense).
 
-- Gemini Enterprise / Agent Platform studio, with the Cyber model selected
-- CodeMender, where Fairwind partners combine the model with Google’s patch harness
-- Organization-controlled cloud projects with the security controls listed in Cloud docs (data residency, CMEK, VPC-SC, AXT on online prediction and context caching)
+### 3. Describe a defensive workload
 
-Keep work inside that project. Do not copy production source into an unapproved consumer Gemini chat.
+Applications that match Google’s published audience look like this:
 
-Google’s published defender outcomes (from the 2 September launch post):
+- You operate or maintain software that other organizations depend on
+- A named security, IR, or product-security team will own the keys
+- Patches will land in a reviewable pipeline inside your cloud environment
+- Access will not sit on a general company chatbot identity
 
-- **CyberGym:** frontier-level Pass@1 for autonomous vulnerability discovery, ahead of 3.5 Flash Cyber and larger frontier models in Google’s comparison.
-- **Internal multi-language discovery set:** success rate **exceeding 70%** across complex codebases in **20** languages.
-- **CWE-Bench (Collinear) patching:** Pass@1 of **47.2%**, close to a leading frontier model at 47.8%, at lower cost.
-- **Chrome Security:** 3.8 Flash Cyber produced **2.6 times** more correct patches than the best much larger commercial models they compared.
-- **Wiz:** **+7.5–9.7%** higher recall on an internal pen-test benchmark at **2.3–5.2x** lower cost than other leading frontier models.
-- **Google Cloud Vulnerability Research:** used the model to find a critical foundational vulnerability in **less than two hours**, work the team says usually takes months.
+Do not invent a threat story. Google already published the use cases it wants: find, verify, and fix vulnerabilities at agentic scale inside a secure environment.
 
-Those figures come from Google and named partners. Treat them as vendor-reported, not as a promise for your repo.
+### 4. Plan controls before the model arrives
 
-
-
-![Security operations workspace with multiple monitors](https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80)
-
-
-
-## What to do if you are not on Fairwind
-
-Most developers should stay on **Gemini 3.8 Flash**.
-
-Google positioned 3.8 Flash for long-horizon coding and autonomous agents. It remains fully supported alongside 3.7 Flash for efficiency-first workloads. On hard tasks the model can spend more tokens and extra tool calls; drop the thinking effort when you need cheaper, shorter answers.
-
-Practical split:
-
-| Need | Model |
-| --- | --- |
-| Agents, coding, Sheets, Gemini app | `gemini-3.8-flash` |
-| Voice / live dialogue | Gemini 3.8 Live family, not Cyber |
-| Allowlisted vuln research and patch loops | `gemini-3.8-flash-cyber` via Fairwind |
-
-Do not try to jailbreak the public Flash model into a substitute for Cyber. Google calls out prompt-injection robustness gains on the 3.8 line and still restricts the cyber-permissive variant.
-
-## Safety rules that stay in force
-
-Google says it prioritized **fixing** over **exploitation** when training Flash Cyber. Fairwind exists because the remaining capability is dual-use.
-
-Use the model only on code and systems you are authorized to test. Run generated patches through your normal review, tests, and release gates. CodeMender is a research-and-patch assistant, not an auto-merge bot.
-
-If your job is consumer security on a phone rather than a code agent, start with platform controls such as [Android theft protection](/blog/android-theft-protection-setup/) instead of a restricted cyber model.
+Fairwind access does not replace change control. Keep Cyber off shared developer API keys. Scope repositories. Log prompts and tool calls. Require a human to merge any generated patch. Google’s own language is “verified, deployment-ready patches” generated **within an organization’s secure cloud environment**, not dropped straight to production.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/FH8WuuKt5Xc"
-    title="Gemini 3.8 Flash and Flash Cyber: Agentic AI, Coding and Cybersecurity Upgrades"
+  <iframe src="https://www.youtube.com/embed/2uVH2WUYb5E"
+    title="GOOGLE IS BACK! (Gemini 3.8 Flash)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Tips
+## What Google published about performance
 
-- Apply as a named security or infrastructure org. Personal accounts stall.
-- Pair Cyber with CodeMender when Google grants both. The launch post treats them as one offering.
-- Keep 3.8 Flash for product agents so you do not burn Fairwind quota on chat.
-- Watch the Flash price change on **1 January 2027** if you budget API spend.
-- Confirm the model string in Cloud docs before you hard-code it. Allowlists move by project.
+Cite only the figures Google put on the launch post.
+
+- **CyberGym:** Google says Flash Cyber shows frontier-level performance on this industry benchmark for finding vulnerabilities, ahead of 3.5 Flash Cyber and larger frontier models. CyberGym is C/C++ heavy, which is why Google added a second test.
+- **Internal multi-language discovery:** Google ran an internal benchmark across complex codebases in **20 programming languages** and reports a success rate **exceeding 70%**.
+- **CWE-Bench (Collinear):** Flash Cyber records **47.2% pass@1** versus **47.8%** for a leading frontier model Google places next to it, at lower cost per rollout.
+- **Chrome Security:** Google says 3.8 Flash Cyber produced **2.6 times** more correct patches to Chrome vulnerabilities than the best commercial models that are much larger.
+- **Wiz:** Google reports **+7.5–9.7%** higher recall on Wiz’s internal penetration-testing benchmark at **2.3–5.2x** lower cost than other leading frontier models.
+- **Google Cloud Vulnerability Research:** the team used the model to find a critical foundational vulnerability in **less than two hours**, work Google says usually takes months.
+
+Those numbers are Google’s and partners’ claims. Reproduce them only inside your own allowlisted environment.
+
+
+
+![Close-up of code on a monitor during a security review](https://images.unsplash.com/photo-1510511459019-5dda7724bfd9?auto=format&fit=crop&w=800&q=80)
+
+
+
+## What to do while you wait
+
+You do not need Cyber to start a defensive loop.
+
+1. Put **Gemini 3.8 Flash** on Gemini Enterprise or the Gemini API for general code review and long-horizon engineering tasks.
+2. Turn on **CodeMender** with a public model if you are already a Google Cloud customer. Google positions that pairing as available without Fairwind.
+3. Keep patch review in the same place you review human changes: tests, owners, and rollback.
+4. If your team builds browser or desktop agents, stay on the public computer-use path documented in our [Gemini Computer Use API guide](/blog/gemini-computer-use-api/). That tool is separate from Flash Cyber.
+
+CodeMender plus Flash Cyber is the Fairwind bundle. CodeMender plus a public Gemini model is the path Google already opened to any Cloud customer.
+
+## Practical tips
+
+- Treat Cyber as a **second identity**, not a new system prompt on the company chatbot.
+- Store allowlisted keys in the security team’s secret manager, not in a shared `.env`.
+- Ask Google whether your region and data-residency controls apply. Enterprise docs list CMEK, VPC-SC, and related controls for online prediction and context caching.
+- Budget tokens like an agent, not a chat. Flash models can spend extra tokens on harder tasks at higher effort levels.
+- Pair every generated patch with a test that fails before the fix and passes after it. Google’s published story is verified patches, not raw diffs.
 
 ## Conclusion
 
-Gemini 3.8 Flash is the model you can use today for coding and agents. Gemini 3.8 Flash Cyber is the allowlisted defender variant behind Fairwind and Gemini Enterprise. Apply only if you are a government, critical-infrastructure, maintainer, or trusted Cloud security team. Everyone else should ship on public 3.8 Flash and leave vulnerability research to authorized programs.
+Gemini 3.8 Flash Cyber is a defender product with a public application form and an enterprise allowlist. Apply on the Fairwind site if you run government, infrastructure, or platform security. Everyone else should ship on 3.8 Flash and CodeMender with public models, then revisit Fairwind when the org actually owns a defensive mandate.
+
+The useful split is access, not marketing names. Public Flash is the coding model. Cyber is the gated twin for find-and-fix work inside a reviewed cloud environment.
 
 ## Sources
 
@@ -129,4 +140,5 @@ Gemini 3.8 Flash is the model you can use today for coding and agents. Gemini 3.
 - [Proactive cyber defense for governments and enterprises](https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/) — Google
 - [Fairwind Program](https://deepmind.google/fairwind-program/) — Google DeepMind
 - [Gemini 3.8 Flash Cyber](https://deepmind.google/models/gemini/cyber/) — Google DeepMind
-- [Gemini 3.8 Flash Cyber model docs](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash-cyber) — Google Cloud
+- [Gemini 3.8 Flash Cyber model page](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-8-flash-cyber) — Google Cloud
+- [GOOGLE IS BACK! (Gemini 3.8 Flash)](https://www.youtube.com/watch?v=2uVH2WUYb5E) — YouTube
