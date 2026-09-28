@@ -1,145 +1,145 @@
 ---
-title: "How to Connect New Apps to Gemini (Sept 2026)"
-description: "Connect Airtable, Linear, Adobe, Peloton and more to Gemini. Official steps, @mentions, privacy notes, and the September 2026 app wave."
-pubDate: 2026-09-25T08:00:00
-heroImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "gemini", "tutorials", "productivity", "google"]
+title: "How to Connect Apps in Gemini After Google’s New Wave"
+description: "Connect Airtable, Adobe, Linear, and more in Gemini. Step-by-step setup for web and Android after Google’s September 2026 app rollout."
+pubDate: 2026-09-28T09:00:00
+heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "ai-tools", "tutorials", "productivity", "google"]
 noindex: false
 ---
 
-Google added another wave of Connected Apps to Gemini on 23 September 2026. You can now keep project boards, design files, credit reports, and workout plans inside one chat instead of hopping between tabs.
+Google added another wave of Connected Apps to Gemini on 23 September 2026. You can now manage projects, edit images, plan workouts, and check tickets from one chat instead of hopping between tabs.
 
-This guide uses Google's own setup steps. You will turn apps on, mention them with `@`, and disconnect anything you no longer want Gemini to see.
+The official Gemini App blog lists three buckets: productivity (Airtable, Linear, monday.com, PandaDoc, Wispr AI, Zoho), creativity (Adobe, Picsart, Squarespace, Webflow), and lifestyle (apartments.com, Experian, Peloton, SeatGeek). This guide shows how to turn those connectors on, call them with `@`, and keep activity and permissions under control.
 
-## What rolled out in September 2026
+## What Connected Apps actually do
 
-Mai Lowe, Group Product Manager for the Gemini app, listed three buckets in the official blog post:
+A Connected App is a service Gemini can read from or write to after you grant access. Google apps such as Gmail, Drive, and Calendar usually switch on with one toggle. Third-party tools open an OAuth screen so you pick the exact workspace, base, or Creative Cloud account.
 
-- **Productivity:** Airtable, Linear, monday.com, PandaDoc, Wispr AI, Zoho
-- **Creativity:** Adobe, Picsart, Squarespace, Webflow
-- **Lifestyle:** apartments.com, Experian, Peloton, SeatGeek
+Gemini uses a connected app on its own when the prompt is a clear match. You can also force a tool by typing `@` in the prompt box and choosing the app. Airtable’s developer docs and Adobe’s connector help both document that `@` pattern.
 
-Availability still depends on country, language, device, and whether you are in the web app or the mobile Gemini app. The list on your account may not match a screenshot from another region.
-
-Earlier 2026 waves already added Canva, Dropbox, Instacart, OpenTable, Zillow Rentals, Granola, Otter.ai, Wix, Ticketmaster, and others. Treat Connected Apps as a growing catalog, not a one-time toggle.
-
-
-
-![Laptop and notebook on a desk used for connecting work apps](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Before you connect anything
-
-Sign in to Gemini with the Google Account you actually use for those services. Connected Apps do not work if you are signed out.
-
-Turn **Keep Activity** on if you want apps on gemini.google.com, iOS, or a watch. Google's help page is explicit: when Keep Activity is off, those surfaces lose Connected Apps. On Android, only Device assistance, Phone, Messages, and WhatsApp stay available in that state.
-
-Work and school accounts follow a different admin policy. Your Workspace admin can allow or block Workspace apps and other Google apps inside Gemini. If a toggle never appears, check with IT before you assume the feature is missing.
-
-Gemini still cannot use Connected Apps inside Google Messages.
-
-## How to connect an app on the web
-
-1. Open [gemini.google.com](https://gemini.google.com) and sign in.
-2. Open **Settings** (sometimes labeled Settings & help).
-3. Open **Connected Apps**. If you only see **Personal Intelligence**, open that first, then Connected Apps.
-4. Find the app and turn it on.
-5. Complete any permission screen from Gemini and from the third-party service.
-
-To inspect what an app can and cannot do, tap **Learn more** under its name. Google documents supported actions, unsupported actions, and example prompts on that details page.
-
-You can browse the same catalog at [gemini.google.com/apps](https://gemini.google.com/apps).
-
-## How to connect an app on Android
-
-1. Open the Gemini app and sign in.
-2. Open your account menu.
-3. Open **Connected apps** (wording can sit under Personal Intelligence on some builds).
-4. Confirm **Keep activity** is on if you want the full catalog.
-5. Toggle the app and accept the permission flow.
-
-Some Android-only helpers never show on iOS or on the web list. That is expected. Google says the catalog is filtered by Gemini app, device, and country.
-
-If you also use Gemini inside Gmail, see [How to Use Gemini in Gmail](/blog/gemini-in-gmail/) for inbox-specific actions that sit outside this settings page.
-
-## How to use a connected app in a chat
-
-Type your request as usual. Gemini can pick a connected app on its own when the prompt matches a supported action.
-
-To force a specific app, type `@` in the composer and choose it from the list. If that app is off, Gemini either connects it or asks for permission first.
-
-Examples that match Google's own categories:
-
-- `@Linear show open issues assigned to me this week`
-- `@Airtable list records in the content calendar that have no owner`
-- `@Adobe create a square social crop from this brief`
-- `@Peloton what strength classes fit a 30-minute lunch break`
-- `@SeatGeek find tickets for the next home game under $80`
-
-Follow any confirmation card before Gemini writes, books, or sends. High-stakes actions should stay behind an explicit confirm step.
-
-
-
-![Team planning a project on a whiteboard after linking productivity tools](https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Custom apps with MCP
-
-If a tool is not in the partner list, Gemini Apps can still talk to a personal or third-party **Model Context Protocol (MCP)** server. Linking that server adds a custom app on your Connected Apps page. You can then call it in chats or longer task threads.
-
-Google documents the MCP flow separately. Only add servers you trust. An MCP connector can expose data you never intended to put in a chat.
-
-## What Gemini already uses without a toggle
-
-Connected Apps settings do not control public data from some Google services. Gemini can use public information from Google Search at all times. With Keep Activity on, it can also use public information from Google Flights, Hotels, Maps, and YouTube.
-
-It does not read your private content in those products unless you grant that access. Do not confuse a Maps search with a Gmail or Photos connection.
-
-## Privacy, disconnect, and data handling
-
-You can turn any app off on the same Connected Apps page. Disconnecting stops new use of that connection. Review Google's Gemini Apps Privacy Hub for what happens to data after you disconnect and how third-party exchanges work.
-
-Practical habits:
-
-- Connect only the apps you will query this month.
-- Read **Learn more** before you enable finance or identity tools such as Experian.
-- Disconnect unused partners after a project ends.
-- Recheck Workspace admin policy if you switch from a personal account to a work account.
-
-Do not paste secrets into a chat and then enable a new partner in the same session. Treat each new toggle as a fresh permission grant.
+You must be signed in. Gemini cannot use most Connected Apps from Google Messages. If Keep Activity is off, Google’s help pages say many third-party connectors will not run; only a small set of utilities stay available.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/NpCNG2-5qAU"
-    title="Save time (and tabs) with apps in Gemini. Access Google Maps, YouTube Music and more in one place"
+  <iframe src="https://www.youtube.com/embed/PDMcpthR88U"
+    title="How to Use Google Gemini AI (Full Tutorial)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## Step 1 — Confirm activity settings
+
+Open [gemini.google.com](https://gemini.google.com) and sign in with the account you want to connect.
+
+On the web, open **Settings & help**, then **Activity**. Make sure Keep Activity is on if you plan to use third-party apps. Google’s Gemini Apps Help article on activity states that turning Keep Activity off limits available apps.
+
+On Android, open the Gemini app, tap the menu, then your profile. Look for **Activity** or **Gemini Apps Activity**. Review stored prompts later at [myactivity.google.com](https://myactivity.google.com) under Gemini Apps Activity.
+
+Work or school accounts may be blocked by an admin. Workspace admins control Gemini app access to Gmail, Drive, Calendar, and extra Google services from the Admin console under Generative AI → Gemini app.
+
+## Step 2 — Open the Apps page
+
+On a computer:
+
+1. Go to [gemini.google.com](https://gemini.google.com).
+2. Open **Settings & help**.
+3. Choose **Apps**. If you do not see Apps, open **Personal Intelligence**, then **Connected Apps**.
+4. You can also start from [gemini.google.com/apps](https://gemini.google.com/apps).
+
+On the Gemini mobile app:
+
+1. Open the menu and tap your profile picture.
+2. Open **Connected Apps**. If the item is missing, open **Personal Intelligence** first.
+3. Find the service and turn the toggle on.
+
+Google apps often activate immediately. Adobe, Airtable, Linear, and similar tools ask you to sign in and approve scopes.
+
+![Laptop on a desk with notes and a browser session open](https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80)
+
+## Step 3 — Connect a productivity app
+
+Airtable is a clear example because the company published Gemini steps on its developer site.
+
+1. Find **Airtable** on the Apps page and turn it on.
+2. Sign in to Airtable and choose which bases, apps, and workspaces Gemini may use.
+3. Confirm your Airtable role. Gemini cannot write to a base if your own permission is read-only.
+4. In chat, type `@` and select **Airtable**, then ask for a list, a filter, or an update.
+
+Useful prompts after you connect:
+
+- `@Airtable list records in my CRM base where last contact is older than 60 days`
+- `@Linear summarize issues closed in the last seven days by assignee`
+- `@monday.com show this week’s tasks that are past due`
+
+Linear, monday.com, PandaDoc, Wispr AI, and Zoho follow the same pattern: toggle, authorize, then `@` when you want that tool and no other.
+
+## Step 4 — Connect a creative app
+
+Adobe’s official connector page lists the same entry points. You need a Google account and an Adobe account (a free Adobe ID is enough to start).
+
+1. In Gemini settings, open **Personal Intelligence** → **Connected Apps**.
+2. Turn **Adobe** on and complete the Adobe sign-in.
+3. In the prompt bar, type `@Adobe` and select it.
+4. Describe the edit, attach a file if needed, and iterate.
+
+Adobe documents these workflows inside Gemini: batch retouch, Firefly-style generation, Express templates, Lightroom-style adjustments, and Creative Cloud search. Ask `What can Adobe help me with?` if you want the connector to list current capabilities.
+
+Picsart, Squarespace, and Webflow use the same toggle-plus-`@` flow for design assets and site drafts.
+
+![Designer reviewing layouts on a computer and tablet](https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80)
+
+## Step 5 — Use lifestyle connectors with care
+
+Peloton, SeatGeek, apartments.com, and Experian landed in the same September wave. Treat them like any other OAuth app.
+
+Grant the smallest scope the consent screen allows. Disconnect the app from Gemini settings as soon as you finish a one-off task such as a ticket search or a credit-report summary. Credit and housing data is not a casual chat log.
+
+Gemini will still ask for confirmation when an action writes data or spends money. Read that confirmation. Do not assume a lifestyle connector can complete a purchase without a second check from the source site.
+
+## Step 6 — Call apps in a prompt
+
+Official Gemini help says you can either let Gemini pick an app or name it with `@`.
+
+1. Open a new chat on web or mobile.
+2. Type `@` and pick the connected service.
+3. Write the task in one or two sentences. Name the project, base, or file if you have several.
+4. Submit and follow any extra permission cards.
+
+Stack one request at a time when two tools must cooperate. Example: pull a Linear issue list first, then ask Adobe to design a status graphic from that summary. If you name two apps in one sentence, Gemini may ignore one of them.
+
+Developers who already wire agents through Android CLI skills can keep coding agents and Gemini chat separate. The CLI path lives in our [Android CLI and agent skills guide](/blog/android-cli-agent-skills/). Connected Apps are for the consumer Gemini surface, not for `android skills add`.
+
+## Privacy, disconnect, and work accounts
+
+Disconnect any app from the same Apps page. Flip the toggle off. Revoke the OAuth grant inside Airtable, Adobe, or Linear as well if you want the token gone on both sides.
+
+Review Gemini Apps Activity and delete chats that included private tables or customer names. Keep Activity off only if you accept that most third-party connectors will stop working.
+
+Workspace users should ask IT whether **Workspace apps**, **Other Google apps**, and third-party connectors are allowed. Admins can disable Gemini access to Gmail, Drive, Calendar, Maps, and YouTube from the Admin console.
+
 ## Tips that save time
 
-Start with one productivity app and one lifestyle app. Confirm `@` mentions work before you enable a long list.
+- Start from [gemini.google.com/apps](https://gemini.google.com/apps) when the settings menu is hard to find.
+- Name the exact base, board, or brand kit in the first prompt.
+- Prefer `@App` over hoping Gemini guesses the right connector.
+- Do not connect Experian or similar financial tools on a shared family account.
+- Recheck the Apps page after a Gemini app update. New connectors often appear there before they show in the `@` picker.
 
-Write the destination in the prompt. “Add a row in Airtable for this brief” beats “remember this.”
-
-Check Live chat support per app. Some Connected Apps work in Gemini Live; many do not. Google keeps a separate help article for Live.
-
-If a brand-new September partner is missing, wait out the staged rollout, then refresh Connected Apps. Google described this wave as “beginning to roll out,” not as a global instant switch.
-
-Windows and macOS Gemini apps inherit the same account connections once you sign in. Install steps for the desktop client are in [How to Use the Gemini App for Windows](/blog/gemini-app-windows/).
+Gems are a separate feature. Google is migrating Gems to skills later in 2026. That change does not replace Connected Apps. Skills customize how Gemini writes; Connected Apps give it live data and actions in other products.
 
 ## Conclusion
 
-The September 2026 wave is useful if you already live in Linear, Airtable, Adobe, or Peloton. Connect the few tools you will mention by name, keep Keep Activity on where you need the full catalog, and disconnect the rest.
+The September 2026 wave makes Gemini a control panel for project tools and creative suites, not only a chat box. Turn Keep Activity on if you need third-party apps, connect only the services you will use this week, and call them with `@` so the model does not guess.
 
-Use `@` when Gemini picks the wrong partner. Confirm writes. Revisit the Connected Apps page whenever Google announces another partner list.
+Start with one productivity app and one creative app. Disconnect anything you are not actively using. Official steps live on the Gemini Apps Help page and on each vendor’s connector doc.
 
 ## Sources
 
-- [New connected apps roll out to Gemini](https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/) — Google, 23 September 2026
-- [Use & manage Connected Apps in Gemini](https://support.google.com/gemini/answer/13695044) — Gemini Apps Help
-- [New connected apps are coming to Gemini](https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-services-gemini-august-2026/) — Google, 12 August 2026
-- [Gemini Spark updates: macOS launch, connected apps and more](https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/) — Google, 30 June 2026
-- [Personal Intelligence: Connecting Gemini to Google apps](https://blog.google/innovation-and-ai/products/gemini-app/personal-intelligence/) — Google
+- [New connected apps roll out to Gemini (Google Blog, 23 Sep 2026)](https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/)
+- [Use and manage connected apps in Gemini (Gemini Apps Help)](https://support.google.com/gemini/answer/13695044)
+- [Manage and delete your Gemini Apps activity](https://support.google.com/gemini/answer/13278892)
+- [Google Gemini connector (Airtable Developers)](https://www.airtable.com/developers/agents/mcp/gemini)
+- [Adobe for Google Gemini](https://www.adobe.com/adobe-connectors/adobe-for-gemini.html)
+- [Adobe for Google Gemini overview (Adobe Help)](https://helpx.adobe.com/creative-cloud/apps/integration-with-other-apps/adobe-connectors/adobe-for-gemini.html)
+- [Control Gemini App access to Workspace services](https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/turn-google-apps-in-gemini-on-or-off)
+- [How to Use Google Gemini AI (Kevin Stratvert, YouTube)](https://www.youtube.com/watch?v=PDMcpthR88U)
