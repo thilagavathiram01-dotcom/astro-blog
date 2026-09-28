@@ -1,137 +1,135 @@
 ---
-title: "Gemini Gems Become Skills: What to Do Before Nov 17"
-description: "Gemini will migrate Gems to skills on 17 Nov 2026. Save instructions, note the Oct 13 lock, and rebuild workflows."
+title: "Migrate Gemini Gems to Skills Before Nov 17, 2026"
+description: "Google will start converting Gemini Gems into Spark skills on November 17, 2026. Save instructions, learn slash commands, and rebuild workflows now."
 pubDate: 2026-09-28T14:00:00
-heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials", "how-to", "productivity", "google"]
+heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "ai-tools", "tutorials", "productivity"]
 noindex: false
 ---
 
-The Gemini app now shows a notice in Gem manager: Gems become skills starting 17 November 2026. Google will migrate existing Gems automatically. You can keep using each Gem until that Gem moves.
+Google is retiring Gems, the custom Gemini personas it launched in 2024. An in-app banner in the Gems manager now states that migration to **skills** begins on **November 17, 2026**. You can keep using each Gem until Google converts it.
 
-That is not the only date that matters. App-code strings reported in September say you will not be able to create or edit Gems from 13 October 2026. If you still refine instructions or attach files, do that work before mid-October.
+Skills already exist inside **Gemini Spark**. They store reusable instructions, attach files, and fire from a slash in the prompt box. This guide explains what changes, who can create skills today, and how to copy your Gems before edit access tightens.
 
-This guide explains what changes, what to copy now, and how skills differ from Gems. It draws on Google’s original Gems documentation and the in-app migration text quoted by 9to5Google and Android Authority.
+## What the November 17 notice actually says
 
+Reporters who opened the Gems manager in late September 2026 recorded this message from Google:
 
+> Starting November 17, 2026, we’ll automatically begin migrating your Gems to skills. You will be able to use your Gems until they migrate.
 
-![Laptop screen with an AI chat interface on a desk](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
+An earlier Google app teardown published by Android Authority on September 9 described a two-step schedule inside the client: **create and edit Gems lock on October 13, 2026**, then automatic conversion on November 17. Treat October 13 as the last safe day to tidy names, instructions, and attached files.
 
+Google has not published a full Help Center article for the Gem-to-skill move yet. The “Learn more” link and some “Create skills” buttons in regular Gemini chat were still dead when the banner appeared. Use the live Spark skills docs below instead of waiting for that page.
 
+![Laptop open to a chat-style AI workspace with notes beside it](https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80)
 
-## What Gems are today
+## Gems versus skills
 
-Google launched custom Gems in 2024 as saved versions of Gemini. You write standing instructions, name the Gem, and reopen it instead of pasting the same prompt every time.
+A **Gem** is a saved custom version of Gemini. You give it standing instructions, pick a default tool such as Create image or Canvas, attach files for context, and share it with a link. Google opened Gems to free accounts in March 2025.
 
-Google’s product posts list extra Gem options:
+A **skill**, per Google’s Help Center, is a set of reusable instructions and extra context that teaches Gemini how to run one type of task and which tools to use. Spark can apply a skill in the background when the prompt matches, or you can force one by typing `/` and picking it. You can stack several skills in a single task.
 
-- A default tool such as Create image or Canvas.
-- Files you attach as context.
-- Share links, added in September 2025, with view or edit control similar to Drive.
+The overlap is real: both store “how I want this done.” The access model is different. Gems live in a side-panel list. Skills live next to the prompt and can run together. That is the main reason Google is collapsing the two features.
 
-Premade Gems still include Brainstormer, Career guide, Coding partner, Learning coach, and Writing editor. Google opened custom Gems to free users in 2025. They have stayed available without a paid plan in regular Gemini chat.
+If you already use reusable playbooks in other products, the pattern matches [ChatGPT Skills for repeatable work](/blog/chatgpt-skills-reusable-workflows/). The invocation character differs (`/` in Spark, `@` in ChatGPT), but the job is the same: write the process once.
 
-## What skills change
+## Who can create skills today
 
-Skills arrived with Gemini Spark. At a high level they do the same job: store custom instructions you reuse. Access is different.
+Google’s article *Create & manage skills for Gemini Apps* lists hard requirements:
 
-You invoke a skill with a forward slash in the prompt box. You can stack more than one skill in a single conversation. Gems live in the side panel under Gem manager and My Gems, so you pick one assistant and stay inside that chat.
+- You must be 18 or older.
+- Sign in with a **personal** Google Account. Work and school accounts are out for now.
+- You need a **Google AI Pro or Ultra** subscription.
+- **Keep Activity** must be on.
+- Skills run only inside **Gemini Spark**, on the Gemini mobile app, the Gemini app on Mac, and [gemini.google.com](https://gemini.google.com).
+- Spark skills are unavailable in the European Economic Area, Nigeria, Switzerland, and the United Kingdom.
 
-9to5Google notes that AI Pro and AI Ultra subscribers can already build skills from the Gemini Spark tab. The in-app “Create skills” button and the “Learn more” help article linked from the Gems notice were not live when the banner appeared on 27 September 2026.
+Gems remain free until they migrate. Skills, as of this writing, are a paid Spark feature. Google has not said whether free-tier Gems will become usable skills after November 17 or whether those users will only keep a read-only leftover. Plan as if you need Pro or Ultra to keep editing after the switch.
 
-Treat skills as the long-term home for custom instructions. Treat Gems as a working copy until Google finishes each migration.
+## Watch a short Spark skills walkthrough
 
-## Dates you should put on a calendar
-
-**13 October 2026.** Android Authority’s Gemini app teardown quoted this lock: you will not be able to create or edit Gems after that date. You can still run existing Gems.
-
-**17 November 2026.** The Gem manager banner, as reported by 9to5Google, says Google will automatically begin migrating Gems to skills on this day. You can use a Gem until it migrates.
-
-Google has not published a public Help article for the move as of 28 September 2026. Recheck Gem manager and [gemini.google.com](https://gemini.google.com) before each date in case Google changes wording or regional timing.
-
-## Copy your Gem before the edit lock
-
-Do this while create and edit still work.
-
-1. Open Gemini on the web or in the app.
-2. Open **Gem manager** in the left panel.
-3. Open each custom Gem you care about.
-4. Copy the full instructions into a Docs file or a notes app you control.
-5. List every attached file and where the original lives (Drive, local folder, shared link).
-6. Note the default tool if you set one (image, Canvas, or other).
-7. If you shared the Gem, record who has view or edit access.
-8. Run one test prompt and save a good reply as a quality check for later.
-
-Google’s older Gems tips still apply while you polish: start from a premade Gem, then edit. Use the wand control to expand thin instructions. Be specific about role, tone, format, and what the assistant must refuse.
-
-If a Gem only exists as a share link from someone else, make a copy you own. Shared Gems are easier to lose track of during a product rename.
+This seven-minute tutorial shows the Skills page, a blank template, and how `/` pulls a skill into a task. Pair it with Google’s Help articles rather than treating any third-party video as the spec.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/bj33rMHj-h4"
-    title="How to Create Marketing Materials with Gemini Gems | Make AI Work for You | Google"
+  <iframe src="https://www.youtube.com/embed/DGdIx1O8BN8"
+    title="Gemini Spark Tutorial in 7 Minutes"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Recreate the same workflow as a skill
+## Save every Gem before October 13
 
-If you pay for Google AI Pro or AI Ultra and Spark is available in your country, build the skill now. 9to5Google reports that the Spark tab is the current creation path.
+Do this now, even if you expect an automatic conversion.
 
-1. Switch to the **Gemini Spark** tab.
-2. Create a skill with the same name as the Gem so you can find it later.
-3. Paste the instructions you exported.
-4. Re-attach reference files from Drive or upload them again.
-5. Test with `/skill-name` in a normal chat.
-6. Try a second skill in the same prompt if the task needs two roles (for example a researcher plus an editor).
+1. Open Gemini on the web or in the app and go to the **Gems** manager.
+2. Open each Gem you still use.
+3. Copy the **name**, the full **instructions**, the default tool, and a list of attached files into a private doc.
+4. Download any files that only exist inside that Gem.
+5. Note share links if teammates rely on them. Skills are not documented as public Gem-style links.
 
-Slash invocation is the main daily change. You no longer have to scroll My Gems first. You also no longer get a one-Gem-per-chat habit by default.
+If the October 13 lock lands as the app code described, you will still *run* Gems until mid-November. You will not be able to fix a typo or swap a file after that date.
 
-Free-tier users should keep the exported text. Public reporting notes that skills creation is limited to Pro and Ultra today. The in-app notice does not yet say what free accounts receive after 17 November. Do not assume share links or default tools survive in the same form.
+## Create the replacement skill in Spark
 
+On a computer:
 
+1. Go to [gemini.google.com](https://gemini.google.com) (or the Gemini Mac app).
+2. In the sidebar, switch to **Spark**, then open **Skills**.
+3. Choose one path: work with Gemini to draft the skill, start from a prefilled or blank template, or **upload a skill file**.
+4. Give the skill an action-first name and a one-to-two sentence description. Google says those two fields decide when Spark auto-applies the skill.
+5. Paste the old Gem instructions. Add a short “common mistakes” block and tell Spark what to do when a required detail is missing.
+6. Attach the same reference files you used in the Gem.
+7. Save, then test with `/` in a Spark task.
 
-![Person taking notes next to a notebook and phone](https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80)
+You can also finish a Spark task once and ask Gemini to turn that run into a skill. You cannot activate, deactivate, or delete a skill from inside a task thread. Those controls stay on the Skills page.
 
+![Person reviewing notes and a second screen while setting up a workflow](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80)
 
+## Write instructions Spark will actually pick up
 
-## Pair skills with Connected Apps
+Google’s *Write effective skills* page is the checklist to copy:
 
-Custom instructions only cover style and process. Live data still comes from connectors. After you migrate a writing or project Gem, connect the apps that Gem used to mention by name.
+- Name the skill with a **verb**: “Draft weekly status,” not “Status helper.”
+- Describe **when to use it and when not to**. A vague description means Spark may skip it.
+- Write for a **type** of task, not one specific email from last Tuesday.
+- Add an output template if the format must stay stable.
+- List common mistakes (invented metrics, skipped sources, wrong tone).
+- Say what to do when a file or fact is missing. Do not let the model fill gaps quietly.
 
-Follow [How to Connect Apps to Gemini in 2026](/blog/connect-apps-to-gemini/) for Keep Activity, `@` mentions, and the September 2026 partner list. A skill that says “summarize my launch board” still needs monday.com or Linear turned on. A meal-plan Gem still needs you to attach the file or connect the source you trust.
+Example description:
 
-Workspace accounts follow a separate Help article. An admin can block connectors even if your personal Gemini settings look correct.
+> Draft a one-page weekly status from notes. Use when the user asks for a status update or shipped / blocked summary. Do not use for financial forecasts.
 
-## What may not map one-to-one
+Then invoke it with `/draft-weekly-status` until you trust automatic matching. Turn a noisy skill **off** on the Skills page. If you later type `/` for a disabled skill, Spark asks whether to enable it again. Deleting a skill cannot be undone; download a copy first if you may need it.
 
-Be ready to rebuild these pieces by hand:
+## Combine skills instead of one mega-Gem
 
-- **Share links.** Gems used Drive-style sharing. Skills documentation for public share links is not in the current banner.
-- **Default tools.** If a Gem always opened Canvas or image generation, test whether the skill needs an explicit instruction to use that tool.
-- **Stacked roles.** Skills can run together. Split a bloated Gem into two short skills instead of one long prompt.
-- **Free vs paid.** Gems are free today. Skill creation is described as a Pro and Ultra path until Google says otherwise.
+Gems often mixed tone, tools, and files in one blob. Skills work better as small pieces. Google documents mixing several skills in one task. A travel change, for example, can call a booking skill and a Gmail-writing skill together.
 
-If a migrated skill looks thin, paste your exported instructions again and re-attach files. Do not wait until the first week of December to discover a missing brand guide.
+Spark also has **tasks** (the job) and **schedules** (when the job runs). Skills only describe *how*. Keep those three layers separate so a schedule can reuse the same writing skill every Monday.
 
-## A short pre-migration checklist
+Connected apps stay off until you enable them. Spark can work with Gmail, Calendar, Drive, Docs, Sheets, Slides, YouTube, Maps, and, from mid-2026 updates, Keep and Tasks plus selected third-party apps. Review those toggles before a migrated Gem tries to act on mail or files.
 
-- Gem manager banner read on web and mobile
-- Every custom Gem exported to Docs
-- Attached files stored outside Gemini
-- Share list saved if the Gem is a team resource
-- Edit work finished before 13 October 2026
-- Skill created in Spark if your plan allows it
-- One slash-command test saved as a baseline
-- Connected Apps reviewed for the same workflow
+## Limits you should expect
 
-Gems were the first reusable custom assistants in the Gemini app. Skills keep the same idea and change how you call them. Copy the text now, lock the files you attached, and treat 13 October as the last comfortable edit window.
+- **Subscription and region gates** remain. Downgrading Pro or Ultra can restrict skill creation and editing; check Google’s FAQ on that Help page if you plan to cancel.
+- **No work or school accounts** for skills yet.
+- **Uploaded skill files** cannot include scripts that need the internet. Strip hidden files such as `.DS_Store` before upload.
+- **Share links** from Gems may not map 1:1. Rebuild team workflows as skills the teammates can invoke, not as a public Gem URL.
+- **Free-tier outcome is unconfirmed.** Do not assume every free Gem becomes an editable skill on November 17.
+
+## Conclusion
+
+Treat November 17 as the start of Google’s conversion, not as a surprise. Export every Gem this week, rebuild the keepers as Spark skills with clear names and `/` tests, and leave October 13 as a hard edit cutoff. Automatic migration should preserve the text. It will not fix vague instructions or a missing file.
+
+Official how-to detail lives in [Create & manage skills](https://support.google.com/gemini/answer/17094296) and [Write effective skills](https://support.google.com/gemini/answer/17102773). Watch the in-app Gems banner for the final Help article when Google ships it.
 
 ## Sources
 
-- [Gemini app replacing Gems with skills in November](https://9to5google.com/2026/09/27/gemini-gems-skills/) — 9to5Google, 27 Sep 2026
-- [Google could auto-migrate Gemini Gems to Spark Skills](https://www.androidauthority.com/google-gemini-gems-spark-skills-apk-teardown-3709228/) — Android Authority, 9 Sep 2026
-- [How to use Gems, Google's custom AI tools](https://blog.google/products/gemini/google-gems-tips/) — Google Blog
-- [New in Gemini: Custom Gems](https://blog.google/products-and-platforms/products/gemini/google-gemini-update-august-2024/) — Google Blog, 28 Aug 2024
-- [Gemini app now lets you share Gems with others](https://blog.google/products-and-platforms/products/gemini/sharing-gems/) — Google Blog, 18 Sep 2025
-- [How to Create Marketing Materials with Gemini Gems](https://www.youtube.com/watch?v=bj33rMHj-h4) — Google on YouTube
+- [Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296) — Gemini Apps Help
+- [Write effective skills for Gemini Apps](https://support.google.com/gemini/answer/17102773) — Gemini Apps Help
+- [Gemini Spark overview](https://gemini.google/overview/agent/spark/) — Google
+- [Gemini Spark updates: macOS launch, connected apps and more](https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/) — Google blog, June 30, 2026
+- [Gemini app replacing Gems with skills in November](https://9to5google.com/2026/09/27/gemini-gems-skills/) — 9to5Google, September 27, 2026
+- [Google could auto-migrate Gemini Gems to Spark Skills](https://www.androidauthority.com/google-gemini-gems-spark-skills-apk-teardown-3709228/) — Android Authority, September 9, 2026
