@@ -1,54 +1,51 @@
 ---
-title: "How to Add Mesh Gradients in Jetpack Compose 1.12"
-description: "Upgrade to Compose BOM 2026.08.00 and paint MeshGradientPainter backgrounds with Wide Color Gamut support."
-pubDate: 2026-09-20T14:00:00
-heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "developer", "tutorials", "how-to"]
+title: "How to Draw Mesh Gradients in Compose 1.12"
+description: "Add MeshGradientPainter in Jetpack Compose 1.12: BOM 2026.08.00, vertices, Bezier tangents, and animation."
+pubDate: 2026-09-28T14:00:00
+heroImage: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "tutorials", "how-to", "developer"]
 noindex: false
 ---
 
-Jetpack Compose 1.12 is stable. The August 2026 BOM ships MeshGradientPainter, Display P3 color through the graphics pipeline, and a compileSdk bump to API 37.
+Jetpack Compose 1.12 ships a first-party mesh gradient API. You no longer need a custom AGSL shader or a third-party modifier to blend several colors across a surface.
 
-This guide walks through the upgrade, a first mesh background, Wide Color Gamut fallbacks, and the layout and text APIs that landed in the same release. Facts come from the official Android Developers Blog post and Compose mesh-gradient docs.
+The official painter is `MeshGradientPainter`. It lives in the August 2026 Compose BOM (`2026.08.00`) and draws a grid of Bezier patches. This guide walks through the upgrade, a four-color hero, custom tangents, a denser grid, and a looping animation.
 
-## What landed in Compose 1.12
+Facts below come from the [Android Developers Blog post for the August 2026 release](https://android-developers.googleblog.com/2026/08/jetpack-compose-august-2026-release.html) and the [mesh gradient documentation](https://developer.android.com/develop/ui/compose/graphics/draw/mesh-gradient).
 
-The August 2026 release maps core modules to version 1.12. Google published the BOM as `androidx.compose:compose-bom:2026.08.00`.
+## Upgrade the Compose BOM first
 
-Headline APIs include MeshGradientPainter, full-pipeline Wide Color Gamut (P3) and HDR rendering, named areas on the experimental Grid, Credential Manager semantics on text fields, keyed SideEffect, and two-stage deferred transitions.
-
-Two breaking notes matter before you bump the BOM. Compose 1.12 sets compileSdk to API 37 and requires Android Gradle Plugin 9.1.1 or newer. `Modifier.onFirstVisible()` is deprecated in favor of `Modifier.onVisibilityChanged()`.
-
-
-
-![Developer writing Kotlin UI code on a laptop](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Upgrade the Compose BOM
-
-Pin the platform BOM, then let modules resolve without explicit versions:
+Compose 1.12 maps to BOM `2026.08.00`. Set that platform dependency before you touch graphics code.
 
 ```kotlin
-dependencies {
-    implementation(platform("androidx.compose:compose-bom:2026.08.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.foundation:foundation")
-    implementation("androidx.compose.material3:material3")
-}
+implementation(platform("androidx.compose:compose-bom:2026.08.00"))
 ```
 
-Set `compileSdk = 37` and confirm AGP is at least 9.1.1. Compose always targets the latest compileSdk; the compatibility matrix lives in the official setup docs.
+The release also raises `compileSdk` to API 37 and requires Android Gradle Plugin 9.1.1 or newer. If your project is still on an older AGP, the build fails before `MeshGradientPainter` resolves.
 
-After the sync, search the project for `onFirstVisible` and move callers to `onVisibilityChanged` so visibility thresholds stay explicit.
+`Modifier.onFirstVisible()` is deprecated in the same release. Switch those call sites to `Modifier.onVisibilityChanged()` while you are already in the BOM file.
 
-Pair the graphics work with a fast first frame. The same release notes say Time to Initial Display in Google's hero benchmarks is now comparable to Views. If you already ship [Android Baseline Profiles](/blog/android-baseline-profiles-guide/), regenerate them after the BOM bump so startup stays tight.
+If you still ship a hybrid View and Compose screen, keep your Baseline Profile pipeline current. Our earlier note on [Android Baseline Profiles](/blog/android-baseline-profiles-guide/) covers how to keep first-frame work cheap after a UI toolkit bump.
 
-## Paint a mesh gradient
 
-Mesh gradients interpolate color across a 2D grid of patches. A grid with `rows` and `columns` contains `(rows + 1) × (columns + 1)` vertices. A 1×1 mesh is four corners and one patch.
 
-Official docs show `MeshGradientPainter` as the drawing primitive. Remember the painter, set each vertex with row, column, normalized offset, and color, then paint a Box:
+![Abstract color mesh on a digital display](https://images.unsplash.com/photo-1550684376-efcbd6e3f031?auto=format&fit=crop&w=800&q=80)
+
+
+
+## How a mesh is built
+
+A mesh is a 2D grid of patches. A grid with `rows` by `columns` patches has `(rows + 1) × (columns + 1)` vertices. A `1 × 1` mesh is four corners and one patch.
+
+Positions use a normalized box: `(0f, 0f)` is the top-left of the draw bounds and `(1f, 1f)` is the bottom-right. You do not pass pixel coordinates.
+
+Each vertex can carry up to four Bezier control points. Those tangents bend the edges between neighbors. If you pass `Offset.Unspecified`, Compose infers tangents so patches stay smooth.
+
+Color between vertices is interpolated. Set `hasBicubicColor` to `true` for Catmull-Rom interpolation. Leave it `false` for bilinear interpolation.
+
+## Draw a four-color hero
+
+Create the painter once with `remember`, then attach it with `Modifier.paint`.
 
 ```kotlin
 val rows = 1
@@ -71,71 +68,122 @@ Box(
 )
 ```
 
-Offsets use the 0f..1f range of the destination. You can place vertices outside that range if you want color to bleed in from off-canvas. Docs also describe `hasBicubicColor`: set it true for Catmull-Rom interpolation, false for bilinear.
+`setVertex` takes row index, column index, normalized position, and color. That snippet is the sample published on the Android Developers Blog.
 
-Keep the painter in `remember` unless vertices must animate. Recreating the painter every frame wastes work.
+Do not look for the old experimental `Modifier.meshGradient`. That API is gone. `MeshGradientPainter` plus `Modifier.paint` is the stable path.
+
+## Bend one corner with tangents
+
+Default tangents keep the grid even. You can override a single vertex when you want a color to bloom or pinch.
+
+Control offsets are relative to that vertex. The docs push the top-left corner out to the right and down like this:
+
+```kotlin
+val customTangentPainter = remember {
+    MeshGradientPainter(rows = 1, columns = 1) {
+        setVertex(
+            row = 0,
+            column = 0,
+            position = Offset(0f, 0f),
+            color = Color.Magenta,
+            rightControlPoint = Offset(0.4f, 0.1f),
+            bottomControlPoint = Offset(0.1f, 0.4f)
+        )
+        setVertex(0, 1, Offset(1f, 0f), Color.Cyan)
+        setVertex(1, 0, Offset(0f, 1f), Color.Blue)
+        setVertex(1, 1, Offset(1f, 1f), Color.Black)
+    }
+}
+```
+
+Leave the other three vertices without explicit tangents. Compose fills those in so you do not have to compute a full tangent field for a one-corner tweak.
+
+
+
+![Designer reviewing colorful UI gradients on a laptop](https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80)
+
+
+
+## Scale to a 3-by-3 grid
+
+A `3 × 3` patch grid needs 16 vertices. Inner points can sit off the regular lattice so color pools in the middle of the card.
+
+The official sample stores those offsets in a list, then maps them in row order:
+
+```kotlin
+val points = remember {
+    listOf(
+        Offset(0.0f, 0.0f), Offset(0.3f, 0.0f), Offset(0.7f, 0.0f), Offset(1.0f, 0.0f),
+        Offset(0.0f, 0.3f), Offset(0.2f, 0.4f), Offset(0.7f, 0.2f), Offset(1.0f, 0.3f),
+        Offset(0.0f, 0.7f), Offset(0.3f, 0.8f), Offset(0.7f, 0.6f), Offset(1.0f, 0.7f),
+        Offset(0.0f, 1.0f), Offset(0.3f, 1.0f), Offset(0.7f, 1.0f), Offset(1.0f, 1.0f)
+    )
+}
+```
+
+Call `setVertex` sixteen times, one per list index. Keep outer points on the 0 and 1 edges so the gradient still fills the `Box`.
+
+Dense grids cost more GPU work. Profile on a mid-range phone before you drop a 6-by-6 mesh behind every list row.
+
+## Animate vertices without reallocating
+
+The configuration lambda runs in a `DrawScope`. It can read Compose state. Animate an offset and add it to inner vertices. The painter does not rebuild shaders or bitmaps on every frame.
+
+```kotlin
+val infiniteTransition = rememberInfiniteTransition(label = "meshMovement")
+val animatedOffset by infiniteTransition.animateFloat(
+    initialValue = -0.1f,
+    targetValue = 0.1f,
+    animationSpec = infiniteRepeatable(
+        animation = tween(2500, easing = LinearEasing),
+        repeatMode = RepeatMode.Reverse
+    ),
+    label = "offset"
+)
+```
+
+Add `Offset(animatedOffset, animatedOffset)` only to interior points. Leave the four corners fixed so the fill still covers the widget.
+
+Keep the painter in `remember` so the object identity stays stable. The state read happens inside the draw block.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/wJx7EhGaDow"
-    title="Shaders | Jetpack Compose Tips"
+  <iframe src="https://www.youtube.com/embed/8PxuWdjESfg"
+    title="What's new in Android"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Keep color wide on modern panels
+## Pair the gradient with other 1.12 graphics work
 
-Compose 1.12 preserves non-sRGB spaces such as Display P3 through graphics, paint, and shaders. Colors are no longer clamped to sRGB on the way to the platform renderer.
+Compose 1.12 also turns on a full Wide Color Gamut and HDR path. Colors defined in Display P3 stay in that space through paint and shaders. They fall back to sRGB on Android 9 and below, or when the color space is unsupported on the device.
 
-Fallback is automatic. Colors drop to sRGB when the space is unsupported (CieXyz, CieLab, Oklab), when the space needs a newer Android version than the device has (for example Bt2020Hlg on Android 13 and below), or when the app runs on Android 9 (API 28) or lower.
+If a `graphicsLayer` clips a glow that sits outside the measured box, use the new `LayerOutsets` API to expand the visual bounds. That avoids the implicit clip when the layer is promoted to an offscreen buffer.
 
-Use Display P3 for hero surfaces on recent Pixels and flagships. Keep sRGB tokens for icons and text that must match Material tokens on older devices.
-
-`LayerOutsets` is new on GraphicsLayer and `Modifier.graphicsLayer`. Use it when a layer is promoted offscreen and you need to grow visual bounds so glow or mesh fringe is not clipped.
-
-
-
-![Colorful abstract gradient light on a desk display](https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Use the rest of the 1.12 toolkit
-
-Mesh work often sits next to other August APIs. Treat them as optional follow-ups, not blockers.
-
-**Keyed SideEffect.** `SideEffect` now accepts keys. Google reports it is up to 90% faster than `LaunchedEffect` and about 20% faster than `DisposableEffect` when you do not need a coroutine or dispose block. It still runs before those effects, so do not migrate frame-delayed work blindly.
-
-**Deferred transitions.** `DeferredAnimatedContent` and `DeferredAnimatedVisibility` support two-stage motion, including predictive back. During the deferred phase you can drive scale or offset from a gesture. When the phase ends, the engine hands off with velocity transfer.
-
-**Named Grid areas.** The experimental Grid lets you name regions (`header`, `sidebar`, `content`) instead of tracking numeric spans. Mark it `@OptIn(ExperimentalGridApi::class)` until the API leaves experimental.
-
-**Editable text styles.** `TextFieldBuffer.addStyle()` applies `SpanStyle` and `ParagraphStyle` inside `textFieldState.edit { }`. `TextFieldState.textStyles` reads active ranges. Styles survive configuration changes.
-
-**Credential Manager.** On API 34+, attach `credentialRequest` semantics with `CredentialRequestData` so a field can request passkeys or saved credentials in the input flow.
-
-**Tests.** `hasPendingWork()` checks pending UI work without advancing the clock. `runWithoutImplicitWait` drops implicit sync while you step frames. Use both when you sample animation state.
+Startup time in this release is close to Views on Google’s hero benchmark. Still measure your own first frame after you add a full-screen animated mesh.
 
 ## Practical tips
 
-Start with a 1×1 mesh. Add rows and columns only when you need extra control points. Each extra vertex costs interpolation work.
+Start with a `1 × 1` mesh on the splash or profile header. Confirm colors on a P3 display and on an sRGB emulator.
 
-Reuse one painter across similar screens. If product needs several palettes, wrap vertex setup in a small factory that takes a color scheme.
+Move inner vertices a little at a time. Large jumps create hard ridges even with inferred tangents.
 
-Do not put live network or analytics calls inside a mesh painter builder. Keep that work in keyed `SideEffect` or a ViewModel.
+Prefer bicubic color on large hero surfaces. Keep bilinear on tiny chips where the extra interpolation is wasted.
 
-On foldables and tablets, paint the mesh on a full-bleed Box and place content above it. Named Grid areas help you keep the chrome stable while the background stretches.
+Do not animate every vertex. Two or three interior points give motion without heating the GPU.
 
-Regenerate screenshot tests after the WCG change. P3 pixels will not match old sRGB goldens on devices that support the wider gamut.
+If you previously used a gist-based `Modifier.meshGradient`, delete that code. The official painter is the supported API and tracks future graphics changes.
 
-## Conclusion
+## Wrap-up
 
-Compose 1.12 gives you a first-party mesh painter and a graphics pipeline that keeps Display P3 intact. Upgrade the 2026.08.00 BOM, raise compileSdk to 37, replace `onFirstVisible`, then ship one four-vertex background before you add more points.
+Compose 1.12 gives Android a stable mesh gradient primitive. Bump BOM `2026.08.00`, raise AGP and `compileSdk`, then draw with `MeshGradientPainter` and `Modifier.paint`.
 
-From there, pick the extras that match the screen: keyed side effects for cheap logging, deferred transitions for predictive back, and Credential Manager semantics on sign-in fields.
+Start with four corners. Add tangents only where the shape needs a pinch. Animate interior offsets through `DrawScope` state instead of rebuilding the painter.
+
+For the full vertex and animation samples, read the official mesh gradient page and the August 2026 release notes linked below.
 
 ## Sources
 
 - [What's new in the Jetpack Compose August '26 release](https://android-developers.googleblog.com/2026/08/jetpack-compose-august-2026-release.html)
 - [Mesh gradients | Jetpack Compose | Android Developers](https://developer.android.com/develop/ui/compose/graphics/draw/mesh-gradient)
 - [Compose BOM mapping](https://developer.android.com/develop/ui/compose/bom/bom-mapping)
-- [Set up Compose dependencies and compiler](https://developer.android.com/develop/ui/compose/setup-compose-dependencies-and-compiler#agp-compatibility)
