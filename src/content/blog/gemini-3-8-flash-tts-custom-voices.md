@@ -1,55 +1,128 @@
 ---
-title: "How to Generate Custom Voices with Gemini 3.8 TTS"
-description: "Use Gemini 3.8 Flash TTS in AI Studio and the Gemini API to design voices, direct two-speaker scenes, and export audio."
-pubDate: 2026-09-24T08:00:00
+title: "How to Create Custom Voices with Gemini 3.8 TTS"
+description: "Use Gemini 3.8 Flash TTS in Google AI Studio and the Gemini API to design voices, direct line-by-line delivery, and export audio."
+pubDate: 2026-09-29T14:00:00
 heroImage: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "ai-tools", "developer"]
+tags: ["gemini", "ai-tools", "tutorials", "how-to", "google", "developer", "ai"]
 noindex: false
 ---
 
-Google launched Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS on September 23, 2026. The pair turns a script into spoken audio you can style, not just a fixed voice reading text.
+Google launched **Gemini 3.8 Flash TTS** and **Gemini 3.8 Flash-Lite TTS** on 23 September 2026. The models turn a script plus style notes into speech you can use in podcasts, audiobooks, agents, and Google Vids.
 
-Use Flash TTS when you need a new character, a regional accent, or a two-speaker scene. Use Flash-Lite TTS when you need volume: dubbing, read-aloud, or a high-traffic voice agent that still needs tone control.
+You no longer pick only from a short list of stock speakers. Flash TTS can design a voice from a natural-language prompt, replicate a consented 30-second sample, or pull from an expanded library of more than 2,000 production voices.
 
-This guide follows Google’s launch post and the official speech-generation docs. It covers which model to pick, how to try it in AI Studio, how to call the Interactions API, and the consent rules for voice replication.
+This guide follows official Google blog posts and Gemini API docs. It shows when to use each model, how to run a first job in AI Studio, and how to keep voice work inside consent and watermark rules.
 
-## Pick the right Gemini 3.8 TTS model
+## What changed with Gemini 3.8 TTS
 
-Google names two model codes:
+Google positions Flash TTS as the creative studio model. You write a role, accent, and delivery style in plain language. The model then keeps that speaker stable across long files.
 
-- `gemini-3.8-flash-tts` — generative voice design, line-by-line acting, two-speaker staging, long-form stability
-- `gemini-3.8-flash-lite-tts` — high-volume generation, dubbing, everyday single-speaker audio, cost-efficient agents
+Flash-Lite TTS uses the same API shape. It is built for volume: dubbing queues, read-aloud features, and voice agents that need lower latency and cost.
 
-Google reports Gemini 3.8 Flash TTS at #1 on Hume AI’s Voice Design Benchmark (71.4) and first in accent modeling (60.8). Flash and Flash-Lite sit at #1 and #2 on Hume’s Overall Quality Index. Treat those as lab scores, not a promise for your script.
-
-TTS is not the Live API. The [Live API voice agent guide](/blog/gemini-3-8-live-api-voice-agent/) covers real-time conversation with tools and camera input. TTS is for exact recitation: podcasts, audiobooks, ads, and scripted agents.
-
-Availability on launch day:
-
-- Developers: Gemini API and Google AI Studio
-- Flash TTS for consumers: Gemini Notebook
-- Flash-Lite TTS for consumers: Google Vids
-- Enterprises: Gemini Enterprise API coming later
+Both models sit in the Gemini Audio family next to 3.5 Live Translate, 3.5 Transcribe, 3.8 Live, and 3.8 Live Extended Thinking. TTS is not the Live API. Live is for turn-taking conversation. TTS is for exact recitation with style control.
 
 
 
-![Close-up of a studio microphone used for voice recording](https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80)
+![Close-up of a studio microphone used for voice recording](https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80)
 
 
 
-## Try voice design in Google AI Studio
+## Pick the right model before you prompt
 
-Google opened a speech playground at [aistudio.google.com/generate-speech](https://aistudio.google.com/generate-speech?model=gemini-3.8-flash-tts). Use it before you write code.
+Use this split from Google’s own comparison:
 
-1. Open the generate-speech workspace and select `gemini-3.8-flash-tts`.
-2. Describe a voice in plain language: role, age range, accent, texture. Example: “Calm documentary narrator, mid-40s, slight Scottish cadence, dry humor.”
-3. Paste a short paragraph and generate. Listen for pitch drift and clipped consonants.
-4. Switch to the dual-speaker screenplay editor. Assign two speakers and write turn-level style notes.
-5. Save a custom voice you like so later takes stay on the same identity.
+- **gemini-3.8-flash-tts** — audiobooks, multi-speaker scenes, regional dialects, heavy acting tags such as laughs and pauses.
+- **gemini-3.8-flash-lite-tts** — high-volume jobs, everyday single-speaker reads, agent replies, voice replication at scale.
 
-The official voice library lists 2,000+ production-ready voices, including regional varieties such as Mexican Spanish, Quebec French, and Scots English. Generative design is for cases those presets do not cover.
+Flash TTS leads Hume AI’s Voice Design Benchmark at 71.4 and accent modeling at 60.8, according to Google’s launch post. Flash and Flash-Lite also took the top two spots on Hume’s Overall Quality Index in that write-up.
 
-Voice remixing (take a library voice and prompt “add a subtle Southern US accent”) is listed as coming soon. Do not plan a production around remix until it ships.
+Flash TTS covers more than 130 languages in API docs. Flash-Lite covers more than 100. Switch models by changing one model ID. Keep the same script and `speech_config`.
+
+## What you need
+
+- A Google account signed in at [Google AI Studio](https://aistudio.google.com/generate-speech?model=gemini-3.8-flash-tts).
+- For API work, an API key from AI Studio and the `google-genai` Python SDK.
+- For replication, a 30-second sample you own or have rights to use, plus a verbal consent recording from that speaker.
+- Age and region limits still apply. Voice replication through AI Studio is not available in Illinois, Texas, the EEA, the UK, Switzerland, and India.
+
+Paid Gemini plans raise limits in consumer apps. Developer quotas follow the Gemini API console.
+
+## Step 1: Open the AI Studio speech playground
+
+1. Go to the speech generator in AI Studio and select `gemini-3.8-flash-tts`.
+2. Choose a prebuilt voice such as Kore, or open voice design and describe a speaker.
+3. Paste the exact words the model must speak. TTS recites the text. It does not paraphrase.
+4. Add a style line: cheerful, whispered, news-anchor pace, Melbourne DJ energy.
+5. Generate a short clip first. Listen for accent, volume, and pacing before you send a chapter.
+
+Google’s playground is built as a voice workspace. You can design a persona, then drop that voice into a dual-speaker screenplay editor and mark each line.
+
+## Step 2: Direct the performance in the script
+
+Both 3.8 models accept turn-level style plus inline tags. Official examples include `<laugh>`, `<sigh>`, `<gasp>`, `<short pause>`, and backchannels such as `|mhm|` or `|yeah|`.
+
+Write stage directions the way you would mark a table read:
+
+- “Calm support agent, slightly slower than conversational pace.”
+- “Whisper the last sentence. Do not raise volume on the name.”
+- “Speaker B interrupts after the pause. Keep both voices distinct.”
+
+Native two-speaker staging lets one script drive a podcast or scene. Keep speaker labels consistent so the model does not swap timbre mid-file.
+
+For hours of audio, Google says Flash TTS holds timbre and room tone with less speaker drift than Gemini 3.1 Flash TTS. Still generate in chapters. It is easier to fix one bad minute than a two-hour file.
+
+
+
+![Headphones and audio interface on a desk during an editing session](https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80)
+
+
+
+## Step 3: Call the Gemini API
+
+API docs show single-speaker output with `response_modalities: ["AUDIO"]` and a `speech_config` voice. A minimal Python pattern looks like this:
+
+```python
+from google import genai
+
+client = genai.Client()
+
+response = client.models.generate_content(
+    model="gemini-3.8-flash-tts",
+    contents=[{
+        "role": "user",
+        "parts": [{
+            "text": "Have a wonderful day!",
+            "speech_metadata": {"style": "cheerful and friendly"},
+        }],
+    }],
+    config={
+        "response_modalities": ["AUDIO"],
+        "speech_config": {
+            "voice_config": {"voice": "Kore"}
+        },
+    },
+)
+```
+
+You can pass a prebuilt name, an Extended Voice Library ID, a designed `voice_...` ID, or a replicated voice ID. Save designed voices so later episodes stay on the same speaker.
+
+LiveKit, Agora, Pipecat, and Vercel already document Gemini TTS connectors. Use those if you already run a voice-agent stack. Do not mix Live API streaming with this TTS path unless you need two different products.
+
+## Step 4: Replicate a voice only with consent
+
+Replication needs about 30 seconds of reference audio plus a verbal consent clip from the same speaker. Google says the system checks that the consent voice matches the reference before it stores a profile.
+
+Every Gemini Audio clip is watermarked with SynthID. C2PA credentials can travel with the file. That does not replace your own rights check. Do not upload a celebrity clip or a coworker sample without written and recorded permission.
+
+Voice remixing — take a library voice and prompt “add a subtle Southern US accent” — is listed as coming soon on the launch post. Design from scratch or replicate today. Do not plan a production calendar around remix until it ships in your region.
+
+## Step 5: Use the same models in Notebook and Vids
+
+Flash TTS is rolling out in [Gemini Notebook](https://notebook.google.com/). Flash-Lite TTS is rolling out in [Google Vids](https://vids.new/). Enterprise API access is listed as coming soon on Gemini Enterprise.
+
+If you already turn reports into listen-while-you-commute files, pair this with our [Gemini Notebook Audio Overview formats](/blog/gemini-notebook-audio-overview-formats/) walkthrough. Notebook Audio Overview is a product feature. 3.8 TTS is the model family under newer speech tools.
+
+Ultra-plan Deep Research reports can add charts and simulators in the Gemini app. That path is separate from TTS. Keep research reports and voice generation as two jobs.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/FL6mI_Br-mc"
@@ -59,130 +132,39 @@ Voice remixing (take a library voice and prompt “add a subtle Southern US acce
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Generate single-speaker audio with the API
+## Practical tips that save reruns
 
-The speech-generation docs use the Interactions API. You pass the verbatim transcript, attach `speech_metadata` for style, and pick a voice in `generation_config.speech_config`.
+Write the words you want spoken. Then add style. If you bury the script inside a long creative brief, the model may treat instructions as dialogue.
 
-```python
-import base64
-from google import genai
+Keep one speaker ID per character across a series. Save custom voices in the workspace instead of redescribing them each week.
 
-client = genai.Client()
+Test hard names, product SKUs, and numbers in a 15-second clip. Fix pronunciation with a respell in the script rather than a long system prompt.
 
-interaction = client.interactions.create(
-    model="gemini-3.8-flash-tts",
-    input=[{
-        "type": "user_input",
-        "content": [{
-            "type": "text",
-            "text": "Have a wonderful day!",
-            "annotations": [{
-                "type": "speech_metadata",
-                "style": "cheerful and friendly",
-            }],
-        }],
-    }],
-    response_format={"type": "audio"},
-    generation_config={
-        "speech_config": [
-            {"voice": "Kore"},
-        ]
-    },
-)
+For agents, start on Flash-Lite. Move a scene to Flash only when acting quality is the bottleneck.
 
-with open("out.wav", "wb") as f:
-    f.write(base64.b64decode(interaction.output_audio.data))
-```
+Export a short WAV, listen on phone speakers, then generate the full chapter. Studio monitors hide thin consonants that cheap earbuds expose.
 
-`Kore` is a built-in voice. You can also pass an Extended Voice Library ID, a Voice design ID (`voice_...`), or a Voice replication ID.
+## Limits and safety notes
 
-Default output is WAV. The model page also documents `audio/l16`, `audio/mulaw`, and `audio/alaw` when you set `response_format`.
+Google publishes a [Gemini 3.8 Audio model card](https://deepmind.google/models/model-cards/gemini-3-8-audio/). Read it before you ship a public voice product.
 
-## Direct a two-speaker scene
+SynthID marks generated audio. It does not prove a human said those words in the real world. Label AI speech in products where listeners could confuse it with a live person.
 
-For dialogue, set `mode` to `conversational` and list two speakers. Each turn is its own text block with a `speaker` annotation.
+Replication blocks listed regions in AI Studio. Confirm availability in your console before you promise a client a cloned narrator.
 
-```python
-interaction = client.interactions.create(
-    model="gemini-3.8-flash-tts",
-    input=[{
-        "type": "user_input",
-        "content": [
-            {
-                "type": "text",
-                "text": "How's it going today Jane?",
-                "annotations": [{
-                    "type": "speech_metadata",
-                    "speaker": "Joe",
-                    "style": "cheerful and friendly",
-                }],
-            },
-            {
-                "type": "text",
-                "text": "Not too bad. Ready to test these new voices?",
-                "annotations": [{
-                    "type": "speech_metadata",
-                    "speaker": "Jane",
-                    "style": "calm and relaxed",
-                }],
-            },
-        ],
-    }],
-    response_format={"type": "audio"},
-    generation_config={
-        "speech_config": {
-            "mode": "conversational",
-            "speakers": [
-                {"speaker": "Joe", "voice": "Puck"},
-                {"speaker": "Jane", "voice": "Kore"},
-            ],
-        }
-    },
-)
-```
-
-Google’s prompting guide supports inline tags for acting: `<laughs>`, `<sigh>`, `<gasp>`, and short backchannels such as `|mhm|` or `|yeah|`. Put those in the script, not in a separate track, so timing stays attached to the line.
-
-Long-form generation is meant to hold timbre and pacing across hours of audio. Still generate in chapters if you need to edit one section without regenerating the book.
-
-
-
-![Audio mixing desk and headphones in a small production room](https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Replicate a voice only with consent
-
-Flash TTS can rebuild a vocal profile from a 30-second sample. Google requires a verbal consent recording from the voice owner that matches the reference speaker. Clips carry SynthID watermarking and C2PA credentials.
-
-Voice replication through AI Studio is not available in Illinois, Texas, the EEA, the UK, Switzerland, and India. Do not ship a clone workflow in those regions through Studio.
-
-Use replication for talent you hired and documented. Do not scrape public clips. Google’s model card is the place to read the safety limits before you productize this.
-
-## Tips that keep takes consistent
-
-- Write style in `speech_metadata` for the whole turn. Use inline tags only for bursts and pauses.
-- Keep one voice ID per character. Mixing library IDs mid-episode causes noticeable drift.
-- Prefer Flash TTS for dialects and IPA pronunciation overrides. Prefer Flash-Lite for batch dubbing.
-- Test Japanese, Brazilian Portuguese, Vietnamese, MSA Arabic, Mexican Spanish, and Hindi if those are target markets. Google cites Voice Arena preference wins in those languages; still listen to your own script.
-- Partner stacks already wrap the models: Agora, LiveKit, Pipecat, and Vercel document Gemini TTS connectors.
-
-If you need a live conversation that can call tools while it talks, stay on the Live API instead of stitching TTS clips.
+Daily request caps exist in Gemini Apps. API projects have their own rate limits. Batch overnight jobs instead of firing 50 parallel chapter requests.
 
 ## Conclusion
 
-Start in the AI Studio speech workspace. Lock a voice description or a library ID. Move that same ID into the Interactions API with `speech_metadata` on every turn. Add a second speaker only after the first voice is stable.
+Gemini 3.8 Flash TTS is the model to open when the voice *is* the product: a character, a branded narrator, or a two-speaker scene that must stay in character for an hour. Flash-Lite TTS is the model to open when you need many files today.
 
-Flash TTS is the studio model. Flash-Lite TTS is the factory model. Both watermark output. Neither replaces a live dialogue session.
-
-Generate one short scene today, save the voice, then scale the script. That order avoids a folder of almost-matching narrators.
+Start in the AI Studio playground. Lock a voice. Mark the script. Then move the same IDs into the Gemini API or your agent framework. Check consent, watermarks, and regional blocks before you publish.
 
 ## Sources
 
-- [Gemini 3.8 text-to-speech launch (Google blog)](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/)
-- [Text-to-speech generation docs](https://ai.google.dev/gemini-api/docs/speech-generation)
-- [Gemini 3.8 Flash TTS model card page](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts)
-- [Gemini Audio speech generation (DeepMind)](https://deepmind.google/models/gemini-audio/speech-generation/)
+- [Gemini 3.8 text-to-speech says hello](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/) — Google, 23 September 2026
+- [Gemini 3.8 Flash TTS model card (API)](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts) — Google AI for Developers
+- [Text-to-speech generation](https://ai.google.dev/gemini-api/docs/speech-generation) — Gemini API docs
 - [Google AI Studio generate speech](https://aistudio.google.com/generate-speech?model=gemini-3.8-flash-tts)
-- [SynthID](https://deepmind.google/models/synthid/)
-- [Gemini 3.8 Audio model card](https://deepmind.google/models/model-cards/gemini-3-8-audio/)
+- [Gemini 3.8 Audio model card](https://deepmind.google/models/model-cards/gemini-3-8-audio/) — Google DeepMind
+- [Create your own voices with Gemini 3.8 text-to-speech](https://www.youtube.com/watch?v=FL6mI_Br-mc) — Google DeepMind
