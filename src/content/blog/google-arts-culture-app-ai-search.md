@@ -51,7 +51,7 @@ Check these blocks on a first visit:
 - Exhibitions and events near you, when location is available.
 - Shortcuts into Chrono Look, Dial-an-Artist, and City Guide.
 
-Scroll once, then pick one block. The feed is designed for a few minutes, not a full catalogue browse. If you want a deep dive into one collection, open the partner page from a story rather than staying on the home feed.
+Scroll once, then pick one block. The feed is designed for a few minutes, not a full catalogue browse. If you want the full collection, open the partner page from a story rather than staying on the home feed.
 
 ## Try Chrono Look
 
