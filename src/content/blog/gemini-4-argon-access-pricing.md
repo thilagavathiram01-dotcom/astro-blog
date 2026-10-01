@@ -1,139 +1,139 @@
 ---
-title: "Gemini 4 Argon: Access, Pricing, and What It Changes"
-description: "Google’s Gemini 4 Argon is out for Fairwind defenders first. See pricing, 1M output tokens, benchmarks, and who gets API access next."
+title: "Gemini 4 Argon Access, Pricing, and What It Does"
+description: "Gemini 4 Argon is Google’s new frontier model. See pricing, 1M output tokens, Fairwind access, and how to prepare."
 pubDate: 2026-10-01T09:00:00
-heroImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "ai", "developer", "google", "security"]
+heroImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "ai", "google", "developer", "ai-tools"]
 noindex: false
 ---
 
-Google announced Gemini 4 Argon on 30 September 2026. It is the company’s new frontier model for long, multi-step work in software engineering, legal and finance research, and cybersecurity defense.
+Google DeepMind announced Gemini 4 Argon on 30 September 2026. It is the first named model in the Gemini 4 line and targets long-horizon coding, legal and finance work, and cybersecurity defense.
 
-You cannot open it in the public Gemini app today. First access goes to vetted cyber defenders in Google DeepMind’s Fairwind Program, plus Google’s own teams. Broader API and Google AI Ultra access is next, after extra safety work.
+You cannot open it in the public Gemini app today. Access starts with trusted testers in the Fairwind Program. Google says paid API customers and Google AI Ultra subscribers come next.
 
-This guide sticks to Google’s published numbers so you can plan pricing, token limits, and evaluation work without guessing.
+This guide sticks to the official blog and DeepMind model page. Use it to decide whether Argon belongs in your stack once the gate opens.
 
-## What Google says Argon is for
+## What Argon is built to do
 
-Argon is built to keep reasoning across long-horizon tasks instead of answering a single short prompt. Google lists three work areas: real-world software engineering, enterprise knowledge work such as legal and finance, and defensive cybersecurity.
+Argon is a frontier model, not a Flash replacement. Google describes it as a system that can hold deep reasoning across long, multi-step jobs instead of answering a single prompt and stopping.
 
-The model already runs inside Google. Koray Kavukcuoglu, SVP of Google DeepMind and Chief AI Architect, wrote that thousands of Googlers use it for specialized coding, deeper research, and writing. Public examples include quantum subroutine optimization that beat a published baseline by 40% in minutes, and agent-driven memory work that freed more than 300 TiB of data-center memory, with 500 TiB to 1 PiB estimated once fully rolled out.
+The headline technical change is output length. Argon can emit up to 1 million output tokens in one trajectory, up from 64K on earlier Gemini models. Cached input tokens are priced at 95 percent off the input rate, which matters if you reuse the same large context.
 
-Another internal case is large C/C++ to Rust migration. Argon agents have worked on libraries such as re2 and libgav1, and on the Fuchsia Zircon kernel at 800K+ lines. For libgav1, agents replaced 32K lines of SIMD in an existing Rust port. Google says the result is a memory-safe decoder that runs 2.7x faster than that Rust port, with identical video output.
-
-
-
-![Laptop and code editor on a desk used for long software engineering sessions](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
+Google already runs Argon inside the company. The launch post cites quantum-algorithm work that beat a published baseline by 40 percent in minutes, fleet memory savings measured in hundreds of tebibytes, and Rust migrations of libraries such as re2 and libgav1. Those are internal results, not a consumer feature list.
 
 
 
-## Output limit and API price
+![Circuit board close-up representing hardware and software systems](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
 
-Argon raises the output token limit to 1 million tokens, up from 64K on prior Gemini models. Google frames that headroom as the reason the model can think and write for a long trajectory in one run.
 
-Introductory API pricing:
-
-- $2 per million input tokens
-- $10 per million output tokens
-- Cached input tokens at 95% off the input price
-
-After the introductory period, Google says the price becomes $4 per million input tokens and $20 per million output tokens.
-
-Treat those figures as list prices for paid API customers. Consumer chat availability is later, and Google has not published a free-tier quota for Argon.
 
 ## Benchmarks Google published
 
-Use these as Google’s own eval snapshot, not as a substitute for your tests.
+DeepMind posted a comparison table against GPT-6 Astra, Claude Fable 5.1, and Claude Opus 5.5. Argon leads several knowledge-work and long-context tests. It does not lead every coding bench.
 
-**Software and agents**
+Numbers from the official Gemini model page:
 
-- DeepSWE v1.1 (long-horizon software engineering): 77.9%, listed as a new state of the art
-- AutomationBench (Zapier, end-to-end business functions): 51.3%, ranked #1 on Google’s table
+- DeepSWE v1.1 (long-horizon software engineering): 77.9 percent, listed as state of the art.
+- Vals Index: 68.9 percent.
+- AutomationBench (Zapier): 51.3 percent, ranked first in Google’s table.
+- Vals Finance Agent v2: 65.4 percent.
+- Harvey’s Legal Agent Benchmark: 19.6 percent.
+- LVBench (long video): 91.7 percent.
+- CWE-bench v1 (vulnerability remediation): 68.0 percent, tied for first with GPT-6 Astra.
+- FrontierSWE v2: 55.0 percent, behind GPT-6 Astra at 65.5 percent.
+- Terminal-bench 4.0: 57.4 percent, behind Claude Opus 5.5 at 66.4 percent.
 
-**Knowledge work**
+Treat those scores as Google’s disclosed set, not an independent audit. Rival labs may publish different evals next week.
 
-- Vals Index (finance, coding, legal, and tax, weighted by U.S. GDP share): leading model on Google’s DeepMind eval page at 68.9%
-- Vals Finance Agent v2: 65.4%
-- Harvey Legal Agent Benchmark: 19.6%
+If you still rely on Gemini 3.8 Flash in Search, keep that path. Our [Gemini 3.8 Flash in AI Mode](/blog/gemini-3-8-flash-ai-mode-search/) guide covers the model picker that is live for Pro and Ultra users today.
 
-**Multimodal and long context**
+## Who can use it right now
 
-- LVBench (long video understanding): 91.7%
-- GraphWalks BFS F1 up to 128k: 99.7%; 256k to 1M: 84.2%
+Day-one access is narrow on purpose. Google is rolling Argon to trusted cyber defenders through the [Fairwind Program](https://deepmind.google/fairwind-program/). The company says it is also in the U.S. government’s voluntary pre-release access process.
 
-**Security**
+For those defenders, Google plans to ship Argon without the cyber guardrails that will sit on the public model. The stated goal is to let security teams find, validate, and patch vulnerabilities. Wiz is named as an early user through its Scan for Good program.
 
-- CWE-bench v1 (vulnerability remediation): 68%, tied for first on Google’s table
-
-DeepMind’s comparison table also shows where Argon does not lead. FrontierSWE v2, Terminal-bench 4.0, PostTrainBench, Terminal-Bench Science 0.1, and OSWorld-2.0 list higher scores for GPT-6 Astra or Claude Opus 5.5. Plan bake-offs on *your* repo and tools, not on a single headline number.
-
-If you already ship voice or live agents on 3.8, keep that stack. Argon is a different product line. See [How to Use Gemini 3.8 Live for Real-Time Voice Conversations](/blog/gemini-3-8-live/) for the current Live models.
+Everyone else waits. The launch post says the next groups are paid API customers and Google AI Ultra subscribers. There is no published date for free Gemini, AI Mode, or Workspace side panels.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/8M3NcH9J43I"
-    title="Gemini 4 Argon Is Comeback Google Needed!"
+  <iframe src="https://www.youtube.com/embed/JGGaNRf6Pko"
+    title="Google rolls out Gemini 4 Argon, its most advanced AI model"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Who can use it now
+## Pricing Google listed
 
-**Fairwind Program.** Google is giving Argon to trusted cyber defenders first. Fairwind opened on 3 September 2026 with Gemini 3.8 Flash Cyber. Reporting based on Google’s program describes more than 650 organizations, including CrowdStrike and Palo Alto Networks. Wiz is using Argon in its Scan for Good work on public infrastructure. Google says the model found a critical exposure in healthcare software that earlier frontier models missed.
+Introductory API price:
 
-**No cyber guardrails for that cohort.** For trusted defenders and Google’s internal teams, Argon ships without the cyber refusal layer so they can find, validate, and patch vulnerabilities. That setting is not the public default.
+- $2 per million input tokens
+- $10 per million output tokens
+- Cached input tokens at 95 percent off the input price ($0.10 per million)
 
-**Phased public release.** Google is in the U.S. government’s voluntary pre-release access process. It will collect tester feedback, then open Argon to developers, enterprises, and consumers, starting with paid API customers and Google AI Ultra subscribers.
+After the introductory window, Google says the rate becomes $4 per million input and $20 per million output. The blog does not name the end date of the intro period.
+
+A 1 million token output run is expensive even at intro rates. Plan prompts so the model stops when the job is done. Use cached context for repeated codebases and policy packs.
+
+## How to prepare before public access
+
+You can set up the workflow now even if the model ID is not in AI Studio yet.
+
+**1. Separate Flash work from frontier work.** Keep 3.8 Flash (or whatever Flash is current) for short answers, Search AI Mode, and high-volume classify jobs. Reserve Argon for migrations, multi-file refactors, long legal or finance packets, and video-plus-document reviews.
+
+**2. Cap output in the client.** When the API lands, set an explicit max-output budget. Do not default to 1M tokens on chat-style calls.
+
+**3. Cache the stable context.** Style guides, security policies, and frozen snapshots of a repo should sit in cached input so you pay the discounted rate.
+
+**4. Keep a human review gate.** Google’s own C/C++ to Rust migrations still go through automated tests and manual audit. Your team should do the same. Argon finding a patch is not the same as shipping the patch.
+
+**5. Do not expect cyber-unrestricted mode.** That configuration is for Fairwind defenders. Public Argon will refuse harmful cyber and CBRN requests under Google’s Frontier Safety Framework.
 
 
 
-![Security operations screens in a darkened control room](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80)
+![Developer working at a desk with dual monitors and code](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
 
 
 
-## Safeguards Google lists before broad access
+## Safeguards Google is still tightening
 
-Google groups remaining work into four buckets.
+Broad release waits on four workstreams the company named in the launch post:
 
-1. **Misuse.** Argon is trained to refuse cyber and CBRN attack requests while allowing legitimate dual-use science, under the Frontier Safety Framework. Google also cites monitoring of internal activations and red-team tests.
-2. **Prompt injection.** Google calls Argon its most resilient model so far against indirect prompt injection and says it leads Gray Swan’s IPI benchmark.
-3. **Misalignment monitors.** Separate systems watch chain-of-thought and actions and can stop a run that goes beyond the user’s intent. Google says training-run alerts go to an incident team, and findings are not fed back into training in a way that would teach the model to hide from monitors.
-4. **Hardened sandboxes.** High-risk training and evals run in isolated, sealed environments, following DeepMind’s agent control roadmap.
+- Misuse defenses for cyber and CBRN requests, including monitoring of internal activations.
+- Prompt-injection robustness, with a lead score on Gray Swan’s Indirect Prompt Injection benchmark.
+- Misalignment monitors that watch chain-of-thought and actions and can stop a run.
+- Hardened sandboxes for high-risk training and eval, aligned with DeepMind’s agent control roadmap.
 
-None of that is a how-to for offensive work. Public users should expect refusals on exploit requests.
+Those controls explain the slow rollout. They also mean early public Argon may refuse tasks that a Fairwind defender is allowed to run.
 
-## How to prepare your stack
+## What not to expect this week
 
-You cannot call a public `gemini-4-argon` model ID yet. Use the wait to tighten evaluation and cost controls.
+Argon is not a drop-in for Gemini Live, Gems, or skills. Those live in the Gemini app and follow a separate product calendar.
 
-**1. Split workloads.** Keep Gemini 3.8 Flash for low-latency chat, TTS, and Live sessions. Reserve Argon-class spend for multi-hour coding, legal or finance research, and long document or video analysis.
+It is not in Google Search AI Mode. Flash remains the model you can pick there on a paid plan.
 
-**2. Budget for output.** A 1M-token completion at $10 per million output tokens is $10 before cache. Design agents that summarize intermediate state instead of dumping every trace into the next turn.
+It is not a promise that every coding benchmark now favors Google. FrontierSWE v2 and Terminal-bench 4.0 still list other labs ahead in Google’s own table.
 
-**3. Turn on caching.** A 95% discount on cached input is the main cost lever for repeated codebases, policy manuals, or case files.
+## Tips
 
-**4. Write task-level tests.** Port DeepSWE-style tickets from your own backlog: reproduce a bug, propose a patch, run tests, and stop when review is required. Score against 3.8 Flash and your current coding agent.
+Watch the DeepMind Gemini page for the model ID before you rewrite SDKs. Do not hard-code a guessed name.
 
-**5. Isolate tools.** Give any future Argon agent a sandboxed repo, read-only credentials first, and an explicit stop policy. That matches how Google describes its own migration audits.
+If you hold Ultra, check the Gemini app model list after each app update. Google said Ultra is in the first consumer wave, not that the toggle is live today.
 
-**6. Watch two release surfaces.** API first for paid customers, then Google AI Ultra in the Gemini app. Skills and Gems in consumer chat are a separate rollout.
+Log token use from day one. Output is five times the input intro rate, and a long reasoning trace can dominate the bill.
 
-## Tips while you wait
-
-- Read the Fairwind and Frontier Safety pages if you work in defense or incident response. Access is application-based, not a public waitlist button in AI Studio.
-- Do not delete 3.8 Flash integrations. Live, TTS, and Flash remain the production path for voice and high-QPS apps.
-- Recheck prices when the introductory window ends. The footnote doubles both input and output rates.
-- Treat Wiz and internal Google stories as existence proofs, not SLAs for your environment.
+Keep a fallback model. When Argon is rate-limited or refused, send the same job to 3.8 Flash rather than stalling the pipeline.
 
 ## Conclusion
 
-Gemini 4 Argon is a restricted frontier release, not a drop-in replacement for Gemini 3.8 Flash. The useful facts for planners are the 1M output window, $2 / $10 introductory API rates, Fairwind-first access, and Google’s own mixed benchmark table.
+Gemini 4 Argon is a limited-release frontier model with a 1 million token output ceiling, intro API pricing of $2 / $10 per million tokens, and early access through Fairwind. Google reports strong scores on DeepSWE, Vals, AutomationBench, legal-agent work, and long video. Other labs still lead some terminal and SWE suites.
 
-Build eval harnesses and cache strategy now. Switch model IDs only when Google publishes them for paid API and Ultra customers.
+Prepare the routing, cache, and review layers now. Switch the model ID when Google opens paid API and Ultra access. Until then, keep production traffic on the Flash models you can already call.
 
 ## Sources
 
-- [Gemini 4 Argon: our next era of frontier intelligence](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/) — Google Blog, 30 Sep 2026
+- [Gemini 4 Argon: our next era of frontier intelligence](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/) — Google, 30 September 2026
 - [Gemini models](https://deepmind.google/models/gemini/) — Google DeepMind
 - [Fairwind Program](https://deepmind.google/fairwind-program/) — Google DeepMind
-- [Google's new frontier AI model Gemini 4 Argon goes to cybersecurity defenders first](https://siliconangle.com/2026/09/30/googles-new-frontier-ai-model-gemini-4-argon-goes-to-cybersecurity-defenders-first/) — SiliconANGLE
+- [Google announces Gemini 4 Argon as its new frontier model](https://9to5google.com/2026/09/30/gemini-4-argon-announcement/) — 9to5Google
+- [Google rolls out Gemini 4 Argon (YouTube)](https://www.youtube.com/watch?v=JGGaNRf6Pko) — CNBC Television
