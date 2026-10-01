@@ -90,11 +90,9 @@ If the reply cites the wrong site, say so in the next turn and repeat `@Webflow`
 
 
 
-![Person editing a page layout on a desktop monitor](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
+![Hands working on a website wireframe at a desk](https://images.unsplash.com/photo-1581291518857-4d76ce7b61d0?auto=format&fit=crop&w=800&q=80)
 
 
-
-Wait — that second image ID is used elsewhere in the repo for a coding desk. Swap to a distinct photo in the published file.
 
 ## Use Webflow from Android after the web link
 
