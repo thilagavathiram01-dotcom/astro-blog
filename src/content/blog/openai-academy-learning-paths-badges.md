@@ -26,7 +26,7 @@ OpenAI's framing is practical: use AI to learn AI. Courses expect a real task, n
 
 Badges and pathway certificates of completion are not certifications. OpenAI says they do not guarantee eligibility for a future certification program. The Help Center also separates Academy courses from the OpenAI Certified app inside ChatGPT.
 
-![Adults in a classroom workshop taking notes around laptops](https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80)
+![Team collaborating around a laptop during a training session](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80)
 
 ## Pick a path before you enroll
 
