@@ -75,7 +75,7 @@ Denying a permission does not delete the app. It only blocks that feature. If a 
 
 ## Pair pause with Play Protect and Private Space
 
-Unused-app pause is a storage and permission tool. It is not a malware scanner. Google Play Protect still scans apps for harmful behavior. If you have not turned scanning on, start with the [Play Protect scanning guide](/blog/android-play-protect-app-scanning/) and then come back to the unused list.
+Unused-app pause is a storage and permission tool. It is not a malware scanner. Google Play Protect still scans apps for harmful behavior. If you have not turned scanning on, start with the [Play Protect scanning guide](/blog/play-protect-scan-apps-android/) and then come back to the unused list.
 
 Apps you want hidden, not merely paused, belong in Private Space. That is a separate lockable profile. The [Private Space setup guide](/blog/android-private-space/) covers creating the space and moving sensitive apps into it. Pause does not replace that lock.
 
