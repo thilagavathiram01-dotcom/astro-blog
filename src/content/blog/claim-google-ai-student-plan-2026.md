@@ -11,13 +11,11 @@ College students still have a window to claim a year of Google AI at no charge. 
 
 The plan you get depends on where you study. Eligible students in the United States can get Google AI Pro for 12 months. Eligible students in more than 140 markets outside the United States can get Google AI Plus for 12 months. A separate bundle pairs Google AI Pro with YouTube Premium at up to 70% off in select markets.
 
-This guide follows Google’s Gemini blog post and Google One Help. It does not invent campus lists or extra storage tiers.
-
 ## What the student offer includes
 
-Google’s 19 August post values the U.S. Google AI Pro year at $19.99 a month if you paid retail. The company says that year unlocks 4x higher Gemini usage limits than non-AI subscribers, Gemini Spark, Gemini inside apps such as Gmail and Google Docs, 5 TB of storage, and Google Health Premium.
+Google’s 19 August post values the U.S. Google AI Pro year at $19.99 a month if you paid retail. That year unlocks 4x higher Gemini usage limits than non-AI subscribers, Gemini Spark, Gemini in Gmail and Docs, 5 TB of storage, and Google Health Premium.
 
-Outside the United States, the free year is Google AI Plus, not Pro. Google says that plan includes Gemini Omni, 2x higher Gemini usage limits than non-AI subscribers, and 400 GB of storage. The exceptions named in the footnotes are Albania, Bolivia, Canada, Macau, Hong Kong, and Tunisia, plus the United States, which has its own Pro offer.
+Outside the United States, the free year is Google AI Plus. It includes Gemini Omni, 2x higher Gemini usage limits than non-AI subscribers, and 400 GB of storage. Footnotes exclude Albania, Bolivia, Canada, Macau, Hong Kong, and Tunisia. The United States uses the Pro offer instead.
 
 A payment method is required at sign-up even when the first year is free. Unless you cancel earlier, Google AI Pro charges $19.99 a month after the trial. Google AI Plus charges $4.99 a month, or the local equivalent, after its trial. Cancel anytime from Google One.
 
