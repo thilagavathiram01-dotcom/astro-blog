@@ -7,11 +7,9 @@ tags: ["google", "android", "how-to", "ai"]
 noindex: false
 ---
 
-The microphone on the Google search bar used to do one job: turn speech into a regular web query. On Android, Google is testing a toolbar that puts Search, AI Mode, Search Live, and Song Search on the same screen, so you do not have to back out and start over.
+The microphone on the Google search bar used to do one job: turn speech into a regular web query. On Android, Google is testing a toolbar that puts Search, AI Mode, Search Live, and Song Search on the same screen.
 
-The redesign was first reported in Google app builds in early August 2026. It is not on every phone yet. If your mic still opens the older transcription screen, update the Google app and check again later. Where the toolbar is present, it sits at the bottom of the voice screen, in the same style as the mode switcher in Google Lens.
-
-This guide covers what each mode does, how to move between them, and what still depends on your account and region.
+The redesign showed up in Google app builds in early August 2026. It is not on every phone yet. If your mic still opens the older transcription screen, update the Google app and check again later. Where the toolbar is present, it sits at the bottom of the voice screen, in the same style as the mode switcher in Google Lens.
 
 ## What the voice toolbar changes
 
@@ -24,9 +22,7 @@ The newer screen keeps listening in one place and adds a bottom toolbar with fou
 - **Search Live** keeps a back-and-forth voice conversation going, with links from the web.
 - **Song Search** still listens for music you play, sing, or hum.
 
-9to5Google noted that Google remembers whether you last used Search or AI Mode and opens that mode the next time. Song Search and Search Live do not replace that default.
-
-Availability is staged. Early sightings were in the Google app beta, not a single global switch. Treat the toolbar as a feature you may already have, not one every Android phone shows today.
+9to5Google noted that Google remembers whether you last used Search or AI Mode and opens that mode next time. Availability is staged. Early sightings were in the Google app beta, not a single global switch.
 
 ![Person holding a smartphone with both hands](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
 
@@ -48,7 +44,7 @@ Search is the right mode for a short lookup: a store hours check, a spelling, or
 3. Stop when the transcript looks right.
 4. Send the query, or edit the text if a word was wrong before you search.
 
-Editing the transcript matters. You can fix a name or a number without repeating the whole sentence. That stop control is the practical difference from the older voice screen, which sent the transcript as soon as you paused.
+Editing the transcript matters. You can fix a name or a number without repeating the whole sentence.
 
 ## Send the same question to AI Mode
 
@@ -82,7 +78,7 @@ You do not have to wait for the voice toolbar to try it. Google’s own steps ar
 
 On the toolbar, **Search Live** is the same conversation style. It fits packing advice, a recipe adjustment, or a comparison you want to hear while your hands are busy. It is a poor fit for a one-word lookup. Use Search for that.
 
-Camera input is part of Search Live in the Google app, separate from the mic-only toolbar. Point the camera only when the on-screen control offers it, and avoid filming private documents unless you intend to send that image to Search.
+Camera input is part of Search Live in the Google app, separate from the mic-only toolbar. Use it only when the on-screen control offers it.
 
 ## Identify a song without leaving the screen
 
@@ -92,7 +88,7 @@ Song Search on the toolbar keeps the earlier behavior. Google did not announce a
 2. Hold the phone near the speakers, or hum or sing a short phrase if the screen invites that.
 3. Wait for a match, then open the result in YouTube or your music app if one is offered.
 
-Background noise still breaks matches. Move closer to the source, or pause other audio, before you retry. If Song Search is missing from the toolbar, use the older shortcut inside the Google app search bar.
+Background noise still breaks matches. Move closer to the source before you retry.
 
 ## What to do when a mode is missing
 
@@ -121,7 +117,7 @@ Match the mode to the job. Search for a link you will open. AI Mode for a writte
 
 Do not treat the answer as the source. AI Mode and Search Live both point at web pages. Open those links when the answer affects a purchase, a medical decision, or travel times.
 
-If you rely on voice because typing is hard, pair this screen with your existing accessibility settings. TalkBack and voice access still work on the Google app, but the new toolbar adds extra controls at the bottom of the screen, so give those buttons a pass with your switch or screen reader after the update lands.
+If you rely on voice because typing is hard, check the new bottom controls with your screen reader after the update lands. TalkBack still works in the Google app, but the toolbar adds extra buttons.
 
 ## Bottom line
 
