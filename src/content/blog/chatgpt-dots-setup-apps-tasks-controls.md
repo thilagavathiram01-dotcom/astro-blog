@@ -7,7 +7,7 @@ tags: ["chatgpt", "ai-tools", "tutorials", "how-to", "productivity"]
 noindex: false
 ---
 
-ChatGPT Dots are always-on agents that keep working after you close the chat. OpenAI started rolling them out on 29 September 2026, powered by GPT-6 Astra, with a cloud computer and access to the apps you choose to connect. This guide covers who can create a Dot, how to set one up on desktop, and the controls that decide what it can do without asking.
+ChatGPT Dots are always-on agents that keep working after you close the chat. OpenAI started rolling them out on 29 September 2026, powered by GPT-6 Astra, with a cloud computer and access to apps you connect. This guide covers who can create a Dot, how to set one up on desktop, and the controls that decide what it can do without asking.
 
 A regular ChatGPT thread waits for your next message. A Dot can take an ongoing goal, work between conversations, and bring results back for review. OpenAI says the first Dot is included in eligible Pro and Business Premium plans at no extra cost. Deeper work still draws on a plan allowance, with extended limits for the first month after launch.
 
@@ -98,7 +98,7 @@ Start with one recurring task and one connected app. A calendar summary is easie
 
 Do not treat proactive memory as a filing system you can partially erase. If a connected app exposed something you do not want kept, disconnecting the app is not enough. Reset the Dot.
 
-Enterprise admins should leave the beta off until they have a policy for plugins, specialist Dots, and what employees may approve without review. Personal Pro users in the EEA, Switzerland, and the UK should not expect the consumer rollout yet.
+Enterprise admins should leave the beta off until they have a policy for plugins and what employees may approve without review. Personal Pro users in the EEA, Switzerland, and the UK should not expect the consumer rollout yet.
 
 ## Conclusion
 
