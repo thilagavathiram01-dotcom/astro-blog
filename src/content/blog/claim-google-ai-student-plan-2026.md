@@ -36,7 +36,7 @@ Family-group members must leave the shared plan first. Signing up for a student 
 
 Google One Help also says recurring add-ons, including upgraded storage packs, are not available on a student offer. Treat the storage figure in the offer you select as the storage you get. Do not expect a separate 10 TB add-on to stack on top.
 
-If you already redeemed an earlier Google AI Pro student trial, Help says you may be prompted to verify again through SheerID for a further student discount. Read the on-screen offer before you confirm a new card charge.
+If you already redeemed an earlier Pro student trial, Help says SheerID may ask you to verify again. Read the on-screen price before you confirm.
 
 
 ![College students working together around laptops in a bright classroom](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80)
@@ -96,17 +96,11 @@ If you already have a separate YouTube Premium or Premium Lite subscription, a s
 
 ## Tips before you subscribe
 
-Use a personal Gmail address. Campus Google Workspace accounts are excluded from the YouTube bundle terms, and some school admins block consumer Gemini features.
+Use a personal Gmail address. Campus accounts are excluded from the YouTube bundle terms, and some school admins block consumer Gemini features.
 
-Read the renewal line on the subscribe screen. The first year is free only if you stay inside the offer terms and cancel before the charge date you do not want.
+Read the renewal line on the subscribe screen. The first year is free only if you stay inside the offer terms and cancel before a charge you do not want. Set a reminder for late November 2026 if you have not claimed yet. The published redeem-by date is 31 December 2026.
 
-Set a calendar reminder for late November 2026 if you have not claimed yet. The published redeem-by date is 31 December 2026.
-
-Keep one account for the discount. Splitting verification across two Gmail addresses is a common reason SheerID and Google One disagree.
-
-After you subscribe, open the student hub the same day and upload one course pack. The storage and higher limits only help if the notebook has your files in it.
-
-Do not treat Gemini output as a graded answer key. Google’s own study-tool notes say usage limits apply and responses should be checked.
+Keep verification on one account. After you subscribe, open the student hub the same day and upload one course pack. Do not treat Gemini output as a graded answer key.
 
 ## Conclusion
 
