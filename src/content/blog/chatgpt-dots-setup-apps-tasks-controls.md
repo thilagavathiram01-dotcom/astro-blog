@@ -51,7 +51,7 @@ If you are wiring plugins for ordinary ChatGPT chats as well, the setup steps ov
 
 Describe the outcome and the details it needs. Useful first jobs are ones you want tracked, not one-off trivia: review tomorrow’s calendar, collect notes on a topic, or remind you before a deadline. Reply in the same conversation to add context or change the request. Attach a file or photo with the **+** button.
 
-Open the Dot’s profile on desktop to review **In progress**, **Scheduled**, and **Completed**. You can open its computer from the profile and interact with it. On mobile, that computer opens in your control.
+Open the Dot’s profile on desktop to review **In progress**, **Scheduled**, and **Completed**. You can open its computer from the profile. On mobile, that computer opens in your control.
 
 Ask it to set a reminder or a recurring check, such as a morning calendar summary. Scheduled runs and proactive updates show up in the conversation. Manage a scheduled task from Recent activity in the profile, or from the Scheduled section in ChatGPT. You can change the repeat schedule, time, and completion notifications, and you can review active, paused, and completed tasks.
 
