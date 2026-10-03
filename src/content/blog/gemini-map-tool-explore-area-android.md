@@ -17,6 +17,8 @@ Open the Gemini app on your phone. In the attachment carousel under the prompt b
 
 9to5Google and Android Authority both reported the control as widely available on mobile as of October 2. Android Authority first saw traces of the tool in February 2026; the public rollout is what landed this week. If Map is missing, update the Google app on Android or the Gemini app on iPhone, then force-close and reopen Gemini.
 
+The carousel order can shift after an update, so do not hunt for Map in Settings. It is a composer tool, next to the other attachments you already use for photos and files.
+
 ![Person holding a phone over a printed city map](https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80)
 
 ## Attach a map area to a prompt
@@ -40,7 +42,7 @@ Useful prompts once Map Area is attached:
 - “I am visiting this neighborhood tomorrow afternoon. Suggest a two-hour walking loop that stays inside the circle.”
 - “Compare grocery options in this area for a household that needs late hours.”
 
-Keep the circle tight. A city-wide circle gives Gemini less to work with than a few blocks around a station or a park.
+Keep the circle tight. A city-wide circle gives Gemini less to work with than a few blocks around a station or a park. If the first answer feels generic, shrink the circle and ask again.
 
 ## What this is not
 
@@ -48,7 +50,7 @@ The Map tool does not turn Gemini into a turn-by-turn navigator. It attaches a g
 
 It is also not the same product as Ask Maps. Google Maps launched Ask Maps so you can ask complex questions about a place from inside Maps, grounded in Maps data, reviews, and busyness. The Gemini app Map tool is a prompt attachment. Use Ask Maps when you are already planning a route. Use the Gemini Map tool when you are in a Gemini chat and want the next answer tied to a specific patch of the map.
 
-Location permission still matters. The map opens on your current location. If location is off, search with the magnifying glass and set the circle yourself.
+Location permission still matters. The map opens on your current location. If location is off, search with the magnifying glass and set the circle yourself. On Android, check that the Google app is allowed to use precise location under Settings, Location, App location permissions. A coarse fix can drop the opening view on the wrong block.
 
 ![Aerial view of a city street grid used to pick a focus area](https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=800&q=80)
 
@@ -64,7 +66,17 @@ Vague questions waste the attachment. Name the constraint.
 
 **Errand chain.** “I need a pharmacy, then a grocery store, both inside this circle. Order them so the walk is shorter.”
 
-Ask Gemini to say when a place sits outside the circle. That catches cases where the model pads the list with nearby favorites.
+Ask Gemini to say when a place sits outside the circle. That catches cases where the model pads the list with nearby favorites. A follow-up such as “Drop anything outside the Map Area and mark the rest with a one-line reason” keeps the list short.
+
+## Worked examples
+
+**Trip planning from home.** Search the destination city with the magnifying glass, drop the circle on the hotel block, then ask for a rainy-day indoor route that stays inside the circle. You are not sharing a live GPS trail of your house if you searched a different city first.
+
+**Same-day errand.** Leave the circle on your current block. Ask which shops inside it can print a document before 6 p.m. Then open Maps only for the walk.
+
+**Group chat decision.** Attach the area, ask for three dinner options with a price band, and paste the reply into your group thread. The Map Area chip stays in your Gemini chat. It does not travel with the copied text, so add the neighborhood name yourself.
+
+These are prompt patterns, not guaranteed results. Hours and stock change. Confirm on the business listing before you go.
 
 ## The slash key is moving to @
 
@@ -98,7 +110,9 @@ Treat hours, prices, and “open now” claims as leads. Open the place in Maps 
 
 Do not paste a home address into a shared Gemini chat if other people can see the thread. The circle already tells the model where you mean.
 
-Web users are out of luck for now. Both reports say the Map carousel item is mobile only.
+Web users are out of luck for now. Both reports say the Map carousel item is mobile only. A phone session will not sync the Map chip into the browser composer.
+
+If the circle feels stuck after a search, close with X and open Map again. The reports describe a fresh live map each time you launch the tool, centered on current location until you search.
 
 ## Bottom line
 
