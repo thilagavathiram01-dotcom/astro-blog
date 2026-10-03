@@ -1,67 +1,41 @@
 ---
-title: "Project Suncatcher: Google’s TPU Satellite in Orbit"
-description: "Project Suncatcher put Google TPUs in orbit on 1 Oct 2026. Here is what the Transporter-18 prototype tests, and what comes next."
-pubDate: 2026-10-02T09:00:00
+title: "Project Suncatcher: Google’s First TPU Satellite Test"
+description: "Project Suncatcher put a Google TPU prototype in orbit on Oct 1, 2026. See what the Planet and SpaceX test measures, and what comes in 2027."
+pubDate: 2026-10-03T09:00:00
 heroImage: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["ai", "google", "developer"]
 noindex: false
 ---
 
-Google’s first Project Suncatcher prototype is in orbit. On 1 October 2026, the satellite launched on SpaceX’s Transporter-18 rideshare, built with Planet. Google Research says the team has confirmed contact and the craft is operating as expected.
+Google confirmed contact with its first Project Suncatcher prototype on October 1, 2026. The satellite, built with Planet, rode SpaceX’s Transporter-18 rideshare and is operating as expected.
 
-This is not a product launch. It is the first hardware test of a research moonshot: can Tensor Processing Units (TPUs) survive launch, radiation, and vacuum long enough to run machine learning off Earth? The peer-reviewed paper behind the mission is now in *Joule*.
+This is not a public cloud region in orbit. It is the first hardware check in a research program that asks whether machine-learning clusters can run on sunlight in low Earth orbit. Travis Beals, senior director of Paradigms of Intelligence, described the flight as the start of a long-term moonshot, with a peer-reviewed paper now in *Joule*.
 
-If you follow Google’s AI stack, this flight sits beside model releases such as [Gemini 4 Argon](/blog/gemini-4-argon-developer-guide/). Argon is a software frontier. Suncatcher asks whether the chips that train and serve models can live in low Earth orbit.
+If you follow Google’s AI stack on the ground — including models such as those covered in our [Gemini 4 Argon developer guide](/blog/gemini-4-argon-developer-guide/) — this flight is the matching hardware experiment: same class of accelerator, a very different power and cooling problem.
 
 ## What launched, and what it is for
 
-Project Suncatcher was announced last year as a long-term study of scalable machine learning infrastructure in space. In low Earth orbit, solar panels can see near-constant sunlight. Google says that can yield up to eight times more solar power than the same panel on Earth.
+Project Suncatcher was announced in 2025. The idea is to put Tensor Processing Units (TPUs) where a solar panel can see near-constant sunlight. Google says a panel in the right low Earth orbit can generate up to eight times more solar power than the same panel on Earth.
 
-The October flight is narrower than that vision. Travis Beals, senior director of Paradigms of Intelligence, described the mission as a data-gathering step. Over the coming weeks, the team will measure how TPUs handle launch stress, radiation, and thermal extremes.
+The October 1 flight is a prototype, developed with Planet and launched on Transporter-18. Over the coming weeks the team will collect in-orbit data on three stresses that ground labs only approximate:
 
-The New York Times reported that the satellite, named MVP, carries four TPUs with about the compute of one data-center server, and that its solar panels supply about one kilowatt. Google has not published a public query API for the craft. Treat any “run a prompt on the satellite” claim as unverified.
+- Vibration and acceleration from launch.
+- Radiation from solar events and cosmic rays.
+- Heat, because a vacuum has no air to carry heat away.
 
-![Earth seen from orbit, the environment Project Suncatcher is testing](https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80)
+Future designs, Google says, would put dozens of TPU chips on each satellite and fly those satellites in clusters. Linking clusters could, in theory, handle larger workloads. That architecture is not on this first vehicle. The 2027 milestone is a two-satellite laser test.
 
-## How to read the mission in five checks
+![Earth seen from orbit, the environment Project Suncatcher is measuring](https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80)
 
-You cannot book time on the prototype. You can still follow the experiment without inventing results.
+## Why orbit is attractive, and why it is hard
 
-1. Start with the 1 October post on the Google Research blog. It confirms launch, partner (Planet), vehicle (Transporter-18 with SpaceX), contact, and that in-orbit data collection has begun.
-2. Read the 24 September explainer for the test plan: vibration, radiation, cooling, and future laser links. That post also points to a Google video series on the engineering questions.
-3. Open the *Joule* paper linked from the launch note (`goo.gle/suncatcher-joule`) if you need the research design rather than the news summary.
-4. Separate ground tests from flight tests. Ground results are already published. Flight results are not.
-5. Watch the 2027 milestone, not daily social posts. Google says a two-satellite laser-link test is planned for 2027, after this first hardware flight.
+Power is the attraction. Dawn-dusk orbits keep solar arrays in sunlight for almost the full orbit, which is why Google looked past geosynchronous options for this concept. More energy per panel is the bet. Whether that energy can feed a useful cluster is the open question.
 
-## What Google already tested on the ground
+Launch is the first filter. A ride to low Earth orbit lasts about 10 minutes. The spacecraft sees sustained loads up to 10 times Earth gravity. Individual parts, including the TPU chips, can see 50 to 100 g. Google shook the satellite on all three axes to match rocket frequencies before flight. The hardware survived that ground test. Survival on the pad is not the same as survival after months of radiation and thermal cycling.
 
-A ride to low Earth orbit lasts about 10 minutes. During that window the spacecraft sees vibration and sustained acceleration up to about 10 g. Individual parts, including TPU chips, can see 50 to 100 g. Google shook the satellite on all three axes to mimic launch frequencies and reported that the hardware held up.
+Radiation testing happened at UC Davis’s Crocker Nuclear Laboratory. Engineers ran AI workloads on Trillium TPUs in a proton beam and watched for errors such as bit flips. Google’s initial result: the chips tolerated a total ionizing dose higher than a five-year mission would deliver. That is a lab result. The orbit test is meant to check what the beam cannot reproduce.
 
-Radiation is the next filter. Solar events and cosmic rays flip bits and wear out electronics. The team ran Trillium TPUs in a proton beam at UC Davis’s Crocker Nuclear Laboratory while AI workloads were active, and watched for errors such as bit flips. Google says those chips survived a total ionizing dose greater than a five-year space mission would deliver.
-
-That is a ground result. Orbit adds a mixed radiation field, thermal cycling, and no chance to swap a board. The October flight exists because those conditions cannot be fully copied in a lab.
-
-![Solar array under bright light, the power source Suncatcher wants to use in orbit](https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=800&q=80)
-
-## Cooling without air
-
-TPUs dump a lot of heat into a small area. On Earth, fans and liquid loops move that heat into air. In vacuum there is no airflow. Heat leaves only by radiation, so the thermal design has to change.
-
-Google is testing heat pipes plus radiators. The stack has already been run in a thermal vacuum chamber that copies space temperature and pressure. The orbiting prototype is the first check of that cooling path on a real flight. If radiators underperform, later satellites get a different layout before anyone talks about clusters.
-
-## What the 2027 flight is meant to prove
-
-Future designs in Google’s plan carry dozens of TPU chips per satellite and fly in clusters. Training-scale jobs need high bandwidth between neighbors, not a thin link to the ground.
-
-Most space lasers are built for modest bandwidth over long range. Suncatcher needs the opposite: very high bandwidth over very short range, with both ends moving. Google compares the pointing problem to hitting a coin-sized target from miles away while both points move. The 2027 mission puts two satellites up to test that link. This October flight does not.
-
-Clusters also need each craft to know its absolute position and its place relative to the others. Google calls that guidance, navigation, and control work. None of it is solved by a single prototype that has only just checked in.
-
-## What this does not change for developers
-
-Suncatcher does not add a new model ID in AI Studio, Firebase AI Logic, or the Gemini API. Your current calls still land in terrestrial regions. Pricing, context windows, and safety filters are unchanged by this launch.
-
-If you are sizing a workload today, keep using published API models. For a frontier model that is actually in a limited program, see the Argon notes on access and token pricing rather than this satellite. Argon’s introductory API price, announced 30 September 2026, is $2 per million input tokens and $10 per million output tokens, rising later to $4 and $20. Cached input is priced at 95% off the input rate. That is a billing fact. Suncatcher is a hardware experiment.
+Cooling is the other constraint. On the ground, fans move air across a heat sink. In vacuum, heat leaves only by radiation. Google is using heat pipes and radiators, already proven on other spacecraft, and has run the stack in a thermal vacuum chamber. Radiators shed on the order of a few hundred watts per square metre, while a TPU pack produces far more heat in a much smaller volume. The flight will show whether that plumbing holds once the chips are actually computing.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/o1JK79jszqo"
@@ -71,30 +45,44 @@ If you are sizing a workload today, keep using published API models. For a front
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Practical tips while the data comes in
+## How to follow the test without overreading it
 
-- Quote only the two Google Research posts and the *Joule* paper when you brief a team. Secondary write-ups often mix the four-chip prototype with the “dozens of chips” future design.
-- Do not plan a product dependency on orbital inference. Google has not offered a developer endpoint, a latency number, or a service level.
-- Track three dates: contact confirmed (1 October 2026), in-orbit thermal and radiation data over the coming weeks, and the two-satellite test in 2027.
-- Power scale is still tiny next to a campus. About one kilowatt on the prototype is a hair-dryer class supply, not a training cluster.
-- Radiation tolerance on the ground is not the same as error rates in orbit. Wait for flight bit-flip data before comparing Trillium to rad-hard parts.
+You cannot rent this satellite. There is no public API and no developer console for the prototype. What you can do is track the claims Google has actually made, and ignore the ones it has not.
 
-## Why Google is running the test anyway
+1. Read the October 1 status post. It confirms launch, contact, and normal operation. It does not publish a model name, a token rate, or a public inference endpoint.
+2. Read the September 24 explainer for the engineering scope: Trillium radiation results, vibration loads, radiator cooling, and the 2027 two-satellite laser test.
+3. Watch the Google Research short series. The overview is “Google’s latest moonshot to put machine learning in space.” Follow-ups cover laser links and cooling. Treat lab demos, including an 800 Gbps bench link built from fiber-optic parts, as ground proofs, not on-orbit results.
+4. Open the *Joule* paper when you want the research record. Google pointed to it as the write-up behind the mission. Use the paper, not secondary recaps, for methods and limits.
+5. Mark 2027 on a calendar. That is when Google plans to fly two satellites and test short-range, high-bandwidth laser links. Current space lasers are mostly tuned for long range and lower bandwidth. Suncatcher needs the opposite: very high bandwidth over short distances, with each satellite knowing its own position and its neighbor’s.
 
-Beals frames the work as working backward from a long goal: enough compute, powered by sunlight that does not set, to keep AI useful for science and health far past today’s grid limits. Google compares the timeline to early autonomous-driving and quantum research: years of experiments before a practical system.
+![A launch vehicle leaving the pad, the kind of ride Transporter-18 provided](https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&w=800&q=80)
 
-The first launch is meant to show what breaks. Vibration, dose, and chamber tests reduce risk. They do not replace weeks of telemetry from a craft that is already on orbit and talking to the ground.
+## What this does not change for app developers
 
-## Bottom line
+Nothing in the Gemini API, Vertex AI, or Android on-device stack moves because this satellite is alive. Training and serving still happen in terrestrial data centers. If you are choosing a model or an on-device runtime this quarter, size that choice against published quotas and device limits, not against an orbital prototype.
 
-Project Suncatcher has a prototype in orbit as of 1 October 2026, launched on Transporter-18 with Planet and SpaceX. Google has contact. The flight is collecting data on TPU survival, not serving public models. Ground tests already suggest Trillium parts can take a five-year radiation dose and a violent ride up. Cooling and short-range laser links are the open engineering problems, with a two-satellite test aimed at 2027.
+The useful takeaway is about constraints. Google is explicit that some failures only show up in orbit: combined radiation, thermal swing, and the lack of airflow. A ground beam test and a thermal vacuum chamber are necessary filters. They are not a substitute for weeks of flight data.
 
-Until Google publishes flight numbers, treat Suncatcher as a research log, not a cloud region.
+That same habit applies to product work. A benchmark on a lab device is not the same as a fleet. Google’s own note on Trillium — chips that survived a five-year dose in a proton beam — still needed a flight to close the loop.
+
+## Tips before you cite the mission
+
+- Quote the power claim carefully. Google says up to eight times more solar power in low Earth orbit, and researchers in the overview video say five to eight times versus the same panel on Earth. Do not turn that into a claim about total data-center cost.
+- Do not call the prototype a production cluster. Google’s language is “first step” and “prototype.” Cluster designs with dozens of TPUs per satellite are future work.
+- Separate ground demos from flight results. The 800 Gbps bidirectional laser test was a bench setup with telescopes and off-the-shelf transceivers. The two-satellite laser flight is scheduled for 2027.
+- Cooling numbers from the research videos are order-of-magnitude engineering context, not a published spacecraft power budget. Google has not posted watt figures for this vehicle in the launch notes.
+- The program is research. Google has not offered a timeline for customer workloads in orbit.
+
+## What to watch next
+
+The next public signal is flight data, not a product launch. Google said it will use the coming weeks to see how the TPUs handle launch stress, radiation, and heat, then refine designs. The 2027 pair of satellites is the first real test of the laser interconnect that a cluster would need.
+
+Until those results land, Project Suncatcher is a hardware experiment with a clear question: can Google’s accelerators compute in orbit long enough to justify a larger design. Contact with the satellite answers only the first line of that question.
 
 ## Sources
 
-- Travis Beals, “Our Project Suncatcher prototype satellite is in orbit,” Google Research blog, 1 October 2026.
-- Travis Beals, “Behind Project Suncatcher, our moonshot to put AI in space,” Google Research blog, 24 September 2026.
-- Peer-reviewed mission paper in *Joule*, linked from the 1 October post.
-- Google, “Google’s latest moonshot to put machine learning in space,” YouTube, 24 September 2026.
-- Koray Kavukcuoglu, “Gemini 4 Argon: our next era of frontier intelligence,” Google blog, 30 September 2026.
+- Google Research, “Our Project Suncatcher prototype satellite is in orbit,” October 1, 2026: https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/
+- Google Research, “Behind Project Suncatcher, our moonshot to put AI in space,” September 24, 2026: https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/
+- Google, “Google’s latest moonshot to put machine learning in space” (YouTube): https://www.youtube.com/watch?v=o1JK79jszqo
+- Google, “Keeping flying satellites connected with lasers” (YouTube): https://www.youtube.com/watch?v=KO2bNK9L7WA
+- Google, “Making sure AI chips don’t overheat in space” (YouTube): https://www.youtube.com/watch?v=ktdbUIZKeSE
