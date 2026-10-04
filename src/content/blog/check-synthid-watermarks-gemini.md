@@ -50,7 +50,7 @@ Keep the clip short enough for Gemini’s upload limit. If a long file is reject
 
 ## What a yes or a no means
 
-A positive result is the useful case. Gemini found a SynthID watermark, so the file matches content Google’s tools marked. That supports a claim that Google AI, or a partner applying SynthID, was involved. It does not name who clicked generate, and it does not score how much of the frame was edited.
+A positive result is the useful case. Gemini found a SynthID watermark, so the file matches content Google’s tools marked. It does not name who clicked generate.
 
 A negative result is weaker:
 
