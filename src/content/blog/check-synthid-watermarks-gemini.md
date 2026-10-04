@@ -31,7 +31,7 @@ DeepMind’s instructions are short. Upload the file, then ask. The scan is part
 
 1. Sign in to the Gemini app or open [gemini.google.com](https://gemini.google.com) with the same Google account.
 2. Start a new chat so an old image does not stay attached.
-3. Upload the image. Use the original file if you have it. A screenshot of a screenshot throws away detail.
+3. Upload the image. Use the original file if you have it.
 4. Ask a direct question: “Was this created or altered by Google AI?” or “Does this image have a SynthID watermark?”
 5. Read the reply before you share the file. Gemini should say whether it found a SynthID watermark.
 
@@ -67,9 +67,9 @@ Do not write “verified real” on a file only because Gemini found no watermar
 
 In May 2025 Google launched SynthID Detector, a portal where you upload an image, audio track, video, or text. If a watermark is present, the portal highlights portions most likely to carry it. For audio it points at segments. For images it marks areas.
 
-DeepMind says that portal is in testing with journalists and media professionals, with an early-tester waitlist. It is not the Gemini upload flow. If you are not on that waitlist, use Gemini and do not invent a public detector URL.
+DeepMind says that portal is in testing with journalists and media professionals, with an early-tester waitlist. It is not the Gemini upload flow. If you are not on that waitlist, use Gemini.
 
-Content Credentials (C2PA) are a separate label. Google’s July 2026 video describes them as a story of the file: camera capture, AI edit, or fully AI-generated. A SynthID check does not replace a Content Credential when a viewer shows one.
+Content Credentials (C2PA) are a separate label. Google’s July 2026 video describes them as a story of the file: camera capture, AI edit, or fully AI-generated. A SynthID check does not replace a Content Credential.
 
 ![Close-up of a circuit board representing digital media processing](https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80)
 
