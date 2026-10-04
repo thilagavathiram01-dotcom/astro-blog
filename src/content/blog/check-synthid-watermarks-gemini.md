@@ -47,9 +47,8 @@ Useful prompts:
 
 - “Check this video for a SynthID watermark and say which result you got.”
 - “Was this audio generated with Google AI, including Lyria or NotebookLM?”
-- “If you find a watermark, say so plainly. If you do not, say that too.”
 
-Keep the clip short enough for Gemini’s upload limit. If a long file is rejected, trim a continuous section that still contains the suspect frames or the music bed, then upload that excerpt. Do not describe the file in text and expect a watermark scan. The model has to receive the media.
+Keep the clip short enough for Gemini’s upload limit. If a long file is rejected, trim a section that still contains the suspect frames or the music bed. Do not describe the file in text and expect a watermark scan. The model has to receive the media.
 
 ## What a yes or a no means
 
@@ -59,7 +58,7 @@ A negative result is weaker:
 
 - The file may be a photo or a human recording.
 - It may come from a tool that does not write SynthID.
-- Heavy edits, re-encoding, or a crop that leaves almost no original pixels can remove a mark DeepMind designed to survive ordinary changes. The company does not call the system foolproof.
+- Heavy edits or re-encoding can remove a mark DeepMind designed to survive ordinary changes. The company does not call the system foolproof.
 - A text paste into another app can strip the statistical pattern SynthID uses for Gemini text.
 
 Do not write “verified real” on a file only because Gemini found no watermark. Say “no SynthID mark detected” and keep the source.
