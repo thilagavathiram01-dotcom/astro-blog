@@ -9,7 +9,7 @@ noindex: false
 
 Lyria 3.5 is Google's flagship music model in the Gemini API. It turns a text prompt, or an image, into 44.1 kHz stereo audio with verses, choruses, and bridges. Developers reach it through the Interactions API, not the older `generateContent` call used for chat models.
 
-This guide covers the model IDs, a working Python request, and how to save the MP3 and lyrics. If you only need a track inside the Gemini app, the [Lyria 3.5 Gemini app guide](/blog/gemini-3-8-flash-tts-ai-studio/) is a different path. Voiceovers still belong on a speech model such as Gemini 3.8 Flash TTS in [Google AI Studio](/blog/gemini-3-8-flash-tts-ai-studio/).
+This guide covers the model IDs, a working Python request, and how to save the MP3 and lyrics. Spoken voiceovers are a different product. For those, use a speech model such as Gemini 3.8 Flash TTS in [Google AI Studio](/blog/gemini-3-8-flash-tts-ai-studio/).
 
 ## Pick the right Lyria model
 
