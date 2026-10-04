@@ -15,8 +15,6 @@ This guide follows the detection flow on [DeepMind’s SynthID page](https://dee
 
 SynthID embeds a watermark in AI-generated images, audio, text, or video. DeepMind says the mark is imperceptible and is applied across Google’s generative AI consumer products.
 
-The method changes by type:
-
 - **Images and video.** The watermark is written into the pixels or frames when the file is created. DeepMind says it is built to survive cropping, filters, frame-rate changes, and lossy compression without a visible quality drop.
 - **Audio.** Marks go into audio from the Lyria music model and into podcast audio from NotebookLM. DeepMind says the signal is inaudible and is meant to hold up under added noise, MP3 compression, and speed changes.
 - **Text.** In the Gemini app and on the web, SynthID nudges token probability scores while the model writes. The wording still reads normally. The pattern of those scores is the watermark.
@@ -35,7 +33,7 @@ DeepMind’s instructions are short. Upload the file, then ask. The scan is part
 4. Ask a direct question: “Was this created or altered by Google AI?” or “Does this image have a SynthID watermark?”
 5. Read the reply before you share the file. Gemini should say whether it found a SynthID watermark.
 
-Google’s July 2026 demo uses the same pattern: upload the picture in the Gemini app and ask if it is AI-generated. If you only have a messaging-app preview, save the attachment and upload that file. A screenshot of a screenshot throws away detail.
+Google’s July 2026 demo uses the same pattern: upload the picture in the Gemini app and ask if it is AI-generated. If you only have a messaging-app preview, save the attachment and upload that file.
 
 ![Person reviewing photos on a laptop before sharing them](https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80)
 
