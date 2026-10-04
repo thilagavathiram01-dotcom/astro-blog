@@ -82,9 +82,9 @@ Use a file you created so you know the ground truth.
 2. Download the image Google returns.
 3. Open a new chat, upload that download, and ask if Google AI created it.
 4. Expect a SynthID hit on that file. If you do not get one, update the Gemini app and retry with the original download, not a screenshot.
-5. Upload a photo you took with your phone and ask the same question. Expect no SynthID mark. That negative is not a certificate of authenticity. It only matches this test.
+5. Upload a photo you took with your phone and ask the same question. Expect no SynthID mark. That negative is not a certificate of authenticity.
 
-Save both replies if you are documenting a workflow for a newsroom or a class. The wording can vary. The claim to record is whether Gemini reported a watermark.
+Save both replies if you are documenting a workflow. The wording can vary. Record whether Gemini reported a watermark.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/Sm7OTow3mcY"
@@ -100,8 +100,8 @@ If you label media for other people, match the claim to the tool:
 
 - Quote the Gemini result, including the date you ran it.
 - Do not treat SynthID as a detector for every AI product on the internet.
-- Do not crop the evidence image down to a face if you still need the watermark. Run the check on the fullest file you have, then crop for display.
-- Text checks apply to Gemini app and web output. Pasting that text into a doc and restyling it is not a reliable way to preserve the mark.
+- Run the check on the fullest file you have, then crop for display.
+- Text checks apply to Gemini app and web output. Pasting that text into another doc is not a reliable way to preserve the mark.
 - SynthID Bio, announced 30 September 2026, watermarks AI-designed protein sequences and predicted structures. It does not scan your photos.
 
 Pair the check with source habits you already use in Chrome. [How to Use Gemini in Chrome on Android](/blog/gemini-in-chrome-android/) covers asking about the page you are reading, which is a different job from uploading a file for a watermark scan.
@@ -110,7 +110,7 @@ Pair the check with source habits you already use in Chrome. [How to Use Gemini 
 
 SynthID is a watermark, not a universal lie detector. For images, video, and audio, the public step Google documents is simple: upload the file to Gemini and ask if Google AI created or altered it. A hit is evidence of a SynthID mark. A miss means Gemini did not find one.
 
-Run the mug test once so you know what a positive reply looks like on your account. After that, check original files, keep the wording of the result, and avoid upgrading a missing mark into a claim that the picture is real.
+Run the mug test once so you know what a positive reply looks like on your account. After that, check original files and avoid upgrading a missing mark into a claim that the picture is real.
 
 ## Sources
 
