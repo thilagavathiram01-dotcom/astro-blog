@@ -115,8 +115,6 @@ Google evaluates skills and points readers to "Inside Android Skills - Built for
 
 Install Android CLI, run `android init`, then `android skills add wear-compose-m3 --project=.`. Point the agent at one list, require `TransformingLazyColumn` and `ScreenScaffold` padding, and verify rotary and RTL on an emulator. The October 2026 CLI post shows that this skill already caught padding and typography mistakes on a shipping Wear app, and removed a layer of custom rotary code in the same pass.
 
-For official forecasts of severe weather, use your national weather service. For Wear UI, use the Wear skill and a device, not a phone screenshot.
-
 ## Sources
 
 - Android Developers Blog, 2 October 2026: Device Streaming and Android skills in Android CLI
