@@ -13,7 +13,7 @@ A line in the Google System Release Notes does not mean every phone has the scre
 
 If the item has no radio at all, log it as a note instead. The guide to [Find Hub Remembered items with Gemini](/blog/find-hub-remembered-gemini/) covers passports, spare keys, and folders that never get a tracker.
 
-![Android phone held in a hand](https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80)
+![Person holding a smartphone outdoors](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
 
 ## What the October notes actually add
 
@@ -62,7 +62,7 @@ Google’s accessory help still starts with Fast Pair. Bluetooth tracker tags ar
 
 If the new screens are missing, the server-side flag has not reached your account. Name the tag from its details page after pairing, then look for left-behind settings on that same card. Do not sideload an older Play services APK to force the note.
 
-![Smartphone on a desk next to a notebook](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
+![Close-up of a smartphone screen on a desk](https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=800&q=80)
 
 ## Use an NFC tap on a tag you already own
 
@@ -99,7 +99,7 @@ The rest of the Find Hub toolkit is already documented:
 
 The network itself is crowdsourced. Nearby Android phones detect the tag over Bluetooth and send an encrypted location. Google says those locations are encrypted with a key only you can unlock.
 
-![Keys and a small tracker on a wooden table](https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80)
+![Keys on a wooden table](https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80)
 
 ## If the tag does not appear
 
