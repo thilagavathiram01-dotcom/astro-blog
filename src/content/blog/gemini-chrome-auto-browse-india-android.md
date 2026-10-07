@@ -29,7 +29,7 @@ Google’s Android help page for auto browse was written for the U.S. wave. The 
 
 You need Chrome updated from Google Play and signed in with a personal Google Account. You also need to be 18 or over, with the device language set to English for auto browse. Google AI Pro or AI Ultra on that same account is required for multi-step tasks. Page questions and summaries are the broader Gemini in Chrome feature. Safe Browsing must be Enhanced or Standard. Incognito is not supported. School and work accounts need an administrator to enable the feature.
 
-Google’s computer help page lists U.S. computer caps of up to 20 multi-step requests a day on AI Pro and 200 on AI Ultra. The India post does not republish those numbers.
+Google’s computer help page lists separate U.S. daily caps. The India post does not republish those numbers.
 
 
 
