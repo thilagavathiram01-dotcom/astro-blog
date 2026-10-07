@@ -11,7 +11,7 @@ Google Wallet on Android is replacing the side-scrolling payment carousel with a
 
 The change is narrow. Passes, transit cards, and loyalty cards stay on the main Wallet screen. Only the payment-card picker moves to a stacked list. That makes one-handed selection easier when you carry more than two cards.
 
-![Credit cards laid out on a desk](https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80)
+![Phone and payment cards on a wooden table](https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80)
 
 ## What the new card list looks like
 
