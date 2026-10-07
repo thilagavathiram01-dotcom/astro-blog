@@ -29,7 +29,7 @@ Google’s Android help page for auto browse was written for the U.S. wave. The 
 
 You need Chrome updated from Google Play and signed in with a personal Google Account. You also need to be 18 or over, with the device language set to English for auto browse. Google AI Pro or AI Ultra on that same account is required for multi-step tasks. Page questions and summaries are the broader Gemini in Chrome feature. Safe Browsing must be Enhanced or Standard. Incognito is not supported. School and work accounts need an administrator to enable the feature.
 
-Google’s computer help page lists daily multi-step caps for the U.S. computer flow: up to 20 requests a day on AI Pro and up to 200 on AI Ultra. The India post does not republish those numbers. If you hit a limit message, stop and wait.
+Google’s computer help page lists U.S. computer caps of up to 20 multi-step requests a day on AI Pro and 200 on AI Ultra. The India post does not republish those numbers.
 
 
 
@@ -39,7 +39,7 @@ Google’s computer help page lists daily multi-step caps for the U.S. computer 
 
 ## Open Gemini on the current page
 
-On Android, Google’s May Chrome post described a Gemini control at the top right of the toolbar. Tapping it opens a panel at the bottom of the screen so the page stays visible. The August U.S. rollout also listed the three-dot menu as a second entry point.
+On Android, Google’s May Chrome post described a Gemini control at the top right of the toolbar. Tapping it opens a panel at the bottom so the page stays visible. The August U.S. rollout also listed the three-dot menu as a second entry point.
 
 1. Open Chrome and load the page you want help with.
 2. Tap the Gemini icon. If it is missing, open the three-dot menu and look for Gemini or Ask Gemini.
@@ -77,11 +77,9 @@ Auto browse is experimental. Google’s help page says you are responsible for t
 
 The product is built to hand some steps back to you. Typical takeover points include finishing a payment, accepting terms, and creating an account. Confirmation also covers sending messages, changing your data, submitting forms, and opening sites with sensitive financial or health data. Read the merchant name, the total, and the delivery address. If the plan names a site you did not intend, stop and start again with that site open.
 
-Prompt injection is the other risk Google names. A page, email, or document can hide instructions that the model can read and you cannot. Do not point auto browse at a random forum thread and then at your Gmail. Prefer a task on a site you already use, with a narrow instruction.
+Prompt injection is the other risk Google names. A page or email can hide instructions the model can read and you cannot. Prefer a task on a site you already use, with a narrow instruction. Do not chain a random forum thread into Gmail.
 
-On computer, review sites Gemini may sign you into under Settings, AI innovations, Gemini in Chrome. Google says it does not share your passwords with Gemini. Removing a site from that list does not delete a saved password. Do that in Password Manager. To turn browsing off, disable Let Gemini browse for you on the same page.
-
-Desktop auto browse uses the same plan review: open Chrome, click Ask Gemini, describe the task, submit, then click Start Task. Phone tasks can continue while you use other apps. If you already followed the U.S. steps in [How to Use Gemini in Chrome on Android](/blog/gemini-in-chrome-android/), the India difference is eligibility, not a new button.
+On computer, review sign-in sites under Settings, AI innovations, Gemini in Chrome. Google says it does not share your passwords with Gemini. Removing a site there does not delete a saved password. Do that in Password Manager. Disable Let Gemini browse for you on the same page to turn browsing off. Desktop uses the same plan review: click Ask Gemini, describe the task, submit, then click Start Task. Phone tasks can continue in other apps. The India difference from the [U.S. Android guide](/blog/gemini-in-chrome-android/) is eligibility, not a new button.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/56b9uHAcHYc"
@@ -105,7 +103,7 @@ Desktop auto browse uses the same plan review: open Chrome, click Ask Gemini, de
 
 Gemini in Chrome on Android in India is a page assistant for signed-in Chrome users, with auto browse reserved for AI Pro and AI Ultra and for devices set to English. Start with a summary of a page you can still see. Use auto browse for one low-stakes task, read the plan, and finish payment yourself.
 
-Language and plan are the two checks that explain most missing controls. The 7 October post is the availability source. The Chrome help page is the button-by-button source. If those two disagree on region, follow the India announcement and keep the help-page safety steps.
+Language and plan explain most missing controls. The 7 October post is the availability source. The Chrome help page is the button-by-button source. If they disagree on region, follow the India announcement and keep the help-page safety steps.
 
 ## Sources
 
