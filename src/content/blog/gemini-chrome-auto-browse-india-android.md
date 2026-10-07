@@ -27,9 +27,7 @@ If Chrome is set to Hindi or another language, switch the device language to Eng
 
 Google’s Android help page for auto browse was written for the U.S. wave. The India blog is the source for regional availability. Use both, and treat the India announcement as the override on geography.
 
-You need Chrome updated from Google Play and signed in with a personal Google Account. You also need to be 18 or over. Set the device language to English for auto browse. Google AI Pro or Google AI Ultra on that same personal account is required for multi-step tasks. Page questions and summaries are the broader Gemini in Chrome feature.
-
-Safe Browsing must be Enhanced or Standard. Incognito is not supported. School accounts need an administrator to enable Gemini in Chrome. Work and school accounts do not get consumer auto browse unless an admin turns the feature on.
+You need Chrome updated from Google Play and signed in with a personal Google Account. You also need to be 18 or over, with the device language set to English for auto browse. Google AI Pro or AI Ultra on that same account is required for multi-step tasks. Page questions and summaries are the broader Gemini in Chrome feature. Safe Browsing must be Enhanced or Standard. Incognito is not supported. School and work accounts need an administrator to enable the feature.
 
 Google’s computer help page lists daily multi-step caps for the U.S. computer flow: up to 20 requests a day on AI Pro and up to 200 on AI Ultra. The India post does not republish those numbers. If you hit a limit message, stop and wait.
 
@@ -63,13 +61,7 @@ Google’s Android help flow is the operational checklist. The India post adds t
 
 While the task runs, an auto browse icon appears on the tab it is using. You can leave Chrome. Google says you get a notification when the task finishes, so notifications for Chrome must be on.
 
-Useful controls from the help page:
-
-- Switch tabs sits next to the task in chat.
-- Check your task appears at the top of the browser when the agent needs you.
-- Take over task is on the task tab for login, payment, terms, or any step you want to finish yourself.
-- Resume or Give back task returns control to Gemini after you finish that step.
-- Stop ends the run. Closing the task tab also stops it.
+Useful controls from the help page: Switch tabs sits next to the task in chat. Check your task appears when the agent needs you. Take over task is on the task tab for login, payment, or terms. Resume or Give back task returns control after you finish that step. Stop ends the run, and closing the task tab also stops it.
 
 Gemini chooses the sites. It may share personal information with those sites, including details from connected apps. Review the plan for any field you would not type into a public form.
 
@@ -83,9 +75,7 @@ Gemini chooses the sites. It may share personal information with those sites, in
 
 Auto browse is experimental. Google’s help page says you are responsible for the agent’s actions, including mistakes and unexpected results such as purchases.
 
-The product is built to hand some steps back to you. Typical takeover points include finishing a payment, accepting terms, and creating an account. Confirmation is also aimed at sending messages, changing your data, submitting forms, scheduling events, and opening sites with sensitive financial or health data.
-
-That design fails if you tap through the prompt. Read the merchant name, the total, and the delivery address. If the plan names a site you did not intend, stop the task and start again with the site open.
+The product is built to hand some steps back to you. Typical takeover points include finishing a payment, accepting terms, and creating an account. Confirmation also covers sending messages, changing your data, submitting forms, and opening sites with sensitive financial or health data. Read the merchant name, the total, and the delivery address. If the plan names a site you did not intend, stop and start again with that site open.
 
 Prompt injection is the other risk Google names. A page, email, or document can hide instructions that the model can read and you cannot. Do not point auto browse at a random forum thread and then at your Gmail. Prefer a task on a site you already use, with a narrow instruction.
 
