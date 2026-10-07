@@ -9,7 +9,7 @@ noindex: false
 
 Google turned on Gemini in Chrome for Android users in India on 7 October 2026. Desktop users in India already had the browsing assistant. The new piece is the phone panel, plus auto browse on desktop and Android for Google AI Pro and AI Ultra subscribers.
 
-This guide covers the India rollout, the English-language limit, and the steps Google documents for starting a task. The earlier U.S. phone walkthrough is at [How to Use Gemini in Chrome on Android](/blog/gemini-in-chrome-android/).
+This guide covers the India rollout, the English-language limit, and the steps Google documents for starting a task. The U.S. phone walkthrough is at [How to Use Gemini in Chrome on Android](/blog/gemini-in-chrome-android/).
 
 ## What landed in India
 
@@ -21,7 +21,7 @@ Auto browse is the agentic layer. Google’s examples for India include booking 
 
 Two footnotes in the 7 October post matter more than the headline. Gemini in Chrome on Android starts in US-English and UK-English, with other languages planned later. Auto browse is limited to devices set to English, with more languages planned later.
 
-If Chrome is set to Hindi or another language, switch the device language to English before you look for auto browse. A missing control can be a language mismatch, not a failed update.
+If the device language is not English, switch it before you look for auto browse. A missing control can be a language mismatch, not a failed update.
 
 ## Check the account before you tap the icon
 
