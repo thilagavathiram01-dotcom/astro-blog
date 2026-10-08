@@ -118,7 +118,7 @@ Cyber scores are the sharpest claim. On one Artificial Analysis Cyber Index test
 
 Those refusal gaps matter for defenders. They are not a license to run offensive tests on systems you do not own. Keep cyber prompts inside a lab, a bug-bounty scope, or an authorized incident.
 
-![Close view of a circuit board](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
+![Person coding on a laptop in a dim workspace](https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80)
 
 ## Where it fits, and where it does not
 
