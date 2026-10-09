@@ -21,7 +21,7 @@ Chrome already tried HTTPS upgrades for years. The new default makes the fallbac
 
 Chrome 147 had already enabled the public-sites variant for people who opted in to Enhanced Safe Browsing. Chrome 154 extends the default to users who had not set the control themselves. If you already chose a setting, Chrome keeps that choice.
 
-![Padlock on a laptop keyboard, representing encrypted browser connections](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80)
+![Padlock resting on a laptop keyboard, representing an encrypted browser connection](https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80)
 
 ## Check the setting on desktop
 
@@ -75,9 +75,7 @@ Explicit `https://` links do not fall back to HTTP. If that secure URL fails, yo
 
 Private addresses stay quieter on the default. A router page at `192.168.0.1`, a printer hostname with no dots, or an intranet short name should not trigger the public-sites warning. Switch to the public-and-private option if you want those prompts too, for example on café Wi-Fi where a local name could be spoofed.
 
-![Network cables in a server room, a stand-in for site traffic that should use HTTPS](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80)
-
-Wait, unique images required. The second image must differ. I will fix before publish if this draft is wrong.
+![Person working on a laptop in a cafe, a common place to meet an insecure public site](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
 
 ## Fix sites that still trip the prompt
 
@@ -102,6 +100,8 @@ Do not confuse this control with Safe Browsing. Enhanced Safe Browsing was the g
 If a site loads over HTTPS and still looks wrong, check the certificate and the clock on the device. The ask-before-HTTP screen will not appear for a successful HTTPS load.
 
 On shared PCs, leave the default on. The Chrome 141 experiment is the best public signal Google has published: most people should see the prompt rarely, because repeat visits are remembered.
+
+![Close-up of a browser window on a desktop monitor during routine web work](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80)
 
 ## Conclusion
 
