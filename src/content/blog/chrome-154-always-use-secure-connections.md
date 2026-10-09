@@ -21,7 +21,7 @@ Chrome already tried HTTPS upgrades for years. The new default makes the fallbac
 
 Chrome 147 had already enabled the public-sites variant for people who opted in to Enhanced Safe Browsing. Chrome 154 extends the default to users who had not set the control themselves. If you already chose a setting, Chrome keeps that choice.
 
-![Padlock resting on a laptop keyboard, representing an encrypted browser connection](https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80)
+![Security login screen on a laptop, a visual for Chrome connection warnings](https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80)
 
 ## Check the setting on desktop
 
