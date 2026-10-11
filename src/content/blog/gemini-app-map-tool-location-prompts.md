@@ -1,103 +1,80 @@
 ---
-title: "How to Prompt Places With Gemini’s Mobile Map Tool"
-description: "Open Gemini’s Map tool on Android or iOS, pin a map area, and write location prompts. Also covers the new @ skills shortcut."
-pubDate: 2026-10-05T14:00:00
-heroImage: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "android", "how-to", "google"]
+title: "How to Use the Gemini App Map Tool for Precise Location Prompts"
+description: "Step-by-step guide to the new Gemini app Map tool on Android and iOS. Select areas, add Map Area tags, and get better location-based answers."
+pubDate: 2026-10-11T09:00:00
+heroImage: "https://images.unsplash.com/photo-ULwzqOnPem0?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "how-to", "ai-tools", "tutorials"]
 noindex: false
 ---
 
-Google added a Map tool to the Gemini mobile app on 2 October 2026. It is in the tool carousel on Android and iOS, and it is not on the web. You pick a circular area on a live map, tap Explore this area, and Gemini attaches that area to the prompt as Map Area.
+Google rolled out a Map tool in the Gemini app on Android and iOS. It lets you pick a specific area on a live map and attach it to your prompt so Gemini focuses answers on that spot. The tool is mobile-only right now and has reached most users.
 
-That is more precise than typing a neighbourhood name and hoping the model guesses the right block. The same week, the Google app beta started replacing the slash shortcut for skills with an @ symbol. This guide covers both changes, and what each one actually does today.
+You no longer need to type long street names or vague phrases like “near me.” Select the region, add the Map Area tag, and ask your question. This works for restaurants, parks, services, or neighborhood details. It builds on Gemini’s existing Google Maps grounding without requiring a separate app switch.
+
+![Aerial view of a dense city skyline with skyscrapers](https://images.unsplash.com/photo-Zr1iXHWenfg?auto=format&fit=crop&w=800&q=80)
 
 ## What the Map tool does
 
-9to5Google and Android Authority both reported a wide rollout on phones, not a limited test. The control sits at the end of the carousel next to Photos, Camera, Avatar, Files, Drive, and Notebooks.
+The Map tool appears at the end of the attachment carousel in the Gemini mobile app. It sits next to Photos, Camera, Avatar, Files, Drive, and Notebooks. Tapping it opens a full-screen live map centered on your current location. A circular focus area highlights the region Gemini will use.
 
-Tap Map and Gemini opens a live map centred on your current location, with a circular focus area. You can pan and zoom. A magnifying-glass icon in the top-right searches for a place. An X closes the map. Explore this area sits at the bottom and writes Map Area into the prompt box so you can add your own question.
+You can pan the map, pinch to zoom, or tap the magnifying glass to search for another place. An X button closes the view without attaching anything. When the circle covers the right spot, the Explore this area button adds a Map Area tag to the prompt box. Anything you type after that is tied to the selected region.
 
-Google has not published a separate support page for this control yet. Treat the reporting as the product behaviour, and check the carousel on your own phone before you rely on it in a workflow.
+The feature is not available on the web version of Gemini. Reports from early October 2026 confirm it is widely available on both Android and iOS phones. It first appeared in app code months earlier and matches the “Search this area” pattern familiar from Google Maps, but with Gemini’s conversational follow-ups.
 
-![Aerial view of a dense city used to plan a map-area prompt](https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80)
+## Step-by-step: attach a Map Area and ask
 
-## Open Map and attach an area
+Open the Gemini app on your phone. Make sure you are signed in with a personal Google account and have location services enabled if you want the map to start at your current position.
 
-1. Update the Gemini app, or the Google app if Gemini lives inside it on your phone.
-2. Open a new chat. Scroll the tool carousel to the end and tap Map.
-3. Allow location access if the system prompt appears. Without it, the map may not centre on you. You can still search.
-4. Pinch to zoom, or drag the map until the circle covers the streets you care about.
-5. Use the magnifying glass if you want a different city or a named place.
-6. Tap Explore this area. Confirm that Map Area appears in the prompt.
-7. Add a specific question, then send.
+1. Tap the plus icon or the attachment carousel below the prompt box. Scroll to the end and select Map.
+2. The live map loads with a circular overlay on your location. Drag the map or zoom until the circle covers the neighborhood or block you care about. Use the search icon in the top-right corner if you want a different city or landmark.
+3. Tap Explore this area. The prompt box gains a Map Area tag. You can still type additional text or attach other files.
+4. Ask your question. Examples include “List coffee shops open now with outdoor seating,” “What parks are within this area and do any have restrooms,” or “Recommend a quick lunch option and give directions.”
+5. Review the response. Gemini grounds answers in Maps data such as addresses, ratings, hours, and links. Tap place names to open details in Google Maps.
 
-A useful prompt names the task, the constraints, and the output. Map Area already supplies the place, so do not repeat a vague "near me."
+![Person holding a smartphone with a city skyline visible](https://images.unsplash.com/photo-J3S9bskcLGc?auto=format&fit=crop&w=800&q=80)
 
-Examples that match how the tool is described:
+Responses typically include clickable place cards or links. You can follow up in the same chat—“Which of these has the highest rating?” or “Add a stop for coffee on the way”—and the Map Area context stays attached until you start a new prompt.
 
-- Map Area. List three lunch spots that are open on a Monday and do not require a reservation. Note walking distance only if you can ground it.
-- Map Area. I have 90 minutes between trains. Suggest a walking loop that stays inside this circle and ends near a coffee shop.
-- Map Area. Compare two grocery options in this area for a traveller who needs late closing hours.
+## Tips for better results
 
-Gemini can still be wrong about hours, closures, and transit. Open the place in Maps before you walk there. The Map tool attaches an area. It does not replace a live listing.
+Zoom tightly when you want street-level detail. A large circle covering a whole district produces broader recommendations. A small circle around one block yields more specific options.
 
-## When a typed place is better
+Combine the Map Area with other tools. Attach a photo of a menu or sign if you want Gemini to cross-reference visual details. Or mention preferences such as “vegetarian,” “under $20,” or “wheelchair accessible.”
 
-Use Map when the boundary matters: a station radius, a campus, a waterfront, a neighbourhood whose name is ambiguous. Type the place name when you already know the venue, or when you are on desktop. The tool is mobile-only, according to both 9to5Google and Android Authority.
+Free users currently see Auto model selection for most prompts. Higher effort or thinking levels (Low, Medium, High) are rolling out and can help with multi-step location questions. If answers feel too brief, try rephrasing or asking for a comparison table.
 
-If Map is missing, scroll the full carousel first. It is reported at the end, not next to the first chips. A stale app build is the next check. Web Gemini will not show it.
+Location data is used only for the prompt you attach. Gemini does not continuously track you after you close the map view. Check your account’s Gemini Apps Activity setting if you want to control how history is stored.
 
-![Person using a phone outdoors while checking a city map](https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=800&q=80)
+## Related Gemini app changes
 
-## Switch skills and connectors to @
+Around the same time, Google began testing a switch from the forward-slash shortcut to the @ symbol for skills and connectors. In Google app beta 17.63, typing / shows a note that the symbol is becoming @. The @ menu gathers custom skills, new-skill creation, and connected apps in one place. Connected Apps are also being renamed Connectors.
 
-The Map tool is separate from skills, but the same app update window includes a shortcut change. In Google app beta 17.63, typing `/` in the Gemini prompt shows this note: "/ is now @. Access your skills, connectors and more from a single place."
-
-9to5Google reported that Connected Apps will be renamed Connectors, and that `@` is the single entry for skills and connectors. On 30 September 2026, Google said skills are rolling out in Gemini chat and will replace Gems. Personal accounts lose Gems support starting in November. Workspace business, enterprise, and nonprofit customers follow in March 2027. Education customers follow in June 2027.
-
-If you already built slash workflows, read [how to stack Gemini skills with slash commands](/blog/stack-gemini-skills-slash-commands/) and then retest those prompts with `@` on the beta. The Map chip does not invoke a skill. You attach Map Area first, then call a skill if you want a fixed format for the answer.
-
-To connect data sources the model can read, use [how to connect apps to Gemini on the web and Android](/blog/connect-apps-gemini-web-android/). Connectors are account links. Map Area is only a location chip on the current prompt.
+This change is still in beta for many users and is separate from the Map tool. Skills themselves are replacing Gems as the way to save reusable instructions. If you rely on custom Gems for location tasks, see the migration details in our guide on [converting Gemini Gems to skills](/blog/convert-gemini-gems-to-skills/).
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/DFXOInBrq60"
-    title="Welcome to the Gemini App"
+  <iframe src="https://www.youtube.com/embed/lh9mmxSTmTc"
+    title="How to Plan a Full Trip Using Gemini App (Maps & Flights Extension)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Prompt patterns that stay checkable
+## When the Map tool helps most
 
-Keep the first reply short, then ask for a source you can open.
+Use it for neighborhood scouting before a trip, finding services near a hotel, or comparing options inside a specific radius. It reduces the back-and-forth of describing locations in text and then opening Maps separately.
 
-- Ask for names and addresses, not a ranked "best of" list. Rankings are opinion.
-- Ask Gemini to flag anything it cannot confirm, such as today's hours.
-- Set a radius in words after Map Area if the circle is still too wide: "Stay inside a 10-minute walk of the centre of this map area."
-- For a trip, split prompts. One for food, one for transit, one for a backup indoor plan.
-- Do not paste home addresses, gate codes, or medical appointment details into a location prompt.
+It is less useful for pure navigation or real-time traffic, which still belong in the Google Maps app or Android Auto. Gemini can hand off to Maps for directions once you pick a place, but it does not replace turn-by-turn guidance.
 
-Android Authority first saw evidence of this feature in February 2026. The October rollout is the point where most phone users can try it. Availability can still differ by account, app version, and region. If a teammate does not see Map, do not assume their install is broken.
+Availability can vary by account, region, and app version. Update the Gemini or Google app from the Play Store or App Store if the Map option is missing from the carousel. The tool works with the same model access you already have—free Auto selection or your paid plan’s models.
 
-## Tips before you rely on it
+## Conclusion
 
-Update Gemini and the Google app, then force-quit once. The carousel is cached on some builds.
+The Map tool gives Gemini a visual way to scope location questions. Select the area, attach the tag, and ask. It is already live for most Android and iOS users and pairs well with existing Maps grounding. Try it the next time you need local recommendations without typing coordinates or long addresses.
 
-Search inside the map if location permission is off. You can still attach an area you looked up.
+For more on customizing Gemini with reusable instructions, check the skills migration post linked above. Update your apps and test the carousel on your phone to see the Map option today.
 
-Retest `@` only on the 17.63 beta path described by 9to5Google. Stable builds may still accept `/` until that note ships widely.
-
-Save a skill for the output format you repeat, such as a three-stop itinerary with a backup. Call it after Map Area is in the box, not instead of the map chip.
-
-Check closing hours in Google Maps or on the venue site. A model answer is a draft, not a reservation.
-
-## Bottom line
-
-On Android and iOS, Map is a carousel tool that pins a circular area and inserts Map Area into the prompt. It is not on the web. Pair it with a narrow question, then verify hours and routes yourself. Use `@` on the Google app beta when you want skills and connectors from one shortcut, and keep Gems migration dates in mind if you still depend on them.
-
-## Sources
-
-- 9to5Google, "Gemini app gains new 'Map' tool, replacing '/' with '@'", 2 October 2026: https://9to5google.com/2026/10/02/gemini-app-map-tool/
-- Android Authority, "Google adds a Map tool to Gemini, but only on phones", 2 October 2026: https://www.androidauthority.com/gemini-app-map-tool-3718688/
-- Google Blog, "Let skills in Gemini tackle your most repetitive tasks", 30 September 2026: https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/
-- Google Cloud, "Welcome to the Gemini App": https://www.youtube.com/watch?v=DFXOInBrq60
+**Sources**
+- 9to5Google reporting on the Map tool rollout and UI (October 2026)
+- Android Authority coverage of the Map attachment feature
+- Google Gemini Apps Help on place and directions grounding
+- YouTube demonstration of Gemini trip planning with Maps integration
