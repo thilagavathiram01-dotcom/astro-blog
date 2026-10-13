@@ -21,7 +21,7 @@ High is extra thorough. The model takes more time to plan and check its work. An
 
 Free accounts cannot manually pick Flash or Pro. Auto decides. Leaving smart model selection enabled is the only way harder prompts can escalate. If you turn it off, every response stays on Flash-Lite.
 
-![Laptop screen showing a data dashboard and charts](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
+![Person typing on a laptop with code on the screen](https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80)
 
 ## Step-by-Step: Set Effort Levels in the Gemini App
 
