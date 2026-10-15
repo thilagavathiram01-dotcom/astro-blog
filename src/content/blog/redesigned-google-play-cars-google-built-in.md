@@ -17,7 +17,7 @@ The homepage now surfaces featured apps, new releases, and key details so you ca
 
 Google notes that cars with Google built-in are available across 16 brands and more than 100 models. The redesign reaches those vehicles, including the next-generation 2027 Chevrolet Silverado 1500 and GMC Sierra 1500.
 
-![Modern car interior with large digital dashboard screens](https://images.unsplash.com/photo-gktNHFreLJ4?auto=format&fit=crop&w=800&q=80)
+![Modern car interior with large digital dashboard screens](https://images.unsplash.com/photo-cnXeOa2qrhM?auto=format&fit=crop&w=800&q=80)
 
 ## How to open and browse the new Play Store
 
@@ -40,7 +40,7 @@ Starting with YouTube, you can watch video on the dashboard while the car is par
 
 Google says it will keep expanding this parked-to-drive pattern with partners including Audible, Pandora, SiriusXM, Amazon Music, and others.
 
-![Car dashboard digital display close-up](https://images.unsplash.com/photo-ebd97HAQbMI?auto=format&fit=crop&w=800&q=80)
+![Car dashboard with digital display](https://images.unsplash.com/photo-ebd97HAQbMI?auto=format&fit=crop&w=800&q=80)
 
 ## Tips for the best experience
 
