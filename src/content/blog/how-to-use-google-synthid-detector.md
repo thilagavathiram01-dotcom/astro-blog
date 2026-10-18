@@ -1,73 +1,85 @@
 ---
-title: "How to Use Google's SynthID Detector to Spot AI Media"
-description: "Learn how to check images, videos, and audio for SynthID AI watermarks using Google's free detector tool. Step-by-step guide for 2026."
-pubDate: 2026-10-16T16:00:00
-heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "google", "security", "how-to"]
+title: "How to Use Google’s SynthID Detector to Check AI Content"
+description: "Step-by-step guide to Google’s free SynthID Detector at synthid.com. Upload images, video or audio to check for AI watermarks from Google and partners."
+pubDate: 2026-10-18T14:00:00
+heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "tutorials", "ai", "google"]
 noindex: false
 ---
 
-AI-generated images, videos, and audio now fill social feeds and news sites. Many look real at first glance. Google’s SynthID Detector gives you a free, public way to check for an invisible watermark that marks content made or edited by participating AI tools.
+**How to Use Google’s SynthID Detector to Check AI Content**
 
-The detector does not guess. It looks for a specific signal embedded by Google, OpenAI, NVIDIA, Kakao, and soon Apple. A positive result is strong evidence. A negative result does not prove the content is human-made.
+Google’s SynthID Detector is now open to everyone. On 7 October 2026 the company made the tool at synthid.com available worldwide in English so anyone can upload an image, video, or audio file and check for an invisible SynthID watermark. TIME later named SynthID one of the Best Inventions of 2026. The watermark is added at creation by Google’s models and by partner systems from OpenAI, NVIDIA, and Kakao (Apple support is expected soon). It survives many common edits such as cropping, filters, and compression.
 
-![Person examining content on a laptop](https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=800&q=80)
+A positive result is strong evidence that supported AI tools helped create or edit the file. A negative result does not prove the file is human-made. The detector only looks for SynthID; it is not a general AI detector.
 
-## What SynthID Detector Does
+## What SynthID Detector Actually Checks
 
-SynthID is an invisible watermark. For images and video it lives in the pixels. For audio it sits in the waveform. The mark survives common edits such as cropping, compression, and filters.
+SynthID embeds an imperceptible digital watermark into AI-generated images, audio, video, and (in some cases) text at the moment of creation. Google states that more than 180 billion images and videos and 240,000 years of audio have already been watermarked.
 
-Google opened the public portal at synthid.com on October 7, 2026. Anyone can use it in English worldwide. The tool now detects watermarks from Google’s own models plus partners including OpenAI, NVIDIA, and Kakao. Apple support is planned.
+The public detector portal accepts:
+- Images: JPG, JPEG, PNG, BMP, WEBP, AVIF, HEIC, HEIF, TIFF, TIF, GIF
+- Video: MP4, MOV, WEBM
+- Audio: WAV, MP3, OGG, FLAC, AAC, M4A
 
-Google states that Gemini alone has applied SynthID to more than 180 billion images and videos and the equivalent of 240,000 years of audio.
+Text is not supported. File size is limited to 100 MB. Videos must be shorter than 90 seconds and audio shorter than one hour. You must sign in with a Google, Apple, or OpenAI account. Google applies a daily quota of approximately 10 checks per user (images, video, and audio combined) to reduce the risk of people using the tool to develop watermark-removal methods.
 
-The portal is not a general AI detector. It only reports whether a supported watermark is present. Content from other generators, or files that had the mark removed, will show no detection.
+Files are processed and then deleted; the service does not keep the original media.
 
-## Step-by-Step: Check a File
+![Digital security concept with lock and network lines](https://images.unsplash.com/photo-1535378620166-273708d44e4c?auto=format&fit=crop&w=800&q=80)
 
-1. Open synthid.com in a browser on your phone or computer.
-2. Sign in with a Google, Apple, or OpenAI account. The site requires login.
-3. Upload an image, video, or audio file. Supported formats include common types such as JPG, PNG, WEBP, HEIC, MP4, MOV, MP3, and WAV. Use the highest-quality original file you can obtain.
-4. Wait for the scan. Results usually appear in seconds.
-5. Read the outcome. If a watermark is found, the tool indicates which parts of the file carry it. For video and audio it can highlight specific segments.
+## Step-by-Step: Checking a File
 
-Keep file sizes reasonable. Large videos may take longer or hit practical limits. Screenshots of screenshots reduce detection quality.
+1. Open a browser and go to https://synthid.com.
+2. Sign in with a Google, Apple, or OpenAI account when prompted.
+3. Accept the terms and privacy notice.
+4. Drag the highest-quality original file you have into the upload area, or click Select file. Avoid screenshots or heavily re-compressed social-media downloads when possible; the watermark is designed to survive many changes, but the original file gives the clearest result.
+5. Wait a few seconds while the portal scans the file.
+6. Read the result. If a watermark is found, the page indicates that SynthID was detected and, for images, highlights regions most likely to contain the mark. For video and audio it can show specific segments.
 
-## What the Results Mean
-
-- **Watermark detected**: The file was made or edited with a participating AI tool. Treat it as AI-generated or AI-modified.
-- **Not detected**: No supported SynthID mark was found. The content could still be AI-generated by a tool that does not use SynthID, or the mark could have been stripped. Verify with other methods.
-
-You can also check Google-created media inside the Gemini app by uploading a file and asking whether it was made with Google AI. Search and Chrome offer similar checks on some images.
-
-![Abstract digital security concept](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
-
-## Tips for Better Checks
-
-Use the original file whenever possible. Social platforms often recompress or strip metadata, but SynthID is designed to survive many of those changes. Still, the cleanest source gives the clearest result.
-
-Combine the detector with other signals. Look at source, reverse-image search, and context. A detected watermark is useful evidence, not a complete answer.
-
-The tool is currently English-only. Daily usage limits apply to prevent abuse. Do not try to automate checks at scale.
-
-## Limitations You Should Know
-
-SynthID Detector cannot identify every AI-generated file. Models that do not embed the watermark will return a clean result. Some editing pipelines can weaken or remove the signal.
-
-It does not tell you who created the content or why. It also does not detect text watermarks in this portal; text uses a different method.
-
-For deeper context on how Google handles AI content in Search, see our guide on [adding Preferred Sources](/blog/add-google-preferred-sources-button/).
+You can also check Google-origin content inside the Gemini app by uploading the file and asking whether it was created or edited with Google AI (or using the @synthid shortcut). The dedicated portal covers partner watermarks as well.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/UuH4at41w-4"
-    title="Google's New Website Detects AI Photos — It's Free"
+  <iframe src="https://www.youtube.com/embed/FDy0syQ7wfU"
+    title="Google SynthID Detector: How to Check Files for AI Watermarks (and What It Can't Tell You)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## Understanding the Results
+
+- **Watermark detected**: The file (or part of it) carries a SynthID mark from Google or a supported partner. Treat it as AI-generated or AI-edited content from those systems.
+- **Watermark not detected**: No SynthID signal was found at a confident level. The file may still be AI-generated by a tool that does not use SynthID, or it may have been so heavily altered that the watermark is no longer recoverable. It may also simply be a real photograph or recording.
+
+The detector does not distinguish between full generation and light editing, nor does it judge truthfulness. It only reports the presence or absence of the watermark.
+
+## Practical Tips for Better Results
+
+Use the original file whenever you can. Social apps often re-encode media; downloading the source version improves detection chances. For videos and audio, pay attention to the segment view—the watermark may cover only part of the file (for example, an AI voice-over on otherwise real footage).
+
+Cross-check important items with other signals. Look for C2PA content credentials when available, examine metadata, and apply ordinary critical thinking. The same verification capability is also built into Google Search, the Gemini app, and Chrome, so you may already see labels in those products.
+
+Respect the daily quota. Automated bulk checking or multiple accounts to bypass limits violates the terms and can result in access being suspended.
+
+If you work with Android and Gemini features regularly, the same underlying technology appears in several Google products. For related Android AI updates see our guide on [Android Halo and Gemini Spark status bar features](/blog/android-halo-gemini-spark-status-bar/).
+
+![Person reviewing content on a laptop screen](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+
+## Limitations You Should Know
+
+SynthID Detector only finds watermarks from Google and the partners that have adopted the system. Content from other models, open-weight tools, or older files created before watermarking was enabled will return “not detected.” Extreme edits, screenshots of AI images, or aggressive compression can also reduce reliability, even though the system is designed to be robust against everyday changes.
+
+The interface is currently English-only. Results are binary (detected / not detected) rather than a confidence percentage in the public portal.
+
 ## Conclusion
 
-SynthID Detector is a practical, free tool for checking media against a growing set of AI watermarks. Start with the original file, read the result carefully, and treat a negative finding as incomplete information. As more partners join the system, the detector becomes more useful for everyday verification.
+The public SynthID Detector gives anyone a straightforward way to check whether an image, video, or audio file carries the invisible watermark used by Google and major partners. Sign in at synthid.com, upload the highest-quality file you have, and read the result carefully. A positive detection is useful evidence of supported AI involvement. A negative result only means the specific watermark was not found.
 
-Official details come from Google’s October 2026 announcements and the synthid.com portal.
+Combine the tool with ordinary source checking and other provenance signals. As more companies adopt SynthID, the practical value of a quick upload check will continue to grow.
+
+**Sources**  
+- Google Blog: SynthID named to TIME’s Best Inventions of 2026 (15 October 2026)  
+- Official SynthID Detector portal: https://synthid.com  
+- Ars Technica and other contemporaneous reporting on the 7 October 2026 public rollout, supported formats, partner coverage, and daily quota  
+- Google DeepMind SynthID documentation on watermarking scope and volume
