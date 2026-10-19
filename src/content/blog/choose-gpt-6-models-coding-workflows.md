@@ -87,7 +87,7 @@ Begin most iterations in a lower-cost model or chat interface. Switch to Astra o
 
 Authorize routine local tests in your agent instructions so the model can verify changes without waiting for approval on every run.
 
-For data-heavy coding tasks you may also find value in related approaches such as the step-by-step process in our guide to analyzing data with Gemini and BigQuery.
+For data-heavy coding tasks you may also find value in related approaches such as the step-by-step process in our [guide to analyzing data with Gemini and BigQuery](/blog/analyze-data-gemini-bigquery-step-by-step/).
 
 Review the official API deployment checklist before you move any workflow to production. Test the exact model, reasoning effort, and prompt style you plan to use.
 
