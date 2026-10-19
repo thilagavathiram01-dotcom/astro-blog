@@ -2,7 +2,7 @@
 title: "How to Set Gemini 4 Argon Thinking Levels for Better Results"
 description: "Learn how to choose low, medium, or high thinking levels for Gemini 4 Argon in the app and API to balance speed, cost, and quality on daily tasks."
 pubDate: 2026-10-19T12:00:00
-heroImage: "https://images.unsplash.com/photo-_jg8xh2SsXQ?auto=format&fit=crop&w=1200&h=630&q=80"
+heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["gemini", "ai-tools", "tutorials"]
 noindex: false
 ---
