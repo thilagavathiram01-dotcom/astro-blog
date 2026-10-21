@@ -1,64 +1,57 @@
 ---
-title: "How to Lock Quick Settings Connectivity in Android 17 QPR3 Beta 2"
-description: "Step-by-step guide to enable Lock Quick Settings connectivity on Pixel devices running Android 17 QPR3 Beta 2 for better phone security."
+title: "How to Lock Quick Settings Connectivity on Android 17 QPR3 Beta 2"
+description: "Enable the new Lock Quick Settings connectivity option in Android 17 QPR3 Beta 2 to protect Wi-Fi, Bluetooth, Airplane mode and mobile data on the lock screen."
 pubDate: 2026-10-21T14:00:00
 heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "pixel", "tutorials", "security"]
+tags: ["android", "how-to", "security", "pixel", "tutorials"]
 noindex: false
 ---
 
-Google's Android 17 QPR3 Beta 2 adds a practical security control for Pixel users. The Lock Quick Settings connectivity option requires you to unlock your phone before changing key tiles.
+Google rolled out Android 17 QPR3 Beta 2 for Pixel devices on 20 October 2026. Among the changes is a practical security toggle that requires your phone to be unlocked before anyone can change key connectivity tiles from the lock screen.
 
-This stops someone who finds or takes your device from quickly turning off Wi-Fi, Bluetooth, Airplane mode, or mobile data. The feature first appeared in Android Canary 2609 and now reaches the public beta program.
+The setting is called Lock Quick Settings connectivity. It covers Wi-Fi, Bluetooth, Airplane mode and mobile data. Other tiles such as flashlight, auto-rotate and battery saver stay available without unlocking.
 
-If you already installed the update, you can turn the switch on in under a minute. For the full install process, see our [Android 17 QPR3 Beta 2 install guide](/blog/android-17-qpr3-beta-2-pixel-install-fixes/).
+This feature addresses a common tactic used when phones are lost or stolen. Thieves often swipe down and turn on Airplane mode or disable mobile data so the owner cannot track the device. Requiring an unlock adds a useful barrier while the phone is still locked.
 
-## Why Lock Quick Settings Connectivity Matters
+![Smartphone held in hands](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
 
-Quick Settings tiles sit one swipe away from the lock screen. Without this protection, anyone holding the phone can disable radios and make the device harder to locate or wipe remotely.
+## What the setting does
 
-Enabling the lock forces a PIN, pattern, password, or biometric check before those tiles respond. It buys time if the phone is lost or stolen while still letting you use the rest of Quick Settings freely.
+When Lock Quick Settings connectivity is enabled, the four connectivity tiles on the lock screen Quick Settings panel require authentication before they can be toggled. You must use your PIN, pattern, password, fingerprint or face unlock.
 
-The setting does not hide the tiles. It only gates the actions that affect connectivity.
+The option first appeared in Android Canary builds earlier in 2026 and is now available to testers on the QPR3 Beta 2 channel. It is present on Pixel 6a and newer devices running build DP11.261002.005.
 
-![Pixel smartphone showing home screen interface](https://images.unsplash.com/photo-1760900051041-90417b9c110e?auto=format&fit=crop&w=800&q=80)
+Non-connectivity tiles remain usable without unlocking the device, so everyday shortcuts are not blocked. The goal is targeted protection of the settings that affect network and radio connectivity.
 
-## How to Enable the Setting on Pixel
+## How to enable Lock Quick Settings connectivity
 
-The option lives in the Lock screen menu. Follow these steps on any supported Pixel running Android 17 QPR3 Beta 2 (build DP11.261002.005).
+You need Android 17 QPR3 Beta 2 installed. If you are already enrolled in the Android Beta Program for Pixel, the update arrives over the air. See our guide on [installing Android 17 QPR3 Beta 2](/blog/android-17-qpr3-beta-2-pixel-install-fixes/) for enrollment steps if you are not yet on the beta.
 
 1. Open the Settings app.
-2. Tap Display & touch.
-3. Tap Lock screen.
-4. Find the toggle labeled Lock Quick Settings connectivity.
-5. Turn it on.
+2. Go to Display & touch, then Lock screen. (Some reports also show it under Security & privacy > Device unlock.)
+3. Find the toggle labelled Lock Quick Settings connectivity or “Require unlock to change Wi-Fi, Bluetooth, Airplane mode, or mobile data tiles”.
+4. Turn the toggle on.
 
-The exact wording on some devices reads “Require unlock to change Wi-Fi, Bluetooth, Airplane mode, or mobile data tiles.” Once active, pulling down Quick Settings and tapping those tiles prompts for unlock.
+After enabling it, pull down the Quick Settings shade from the lock screen and try changing Wi-Fi or Airplane mode. The phone will prompt you to unlock before the change is applied.
 
-You can reverse the change at any time by returning to the same screen and switching the toggle off.
+![Android phone on a surface](https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=800&q=80)
 
-## What Happens After You Turn It On
+## Why this matters for lost or stolen phones
 
-With the feature enabled:
+Find My Device and location sharing depend on the phone remaining connected to the internet or cellular networks. If a thief can instantly disable those connections from the lock screen, the window for recovery shrinks.
 
-- Wi-Fi, Bluetooth, Airplane mode, and mobile data tiles require authentication.
-- Other Quick Settings tiles continue to work without unlocking.
-- The phone still shows the status of those connections on the lock screen.
-- Biometric unlock (fingerprint or face) works for the prompt if you have it set up.
+With the new lock in place, the thief must first unlock the device. Combined with strong screen lock methods, this gives you more time to mark the device as lost, wipe it remotely or contact the carrier. It does not replace a PIN or biometric lock, but it reduces one easy action a thief can take while the phone is still locked.
 
-Google lists this among the user-facing changes in the Beta 2 release notes, alongside a long list of stability fixes such as reduced crash-and-reboot cycles.
+Google has not announced when the feature will reach stable Android 17 or non-Pixel devices. As with other QPR features, it is likely to appear in later stable updates or on other manufacturers once they adopt the platform changes.
 
-## Tips for Daily Use
+## Tips for using the feature
 
-Enable the option if you frequently leave your phone unattended or travel with it. Pair it with Find My Device so you can still ring, lock, or erase the phone remotely even if connectivity is locked.
+- Keep a strong screen lock. The connectivity lock only helps if the device itself is hard to unlock.
+- Test it after enabling. Confirm that Wi-Fi, Bluetooth, Airplane mode and mobile data all require unlock, while flashlight does not.
+- Combine it with other protections such as Advanced Protection or app pinning if you regularly hand your phone to others.
+- Report any bugs through the Android Beta Feedback app. The beta still carries the usual stability risks.
 
-Test the behavior once after enabling it. Pull down the shade while the phone is locked and confirm the protected tiles demand unlock. This avoids surprises later.
-
-If you share the device with family members who know the unlock method, the protection still applies to anyone who does not.
-
-![Android phone on a surface with lock screen elements](https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=800&q=80)
-
-## Watch the Feature in Action
+If you are on an earlier beta or stable build, the toggle will not appear until you receive the QPR3 Beta 2 update or a later release that includes it.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/yfQW5oDkgcU"
@@ -70,12 +63,12 @@ If you share the device with family members who know the unlock method, the prot
 
 ## Conclusion
 
-Android 17 QPR3 Beta 2 brings a focused security improvement that addresses a real risk with unlocked Quick Settings. The setup takes seconds and adds a meaningful barrier against quick disconnection by unauthorized users.
+Lock Quick Settings connectivity is a small but practical addition in Android 17 QPR3 Beta 2. It raises the bar for anyone who gets hold of a locked Pixel and tries to take it offline. Enable it if you are on the beta and want an extra layer of protection for the connectivity controls that matter most when a device goes missing.
 
-If you are on the beta and value the extra protection, enable Lock Quick Settings connectivity today. Stable release is expected in March 2027 as part of the next Feature Drop.
+The feature is still in beta, so behaviour may change before it reaches stable. For now, Pixel testers can turn it on today and verify it works with their preferred unlock method.
 
-### Sources
+## Sources
 
-- [Android 17 QPR3 Beta 2 release notes](https://developer.android.com/about/versions/17/qpr3/release-notes)
-- [9to5Google: Everything new in Android 17 QPR3 Beta 2](https://9to5google.com/2026/10/20/android-17-qpr3-beta-2-everything-new/)
-- [Droid Life: New Android 17 security setting](https://www.droid-life.com/2026/10/20/new-android-17-update-adds-security-setting-i-didnt-realize-i-needed-so-badly/)
+- [Android 17 QPR3 Beta 2 release notes and fixes](https://developer.android.com/about/versions/17/qpr3/release-notes) — Android Developers
+- [Here’s everything new in Android 17 QPR3 Beta 2](https://9to5google.com/2026/10/20/android-17-qpr3-beta-2-everything-new/) — 9to5Google, 20 October 2026
+- [Latest Android 17 beta fixes a major Quick Settings security issue](https://www.androidauthority.com/android-17-qpr-3-beta-2-lock-quick-settings-tiles-3725896/) — Android Authority, 21 October 2026
