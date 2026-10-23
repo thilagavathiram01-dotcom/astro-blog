@@ -1,67 +1,75 @@
 ---
-title: "How to Build Native Android Apps in Google AI Studio"
-description: "Step-by-step guide to prompt native Kotlin Android apps in Google AI Studio, preview in the browser emulator, install on device, and add Firebase."
-pubDate: 2026-10-22T21:00:00
-heroImage: "https://images.unsplash.com/photo-1757165792338-b4e8a88ae1c7?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "tutorials", "gemini", "ai-tools"]
+title: "Build Native Android Apps with Prompts in Google AI Studio"
+description: "Learn how to build native Android apps from natural language prompts in Google AI Studio, preview them, install on device, and add Firebase."
+pubDate: 2026-10-23T15:10:00
+heroImage: "https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "tutorials", "ai-tools", "developer"]
 noindex: false
 ---
 
-Google AI Studio turns a plain-language prompt into a complete native Android project. The Antigravity Agent writes Kotlin and Jetpack Compose code, launches a browser emulator, and lets you install the result on a real phone. On October 13, 2026 Google also began rolling out a personal library in the Play Store so eligible users can run these apps with only a standard Google account.
+Google AI Studio now turns a plain description into a complete native Android app. The Antigravity Agent writes Kotlin and Jetpack Compose code, runs it in a browser emulator, and lets you install the result on a phone or push it to Play internal testing.
 
-You do not need Android Studio, the Android SDK, or prior coding experience for the basic flow. The generated apps stay client-side, single-activity projects aimed at phones and tablets.
+You do not need Android Studio, the full SDK, or prior mobile experience. A Google account and a clear prompt are enough to start.
 
-![Hand holding a smartphone that displays lines of code](https://images.unsplash.com/photo-1757165792338-b4e8a88ae1c7?auto=format&fit=crop&w=800&q=80)
+![Person coding on a laptop at night](https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=800&q=80)
 
-## What you get
+## What the tool actually generates
 
-The agent produces a standard Gradle project that uses Kotlin DSL, Jetpack Compose with Material 3, a single activity, ViewModels, and the usual Android resources. You can view or edit the files in the Code tab and download the whole project as a ZIP for continued work in Android Studio. GitHub export is not yet available for Android projects.
+When you select Android in Build mode and send a prompt, the agent produces a standard Gradle project. It includes:
 
-Firebase integration is supported. When you ask for generative AI features, data storage, or sign-in, the agent can provision Firebase AI Logic with App Check, Cloud Firestore (including security rules), and Firebase Authentication. This keeps API keys out of the APK.
+- Kotlin DSL build files
+- Jetpack Compose UI with Material 3
+- Single-activity architecture, ViewModels, and data classes
+- AndroidManifest, resources, and dependencies pulled from Maven
 
-Limitations are clear: no server-side runtime, no multiplayer, no Google Workspace APIs, no NDK or native C/C++, no Java or XML layouts, and no Wear OS or Android TV targets. The browser emulator cannot access the real camera, NFC, Bluetooth, or most Play services.
+You can view and edit the code in the Code tab. The project downloads as a ZIP if you want to open it later in Android Studio.
 
-## Step 1: Open Build mode and choose Android
+Firebase integration is optional. Request sign-in, data storage, or Gemini calls and the agent can provision Firebase AI Logic with App Check, Cloud Firestore, and Authentication. This keeps API keys out of the APK.
 
-Go to [Google AI Studio](https://aistudio.google.com/apps) and sign in with a Google account. In the left navigation open Build mode. Select Android from the platform picker. If you skip this step the agent builds a web app instead.
+## Step-by-step: create your first app
 
-Type a concrete description. Official examples include “Create a daily task tracker with local storage” or “Build a recipe app that uses AI to suggest meals from ingredients.” Click Build. The agent plans the requirements, writes the code, and opens the app in the cloud emulator that streams to your browser.
+1. Open Google AI Studio and sign in. Go to Build mode from the left navigation.
+2. Choose Android from the platform picker. Skipping this step builds a web app instead.
+3. Type a concrete prompt. Examples from the docs: “Create a daily task tracker with local storage” or “Build a recipe app that uses AI to suggest meals from ingredients.”
+4. Submit. The agent generates the project and opens it in the cloud Android emulator.
+5. Interact with the preview. Tap, scroll, and rotate the simulated device. Code changes rebuild automatically.
 
-You can keep chatting to iterate. Changes rebuild and refresh the emulator automatically. You can also rotate the virtual device between portrait and landscape.
+You can keep chatting to add screens, fix layout issues, or connect Firebase. The agent updates files across the project.
 
-## Step 2: Preview and refine in the browser emulator
+## Preview, install, and share
 
-The emulator runs entirely in Google’s cloud. You do not install anything locally. Tap, scroll, and interact as you would on a Pixel-like device. Location is simulated. Camera, NFC, Bluetooth, and Google Sign-In or Maps features that rely on Play services work only on a physical device.
+The emulator streams from the cloud. It supports basic touch and rotation but not camera, NFC, Bluetooth, real GPS, or Google Play services. Those features work only on a physical device.
 
-Use the chat panel to request fixes or new screens. Open the Code tab if you want to inspect or lightly edit the generated Kotlin. When the result matches your idea, move to installation.
+To install on your phone:
 
-![Laptop and smartphone on a developer desk](https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&w=800&q=80)
+- Enable Developer Options and USB Debugging on the device.
+- Use Chrome or Edge with WebUSB support.
+- Connect the phone with a data-capable USB cable.
+- Click Install on Device in the preview panel, select the phone, and confirm.
 
-## Step 3: Install on a physical device over USB
+The APK transfers and launches. No local ADB install is required.
 
-You need a Chrome or Edge browser that supports WebUSB, an Android phone with Developer Options and USB debugging enabled, and a USB cable. In the preview panel click Install on Device. Select the phone from the browser’s USB picker. The APK transfers, installs, and launches.
+For wider testing, open Settings > Publish, connect a Google Play Developer account ($25 one-time fee), and push to the internal testing track. AI Studio handles signing and creates the listing. Share the tester link with up to 100 people.
 
-No separate ADB installation is required. This route is useful for testing hardware features the emulator cannot provide. Keep the phone connected while you iterate if you want quick reinstalls.
+As of mid-October 2026, Google also lets standard Google accounts run personal AI Studio apps privately through Play without a public listing or developer fee.
 
-## Step 4: Run the app through the Play Store personal library
+![Smartphone showing multiple AI app icons](https://images.unsplash.com/photo-1757310998309-87a97e562ee5?auto=format&fit=crop&w=800&q=80)
 
-Starting October 13, 2026, Google began rolling out a personal library inside the Play Store. Eligible users (18 or older in select markets including the United States) can launch AI Studio Android apps on their own devices with only a standard Google account. No $25 Play developer fee is required for this private path. The apps stay out of the public catalog, appear only in “Your personal library,” and are not reviewed by Google Play.
+## Limits to keep in mind
 
-Sharing with a small group of friends and family is planned for later. If you later want a public listing you can graduate the project to a normal Play Console developer account and the internal testing track.
+Android projects stay client-side only. Server logic, multiplayer, or Workspace API calls are not included. Only single-activity, single-module Compose apps are supported. No Java/XML, NDK, Wear OS, or Android TV.
 
-## Step 5: Publish to the internal testing track (optional)
+GitHub export is not available yet for Android projects—ZIP download is the current option.
 
-For wider tester distribution you still need a Google Play Developer account (one-time $25 registration) and a completed developer profile. In AI Studio open Settings > Publish and choose Publish to Play Store. Authenticate, and AI Studio signs the APK with a managed keystore, creates or updates the listing, and pushes to the internal testing track. You receive a link you can share with up to 100 testers. You can later edit the icon, screenshots, and description in the Play Console.
+These constraints make the tool excellent for prototypes, personal utilities, and learning, but not a full replacement for production Android Studio workflows. For agent-driven coding inside the IDE itself, see our guide on [Android CLI and skills for any agent](/blog/android-cli-skills-any-agent/).
 
-## Add Firebase for AI features and data
+## Tips for better results
 
-Prompt the agent for features that need generative AI, a database, or sign-in. A setup card appears; you can also enable the integration under Settings > Integrations. The agent configures:
+Write specific prompts. Name screens, data storage method, and any Gemini or Firebase features you need. Iterate in small steps rather than one giant request.
 
-- Firebase AI Logic plus App Check so Gemini calls stay authenticated without raw keys in the APK. Debug builds use an automatic debug token; release builds switch to reCAPTCHA Enterprise.
-- Cloud Firestore with generated security rules.
-- Firebase Authentication with “Sign in with Google.”
+Test on a real device early if your app uses camera, location, or Play services. The emulator will not catch those gaps.
 
-Review the generated firestore.rules before you share the app. For deeper Gemini model usage on Android see our guide to [adding Gemini 4 Argon with Firebase AI Logic](/blog/add-gemini-4-argon-android-firebase-ai-logic/).
+Review the generated code before relying on it. The agent follows current Jetpack patterns, but you still own security rules for Firestore and any user data.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/KwJwYIqDMLY"
@@ -71,21 +79,14 @@ Review the generated firestore.rules before you share the app. For deeper Gemini
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Practical tips
-
-Start with a narrow scope. A single-screen tracker or calculator finishes faster and is easier to debug than a multi-feature app. Mention local storage or AI explicitly if you need those capabilities. After the first build, download the ZIP and open it in Android Studio if you want full IDE tooling, baseline profiles, or custom Gradle changes.
-
-Watch the emulator limitations. Anything that needs the camera or Bluetooth must be tested on a real device. Because the projects are client-side only, plan for data that can live on the device or in Firestore. Monitor any Firebase usage against free-tier quotas before you scale.
-
-If the agent produces unexpected UI, paste a short correction in chat rather than rewriting the whole prompt. You can also edit files directly in the Code tab and let the agent propagate the change.
-
 ## Conclusion
 
-Google AI Studio removes the local toolchain barrier for native Android prototypes. Describe the app, refine it in the browser emulator, install over USB or through the new personal Play library, and optionally add Firebase for secure Gemini calls and data. The result is a real Kotlin and Compose project you can keep iterating or move into Android Studio. For the latest details always check the official AI Studio Android documentation.
+Google AI Studio lowers the barrier for native Android apps. Describe the idea, watch the emulator, install on your phone, and optionally add Firebase or publish for testing—all from the browser.
+
+Start with a simple tracker or utility this week. Once the flow feels familiar, download the ZIP and continue in Android Studio if the project grows beyond the current limits.
 
 ## Sources
 
-- Google AI for Developers, Build Android apps in Google AI Studio, updated 2026-10-20: https://ai.google.dev/gemini-api/docs/aistudio-android
-- Firebase, Add Firebase to your Google AI Studio app: https://firebase.google.com/docs/ai-assistance/ai-studio-integration
-- Android Developers Blog, Build native Android apps in Google AI Studio, 19 May 2026: https://developer.android.com/blog/posts/build-native-android-apps-in-google-ai-studio
-- Google for Developers, Building an Android app in AI Studio (video): https://www.youtube.com/watch?v=KwJwYIqDMLY
+- [Build Android apps in Google AI Studio](https://ai.google.dev/gemini-api/docs/aistudio-android) (Google AI for Developers)
+- [Build native Android apps in Google AI Studio](https://developer.android.com/blog/posts/build-native-android-apps-in-google-ai-studio) (Android Developers Blog, 19 May 2026)
+- [Build apps in Google AI Studio](https://ai.google.dev/gemini-api/docs/aistudio-build-mode)
