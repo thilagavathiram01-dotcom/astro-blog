@@ -1,124 +1,94 @@
 ---
-title: "Use Gemini Notebook as Connected App in Gemini"
-description: "Create, query, and update Gemini Notebooks directly from any Gemini app chat on Android with the new Connected App feature."
-pubDate: 2026-10-24T10:30:00
-heroImage: "https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials", "how-to", "google", "productivity"]
+title: "Use Gemini Notebook as a Connected App in Gemini"
+description: "How to manage and query Gemini Notebooks directly inside Gemini chats with the new Connected App. Step-by-step guide."
+pubDate: 2026-10-24T15:00:00
+tags: ["gemini", "tutorials", "ai-tools", "productivity", "google"]
+heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&h=630&q=80"
 noindex: false
 ---
 
-Gemini Notebook (formerly NotebookLM) has been available in the Gemini app side panel for months. On 23 October 2026, Google made it a full Connected App. You can now create notebooks, add sources, save chat content, and ask questions grounded in your notebooks without leaving a Gemini conversation.
+Google has added Gemini Notebook as a Connected App inside the Gemini app. You can now create notebooks, add sources, save chats, and ask questions grounded in your notebooks without leaving a conversation.
 
-The feature is on by default for most users worldwide. It is off by default in the European Economic Area. It works for personal Google accounts, Workspace Individual, and most Workspace customers. Admins control access via the Gemini and Gemini Notebook settings.
+The feature is available to Google Workspace customers, Workspace Individual subscribers, and personal Google accounts. It is on by default outside the European Economic Area and off by default inside the EEA.
 
-This guide shows the exact steps on Android, what you can ask, and how to manage the connection.
+![Person working on a laptop at a desk with notes](https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80)
 
 ## What the Connected App lets you do
 
-Type `@Gemini Notebook` in any chat (or let Gemini detect a relevant prompt). You can:
+Inside any Gemini chat you can type `@Gemini Notebook` to target the tool. Gemini can also detect relevant prompts and call the Connected App on its own.
+
+Supported actions include:
 
 - Create, edit, or delete a notebook
-- Add, update, or delete sources
-- List notebooks and their sources
-- Answer questions using the notebook’s context
-- Save the current chat as a source
+- Add, update, or delete sources inside a notebook
+- List your notebooks and the sources they contain
+- Answer questions using context from one or more notebooks
+- Save a copy of the current chat into a notebook
 
-Official examples from Google Workspace Updates include:
+Official examples from Google’s Workspace update include “Create a Gemini Notebook about solar farm market trends,” “Add a copy of this chat to my notebook about Bio 101 course,” and “What do my Gemini Notebooks say about butterfly migration?”
 
-- “Create a Gemini Notebook about solar farm market trends”
-- “Add a copy of this chat to my notebook about Bio 101 course”
-- “Show me a list of all the sources in my notebook about US National Parks”
-- “What do my Gemini Notebooks say about butterfly migration?”
+## How to use it step by step
 
-Shared notebooks appear as links rather than full listings. Responses stay grounded in the sources you have added.
+1. Open the Gemini app on your phone or go to gemini.google.com.
+2. Start or continue a chat.
+3. Type `@Gemini Notebook` followed by your request, or simply ask in natural language if the feature is enabled.
+4. Review the confirmation. Gemini will create the notebook, add the source, or return the answer with the relevant context.
+5. Open the notebook later from the Gemini side panel or the standalone Gemini Notebook app if you need to review sources or generate Audio Overviews.
 
-## Connect or check the feature on Android
-
-1. Open the Gemini app and sign in with the account that owns your notebooks.
-2. Start a new chat or open an existing one.
-3. Type a prompt that includes `@Gemini Notebook` followed by an action (for example, “@Gemini Notebook create a notebook called Project Research”).
-4. If the app is not connected, Gemini offers an on-screen prompt to connect it. Follow the steps.
-5. You can also manage the connection manually: open Settings → Connected Apps (or Preferences → Gemini Notebook on the redesigned settings page) and toggle it on or off.
-
-In the EEA you must complete the connection step yourself. Elsewhere it is already enabled unless you turned it off.
-
-For details on the new side panel and settings layout that appeared around the same time, see the guide to the [Gemini app side panel and settings redesign](/blog/gemini-app-side-panel-settings-2026/).
-
-
-
-![Person using a smartphone above a laptop keyboard in a workspace](https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Create a notebook and add sources from a chat
-
-You no longer need to switch to the standalone Gemini Notebook app or website for basic management.
-
-1. Open Gemini on your Android phone.
-2. In the prompt box type: `@Gemini Notebook create a notebook called [name]`.
-3. Gemini confirms creation and can open or link the new notebook.
-4. To add sources, continue in the same thread: “Add this website as a source: [URL]” or “Add a copy of this chat to the notebook.”
-5. You can also add PDFs, Google Docs, YouTube videos, or pasted text by describing them.
-
-Sources sync with the standalone Gemini Notebook experience. Limits depend on your Google AI plan (free tier up to 50 sources per notebook; higher tiers allow more).
-
-## Ask questions grounded in your notebooks
-
-Once a notebook has sources, you can query it from any Gemini chat:
-
-1. Type `@Gemini Notebook` and the question, or simply ask something that matches the notebook topic.
-2. Gemini pulls from the notebook’s sources and can cite them.
-3. Ask follow-ups in the same thread. The notebook context stays available.
-
-Example workflow:
-
-- Research a topic in a normal Gemini chat.
-- Say “@Gemini Notebook add this conversation to my Research notebook.”
-- Later ask “What does my Research notebook say about the latest findings?”
-
-This keeps your grounded research separate from general Gemini knowledge while still letting you work in one place.
-
-
-
-![Open notebook with pen and smartphone on a wooden desk](https://images.unsplash.com/photo-1759296844873-e0c694c24284?auto=format&fit=crop&w=800&q=80)
-
-
+You stay in the chat. The notebook updates in the background. Shared notebooks are not listed inside Gemini Apps, but Gemini can still link to them when useful.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/PYNclBOEFPM"
-    title="How to use Gemini Notebook | Galaxy Z Fold8 Ultra, Fold8, and Flip8 | Samsung"
+  <iframe src="https://www.youtube.com/embed/3TSdIYMX8pw"
+    title="The Android Show: I/O Edition | Gemini Intelligence"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Manage and disconnect the Connected App
+## Turn the Connected App on or off
 
-- Open Gemini Settings → Connected Apps (or the Preferences section that lists Gemini Notebook).
-- Toggle Gemini Notebook off if you do not want automatic or `@` access.
-- Turning it off does not delete your notebooks or existing sources.
-- You can re-enable it at any time with the same toggle or by using `@Gemini Notebook` again.
+Outside the EEA the feature is on by default. Inside the EEA you must enable it yourself.
 
-Notebooks you create or update in the Gemini app appear in the Gemini Notebook app and on notebook.google.com. Changes sync both ways.
+To change the setting:
+
+1. Open the Gemini app.
+2. Go to Settings > Connected Apps.
+3. Find Gemini Notebook and toggle it on or off.
+
+Workspace administrators control access through the Gemini and Gemini Notebook settings for organizational units and groups. Users need both products enabled.
+
+## Practical examples
+
+**Research collection.** After a long chat about market trends, type `@Gemini Notebook add a copy of this chat to my notebook Solar Market Trends`. The conversation is saved as a source.
+
+**Study session.** Create a notebook for a course, then ask Gemini to pull key points from it while you stay in the same chat: “What do my Gemini Notebooks say about butterfly migration?”
+
+**Source management.** List every source in an existing notebook or delete one you no longer need without switching apps.
+
+For related Gemini app features on Android, see our guide on [How to Use Gemini Intelligence on Android](/blog/how-to-use-gemini-intelligence-android-widgets/).
+
+![Open notebook and laptop on a study desk](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
 
 ## Tips for better results
 
-- Name notebooks clearly. Gemini uses the name when you refer to them in chat.
-- Add sources before asking detailed questions. Empty notebooks produce limited answers.
-- Use the standalone Gemini Notebook Studio tools (infographics, audio overviews, slide decks) for heavier output; the Connected App focuses on chat-based management and querying.
-- Review Gemini Apps Activity if you want to delete chat history that was saved into a notebook.
-- On Workspace accounts, confirm with your admin that both Gemini and Gemini Notebook are enabled for your organizational unit.
-- If `@Gemini Notebook` does nothing, update the Google app, force-close Gemini, and check the Connected Apps toggle.
+Name notebooks clearly so Gemini can find them later. Be specific when you ask it to add a source (“Add this chat to the Bio 101 notebook”) rather than a vague request.
+
+Review the notebook afterward in the Gemini Notebook app if you want citations, Audio Overviews, or further source management. The Connected App is designed for quick actions inside chat; the full notebook workspace still handles deeper work.
+
+If the feature does not appear, check Connected Apps settings and confirm your account type supports Gemini Notebook. Rollout can vary by region and account.
+
+## Privacy and control notes
+
+Sources you add stay private unless you share the notebook. Gemini Notebook does not train models on your uploaded data. You can disconnect the Connected App at any time in settings. Workspace admins retain the ability to restrict the feature for their organization.
 
 ## Conclusion
 
-The Gemini Notebook Connected App removes the need to switch apps for everyday notebook tasks. Create a notebook, drop in sources, save a useful chat, and query everything from the same Gemini thread on your Android phone.
+The Gemini Notebook Connected App removes the need to switch between the chat interface and the notebook workspace for common tasks. You can create notebooks, file chats, manage sources, and query existing material with a short prompt or the `@Gemini Notebook` mention.
 
-Start with one focused notebook today. Type `@Gemini Notebook create a notebook called [your topic]` and add the first source. The rest of your research can stay inside Gemini.
+Enable or review the setting in Connected Apps if you are in the EEA, then try saving one useful chat into a notebook. The same notebooks remain available in the standalone Gemini Notebook app for deeper research.
 
 ## Sources
 
-- [Take actions on your notebooks from Gemini Notebook directly in the Gemini app](https://workspaceupdates.googleblog.com/2026/10/take-actions-on-your-notebooks-from-Gemini-Notebook-directly-in-the-Gemini-app.html) — Google Workspace Updates, 23 October 2026
-- [Organize your projects with notebooks in Gemini Apps](https://support.google.com/gemini/answer/16972047) — Gemini Apps Help
-- [Get started with the Gemini Notebook mobile app](https://support.google.com/gemininotebook/answer/16296687) — Gemini Notebook Help
-- [Gemini Notebook now available as Connected App](https://9to5google.com/2026/10/23/gemini-notebook-connected-app/) — 9to5Google, 23 October 2026
+- Google Workspace Updates: [Take actions on your notebooks from Gemini Notebook directly in the Gemini app](https://workspaceupdates.googleblog.com/2026/10/take-actions-on-your-notebooks-from-Gemini-Notebook-directly-in-the-Gemini-app.html) (23 October 2026)
+- 9to5Google: [Gemini Notebook now available as Connected App](https://9to5google.com/2026/10/23/gemini-notebook-connected-app/)
+- Gemini Notebook Help: Manage connected apps and sources
