@@ -1,119 +1,88 @@
 ---
-title: "OpenAI Decisions API Guide: Fast Classification & Routing"
-description: "Learn how to use the OpenAI Decisions API with GPT-6 Luna for fast predicate, choice, and score answers. Includes setup, examples, and tips for low-latency apps."
-pubDate: 2026-10-23T14:00:00
-heroImage: "https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "tutorials", "chatgpt", "ai", "developer"]
+title: "How to Use OpenAI Decisions API for Fast Classification"
+description: "Step-by-step guide to OpenAI Decisions API with GPT-6 Luna for 10x faster typed answers, routing, and scoring in apps."
+pubDate: 2026-10-26T09:46:00
+heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "chatgpt", "tutorials", "developer"]
 noindex: false
 ---
 
-Applications and agents constantly classify inputs, route requests, or pick the next action. Those small decisions add latency and cost when you send every one through a full Responses API call. OpenAI made the Decisions API generally available on 22 October 2026 so developers can get typed answers up to 10 times faster.
+OpenAI's Decisions API lets your application get structured answers from text, images, or JSON in a fraction of a second. It focuses GPT-6 Luna on bounded questions so you receive probabilities, choices, or scores instead of free-form text.
 
-Powered only by GPT-6 Luna, the endpoint returns a probability, a choice from your list, or a score against a rubric. You pay solely for input tokens at $0.10 per million, with cached inputs at $0.01. There are no output-token charges. This guide shows how to call it, choose the right question type, and put the result to work in real apps.
+This guide shows how to call the API, choose the right question type, and put the result into app logic. You will also see a verified video walkthrough.
 
-## What the Decisions API returns
+## What the Decisions API Returns
 
-A request has three pieces: the model (always gpt-6-luna), shared input evidence, and one or more named questions. The response is an answers array in the same order. Each answer is one of three types.
+A request has three parts: the model (currently only `gpt-6-luna`), shared input evidence, and one or more questions. The API returns an `answers` array in the same order.
 
-Predicate questions return a probability between 0 and 1 that a condition is true. Use them for yes/no checks such as “does this product photo show a crack?” or “is this message spam?”
+Three answer types exist:
 
-Choice questions pick one value from the list you supply and also return probabilities and a confidence score. They suit routing: send a support ticket to billing, technical, or other.
+- **predicate** — probability from 0 to 1 that a condition is true (for example, “does this photo show visible damage?”).
+- **choice** — one value from a fixed list you supply, plus confidence and per-option probabilities.
+- **score** — a probability-weighted numeric score against an ordered rubric (for example, severity levels).
 
-Score questions rate an input against ordered levels you define. The score is the probability-weighted average of the level indices, so results can fall between whole numbers. Severity ratings and lead quality scores fit here.
+You pay only for input tokens. Output tokens are free. Cached input is cheaper. The endpoint is `POST /v1/decisions`.
 
-You can ask up to 400 questions in one request. The API also accepts images, native JSON, and conversation history that includes tool calls. Prompt caching is available for repeated prefixes.
+![Developer coding on a laptop with code on screen](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
 
-![Developer coding on a laptop at night with city lights outside](https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=800&q=80)
+## Step 1: Get an API Key and Test in the Playground
 
-## Step 1: Make your first request
+1. Sign in at platform.openai.com and create or copy an API key.
+2. Open the Decisions Playground (linked from the official guide).
+3. Paste sample text or upload an image.
+4. Add a question of type predicate, choice, or score.
+5. Run it and inspect the probability, choice, or score before you write code.
 
-You need an OpenAI API key with access to the Decisions endpoint. Send a POST to https://api.openai.com/v1/decisions.
+This confirms the question is clear and the model can distinguish the options with your real data.
 
-Here is a minimal Python example that routes a support ticket:
+## Step 2: Make Your First Request
 
-```python
-from openai import OpenAI
-client = OpenAI()
+Use the official Python or JavaScript SDK, or call the endpoint directly with curl. Here is a minimal choice example that routes a support ticket:
 
-response = client.decisions.create(
-    model="gpt-6-luna",
-    input="I was charged twice for order R-208. Please refund the extra payment.",
-    questions=[
-        {
-            "type": "choice",
-            "name": "route",
-            "instructions": "Select the team that should handle this ticket.",
-            "choices": [
-                {"value": "billing"},
-                {"value": "technical"},
-                {"value": "other"}
-            ]
-        }
-    ]
-)
-print(response.answers[0].choice)
+```json
+{
+  "model": "gpt-6-luna",
+  "input": "Order R-208 was charged twice. Please refund the extra payment.",
+  "questions": [
+    {
+      "type": "choice",
+      "name": "route",
+      "instructions": "Select the team responsible. Choose other when no team fits.",
+      "choices": [
+        {"value": "billing", "description": "Charges, invoices, and refunds"},
+        {"value": "account", "description": "Login and profile issues"},
+        {"value": "other", "description": "Everything else"}
+      ]
+    }
+  ]
+}
 ```
 
-The call returns in a fraction of a second on typical inputs. Test edge cases in the Decisions Playground before you hard-code thresholds.
+Send it to `https://api.openai.com/v1/decisions` with your Bearer token. The response contains the selected `choice` and a confidence value you can threshold.
 
-## Step 2: Add images and JSON
+## Step 3: Handle Images and JSON
 
-For visual checks, include an image as a content part. The API accepts public HTTPS URLs or base64 data URLs.
+Pass an image as a base64 data URL or public HTTPS URL inside an `input` content array. You can also send native JSON with `input_json`. Each question can carry its own images for comparison against the shared evidence.
 
-```python
-response = client.decisions.create(
-    model="gpt-6-luna",
-    input=[
-        {
-            "role": "user",
-            "content": [
-                {"type": "input_text", "text": "Check the product for damage."},
-                {"type": "input_image", "image_url": "https://example.com/product.jpg"}
-            ]
-        }
-    ],
-    questions=[
-        {
-            "type": "predicate",
-            "name": "damaged",
-            "instructions": "Does the product have a visible crack, tear, or dent? Ignore packaging."
-        }
-    ]
-)
-print(response.answers[0].probability)
-```
+A predicate on a product photo looks like this in the question instructions: “Does the photo show a crack, tear, or dent?” The returned probability lets you auto-approve or escalate.
 
-Native JSON works the same way. Place an input_json content part inside a user message. Keys inside the JSON are ordinary data; they do not create extra messages.
+![Analytics dashboard on a screen](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
 
-## Step 3: Use scores and multiple questions
+## Step 4: Integrate with Voice via GPT-Live
 
-Define ordered levels for a score question. The model returns a floating-point score plus the probability of each level.
+Add a decisions trigger to a GPT-Live session. On each transcript delta the API can return a reaction choice that your app uses to animate an avatar or decide the next spoken action. Official examples show latency dropping from over a second to under 150 ms in language-learning and support flows.
 
-You can combine types in one call. Ask a predicate, a choice, and a score against the same evidence. Name each question so your code can match the answer.
+## Tips for Production Use
 
-![Team collaborating around a table reviewing project work](https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80)
+- Start with one high-volume decision and measure accuracy on real examples before expanding.
+- Use the `name` field so you can match answers reliably.
+- Threshold low-confidence results and send them to a human or a fuller Responses API call.
+- Enable prompt caching when the same context is reused across many questions.
+- Check regional availability and Zero Data Retention options if your compliance rules require them.
 
-## Connect Decisions to GPT-Live
+## Related Reading
 
-The API integrates natively with GPT-Live. Live can call Decisions directly during a voice session so the model decides the next action while the user is still speaking. Set the delegation type when you create the session and supply the questions Live should ask.
-
-This pattern keeps voice agents responsive. A customer-support avatar can choose whether to escalate, ask a clarifying question, or continue without an extra round trip through your application.
-
-If you are already building always-on agents, the same low-latency classification helps Dots decide when to surface a result or stay quiet. See the [ChatGPT Dots setup guide](/blog/chatgpt-dots-setup-apps-tasks-controls/) for how those agents handle ongoing tasks.
-
-## Tips for production use
-
-Start with one recurring decision and measure latency and accuracy on real examples. Set confidence thresholds in your application, not inside the prompt. Low-confidence answers should route to a human or fall back to a full Responses call.
-
-Use prompt caching for any shared instructions or long context that repeats across requests. Cached input is ten times cheaper.
-
-Regional processing is available in the US and EU. Zero Data Retention is offered to eligible customers. Monitor usage through the organization usage endpoint so you can track token counts and request volume by project.
-
-Do not treat a probability of 0.51 as a hard yes. Calibrate thresholds on your own data. The model can also refuse a question; your code should handle a refusal answer type gracefully.
-
-## Watch the official introduction
-
-OpenAI’s short video walks through classifying text, reading images, and driving a robot with Decisions responses.
+If you already have an implementation and want to compare latency numbers, see our earlier walkthrough on [How to Use OpenAI Decisions API with GPT-6 Luna](/blog/how-to-use-openai-decisions-api-with-gpt-6-luna/).
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/FB6oCmrIj-Y"
@@ -125,10 +94,10 @@ OpenAI’s short video walks through classifying text, reading images, and drivi
 
 ## Conclusion
 
-The Decisions API removes the overhead of free-form generation when your app only needs a probability, a label, or a score. Call it with GPT-6 Luna, define clear questions and allowed answers, then act on the typed result. Pair it with prompt caching and GPT-Live for the lowest latency. Test in the Playground, measure on real traffic, and keep a fallback path for cases that need richer reasoning.
+The Decisions API turns bounded questions into fast, typed signals your application can act on immediately. Define the question, supply the evidence, and use the probability, choice, or score to route, filter, or prioritize. Test in the Playground first, then wire the same request into your code.
 
 ## Sources
 
-- OpenAI, “Build more responsive apps with the Decisions API,” 22 October 2026: https://openai.com/index/decisions-api/
-- OpenAI API Documentation, “Decisions”: https://developers.openai.com/api/docs/guides/decisions
-- OpenAI, “Introducing the Decisions API,” YouTube, 6 October 2026: https://www.youtube.com/watch?v=FB6oCmrIj-Y
+- OpenAI: Build more responsive apps with the Decisions API (openai.com/index/decisions-api/)
+- OpenAI API guide: Decisions (developers.openai.com/api/docs/guides/decisions)
+- OpenAI YouTube: Introducing the Decisions API
