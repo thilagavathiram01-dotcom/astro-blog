@@ -1,103 +1,98 @@
 ---
-title: "Gemini Business Landing Page: Setup Guide for Owners"
-description: "Learn how to set up and use Gemini's new business landing page for brand visuals with Nano Banana 2.1, finance insights, and app connections."
-pubDate: 2026-10-21T14:00:00
-heroImage: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials", "google"]
+title: "Gemini Business Hub: Setup Guide for Small Businesses"
+description: "Guide to Gemini's new business landing page for small owners: set up brand style, generate visuals, connect apps, and get financial insights."
+pubDate: 2026-10-26T14:00:00
+heroImage: "https://images.unsplash.com/photo-1758876017768-458c975e92ed?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "gemini", "productivity", "how-to"]
 noindex: false
 ---
 
-On October 20, 2026, Google introduced a dedicated business landing page inside the Gemini app. It acts as a central hub so small business owners can build their brand, analyze finances, and understand customer insights without switching tools. The page, marketing and finance skills, and new connected apps begin rolling out globally in the coming days for all Gemini app users.
+Google announced new tools inside the Gemini app on 20 October 2026. These tools give small business owners a dedicated business landing page. The page acts as a central hub for brand work, finances, and customer insights.
 
-Tens of millions of small business owners already use Gemini to brainstorm products, manage feedback, and review performance. The new hub extends that by linking Google Business Profile, Google Ads, and Google Workspace, plus Adobe, Canva, Dropbox, Shopify, Wix, Zoho, and Xero.
+Tens of millions of small business owners already use Gemini. They brainstorm products, manage feedback, and check performance. The new landing page organises those tasks in one place. It rolls out globally to all Gemini app users in the coming days.
 
-![Small business owner working at a laptop in a cafe](https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80)
+The hub connects to Google Business Profile, Google Ads, and Google Workspace. It also links to Adobe, Canva, Dropbox, Shopify, Wix, Zoho, and Xero. You upload your brand style once. Gemini retains it for future visuals.
 
-## Access the business landing page
+## What the business landing page includes
 
-Open the Gemini app on web or mobile with the Google account you use for your business. Look for the new business landing page entry. Google has not published a precise click path yet because the feature is still rolling out, but it appears as a dedicated hub once available on your account.
+The landing page sits inside the Gemini app. You open it to start brand, finance, or customer work instead of a blank chat. From there you build your brand, analyse numbers, and review insights.
 
-From the hub you can start brand work, upload financial records, or open connected app data. The banner on the official announcement reads “Your brand, your tools, all in one place.”
+Google pairs the page with marketing and finance skills. These skills help you create assets and understand records. Larger businesses that need admin controls can look at Gemini for business instead.
 
-## Define your brand style once
+Owners report time savings. A ceramicist in Bordeaux uses Gemini for product descriptions, newsletters, and social hooks. She saves two to three hours a day. A restaurant owner in New Jersey checks local search and Maps performance between shifts.
 
-Upload your website, a brand kit, fonts, or color palettes. Gemini stores that style. When you later generate images with Nano Banana 2.1 (Google’s latest image generation model), the assets stay consistent without re-uploading guidelines.
+![Small business owner reviewing notes at a desk](https://images.unsplash.com/photo-1758876017768-458c975e92ed?auto=format&fit=crop&w=800&q=80)
 
-Nano Banana 2.1 improves visual quality, text rendering, and multi-image consistency compared with earlier Nano Banana versions. It supports up to 14 reference images and works at 1K, 2K, and 4K. Every generated image carries Google’s SynthID watermark.
+## How to set up the business landing page
 
-Steps to set the style:
+Open the Gemini app on your phone or computer. Sign in with the Google account linked to your business tools. Look for the new business landing page. It may appear as a banner or dedicated section while the rollout continues.
 
-1. Open the business landing page.
-2. Locate the brand style section.
-3. Upload your site URL, brand kit file, font files, or color values.
-4. Save. Gemini retains the style for later image requests.
-5. Prompt for a product launch graphic or social post and confirm the colors and fonts match.
+Upload your brand materials first. Add your website URL, brand kit, fonts, or colour palettes. Gemini stores the style. You do not need to re-upload it for each request. Test it with a simple prompt such as “Create three social images for a weekend special using my brand style.”
 
-## Connect your existing tools
+Connect one app next. Start with Google Business Profile if you have one. Then add Google Ads or Workspace. For third-party tools, link Canva or Shopify. Review the permissions each connection requests. Connect only the apps you use this month.
 
-Gemini links to these apps from the hub:
+Ask for a small task to confirm everything works. Request a product description or a short review reply. Check that the output matches your brand voice and the connected data.
 
-- Google Business Profile
-- Google Ads
-- Google Workspace
-- Adobe
-- Canva
-- Dropbox
-- Shopify
-- Wix
-- Zoho
-- Xero
+## Create on-brand visuals with Nano Banana 2.1
 
-Connect the ones you already use. Once linked, you can ask Gemini to pull review themes from your Business Profile, draft ad variations from Ads data, or turn Shopify orders into a summary without exporting files first.
+Nano Banana 2.1 is Google’s latest image generation model. It works with the brand style you uploaded. Gemini generates cohesive assets for product launches or campaigns. The model keeps colours, fonts, and overall look consistent.
 
-For larger teams that need admin controls, data governance, and enterprise security, Google points to Gemini for your business (the Cloud product) rather than the consumer Gemini app hub.
+Provide clear instructions. Specify the format, such as Instagram post or poster. Leave space for headlines if needed. Review every image before you publish. AI visuals still require a human check for accuracy and brand fit.
 
-## Turn records into financial graphics
+You can generate multiple variations in one session. Ask for three versions of a product flat-lay or two offer cards. The retained style reduces the need to describe colours and fonts each time.
 
-Upload spreadsheets, receipts, or purchase records. Gemini converts them into clear charts and interactive models in seconds. You receive the insight in plain language instead of scanning raw numbers yourself.
+![Desk with financial charts, calculator, and smartphone](https://images.unsplash.com/photo-1707157284454-553ef0a4ed0d?auto=format&fit=crop&w=800&q=80)
 
-Example prompts once files are attached:
+## Get financial insights from your records
 
-- “Summarize last month’s expenses by category and highlight the largest increase.”
-- “Build a simple cash-flow chart from these receipts.”
-- “Compare this quarter’s purchases with the prior quarter.”
+Upload messy spreadsheets, receipts, or purchase records. Gemini turns them into clear graphics and interactive models in seconds. You see summaries instead of raw numbers.
 
-The output stays inside Gemini so you can refine the chart or export it later.
+Ask for plain-language explanations. A prompt such as “Summarise last month’s income versus expenses and highlight the biggest change” produces a short briefing. Request charts for categories you track weekly.
 
-![Color palette and design materials on a desk](https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80)
+Cross-check the numbers against your original records. Gemini organises data, but you remain responsible for accuracy. Use the insights to decide which invoice to follow up or which expense to review.
 
-## Real examples from owners
+If you already analyse data with Gemini and BigQuery, the new finance skills complement that workflow. You can start with simple uploads here and expand later.
 
-Google shared five cases in the announcement:
+## Connect apps and pull customer insights
 
-- In Bordeaux, ceramicist Morgane (Bleu Clémentine) uses Gemini for product descriptions, newsletters, and social hooks. She saves two to three hours daily and puts the time back into making tableware.
-- In Maharashtra, farmer Santosh Jadhav used Gemini as a virtual agronomist to check soil, calculate seed needs, and draft an investment budget for his ginger farm.
-- In Goiânia, personal organizer Patricia Morais uses Gemini for customer service replies and content while she grows local visibility with Google Business Profile.
-- In Jakarta, Gumilang used Gemini to create a “Brazilian-street” visual style, merchandise, and partnership proposals for Barelz Arena under the train tracks.
-- In New Jersey, Josh (Burger & Butcher) checks local Search and Maps performance between shifts, drafts weekend updates, and reviews flavor trends for new menu items.
+The listed connections let Gemini pull real data. Google Business Profile gives access to reviews, search impressions, and Maps views. Google Ads supplies campaign performance. Workspace brings email and documents.
 
-These owners already connect Google Business Profile or upload files. The new landing page simply puts those actions in one place.
+Third-party apps add more context. Shopify or Wix can supply order and customer details. Xero or Zoho help with accounting records. Canva and Adobe support design assets.
+
+Start with one connection and test a prompt. “Look at my Google Business Profile for the last month. What changed in searches and Maps views? Suggest three updates for this weekend.” Expand once the first connection works.
+
+Customer insights appear when you ask about reviews or engagement. Gemini can draft replies that reference specific feedback. Always edit the draft before you send it.
+
+![Small street shop with tools and goods displayed](https://images.unsplash.com/photo-1770386291952-e1347d13d947?auto=format&fit=crop&w=800&q=80)
+
+## Practical tips for daily use
+
+Open the landing page for ten minutes each morning. Ask for a short briefing that covers money in versus money out, one marketing task, and any review that needs a reply. Keep the request under 200 words so the answer stays focused.
+
+Test brand style with low-stakes images first. Generate a simple announcement graphic. Compare it to your existing materials. Adjust the uploaded kit if colours or fonts drift.
+
+Limit connected apps to those you check regularly. Extra connections add permissions to manage. Review privacy settings for each linked account.
+
+Save useful outputs. Export charts or copy strong product descriptions into your existing tools. The landing page organises work, but your business systems still hold the final records.
+
+## Watch the overview
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/y2izXDTUMCA"
-    title="New Gemini Features for Small Businesses | Grow with Google"
+  <iframe src="https://www.youtube.com/embed/8TD05XOysOo"
+    title="NEW Gemini for Small Business—Easy Guide | One Hub for Your Brand, Money + Customers + How to Use It"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Practical tips
+## Conclusion
 
-Start with the connection you already rely on—usually Google Business Profile—then add the brand style upload. Test one image generation and one financial summary before you move larger workflows.
+The Gemini business landing page gives small business owners one place to handle brand, finance, and customer tasks. You upload style once, connect the apps you already use, and receive visuals plus financial graphics. The tools begin rolling out globally to all Gemini app users.
 
-Keep original files in Drive or Dropbox. Gemini works on the copies you upload or connect; it does not replace your accounting system.
-
-If the landing page has not appeared yet, check back over the next few days. The rollout is global and covers all Gemini app users.
-
-For related Workspace automation, see our earlier guide on [building Gemini Workspace skills in Google Docs](/blog/build-gemini-workspace-skills-google-docs/).
+Start with the brand upload and one connection. Test a small request. Expand as the features become available in your account. The time you save returns to the work that built your business.
 
 ## Sources
 
-- Google Keyword Blog, “New Gemini tools for small business owners,” October 20, 2026: https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/
-- Google AI for Developers, Gemini Nano Banana 2.1 model page: https://ai.google.dev/gemini-api/docs/models/gemini-nano-banana-2.1
-- Google DeepMind, Nano Banana 2.1 model card: https://deepmind.google/models/model-cards/nano-banana-2-1/
+- Google Blog: New Gemini tools for small business owners (20 October 2026)
+- Official announcement details on the business landing page, brand style with Nano Banana 2.1, financial insights, and connected apps
+- YouTube: NEW Gemini for Small Business—Easy Guide
