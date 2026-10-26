@@ -1,84 +1,94 @@
 ---
 title: "How to Use GPT-6 Intelligent UI in ChatGPT"
-description: "Learn how to use GPT-6 Intelligent UI in ChatGPT to get interactive charts, buttons, forms, and tools for everyday tasks on free and paid plans."
-pubDate: 2026-10-19T14:00:00
-heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "chatgpt", "tutorials", "how-to"]
+description: "Learn how to use GPT-6 Intelligent UI in ChatGPT for interactive charts, tools, and faster answers. Step-by-step guide for all plans."
+pubDate: 2026-10-26T14:00:00
+heroImage: "https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["chatgpt", "ai-tools", "tutorials"]
 noindex: false
 ---
 
-ChatGPT answers no longer stop at paragraphs. On October 7, 2026, OpenAI began rolling out GPT-6 with Intelligent UI to ChatGPT users. Responses can now include charts, tappable buttons, forms, and small interactive tools you use right in the conversation.
+OpenAI rolled out GPT-6 to ChatGPT in early October 2026, bringing Intelligent UI to everyday conversations. Responses can now include charts, buttons, forms, and small working tools instead of text alone. You can start reading useful information while the model continues thinking.
 
-This guide shows you exactly how to access it, what plans get which model, and practical ways to trigger useful interactive answers. You will also see how to dial the visuals back if you prefer simpler text. For model selection tips on coding work, see our guide on [choosing GPT-6 models for coding workflows](/blog/choose-gpt-6-models-coding-workflows/).
+This guide shows exactly how to use it, what each plan gets, and practical ways to get interactive answers.
 
-## What Intelligent UI actually does
+## What Is GPT-6 Intelligent UI?
 
-OpenAI trained GPT-6 to compose answers from text, visuals, and interactive elements. It chooses the mix based on your question. A comparison can appear side by side. An explanation can include an interactive diagram. When plain text works best, you still get plain text.
+GPT-6 composes answers from text, visuals, and interactive elements. It chooses the format that fits the question. A comparison can appear side by side. An explanation can use an interactive diagram. A request for a calculator produces a working tool inside the chat.
 
-The system uses a library of native streamable components and a compiler that builds the interface as the model generates it. Pieces appear progressively so you do not wait for a full response. Official examples include a savings calculator, a bill splitter for a group dinner, and labeled diagrams of everyday objects such as a bicycle.
+OpenAI built a library of native, streamable components and a compiler that renders the interface as the model generates it. The model decides when interactivity helps and when plain text is better.
 
-Intelligent UI works only in the Chat tab. It does not appear in the Work tab, in Voice mode, or when you select the Pro reasoning option (which uses GPT-6 Astra). It supports Instant through Extra High reasoning levels.
+ChatGPT can also begin answering while it continues to think or use tools. For questions that need web search, GPT-6 Instant starts answering 44% sooner on average than GPT-5.6 Instant, according to OpenAI.
 
-![Person working on a laptop with AI tools open](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+![Person coding on a laptop at night with city lights in the background](https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=800&q=80)
 
-## Who gets access and which model
+## Who Gets GPT-6 and Intelligent UI
 
-The rollout started October 7, 2026 for Plus, Pro, Business, and Enterprise plans. Free and Go plans followed on October 8. Enterprise access depends on your workplace admin settings.
+The rollout started on 7 October 2026 for Plus, Pro, Business, and Enterprise users in the Chat tab. Free and Go users received it starting 8 October.
 
-| Plan | Model in Chat tab | Intelligent UI | Rollout start |
-|------|-------------------|----------------|---------------|
-| Free and Go | GPT-6 Luna | Yes | October 8, 2026 |
-| Plus, Pro, Business, Enterprise | GPT-6 Sol | Yes | October 7, 2026 |
-| Pro reasoning option | GPT-6 Astra | No | N/A |
+| Plan | Model in Chat tab | Intelligent UI |
+| --- | --- | --- |
+| Plus, Pro, Business, Enterprise | GPT-6 Sol | Yes (Enterprise depends on admin settings) |
+| Free and Go | GPT-6 Luna | Yes |
+| Pro thinking level | GPT-6 Astra | No |
 
-Both Luna and Sol support Intelligent UI and are tuned for everyday conversation. Update the mobile app if the feature has not appeared yet. Older desktop apps for macOS and Windows do not support it; use the web version instead.
+Intelligent UI works in the Chat tab at thinking levels from Instant through Extra High. It does not appear at the Pro thinking level or in the Work tab or older desktop apps for macOS and Windows.
 
-## Step-by-step: start using Intelligent UI
+## How to Start Using Intelligent UI
 
-1. Open ChatGPT at chatgpt.com or in a supported updated app and sign in.
-2. Start a new conversation in the Chat tab. Confirm GPT-6 appears in the model picker (the label is usually GPT-6 rather than Sol or Luna).
-3. Choose a reasoning level from Instant to Extra High. Avoid the Pro option if you want interactive elements.
-4. Ask a clear question that benefits from interaction. Examples appear in the next section.
-5. Wait for the response to finish building. Then adjust any sliders, buttons, or form fields and watch the result update.
-6. Follow up in the same chat if you need a change. You can ask for a plain-text summary of the formulas or assumptions alongside the interactive view.
+You do not need to enable anything. Once the feature reaches your account, it works automatically in the Chat tab.
 
-No special command turns the feature on. GPT-6 decides when a visual or interactive layout helps. You can also request a format directly: “Show this comparison side by side” or “Build an interactive calculator I can use here.”
+1. Open ChatGPT on the web or a supported app.
+2. Start a new chat or continue an existing one.
+3. Confirm the model shows GPT-6 (it replaced the previous “Latest” option).
+4. Ask your question normally.
 
-![Mobile interface showing interactive elements](https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80)
+ChatGPT decides when a visual or interactive response is useful. You can also ask directly. Try “Build me a bill splitter for $186 split among 5 people” or “Show a side-by-side comparison of these three phones.”
 
-## Practical prompts that trigger useful tools
+For deeper work, adjust the thinking level. Instant suits quick everyday questions. Medium, High, or Extra High give the model more time for complex requests.
 
-These prompts work well because they name the inputs, the live output, and what should update:
+## Practical Examples That Trigger Interactive Answers
 
-- “Build an interactive bill splitter for a dinner. Let me change the total amount, tip percentage, and number of people. Show the amount each person owes and a copy-summary button.”
-- “Create a simple loan calculator. Inputs: loan amount, annual interest rate, and years. Display monthly payment and total interest paid. Let me adjust the values and see the numbers update.”
-- “Explain how a 7-speed bicycle works. Give a short overview, then an interactive diagram with tappable parts (frame, wheels, drivetrain, brakes). Each tap shows a short callout.”
-- “Here are my six-month sales numbers: [paste table]. Turn them into an interactive chart and describe the trend in a short paragraph below it.”
-- “Build a workshop cost calculator. Inputs: number of attendees (slider 5–50), hourly rate, room fee, materials per person. Show live total, cost per person, and a breakdown table.”
+Ask for a tool when you need adjustable inputs. “Create a savings calculator where I can change the starting amount, monthly contribution, and interest rate, and show the result after 10 years.”
 
-After the tool appears, change one input and verify the calculation yourself. Ask “Show the exact formulas you used” if you need to audit the numbers.
+Request a visual plan. “Give me a Sunday roast plan for friends. Include a shopping list that updates when I change the number of guests, plus a cooking timeline.”
 
-## Tips for better results
+Explain a concept interactively. “Break down how a 7-speed bike works with clickable sections for the frame, drivetrain, and brakes.”
 
-Be specific about the controls and the output you want. Vague requests such as “make it interactive” often produce weaker layouts. List the adjustable inputs and the values that should update live.
+Turn numbers into a chart. “Here is my monthly sales data for six months. Create an interactive chart and describe the trend.”
 
-Use Custom Instructions to set a default style. OpenAI examples include “keep answers concise” or “use tables when comparing options.” The exact layout can still vary from chat to chat.
+These patterns match the examples OpenAI showed: road-trip maps, recipe schedules, calculators, bill splitters, and small games.
 
-If the visuals feel too busy, reduce them on the web. Go to Settings or Personalization, open Layout and Visuals, and choose Simple. This reduces interactive elements but does not remove them entirely. There is no pure text-only mode. Start a new chat after changing the setting.
+![Laptop displaying code on a wooden desk with glasses beside it](https://images.unsplash.com/photo-1763568258187-a0d90864ed66?auto=format&fit=crop&w=800&q=80)
 
-Prefer the highest-quality original file or data when you paste numbers. The model works from what you supply, so incomplete tables produce incomplete charts.
+## Tips for Better Results
 
-## Limitations to keep in mind
+Be specific about the interaction you want. Name the inputs, the live output, and any buttons or controls. Vague prompts more often stay as plain text.
 
-Intelligent UI only uses the components in OpenAI’s library. It cannot invent arbitrary new widgets beyond that set. Heavy or very long tasks may still fall back to text or require follow-ups.
+Use the feature for planning, learning, and quick calculations. It reduces the need to copy numbers into a separate spreadsheet or calculator.
 
-A detected interactive element does not guarantee perfect accuracy. Always verify calculations, data, and claims against your own sources. The feature is designed for everyday tasks, not high-stakes decisions without review.
+Check important numbers yourself. Interactive tools are convenient, but they are still generated content.
 
-Availability continues to roll out. If GPT-6 or the interactive elements have not appeared, update your app and check again later. Enterprise users should confirm with their admin.
+If you prefer simpler answers, open Settings on the web, go to Personalization or Layout and visuals, and switch the option that reduces visual elements. Start a new chat afterward. This reduces but does not fully remove visuals.
+
+## Limitations to Know
+
+Intelligent UI is available only in the Chat tab on supported surfaces. It is not in the Work tab. The Pro thinking level uses GPT-6 Astra and does not support the interactive layer.
+
+Older desktop apps may not show the feature yet. The web version works more consistently.
+
+Enterprise workspaces depend on administrator settings.
+
+The model still chooses plain text when that format is clearer. You cannot force every response into an interactive layout.
+
+## How It Fits with Other AI Tools
+
+GPT-6 Intelligent UI is one of several recent advances in making AI answers more useful without leaving the conversation. Developers can also access OpenAI models through other platforms. For example, see our guide on [accessing OpenAI models in Google Cloud Model Garden](/blog/access-openai-models-google-cloud-model-garden/).
+
+If you work with Android apps or Gemini models, related tutorials on this site cover Firebase AI Logic and agent setups.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/IsL4dVezs18"
-    title="Introducing GPT-6 in ChatGPT with Intelligent UI"
+  <iframe src="https://www.youtube.com/embed/nJtZ2nxsmA0"
+    title="GPT-6 Intelligent UI in ChatGPT: 5 Practical Examples (Beginner Tutorial)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
@@ -86,12 +96,12 @@ Availability continues to roll out. If GPT-6 or the interactive elements have no
 
 ## Conclusion
 
-GPT-6 Intelligent UI turns ChatGPT into a place where you can explore ideas, run small calculations, and learn concepts through controls you adjust yourself. Open ChatGPT, stay in the Chat tab on a supported plan, and ask for the interactive format you need. Test the results, refine with follow-ups, and turn the visual intensity down if you prefer simpler answers.
+GPT-6 with Intelligent UI changes how many everyday answers appear in ChatGPT. Charts, forms, maps, and small tools can appear directly in the thread. Responses can start sooner while the model continues working.
 
-The feature is live for free and paid users. Start with one everyday task—splitting a bill or charting your own numbers—and build from there.
+Open ChatGPT, confirm you have GPT-6, and ask for the format you need. Start with a simple calculator or comparison. The feature works across free and paid plans in the Chat tab once the rollout reaches your account.
 
 ## Sources
 
-- OpenAI, [GPT-6 and Intelligent UI for everyone](https://openai.com/index/gpt-6-for-everyone/), October 7, 2026.
-- OpenAI Help Center, [Intelligent UI in ChatGPT](https://help.openai.com/en/articles/20001598-intelligent-ui-in-chatgpt).
-- OpenAI Developer Community announcement on the GPT-6 rollout, October 7, 2026.
+- OpenAI: GPT-6 and Intelligent UI for everyone (7 October 2026)
+- OpenAI Help Center: ChatGPT release notes
+- OpenAI system and product announcements on model availability and Intelligent UI capabilities
