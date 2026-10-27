@@ -1,136 +1,118 @@
 ---
-title: "How to Create Custom Android Widgets with Gemini Create My Widget"
-description: "Build resizable home screen and Wear OS widgets with Gemini Intelligence: describe the widget in plain language, refine it, and keep data grounded in Search and Google apps."
-pubDate: 2026-09-19T19:30:00
-tags: ["android", "ai-tools", "tutorials"]
-heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&h=630&q=80"
+title: "Create Custom Android Widgets with Gemini Intelligence"
+description: "Build personalized home screen widgets on Android using Gemini Intelligence Create My Widget. Step-by-step for Pixel and Galaxy."
+pubDate: 2026-10-27T10:00:00
+heroImage: "https://images.unsplash.com/photo-1760900051041-90417b9c110e?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "gemini", "tutorials", "how-to", "ai"]
+noindex: false
 ---
 
-Android widgets used to come only from apps. **Create My Widget**, part of [Gemini Intelligence](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence), flips that: you describe the panel you want in everyday language, and Gemini builds a resizable widget for the home screen — and, on supported devices, a Wear OS watch.
+Android home screens have long relied on fixed widgets built by app developers. Gemini Intelligence changes that with Create My Widget. You describe what you want in plain language. Gemini builds a resizable, updating widget that pulls from Google Search and your connected apps such as Gmail and Calendar.
 
-Google announced the feature at The Android Show on 12 May 2026. Official developer notes say the rendering engine is [RemoteCompose](https://developer.android.com/jetpack/androidx/releases/compose-remote), the same framework that powers richer [Jetpack Glance](https://developer.android.com/develop/ui/compose/glance) widgets. Availability started on the latest Samsung Galaxy and Google Pixel phones during summer 2026 and is still rolling out by device, country, and language.
+The feature rolled out first to recent Pixel and Galaxy phones as part of Gemini Intelligence. It appears in the widget picker under a Create option. You stay in control: Gemini suggests a layout, you edit or refine it, then add it to the home screen. No coding required.
 
-This guide covers what the feature can and cannot do, how to create a first widget, how to refine it, and how developers should think about Glance if they want first-class app widgets instead of Gemini-generated ones.
+This guide walks through eligibility, the creation flow, useful prompts, editing, and limits. It pairs well with developer-focused widget work; see [How to Build Adaptive Glance Widgets for Phone, Wear, Auto](/blog/adaptive-glance-widgets-phone-wear-auto/) for the app-side counterpart.
 
-## What Create My Widget is
+## What Create My Widget does
 
-Create My Widget is not a third-party widget maker app. It is a Gemini Intelligence surface on the phone:
+Create My Widget uses generative UI. You type a prompt. Gemini assembles a widget that follows Material 3 Expressive shapes and updates automatically. Data sources include public web information via Search and personal context from Google apps you have connected.
 
-- You describe a glanceable panel (recipes for the week, wind and rain for a ride, a trip countdown).
-- Gemini generates layout and content.
-- You can add it to the home screen, resize it, and edit it with follow-up language or an Edit control.
-- The same adaptive widget can target a Wear OS watch on devices that support Gemini Intelligence there.
+Examples from Google’s demos include:
 
-Google public examples from the announcement and press briefing:
+- A countdown to a marathon with days remaining.
+- Weekly high-protein meal prep recipe suggestions.
+- A stripped-down weather view showing only wind speed and rain chance for cycling.
+- Combined cards that mix calendar events with location weather.
 
-- Suggest three high-protein meal prep recipes every week.
-- A weather card that shows only wind speed and rain chance for cycling.
-- A family-trip dashboard that pulls flight and hotel details and a countdown.
-
-Gemini can use **Google Search** and connected **Google apps** such as Gmail and Calendar. That is why trip widgets can surface reservations that already live in your inbox. It is also why you should not expect a custom third-party dating or sports app widget — those apps are not the data source unless Google later wires them through the intelligence system (for example via [AppFunctions](https://developer.android.com/ai/appfunctions)).
+You can start from categories (Combo, Weather alerts, World clock, Daily brief, Important dates, Markets) or enter a free-form prompt. An Edit button lets you adjust after the first generation. The widget appears on the home screen ready to resize.
 
 <div class="video-embed">
-<iframe src="https://www.youtube.com/embed/VnjgKzAa0ws" title="Build adaptive widgets for cars, phones, watches, and more (Google I/O 2026)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+  <iframe src="https://www.youtube.com/embed/J8fzhU2Psfg"
+    title="Android's Biggest Update: Everything to Know About Gemini Intelligence"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen loading="lazy"></iframe>
 </div>
 
-The I/O 2026 widgets session above is aimed at developers, but it is the official explanation of RemoteCompose — the engine Google says sits under Create My Widget — and of widgets moving to Auto, Wear, and later XR.
+## Check device eligibility
 
-## What you need before you start
+Create My Widget is part of Gemini Intelligence. Early availability focused on the latest Pixel and Samsung Galaxy flagships with sufficient hardware for on-device processing. Confirm these points before you start:
 
-Confirm all of the following. If any piece is missing, the Create control will not appear.
+1. Your phone runs a recent Android version that includes the Gemini Intelligence rollout (Android 17-era features on supported devices).
+2. You have the Gemini app installed and signed in with a Google account.
+3. Gemini is set as the default assistant if you want deeper system integration (Settings > Apps > Default apps > Digital assistant app).
+4. Connected apps such as Calendar or Gmail are enabled inside the Gemini app settings if you want personal data in the widget.
 
-- A phone in the Gemini Intelligence wave. Google said the first wave is the latest **Samsung Galaxy** and **Google Pixel** models, with watches, cars, glasses, and laptops later in 2026.
-- Gemini available in your country and language.
-- A current system and Gemini app update. Widget-picker UI changes shipped with the Gemini Intelligence suite, not as a Play Store-only add-on.
-- For Google-app data (flights, calendar holds), the same Google Account signed into Gemini, Gmail, and Calendar.
+If the Create button is missing from the widget picker, the feature has not reached your device, region, or language yet. Availability expands over time.
 
-Rollout is staggered. A Pixel 11 in one country can have the button while an otherwise similar device does not. Treat a missing Create button as a rollout gap first, not a broken phone.
+![Person holding an Android smartphone](https://images.unsplash.com/photo-1561525155-40a650192479?auto=format&fit=crop&w=800&q=80)
 
-![Person holding an Android phone with home screen widgets](https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=1200&h=630&q=80)
+## Step-by-step: create your first widget
 
-## Step 1 — Open the widget picker the new way
-
-On a supported device:
+Follow these steps on a supported device:
 
 1. Long-press an empty area of the home screen.
-2. Tap **Widgets**.
-3. Look for a **Create** (or Create My Widget) entry at the top of the picker, separate from the per-app widget list.
-4. If you use a third-party launcher, try the system launcher once. Custom launchers sometimes hide new picker rows.
+2. Tap Widgets.
+3. Look for the Create option (sometimes labeled under Gemini or as a dedicated Create My Widget entry).
+4. Choose a category or tap the prompt field.
+5. Type a clear description. Examples: “Countdown to my first marathon on 25 June 2026” or “Suggest three high-protein meal prep recipes every week.”
+6. Review the preview Gemini generates.
+7. Tap Edit if you want to change layout, content focus, or style.
+8. Tap Add (or equivalent) to place the widget on the home screen.
+9. Long-press the widget to resize or reposition it.
 
-Some Galaxy One UI builds surface the same flow from the home-screen edit mode. The wording can differ slightly; the intent is the same: leave the catalog of app widgets and start a Gemini prompt.
+The process is intentionally short. Google’s design goal is that the assistant brings the answer on a repeating schedule rather than forcing you to open an app every time.
 
-## Step 2 — Write a prompt that fits a small surface
+## Write better prompts
 
-Widgets are glanceable. Prompts that ask for an essay fail. Prompts that name **what**, **how often**, and **which fields** work.
+Specific prompts produce more useful widgets. Include the update frequency, the exact data points, and any personal context.
 
-Good starting prompts:
+- Good: “Show only wind speed and rain chance for my morning cycling route.”
+- Good: “Daily brief with today’s calendar events and the weather at each location.”
+- Good: “Countdown to my anniversary on 14 February with days remaining.”
+- Weaker: “Weather widget” (too vague; the system already has standard weather cards).
 
-- Weekly meal-prep widget: three high-protein dinners, shopping-list line under each, refresh every Monday.
-- Ride weather: only wind speed, rain chance, and temperature for my usual 7 a.m. commute.
-- Berlin trip: countdown to departure, flight number from Gmail, hotel check-in date, and a USD to EUR line.
-- Fahrenheit and Celsius converter I can tap from the home screen.
+You can iterate. After the first version appears, use the Edit flow or return to the prompt to refine. Gemini pulls fresh data on its schedule, so the widget stays current without manual refreshes.
 
-Keep one job per widget. A life dashboard that mixes workouts, stocks, recipes, and school email will be cramped and harder to trust.
+![Custom Android home screen with widgets and icons](https://images.unsplash.com/photo-1760900051041-90417b9c110e?auto=format&fit=crop&w=800&q=80)
 
-## Step 3 — Add, resize, then edit
+## Edit, resize, and manage widgets
 
-After Gemini returns a preview:
+Once the widget is on the home screen:
 
-1. Add it to the home screen.
-2. Resize like any Android widget. RemoteCompose widgets are meant to reflow instead of letterboxing a fixed bitmap.
-3. If the first draft is wrong, use follow-up language (drop calories, add prep time) or the **Edit** control Google showed in demos.
-4. Delete the widget when the job ends — for example after a trip — instead of leaving stale counts on the home screen.
+- Long-press it to open resize handles or move it.
+- Use the Edit option (available from the creation flow or sometimes via long-press) to tweak content or appearance.
+- Remove it the same way you remove any widget: long-press and drag to Remove.
+- Multiple Create My Widget cards can coexist. Each keeps its own prompt and data sources.
 
-On a paired Wear OS watch that supports the feature, check whether the same widget appears in the watch widget carousel. Google developer write-up states Create My Widget widgets can be optimized for the watch as well as the phone.
+Widgets follow Material 3 Expressive design language so they match the system theme. They update in the background using the data sources you authorized.
 
-<div class="video-embed">
-<iframe src="https://www.youtube.com/embed/naTvTQ60eoE" title="Automate Tasks with Gemini (Android Developers)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-</div>
+## Limits and practical tips
 
-Task automation is a sibling Gemini Intelligence feature, not the widget builder. Use automation when you want Gemini to do a multi-step job in apps; use Create My Widget when you want a persistent glanceable card.
+Create My Widget cannot directly read arbitrary third-party app data. It works with Google services and public web information. You cannot build a custom Tinder-style widget or pull from an unsupported banking app.
 
-## What the widget will not do
+Hardware and rollout constraints mean not every Android phone has the feature yet. Flagship Pixel and Galaxy devices received it first. Check for system updates and Gemini app updates if the option is missing.
 
-Stay inside what Google has actually described:
+Tips that improve results:
 
-- It is not a general coding environment. You do not get a project folder or a Play Store listing.
-- It does not automatically bind every installed app. Search plus selected Google apps are the documented sources.
-- It is not a live GPS tracker or medical device. Do not use generated copy as a navigation or health instrument.
-- Availability is not all Android 17 phones on day one. Google own line is wave-based, starting with current Galaxy and Pixel flagships.
-
-If you need a widget that talks to your app private data, ship a Glance widget and, for agent triggers, look at AppFunctions. Create My Widget is for personal dashboards, not a substitute for an app official widget.
-
-![Android phones on a wooden desk next to a notebook](https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=1200&h=630&q=80)
-
-## Tips that keep widgets useful
-
-- **Name the refresh.** Every Monday or morning commute beats keep this updated.
-- **Prefer numbers and dates** the model can pull from Search or Calendar over vague tone requests.
-- **One conversion or countdown per card.** Small surfaces punish density.
-- **Re-check travel widgets** the day before you fly. Inbox-grounded fields are only as current as the last email Gemini saw.
-- **Do not put secrets on the home screen.** A widget is visible at a glance, including on lock-screen or Always On displays if your launcher allows it.
-
-## Notes for Android developers
-
-If you build apps, Create My Widget is a user feature, not an API you call. The relevant developer stack is:
-
-- [Jetpack Glance](https://developer.android.com/develop/ui/compose/glance) for official app widgets.
-- [RemoteCompose](https://developer.android.com/jetpack/androidx/releases/compose-remote) for richer interactions (snap-scroll, expressive buttons) on Android 16 and higher, with Glance keeping older devices on a simpler rendering path.
-- Widget support expanding to [Android Auto](https://developer.android.com/design/ui/cars/guides/flows/widgets) and Wear.
-
-Google 12 May 2026 developer post is explicit: RemoteCompose is the engine behind Create My Widget. Shipping a high-quality Glance widget still matters, because Gemini-generated cards will not replace branded app widgets that need your backend.
+- Connect the Google apps you actually use (Calendar, Gmail, Maps) inside Gemini settings.
+- Prefer prompts that name a clear job and update cadence.
+- Test the widget after placement; long-press to confirm resize behavior matches your layout.
+- Treat the widget as a glanceable summary. Deep actions still belong in the full app.
+- For developers building their own widgets, Glance and RemoteCompose remain the path for branded, app-specific cards. Create My Widget is a user-facing generative layer.
 
 ## Conclusion
 
-Create My Widget is the fastest way to get a single-purpose panel on a Gemini Intelligence phone without waiting for an app developer to ship that exact layout. Describe one job, pin the result, resize it, and delete it when the job is over.
+Create My Widget turns natural-language descriptions into living home-screen cards. You describe the information you want repeated—countdowns, filtered weather, meal ideas, combined calendar views—and Gemini assembles a resizable widget that stays current.
 
-Use it for meal plans, ride weather, trip countdowns, and unit converters. Use official app widgets and AppFunctions when the data lives inside a third-party app you do not control. And if the Create button is missing, check device wave and Gemini availability before treating it as a software defect.
+On supported Pixel and Galaxy phones the flow is short: open the widget picker, choose Create, enter a prompt, edit if needed, and add. Pair it with solid personal-app connections for the best personalization. For the developer side of adaptive widgets across phone, watch, and car, the Glance approach in related guides remains complementary.
+
+Start with one concrete prompt today and see what lands on your home screen.
 
 ## Sources
 
-- [Building for the Intelligence System on Android](https://developer.android.com/blog/posts/building-for-the-intelligence-system-on-android) — Android Developers Blog, 12 May 2026
-- [Gemini Intelligence announcement](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence) — Google
-- [Jetpack Glance](https://developer.android.com/develop/ui/compose/glance) and [RemoteCompose releases](https://developer.android.com/jetpack/androidx/releases/compose-remote)
-- [AppFunctions](https://developer.android.com/ai/appfunctions)
-- [Build adaptive widgets for cars, phones, watches, and more](https://www.youtube.com/watch?v=VnjgKzAa0ws) — Android Developers, Google I/O 2026
-- [Automate Tasks with Gemini](https://www.youtube.com/watch?v=naTvTQ60eoE) — Android Developers
+- [Gemini Intelligence brings proactive AI to Android](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence/) — Google Blog, 12 May 2026
+- [Can't find the perfect widget? Google will help you create your own](https://www.androidauthority.com/create-my-widget-3665312/) — Android Authority, 12 May 2026
+- [Gemini Intelligence brings gen UI, Gboard 'Rambler' to Android](https://9to5google.com/2026/05/12/gemini-intelligence-announcement/) — 9to5Google, 12 May 2026
+- [Add & customize your Gemini widget](https://support.google.com/gemini/answer/16179553) — Gemini Apps Help
+- [Android's Biggest Update: Everything to Know About Gemini Intelligence](https://www.youtube.com/watch?v=J8fzhU2Psfg) — CNET
