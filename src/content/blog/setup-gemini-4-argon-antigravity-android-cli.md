@@ -1,81 +1,91 @@
 ---
-title: "Set Up Gemini 4 Argon with Antigravity for Android"
-description: "Step-by-step guide to access Gemini 4 Argon in Antigravity and Android CLI for self-healing builds and Compose shaders."
-pubDate: 2026-10-15T16:00:00
-heroImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "android", "tutorials", "gemini"]
+title: "Set Up Gemini 4 Argon in Antigravity for Android"
+description: "Step-by-step guide to install Google Antigravity, enable the Android CLI plugin, and use Gemini 4 Argon for native Android app development."
+pubDate: 2026-10-27T12:00:00
+heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "android", "tutorials", "gemini", "developer", "ai"]
 noindex: false
 ---
 
-Gemini 4 Argon is Google's latest frontier model. It excels at long-horizon coding tasks. Android developers can now use it in Antigravity and via the Gemini API for agentic workflows.
+Android developers can now use Gemini 4 Argon through Google Antigravity for complex coding tasks. The model handles long-horizon work such as self-healing build loops and production-ready Jetpack Compose code with AGSL shaders. This guide shows how to set it up on desktop or via the CLI so you can start building.
 
-This guide shows how to set it up for Android development. You get self-healing build loops and advanced Jetpack Compose generation, including AGSL shaders.
+Google made Gemini 4 Argon available in Antigravity for Google AI Ultra subscribers (and in some cases Pro), plus via the paid Gemini API tier. The official Android CLI plugin connects the agent to local Android tools including Gradle and the emulator.
 
-## What you need
+## What you need before starting
 
-You need a Google AI Ultra subscription for Antigravity access. Or use the paid tier of the Gemini API. Introductory pricing runs through November 30, 2026.
+Confirm you have an active Google AI Ultra subscription if you plan to use the Antigravity desktop app or CLI path. Developers on the paid Gemini API tier can access the model in Android Studio without Ultra. Download the latest Antigravity desktop app from the official site or install the CLI.
 
-Download the latest Antigravity desktop app or CLI from antigravity.google. Have Android Studio installed if you prefer the IDE path. Confirm your region supports the rollout.
+You also need Android Studio Canary for the integrated path, or a standard Android SDK setup for terminal work. The plugin does not install the SDK or emulator for you.
 
-![Laptop screen showing lines of code in a development environment](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80)
+## Install Google Antigravity
 
-## Set up Antigravity with the Android CLI plugin
+Download the Antigravity desktop app for macOS, Windows, or Linux from antigravity.google. Run the installer and sign in with the Google account that has Ultra access. Choose a theme and accept the terms.
 
-Antigravity connects agents to local Android tools via the official Android CLI plugin. This enables programmatic commands and custom skills.
+For the CLI route, run the install script:
 
-### Visual setup in the desktop app
-
-1. Open the Antigravity Desktop App.
-2. Go to Settings > Customizations > Build With Google Plugins.
-3. Locate android-cli-plugin and toggle it to Enabled.
-
-In Android Studio Canary, log in to your Antigravity account in the agent tool window. This enables workflows directly in the editor.
-
-### Terminal setup
-
-For Google Antigravity, run:
-
+```bash
+curl -fsSL https://antigravity.google/cli/install.sh | bash
 ```
+
+On Windows PowerShell use:
+
+```powershell
+irm https://antigravity.google/cli/install.ps1 | iex
+```
+
+The binary lands in `~/.local/bin/agy` on macOS/Linux. Restart your terminal and verify with `agy --version`. On first launch, select a color scheme, rendering mode, and confirm you trust the workspace folder.
+
+
+![Developer working on a laptop with code editor open](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80)
+
+
+## Enable the Android CLI plugin
+
+The android-cli-plugin is the bridge that lets the agent run Android commands and skills. In the Antigravity desktop app, open Settings > Customizations > Build With Google Plugins (or the plugin marketplace). Locate android-cli-plugin and toggle it to Enabled.
+
+In Android Studio Canary, open the agent tool window and log in with your Antigravity account. This enables agentic workflows next to the editor.
+
+From the terminal, run:
+
+```bash
 agy plugin install android-cli-plugin
 ```
 
-For any terminal agent via Android CLI, run:
+Then initialize Android tooling in your project directory:
 
-```
+```bash
 android init
 ```
 
-Update your tools first. Download the latest Antigravity version before installing the plugin.
+Follow the prompts. The agent can now inspect layouts, run builds, and interact with the emulator.
 
-## Access Gemini 4 Argon
+## Switch to Gemini 4 Argon
 
-Argon rolls out globally to supported regions starting October 13, 2026.
+In the Antigravity desktop app or CLI, open the model picker and select Gemini 4 Argon. Google AI Ultra subscribers see it listed. If it does not appear, sign out and back in, then update the app or CLI to the latest version.
 
-Google AI Ultra subscribers access it in the Antigravity desktop app (macOS, Windows, Linux) or terminal CLI. Developers on the paid Gemini API tier use it in Android Studio and Google AI Studio.
+For the Gemini API path in Android Studio, add your paid API key under Settings > Tools > AI > Model Providers > Gemini and enable the model. Introductory pricing is available through November 30, 2026.
 
-In Firebase AI Logic, paid API users can call it client-side for intelligent app features.
+Gemini 4 Argon ranks fifth on the latest Android Bench results with a 21.3% pass rate on long-horizon tasks. Compare costs and performance against Claude Sonnet 5.5 or GPT-6.1 Sol in the [Android Bench guide](/blog/android-bench-2-0-choose-ai-models/).
 
-Confirm your plan. Ultra is required for the Antigravity path. API paid tier works for standard surfaces.
+## Run your first Android task
 
-![Close-up of a developer coding on a laptop with multiple windows open](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
+Open a project workspace. Give the agent a clear prompt such as "Add a Picture-in-Picture feature to the existing media player screen using CameraX and Jetpack Compose." The agent plans, edits files, runs Gradle builds, and self-corrects on errors using compiler and daemon logs.
 
-## Use self-healing build loops
+Review the generated diffs before accepting. The model produces AGSL shaders for effects like frosted glass inside Compose modifiers. Test the result on an emulator or physical device.
 
-Argon improves long-horizon autonomous execution. When a local build fails, the Antigravity harness captures error streams from Gradle daemons and Kotlin compiler logs.
 
-The model diagnoses root causes iteratively. It maintains a consistent hypothesis across edit rounds. It uses internal AST awareness for better edits.
+![Close-up of code on a computer screen during development](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
 
-This reduces failed iterations. Prompt the agent with a clear goal. Let it run the loop instead of fixing errors manually each time.
 
-For related agent patterns in Studio, see our guide on [Android Studio Quail 4 Agent Mode](/blog/android-studio-quail-4-agent-mode/).
+## Tips for better results
 
-## Generate advanced Compose UI and shaders
+Keep the workspace trusted and grant only the permissions the task needs. Start with smaller features before multi-day migrations. Use the reasoning level controls when available to balance speed and depth.
 
-Argon produces production-ready Jetpack Compose code. It handles complex AGSL shaders in Modifier.graphicsLayer blocks and shader brushes.
+Pair the setup with Firebase AI Logic if you want client-side Gemini 4 Argon calls in your finished app. Check the official changelog on developer.android.com/bench for updated rankings after the October 26 release.
 
-Examples include frosted glass effects, dynamic lighting, and ripple animations. These run alongside fluid 120 FPS Compose motion.
+If the plugin fails to load, reinstall it with the agy command and restart the CLI session. Confirm Android Studio and the SDK are on your PATH for terminal agents.
 
-Provide design references or describe the effect. The model writes the math and integrates it cleanly. Test on a device or emulator after generation.
+## Watch the setup in action
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/4rwvcOu1JxE"
@@ -85,25 +95,17 @@ Provide design references or describe the effect. The model writes the math and 
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Tips for better results
-
-Keep prompts focused. Name the target module and constraints early.
-
-Use the Android CLI plugin for tasks like building, installing, or running tests. Combine it with skills for Navigation 3 or AGP upgrades.
-
-Review changes before committing. Argon reduces rollbacks compared with earlier models, but human checks still matter.
-
-Monitor token use on long runs. The 1-million-token output limit helps with large refactors.
+The official demo shows the agent pulling designs, generating Compose UI, verifying in the emulator, and deploying to a real phone using the Android CLI plugin.
 
 ## Conclusion
 
-Gemini 4 Argon brings stronger autonomy to Android agentic development. Set up Antigravity with the Android CLI plugin, choose the right access path, and start with self-healing builds or shader-heavy Compose screens.
+Setting up Gemini 4 Argon in Antigravity takes a few minutes once you have the right subscription and the Android CLI plugin enabled. You gain an agent that can handle multi-step Android tasks, fix build failures, and generate production-ready Compose code.
 
-Update your tools, confirm your subscription, and run a small test task. Share results with the Android community on X or LinkedIn.
+Start with a small feature in an existing project, review every change, and expand from there. The same workflow works across the desktop app, CLI, and Android Studio Canary.
 
 ## Sources
 
-- [Bringing our latest frontier model to Android Developers](https://developer.android.com/blog/posts/bringing-gemini-4-argon-to-android-agentic-engineering-antigravity-cli) — Android Developers Blog, 13 October 2026
-- [Gemini 4 Argon: Built to solve your hardest problems](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/) — Google Blog, 13 October 2026
-- [Google Antigravity](https://antigravity.google/)
-- [How to Build an Android App on Antigravity](https://www.youtube.com/watch?v=4rwvcOu1JxE) — Google Antigravity
+- Android Developers Blog: Bringing our latest frontier model to Android Developers
+- Google Antigravity documentation and download page
+- Android Bench leaderboard (October 26, 2026 update)
+- YouTube: How to Build an Android App on Antigravity
