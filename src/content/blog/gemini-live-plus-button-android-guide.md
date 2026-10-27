@@ -1,70 +1,88 @@
 ---
-title: "How to Use the New Plus Button in Gemini Live on Android"
-description: "Learn how the new Plus button in Gemini Live on Android lets you share photos, files, Drive items, and your screen mid-conversation. Steps for Google app 17.68."
-pubDate: 2026-10-27T09:30:00
-heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "android", "tutorials", "ai-tools", "how-to"]
+title: "How to Use Gemini Live Plus Button on Android"
+description: "Step-by-step guide to the new Gemini Live plus button on Android for adding photos, files, Drive, and screen share during chats."
+pubDate: 2026-10-27T14:00:00
+heroImage: "https://images.unsplash.com/photo-1724322535079-11b08f7f5c88?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "android", "tutorials", "how-to", "ai-tools"]
 noindex: false
 ---
 
-Google rolled out a small but practical update to Gemini Live on Android. A new Plus button appears on the left side of the Live interface. It opens a carousel so you can add photos, files, Google Drive items, or share your screen without leaving the conversation.
+Google rolled out a practical update to Gemini Live on Android this week. The new plus button lets you add photos, files, Drive items, and share your screen without leaving an active conversation.
 
-The change is live in Google app version 17.68 and later on Android. It is not yet available on iOS, and it does not appear when you start Live from the Gemini overlay outside the full app. Previously you had to attach items first and then switch to Live. Now the attachment options sit inside the active session.
+Previously, you added context in the Gemini overlay first, then switched to Live. That extra step is gone when you start Live inside the Gemini app. Reports from 9to5Google and others confirm the change appears in Google app stable version 17.68 on Android.<grok type="render_inline_citation" citation_id="28" />
 
-![Smartphone held in hand showing a mobile interface](https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=800&q=80)
+This guide shows exactly how to use it.
 
-## What the Plus Button Does
+## What Changed in the Gemini Live Controls
 
-When you start Gemini Live inside the Gemini app, the controls along the bottom change. A Plus icon sits on the left. Tap it and a carousel appears with four options: Share screen, Photos, Files, and Drive.
+Open Gemini Live from inside the Gemini app and you will see a new plus icon on the far left of the bottom controls. Tap it and a carousel appears with four options: Share screen, Photos, Files, and Drive.
 
-Share screen now takes one extra tap compared with the previous layout. The camera button has moved next to the waveform. The microphone mute switch and the close button stay on the right and work the same way.
+The camera button moved next to the audio waveform. Microphone mute and the close button stay on the right, unchanged. Screen sharing now sits inside the plus menu, so it takes one extra tap.<grok type="render_inline_citation" citation_id="28" />
 
-This layout reduces the steps needed to bring visual or document context into an ongoing voice chat. You can start talking, then add a photo of a receipt, a PDF from Drive, or your current screen while Gemini is still listening.
+The plus menu does not appear if you launch Live from the Gemini overlay that floats over other apps. You must open the full Gemini app first. iOS does not have this update yet.
 
-## How to Start Gemini Live and Use the Plus Button
+![Person holding a smartphone showing a chat interface](https://images.unsplash.com/photo-1682941664177-7920d0e59418?auto=format&fit=crop&w=800&q=80)
 
-Make sure your Google app is updated to version 17.68 or higher through the Play Store. Open the Gemini app on your Android phone or tablet.
+## How to Start Gemini Live and Open the Plus Menu
 
-1. Tap the Live button at the bottom of the screen or swipe left to enter Live mode.
-2. Wait for the waveform and controls to appear. Look for the Plus button on the left side.
-3. Tap the Plus button. A carousel slides up with Share screen, Photos, Files, and Drive.
-4. Choose the source you need. Select a photo from your gallery, pick a file, open an item from Google Drive, or start screen sharing.
-5. Once the item loads, continue speaking. Gemini can now reference the added content in the conversation.
-6. To stop screen sharing or remove context, use the controls that appear or end the Live session with the close button.
+1. Update the Google app on your Android phone if it is not already on version 17.68 or later. Check Settings > Apps > Google > App details.
+2. Open the Gemini app directly. Do not use the overlay or power button shortcut for this feature.
+3. Tap the Live button to begin a conversation.
+4. Look for the plus (+) icon on the left side of the Live controls.
+5. Tap it. The carousel opens with Share screen, Photos, Files, and Drive.
 
-The Plus menu is only available when you launch Live from inside the Gemini app itself. Starting Live from the overlay (the floating interface you get by holding the power button or using a gesture) still uses the older layout.
+Once you select an item, Gemini Live continues the voice conversation with the new context. You can keep talking while it processes the photo or file.
 
-## Practical Tips for Better Results
+## Adding Photos, Files, and Drive Content
 
-Add context early in the conversation when possible. A clear photo of a document or a specific Drive file gives Gemini more precise information to work with than a vague description.
+Photos pulls from your device gallery. Select one or more images and ask questions about them in real time. This works well for identifying objects, explaining diagrams, or getting feedback on a screenshot.
 
-Screen sharing is useful for walking through an app or a webpage, but it requires an extra tap now. Grant the necessary permissions the first time you try it. Note that screen sharing pauses if your phone locks and does not automatically resume.
+Files lets you pick documents stored on your phone. PDFs and common formats are supported. Drive connects to your Google Drive so you can pull in shared documents or recent files without downloading them first.
 
-If the Plus button does not appear, force-close the Google app, clear its cache from Android settings, or check that you are on a stable release of version 17.68 or newer. Updates can roll out gradually, so the feature may take a short time to reach every device.
+After you add something, continue speaking. Gemini responds using both your voice and the attached content. You can interrupt at any time for follow-ups.
 
-Keep Live notifications enabled if you want the session to continue in the background. You can only undo certain actions while the Live interface remains visible on screen.
-
-![Close-up of a modern smartphone](https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80)
-
-## Limits and Current Availability
-
-The redesign is Android-only for now. iOS users still follow the previous flow. It also does not appear in the Gemini overlay, so power-button or gesture launches stay on the older controls.
-
-Gemini Live continues to require a compatible Android device and an account that has access to Gemini features. The same usage rules that apply to the rest of Gemini still govern how long a Live session can run and what actions it can take.
-
-For more ways to bring external context into Gemini, see our guide on [connecting apps to Gemini](/blog/connect-apps-to-gemini/).
-
-## Sources
-
-- 9to5Google report on the Gemini Live Plus button redesign (October 26, 2026)
-- Google Gemini Apps Help documentation on using Live and adding files or images
-
-The Plus button removes a small friction point in Gemini Live. Once it reaches your device, adding a photo, a Drive file, or a screen share mid-conversation takes fewer steps than before. Update the Google app, start Live inside the full Gemini app, and try the carousel on your next voice session.
+For more ways to work with visual input in Gemini, see our guide on [guided vision for Gemini Live](/blog/enable-guided-vision-gemini-live-android/).
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/fY5jwF7TQmE"
-    title="Go Live with Gemini"
+  <iframe src="https://www.youtube.com/embed/GbAIlH4t3uQ"
+    title="How to use Gemini Live on Galaxy S25 Series"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
+
+## Screen Sharing from the Plus Menu
+
+Screen share is now inside the plus carousel. Tap plus, then Share screen. Android prompts you to allow screen recording for the Google app. Choose whether to share the entire screen or a single app.
+
+Once sharing starts, Gemini can see what is on your display and answer questions about it. This is useful for troubleshooting an app, explaining a webpage, or getting help with a form.
+
+To stop, pull down the notification shade and end the screen sharing session. The Live conversation continues until you close it.
+
+![Close-up of a modern Android phone screen](https://images.unsplash.com/photo-1738830251513-a7bfef4b53c6?auto=format&fit=crop&w=800&q=80)
+
+## Tips for Better Results
+
+- Start Live from the Gemini app, not the overlay, if you want the plus button.
+- Speak clearly after adding a photo or file. Give Gemini a moment to process before asking complex questions.
+- For long documents, ask specific questions rather than requesting a full summary in one go.
+- Check your Google app version if the plus button is missing. A restart of the app sometimes helps after an update.
+- On Pixel and Galaxy devices the feature works the same once the Google app is updated.
+
+## Availability and Limitations
+
+The redesign is rolling out with Google app 17.68 on Android. Not every user sees it at the same time, so server-side flags may control the rollout. It is not available when Live starts from the overlay, and it has not reached iOS yet.<grok type="render_inline_citation" citation_id="25" />
+
+Gemini Live still requires an internet connection for full responses. Some advanced visual features may work better on newer devices with stronger on-device processing, but the plus menu itself is a standard UI change.
+
+## Conclusion
+
+The new plus button removes a small but frequent friction from Gemini Live on Android. Adding a photo or document no longer forces you to leave the conversation and come back. For most users this is a straightforward quality-of-life improvement that makes Live more practical for everyday tasks.
+
+Update the Google app, open Gemini, start Live, and try the plus menu. You will see the difference the first time you need to reference something on your phone while talking.
+
+## Sources
+
+- 9to5Google: Gemini Live redesign makes it easier to add context to chats (October 26, 2026)
+- Chrome Geek and related reports confirming Google app version 17.68 behavior
+- Google app release notes and user reports on Android
