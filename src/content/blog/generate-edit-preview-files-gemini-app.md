@@ -1,77 +1,51 @@
 ---
-title: "How to Generate and Edit Files Directly in Gemini"
-description: "Generate, preview, and edit documents, PDFs, spreadsheets, slides, and code right inside the Gemini app. Step-by-step for web and mobile."
-pubDate: 2026-10-30T14:00:00
-heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "how-to", "productivity", "ai-tools"]
+title: "How to Generate, Preview and Edit Files in Gemini"
+description: "Step-by-step guide to generate, preview, and edit PDFs, Google Docs, Sheets, and more directly inside the Gemini app on web and mobile."
+pubDate: 2026-10-31T15:00:00
+heroImage: "https://images.unsplash.com/photo-1758876201660-103984519266?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "ai-tools", "tutorials", "how-to", "productivity"]
 noindex: false
 ---
 
-Google added native file creation and editing inside the Gemini app on 29 October 2026. You can now ask for a document, PDF, spreadsheet, slide deck, Markdown file, plain text, or code snippet, then preview and revise it without leaving the chat.
+You no longer need to download a file, open it in another app, fix a problem, and upload it again. Gemini now lets you generate, preview, and edit documents, PDFs, presentations, spreadsheets, and code right inside the chat.
 
-PDF preview and editing work on both the web and the mobile app. Other formats are available on the web for now. The feature is open to all users in every language where Gemini is available.
+Google rolled the capability out to all users on October 29, 2026. PDF preview and editing works on both the web and the mobile app. Other formats currently work on the web version only.
 
-This guide shows how to generate a file, expand it for manual edits, highlight sections for targeted changes, and export the result. Pair it with related Gemini tools such as [Gemini Autofill with Personal Intelligence](/blog/gemini-autofill-personal-intelligence/) when you need form data pulled from Gmail or Photos.
+This guide shows exactly how to use the new tools, with a practical example you can try today.
 
-## What the new file tools support
+## What changed in the Gemini app
 
-Gemini can generate and refine:
+Previously you could ask Gemini to create a file and download it. You then had to open the file elsewhere to make changes. The new flow keeps the entire process inside the conversation.
 
-- PDFs (web + mobile)
-- Google Docs
-- Google Sheets
-- Slide decks
-- Markdown files
-- TXT files
-- Code files
+You can expand a generated file to full screen and type edits yourself. You can highlight a section of text and ask Gemini a question about it. Or you can simply tell Gemini what to change and let it refine the file for you.
 
-Once generated, the file appears as a preview in the chat. You can expand it to full screen, type changes yourself, highlight text or visuals, and ask Gemini to rewrite only the selected part. You can also ask follow-up questions about the content.
+The feature covers Google Docs, Google Sheets, slide decks, Markdown files, plain text files, code files, and PDFs. Availability is global for every language where the Gemini app already works.
 
-Google’s own example is a student who uploads photos of handwritten lecture notes. Gemini turns them into a PDF study guide. The student then expands the guide, corrects a section by hand, highlights a diagram, and asks Gemini to revise either the text or the visual.
+![Person working at a tidy desk with a laptop](https://images.unsplash.com/photo-1749048574079-5d6a12e6cd0c?auto=format&fit=crop&w=800&q=80)
 
-![Laptop displaying code on a wooden desk with glasses beside it](https://images.unsplash.com/photo-1763568258187-a0d90864ed66?auto=format&fit=crop&w=800&q=80)
+## Supported formats and where they work
 
-## Prerequisites
+Here is the current split:
 
-- A Google account signed into the Gemini app (gemini.google.com or the mobile apps)
-- Access in a region and language where Gemini is available
-- For non-PDF formats: use the web version
+- **PDFs**: Preview and edit on both web and mobile.
+- **Google Docs, Google Sheets, slide decks, Markdown, TXT, and code**: Preview and edit on the web only.
 
-No special subscription is required for the basic feature. Higher-tier plans may offer longer context or higher usage limits, but the editing tools themselves are available to all users.
+If you are on a phone and need to work with a Doc or Sheet, open Gemini in a browser on a computer for the full experience. On mobile the PDF path is already useful for study guides, reports, and quick exports.
 
-## Step 1: Generate a file from a prompt
+Google showed an example where a user uploads photos of handwritten lecture notes. Gemini turns them into a clean PDF study guide. The user can then expand the PDF, make manual edits, highlight a section, and ask Gemini to adjust text or visuals.
+
+## Step-by-step: create a PDF study guide from notes
 
 1. Open the Gemini app on the web or mobile.
-2. Type a clear request. Examples:
-   - “Create a PDF study guide from these lecture notes” (then attach images)
-   - “Make a Google Sheet that tracks monthly expenses with categories and totals”
-   - “Draft a short slide deck outline for a product launch, five slides”
-   - “Write a Python script that reads a CSV and prints the top five rows”
-3. Attach any source material with the plus button or by dragging files into the chat.
-4. Send the prompt. Gemini generates the file and shows a preview card in the conversation.
+2. Upload one or more images of your handwritten notes (or type the content).
+3. Prompt something clear: “Turn these lecture notes into a well-organized PDF study guide with headings, bullet points, and a short summary at the end.”
+4. Wait for Gemini to generate the file. A preview appears in the chat.
+5. Tap or click the preview to expand it.
+6. Review the content. Expand to full screen if you want to type changes directly.
+7. Highlight any section and type a follow-up such as “Make this section shorter and add a real-world example.”
+8. When you are satisfied, use the export or share option to save the PDF to Drive or download it.
 
-Keep the first prompt specific about format, length, and tone. Vague requests produce generic results that need more revision later.
-
-## Step 2: Preview and expand to full screen
-
-The preview appears inline. On the web you can click the expand control to open a full-screen editor. On mobile the same expand action is available for PDFs.
-
-In full-screen mode you can:
-
-- Scroll through the entire document
-- Click into text and type corrections
-- Adjust tables or simple layouts where the editor supports it
-
-Changes you type are saved in the chat session. You do not need to re-prompt for small wording fixes.
-
-## Step 3: Highlight text or sections for targeted edits
-
-1. Select a paragraph, table cell, or image caption.
-2. A prompt bar or context menu appears.
-3. Type a short instruction such as “make this more concise,” “turn this table into a graph,” or “fix the grammar.”
-4. Gemini revises only the highlighted portion and updates the preview.
-
-This is faster than asking for a full regeneration. It also preserves the rest of the document you already approved.
+The same pattern works for other file types on the web. Ask for a Google Sheet of project tasks, a slide outline, or a Markdown README, then refine it in place.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/dJ-SIBF1nJQ"
@@ -81,55 +55,51 @@ This is faster than asking for a full regeneration. It also preserves the rest o
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Step 4: Ask follow-up questions or request refinements
+## How to edit files without leaving the chat
 
-You can continue the conversation about the same file. Useful prompts include:
+Three practical ways to refine a file:
 
-- “Explain the second paragraph in simpler terms”
-- “Add a column for tax rate and recalculate the totals”
-- “Change the slide color scheme to dark mode”
-- “Export this as a downloadable PDF”
+- Expand to full screen and type your own edits. This is fastest for small wording or number changes.
+- Highlight text and ask a question. Gemini answers in context and can apply the change.
+- Give a direct instruction: “Turn this table into a graph” or “Rewrite the introduction in a more formal tone.”
 
-Gemini keeps the file context, so later prompts reference the current version rather than starting over.
+Google’s demo shows the graph request working on a table inside a preview. The model updates the visual without regenerating the entire document from scratch.
 
-## Step 5: Export or open in Google Workspace
+Because the file stays in the conversation, you can keep iterating. Ask for another revision, then another, until the result matches what you need.
 
-From the preview or full-screen view you can typically:
+![Laptop and code on a developer desk](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80)
 
-- Download the file (PDF, DOCX, PPTX, XLSX, or code as plain text)
-- Open it directly in Google Docs, Sheets, or Slides when the format matches
-- Copy content to the clipboard
+## Tips for better results
 
-For PDFs on mobile, download or share is the primary export path. On the web, Workspace formats often offer a one-click open.
+Start with a specific prompt. Include the desired format, length, and audience. “Create a one-page PDF summary for a non-technical manager” produces cleaner output than “make a summary.”
 
-![Programmer working at a multi-monitor desk with code on screen](https://images.unsplash.com/photo-1753715613434-9c7cb58876b9?auto=format&fit=crop&w=800&q=80)
+Upload source material when you have it. Photos of notes, existing documents, or data tables give Gemini concrete content to work from instead of inventing details.
 
-## Practical tips for better results
+Review carefully before exporting. The preview makes it easy to catch factual or formatting issues while everything is still in one place.
 
-**Start with structure.** Ask for headings, bullet lists, or table columns first. Then refine content. Structured prompts produce cleaner previews.
+On mobile, stick to PDFs for now. For Docs, Sheets, or slides, switch to the web version so you can use the full editor.
 
-**Use source material.** Upload notes, spreadsheets, or screenshots. Gemini works better when it has concrete input instead of inventing details.
+If you are building Android apps that call Gemini, the same models that power the app experience are available through Firebase AI Logic. See our guide on [adding Gemini 4 Argon to Android with Firebase AI Logic](/blog/add-gemini-4-argon-android-firebase-ai-logic/) for the developer-side setup.
 
-**Edit in layers.** Fix critical facts yourself in full-screen mode. Use highlight-and-prompt for style or calculation changes. Reserve full regenerations for major restructuring.
+## Common questions
 
-**Check platform limits.** Non-PDF formats stay web-only for now. If you need to edit a Sheet or slide deck on the go, generate on mobile then open the exported file in the native Google app.
+**Does this work on free Gemini accounts?**  
+Yes. Google states the capabilities are available to all users in every language where the Gemini app is offered.
 
-**Review numbers and citations.** Generated spreadsheets and reports can contain calculation or factual errors. Verify totals and sources before sharing.
+**Can I edit an existing file I already uploaded?**  
+The main flow is generation plus in-chat refinement. You can upload source material and ask Gemini to produce an editable version.
 
-## Common limitations
-
-Complex layouts, advanced formulas, and heavily formatted presentations may need a final pass in the native Google app. Image generation inside documents relies on Gemini’s current visual tools and can be inconsistent. Large files may hit context or processing limits; split very long documents into sections.
-
-Mobile support is currently strongest for PDFs. Other formats require the web client.
+**What happens if I need a format that is web-only while I am on my phone?**  
+Open gemini.google.com in a mobile browser or wait until you are at a computer. PDF work continues to function in the native app.
 
 ## Conclusion
 
-The in-chat file tools remove the old generate-download-edit-reupload cycle. Generate a first draft, expand it, highlight the parts that need work, and export when finished. The feature is available to every Gemini user today, with PDF editing on both web and mobile.
+Generating and editing files inside Gemini removes a common friction point. You stay in one conversation, see a live preview, make changes yourself or with follow-up prompts, and export when the result is ready.
 
-Start with a small, concrete task—such as turning notes into a one-page PDF or building a simple expense tracker—so you can learn the expand and highlight flow. Once that feels natural, move to longer documents and presentations.
+Start with a simple PDF on mobile or a Doc on the web. Upload a source, give a clear instruction, expand the preview, and refine. The workflow is now available to every Gemini user.
 
-## Sources
+**Sources**
 
-- [Edit and preview documents directly in Gemini](https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/) — Google Blog, 29 October 2026
-- [Create, preview, and edit files directly in the Gemini app](https://workspaceupdates.googleblog.com/2026/10/create-preview-and-edit-files-directly-in-the-Gemini-app.html) — Google Workspace Updates
-- [Generate, edit, and preview files in Gemini](https://www.youtube.com/watch?v=dJ-SIBF1nJQ) — Google Gemini on YouTube
+- Google Blog: Edit and preview documents directly in Gemini (October 29, 2026)
+- Google Gemini YouTube: Generate, edit, and preview files in Gemini
+- Workspace Updates: Create, preview, and edit files directly in the Gemini app
