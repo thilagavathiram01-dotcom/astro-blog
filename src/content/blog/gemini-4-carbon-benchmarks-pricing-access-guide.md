@@ -7,7 +7,7 @@ tags: ["ai", "gemini", "google", "developer", "ai-tools"]
 noindex: false
 ---
 
-Google released Gemini 4 Carbon on 28 October 2026, just two weeks after Gemini 4 Argon. The model leads the Artificial Analysis Intelligence Index v5.0 with a score of 59 and posts strong results on cybersecurity benchmarks. Most people cannot use it yet. Access starts with a subset of cyber defenders through the Fairwind Program.<grok type="render_inline_citation" citation_id="68" />
+Google released Gemini 4 Carbon on 28 October 2026, just two weeks after Gemini 4 Argon. The model leads the Artificial Analysis Intelligence Index v5.0 with a score of 59 and posts strong results on cybersecurity benchmarks. Most people cannot use it yet. Access starts with a subset of cyber defenders through the Fairwind Program.
 
 Carbon improves on Argon in coding, agentic tasks, and long-horizon work. Teams at Google report it can run for days on multi-step engineering problems such as finding and patching subtle bugs in large codebases. The model also shows better resistance to shortcuts and prompt injection.
 
@@ -15,7 +15,7 @@ Carbon improves on Argon in coding, agentic tasks, and long-horizon work. Teams 
 
 ## What Gemini 4 Carbon Does Differently
 
-Carbon builds directly on Argon. Google focused improvements on coding quality, web development artifacts, multimodal understanding, and scientific tasks. On WebDev Arena it gained 89 Elo points and landed at fourth place with a score of 1768.<grok type="render_inline_citation" citation_id="68" />
+Carbon builds directly on Argon. Google focused improvements on coding quality, web development artifacts, multimodal understanding, and scientific tasks. On WebDev Arena it gained 89 Elo points and landed at fourth place with a score of 1768.
 
 Internal teams observed reduced misalignment and fabrication rates in live coding environments. Carbon cuts unsupported claims by roughly half compared with Argon. When information is missing it surfaces the gap instead of inventing an answer.
 
@@ -29,7 +29,7 @@ Google published three external cybersecurity numbers, all measured without guar
 - ExploitGym (validating through exploitation): 54.8 percent
 - CWE-bench (patching at the root cause): 71.0 percent
 
-These figures place Carbon ahead of other frontier models on the tests Google highlighted. Internal benchmarks showed more than a 2x lift in success rate for generating secure code over Argon. The Chrome team reported that Carbon produced high-quality patches more than 10 times better than another lab’s large frontier model in their evaluation.<grok type="render_inline_citation" citation_id="68" />
+These figures place Carbon ahead of other frontier models on the tests Google highlighted. Internal benchmarks showed more than a 2x lift in success rate for generating secure code over Argon. The Chrome team reported that Carbon produced high-quality patches more than 10 times better than another lab’s large frontier model in their evaluation.
 
 On Gray Swan’s Indirect Prompt Injection Benchmark, Carbon scored 0.0 percent attack success rate. Argon previously scored 0.7 percent.
 
@@ -37,13 +37,13 @@ On Gray Swan’s Indirect Prompt Injection Benchmark, Carbon scored 0.0 percent 
 
 ## Pricing and Token Costs
 
-Carbon launches at the same introductory price as Argon: $2 per million input tokens and $10 per million output tokens. Cached input tokens receive a 95 percent discount off the input rate. After the introductory period ends, the price moves to $4 per million input tokens and $20 per million output tokens.<grok type="render_inline_citation" citation_id="68" />
+Carbon launches at the same introductory price as Argon: $2 per million input tokens and $10 per million output tokens. Cached input tokens receive a 95 percent discount off the input rate. After the introductory period ends, the price moves to $4 per million input tokens and $20 per million output tokens.
 
 The pricing matches Argon’s introductory rate. Developers who already use Argon on the Gemini API or Google AI Studio will see familiar unit costs once Carbon becomes available on those surfaces. Google has not published a model ID or public API endpoint for Carbon yet.
 
 ## Who Gets Access First
 
-Access begins this week with a subset of cyber defenders. Google will then phase additional trusted partners into the Fairwind Program. Broader availability for developers, businesses, and consumers comes after Google gathers feedback and iterates on guardrails. No public timeline has been announced.<grok type="render_inline_citation" citation_id="68" />
+Access begins this week with a subset of cyber defenders. Google will then phase additional trusted partners into the Fairwind Program. Broader availability for developers, businesses, and consumers comes after Google gathers feedback and iterates on guardrails. No public timeline has been announced.
 
 The Fairwind Program prioritizes governments and national cyber authorities, critical infrastructure operators (healthcare, telecommunications, energy, financial networks), and core technology platforms. Academic labs focused on defensive benchmarking can also apply. Google conducts background checks on applicant organizations and reviews their security history and ethical operations.
 
@@ -60,7 +60,7 @@ Carbon is not in the Gemini API or Google AI Studio today. The practical steps a
 3. Review long-horizon task patterns. Internal reports show Carbon persists through dead ends for days on complex engineering work. Test similar multi-day coding or remediation flows on Argon so the hand-off is measurable.
 4. Monitor the official Gemini models blog and the Fairwind Program page for model ID announcements and expanded eligibility notes.
 
-If you already integrate Argon into Android apps or Firebase AI Logic, the same client libraries will support Carbon once it is listed. Check our earlier guide on adding Gemini 4 Argon to Android apps for the integration pattern that will carry forward.<grok type="render_inline_citation" citation_id="0" />
+If you already integrate Argon into Android apps or Firebase AI Logic, the same client libraries will support Carbon once it is listed. Check our earlier guide on [adding Gemini 4 Argon to Android apps](/blog/add-gemini-4-argon-android-firebase-ai-logic/) for the integration pattern that will carry forward.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/yNI84SU9x4I"
