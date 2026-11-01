@@ -51,6 +51,8 @@ Add `--component-tree` to also produce a companion JSON file. The JSON includes 
 
 Agents can read the PNG for visual checks and the JSON for precise layout data. This combination replaces many round-trips through an emulator.
 
+![Smartphone showing mobile app interface](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
+
 ## Speed up repeated renders
 
 For iterative work, keep the renderer warm:
