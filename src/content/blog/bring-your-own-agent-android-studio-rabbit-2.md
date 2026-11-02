@@ -1,80 +1,81 @@
 ---
 title: "Set Up Bring Your Own Agent in Android Studio Rabbit 2"
-description: "Step-by-step guide to connect Claude, Codex, or 40+ agents in Android Studio Rabbit 2 using Bring Your Own Agent and the Agent Client Protocol."
-pubDate: 2026-11-02T09:00:00
+description: "Step-by-step guide to connect Claude, Codex, and 40+ ACP agents in Android Studio Rabbit 2 with Bring Your Own Agent."
+pubDate: 2026-11-02T12:00:00
 heroImage: "https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "ai-tools", "tutorials", "developer"]
+tags: ["android", "developer", "ai-tools", "tutorials", "how-to"]
 noindex: false
 ---
 
-Android Studio Rabbit 2, released as the stable channel build on 28 October 2026 at Android Dev Summit, introduces Bring Your Own Agent (BYOA). Developers can now run Claude Agent, OpenAI Codex, Google Antigravity, or any of more than 40 Agent Client Protocol (ACP) compatible coding agents directly inside the IDE.
+Android Studio Rabbit 2 is stable. You can now connect any of more than 40 coding agents that support the Agent Client Protocol (ACP) directly inside the IDE. Claude Agent, OpenAI Codex, Google Antigravity, and others work alongside Android Studio’s own tools.
 
-This replaces the previous single-agent experience with a flexible setup. Your chosen agent receives full project context, build diagnostics, emulator controls, Logcat, and Compose Preview rendering. Android Studio’s built-in agent remains available at no extra cost.
-
-![Developer typing code on a laptop during an Android Studio session](https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&w=800&q=80)
+This guide shows exactly how to update, install an agent, authenticate, and start using it on a real project.
 
 ## Why Bring Your Own Agent matters
 
-Teams already use specific agents for different tasks. Some prefer Claude for long-horizon refactors. Others rely on Codex for terminal-style work or Antigravity for Gemini model access. BYOA lets those agents operate inside Android Studio without context switching.
+Previously Android Studio locked you into Google’s built-in assistant. BYOA removes that restriction. Your preferred agent receives the full project graph, build diagnostics, Compose Preview rendering, Emulator controls, and Logcat output. Token use drops because the agent no longer needs to rediscover basic project structure.
 
-The open Agent Client Protocol means Google does not need a custom integration for every new agent. Any ACP-compliant tool can connect and immediately use Studio’s project graph, symbol resolution, and device tools. Official documentation notes that this pairing reduces token use because the agent receives accurate build and preview data instead of guessing.
+You keep your existing subscription or API key. Android Studio’s free built-in agent stays available as a fallback.
 
-Internal Google testing of related Android CLI features (Compose previews from the terminal) showed agents completing UI tasks 77 percent faster while using up to three times fewer tokens. BYOA extends similar advantages into the full IDE.
+![Developer working on a laptop with code open](https://images.unsplash.com/photo-1763568258187-a0d90864ed66?auto=format&fit=crop&w=800&q=80)
 
-## Prerequisites
+## Update to Android Studio Rabbit 2
 
-- Android Studio Rabbit 2 (2026.2.2) or later installed from the stable channel. Update via Help → Check for updates (or Android Studio → Check for updates on macOS).
-- An active project that syncs and builds successfully. Note your current AGP and Gradle versions before major changes.
-- Credentials for your chosen agent: a subscription, enterprise plan, or API key. Consumer and enterprise options are supported depending on the provider.
+1. Open Android Studio.
+2. Choose Help > Check for Updates (Android Studio > Check for Updates on macOS).
+3. Install the Rabbit 2 stable build (2026.2.2 or later).
+4. Restart the IDE and open an existing Android project that already syncs cleanly.
 
-Download the latest Rabbit 2 build from the official [Android Studio releases page](https://developer.android.com/studio/releases) if you prefer a clean install.
+Confirm the version in Help > About. You should see Rabbit 2 listed.
 
-## Step-by-step setup
+## Connect your first agent
 
-### 1. Update to Android Studio Rabbit 2
+The Agent tool window appears by default in Rabbit 2.
 
-Open Android Studio and select Help → Check for updates. Accept the Rabbit 2 update and restart. Confirm the version in Help → About shows 2026.2.2 or higher. On macOS the menu path is Android Studio → Check for updates.
+1. Open the Agent panel.
+2. Select one of the default agents: Claude Agent, Codex, or Antigravity.
+3. Sign in with your account or paste an API key when prompted.
+4. Type a simple prompt such as “Summarize the module structure and identify the main entry point.”
 
-### 2. Open the agent tool window
+The agent can now read project files, run Gradle tasks, launch the emulator, and inspect Logcat without leaving the IDE.
 
-Look for the agent panel, usually available from the right sidebar or via the AI menu. The first time you open it, Studio presents default agent options: Claude Agent, Codex, and Antigravity.
+For additional agents, go to File (or Android Studio on macOS) > Settings > Tools > AI > Agents. Browse the registry and install any ACP-compliant agent.
 
-Select one of the defaults. You will be prompted to sign in with your existing account or paste an API key. Authentication is handled by the agent provider; Android Studio does not store your provider credentials beyond the current session needs.
+## Use Android skills with your agent
 
-### 3. Install additional agents from the registry
+Rabbit 2 includes a Skills Manager. Skills give the agent specialized Android knowledge for tasks such as Compose performance, Glance widgets, or Play policy checks.
 
-For any agent beyond the three defaults, open Settings:
+1. Open the Agent panel three-dot menu or Settings > Tools > AI > Skills Manager.
+2. Install the skills you need.
+3. In chat, type @ followed by the skill name to invoke it.
 
-- Windows/Linux: File → Settings → Tools → AI → Agents
-- macOS: Android Studio → Settings → Tools → AI → Agents
+You can also reference the [Android CLI skills guide](/blog/android-cli-agent-skills/) for command-line equivalents that work with any agent.
 
-Browse the marketplace list of ACP-compatible agents. Install the one you want. You can keep multiple agents installed and switch between them from the agent window while you work. New agent features appear as soon as the provider ships them.
+![Close-up of code displayed on a laptop screen](https://images.unsplash.com/photo-1763568258330-039d2f3dfc76?auto=format&fit=crop&w=800&q=80)
 
-### 4. Verify the connection
+## Practical first tasks
 
-With an agent selected, try a read-only prompt first: “Summarize the module structure and identify the main application entry point.” Confirm the response matches your project. Then ask it to diagnose a known Gradle sync warning or read recent Logcat output. Review any proposed commands or file changes before accepting them.
+Start with read-only requests so you can verify the agent understands the project:
 
-![Programmer working at a multi-monitor desk setup for Android development](https://images.unsplash.com/photo-1753715613434-9c7cb58876b9?auto=format&fit=crop&w=800&q=80)
+- Ask it to list all build variants and explain the differences.
+- Request a summary of the current navigation graph.
+- Have it diagnose a known Logcat error without making changes.
 
-## What the agent can access
+Once confident, let it propose a small fix. Review every suggested file change and shell command before accepting. Agents can run terminal commands and write files, so keep approval gates active.
 
-Once connected, the agent receives:
+## Tips for reliable results
 
-- Full project structure and build graph
-- Symbol resolution and navigation
-- Compose Preview rendering without launching a full emulator for every check
-- Emulator and device controls
-- Logcat and build output
-- Terminal and shell execution (with safety pauses on risky actions)
-- Official Android skills (more than 30 available covering permissions, Glance widgets, Compose performance, adaptive layouts, and more)
+Keep the project fully synced before prompting. Agents rely on accurate symbol resolution and build diagnostics.
 
-You can also invoke Change Review on pending agent changes or from the Git changes window. Studio generates a report of potential issues and can walk you through longer diffs. The `/review` command works directly from the agent tool window.
+Install only the skills you actively use. Too many skills can dilute context.
 
-## Pair BYOA with Android CLI and skills
+Switch agents mid-session if one struggles with a particular task. Claude often handles large refactors well; Codex is strong at generating new code; Antigravity carries deeper Android-specific knowledge.
 
-BYOA inside Studio works well alongside the Android CLI and official skills. Many developers keep the IDE agent for interactive work and use CLI skills for terminal or CI agents. The skills catalog (Navigation 3, CameraX migration, edge-to-edge, AGP upgrades, adaptive UI, and others) installs via `android skills add` and is readable by any ACP agent.
+For on-device agent features inside your app, look at the ML Kit Agentic API powered by Gemini Nano 4. That is separate from the IDE agents but pairs naturally once you ship the feature. See also the [guide on adding AppFunctions](/blog/add-appfunctions-to-android-app/).
 
-See the existing guide on [using Android CLI and official skills with any AI agent](/blog/android-cli-skills-any-agent/) for the terminal-side workflow. Official plugins also exist for Claude Code and Codex that expose the same Android CLI commands and skills.
+## Watch the official announcement
+
+The Android Dev Summit 2026 keynote covers BYOA and the broader set of agent tools released the same day.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/8Lmv7LGgL4E"
@@ -84,35 +85,14 @@ See the existing guide on [using Android CLI and official skills with any AI age
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Practical tips for daily use
-
-Start with small, bounded tasks. Ask the agent to add a single Compose preview or fix a specific lint warning before requesting large refactors. Review the plan or diff every time; the Change Review feature helps surface issues quickly.
-
-Install only the skills you need for the current job. Loading every skill into every prompt increases context size without benefit. Re-run skill updates periodically because recommended patterns change.
-
-If you use Google Antigravity, log in inside Studio to receive new Gemini models as they launch. Enterprise users retain the existing Gemini Enterprise controls (data privacy, audit logging, and admin policies) that have been available since earlier Rabbit builds.
-
-For memory leaks, Rabbit 2 integrates LeakCanary with the agent. You can ask the agent to analyze a leak report and suggest fixes directly from the Profiler, or use the upcoming Android CLI leakcanary subcommand for terminal workflows.
-
-## Common questions
-
-**Can I use more than one agent?** Yes. Install several and switch from the agent window as the task changes.
-
-**Does the built-in agent still work?** Yes. It remains free and available alongside any external agents you connect.
-
-**What if my preferred agent is not listed?** Check the Settings → Tools → AI → Agents registry. New ACP-compliant agents appear as providers add them. You can also use the official Android plugins for Claude Code and Codex outside the IDE.
-
-**Is this available on Canary only?** No. Bring Your Own Agent is stable in the production Rabbit 2 channel.
-
 ## Conclusion
 
-Bring Your Own Agent in Android Studio Rabbit 2 removes the previous lock-in to a single coding assistant. Update to the stable 2026.2.2 release, connect Claude Agent, Codex, Antigravity, or another ACP agent through the agent window or Settings, and give it real project and device context. Combine it with Android skills and the CLI for consistent patterns across IDE, terminal, and CI.
+Android Studio Rabbit 2 makes Bring Your Own Agent production-ready. Update the IDE, connect the agent you already pay for, and start with a small verification prompt. The combination of ACP integration, Android skills, and direct access to Emulator and Logcat removes the previous friction of copy-pasting code between tools.
 
-The result is an agent that understands your Android project the same way you do, instead of guessing from a code snippet.
+Check the official Android Studio release notes for the latest list of supported agents and any new skills added after the summit.
 
 ## Sources
 
-- [Agentic and Flexible: A next era of Android development](https://developer.android.com/blog/posts/build-it-your-way-a-next-era-of-android-development) — Android Developers Blog, 28 October 2026
-- [What's new in Android developer tools and performance at Android Dev Summit](https://developer.android.com/blog/posts/android-dev-summit-26-developer-tools-performance) — Android Developers Blog, 28 October 2026
-- [Android Studio Rabbit 2 release notes](https://developer.android.com/studio/releases) — Android Developers
-- [Android Dev Summit 2026 keynote](https://www.youtube.com/watch?v=8Lmv7LGgL4E) — Android Developers YouTube
+- Android Developers Blog: Agentic and Flexible — A next era of Android development (28 Oct 2026)
+- Android Studio Rabbit 2 release notes (developer.android.com/studio/releases)
+- Android Dev Summit 2026 keynote (YouTube, Android Developers)
