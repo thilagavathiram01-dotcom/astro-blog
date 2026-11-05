@@ -1,70 +1,97 @@
 ---
-title: "Connect Your Android App to Gemini with Connected Apps"
-description: "Step-by-step guide to integrate your Android app with Gemini using Connected Apps Platform and AppFunctions for on-device actions."
-pubDate: 2026-11-04T14:00:00
-heroImage: "https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "gemini", "tutorials", "ai-tools"]
+title: "How to Connect Android Apps to Gemini via Connected Apps Platform"
+description: "Register your Android app with the Connected Apps Platform using Android MCP and AppFunctions so Gemini can trigger actions on-device."
+pubDate: 2026-11-05T16:00:00
+heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "gemini", "tutorials", "developer", "ai-tools"]
 noindex: false
 ---
 
-Google launched the Connected Apps Platform preview on 28 October 2026 at Android Dev Summit. It lets developers expose app capabilities so users can complete tasks in Gemini (and Search for remote paths) without switching apps. Users link once; after that Gemini can read live data and trigger actions with explicit confirmation for state-changing operations.
+Google introduced the Connected Apps Platform preview at Android Dev Summit on 28 October 2026. It lets developers surface app actions inside Gemini and Search without building separate integrations for each surface.<grok type="render_inline_citation" citation_id="109" />
 
-Two paths exist. A remote MCP server reaches Gemini and Search across web, Android, and iOS. Android MCP uses Jetpack AppFunctions so tools run locally on the device and reach Gemini on Android phones and tablets. This guide focuses on the Android path because it fits native apps that already hold data on-device. You implement AppFunctions, register in Google Connected Console, link a Play app, test with Gmail accounts, and publish when the containing Play release goes to production.
+For Android apps the path runs through Android MCP, powered by the AppFunctions API (now in beta). Once registered, users can mention your app with @ or describe a task in natural language and Gemini executes it on the device.<grok type="render_inline_citation" citation_id="105" />
 
+This guide covers the self-service workflow in Google Connected Console: create the connected app, link your Play listing, upload an App Bundle that contains AppFunctions, test with Gmail accounts, and publish when you release to production.
 
-![Android smartphone displaying AI app icons including Gemini](https://images.unsplash.com/photo-1757310998309-87a97e562ee5?auto=format&fit=crop&w=800&q=80)
+## What you need before starting
 
+You need a Google Play developer account that already contains the app you want to connect. Each Play app can link to only one Android MCP connected app.<grok type="render_inline_citation" citation_id="105" />
 
-## Choose the right path and prepare prerequisites
+An account owner or admin must accept the Connected Apps Terms of Service the first time the organisation uses the feature. Team members then need the “View Connected Apps” or “Create and manage Connected Apps” permission plus release-management rights on the Play app.
 
-Android MCP is best when tool execution must stay on-device for privacy or offline access. Remote MCP is preferred when you need Search reach or cross-platform coverage. You pick one connection type per connected app and cannot change it later.
+Your App Bundle must implement AppFunctions and target Android mobile devices. Store-listing assets (icon, languages, country targeting) control where the connected experience appears.
 
-Before you start:
+Prepare a 512 × 512 px icon (JPEG or PNG, under 1 MB), a short description under 30 words, at least three capabilities, at least three example prompts, a Privacy Policy URL, and a Terms of Service URL.
 
-- You need access to Google Connected Console. An account admin must accept the Connected Apps Terms of Service the first time.
-- Your Play app must already exist in the same developer account with a default store listing, icon, and supported languages. Country and language targeting on the listing control where the connected app is available. Each Play app links to only one Android MCP connected app.
-- Prepare a 512×512 px icon (JPEG or PNG, under 1 MB), a short description under 30 words, at least three capabilities, at least three example prompts, Privacy Policy URL, and Terms of Service URL.
-- Build an Android App Bundle that targets mobile devices and contains your AppFunctions. AppFunctions require Android 16 or higher and the Jetpack AppFunctions library (currently alpha).
+If you have not yet exposed functions, start with the Jetpack AppFunctions library and the official samples before you reach Connected Console. Our earlier guide on [adding AppFunctions to an Android app](/blog/add-appfunctions-to-android-app/) walks through the code side.
 
-Implement AppFunctions first so the bundle can be detected. See the existing guide on [adding AppFunctions to an Android app](/blog/add-appfunctions-to-android-app/) for the library setup and function declaration pattern.
+![Developers working on Android app integration](https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80)
 
-## Create the connected app and link your Play app
+## Create the connected app and link your Play listing
 
-Sign in to Google Connected Console. On the Home page select Create app. Accept the terms if prompted (admin only). Choose the Connected app card, give the app a display name (this is the name users type after @ in Gemini), select a category, then choose the Android MCP connection type. Category cannot be changed after creation.
+Sign in to Google Connected Console. On the Home page choose Create app.
 
-Link the existing Play app that will contain the AppFunctions. Once selected, the Play app cannot be changed. The management overview page opens for configuration, versions, and testers.
+If the Terms of Service dialog appears, an admin reviews and accepts it, then continues. Otherwise select Create on the Connected app card.
+
+Give the connected app a name. This name appears across Google products and is what users type after @ to invoke it. Choose a category that matches your domain; the category cannot be changed later and may include baseline capabilities.
+
+Select the connection type Android MCP. You cannot switch types after creation. Finally, pick the existing Play app that will contain the AppFunctions. The link is permanent, so confirm the package is correct.
+
+The overview page opens and you can now add public details.
 
 ## Add public details and example prompts
 
-On the connected app management page, open the Android MCP card and select Add app details. Confirm or edit the connected app name. Upload the 512×512 icon. Enter the description (concise, under 30 words). Add at least three capabilities that describe high-value tasks. Add at least three example prompts: at least two must start with @YourAppName, and at least one must mention the app name naturally without a leading @. Avoid numbered prefixes or quotation marks around prompts.
+On the Android MCP card select Add app details. Confirm or edit the connected app name.
 
-You can localize description, capabilities, and prompts by wrapping text in language tags such as <en-US>…</en-US> and <es-ES>…</es-ES>. Connected Console validates the tags. Provide the Privacy Policy and Terms of Service URLs. A website URL is optional for attribution.
+Upload the 512 × 512 icon. Write a single-sentence description. Add at least three capabilities that describe high-value tasks users can complete. Do not number them and keep one capability per entry.
 
-## Upload the bundle and submit for testing
+For example prompts, supply at least three. At least two must start with @ followed by your app name. At least one should mention the app name naturally without a leading @. Avoid quotation marks and numbered prefixes.
 
-Return to the Android MCP card and select Upload app bundle (or go directly to the linked Play app’s Testing track). Create or edit a release, upload the .aab that contains the AppFunctions, or add it from the library. After upload, the release page shows detected AppFunctions, tool count, languages, and country targeting. Confirm automated checks pass, then select Submit connected app and continue.
+You can localise description, capabilities, and prompts by wrapping text in language tags such as <en-US>…</en-US>. Connected Console validates the tags automatically.
 
-This makes the version available to testers and advances the Play release to preview. Leave the Play release in Draft if you want to iterate without locking the version code. Publishing locks the version code so later changes require an incremented version.
+Enter the required Terms of Service and Privacy Policy URLs. A website URL is optional.
+
+Save the details before you upload any bundle. The public metadata snapshot is captured when you later submit a version.
+
+![Mobile app development workflow](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80)
+
+## Upload the App Bundle and submit for preview
+
+After the details are saved, go to the Upload an app bundle section and choose Upload app bundle. This takes you to the linked Play app’s Test and release page.
+
+Create a new release on an internal testing track (or edit a draft). Upload the .aab that contains your AppFunctions, or add one already in the library.
+
+Once processing finishes, the release page shows “App functions were detected.” Verify the connected app name, version code, tool count, languages, and country targeting. Fix any validation errors before continuing.
+
+Select Submit connected app and continue. This sends the AppFunctions version to Gemini for preview testing and moves the Play release to the preview page.
+
+Leave the Play release in Draft if you want to iterate without locking the version code. Publishing a Play release permanently locks that version code; later changes require an incremented version.
 
 ## Add testers and verify on device
 
-On the connected app overview, open Manage testers and add Gmail addresses (include your own). Only listed accounts can see the unpublished connected app. Testers must be signed in on an Android phone or tablet with the exact app build whose version code matches the submitted bundle.
+Return to the connected app overview and open Manage testers. Create or select an email list containing only @gmail.com addresses. Include your own address.
 
-In the Gemini app, type @ followed by the connected app name and select it, or open Settings & help > Connected apps. Test every example prompt, both explicit @ mentions and natural-language queries. Confirm parameter handling, confirmation dialogs for state-changing actions, and end-to-end execution.
+Save the list. Testers can then open the Gemini app, type @ followed by the connected app name, and select it. They can also find the app under Settings & help > Connected apps.
 
+Each tester must be signed in on an Android phone or tablet with a listed Google Account and must have the exact App Bundle version that was submitted. Sideloading a different build will not match.
 
-![Developer working on a laptop with code and a phone nearby](https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80)
-
+Test every example prompt, both explicit @ mentions and natural-language requests. Confirm parameter handling, confirmation dialogs, and end-to-end execution of each AppFunction.
 
 ## Publish to production
 
-Unlike remote MCP apps, an Android MCP connected app does not require a separate Connected Console review step. Google reviews and publishes it automatically when you release the Play app version that contains the AppFunctions bundle to production. Complete internal testing, then promote the release. Availability follows the Play listing’s languages and country targeting.
+Unlike remote MCP servers, an Android MCP connected app does not require a separate Connected Console publish step. Google reviews and publishes the connected experience automatically when you release the Play app version that contains the matching App Bundle to production.
+
+After thorough testing, open the linked Play app in Connected Console, promote the release through the normal tracks, and publish. The connected app version becomes available to users in the countries and languages defined by your store listing.
 
 ## Tips for a smooth launch
 
-Start with a small set of high-value, well-described functions so Gemini can invoke them reliably. Write clear tool descriptions and example prompts; they influence discovery and invocation. Keep confirmation flows short and specific. Monitor the Connected Console for traffic, latency, and errors after launch. Because the Android path is experimental, expect API changes before general availability. For cross-platform or Search reach, evaluate a remote MCP server in parallel.
+Start with a small set of high-value AppFunctions rather than exposing every screen. Users discover the integration through example prompts, so make those prompts realistic.
 
-The official Android Developers session walks through the full flow:
+Keep the connected app name short and memorable; it becomes the @ handle. Test on real devices that match the submitted version code, not only the emulator.
+
+Monitor the Versions page after submission. Pending submission means you have not yet clicked Submit connected app and continue. Available to testers means preview is live for the email list.
+
+If you also use coding agents in Android Studio, the same project can be built with any ACP-compliant agent. See our guide on [Bring Your Own Agent in Android Studio Rabbit 2](/blog/android-studio-byoa-agents-rabbit-2/) for setup.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/-4G-4w9FKDw"
@@ -76,11 +103,13 @@ The official Android Developers session walks through the full flow:
 
 ## Conclusion
 
-Connected Apps Platform gives Android apps a standard way to surface on-device actions inside Gemini. Implement AppFunctions, register and link in Google Connected Console, test with real Gmail accounts, then ship through a normal Play production release. The result is users completing tasks in Gemini while your app stays in control of data and confirmation.
+The Connected Apps Platform preview gives Android developers a direct route into Gemini on the device through Android MCP and AppFunctions. Register once in Google Connected Console, link your existing Play app, upload a bundle that contains the functions, and test with a short Gmail list.
+
+When you promote the same bundle to production, the connected experience follows automatically. Start with a focused set of actions, validate them thoroughly on device, and expand as user feedback arrives.
 
 ## Sources
 
-- Google for Developers: Connected Apps Platform overview
-- Android Developers: Create and manage Connected Apps using AppFunctions and Android MCP
-- Android Developers Blog: Agentic and Flexible announcements (28 Oct 2026)
-- Android Dev Summit session: Extend your app to Gemini and Search with the Connected Apps Platform
+- Create and manage Connected Apps using AppFunctions and Android MCP in Google Connected Console – Android Developers
+- Connected Apps Platform overview – Google for Developers
+- Agentic and Flexible: A next era of Android development – Android Developers Blog
+- Extend your app to Gemini and Search with the Connected Apps Platform – Android Dev Summit 2026 session
