@@ -1,57 +1,91 @@
 ---
-title: "Android Family Hub: Manage Family Tools in Settings"
-description: "Access the new Android Family Hub in Settings with Google Play services v26.43 to manage family members, shared subscriptions, and locations."
-pubDate: 2026-11-03T14:00:00
-heroImage: "https://images.unsplash.com/photo-1713942590404-d6981e63fb56?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "how-to", "google", "tutorials"]
+title: "How to Use Android Family Hub in Settings"
+description: "Find and use the new Android Family Hub for managing family tools, subscriptions, and locations in Settings with Play services 26.43."
+pubDate: 2026-11-05T14:00:00
+heroImage: "https://images.unsplash.com/photo-1772182125359-e472ca9b27c2?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "tutorials", "how-to", "google"]
 noindex: false
 ---
 
-Google has introduced the Android Family Hub, a dedicated section in Settings that brings family management tools into one place. Previously, users jumped between the Family Link app, Play Store settings, and account pages to handle shared subscriptions or check locations. The hub arrives with Google Play services v26.43 as part of the November 2026 system updates.
+Google added Android Family Hub as a dedicated space for family management tools inside Android Settings. The change arrives with Google Play services version 26.43, listed in the November 2026 System Services Release Notes.
 
-This change mirrors the Family section near the top of iOS Settings. On Android it appears for users with a family group. Early sightings on Pixel devices placed it at the top of the Settings list. The official release notes describe it as “a dedicated space for family management tools in Android Settings.”
+Managing a family group previously required switching between the Family Link app, Play Store pages, and Google account settings. Family Hub brings those tools into one place in Settings.
 
-![Family using phones together at home](https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80)
+![Person holding a smartphone showing settings menu](https://images.unsplash.com/photo-1772182125359-e472ca9b27c2?auto=format&fit=crop&w=800&q=80)
 
-## What the Android Family Hub Includes
+## What Android Family Hub includes
 
-Testing reports show the hub lists family members along with their roles. It displays details for shared subscriptions such as Google One storage, Google AI plans, and YouTube Premium. Calendar events that involve multiple family members appear in the same view. Shared live locations for family members are visible, along with suggestions aimed at the family manager.
+Google’s release notes describe it as “a dedicated space for family management tools in Android Settings.” Official notes provide no further feature list.
 
-These elements reduce the need to open separate apps for routine checks. Full parental controls for screen time, app approvals, and content filters still live primarily in Family Link. The hub serves as a quick overview and entry point rather than a complete replacement.
+Testing reports from Pixel 11 devices show a Family entry near the top of Settings. Opening it displays family members, shared subscriptions such as Google One storage, Google AI plans, and YouTube Premium, Calendar events involving multiple family members, current shared locations, and suggestions for the family manager.
 
-The feature ships through Google Play services, so it can reach a wider set of Android phones beyond Pixel devices. Availability depends on the update reaching your device and an existing Google family group.
+These details come from early sightings, not from Google’s bulletin. The exact contents can vary as the feature rolls out more widely.
 
-## How to Access Android Family Hub
+Family Hub is delivered through Play services rather than a system update. This means it can reach non-Pixel devices that receive Play services updates.
 
-First confirm that Google Play services is up to date. On most phones open Settings, tap your profile at the top, then All services, and look under Privacy & security for System services. Select Google Play services and check for updates if shown.
+## How to check if Family Hub is available
 
-Once the update is installed:
+The feature rolls out gradually. Installing Play services 26.43 does not guarantee the hub appears immediately.
 
 1. Open the Settings app on your Android phone.
-2. Look near the top of the list for a Family option. On some devices it appears above Network & internet.
-3. Tap it to open the hub.
+2. Look for a Family entry near the top of the main Settings list.
+3. If it is present, tap it to open the hub.
 
-If you do not see the option, your device may not have received the rollout yet, or you may not be part of a family group. Create or join a family group at families.google.com if needed. The hub is intended for the family manager.
+If you do not see it, confirm your Play services version. Open Settings, search for Google, go to All services or Privacy & security, then System services, and check the Google Play services version. It should read 26.43 or later.
 
-After opening the hub you can review members, tap into subscription details, or check shared locations. Changes to advanced controls still route through Family Link or the relevant Google service.
+Restart the phone after the update. Some Play services features take extra time to surface after the version number changes.
 
-![Smartphone settings screen on a device](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80)
+On Samsung and other manufacturer skins the Settings layout differs. Search for “Family” inside Settings if the entry is not at the top.
 
-## Tips for Using the Hub Effectively
+![Family using phones together at home](https://images.unsplash.com/photo-1713942590404-d6981e63fb56?auto=format&fit=crop&w=800&q=80)
 
-Keep Family Link installed even after the hub appears. The dedicated app handles screen-time limits, downtime schedules, app approvals, and content filters for supervised accounts. The hub gives a faster snapshot of the same group.
+## Managing family tools from the hub
 
-Check shared subscription status regularly. Google One storage, YouTube Premium, and Google AI plans can be shared with family members. The hub surfaces current usage and plan details so you can decide whether to adjust sharing.
+Once the hub appears, you can view and act on family-related items without leaving Settings.
 
-Location sharing is optional and controlled separately. If family members have enabled location sharing, the hub can show current positions. Review privacy settings in each account if you prefer tighter controls.
+- Review the list of family members in your Google family group.
+- See which subscriptions are shared, including storage and premium plans.
+- Check Calendar events that involve more than one family member.
+- View current shared locations when location sharing is enabled.
+- Follow any suggested actions for the family manager.
 
-For stronger device protection on family phones, review the six features in Advanced Protection Mode. See our guide on [Android Advanced Protection setup](/blog/android-advanced-protection-setup/) for steps that apply across accounts.
+These controls complement the full Family Link app. Family Link remains the place for detailed screen-time limits, app approvals, content filters, and device locking. Family Hub offers a quicker overview inside Settings.
 
-## Related Family Management Tools
+If you manage children’s accounts, start with Family Link setup if you have not already done so. Our related guide on [automatic photo backup to Windows via Quick Share](/blog/quick-share-automatic-photo-backup-windows/) covers another connectivity feature that arrived in the same Play services update.
 
-Family Link remains the main tool for supervising child accounts. It lets parents set daily screen-time limits, approve or block apps, filter content on YouTube and Chrome, and view app usage reports. The hub does not remove the need for that app on devices used by younger users.
+## Tips for using Family Hub effectively
 
-You can also manage a family group on the web at families.google.com. That page lets you add or remove members, adjust sharing for subscriptions, and handle supervision settings. The new Settings hub simply makes the same information reachable without leaving the phone’s main Settings app.
+Update Google Play services through the Play Store. Open the Play Store, tap your profile, then Manage apps & device, and check for updates under System.
+
+Sign in with the family manager account on the device where you want the hub. The hub shows tools for the signed-in family group.
+
+Enable location sharing in the family group settings if you want the shared locations section to populate. Location data follows the same privacy controls already used in Family Link and Google Maps.
+
+Check the hub after major Play services updates. New tools may appear in later versions without a separate announcement.
+
+If the Family entry is missing after several days on version 26.43, continue using the Family Link app. The hub is an additional entry point, not a replacement.
+
+## Common questions
+
+Does Family Hub work on non-Pixel phones? Yes, because it arrives through Play services. Availability still depends on the phased rollout and the device receiving the update.
+
+Can I manage screen time from the hub? Official notes do not confirm this. Early reports focus on overview items. Use the Family Link app for detailed controls.
+
+What if I do not have a family group? The hub may not appear, or it may offer to create one. Create a family group through Google account settings or Family Link first.
+
+## Conclusion
+
+Android Family Hub puts family management tools into Settings for users running Play services 26.43 or later. It reduces the need to jump between apps for basic family overview tasks.
+
+Check Settings for the new Family entry after updating Play services. Pair it with Family Link for full parental controls and with other November system features for a more connected Android experience.
+
+The hub is rolling out now. Look for it at the top of Settings on supported devices.
+
+## Sources
+
+- Google System Services Release Notes, November 2026 (Play services v26.43): https://support.google.com/product-documentation/answer/14343500
+- Android Authority reporting on Family Hub: https://www.androidauthority.com/android-family-hub-rollout-3730927/
+- TechRepublic summary of the feature: https://www.techrepublic.com/article/news-google-android-family-hub-settings/
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/qunQ3ggbErQ"
@@ -60,13 +94,3 @@ You can also manage a family group on the web at families.google.com. That page 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
-
-## Conclusion
-
-The Android Family Hub in Settings simplifies daily family management by gathering member lists, shared plans, calendar events, and locations into one screen. It arrives with Google Play services v26.43 and is rolling out through the November 2026 system updates. Update Play services, open Settings, and look for the Family entry near the top of the list. Pair it with Family Link for full parental controls and keep subscription sharing current. This update brings Android family tools closer to the streamlined experience many users already expect from other platforms.
-
-## Sources
-
-- Google System Release Notes via 9to5Google (November 2026): Google Play services v26.43 Account Management entry for Android Family Hub.
-- Android Authority reporting on early Pixel testing and the official rollout confirmation.
-- Google Family Link help documentation for related parental controls and family group management.
