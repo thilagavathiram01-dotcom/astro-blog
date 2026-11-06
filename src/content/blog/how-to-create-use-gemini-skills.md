@@ -1,102 +1,95 @@
 ---
-title: "How to Create and Use Gemini Skills for Workflows"
-description: "Step-by-step guide to creating, managing, and using Gemini Skills in the Gemini app. Reusable custom instructions for productivity, free for personal accounts."
-pubDate: 2026-10-13T12:00:00
-heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "gemini", "tutorials", "how-to", "productivity", "google"]
+title: "How to Create and Use Skills in the Gemini App"
+description: "Step-by-step guide to create, stack, and use reusable Skills in Gemini. Replace Gems and automate repeated tasks."
+pubDate: 2026-11-06T12:00:00
+heroImage: "https://images.unsplash.com/photo-1763568258289-47ada8efe7ea?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "tutorials", "how-to", "ai-tools", "productivity"]
 noindex: false
 ---
 
-Google rolled out Gemini Skills in late September 2026. These reusable custom instructions replace much of the old Gems workflow and let you save preferred formats, rules, and reference material once, then apply them across chats.
+Google rolled out Skills in the Gemini app starting 13 October 2026. Skills let you save custom instructions once and reuse them in any chat or task. They work on web, Android, and the Mac Gemini app for users 18 and older who keep Activity on.
 
-Skills work in the Gemini mobile app, the Mac app, and at gemini.google.com for personal Google accounts (age 18+). Keep Activity must be on. The feature is free—no Google AI subscription required for basic use. Work and school accounts receive Skills later.
+Unlike the older Gems, Skills sit inline in your regular conversations. You can stack several in one prompt, upload reference files, and let Gemini apply them automatically when the context matches. This guide shows the exact steps from Google’s help pages and Workspace update.
 
-## What Gemini Skills Are
+## What Skills do in Gemini
 
-A Skill is a named set of instructions (plus optional reference files) stored as a SKILL.md file under the open Markdown standard. Gemini can apply it automatically when the description matches your prompt, or you can call it explicitly with a slash (/) command (soon @).
+A Skill is a reusable set of instructions plus optional files. You name it, describe when it should run, and write the rules Gemini must follow. Once saved, type `/` (or `@` on updated accounts) in any chat to call it, or let Gemini pick it when relevant.
 
-Unlike a one-off prompt, a Skill stays available across chats and tasks. You can stack multiple Skills in one request. Google notes that Skills do not yet sync between the Gemini app and Workspace apps, so you create them separately if you need both.
+Examples include a brand-voice writer, a meeting-recap formatter, a lesson-plan template, or a vendor-comparison checklist. You can combine two or more Skills in the same request so one handles tone while another handles structure.
 
-## Requirements Before You Start
+Skills use the open SKILL.md format. You can export a Skill as a zip and import one built on another platform, provided it follows the naming rules (lowercase, hyphens).
 
-Confirm three items:
+![Laptop and plant on a wooden desk ready for focused work](https://images.unsplash.com/photo-1749048574079-5d6a12e6cd0c?auto=format&fit=crop&w=800&q=80)
 
-- You are signed in with a personal Google Account and are 18 or older.
-- Keep Activity is turned on in your Gemini settings.
-- You are using the Gemini mobile app, Mac app, or gemini.google.com.
+## How Skills differ from Gems
 
-If Skills do not appear yet, the rollout is gradual. Check Settings periodically.
+Gems were separate custom assistants. Skills live inside ordinary chats and Tasks. You can layer multiple Skills in one prompt, something Gems did not support cleanly.
 
-## How to Create a Gemini Skill
+Google’s 30 September 2026 Workspace update lists the transition timeline:
 
-Google offers four methods. The fastest for most people is conversational creation.
+- 13 October 2026: Skills begin rolling out in the Gemini app (expected complete mid-November).
+- 17 November 2026: Gems move to the Settings panel; you can still create and use them.
+- No sooner than 1 March 2027 (business/enterprise): Gems are removed; remaining ones auto-migrate to draft Skills.
 
-### Method 1: Create with Gemini
+Skills do not currently sync between the Gemini app and Workspace apps. Create them separately if you need both.
 
-1. Open the Gemini app or gemini.google.com.
-2. Go to Menu (or sidebar) → Settings → Skills.
-3. Tap or click Create with Gemini.
-4. Describe the skill in plain language. Example: “Create a skill that turns meeting notes into a structured recap with decisions, action items (owner and due date), and open questions. Never invent owners or dates.”
-5. Review the generated name, description, and instructions. Edit if needed, then save.
+## How to create a Skill
 
-The description is critical. Gemini uses it to decide when to apply the skill automatically. Write a third-person capability statement plus specific “Use when…” examples.
+Open gemini.google.com (or the Mac app) and sign in. Click Customize in the sidebar (tap More first if you do not see it), then Skills.
 
-### Method 2: Create Manually
+You have four main ways:
 
-1. On the Skills page, choose Create manually.
-2. Enter a name in lowercase with hyphens (e.g., weekly-status-update). Start with an action verb when possible.
-3. Write a focused description under 1,024 characters.
-4. Add detailed instructions: steps, output format, rules, and a concrete example of the desired result.
-5. Click Create.
+1. **Create with Gemini**  
+   Click Create → Create with Gemini. Describe the job in plain language. Gemini asks follow-up questions and drafts the Skill. Refine by chatting until the instructions match what you want.
 
-Note: Manually created skills may not save correctly in the mobile app at the moment. Prefer the web version for manual creation if you hit issues.
+2. **Start from a recommended template**  
+   Pick a prefilled template under Recommended. Edit the name, description, and instructions. Add files if needed, then Create.
 
-### Method 3: Ask in a Chat
+3. **Create manually**  
+   Click Create → Create manually. Enter a short hyphenated name (for example, brand-voice), a clear description, and the full instructions. Include an example of good output.
 
-In any Gemini chat, type: “Create a skill based on these instructions: [your detailed instructions].” Gemini drafts the skill. You can then edit it from the Skills page.
+4. **Upload a SKILL.md file or folder**  
+   Click Create → Upload. Choose a SKILL.md file, or a folder/zip that contains SKILL.md at the root. Total upload size must stay under 100 MB. Supported files include text, PDFs, images, spreadsheets, and limited code types. Scripts that call external websites are blocked.
 
-### Method 4: Upload a SKILL.md File
+You can also start from inside an existing chat: ask Gemini “Create a skill based on these instructions: …” and it saves the result to your Skills page.
 
-Prepare a folder containing SKILL.md (and optional reference files). Upload the folder or a zip from the Skills page. This is useful if you already have Skills from Claude or other tools that follow the same Markdown standard.
+After creation, activate the Skill so Gemini can apply it automatically. Deactivate any you want to call only manually.
 
-![Person working on a laptop at a desk](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
+![Clean laptop setup with AI workspace on screen](https://images.unsplash.com/photo-1758626099012-2904337e9c60?auto=format&fit=crop&w=800&q=80)
 
-## How to Use Skills
+## How to use a Skill in a chat or Task
 
-- Type / in the prompt box (or @ after the shortcut update) and select the skill, then add your input.
-- Leave the skill activated so Gemini applies it automatically when relevant.
-- Combine skills: mention two or more in one prompt or let the system select them based on context.
+In any chat or Task:
 
-You can turn automatic use on or off per skill from the Skills page. If a skill is off and you call it, Gemini asks whether to activate it.
+1. Type `/` (or `@`) in the prompt box.
+2. Select the Skill from the list that appears.
+3. Add the specific details for this run (the email text, the notes, the product name).
 
-## Tips for Effective Skills
+Gemini applies the saved instructions. You can call a second Skill in the same message to stack them. For example, call a “weekly-status” Skill and a “brand-voice” Skill together.
 
-- Keep the description specific. Vague text leads to false triggers.
-- Include an example of the exact output format you want.
-- Reference other skills inside instructions for multi-step workflows.
-- Upload supporting files (up to the size limit) for brand voice, templates, or data schemas. File updates require re-uploading the full skill package on some platforms.
-- Test the skill with real inputs immediately after creation.
+Activated Skills can also trigger on their own when your request matches the description. Turn automatic use on or off from the Skills page by clicking More → Activate/Deactivate.
 
-Best practices from Google’s help pages emphasize starting the name with an action, avoiding generic words, and listing clear use-when conditions.
+Skills work with Tasks (the background mode that replaced Spark). Pair a Skill with a schedule so Gemini runs the same formatted report every morning.
 
-## Migrating from Gems
+## Tips for reliable Skills
 
-Gems remain available for now. Personal accounts see Gems move to Settings and eventually convert to Skills around November 2026. Workspace and Enterprise Gems migrate later (no sooner than March 2027).
+Write instructions the way you would brief a new colleague: state the goal, the audience, the required sections, the tone, and what to avoid. Add one short example of ideal output.
 
-To migrate early:
+Keep the description specific. Gemini uses it to decide when to apply the Skill automatically.
 
-1. Open the Gem, download any Knowledge files.
-2. Create a new skill manually and paste the name, description, and instructions.
-3. Re-upload the files if needed.
+Test with two or three real inputs before relying on it. Edit by opening the Skill and choosing Edit with Gemini or by typing changes in chat.
 
-Skills built on the SKILL.md standard can also be copied to other platforms that support the format.
+Download a backup zip before you delete anything. Deletion cannot be undone.
 
-## Limitations and Known Issues
+If you already have Gems, recreate the useful ones as Skills now. Google will auto-migrate remaining Gems later, but manual conversion lets you clean up the instructions first.
 
-- Skills are currently limited to personal accounts on the listed apps.
-- Editing skills that contain uploaded files works best on the web.
-- Automatic application depends on a clear description.
-- No real-time sync between Gemini app Skills and Workspace Skills.
+For study workflows that need grounded sources, pair Skills with the free textbooks available in Gemini Notebook. See our guide on [adding free textbooks to Gemini Notebook](/blog/add-free-textbooks-gemini-notebook/) for the catalog steps.
+
+## Conclusion
+
+Skills turn repeated instructions into one-click or automatic actions inside Gemini. Create them from the Skills page, call them with `/` or `@`, and stack them when a task needs multiple rules. The rollout is underway for all eligible users, and Gems will phase out over the next year.
+
+Start with one frequent task—meeting notes, brand voice, or weekly status—and build the Skill today. You will stop pasting the same prompt every time.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/XQtvloPXap4"
@@ -106,19 +99,9 @@ Skills built on the SKILL.md standard can also be copied to other platforms that
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Related Reading
-
-If you build Android agents or use Gemini models in apps, see our guide on [adding Gemini 3.8 Flash with Firebase AI Logic](/blog/add-gemini-3-8-flash-android-firebase-ai-logic/).
-
-## Conclusion
-
-Gemini Skills turn repeated instructions into reusable tools you can call with a slash or let Gemini apply automatically. Start with one task you perform weekly—status updates, meeting recaps, or email drafts—create the skill once, and reuse it. The feature is free for eligible personal accounts and follows an open Markdown standard, so your work stays portable.
-
-Check Settings → Skills today. If the option is missing, it should appear as the rollout continues.
-
 ## Sources
 
-- [Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296) — Google Gemini Apps Help
-- [Write effective skills for Gemini Apps](https://support.google.com/gemini/answer/17102773) — Google Gemini Apps Help
-- [Introducing skills in the Gemini app and Workspace](https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html) — Google Workspace Updates
-- [About the transition from Gems to skills](https://support.google.com/gemini/answer/18560919) — Google Gemini Apps Help
+- [Introducing skills in the Gemini app and Workspace, plus what’s next for Gems](https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html) — Google Workspace Updates, 30 September 2026
+- [Create & manage skills for Gemini Apps](https://support.google.com/gemini/answer/17094296) — Gemini Apps Help
+- [Let skills in Gemini tackle your most repetitive tasks](https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/) — Google Blog
+- [About the transition from Gems to skills](https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/about-the-transition-to-skills) — Google Workspace Help
