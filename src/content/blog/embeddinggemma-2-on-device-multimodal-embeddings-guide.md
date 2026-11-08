@@ -1,112 +1,72 @@
 ---
-title: "EmbeddingGemma 2 On-Device Multimodal Embeddings Guide"
-description: "How to use EmbeddingGemma 2 for private on-device search across text, images, audio, and video with code examples and tips."
-pubDate: 2026-11-07T14:00:00
-heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "tutorials", "ai", "developer", "google"]
+title: "EmbeddingGemma 2: On-Device Multimodal Embeddings Guide"
+description: "Use Google’s open EmbeddingGemma 2 to search text, images, video, and audio on-device. Modular 740M model, Apache 2.0, practical setup steps."
+pubDate: 2026-11-08T14:00:00
+heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "tutorials", "developer", "google"]
 noindex: false
 ---
 
-EmbeddingGemma 2 maps text, code, images, video, and audio into one shared vector space. You run it locally so sensitive data never leaves the device. Google DeepMind released the model on 6 October 2026 under the Apache 2.0 licence.
+Google DeepMind released EmbeddingGemma 2 on 6 October 2026. The open model maps text, code, images, video, and audio into one 768-dimensional space. At 740 million parameters it runs on phones and laptops. The Apache 2.0 licence lets developers ship it in commercial apps without royalty fees.
 
-It builds on the earlier text-only EmbeddingGemma (more than 20 million downloads) and adds native multimodal support while staying small enough for phones and laptops. The full model is 740 million parameters. A text-only load drops to roughly 270 million.
+This guide shows what the model does, how to install it, and practical steps for on-device retrieval. All numbers come from the official Google blog and model card.
 
+## What EmbeddingGemma 2 Delivers
 
-![Laptop showing code and notes on a desk](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
+The model unifies four modalities. A text query can retrieve matching images. A voice note can surface related documents. Interleaved inputs are supported in one call. Context length is 8,192 tokens across every modality. That covers roughly 29 images, 58 video frames, or about 5.5 minutes of audio.
 
+It improves on the previous EmbeddingGemma. Code retrieval rises from 68.76 to 78.68 on MTEB Code. Multilingual text stays roughly level at 61.36 on MTEB multilingual v2. The full multimodal version sets a new efficiency frontier against larger specialist models.
 
-## What EmbeddingGemma 2 does
+Modular design is the practical advantage. Load only the parts you need:
 
-The model produces 768-dimensional embeddings. Text, images, video frames, and audio clips land in the same space, so a text query can retrieve a matching photo or sound clip. You can truncate the vectors to 512, 256, or 128 dimensions via Matryoshka Representation Learning. Truncation cuts storage by up to 6× with limited quality loss.
+- Text and code: 270M parameters
+- Text + vision: 440M
+- Text + audio: 570M
+- Full multimodal: 740M
 
-Context length is 8 192 tokens — four times the previous version. That covers about 5.5 minutes of audio, 29 images, or 58 video frames, or mixes of them. The modular design lets you load only the encoders you need:
+Quantized weights drop active RAM. On a Pixel 11 Pro the text-only checkpoint uses about 191 MB. The full model uses about 567 MB. Matryoshka Representation Learning lets you truncate vectors from 768 down to 512, 256, or 128 dimensions and cut storage up to 6x.
 
-- Text only: ~270 M parameters
-- Text + vision: ~440 M
-- Text + audio: ~570 M
-- Full multimodal: 740 M
+![Developer workspace with laptop and code on screen](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
 
-Quantized weights run in roughly 191 MB of active RAM for text-only work on a Pixel 11 Pro, or about 567 MB for the full model.
+## Step-by-Step Setup
 
-## Key improvements over the first EmbeddingGemma
+Weights live on Hugging Face as google/embeddinggemma-2. Sentence Transformers provides the fastest path.
 
-Code retrieval scores rose sharply. On the MTEB Code benchmark the model moved from 68.76 to 78.68. Multilingual text performance stayed strong. It leads other sub-1 B multimodal embedders on several image, video, and audio tasks and matches or beats some specialist models more than twice its size.
-
-Because it shares the Gemma 4 tokenizer and audio encoder, you can pair it with Gemma 4 generative models for fully local RAG pipelines without loading two large separate stacks.
-
-## How to start with EmbeddingGemma 2
-
-Install the required libraries:
+1. Install the library.
 
 ```bash
 pip install -U sentence-transformers transformers
 ```
 
-Load the model and embed a query plus a document:
+2. Load the model and encode text.
 
 ```python
 from sentence_transformers import SentenceTransformer
 
 model = SentenceTransformer("google/embeddinggemma-2")
 
-query = "What causes the northern lights?"
-document = "The northern lights are caused by charged particles from the sun."
-
-query_emb = model.encode(query, prompt_name="SearchQuery")
-doc_emb = model.encode(document, prompt_name="Document")
-print(model.similarity(query_emb, doc_emb))
+query = model.encode("What causes the northern lights?", prompt_name="SearchQuery")
+doc = model.encode("The northern lights are caused by charged particles from the sun.", prompt_name="Document")
+print(model.similarity(query, doc))
 ```
 
-The first run downloads the weights from Hugging Face. Later runs stay on your machine.
+3. Add images or audio when needed. Pass a dictionary with the modality key. The vision and audio encoders load only if you request them.
 
-To load only the text backbone and save memory:
+4. Truncate for storage. After encoding, keep the first 256 dimensions. Similarity search still works because the model was trained with Matryoshka learning.
 
-```python
-model = SentenceTransformer(
-    "google/embeddinggemma-2",
-    config_kwargs={"vision_config": None, "audio_config": None},
-)
-```
+5. Quantize for mobile. Use the INT8 or INT4 variants listed in the model card. LiteRT and GGUF builds are available for edge runtimes.
 
-For images or audio you need the extra packages (`pillow`, `soundfile`, `torchcodec`) and you leave the corresponding config present.
+For Android, pair it with the existing Gemini Nano or MediaPipe pipelines already documented in our [Android AI tools guides](/blog/android-bench-2-0-choose-ai-models/).
 
-Truncate dimensions when you call encode:
+## Practical Retrieval Patterns
 
-```python
-emb = model.encode(
-    query,
-    truncate_dim=256,
-    normalize_embeddings=True,
-    prompt_name="SearchQuery",
-)
-```
+On-device RAG is the clearest use case. Index your local documents, screenshots, and voice memos once. Queries stay on the device. No data leaves the phone.
 
-Always normalize after truncation. Queries and documents must use the same dimension.
+Cross-modal search works out of the box. Embed product photos and their descriptions together. A spoken query later retrieves the matching photo. Video moment retrieval uses the same vectors. Encode key frames plus a transcript snippet.
 
-## Practical on-device use cases
+Code search improves enough for local codebase indexing. The 9.92-point gain on MTEB Code makes natural-language queries over a repository practical on a laptop.
 
-Build a private photo library search. Embed every image once, store the vectors in a local database (Qdrant, a simple NumPy array, or SQLite with a vector extension), then query with text. No cloud call is required.
-
-Index a personal audio archive. A spoken note can retrieve the matching video segment or photo because all modalities share the same space. Google AI Edge Gallery demonstrates Instant Media Search and Video Moments Finder with this model.
-
-Create a local codebase search for coding agents. The improved code scores make it practical to embed files and retrieve relevant snippets without sending source code off-device. Pair the embeddings with a small generative model for fully offline RAG.
-
-For Android, Google AI Edge provides MediaPipe Decision Task and LiteRT paths so you can ship the same embeddings inside a mobile app. Browser users can try the WebGPU demo on Hugging Face.
-
-
-![Abstract digital network visualization](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80)
-
-
-## Tips for production
-
-- Choose the smallest encoder set that matches your data. Text-only keeps the footprint low.
-- Start with 256 or 128 dimensions for large indexes and measure recall on your own queries before committing.
-- Use the built-in prompt names (`SearchQuery`, `Document`, `CodeRetrieval`, `Classification`) — they improve results on most tasks.
-- Quantize for mobile. The model card and LiteRT community repos include ready quantized builds.
-- Fine-tune if your domain is narrow. Official guides cover Sentence Transformers and Unsloth workflows.
-- Test offline thoroughly. Network latency disappears, but you must still validate quality on real user data.
-
-If you already work with other on-device models, compare the memory profile here with the approach in our guide on [Android AISeal for protected on-device AI](/blog/android-aiseal-on-device-ai-vault/).
+Watch the official introduction for the architecture walkthrough.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/anPsS6huQk0"
@@ -116,9 +76,24 @@ If you already work with other on-device models, compare the memory profile here
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+![Abstract data visualization and charts](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
+
+## Tips and Limits
+
+Start with the text-only checkpoint if RAM is tight. Add vision or audio only for the specific feature that needs it. Measure peak memory on your target device before shipping.
+
+The model has no safety fine-tuning. Treat outputs as retrieval scores, not generated content. Performance is not uniform across the 100+ languages. Test the languages you support.
+
+Quantization and truncation trade a little quality for large storage wins. Profile both on your dataset. For most search tasks the 256-dimension vectors remain strong.
+
+## Conclusion
+
+EmbeddingGemma 2 puts multimodal retrieval on everyday hardware. The modular design, Apache 2.0 licence, and measured efficiency gains make it ready for privacy-first apps. Load the weights, encode your local data, and keep queries on-device.
+
 ## Sources
 
-- Google blog: EmbeddingGemma 2: an open, lightweight multimodal embedding model (6 October 2026). https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/
-- Hugging Face model card: google/embeddinggemma-2. https://huggingface.co/google/embeddinggemma-2
-- Google AI documentation and inference notebooks. https://ai.google.dev/gemma/docs/embeddinggemma
-- YouTube introduction by Google for Developers. https://www.youtube.com/watch?v=anPsS6huQk0
+- Google Blog: EmbeddingGemma 2 is a best-in-class open model for natively multimodal embeddings (6 October 2026). https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/
+- Google Developers Blog: EmbeddingGemma 2: The Developer Guide. https://developers.googleblog.com/embeddinggemma-2-the-developer-guide/
+- Model card on Google AI for Developers. https://ai.google.dev/gemma/docs/embeddinggemma/model_card_2
+- Official YouTube: Introducing EmbeddingGemma 2. https://www.youtube.com/watch?v=anPsS6huQk0
+- Hugging Face: google/embeddinggemma-2
