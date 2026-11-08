@@ -1,70 +1,86 @@
 ---
-title: "How to Generate and Edit Documents Directly in Gemini"
-description: "Step-by-step guide to create, preview, and edit PDFs, Docs, Sheets, and more inside the Gemini app on web and mobile."
-pubDate: 2026-11-05T16:00:00
-heroImage: "https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "how-to", "ai-tools", "productivity", "google"]
+title: "Generate and Edit Documents Directly in Gemini"
+description: "How to generate, preview, and edit PDFs, Docs, Sheets, and slides right in the Gemini app chat. Step-by-step for web and mobile."
+pubDate: 2026-11-08T09:00:00
+heroImage: "https://images.unsplash.com/photo-1759984782211-3a02ca78e6ac?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "tutorials", "how-to", "productivity", "google"]
 noindex: false
 ---
 
-Google added direct file generation and editing to the Gemini app on October 29, 2026. You can now ask Gemini to create a PDF study guide from handwritten notes, then preview it in the chat, type changes yourself, highlight sections for AI edits, or refine the whole file with follow-up prompts. PDF tools work on web and mobile. Other formats stay web-only for now.
+You no longer need to copy text out of a chat and paste it into another app. The Gemini app now lets you generate a document, preview it in the conversation, and edit it on the spot. PDF editing works on both web and mobile. Other formats stay on the web for now.
 
-This changes how you move from conversation to finished file. Instead of copying text into another app, you stay in one place. The feature is available to all users in every language where the Gemini app runs.
+This update arrived on October 29, 2026, and is available to every Gemini user in every language the app supports. It builds on the file-generation feature that launched earlier in the year.
 
-## What the new file tools actually do
+## What you can create and edit
 
-Gemini generates the file and shows a preview inside the same chat. You expand it to full screen, type edits directly, select text to ask a question about that section, or tell Gemini to rewrite or restyle parts of it. When the preview looks right, export it.
+Gemini can produce these file types inside a chat:
 
-Supported actions include creating Google Docs, Google Sheets, slide decks, Markdown, plain text, code files, and PDFs. You can also upload existing files and ask Gemini to turn them into something new. The example Google showed starts with a photo of handwritten lecture notes and ends with a clean PDF study guide you can still tweak.
+- PDFs
+- Google Docs
+- Google Sheets
+- Slide decks
+- Markdown files
+- Plain text (TXT)
+- Code
 
-![Student writing notes next to a laptop](https://images.unsplash.com/photo-1759984782211-3a02ca78e6ac?auto=format&fit=crop&w=800&q=80)
+PDF preview and editing work on the web and in the mobile apps. All other formats require the web version at gemini.google.com. You can expand any preview to full screen, type changes yourself, highlight a section and ask Gemini about it, or tell Gemini to refine that part.
 
-## Step-by-step: turn notes into a PDF study guide
+![Person writing notes next to a laptop](https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=800&q=80)
+
+## How to generate a file
 
 1. Open the Gemini app on the web or mobile.
-2. Upload a photo or scan of your handwritten notes. On mobile use the attachment button. On the web drag the file into the chat or use the upload control.
-3. Type a clear request: "Create a PDF study guide from these lecture notes. Organize the key points under clear headings, add a short summary at the top, and keep the original terminology."
-4. Wait for Gemini to generate the file. The preview appears in the chat.
-5. Tap or click the preview to open it. On web you can expand to full screen.
-6. Make changes. Type directly in the full-screen editor, highlight a paragraph and ask Gemini to simplify the language, or type a new instruction in the chat such as "Add a short quiz at the end based on the main sections."
-7. When the content is correct, use the export or download control. Save the PDF or open it in Google Drive.
+2. Upload source material if you have any (lecture notes, a photo of handwritten pages, or an existing outline).
+3. Ask for a specific format. Example: “Turn these handwritten notes into a one-page PDF study guide with headings and five practice questions.”
+4. Wait for the preview to appear in the chat.
 
-The same flow works for other file types. Replace the prompt with "Build a three-slide outline for a team update" or "Create a simple spreadsheet that tracks weekly expenses from this list."
+The preview shows the finished file. You can read it before you change anything.
 
-## How to edit files once they exist
+## Three ways to edit
 
-Three editing paths exist after the preview appears.
+Once the preview is open, you have three options.
 
-- Manual edits: Expand to full screen and type or delete text yourself. This works best for quick wording changes or fixing a specific fact.
-- Selection-based help: Highlight a sentence or paragraph, then ask Gemini a question or give an instruction about only that part. The model rewrites or explains the selection without touching the rest of the file.
-- Full refinement: Stay in the chat and describe larger changes. Examples include "Make the tone more formal," "Turn the second section into a bulleted list," or "Add a chart that compares the two methods." Gemini updates the preview.
+**Type your own changes.** Expand the preview to full screen and click or tap into the text. Edit the same way you would in any document editor. Changes save automatically.
 
-PDF preview and editing work on both the Gemini website and the mobile apps. Google Docs, Sheets, slide decks, Markdown, TXT, and code files currently open for editing only on the web version. On mobile you can still generate those formats and download them, but the inline editor is limited to PDFs.
+**Highlight and ask.** Select a paragraph, table, or image. Type a request such as “show this as a graph instead” or “make this section shorter.” Gemini updates only that part.
 
-## Platform differences and practical limits
+**Refine the whole file.** Ask Gemini to change tone, length, or structure across the entire document. The preview refreshes with the new version.
 
-| File type          | Web editing | Mobile editing |
-|--------------------|-------------|----------------|
-| PDF                | Yes         | Yes            |
-| Google Docs        | Yes         | No             |
-| Google Sheets      | Yes         | No             |
-| Slide decks        | Yes         | No             |
-| Markdown / TXT     | Yes         | No             |
-| Code               | Yes         | No             |
+PDF editing works the same on a phone. For Docs, Sheets, slides, Markdown, TXT, or code, switch to the web version.
 
-Start on the web if you need to edit anything except PDFs. Mobile remains useful for generating a PDF from photos of notes and making small adjustments before you share it. Large or complex files may take longer to generate. Always review the output. Gemini can misread handwriting or invent details that were not in the source.
+## Example: study guide from handwritten notes
 
-You can also combine this feature with other Gemini tools. For longer multi-step work that continues in the background, see the guide on [How to Use Gemini Tasks Mode on Web and Desktop with Argon](/blog/gemini-tasks-mode-web-desktop-argon-guide/). Tasks Mode can generate files and leave them in the thread for later review and editing with the new preview tools.
+Google’s own demo starts with a photo of handwritten lecture notes. Upload the photo, ask for a PDF study guide, then:
 
-![Developer working on a laptop with code on screen](https://images.unsplash.com/photo-1780253256194-34e5867ccb8c?auto=format&fit=crop&w=800&q=80)
+- Expand the preview and fix a heading by typing.
+- Highlight a table and ask Gemini to turn it into a chart.
+- Ask a follow-up question about one section.
 
-## Tips for cleaner results
+The finished PDF can be downloaded or saved to Drive. The same notes can also become a Google Sheet or a short slide deck if you stay on the web.
 
-Give Gemini a clear structure in the first prompt. Name the headings you want or the order of sections. Upload the best source material you have. Clear photos of notes produce better PDFs than blurry ones. After the first version appears, make one type of change at a time so you can see what the model actually altered.
+![Desk with open books, notes, and laptop](https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=800&q=80)
 
-For study guides, ask for a short self-test at the end. For spreadsheets, specify the columns and any formulas you need. For slides, mention the audience and the number of slides. Export early and open the file in its native app if you need advanced formatting that the Gemini preview does not show.
+## Export and next steps
 
-If the preview fails to load or the edit does not apply, start a new chat and re-upload the source. Check that you are signed in with the same Google account across devices.
+After you finish editing:
+
+- Download the file directly.
+- Save PDFs, Docs, Sheets, and other formats to Google Drive.
+- Open a Google Sheet or slide deck in its native app for further work.
+
+If you already keep course materials in Gemini Notebook, you can pull those sources into the same chat and turn them into an editable study guide. See our guide on [adding free textbooks to Gemini Notebook](/blog/add-free-textbooks-gemini-notebook/) for the catalog steps.
+
+## Tips for better results
+
+- Name the exact format in your first prompt (“as a PDF,” “as a Google Sheet”).
+- For slide decks, ask for an outline first. Fix the order in the chat, then request the full deck.
+- For spreadsheets, specify columns and any formulas you need before Gemini builds the table.
+- Review numbers, names, and citations in the preview. Highlight any section that looks off and ask for a correction.
+- On mobile, stick to PDFs until other formats gain full editing support.
+
+## Limitations to know
+
+PDF is the only format that supports preview and editing on both web and mobile. Everything else is web-only right now. The feature generates and edits files that Gemini creates inside the chat; it is not a full replacement for desktop editors. Always check the final preview before you share or submit the file.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/dJ-SIBF1nJQ"
@@ -76,10 +92,10 @@ If the preview fails to load or the edit does not apply, start a new chat and re
 
 ## Conclusion
 
-The ability to generate, preview, and edit documents, PDFs, presentations, and spreadsheets inside the Gemini app removes several steps from everyday work. Upload notes or type a description, review the file in the same conversation, apply small or large changes, then export. PDF tools work everywhere the app runs. Other formats need the web version for full editing. Start with a simple study guide or meeting outline and expand from there once you see how the preview and selection tools behave.
+The Gemini app now turns a prompt and optional upload into a previewable, editable file. Start with a clear request, use the three editing methods to refine the result, and export when it looks right. The process works for study guides, trackers, short decks, and quick documents without leaving the chat.
 
-## Sources
+**Sources**
 
-- [Edit and preview documents directly in Gemini](https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/)
-- [Create, preview, and edit files directly in the Gemini app](https://workspaceupdates.googleblog.com/2026/10/create-preview-and-edit-files-directly-in-the-Gemini-app.html)
-- [Generate, edit, and preview files in Gemini (YouTube)](https://www.youtube.com/watch?v=dJ-SIBF1nJQ)
+- Google Blog: Edit and preview documents directly in Gemini (October 29, 2026)
+- Google Workspace Updates: Create, preview, and edit files directly in the Gemini app
+- Official Google Gemini YouTube: Generate, edit, and preview files in Gemini
