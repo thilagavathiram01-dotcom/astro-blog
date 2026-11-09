@@ -1,85 +1,130 @@
 ---
-title: "Author On-Device Models with LiteRT Tensor API Guide"
-description: "Learn how to build custom on-device ML models in C++ with Google's LiteRT Tensor API. Full control, zero-copy pipelines, and cross-platform runs."
-pubDate: 2026-11-08T12:00:00
-heroImage: "https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "tutorials", "developer", "android", "ai"]
+title: "How to Author On-Device Models with LiteRT Tensor API"
+description: "Step-by-step guide to building custom ML graphs with Google's LiteRT Tensor API for Android and edge devices using C++."
+pubDate: 2026-11-09T11:00:00
+heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "android", "tutorials", "developer", "ai"]
 noindex: false
 ---
 
-Google released the LiteRT Tensor API in October 2026 as a lightweight C++ authoring layer on top of the LiteRT runtime. It lets developers write model graphs op by op instead of converting from PyTorch or TensorFlow. The same code runs on CPU, GPU via open-source ML Drift, or NPU, and it exports to standard .tflite files when needed.<grok type="render_inline_citation" citation_id="364" />
+Google released the LiteRT Tensor API in October 2026 to give developers full control over on-device model graphs. Most projects still convert trained models to .tflite and run them with the LiteRT runtime. The Tensor API targets cases where you need to define every operation yourself or optimize for specific hardware.
 
-This guide shows what the API offers, why it matters for edge deployments, and how to start building with it. For related Android AI work, see our [Gemini 4 Argon Firebase AI Logic guide](/blog/add-gemini-4-argon-android-firebase-ai-logic/).
+This guide shows how to get started with the C++ API, build a simple graph, and run it on CPU or export for LiteRT on Android.
 
-## Why Author Models Directly in C++
+## Why use the Tensor API
 
-Most production models still follow the conversion path: train in a high-level framework, export, then run with LiteRT. That remains the recommended default. The Tensor API targets cases where you need precise control over graph structure, custom ops, or end-to-end accelerator residency.
+Standard conversion works for most models. The Tensor API helps when you need custom architectures, direct weight loading from .safetensors, or zero-copy pipelines that stay on the GPU or NPU. The same C++ code can target XNNPACK for CPU, ML Drift for GPU, or export a .tflite file.
 
-You define every connection. Pre-processing, the network, and post-processing share accelerator buffers with zero CPU copies. Coding agents can generate, validate, and optimize the C++ graph because it is plain source rather than opaque weights. Google used an agent to evolve a Segment Anything Model 2 (SAM 2) pipeline from under 10 fps to over 30 fps at 512	imes512 on WebGPU.<grok type="render_inline_citation" citation_id="394" />
+Google demonstrated this with Segment Anything Model 2 (SAM 2). The full encoder and decoder were authored in C++. A coding agent improved frame rates from under 10 to over 30 fps at 512x512 on WebGPU. The same graph ran on macOS Metal, iOS Metal, and Android OpenCL.
 
-![AI chip on a circuit board](https://images.unsplash.com/photo-1744640326166-433469d102f2?auto=format&fit=crop&w=800&q=80)
+![Laptop showing code in an IDE](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
 
-## Core Features of the Tensor API
+## Prerequisites
 
-The API provides four practical capabilities:
-
-- Full graph control: element-wise math, activations, matmul, convolution, RMSNorm, scaled dot-product attention, and KV-cache updates.
-- Direct weight loading from Hugging Face .safetensors checkpoints without intermediate conversion scripts.
-- Tensor-centric buffer interoperability so intermediate data stays on the GPU or NPU.
-- A foundation for AI coding agents that can rewrite ops and benchmark variants on device.
-
-You can run the graph two ways. Tag tensors with TfLiteMixinTag to export a .tflite that LiteRT executes on CPU, ML Drift GPU, or NPU. Tag with XnnpackMixinTag to run directly on CPU through XNNPACK with no model file. Iterate on the direct path, then export for shipping.<grok type="render_inline_citation" citation_id="386" />
-
-## Step-by-Step: Get Started
-
-Clone the LiteRT repository and the samples.
+You need the LiteRT repository. Clone it:
 
 ```bash
 git clone https://github.com/google-ai-edge/LiteRT.git
-git clone https://github.com/google-ai-edge/litert-samples.git
+cd LiteRT
 ```
 
-Build the Tensor API examples with Bazel. The Gemma 4 example runs prefill and decode directly on XNNPACK:
+Build tools differ by platform. Bazel is the primary option inside the repo. CMake works for host and Android builds. For Android, install the NDK (r26a or later) and set ANDROID_NDK_HOME.
 
-```bash
-bazel build //tensor/examples/gemma4:gemma4_xnnpack_main
-```
+The API lives under the tensor/ directory. Documentation is in tensor/README.md and tensor/tensor_api.md.
 
-Pass weights and a tokenizer from a .safetensors checkpoint. The same pattern works for custom graphs.
+## Build a simple graph
 
-For the full SAM 2 video segmentation demo (11 signatures, shared weights, GPU-resident memory bank), follow the litert-samples README. It compiles to WebAssembly and runs at roughly 30 fps on WebGPU in Chrome on an M4 Pro. The web demo is available at the public LiteRT.js SAM 2 page.<grok type="render_inline_citation" citation_id="394" />
+The API is tensor-centric. You define functions that take inputs and return outputs using ops like Mul, Add, or more complex composites.
 
-## Build a Simple Graph
-
-A minimal scale model looks like ordinary C++ math:
+Here is a minimal scale operation from the official examples:
 
 ```cpp
+#include "tensor/arithmetic.h"
 #include "tensor/tensor.h"
 
-Tensor ScaleModel(const Tensor& x, const Tensor& scale) {
-  return Mul(x, scale);
+struct Inputs {
+  Tensor x;
+  Tensor scale;
+};
+
+struct Outputs {
+  Tensor y;
+};
+
+Outputs ScaleModel(Inputs& in) {
+  return {.y = Mul(in.x, in.scale)};
 }
 ```
 
-Load weights, set inputs, and run. On GPU the MlDriftMixinTag lowers the graph straight into an ML Drift GpuModel for OpenCL or WebGPU without a .tflite intermediate. Pre- and post-processing graphs connect once at startup and share buffers for every frame.
+To run it on CPU with XNNPACK (no model file needed):
 
-In the SAM 2 sample all 522 encoder and 269 decoder operations stay on the GPU; pre- and post-processing add about 0.34 ms per frame. Google measured the same C++ code on a MacBook Pro (Metal), iOS (Metal), and Android (OpenCL). On the Mac it ran roughly 1.5× faster than Apple MLX for the image encoder plus mask decoder.<grok type="render_inline_citation" citation_id="394" />
+```cpp
+#include "tensor/backends/xnnpack/arithmetic.h"
+#include "tensor/runners/xnnpack/runner.h"
 
-![Microchip on circuit board](https://images.unsplash.com/photo-1782015855555-b4efec15b5dd?auto=format&fit=crop&w=800&q=80)
+// Set up inputs and runner
+Inputs inputs = {
+  .x = TensorXNN({.type = Type::kFP32, .shape = {1, 1, 4}}),
+  .scale = TensorXNN({.type = Type::kFP32, .shape = {}}),
+};
+Outputs outputs;
 
-## Practical Tips
+XnnpackRunner<decltype(&ScaleModel), Inputs, Outputs> runner(
+    &ScaleModel, inputs, outputs);
 
-Start with conversion for standard models. Switch to the Tensor API when you need a custom attention variant, zero-copy camera pipelines, or agent-driven optimization.
+// Fill and run
+runner.SetInput("x", std::vector<float>{1.0f, 2.0f, 3.0f, 4.0f});
+runner.SetInput("scale", std::vector<float>{2.0f});
+runner.Run();
+```
 
-Use the direct XNNPACK path for rapid iteration. Export .tflite only when you are ready for LiteRT on mobile or LiteRT.js on the web.
+The same function body works for other backends by changing the mixin tag on the Tensor type.
 
-Keep numerical checks against a reference implementation (PyTorch or Hugging Face) as the SAM 2 sample does. Coding agents work well because the graph is source you can diff and re-benchmark.
+## Export to .tflite for LiteRT
 
-Future work listed by Google includes direct ML Drift GPU backends, more NPU-friendly ops, automatic full-graph quantization, and Python authoring with .tflite export.<grok type="render_inline_citation" citation_id="394" />
+For Android or browser deployment, export the graph. Tag tensors with TfLiteMixinTag and use ModelFactory to produce a .tflite file with signatures.
+
+```cpp
+// Conceptual: build graph then
+ModelFactory factory;
+factory.Export(encoder_graph, "encoder");
+factory.Export(decoder_graph, "decoder");
+factory.Save("model.tflite");
+```
+
+On Android, load the file with the CompiledModel API from the litert dependency or Google Play services. See related guides on on-device AI for integration patterns.
+
+![Multiple monitors with code](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
+
+## Zero-copy pipelines
+
+A production app needs pre-processing, inference, and post-processing. The Tensor API lets you chain graphs that share accelerator buffers. Data never returns to the CPU between steps.
+
+In the SAM 2 sample, pre-processing resizes the frame, the encoder extracts features, the decoder produces the mask, and post-processing scales it back—all on GPU. Pre- and post-processing added about 0.34 ms per frame.
+
+Build small lambda runners for pre/post steps and connect them once at startup. This pattern works for camera pipelines, audio, or any streaming input.
+
+## Tips for success
+
+- Start with the XNNPACK path for fast iteration. Load weights directly from .safetensors.
+- Compare outputs against a PyTorch or reference implementation before optimizing.
+- Use coding agents with the Tensor API README and SAM 2 sample. Agents can rewrite graphs for specific backends.
+- For Android, cross-compile with Bazel `--config=android_arm64` or CMake with the NDK toolchain.
+- GPU on device requires the matching accelerator library (libLiteRtClGlAccelerator.so).
+
+The API is still evolving. Check the LiteRT GitHub for updates on ML Drift GPU backends, NPU ops, and Python authoring.
+
+## Related reading
+
+If you are integrating on-device models into Android apps, review our guide on [Android AI Seal for on-device AI vaults](/blog/android-aiseal-on-device-ai-vault/).
+
+## Watch the Android Dev Summit keynote
+
+The October 2026 Android Dev Summit covered on-device intelligence and related APIs.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/LiBWWJ9IKag"
-    title="Mastering on-device intelligence with ML Kit and LiteRT in Google Play services"
+  <iframe src="https://www.youtube.com/embed/8Lmv7LGgL4E"
+    title="Android Dev Summit 2026 keynote"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
@@ -87,12 +132,11 @@ Future work listed by Google includes direct ML Drift GPU backends, more NPU-fri
 
 ## Conclusion
 
-The LiteRT Tensor API gives developers the control previously reserved for hand-written Metal or OpenCL shaders while keeping portability across CPU, GPU, and NPU. It pairs naturally with coding agents and with the existing LiteRT CompiledModel path used in Google Play services.
-
-If you are already shipping custom models on Android, start with the SAM 2 sample and the Tensor API README. The conversion path stays the fastest route for most projects; the Tensor API is the tool for the ones that need tighter control.
+The LiteRT Tensor API gives precise control for edge ML when conversion is not enough. Define graphs in C++, choose the backend, and keep data on the accelerator. Start with the official samples and the README in the LiteRT repository.
 
 ## Sources
 
-- Google Developers Blog: Native Model Authoring for Edge with LiteRT Tensor API (19 October 2026)
-- LiteRT Tensor API README and samples on GitHub
-- Android Developers session on ML Kit and LiteRT in Google Play services
+- Google Developers Blog: Native Model Authoring for Edge with LiteRT Tensor API (October 19, 2026)
+- LiteRT GitHub: tensor/README.md and tensor/tensor_api.md
+- LiteRT Samples: SAM 2 and Gemma examples
+- Android Developers documentation on LiteRT CompiledModel
