@@ -1,43 +1,51 @@
 ---
-title: "Connect Your App to Gemini and Search"
-description: "How to join Google’s Connected Apps Platform preview and expose your Android app services to Gemini and Search via MCP."
-pubDate: 2026-10-31T12:00:00
-heroImage: "https://images.unsplash.com/photo-1753715613434-9c7cb58876b9?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "developer", "gemini", "tutorials"]
+title: "How to Join the Connected Apps Platform Preview"
+description: "Step-by-step guide for developers to integrate apps with Gemini and Search via the Connected Apps Platform using MCP."
+pubDate: 2026-11-10T14:00:00
+heroImage: "https://images.unsplash.com/photo-1756946565798-382eb6bfeda2?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["developer", "gemini", "ai-tools", "tutorials"]
 noindex: false
 ---
 
-At Android Dev Summit on October 28, 2026, Google opened the Connected Apps Platform preview. It lets developers surface app services directly inside Gemini and Google Search so users can complete tasks without leaving the conversation.
+Google launched the Connected Apps Platform preview on 28 October 2026. Developers can now expose app capabilities to Gemini and Google Search so users complete tasks without leaving the conversation.
 
-More than 50 partner integrations already run in the Gemini app. Examples include Adobe, Peloton, and Experian. The platform expands that reach to more developers through a single console.
+The platform uses the Model Context Protocol (MCP) for remote servers or Android MCP via AppFunctions for on-device execution. Once approved, your tools appear in both surfaces. Users link the app once and then access personal data or trigger actions with natural language.
 
-![Laptop and phone workspace with code open on screen](https://images.unsplash.com/photo-1778146476147-5f8d4bd03c79?auto=format&fit=crop&w=800&q=80)
+This guide walks through the official steps from Google’s developer documentation and the Android Dev Summit announcements.
 
-## What the Connected Apps Platform Does
+## What the Connected Apps Platform offers
 
-Users mention an app with @ or describe a task. Gemini or Search discovers the matching connected app, calls its tools, and returns results or actions inside the chat. Sensitive steps show a confirmation card so the user stays in control.
+You build once. You choose whether the integration appears in the Gemini app, Search, or both. After review, you track traffic, latency, and error rates from the Google Connected Console. You also keep control of brand assets such as verified logos and authenticated accounts.
 
-The platform sits on the open Model Context Protocol (MCP). You keep your brand and business logic. Google handles discovery and the user interface layer.
+More than 50 Connected Apps already exist across productivity, ticketing, health, and fitness. Partners including Adobe, Experian, Localiza, and Peloton are live in Gemini, with Search support arriving soon. Calm is next in line for both surfaces.
 
-Two connection paths exist:
+![Developer workspace with laptop displaying code](https://images.unsplash.com/photo-1756946565798-382eb6bfeda2?auto=format&fit=crop&w=800&q=80)
 
-- Remote MCP server: reaches Gemini and Search users on web, Android, and iOS.
-- Android MCP (powered by AppFunctions): limited to Gemini on Android devices running Android 16 or higher.
+## Requirements before you start
 
-AppFunctions is now in beta as Android’s unified tool-calling layer. It lets your app expose typed functions that agents can invoke.
+You need a Google account that can access the Connected Console. During the preview, capacity is limited. Google reviews applications and prioritises production-ready apps in supported categories.
 
-## How to Start with the Preview
+Familiarity with MCP or Android AppFunctions helps. For remote servers you implement an MCP endpoint that exposes tools. For Android you use the Jetpack AppFunctions SDK so Gemini can call native features on the device.
 
-The preview is open for developers. Sign-up and management happen in the Google Connected Console.
+Sign up for the preview at the Connected Apps documentation site. The form asks for basic details about your app and intended surfaces.
 
-1. Apply for the Connected Apps Platform preview through the form linked from the official Android Developers documentation and blog posts.
-2. Once approved, sign in to Google Connected Console.
-3. Create a connected app, choose a category (the choice cannot be changed later), and select the connection type: Android MCP or remote MCP.
-4. Fill in the public card: a short description under 30 words, at least three capabilities, example questions, icon, terms, and privacy policy URLs.
-5. For Android MCP, link the connected app to your Play Store listing and upload the app bundle that contains the AppFunctions declarations.
-6. Test in Gemini developer mode or on-device preview, then submit for review.
+## Step 1: Choose your integration path
 
-After approval the app becomes available to users who connect it. Over the coming weeks more partner apps will appear in Search as well.
+Decide between a cloud-hosted MCP server and Android MCP.
+
+Remote MCP works for cross-platform services. You host the server, define tools, and handle OAuth 2.1 so Gemini can act on behalf of the user. Official docs include an MCP server developer guide and an OAuth implementation guide.
+
+Android MCP keeps execution on the device. Implement AppFunctions so the system intelligence layer can invoke your app’s features. This path suits tools that need local data or real-time device context. See the Android Developers guide on AppFunctions for the SDK details.
+
+You can support both paths if your product spans web and mobile.
+
+## Step 2: Build and test locally
+
+For a remote MCP server, spin up the endpoint on your machine. Use the MCP Inspector tool to list available tools and test interactions. Provide clear server instructions that describe your domain and capabilities. The Connected Console validates these instructions before review.
+
+For Android, add the AppFunctions dependency and expose the functions you want Gemini to call. Test with Gemini Apps Developer Mode on a device. Developer Mode lets you prototype without waiting for console approval.
+
+Watch the official session “Extend your app to Gemini and Search with the Connected Apps Platform” for a walkthrough of local testing and the console flow.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/-4G-4w9FKDw"
@@ -47,39 +55,43 @@ After approval the app becomes available to users who connect it. Over the comin
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Building with Android MCP and AppFunctions
+## Step 3: Register in Google Connected Console
 
-For on-device Android integration:
+After local tests succeed, create a new Connected App in the console. Enter a display name, icon, user-facing description, and the list of capabilities. Select the category (productivity, health, and so on) and choose the surfaces: Gemini, Search, or both.
 
-- Target Android 16 (API 36) or higher.
-- Annotate public methods with `@AppFunctionDeclaration` and provide clear KDoc `@param` descriptions. The system generates the schema automatically.
-- Enable AppFunctions discovery in your agent or Connected App configuration.
-- Sensitive actions (payments, reservations, messages) must surface an interactive confirmation. The platform enforces this pattern.
+Submit for review. Google checks that tools are safe, that user consent is clear, and that brand assets match. Once approved, the app becomes available to users who link it.
 
-Remote MCP servers require HTTPS, a single global endpoint (or country-specific when limited), domain verification via a `/.well-known/google-connected-apps` file, and recommended OAuth 2.1 with PKCE for login.
+You can monitor usage metrics after launch. Update tools or instructions through the same console without rebuilding the entire integration.
 
-![Hand holding smartphone showing code on the display](https://images.unsplash.com/photo-1757165792338-b4e8a88ae1c7?auto=format&fit=crop&w=800&q=80)
+![Smartphone screen showing AI app icons including Gemini](https://images.unsplash.com/photo-1757310998309-87a97e562ee5?auto=format&fit=crop&w=800&q=80)
 
-## Practical Tips
+## Step 4: Handle authentication and user control
 
-Start with one high-value capability such as “add items to cart” or “check order status.” Clear natural-language descriptions improve discovery.
+Users must link the app and grant permission. For remote MCP, implement OAuth 2.1 so Gemini receives an access token scoped to the necessary tools. Never request broader access than required.
 
-Test thoroughly in Gemini developer mode before submission. Review the confirmation flow for any action that changes user data.
+On Android, AppFunctions respect the app’s existing permissions. Gemini only calls functions the user has already authorised on the device.
 
-If you already expose AppFunctions for your own on-device agent, the same declarations can serve the system agent once you register the Connected App.
+Google emphasises that users stay in control of key actions. Design confirmation steps for sensitive operations such as bookings or purchases. The platform documentation covers these guardrails.
 
-Users control which apps Gemini can access. Document the permissions your tools need so reviewers and users understand the scope.
+## Tips for a successful submission
 
-For related on-device agent patterns see our guide to [Android AppFunctions for agents](/blog/android-appfunctions-agents/).
+Write precise tool descriptions. Gemini decides when to call a tool based on the instructions you supply. Vague wording leads to missed opportunities or incorrect calls.
 
-## What Comes Next
+Test edge cases in Developer Mode. Confirm that error messages are clear and that partial failures do not leave the user stuck.
 
-The Connected Apps Platform is still in preview. Google is gathering feedback on guardrails and the console experience. Broader availability for more developers and deeper Search integration is expected in the weeks ahead.
+Start with one high-value tool rather than dozens. A focused integration is easier to review and easier for users to understand. You can add more tools later.
 
-If your app already solves a multi-step task that users currently leave Gemini or Search to finish, this is the shortest path to keep them inside the conversation.
+If you also build on-device agents, see the companion guide on [building on-device agents with Gemini Nano 4 and ML Kit](/blog/build-on-device-agents-gemini-nano-4-ml-kit/).
 
-**Sources**
+## Conclusion
 
-- Android Developers Blog: Agentic and Flexible: A next era of Android development (28 October 2026)
-- Google Connected Console and AppFunctions documentation
-- Android Dev Summit 2026 session: Extend your app to Gemini and Search with the Connected Apps Platform
+The Connected Apps Platform lets developers reach users inside Gemini and Search without custom one-off integrations. Choose MCP or Android MCP, test locally, register in the Connected Console, and submit for the preview. Once live, users link once and complete real actions from natural language prompts.
+
+Check developers.google.com/connected-apps for the latest documentation and the preview signup form. Rollout expands in phases, so early applications have the best chance of access.
+
+## Sources
+
+- Google Blog: New Connected Apps Platform launches for developers (28 October 2026)
+- Android Developers Blog: What’s new in intelligent apps at the Android Developer Summit
+- developers.google.com/connected-apps official documentation
+- YouTube: Extend your app to Gemini and Search with the Connected Apps Platform
