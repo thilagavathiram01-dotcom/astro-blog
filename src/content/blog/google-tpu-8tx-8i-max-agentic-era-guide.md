@@ -1,71 +1,77 @@
 ---
-title: "Google TPU 8tx and 8i Max: Agentic AI Hardware Guide"
-description: "Google's TPU 8tx for confidential inference and TPU 8i Max for massive context windows. Practical guide for agentic workloads on Google Cloud."
-pubDate: 2026-11-09T14:00:00
+title: "Google TPU 8tx and 8i Max for Agentic AI Workloads"
+description: "Google expands its 8th-gen TPU lineup with TPU 8tx for confidential inference and TPU 8i Max for massive context windows."
+pubDate: 2026-11-10T14:00:00
 heroImage: "https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai", "google", "developer", "tutorials"]
+tags: ["ai", "google", "developer"]
 noindex: false
 ---
 
-Google expanded its eighth-generation TPU portfolio on 9 November 2026 with TPU 8tx and TPU 8i Max. These systems target agentic AI needs: confidential computing for sensitive data and higher memory density for long-context agents.
+Google added two specialized systems to its eighth-generation Tensor Processing Unit (TPU) portfolio on November 9, 2026. TPU 8tx targets secure, confidential inference. TPU 8i Max targets massive context windows and higher rack density. Together with the earlier TPU 8t and TPU 8i, this marks the first time Google has introduced four TPU systems in a single year.
 
-This is the first time Google has shipped four TPU systems in one year. TPU 8t handles large-scale training. TPU 8i focuses on low-latency reasoning. The new systems reuse existing silicon with different packaging, networking, and hosts so Google can respond faster to customer requirements.
+The announcement comes as agentic workloads grow. Enterprises need accelerators that keep sensitive data protected during inference and that supply memory bandwidth fast enough for agents reasoning across long contexts or entire codebases.
 
-## What the New TPU Systems Do
+![Rows of server racks in a data center](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80)
 
-TPU 8tx runs on the same silicon as TPU 8t and pairs with 5th-generation AMD EPYC CPU hosts. It adds hardware-level confidential computing so data and model weights stay protected even while the chip processes them. Normally encryption covers storage and networks; here the protection continues during active use. It also adopts the low-latency Boardfly network from TPU 8i, delivering up to 2x lower latency than TPU 8t with little performance cost. Teams can fine-tune models, distill larger models, and run reinforcement learning on private data without moving sensitive information between clusters.
+## Why four systems in one year
 
-TPU 8i Max places two TPU 8i chips on one package. It doubles compute, on-chip SRAM, and HBM bandwidth relative to a single TPU 8i. The dual-chip layout fits twice the silicon in the existing rack footprint, raising compute density per square foot and per watt. This addresses the memory wall that appears when agents process full codebases or long video sequences together. Processors stay supplied with data so large workloads do not stall.
+Google co-designs TPUs with DeepMind and now incorporates feedback from external organizations. Agent-scale computing creates two urgent needs: hardware-level data protection and million-token context scale. The new systems address these without waiting for a full new chip generation.
 
-Google notes that the four systems together cover the agentic lifecycle: scale-up training on 8t, low-latency reasoning on 8i, confidential computing on 8tx, and massive context plus density on 8i Max. Pricing, regions, and general availability dates have not been published yet.
+A new chip requires years of design and manufacturing. A new system reconfigures packaging, networking, memory, and hosts around existing silicon. This modular approach, part of Google’s AI Hypercomputer, lets the company ship specialized configurations in months.
 
-![Rows of server racks in a data center](https://images.unsplash.com/photo-1752742111841-f490c48aa668?auto=format&fit=crop&w=800&q=80)
+TPU 8t (announced April 2026) handles large-scale training. TPU 8i focuses on low-latency reasoning. The November additions complete the set for the agentic lifecycle.
 
-## Why These Systems Matter for Agents
+## TPU 8tx: confidential inference and private fine-tuning
 
-Agent workloads differ from traditional training or single-query inference. Agents pause for tool calls, database lookups, or human input. They often hold large context windows and coordinate across many instances. Memory bandwidth becomes the limit before raw compute does. Confidentiality requirements rise when agents touch proprietary code, customer records, or regulated data.
+TPU 8tx uses the same silicon as TPU 8t. It pairs that silicon with 5th Generation AMD EPYC CPU hosts and the low-latency Boardfly network originally built for TPU 8i. The result delivers up to 2x lower latency than TPU 8t with near-zero performance penalty.
 
-TPU 8i Max directly targets the memory wall by scaling compute and memory together. TPU 8tx keeps multi-step agents responsive while protecting data in use. Both build on the modular AI Hypercomputer approach Google has used for years: change packaging, memory, networking, and hosts around proven silicon instead of waiting for a full new chip generation.
+The key difference is hardware-level confidential compute. Data is normally encrypted at rest and in transit, then decrypted in memory while the chip processes it. TPU 8tx keeps sensitive data and model weights protected and isolated even while in active use. This suits regulated enterprises and governments that must run frontier or proprietary models and autonomous agents next to their most sensitive information.
 
-Software improvements announced alongside the hardware lower the barrier for developers. TorchTPU is open source so native PyTorch code and Hugging Face models run on TPUs. vLLM and SGLang have TPU backends. A TPU agent suite (in preview) works with Claude Code, Cursor, and Google Antigravity to help with onboarding, bottleneck diagnosis, and kernel tuning. Agent Compute Engine suspends idle agent sessions and moves working memory off the chip. TPU Sync tiers KV caches across HBM, host DRAM, storage, and the network. Cloud Pathways is generally available on GKE for single-controller orchestration across slices. GKE dynamic slicing uses optical circuit switching to form topologies on demand.
+Because the system combines training-grade compute with a fast inference network, teams can fine-tune models on private data, distill large models into smaller ones, and run reinforcement learning for agents—all on one system. No data migration between separate clusters is required.
 
-These pieces let teams use the new systems without rewriting large amounts of code or managing rigid node pools.
+## TPU 8i Max: double compute and memory bandwidth
 
-## How to Prepare and Access the Hardware
+TPU 8i Max places two low-latency TPU 8i chips onto a single package. Google states this delivers double the compute, double the on-chip SRAM, and double the high-bandwidth memory (HBM) bandwidth of a single TPU 8i.
 
-Google has not listed public pricing or availability dates for TPU 8tx or TPU 8i Max. Customers can request more information through existing Google Cloud channels while the systems move into production. In the meantime, start with the already available TPU 8t and TPU 8i systems and the open software stack.
+The design targets the memory wall. When multiple agents work across an entire software codebase or hours of video, processors idle while waiting for data. Scaling compute and memory bandwidth together keeps essential data resident so large workloads do not stall. Because twice the silicon fits in the same rack footprint, data centers gain more computing power per square foot and per watt.
 
-1. Confirm your Google Cloud project has billing enabled and the necessary APIs for Compute Engine or GKE.
-2. Review TPU region and zone availability in the Compute Engine or TPU documentation. Current generations appear in specific AI zones and standard zones.
-3. Install or update the open-source tools: TorchTPU for PyTorch, the vLLM or SGLang TPU backends for inference, and pathwaysutils if you plan distributed jobs.
-4. Test workloads on existing TPU 8t or TPU 8i capacity if you have access. Measure latency, memory pressure, and idle behavior so you know which new system matches your agents.
-5. For confidential workloads, evaluate whether your data classification requires the hardware isolation in TPU 8tx. For long-context multi-agent jobs, check whether TPU 8i Max’s doubled bandwidth removes your current stalls.
-6. Use GKE dynamic slicing and Cloud Pathways once available on your clusters to avoid manual node-pool recreation when topologies change.
-7. Contact your Google Cloud account team or use the request form linked from the official announcement if you need early access or capacity planning numbers.
+Each original TPU 8i chip provides 10.1 PFLOPS of FP4 compute, 288 GB of HBM, and 384 MB of on-chip SRAM. The dual-chip package therefore roughly doubles those figures for compute and bandwidth.
 
-Teams already running agents on GKE can also review related isolation options. The open-source Agent Substrate runtime (donated to the CNCF) and Agent Compute Engine provide snapshot and resume for idle agents; see the guide on [secure microVMs with Agent Compute Engine](/blog/agent-compute-engine-secure-microvms-guide/).
+![Circuit board with processing components](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
 
-![Close-up of a computer circuit board and chip](https://images.unsplash.com/photo-1782330136534-6490d16568ea?auto=format&fit=crop&w=800&q=80)
+## How the four systems fit the agentic lifecycle
 
-## Practical Tips
+| System | Primary role | Key official claim |
+|--------|--------------|--------------------|
+| TPU 8t | Large-scale training | Up to 2.7x better training performance vs previous generation |
+| TPU 8i | Low-latency reasoning | Up to 80% better inference price performance |
+| TPU 8tx | Confidential inference + small-scale training | Up to 2x lower latency than TPU 8t; hardware-level isolation |
+| TPU 8i Max | Massive context + rack density | Double compute, SRAM, and HBM bandwidth of TPU 8i |
 
-- Start with software. TorchTPU and the inference engines let you validate agent loops on TPUs before the newest systems arrive.
-- Profile memory bandwidth and KV-cache movement. TPU Sync and Agent Compute Engine address idle waste and large contexts; measure them on current hardware.
-- Separate confidential and high-density needs. Use TPU 8tx-style isolation for regulated data and TPU 8i Max-style density for long-context coordination.
-- Plan rack and power density. TPU 8i Max packs more silicon in the same footprint, which changes cooling and power calculations.
-- Keep frameworks portable. The open stack (PyTorch via TorchTPU, vLLM, Pathways) reduces lock-in while you wait for capacity.
+Organizations can choose the right accelerator for each stage rather than forcing every workload onto a single chip design.
 
-## Conclusion
+## Software stack updates that accompany the hardware
 
-TPU 8tx and TPU 8i Max complete Google’s eighth-generation lineup for agentic workloads. They reuse proven silicon with specialized packaging and hosts so the company can address confidential computing and memory-wall problems without waiting for a new chip generation. Combined with the open software stack (TorchTPU, Agent Compute Engine, TPU Sync, Cloud Pathways, and GKE dynamic slicing), the systems aim to make TPUs practical for a wider range of developers and enterprises.
+Google simultaneously expanded the open software stack so more developers can use TPUs without rewriting code.
 
-Availability and pricing details remain unpublished as of the announcement. Teams that prepare their agent code and measurement pipelines on existing TPU capacity will be ready when the new systems reach production.
+- TorchTPU (open-sourced last month) lets PyTorch code and Hugging Face models run natively on TPUs. Out-of-the-box backends exist for vLLM and SGLang.
+- The TPU agent suite (preview) plugs into coding tools such as Claude Code, Cursor, and Google Antigravity. It automates onboarding, diagnoses bottlenecks, and autotunes kernels with plain-language instructions.
+- XLA Serving Engine (open source) lets teams train in Python and serve in a low-latency C++ runtime across TPUs, GPUs, and CPUs.
+- TPU Sync (open-sourced) unifies chip HBM, host DRAM, shared storage, and the network into one memory hierarchy. It tiers KV caches off-chip in milliseconds and cuts KV transfer latency and time-to-first-token by more than 90% in some cases.
+- Cloud Pathways is now generally available on Google Kubernetes Engine. A single-controller architecture plus pathwaysutils lets operators treat multi-slice TPU systems as one local machine.
+- GKE dynamic slicing (generally available) uses optical circuit switching to assemble or partition topologies on the fly, reducing job startup times by up to 5x.
 
-## Sources
+These changes address the practical barriers that previously limited TPU adoption outside Google.
 
-- Google Blog: Introducing TPU 8tx and TPU 8i Max (9 November 2026)
-- Google Blog: Eighth-generation TPUs for the agentic era (April 2026)
-- Google Cloud documentation on TPU regions, TorchTPU, Cloud Pathways, and Agent Compute Engine
+## Practical steps for teams evaluating the new systems
+
+1. Identify the dominant bottleneck. If data must stay encrypted during inference or fine-tuning, start with TPU 8tx. If agents stall on long contexts or multi-agent coordination, evaluate TPU 8i Max.
+2. Confirm software readiness. Test existing PyTorch or Hugging Face workflows with TorchTPU. Use the TPU agent suite inside your preferred coding agent to surface optimization opportunities.
+3. Measure real workloads. Google points to InferenceX and AgentX benchmarks for agentic coding and long-context tasks rather than peak chip FLOPS alone.
+4. Plan for availability. The November 9 post gives no public pricing or general-availability date. Reports indicate the systems are expected in 2027. Contact Google Cloud sales for early-access information if your use case matches the confidential or high-density profiles.
+5. Combine with existing tools. Pair the hardware with Cloud Pathways for multi-slice orchestration and TPU Sync for memory hierarchy management when agents run for hours or days.
+
+For developers already building agentic features, these systems complement on-device options such as Gemini Nano. See our earlier guide on [building on-device agents with ML Kit Agentic API and Gemini Nano](/blog/build-on-device-agents-ml-kit-agentic-api-gemini-nano/) for the complementary software side.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/3Qw_CZkiQQg"
@@ -74,3 +80,23 @@ Availability and pricing details remain unpublished as of the announcement. Team
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
+
+## Tips for production use
+
+Start with the open software stack on current TPU generations while waiting for the new systems. TorchTPU and the TPU agent suite already reduce the friction of moving PyTorch code. Measure token throughput and latency on your actual agent traces rather than synthetic benchmarks. For confidential workloads, confirm the exact isolation guarantees with Google Cloud before moving regulated data.
+
+Density matters. TPU 8i Max’s doubled silicon in the same footprint improves power and floor-space efficiency—two of the scarcest resources in current data-center builds.
+
+## Conclusion
+
+TPU 8tx and TPU 8i Max give organizations purpose-built options for the two hardest parts of agentic production: keeping data protected while models run, and feeding enough memory bandwidth to keep long-context agents productive. Combined with the open PyTorch path, TPU Sync, and Cloud Pathways, the eighth-generation lineup covers the full lifecycle from large-scale training to secure, high-context inference.
+
+Teams should map their dominant constraints (confidentiality versus context length versus training scale) to the matching system and validate software compatibility now. The modular system approach means Google can keep delivering specialized configurations as agent workloads evolve.
+
+## Sources
+
+- [Google Blog: Introducing TPU 8tx and TPU 8i Max](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/)
+- [Google Cloud Blog: Eighth-generation TPU technical deep dive (TPU 8t and 8i)](https://cloud.google.com/blog/products/compute/tpu-8t-and-tpu-8i-technical-deep-dive)
+- [Google Cloud: TorchTPU open source announcement](https://cloud.google.com/blog/topics/ai-infrastructure/torchtpu-is-now-open-source-run-native-pytorch-on-tpus)
+- [Google Cloud: TPU Sync](https://cloud.google.com/blog/topics/ai-infrastructure/introducing-tpu-sync-fast-kv-cache-and-weight-transfer-on-tpu)
+- [YouTube: Google TPU 8t and TPU 8i overview (Google Cloud)](https://www.youtube.com/watch?v=3Qw_CZkiQQg)
