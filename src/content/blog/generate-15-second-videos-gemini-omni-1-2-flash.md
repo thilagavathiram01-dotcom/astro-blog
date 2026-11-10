@@ -1,104 +1,86 @@
 ---
 title: "Generate 15-Second Videos with Gemini Omni 1.2 Flash"
-description: "Create and edit 15-second AI videos with Gemini Omni 1.2 Flash in AI Studio, Google Vids, and the API. Step-by-step guide for 2026."
-pubDate: 2026-11-07T14:00:00
+description: "Step-by-step guide to create and edit 15-second videos with Gemini Omni 1.2 Flash in Google Flow using free credits."
+pubDate: 2026-11-10T14:00:00
 heroImage: "https://images.unsplash.com/photo-1742144897663-6c8c6faaf1ab?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials", "how-to", "productivity"]
+tags: ["gemini", "tutorials", "how-to", "ai-tools"]
 noindex: false
 ---
 
-Google released Gemini Omni 1.2 Flash on November 5, 2026. The model generates and edits videos up to 15 seconds long with native audio, stronger reference consistency, and multi-turn conversational edits.
+Google released Gemini Omni 1.2 Flash on November 5, 2026. The model generates videos up to 15 seconds long, supports conversational edits, and costs 30 percent less than the previous version. Everyday users can try it for free in Google Flow with 50 daily credits.
 
-It costs 30% less than Omni 1.1 at $0.07 per second for 720p output. You can draft at lower resolutions and upscale keepers to 1080p or 4K.
+This guide shows how to create and refine clips in Flow without a paid plan. You draft at low resolution, edit with follow-up prompts, and export when the result matches your needs.
 
-This guide shows how to access the model, generate your first clip, use reference images, and refine results through conversation. All details come from Google’s official announcement and documentation.
+## What Changed in Omni 1.2 Flash
 
-## What’s New in Omni 1.2 Flash
+The update adds native 15-second clips instead of the prior 10-second limit. You set duration in one-second steps from 3 to 15 seconds. Pricing dropped to $0.07 per second for 720p video on paid plans. Free accounts in Flow still receive 50 credits each day and can generate up to 10-second clips.
 
-Omni 1.2 Flash builds on the earlier Omni Flash model. Key changes include:
+Conversational editing lets you change one element—such as background, lighting, or an object—while the rest of the scene stays intact. Reference following improved, so uploaded images for characters, products, or style hold more consistently across frames. Speech sounds more natural with clearer lip-sync and support for multiple speakers.
 
-- Native length up to 15 seconds, selectable in one-second steps from 3 to 15 seconds.
-- Multi-turn editing on full-length clips. Swap backgrounds, change lighting, or adjust aspect ratio without regenerating from scratch.
-- Better adherence to character, product, and style references across camera moves.
-- Improved speech, lip-sync, and multi-speaker conditioning.
-- Continuous camera control with fewer unwanted cuts.
+Outputs include an imperceptible SynthID watermark. The model works in Google Flow, Google Vids, the Gemini API, and Google AI Studio.
 
-Outputs include an imperceptible SynthID watermark. The model is generally available on the Gemini API and Google Cloud.
+![Laptop displaying video editing software on a desk](https://images.unsplash.com/photo-1742829705753-f07509bc88ac?auto=format&fit=crop&w=800&q=80)
 
-![Professional video camera on a tripod in a studio](https://images.unsplash.com/photo-1764068866740-506ba4cf64e4?auto=format&fit=crop&w=800&q=80)
+## Free Access in Google Flow
 
-## Where You Can Use It
+Open flow.google.com and sign in with any Google account. No separate subscription is required for the free tier. Each day you receive 50 credits. A 5-second clip at 360p costs about 5 credits. A 10-second clip at 360p costs about 10 credits. 720p costs roughly three times more, so most free users start at 360p to test ideas.
 
-Access paths as of November 2026:
+Peak hours (roughly 2 PM to 5 PM UTC) may restrict free generation. Outside those windows the full daily allotment is available. Free clips max out at 10 seconds. Paid plans unlock the full 15-second length and higher resolutions.
 
-- Google AI Studio: Select gemini-omni-1.2-flash in the playground for prototyping.
-- Gemini app: 15-second clips rolling out to Google AI Ultra subscribers.
-- Google Vids: Up to three free 15-second videos per month with a Google account or Workspace subscription. Visit vids.new.
-- Google Flow: Scene direction and multi-turn edits.
-- Gemini API and Vertex AI: Production use with Provisioned Throughput available.
-- Third-party platforms such as Runway, Artlist, and Segmind.
+Google Vids offers another free path: a personal Google account receives 60 seconds of clips per month, enough for about four 15-second videos. Flow gives more daily volume for experimentation.
 
-Google AI Pro and Ultra plans unlock higher limits in consumer surfaces. API usage is billed per second.
+## Step-by-Step: Create a Video in Flow
 
-## Step-by-Step: Generate a Text-to-Video Clip
+1. Go to flow.google.com and log in.
+2. Start a new project. In the prompt box, open settings and select Omni Flash 1.2 as the model.
+3. Choose aspect ratio (16:9 or 9:16), resolution (start with 360p), and length (up to 10 seconds on free).
+4. Enter a clear prompt. Include subject, action, setting, camera movement, and lighting. Example: "A person walks through a sunlit park, camera slowly pans right, golden hour light, natural sound of birds."
+5. Optionally upload a start frame or reference images for character or style consistency.
+6. Generate. Review the clip. If something needs adjustment, type a follow-up such as "change the background to a city street at night" or "make the person wear a red jacket."
+7. Once satisfied, download the MP4. On paid plans you can upscale to 1080p or 4K.
 
-Start in Google AI Studio.
-
-1. Open aistudio.google.com and sign in.
-2. Create a new prompt and choose the model gemini-omni-1.2-flash.
-3. Enter a detailed prompt. Example: “A golden retriever runs through a field of wildflowers at golden hour. Single continuous tracking shot, warm backlight, soft wind sound, no music.”
-4. Set duration to 10 or 15 seconds and resolution to 720p for the first pass.
-5. Run the generation. Review the result, then request an edit if needed.
-
-You can also supply a starting image or both a first and last frame for interpolation (up to 10 seconds for interpolation).
-
-## Using Reference Images and Motion
-
-Upload up to several reference images of a character, product, or style. Add a short motion clip (up to three seconds) if you have one.
-
-Prompt example for consistency: “The woman from the reference photo walks through a farmers market holding the tumbler from the second image. She takes a sip. 9:16 vertical, 12 seconds, natural daylight, ambient market sounds.”
-
-The model keeps faces, garments, packaging text, and brand colors consistent across angles. This works well for virtual try-ons, product spins, and branded ads.
-
-## Conversational Editing
-
-After the first generation, continue in the same conversation.
-
-- “Change the background to an oak forest at dusk while keeping the characters and camera framing the same.”
-- “Make it night and raining. Add soft rain sounds.”
-- “Switch to 9:16 and upscale to 1080p.”
-
-Edits apply to the full clip length. This reduces cost compared with regenerating the entire sequence.
-
-![Video editing timeline on a computer monitor](https://images.unsplash.com/photo-1778052404716-b39eef1f17c6?auto=format&fit=crop&w=800&q=80)
-
-## Practical Tips
-
-Describe the full shot: subject, action, setting, lighting, camera move, and audio. State “single continuous shot” or “no scene cuts” when you want one take.
-
-Draft at 360p or 720p, refine with conversation, then upscale only the final version. Specify dialogue in quotes and name speakers for better lip-sync.
-
-For longer sequences, generate segments and stitch them in an editor. Related interactive world simulation is available in Genie 4; see our guide on [how to access Google Genie 4 interactive worlds](/blog/access-google-genie-4-interactive-worlds/).
-
-Check outputs for visual drift on complex motion or fine text. Review SynthID and content credentials before commercial use.
-
-## Watch a Clear Explanation
-
-This video covers the 15-second length, pricing, draft-then-upscale workflow, and comparisons with other models.
+The same chat thread keeps context, so later edits build on earlier ones without regenerating the entire clip.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/iZI2yHERihI"
-    title="Gemini Omni 1.2 Flash, Clearly Explained: Google's 15-Second AI Video Model"
+  <iframe src="https://www.youtube.com/embed/cIfN0CJRDpc"
+    title="How to Use Gemini Omni 1.2 Flash for FREE Right Now"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## Tips for Better Results
+
+Draft at 360p first. It costs fewer credits and generates faster. Move only the best versions to 720p.
+
+Use reference images when consistency matters. Upload a clear photo of a product or person and mention it in the prompt. The model follows these anchors more closely than in the prior version.
+
+Break complex ideas into steps. Generate a short establishing shot, then edit to add dialogue or change the camera angle. Multi-turn editing preserves the parts you already like.
+
+Specify audio when needed. Omni 1.2 produces more natural speech. Write dialogue lines and note who speaks them for clearer results.
+
+Watch credit usage in the settings panel before you generate. Free accounts reset daily, so plan longer sessions for off-peak hours.
+
+![Professional video camera on a tripod in a studio](https://images.unsplash.com/photo-1764068866740-506ba4cf64e4?auto=format&fit=crop&w=800&q=80)
+
+## How This Compares to Other Tools
+
+Omni 1.2 Flash focuses on longer native clips and conversational edits inside one interface. If you already use the Gemini app for documents and PDFs, the video workflow follows a similar pattern of generate then refine. Our earlier guide covers [how to generate and edit files in the Gemini app](/blog/generate-preview-edit-files-gemini-app/).
+
+For developers, the Gemini API offers the same model with per-second pricing. Google AI Studio provides a quick way to prototype prompts before moving to production.
+
+## Limitations to Know
+
+Free Flow accounts cannot create 15-second clips. The 10-second limit applies until you upgrade. Text on screen remains imperfect in some cases. Complex multi-character dialogue can still drift. Always review outputs before publishing.
+
+The SynthID watermark is present on every clip. It does not appear visually but identifies AI-generated content.
+
+## Conclusion
+
+Gemini Omni 1.2 Flash lowers the barrier for short video creation. Free credits in Google Flow let you test 360p drafts, refine with chat, and download usable clips the same day. Start with a simple prompt, edit one detail, and see how the conversational loop works for your own projects.
+
 ## Sources
 
-- Google blog: Gemini Omni 1.2 Flash: 15-second video and lower pricing (November 5, 2026). https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/
-- Google Cloud: Gemini Omni 1.2 Flash now generally available.
-- Google Vids announcement for free generation with Omni 1.2.
-- Official model details and developer documentation on AI Studio.
-
-Gemini Omni 1.2 Flash makes longer, more controllable video generation practical for product explainers, social ads, and creative drafts. Start with a short prompt in AI Studio or Google Vids today, refine through conversation, and scale the clips that work.
+- Google: [Gemini Omni 1.2 Flash: 15-second video and lower pricing](https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/)
+- Google Flow: [flow.google.com](https://flow.google.com)
+- Tutorial: [How to Use Gemini Omni 1.2 Flash for FREE Right Now](https://www.youtube.com/watch?v=cIfN0CJRDpc)
