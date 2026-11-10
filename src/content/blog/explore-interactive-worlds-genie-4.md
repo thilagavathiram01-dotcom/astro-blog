@@ -7,13 +7,13 @@ tags: ["ai", "gemini", "tutorials", "how-to", "google"]
 noindex: false
 ---
 
-Google DeepMind announced Genie 4 on October 27, 2026. It is a world model that generates explorable environments in real time. You type instructions while the scene runs. Characters move, react, and speak. Ambient sound and music appear automatically.<grok type="render_inline_citation" citation_id="479" />
+Google DeepMind announced Genie 4 on October 27, 2026. It is a world model that generates explorable environments in real time. You type instructions while the scene runs. Characters move, react, and speak. Ambient sound and music appear automatically.
 
-This is the first Genie model with native audio. Earlier versions produced visuals only. Genie 4 keeps scenes coherent for longer stretches and responds to live text prompts that change weather, camera angle, or add new people and objects.<grok type="render_inline_citation" citation_id="471" />
+This is the first Genie model with native audio. Earlier versions produced visuals only. Genie 4 keeps scenes coherent for longer stretches and responds to live text prompts that change weather, camera angle, or add new people and objects.
 
 ## What Genie 4 Actually Does
 
-Genie 4 builds on the Gemini family. Gemini Omni handles appearance and physical behavior. Other Gemini models supply the reasoning that tracks world state and plans multi-step events so the simulation stays consistent when you intervene.<grok type="render_inline_citation" citation_id="479" />
+Genie 4 builds on the Gemini family. Gemini Omni handles appearance and physical behavior. Other Gemini models supply the reasoning that tracks world state and plans multi-step events so the simulation stays consistent when you intervene.
 
 You start a scene with a text prompt or reference image. Once it runs, you can:
 
@@ -22,17 +22,17 @@ You start a scene with a text prompt or reference image. Once it runs, you can:
 - Hear matching ambient sound, music, and dialogue that adapts as the scene evolves.
 - Watch people move naturally and respond to the environment.
 
-All generated video and audio carry Google’s SynthID watermark. The model is still a research preview.<grok type="render_inline_citation" citation_id="508" />
+All generated video and audio carry Google’s SynthID watermark. The model is still a research preview.
 
 ![Futuristic circuit board representing AI hardware that powers world models](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
 
 ## Current Access and Rollout
 
-Google has begun limited rollout to trusted testers. Wider access is described as “coming soon” for Google AI Ultra subscribers inside Project Genie and for early-access partners through the Gemini API and Google AI Studio. No public pricing, exact resolution, frame rate, or maximum session length has been published.<grok type="render_inline_citation" citation_id="479" />
+Google has begun limited rollout to trusted testers. Wider access is described as “coming soon” for Google AI Ultra subscribers inside Project Genie and for early-access partners through the Gemini API and Google AI Studio. No public pricing, exact resolution, frame rate, or maximum session length has been published.
 
 If you already have a Google AI Ultra subscription, watch the Project Genie surface for the update. Developers should monitor Google AI Studio and the Gemini API documentation for the model identifier once it appears.
 
-For related Gemini video tools that are already generally available, see our guide to generating clips with Gemini Omni.<grok type="render_inline_citation" citation_id="0" />
+For related Gemini video tools that are already generally available, see our [guide to generating clips with Gemini Omni](/blog/gemini-omni-generate-edit-videos/).
 
 ## How to Prepare Prompts
 
@@ -67,7 +67,7 @@ Because Genie 4 accepts live text steering, you can refine after the initial gen
 
 ## Limitations to Expect
 
-Genie 4 remains a research preview. Google has not released public benchmarks, latency numbers, or maximum session duration. Early access is restricted. Outputs are watermarked. Real-world physics and long-horizon consistency continue to improve but are not yet production-perfect for every use case.<grok type="render_inline_citation" citation_id="508" />
+Genie 4 remains a research preview. Google has not released public benchmarks, latency numbers, or maximum session duration. Early access is restricted. Outputs are watermarked. Real-world physics and long-horizon consistency continue to improve but are not yet production-perfect for every use case.
 
 ## Conclusion
 
