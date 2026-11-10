@@ -21,13 +21,15 @@ Later builds added more detail. Version 17.73.15 includes a string that reads: "
 
 These strings indicate planning for an offline option. They do not specify the underlying model, exact feature list, or performance characteristics. Many modern Android phones already run the on-device Gemini Nano model, which some reports suggest could handle simpler offline tasks. This remains unconfirmed by the code itself.
 
+The presence of these strings across multiple builds shows continued development. Features can still be altered, delayed, or dropped before they reach users.
+
 ## Setup Requires an Internet Connection First
 
 The strings make clear that offline mode is not instantly available. Users must set it up while connected to the internet. This mirrors how Google Maps and Google Translate handle offline packages: download or prepare data in advance.
 
 The exact data prepared during setup is not described in the strings. It could involve downloading model weights, caching recent context, or configuring local permissions. Until Google releases details, treat the requirement as a one-time online step before going offline.
 
-If you frequently travel or work in low-signal areas, check for the option after updating the Google app. Force-stop the app and reopen it if the setting does not appear immediately after an update.
+If you frequently travel or work in low-signal areas, check for the option after updating the Google app. Force-stop the app and reopen it if the setting does not appear immediately after an update. A strong Wi-Fi connection during setup reduces the chance of incomplete preparation.
 
 ## Limited Features While Offline
 
@@ -53,7 +55,15 @@ For privacy-conscious users, offline processing keeps conversations on the devic
 
 6. Reconnect periodically to refresh the full feature set and any updated local data.
 
-These steps assume the feature ships as described by the current strings. Google can change or remove it before release.
+These steps assume the feature ships as described by the current strings. Google can change or remove it before release. Device compatibility will likely depend on having sufficient storage and a supported chipset for on-device models.
+
+## What Offline Mode Could Mean for Daily Tasks
+
+An offline Gemini Live could support basic questions during a long flight or while hiking without signal. You might continue a brainstorming session started earlier or ask for a summary of a topic already discussed. Real-time information such as current weather, traffic, or news would stay unavailable until you reconnect.
+
+Hands-free use in a car remains valuable. Android Auto users already face occasional recognition issues; an offline path could reduce complete dropouts in tunnels. Always prioritize safe driving and verify critical information when back online.
+
+Battery life becomes more relevant. On-device inference draws power from the phone rather than remote servers. Close background apps and lower screen brightness during extended offline conversations.
 
 ## Tips for Everyday Use
 
@@ -64,6 +74,8 @@ If you rely on Gemini Live for navigation or real-time information, plan to reco
 Monitor battery impact. On-device processing can use more power than cloud inference on some phones. Close unnecessary apps before long offline sessions.
 
 For Android Auto users, an offline Gemini Live option could improve hands-free reliability in tunnels or remote areas. Test carefully and keep eyes on the road.
+
+Watch storage space. Any local model or cached data will consume device storage. Clear unused app data if space is limited before attempting setup.
 
 ## Conclusion
 
