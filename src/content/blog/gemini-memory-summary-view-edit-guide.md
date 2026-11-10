@@ -1,69 +1,122 @@
 ---
-title: "How to View and Edit Your Gemini Memory Summary"
-description: "Step-by-step guide to view, edit, and delete what Gemini remembers about you using the new Memory summary feature in the Gemini app."
+title: "Gemini Memory Summary: View, Edit, Delete What It Remembers"
+description: "Step-by-step guide to view, edit, and delete your Gemini Memory summary. Available for US Google AI plan users in English."
 pubDate: 2026-11-10T14:00:00
-heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials"]
+heroImage: "https://images.unsplash.com/photo-1674027215016-0a4abfdbf1cc?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "tutorials", "how-to", "ai-tools"]
 noindex: false
 ---
 
-Google rolled out Memory summary in the Gemini app on November 9, 2026. This page shows exactly what the assistant has learned about you from chats and lets you correct or remove it.<grok type="render_inline_citation" citation_id="50" />
+Google rolled out Memory summary in Gemini Apps on November 9, 2026. The page shows what Gemini Apps understands about you, sorted into categories, and lets you add, correct, or delete details in plain language.
 
-Memory summary organizes details into categories so responses stay accurate. You control the content instead of guessing what the model retained.
+It sits under Settings > Personal Intelligence. You can also ask Gemini “What do you know about me?” to pull the same summary. This guide walks through the exact steps from Google’s help pages, eligibility rules, edit examples, and how to check Memory history.
 
-![Person interacting with AI interface on a laptop](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+The feature requires a personal Google account, age 18 or older, Keep Activity on, and Memory turned on. Officially it is limited to US users with an active Google AI plan, in English, on the Gemini mobile app and gemini.google.com. Availability can vary during rollout.
 
-## What Memory Summary Shows
 
-The feature lists what Gemini Apps understands about you. Categories include The Essentials (core background, location, and key relationships), Career & Professional Projects, Travel & Daily Gear, Media & Entertainment, and Fitness & Lifestyle.<grok type="render_inline_citation" citation_id="35" />
 
-Each section contains specific bullet points drawn from your conversations when Memory is enabled. Google designed it so responses stay relevant without you repeating the same facts.
+![Abstract AI brain illustration representing memory and personalization](https://images.unsplash.com/photo-1750365919878-2735d30fa3d8?auto=format&fit=crop&w=800&q=80)
 
-You need a personal Google account, must be 18 or older, have Keep Activity turned on, and have Memory enabled. Availability starts with US users on an active Google AI plan in English, on the Gemini mobile app and gemini.google.com.<grok type="render_inline_citation" citation_id="50" />
 
-## How to Open Memory Summary
 
-Open the Gemini app or go to gemini.google.com. Tap or click the menu, then Settings, Personal Intelligence, and Memory summary.<grok type="render_inline_citation" citation_id="50" />
+## What Memory summary shows
 
-On the web you can also visit gemini.google.com/personalization-settings. Or type the prompt “What do you know about me?” in a chat and Gemini surfaces the summary.
+Memory summary collects facts Gemini has learned from your chats when Memory is enabled. Google groups them into labeled categories instead of a single long list.
 
-The page loads your current details grouped by category. Review it before making changes so you know what is already stored.
+Reports from early access describe these groups:
 
-## How to Add, Edit, or Delete Details
+- The Essentials: core background, location, and key relationships
+- Career & Professional Projects
+- Travel & Daily Gear
+- Media & Entertainment
+- Fitness & Lifestyle
 
-A text box at the bottom accepts plain-language requests. Examples from Google’s guidance: “Add to my memory that I speak Japanese” or “Remove my old phone number from your memory.” Gemini may ask a follow-up question if the request is unclear.<grok type="render_inline_citation" citation_id="35" />
+Each category holds a short list of specific details. You control what stays. Correcting or deleting an entry updates the summary Gemini uses for future responses.
 
-Use the pencil icon in the top-right corner for broader edits across the summary. Open the three-dot menu and select Memory history to see when each item was added or changed.
+This is separate from Instructions for Gemini (previously called Saved info), which holds standing preferences you add yourself. Memory summary focuses on what the system has inferred and stored from conversations.
 
-These controls keep the summary current. Outdated or incorrect entries can skew later answers, so review them after major life changes.
+## Eligibility and prerequisites
 
-![Abstract data visualization representing AI processing](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
+Confirm these before you look for the menu:
 
-## Tips for Better Results
+1. Sign in with a personal Google Account (not work, school, or supervised).
+2. Be 18 or older.
+3. Turn Keep Activity on in Gemini settings.
+4. Turn Memory on under Personal Intelligence.
+5. Hold an active Google AI plan.
+6. Use English and be in the US (official requirement; some users outside the US have reported access via browser).
 
-Turn Memory on only if you want personalization. You can disable it under Settings > Personal Intelligence at any time. The setting uses your saved chats, so Keep Activity must stay enabled for it to work.<grok type="render_inline_citation" citation_id="64" />
+If the Memory summary option is missing, check plan status, language, region, and the two activity toggles. Google notes the rollout is gradual.
 
-Ask specific questions like “Remember that I prefer concise answers” rather than vague ones. Clear instructions produce cleaner memory entries.
+## How to view your Memory summary
 
-Check Memory history after edits. It shows the timeline so you can spot unexpected additions.
+**On the web**
 
-Compare this with other assistants. ChatGPT and Claude also offer memory views you can edit; Gemini’s category layout makes scanning faster for many users. See our guide on [ChatGPT locked chats privacy](/blog/chatgpt-locked-chats-privacy-guide/) for related controls.
+1. Go to gemini.google.com and sign in.
+2. Click Settings at the bottom left.
+3. Select Personal Intelligence, then Memory summary.
 
-## Watch a Comparison of AI Memory Features
+Direct link reported during rollout: gemini.google.com/personalization-settings.
+
+**On mobile**
+
+1. Open the Gemini app.
+2. Tap Menu on the left.
+3. At the bottom left, tap Settings > Personal Intelligence > Memory summary.
+
+Early reports noted the page appeared first on the web; the mobile app experience is expected to match once fully rolled out. You can also type “What do you know about me?” in any chat.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/YAjbVP_5ZXU"
-    title="What AI Memory Actually Remembers: ChatGPT vs Claude vs Gemini"
+  <iframe src="https://www.youtube.com/embed/IqLEoaODLcw"
+    title="How To Enable Memory In Gemini AI: The Ultimate 2026 Guide To Saved Info & Personal Intelligence!"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## How to edit or delete details
+
+You manage the summary with natural-language instructions. Google’s documented examples are:
+
+- To add: “Add to my memory that I speak Japanese.”
+- To remove: “Remove my old phone number from your memory.”
+
+Type the request in the text box at the bottom of the Memory summary page, or in a regular chat. Gemini updates the summary and may ask a follow-up question if the request is ambiguous, to keep the entry accurate.
+
+A pencil icon in the top-right corner opens broader direct editing on the summary page. Use the three-dot menu to open Memory history, which lists when specific information was added or modified.
+
+After an edit, confirm the change by asking “What do you know about me?” again or by reopening the summary. Deleting a detail from the summary does not automatically delete the original chats; those remain in Gemini Apps Activity until you remove them separately.
+
+For comparison, ChatGPT offers a similar review path inside its Privacy Center. See our guide on [how to use the ChatGPT Privacy Center](/blog/chatgpt-privacy-center-setup/) if you manage both tools.
+
+
+
+![Futuristic neural network brain graphic for AI memory concepts](https://images.unsplash.com/photo-1617791160536-598cf32026fb?auto=format&fit=crop&w=800&q=80)
+
+
+
+## Tips for keeping the summary useful
+
+Review the five categories once a month. Remove outdated location, job, or preference details so Gemini does not reuse them.
+
+Add high-value facts you want remembered: preferred tone, dietary needs, ongoing projects, or language skills. Keep the list short; long entries reduce clarity.
+
+If a response feels wrong, check Memory summary first before blaming the model. Correct the stored fact, then retest in a new chat.
+
+Turn Memory off under Personal Intelligence if you prefer no cross-chat learning. The summary page itself can also be switched off.
+
+Activity auto-delete settings (default 18 months) still apply to the underlying chats. Changing auto-delete does not clear the Memory summary; use the edit or history tools for that.
+
 ## Conclusion
 
-Memory summary gives you a clear view of what Gemini knows and tools to keep it accurate. Open Settings > Personal Intelligence > Memory summary, review the categories, and use the text box or pencil icon to update details. The feature is rolling out to eligible US Google AI plan users in English; check your account if it does not appear yet.
+Memory summary gives you a readable, editable view of what Gemini Apps has stored about you. Open it from Settings > Personal Intelligence, use plain-language commands to add or remove details, and check Memory history for changes.
 
-Sources:
-- Google Gemini Apps Help: View and manage your Memory summary
+Confirm your account meets the US, Google AI plan, English, age, and activity requirements. Once visible, spend ten minutes reviewing the categories and cleaning anything you no longer want used in responses. The controls are designed so you decide what stays.
+
+## Sources
+
+- [View & manage your memory summary in Gemini Apps](https://support.google.com/gemini/answer/18617127) — Gemini Apps Help
+- [Get personalization with memory of your past Gemini chats](https://support.google.com/gemini/answer/16598469) — Gemini Apps Help
+- [Manage what Gemini remembers about you](https://support.google.com/gemini/answer/16598625) — Gemini Apps Help
 - 9to5Google coverage of the November 9, 2026 rollout
-- Official Gemini personalization documentation
+- Android Authority and other contemporary reports confirming categories and access steps
