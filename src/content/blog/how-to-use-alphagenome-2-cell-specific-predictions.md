@@ -1,77 +1,131 @@
 ---
 title: "How to Use AlphaGenome 2 for Cell-Specific DNA Predictions"
-description: "Step-by-step guide to AlphaGenome 2 API: predict variant effects in specific cell types, score genes, and condition on your own scRNA-seq data."
-pubDate: 2026-11-12T19:00:00
+description: "Step-by-step guide to AlphaGenome 2 API: condition on cell types, score variants, and predict effects with official DeepMind examples."
+pubDate: 2026-11-12T14:00:00
 heroImage: "https://images.unsplash.com/photo-1628595351029-c2bf17511435?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai", "tutorials", "google", "developer"]
+tags: ["ai-tools", "tutorials", "ai", "google"]
 noindex: false
 ---
 
-Google DeepMind released AlphaGenome 2 on 11 November 2026. The model predicts how DNA sequence changes affect molecular activity in one specific cell type or cell state at a time. Researchers can access it free for non-commercial work through the AlphaGenome API.
+Google DeepMind released AlphaGenome 2 on November 11, 2026. The model predicts how DNA sequences and single-letter variants affect specific human cell types and states instead of averaging across whole tissues.
 
-Unlike earlier tools that averaged across whole tissues, AlphaGenome 2 takes a 1-million-letter DNA sequence plus a target condition. It returns predictions for gene expression, chromatin accessibility, histone marks, transcription factor binding, splicing, 3D contacts, and DNA methylation. This guide shows the practical steps to install the package, score a variant, and adapt the model to your own single-cell data.
+Trained on more than 107 million individual cell profiles across 68 tissues, it identifies nearly twice as many causal variants that change gene expression (30% versus 16% on the TenK10K immune-cell set) compared with the prior model fine-tuned on single-cell data. Directional accuracy rises from 23% to 43%. Access is free for non-commercial research through the AlphaGenome API today, with commercial use in private preview.
 
-![DNA double helix structure](https://images.unsplash.com/photo-1732046801426-f32529468176?auto=format&fit=crop&w=800&q=80)
+This guide shows how to install the client, choose a condition, score a variant, and interpret the results. It builds on the earlier [AlphaGenome Atlas variant scores guide](/blog/query-alphagenome-atlas-variant-scores/).
 
-## What changed from AlphaGenome 1
+## Why cell-type conditioning matters
 
-AlphaGenome 1 predicted thousands of experiments in parallel from a fixed set of bulk tissues and cell lines. AlphaGenome 2 is a conditional model. You choose one condition (a tissue, cell type, or state) and the model conditions on it at every layer.
+Every cell carries the same DNA. Different cell types turn different genes on or off. A variant that overactivates ETS2 in gut macrophages can drive inflammatory bowel disease while leaving other cells largely unaffected. Broad-tissue models can miss these effects. AlphaGenome 2 is a conditional model: you supply a 1 Mb DNA window plus a target condition, and it predicts molecular readouts for that condition only.
 
-DeepMind trained it on more than 107 million individual cell profiles across 68 tissues from human and mouse samples. On the TenK10K single-cell eQTL benchmark covering 28 primary immune cell types, AlphaGenome 2 identified 30 percent of causal variants at 90 percent precision, versus 16 percent for AlphaGenome 1 fine-tuned on single-cell data. Directional gene-effect accuracy rose from 23 percent to 43 percent.
+Conditions can be reference catalog entries (tissue + cell type ontology CURIEs) or your own single-cell RNA-seq counts (up to 256 cells). The model also supports DNA methylation predictions and can impute missing modalities from a single measurement such as gene activity.
 
-The model can also impute unmeasured experimental readouts. If you supply gene expression for a cell state, it can predict chromatin accessibility or other tracks that were not measured in that experiment.
+![DNA double helix structure against a dark background](https://images.unsplash.com/photo-1732046801426-f32529468176?auto=format&fit=crop&w=800&q=80)
 
-## Getting an API key and installing the package
+## Set up the Python client
 
-1. Go to [alphagenome.google/api](https://alphagenome.google/api) and sign in. Accept the non-commercial terms of service. The API is free for non-commercial research; commercial use is in private preview.
-2. Install the Python package: `pip install alphagenome` (or use `uv` or `conda`).
-3. Store your key as an environment variable `ALPHA_GENOME_API_KEY` or pass it directly when you create the client.
+Install the package from PyPI:
 
-The official documentation at [alphagenomedocs.com](https://www.alphagenomedocs.com/) includes Colab notebooks for the full workflow.
+```bash
+pip install alphagenome
+```
 
-## Scoring a variant in a reference cell type
-
-The core workflow has four steps: choose a condition, select a genomic interval centered on the variant, score or predict, then inspect the results.
-
-Here is the official example that scores a variant in CD14-positive monocytes in blood:
+Request a free API key for non-commercial use at the AlphaGenome portal and store it securely. Then create the client:
 
 ```python
 from alphagenome.data import genome
 from alphagenome.models.v2 import dna_client
 
 dna_model = dna_client.create('YOUR_API_KEY')
+```
 
-# Condition: CD14-positive monocytes in blood
+The v2 client supports reference-condition and expression-conditioned predictions, variant and interval scoring, cell embeddings, and input gradients. Interactive Colab tutorials cover each step.
+
+## Choose a condition
+
+List supported reference conditions:
+
+```python
+conditions = dna_model.supported_conditions()
+print(conditions.head())
+```
+
+Each row includes a condition string (ontology CURIE or composite), biosample name, and imputation mode for each output type. Example for CD14-positive monocytes in blood:
+
+```python
 condition = 'UBERON:0000178_CL:0001054'
+```
 
+You can also build a ModelCondition from component CURIEs. For your own data, pass raw UMI counts as AnnData via the cell_conditioning argument (and supply a cell_condition_name).
+
+## Score a variant
+
+Define a variant and center a 1 Mb interval on it:
+
+```python
 variant = genome.Variant(
     chromosome='chr2',
     position=219243701,
     reference_bases='C',
-    alternate_bases='T',
+    alternate_bases='T'
 )
 interval = variant.reference_interval.resize(dna_client.SEQUENCE_LENGTH_1MB)
+```
 
+Score it with recommended scorers:
+
+```python
+from alphagenome.models.v2 import variant_scorers
+
+scorer = variant_scorers.RECOMMENDED_VARIANT_SCORERS['SC_GENE_EXPRESSION']
 scores = dna_model.score_variant(
     interval=interval,
     variant=variant,
-    condition=condition,
+    variant_scorers=[scorer],
+    condition=condition
 )
 ```
 
-You can request specific scorers (for example gene expression) and tidy the output into a DataFrame for filtering by gene or track. The same client supports `predict_interval`, `predict_variant`, and batch methods.
+Tidy the results into a DataFrame:
 
-If you already work with pre-computed genome-wide scores, the [AlphaGenome Atlas variant scores guide](/blog/query-alphagenome-atlas-variant-scores/) shows how to look up AVI scores without running the live model.
+```python
+df = variant_scorers.tidy_scores(
+    scores,
+    match_gene_strand=True,
+    filter_protein_coding=True
+)
+print(df.query('imputation_mode == "observed"').head())
+```
 
-![Laboratory researcher preparing genetic samples](https://images.unsplash.com/photo-1576091160651-e028ca26a943?auto=format&fit=crop&w=800&q=80)
+Each row reports one variant, gene, scorer, and track. Positive or negative raw_score values indicate the direction of the expression change. You can request multiple scorers (RNA-seq, chromatin accessibility, splicing, methylation) in one call. Batch methods accept lists of intervals, variants, and conditions.
 
-## Conditioning on your own single-cell data
+![Scientist handling DNA samples in a laboratory](https://images.unsplash.com/photo-1576091160651-e028ca26a943?auto=format&fit=crop&w=800&q=80)
 
-AlphaGenome 2 accepts up to 256 cells of your own scRNA-seq counts. The API compresses the expression profile into a cell-state embedding and conditions the model on that state. No fine-tuning is required.
+## Predict tracks and condition on your data
 
-This lets you predict variant effects in cell states the model never saw during training, such as activated T cells after vaccination or disease-specific macrophage populations. DeepMind reports that the approach matches or outperforms models trained or fine-tuned directly on those datasets.
+Use predict_variant or predict_interval to obtain full reference and alternate tracks for gene expression, histone marks, chromatin accessibility, splicing, and methylation. Filter to observed tracks when available. For new cell states, encode a small scRNA-seq sample (a few dozen cells can suffice) and pass it as conditioning. The model adapts without retraining and can distinguish, for example, vaccine-activated T cells from resting ones.
 
-See the official tutorials for the exact `cell_conditioning` call and for plotting gene-expression heatmaps or enhancer-gene arcs.
+Precomputed scores for many GWAS-linked variants across primary human cell types are also available, helping link association signals to specific enhancers, genes, and cell types.
+
+## Tips for productive use
+
+- Start with supported_conditions() to confirm observed tracks for your cell type of interest.
+- Prefer protein-coding gene filters and strand matching when ranking expression effects.
+- Compare several related cell types by looping or using score_variants with a conditions list.
+- Treat outputs as research predictions. DeepMind states the model is not validated for clinical or diagnostic use.
+- Pair results with experimental follow-up; the model prioritizes candidates, it does not replace wet-lab validation.
+
+For the earlier genome-wide Atlas that precomputes every possible single-letter change, see the [AlphaGenome Atlas AVI scores guide](/blog/alphagenome-atlas-avi-variant-guide/).
+
+## Conclusion
+
+AlphaGenome 2 moves variant effect prediction from tissue averages to individual cell types and states. The free non-commercial API, clear Python client, and Colab tutorials let researchers score variants, condition on their own single-cell data, and inspect molecular readouts in minutes. Combined with the precomputed Atlas and upcoming Antigravity skills, it gives a practical way to prioritize disease-relevant candidates that broader models miss.
+
+## Sources
+
+- Google DeepMind blog: AlphaGenome 2 announcement (11 November 2026)
+- alphagenome Python package README and v2.0.0 release notes
+- Official Colab tutorials for scoring variants and choosing conditions
+- TenK10K benchmark results reported by DeepMind
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/uND6iY2qp_c"
@@ -80,22 +134,3 @@ See the official tutorials for the exact `cell_conditioning` call and for plotti
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
-
-## Practical tips
-
-- Start with a reference condition that matches your biological question. List supported conditions with the client before you write code.
-- Live model predictions suit small-to-medium analyses. For genome-wide lookups of pre-computed scores, use the AlphaGenome Atlas website or Atlas API endpoints, which support higher query rates.
-- Predictions are for research only. They are not validated for clinical or diagnostic use.
-- Outputs must not be used to train other machine-learning models under the non-commercial terms.
-- Pair model scores with orthogonal evidence (CRISPR screens, eQTL fine-mapping, or functional assays) before treating a variant as causal.
-
-## Conclusion
-
-AlphaGenome 2 turns a 1 Mb DNA window and a cell-type condition into quantitative predictions of molecular activity. The free non-commercial API, expression-conditioning support, and improved single-cell variant recall give researchers a practical way to prioritize disease-relevant variants in the cell types where they matter. Install the package, score a few known variants in a relevant condition, and compare the output against existing functional data before scaling up.
-
-## Sources
-
-- Google DeepMind blog, AlphaGenome 2 announcement, 11 November 2026: https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/
-- AlphaGenome API GitHub repository and README: https://github.com/google-deepmind/alphagenome
-- Official documentation and tutorials: https://www.alphagenomedocs.com/
-- AlphaGenome terms of service: https://alphagenome.google/terms
