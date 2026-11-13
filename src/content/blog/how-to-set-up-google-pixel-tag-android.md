@@ -1,57 +1,42 @@
 ---
-title: "How to Set Up Google Pixel Tag on Android"
-description: "Step-by-step guide to set up Google Pixel Tag, pair it with Find Hub, use Precision Finding, and locate lost keys or bags on Android phones."
-pubDate: 2026-11-11T14:00:00
+title: "How to Set Up and Use Google Pixel Tag on Android"
+description: "Step-by-step guide to set up Google Pixel Tag, pair it via Fast Pair, track items in Find Hub, and use UWB precision finding."
+pubDate: 2026-11-13T22:05:00
 heroImage: "https://images.unsplash.com/photo-1689757309074-944c1eb421ed?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["pixel", "android", "how-to", "tutorials"]
 noindex: false
 ---
 
-Google Pixel Tag is now available, giving Android users a simple way to track keys, wallets, bags, and other everyday items. It works through the Find Hub app and the network of more than one billion Android devices. Setup takes only a few minutes on any phone running Android 9 or newer.
+Google Pixel Tag is now available, giving Android users a first-party way to track keys, wallets, bags, and luggage. Announced in August 2026 and on sale from November 11, the slim stainless-steel tracker works with the Find Hub network of more than one billion Android devices.
 
-This guide walks through unboxing, pairing, naming, locating items, and using extra features like Precision Finding and phone-ringing. All steps come from Google’s official product page and November Pixel Drop announcement.
+It pairs through Fast Pair, rings when nearby, and on compatible phones uses Ultra Wideband for directional guidance. This guide covers verified setup from Google’s support pages, how tracking works, and practical tips for daily use. For related Pixel security features, see our guide on [locking apps with Android 17](/blog/android-17-app-lock-pixel/).
 
-## What Pixel Tag does
+## What is Google Pixel Tag
 
-Pixel Tag is a thin stainless-steel tracker with IP67 water- and dust-resistance. It includes a speaker so you can ring it when nearby and a button that can ring your phone. Battery life is rated for over a year under typical use, and you can replace the coin cell yourself without tools.
+Pixel Tag is Google’s first item tracker. It measures 28 mm wide, 46.1 mm tall, and 5.4 mm thick, weighing about 11.8 g with the battery. The Fog-colored design is IP67 rated for water and dust, and it fits easily into a wallet or attaches to a keyring.
 
-It pairs via Fast Pair. Once set up, Find Hub shows the item’s last known location on a map. When you are close, Bluetooth and (on supported phones) Ultra-Wideband with Channel Sounding give distance and directional guidance. You can share a tag with up to 10 people.
+Connectivity includes Bluetooth with Channel Sounding and Ultra Wideband for Precision Finding on supported phones. A user-replaceable CR2032 coin cell lasts more than a year under typical use. A physical button lets you ring your phone if you misplace it. Pricing is $29.99 for one or $99.99 for a four-pack from the Google Store.
 
-![Keys, wallet, and phone on a wooden table](https://images.unsplash.com/photo-1734209507417-1f70aa230aa7?auto=format&fit=crop&w=800&q=80)
+It works with Android phones running Android 9 or later. Carbon-fiber or aluminum luggage and RFID-blocking wallets can block the signal, so place the tag in exterior pockets when traveling.
 
-## Step-by-step setup
+![Keys on a dark surface](https://images.unsplash.com/photo-1635237393049-55046279ebb8?auto=format&fit=crop&w=800&q=80)
 
-1. Buy the tag from the Google Store ($29.99 each or $99.99 for a four-pack). Remove the plastic battery tab. The tag should chirp when the battery connects.
-2. Make sure your phone runs Android 9 or later, has Bluetooth on, and is signed into the same Google account you use for Find Hub. Location services should be enabled.
-3. Bring the tag close to the phone. A Fast Pair prompt appears. Tap it and follow the on-screen steps. The process usually finishes in under two minutes.
-4. Open the Find Hub app (pre-installed on most Android phones or available from Play Store). The new tag appears. Name it (for example “House keys” or “Travel bag”) and optionally choose a category.
-5. Attach the tag to the item with a keyring, adhesive, or case. Test by moving a short distance away and confirming the location updates in Find Hub.
+## Set up Pixel Tag with Fast Pair
 
-If the prompt does not appear, open Find Hub, tap the add button, and choose the tag option, then bring the devices together again.
+Setup takes under two minutes on a compatible Android phone. Follow these steps from Google’s official support page.
 
-## Locating items with Find Hub
+1. Turn on Bluetooth and ensure the phone has internet access. Unlock the phone and stay on the home screen.
+2. Place the Pixel Tag next to the phone.
+3. Fully remove the plastic battery tab from the contact point. The tag powers on.
+4. A Fast Pair pop-up appears. Tap **Connect**.
+5. Read the Acceptable Use Policy and tap **Continue**.
+6. Read the Terms and Conditions and tap **I accept**.
+7. Grant Location permission when prompted by choosing **When using this app**.
+8. The tag is added to the Find Hub app, where you can manage it.
 
-Open Find Hub and select the item. The map shows its last reported position. Tap “Play sound” when you are within Bluetooth range; the tag emits a chime you can stop by pressing its button once or unlocking the phone.
+If the pop-up does not appear, open Settings → Connected devices. The tag should show at the top. Alternatively, open the Find Hub app, tap **Add Device**, and follow the prompts. Dismissing the pop-up requires a five-minute wait before it returns, or a longer wait on a second dismissal. Toggling Bluetooth or restarting the phone clears the timer.
 
-For farther distances, the crowdsourced Android network anonymously reports the tag’s location when other phones pass near it. Location data is end-to-end encrypted. Left Behind alerts can notify you if you walk away from a tagged item while it is still nearby.
-
-![Backpack with a tag attached](https://images.unsplash.com/photo-1720430341267-12c806e4acbd?auto=format&fit=crop&w=800&q=80)
-
-## Precision Finding on supported phones
-
-On phones with Ultra-Wideband (Pixel 8 Pro and newer Pro models, plus select others), Precision Finding activates once you are close. Hold the phone upright. The app shows an arrow and distance estimate that updates as you move. Bluetooth Channel Sounding improves accuracy on Android 16 and newer devices even without UWB.
-
-Not every phone supports visual guidance. Check Find Hub after pairing; if the option is missing, the basic map and sound features still work.
-
-## Extra features and tips
-
-- Double-press the tag’s flush button (on the back, away from the battery cover) to ring your phone. Enable this in the setup “next steps” screen or later in tag settings.
-- From a Pixel Watch, open Find Hub to view or ring the tag. Pixel Buds users can ask Gemini to ring a named tag.
-- Share the tag with family or coworkers so multiple people can locate the same item.
-- Replace the battery when Find Hub warns you (roughly every two weeks once low). Press the cover, twist counterclockwise, swap the cell, and twist clockwise to reseal.
-- Enable unknown-tag alerts so your phone notifies you if an unfamiliar tracker is traveling with you.
-
-Pixel Tag is Android-only. It does not appear in Apple’s Find My network.
+After pairing, open Find Hub to rename the tag. Choose a category such as Keys, Backpack, or Other. The name defaults to your name plus the category, for example “Alex’s keys.” You can edit it later.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/1fs84Lyp1s0"
@@ -61,16 +46,48 @@ Pixel Tag is Android-only. It does not appear in Apple’s Find My network.
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Related Pixel features
+## Track items with Find Hub
 
-If you are already using the November Pixel Drop features on a Pixel 10 or 11, pair this tracker with Gemini Intelligence task automation and Rambler. See our guide on [how to use Gemini Intelligence on Pixel 10 after the Drop](/blog/how-to-use-gemini-intelligence-on-pixel-10-after-drop/) for those steps.
+Open the Find Hub app to see all paired tags on a map. When the tag is within Bluetooth range, you can play a sound to locate it under cushions or in a bag. Volume is adjustable in the tag’s settings.
+
+If the item is farther away, Find Hub uses the crowdsourced network of over one billion Android devices. Other phones that detect the tag report its approximate location anonymously. Default settings aggregate detections in busy areas for privacy. An “everywhere” option can use a single device in more remote spots when a screen lock is enabled.
+
+Left Behind alerts can notify you if you walk away from a tagged item. Mark an item as lost to share contact details with the finder if the tag is reported.
+
+Share a tag with up to 10 people through the Find Hub app. The owner sends an invite; the recipient accepts on an Android device. Confirmation may include a four-digit PIN for added security. Shared users can locate the item after a short delay.
+
+![Hands holding an open wallet and phone](https://images.unsplash.com/photo-1614260938313-a7fc1a7ad0d2?auto=format&fit=crop&w=800&q=80)
+
+## Use Precision Finding with UWB
+
+On supported phones, Precision Finding shows direction and distance on screen. Google lists compatibility for Pixel 8 series and newer Pro models, Samsung Galaxy S21 and newer Plus/Ultra models, and certain Motorola Edge and Razr devices running Android 13 or later. Enable UWB in the phone’s Settings if available.
+
+Bluetooth Channel Sounding provides better distance estimates on Android 16 or later with Bluetooth 6.0 devices. UWB kicks in closer for the visual arrow guidance. Google states UWB works up to about 50 meters from the paired phone, though real-world results vary by environment.
+
+In Find Hub, select the tag and tap **Find Nearby**. Walk toward the indicated direction. As you get closer, the display updates distance. Play sound if the tag is still hidden nearby.
+
+Not every Android 9+ phone supports UWB or Channel Sounding. Basic pairing and network tracking still work without them.
+
+## Battery, button, and extra tips
+
+The CR2032 battery lasts over a year based on everyday use that includes playing sound and Precision Finding. Replace it yourself: twist the battery door counterclockwise, swap the cell, and reseal. No tools are needed.
+
+Double-press the physical button to ring your nearby phone, even if the phone is on silent. A single press silences it. You can also ask Gemini on Pixel Buds to ring the tag.
+
+Place tags on exterior luggage pockets to avoid signal blockage. The device is TSA/FAA/IATA compliant for air travel. Avoid tracking pets or using it solely for stolen-item recovery beyond normal lost-item finding.
+
+NFC support lets you tap the tag to a compatible phone to open its settings page on newer Android versions.
 
 ## Conclusion
 
-Pixel Tag turns the Find Hub network into a practical lost-item tool for Android users. Pair it once, name it clearly, and you can check the map, play a sound, or follow Precision Finding arrows when needed. The replaceable battery and reverse phone-ringing button keep it useful for more than a year of daily carry.
+Google Pixel Tag brings simple Fast Pair setup, Find Hub network tracking, and UWB Precision Finding to Android users for $29. Attach it to everyday items, pair once, and use the map, sound, or directional guidance when something goes missing. Share with family for household items and replace the battery yearly.
+
+Check official Google Store availability in your region and confirm your phone’s UWB support for the full experience. Combined with other Pixel features such as App Lock, it strengthens day-to-day control over your devices and belongings.
 
 ## Sources
 
-- Google blog: [Pixel Tag product page](https://blog.google/products-and-platforms/devices/pixel/google-pixel-tag/) (12 August 2026)
-- Google blog: [November 2026 Pixel Drop](https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/) (10 November 2026)
-- Google Store product availability and pricing as of 11 November 2026
+- [Set up and connect your Google Pixel Tag](https://support.google.com/pixelphone/answer/18798328) — Google Pixel Phone Help
+- [Google Pixel Tag keeps track of your everyday items](https://blog.google/products-and-platforms/devices/pixel/google-pixel-tag/) — Google Blog, August 2026
+- [November Pixel Drop: Gemini Intelligence and Pixel Tag](https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/) — Google Blog, November 2026
+- [Google Pixel Tag technical & device specifications](https://support.google.com/pixelphone/answer/17469707) — Google Pixel Phone Help
+- [Share & manage devices with Find Hub](https://support.google.com/pixelphone/answer/14800516) — Google Pixel Phone Help
