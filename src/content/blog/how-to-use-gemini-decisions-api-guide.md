@@ -1,35 +1,59 @@
 ---
 title: "How to Use the Gemini Decisions API for Fast Choices"
-description: "Step-by-step guide to the Gemini Decisions API and Gemini Decision 1 for fast yes/no, choice, and scoring tasks on multimodal inputs."
-pubDate: 2026-11-14T14:00:00
-heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "how-to", "ai-tools", "developer"]
+description: "Step-by-step guide to the Gemini Decisions API. Score yes/no, choice, and rubric questions on text, images, audio, video, and PDFs with Gemini Decision 1 at low cost."
+pubDate: 2026-11-15T14:00:00
+heroImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "tutorials", "gemini", "developer"]
 noindex: false
 ---
 
-Google launched the Gemini Decisions API on November 11, 2026. It powers a new model called Gemini Decision 1 (gemini-decision-1). The API scores closed-set questions instead of generating text. You send one shared multimodal input plus up to 1,000 questions and receive probabilities plus confidence scores in a single forward pass.
+Google released the Gemini Decisions API on November 11, 2026. It lets developers score closed-set questions against multimodal inputs without generating any text.
 
-This design targets routine branching inside agents and apps: tool selection, policy checks, model routing, and grading. Latency stays at 150-250 ms end-to-end for typical contexts. Pricing is $0.10 per million input tokens with zero output tokens billed. Shared input is charged once no matter how many questions you attach.
+The endpoint uses the new Gemini Decision 1 model. You send one shared input and up to 1,000 typed questions. It returns calibrated probabilities and confidence scores in a single forward pass.
 
-The model accepts text, images, audio, video, and PDFs up to a 256K token context shared across the input and questions. It does not generate prose, call functions, or support thinking modes. Your code branches directly on the returned numbers.
+This guide shows how to set it up, call the three question types, and apply the results in code. Facts come from the official Google Blog announcement and the Decisions API documentation.
 
-## Set up access in Google AI Studio
+## What the Gemini Decisions API Does
 
-Open Google AI Studio and sign in. Navigate to the Decisions playground or generate an API key under the API keys section. The free tier supports prototyping with rate limits of about 200 requests per minute and 10,000 per day.
+Generative models produce tokens that your code must parse. The Decisions API skips that step. Gemini Decision 1 evaluates the input once and scores every question against it.
 
-Install the official SDK version 3.2 or later:
+You can mix text, images, audio, video, and PDFs in the shared input. The context window is 262,144 tokens. Output tokens are always zero, so you pay only for input.
+
+Latency stays in the 150-250 ms range end to end for typical requests. Shared input is billed once per request no matter how many questions you attach.
+
+Pricing is $0.10 per million input tokens on the paid tier. A no-cost tier is available in Google AI Studio for prototyping.
+
+Teams at Google already use it for model routing, emoji selection, and safety checks. The same pattern works for tool selection, policy enforcement, or ranking results.
+
+## The Three Question Types
+
+Every question belongs to one of three types.
+
+**noul** answers a yes/no condition. It returns a probability between 0.01 and 0.99 plus a confidence score. You can optionally supply true and false descriptions to clarify the boundary.
+
+**choice** selects one option from a fixed list of 2 to 255 candidates. It returns the top choice, normalized probabilities for every option, and a confidence score. Each option needs a short description of when it applies.
+
+**score** rates the input against an ordered rubric. Levels start at 0. It returns a continuous weighted score, per-level probabilities, a legend, and confidence. Use two to ten levels for most rubrics.
+
+You can mix all three types in one request. The model sees the shared input once and answers every question independently.
+
+![Developer reviewing code on a laptop](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+
+## Set Up the Client
+
+You need the google-genai SDK version 3.2 or later. Install or upgrade it:
 
 ```bash
-pip install -U google-genai
+pip install -U "google-genai>=3.2.0"
 ```
 
-Or for JavaScript:
+Create an API key in Google AI Studio and export it:
 
 ```bash
-npm install @google/genai@latest
+export GEMINI_API_KEY=your-key-here
 ```
 
-Create a client that targets the v1beta endpoint, because the Decisions API lives only there:
+The endpoint lives on the v1beta surface. Pass that version when you create the client:
 
 ```python
 from google import genai
@@ -37,15 +61,53 @@ from google import genai
 client = genai.Client(http_options={"api_version": "v1beta"})
 ```
 
-Store the API key in an environment variable and never hard-code it.
+The free tier works for testing. Switch to a paid key when you process customer data, because the free tier may use inputs to improve Google products.
 
-![Analytics dashboard showing charts and metrics](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80)
+## Make Your First Request
 
-## Call the API with the three question types
+Start with a simple text input and a single noul question. The example below checks whether a customer message describes a damaged item.
 
-The three supported types are noul (yes/no), choice (2-255 options), and score (ordered rubric).
+```python
+result = client.decisions.create(
+    model="gemini-decision-1",
+    input="The blue mug I ordered on Monday arrived cracked on Wednesday.",
+    questions={
+        "is_damaged": {
+            "type": "noul",
+            "instructions": "Did the item arrive damaged?",
+        },
+    },
+)
 
-Here is a complete example that checks a breakroom photo plus a text note for a spill, the best cleanup action, and severity:
+answer = result.answers["is_damaged"]
+print(f"P(yes)={answer.noul:.2f} confidence={answer.confidence:.2f}")
+```
+
+The response object contains an answers map keyed by the question names you supplied. Each answer includes the relevant probability fields plus confidence.
+
+You can also send the request with plain curl:
+
+```bash
+curl -X POST "https://generativelanguage.googleapis.com/v1beta/decisions" \
+  -H "x-goog-api-key: $GEMINI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gemini-decision-1",
+    "input": "The blue mug I ordered on Monday arrived cracked on Wednesday.",
+    "questions": {
+      "is_damaged": {
+        "type": "noul",
+        "instructions": "Did the item arrive damaged?"
+      }
+    }
+  }'
+```
+
+## Handle Multimodal Inputs
+
+The input field accepts a string or a list of content blocks. Blocks use the same format as the Interactions API.
+
+Here is the official example that mixes an image URI with text and asks all three question types at once:
 
 ```python
 result = client.decisions.create(
@@ -86,37 +148,43 @@ result = client.decisions.create(
         },
     },
 )
-print(result.answers)
 ```
 
-Each answer returns a probability (or weighted score) and a confidence value between 0 and 1. Route low-confidence cases to a human or a generative model fallback.
+You can pass base64 data instead of a URI. Inline media is limited to 100 MB per request (50 MB for PDFs). External URLs are limited to 15 MB each. YouTube links and gs:// Cloud Storage URIs are not supported.
 
-For video or audio, upload via the Files API, an HTTPS URL, or inline bytes. YouTube links and gs:// Cloud Storage URIs are rejected. Question instructions themselves must be plain text.
+## Branch on the Results
 
-## Practical use cases
+Use the returned probabilities to decide the next step. A high confidence noul answer can route a ticket automatically. A low confidence choice can fall back to a human or a generative model.
 
-Teams inside Google already route queries in Gemini Notebook by classifying intent in milliseconds and sending simple requests to faster models. Stitch uses it for rapid canvas generation and instant voice or tap edits. CC picks emoji reactions from more than 200 options almost instantly.
+For the choice example above, inspect result.answers["next_action"].choice and the probabilities dictionary. For the score, read the continuous score value and the per-level probabilities.
 
-Outside Google, common patterns include:
+Keep the instructions field self-contained. The model does not see other context outside the shared input and the instructions you write for that question.
 
-- Claims intake that checks a scanned form, damage photos, and a call recording against missing-evidence and priority rules.
-- Support ticket routing that scores which queue fits the description.
-- Policy checks that score content against multiple safety criteria in one call.
-- Grading of open-ended student answers or agent outputs against a fixed rubric.
+## Tips for Production Use
 
-Because the shared input is billed only once, batching many questions against the same media is far cheaper than separate generative calls.
+Write clear, specific instructions. Ambiguous wording produces lower confidence scores.
 
-![Developers collaborating at a table with laptops](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+Test the same input across a few rephrased questions to confirm stable probabilities.
 
-## Tips for reliable results
+Batch related questions on the same input. The shared input is billed only once.
 
-Write clear, specific instructions and criteria. For choice questions, make the option descriptions mutually exclusive. For score questions, order the rubric levels from lowest to highest.
+Monitor confidence. Route any answer below a threshold you choose to a review queue.
 
-Start with a small number of questions and inspect the returned probabilities. Confidence scores help you decide when to escalate. On benchmarks covering routing, ranking, and multimodal understanding, Gemini Decision 1 leads most tests and shows the lowest calibration error.
+Watch the 262,144-token context limit. Large videos or many long criteria can approach it quickly.
 
-If you already call other Gemini models, the Decisions endpoint sits alongside the regular Interactions API. Use Decision 1 only when the answer set is closed and known in advance. For open generation or multi-step reasoning, stick with models such as Gemini 4 Hydrogen. See our guide on [using the Gemini 4 Hydrogen API](/blog/how-to-use-gemini-4-hydrogen-api-guide/) for those workflows.
+The free tier is fine for development. Move production traffic to a paid key.
 
-Monitor usage in AI Studio. The free tier is fine for experiments; move production traffic to a billed project so you control data retention.
+## When to Choose Decisions Over Generation
+
+Use the Decisions API when your code needs a yes/no, a single option from a fixed set, or a rating on a fixed scale. Use a generative model when you need free-form text, explanations, or tool calls with arguments.
+
+For agent workflows that already call Gemini 4 Hydrogen or Carbon, the Decisions API can sit in front as a fast router. See our guide on [using the Gemini 4 Hydrogen API](/blog/how-to-use-gemini-4-hydrogen-api-guide/) for the complementary generative side.
+
+![Abstract technology visualization](https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80)
+
+## Watch a Walkthrough
+
+This video from the Prompt Engineering channel covers the model, the three question types, and practical Python examples:
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/-On9ZKGiMfA"
@@ -128,12 +196,14 @@ Monitor usage in AI Studio. The free tier is fine for experiments; move producti
 
 ## Conclusion
 
-The Gemini Decisions API and Gemini Decision 1 give developers a fast, low-cost way to make closed-set judgments over text, images, audio, video, and PDFs. Set up a v1beta client, define clear noul, choice, or score questions, and branch on the returned probabilities and confidence scores. Batch questions against shared media to keep costs minimal.
+The Gemini Decisions API removes the latency and parsing cost of generating text when all you need is a closed-set answer. Gemini Decision 1 scores up to 1,000 questions against one multimodal input and returns probabilities you can threshold in code.
 
-Official details and demos live on the Google blog announcement and the AI Studio Decisions documentation. Check the model card for the latest limits and supported formats.
+Start in Google AI Studio with the free tier, then move the same calls to production. Combine it with generative models for the steps that still need open-ended text.
 
-**Sources**
+Official details and code samples remain on the Google Blog post and the Decisions API documentation.
 
-- Blog.google: Gemini Decisions API: Fast, calibrated multimodal decisions (November 11, 2026)
-- Google AI Studio: Decisions API documentation and playground demos
-- Google for Developers announcement and ecosystem integrations notes
+## Sources
+
+- [Gemini Decisions API: Fast, calibrated multimodal decisions](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/) — Google Blog, November 11, 2026
+- [Decisions API documentation](https://aistudio.google.com/docs/decisions-api) — Google AI Studio
+- [Gemini Decision 1 model page](https://aistudio.google.com/docs/models/gemini-decision-1) — Google AI Studio
