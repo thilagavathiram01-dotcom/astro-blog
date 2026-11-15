@@ -1,82 +1,93 @@
 ---
 title: "How to Enable Enhanced Protection in Google Messages"
-description: "Step-by-step guide to turning on Enhanced protection mode in Google Messages for advanced Gemini-powered scam detection on Android."
-pubDate: 2026-10-17T15:00:00
-heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "security", "how-to", "google"]
+description: "Step-by-step guide to turn on Enhanced Protection in Google Messages for better scam detection using Gemini and Private AI Compute."
+pubDate: 2026-11-15T10:30:00
+heroImage: "https://images.unsplash.com/photo-1762340916350-ad5a3d620c16?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "security", "how-to", "tutorials"]
 noindex: false
 ---
 
-Scammers hide their intent behind long conversations. Google Messages now offers an opt-in Enhanced protection mode that uses cloud Gemini models and on-device Gemini Nano to catch them earlier.
+Scammers now use long conversations and fresh websites that older filters miss. Google added Enhanced Protection in Messages so your phone can spot those tactics earlier.
 
-Announced on October 14, 2026, the feature rolls out in the coming weeks. It builds on existing Scam Detection and adds Private AI Compute analysis for unknown senders, smarter link checks, and clearer warnings.
+This opt-in setting uses cloud Gemini models through Private AI Compute plus on-device checks. It builds on the standard Scam Detection that already flags millions of suspicious messages each month.
 
-![Android phone with security shield](https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80)
+You can turn it on in a few taps once the update reaches your phone. The change stays under your control and does not replace the on-device protections already running.
 
-## What Enhanced protection mode adds
+## What Enhanced Protection Adds
 
-The mode is optional. When enabled, it activates three layers for conversations with numbers not saved in your contacts.
+Enhanced Protection layers three defenses on top of the existing spam filter.
 
-First, Scam Detection taps Google’s most capable cloud Gemini models. Analysis runs in Private AI Compute. Data stays encrypted in a secure space that even Google cannot access. This catches slow-burn attacks that on-device detection might miss.
+First, Scam Detection can send conversation context from unknown senders to Google’s cloud Gemini models. The analysis runs inside Private AI Compute. Data stays encrypted and inaccessible to Google or anyone else outside that secure space. This helps catch slow-burn scams where intent only appears after several messages.
 
-Second, on-device Gemini Nano checks unfamiliar links using real-time web signals. It flags new phishing sites that standard URL lists have not yet catalogued.
+Second, on supported phones Gemini Nano checks unfamiliar links before you open them. It pulls real-time web signals so brand-new phishing sites get flagged even if they have never appeared on a blocklist.
 
-Third, redesigned warnings appear before you tap links from unknown numbers. These give clearer context so you pause instead of clicking by habit.
+Third, redesigned warnings appear when a link arrives from a number not saved in your contacts. The extra pause and clearer wording give you time to think before you tap.
 
-Device support varies. Cloud analysis works on Pixel 6 and newer, Galaxy S24 series and newer, Galaxy Z Flip/Fold 6 and newer, and other AICore devices. Gemini Nano link checks require Pixel 10 or newer, Galaxy S26 series, Galaxy Z Flip/Fold 8, or select other devices. Link checkpoints work on Android 6 and later.
+These features roll out gradually. If the option is missing, update Google Messages from the Play Store and check again in a few days.
 
-## How to enable it once it arrives
+![Person holding a phone showing a text conversation](https://images.unsplash.com/photo-1760360497581-0606569510a6?auto=format&fit=crop&w=800&q=80)
 
-Google has not published exact menu steps yet because the feature is still rolling out. Expect it under the existing Spam and scam protection settings.
+## How to Turn On Enhanced Protection
+
+Follow these steps in Google Messages:
 
 1. Open the Google Messages app.
-2. Tap your profile picture or the three-dot menu in the top right.
-3. Select Settings.
-4. Tap Spam and scam protection (or similar wording).
-5. Look for Enhanced protection mode and toggle it on.
+2. Tap your profile picture or initials in the top-right corner.
+3. Select Messages settings.
+4. Tap Protection & safety.
+5. Under Spam and scam protection, choose Enhanced protection.
 
-You will likely need to accept a privacy notice that explains Private AI Compute. Review it before enabling.
+You will see three choices: Enhanced protection, Standard protection, and No protection (not recommended). Standard keeps the existing on-device filter and known-bad link checks. Enhanced adds the cloud analysis and stronger link tools.
 
-If the option is missing, check for a Google Messages update in the Play Store and confirm your phone meets the AICore requirements listed above.
+The setting is opt-in. You can switch back to Standard at any time through the same menu.
 
-## Related protections rolling out alongside it
+If you do not see Enhanced protection yet, confirm that Google Messages is updated and that your device meets the requirements below. Google began rolling the feature out in the weeks after its October 2026 announcement.
 
-The same October announcement expands Scam Detection in chat notifications beyond Pixel to brands including Honor, Motorola, OnePlus, Oppo, Xiaomi, and others. A “likely scam” label can appear in the notification shade before you open the app.
+## Device Support and Requirements
 
-Screen-share privacy now blanks login and payment fields in Chrome and WebView on Android 15 and later. Call-forwarding protection, arriving in early December on Pixel and select devices, blocks silent background forwarding and warns if someone tries to make you type an MMI code.
+Not every phone receives every part of Enhanced Protection.
 
-These sit alongside existing tools such as Circle to Search scam checks and Advanced Protection mode. For a broader setup guide, see our post on [Android’s new scam protections](/blog/android-new-scam-protections-setup-guide/).
+Cloud scam analysis with Private AI Compute works on Pixel 6 and newer, Samsung Galaxy S24 series and newer, Galaxy Z Flip6 and Z Fold6 and newer, plus other Android AICore devices.
 
-![Person holding smartphone](https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80)
+Gemini Nano link checks require more recent hardware. They are available on Pixel 10 and newer, Galaxy S26 series, Galaxy Z Flip8 and Z Fold8, and certain other select devices.
 
-## Tips for safer messaging
+Link checkpoints work on a wider set of Android 6 and later phones.
 
-Keep Google Messages updated. Newer versions receive the protection first.
+Check Google’s support pages for the latest device list if your phone is not listed here. Availability also depends on region and the version of Google Messages installed.
 
-Use a different Google Account for sensitive apps if you also enable Private Space.
+For stronger overall device security you can also review Android’s Advanced Protection features, which are covered in our guide on [setting up Advanced Protection](/blog/android-advanced-protection-setup/).
 
-Never share one-time codes or banking details over text, even if the message looks official.
+## Tips for Staying Safer
 
-Report suspicious messages using the built-in spam tools. Your report helps improve detection for everyone.
+Even with Enhanced Protection enabled, treat unexpected messages carefully.
 
-If you receive a warning, read it fully before deciding. The extra checkpoint exists because many scams succeed through urgency.
+- Do not share one-time codes, passwords, or banking details with anyone who contacts you first.
+- Verify unexpected requests by calling the person or company through a number you already know.
+- Report confirmed spam so Google can improve detection. Reporting is optional and sends the message for review.
+- Keep Google Messages and your Android system updated. Many security improvements arrive through Play Store and system updates.
 
-## Conclusion
+Android also expands scam alerts in chat notifications to more device makers and adds protections against silent call forwarding and screen-share exposure of sensitive fields. Those features arrive on their own schedules.
 
-Enhanced protection mode gives Google Messages stronger tools against sophisticated text scams without making the feature mandatory. Once it appears on your device, enabling it takes only a few taps and adds cloud-backed intent analysis plus smarter link checks.
+## Watch the Overview
 
-Check for the setting in the coming weeks, verify your phone supports the features you care about, and combine it with the other Android scam defenses already available.
+Google’s announcement video walks through the new defenses:
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/99r8Ya0nzyY"
-    title="How Android Combats Mobile Scams"
+  <iframe src="https://www.youtube.com/embed/B4XSwBWTIOc"
+    title="Google's Android Scam Protections: Opt-In Gemini in Messages, Wider Chat Alerts, Call-Forward Block"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## Conclusion
+
+Enhanced Protection gives Google Messages stronger tools against conversations that start innocently and turn dangerous later. Turning it on takes under a minute once the option appears in settings.
+
+Update your Messages app, open Protection & safety, and select Enhanced protection. Pair it with careful habits and regular updates for better everyday safety.
+
 ## Sources
 
-- [New Android protections to help keep you safe from mobile scams](https://blog.google/security/new-android-scam-protections/) — Google Blog, October 14, 2026
-- [Private AI Compute](https://blog.google/innovation-and-ai/products/google-private-ai-compute/) — Google
-- [Google Messages spam and scam protection support](https://support.google.com/android/answer/17065362)
+- Google: [New Android protections to help keep you safe from mobile scams](https://blog.google/security/new-android-scam-protections/)
+- Google support documentation on Scam Detection (linked from the announcement)
+- Independent coverage confirming rollout timing and device eligibility
