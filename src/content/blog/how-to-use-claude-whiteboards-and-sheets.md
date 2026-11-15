@@ -1,85 +1,75 @@
 ---
-title: "How to Use Claude Whiteboards and Sheets for Team Planning"
-description: "Step-by-step guide to brainstorm on Claude Whiteboards and build trackers in Claude Sheets. Available on paid plans from November 2026."
-pubDate: 2026-11-11T14:00:00
-heroImage: "https://images.unsplash.com/photo-1758873269117-d5845126928a?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "tutorials", "how-to", "ai", "productivity"]
+title: "How to Use Claude Whiteboards and Sheets for Teams"
+description: "Step-by-step guide to Claude Whiteboards and Sheets. Brainstorm ideas and build spreadsheets directly in Claude on paid plans."
+pubDate: 2026-11-15T14:00:00
+heroImage: "https://images.unsplash.com/photo-1781246081182-b8e658662ebd?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "tutorials", "productivity"]
 noindex: false
 ---
 
-Anthropic launched Claude Whiteboards and Claude Sheets in beta on 10 November 2026. Both are new artifact types that keep planning and tracking inside the same Claude conversation, so context stays with the work instead of being copied into another tool.
+Anthropic launched Claude Whiteboards and Claude Sheets in beta on November 10, 2026. These tools let teams brainstorm on shared boards and build spreadsheets without leaving Claude. Both features sit inside the Claude app on web, desktop, and mobile for all paid plans.
 
-Whiteboards turn spoken or typed plans into shared boards with timelines, owners, and dates. Sheets build working spreadsheets with tabs, formulas, formatting, and drop-downs. Both are available on Pro, Max, Ultra, Team, and Enterprise plans on web, desktop, and mobile. On Team plans they are on by default. On Enterprise plans an admin must enable them under Organization settings > Artifacts.
+You no longer copy output from a chat into Miro or Excel. Claude organizes the work in place. Teams edit together in real time. When finished, export or send the result to partner tools.
 
-This guide shows how to start both, work with a team, and move the result into a document or export when you need it.
+## What Claude Whiteboards Does
 
-## What you need before you start
+Claude Whiteboards turns spoken or typed ideas into structured boards. Describe a plan. Claude draws sections, arrows, and groups. Anyone on the board can rearrange elements live.
 
-You need a paid Claude plan. Free accounts cannot create Whiteboards or Sheets. Confirm your plan in account settings. If you are on an Enterprise plan, ask an admin to turn the features on. The tools work in the Claude web app, the desktop app, and the mobile apps.
+Use it for product launches, decision options, or retrospectives. Talk through a messy plan. Claude builds a timeline with owners and dates. In a retro, team members add notes. Claude groups them by theme and drafts action items.
 
-Dictation is supported in many languages (English, Spanish, French, German, Hindi, Japanese, and others). You can also type or sketch. Usage counts against your plan’s normal limits.
+Drag a box around any area and ask Claude questions about that section only. When ready, ask Claude to turn the board into a document or slide deck. Send it to Lucid, Miro, or Zoho Vani, or export as PNG.
 
-## Start a Claude Whiteboard
+![Team brainstorming ideas on a whiteboard](https://images.unsplash.com/photo-1758873269117-d5845126928a?auto=format&fit=crop&w=800&q=80)
 
-Open any chat or go to the Artifacts tab and select the Whiteboard tile.
+## What Claude Sheets Does
 
-Ask Claude directly. Example prompts:
+Claude Sheets builds working spreadsheets from a prompt. Ask for a campaign tracker or hiring budget. Claude creates tabs, formulas, formatting, and drop-downs. It outlines each cell edit so you see exactly what changed.
 
-- “Start a whiteboard to plan our product launch.”
-- “Put the options for this decision on a whiteboard, with the trade-offs of each.”
-- “Map this process on a whiteboard from start to finish.”
+You and your team edit the same cells at the same time. Formulas stay visible. Claude supports 144 functions. Add charts, conditional formatting, and comments.
 
-You can also dictate. Click the microphone next to the send button, speak a brain dump, then stop and send. Claude groups related ideas, orders steps, and connects dependencies.
+Sheets currently offer simple spreadsheet features. Export to .xlsx or CSV when you need full Excel power, or use Claude for Excel. You can also send sheets to Airtable, Asana, monday.com, or Smartsheet.
 
-The board appears as an artifact. Claude draws shapes, arrows, and sections. Anyone with access can rearrange items. Every whiteboard is saved in the Artifacts tab.
+## Step-by-Step: Start a Whiteboard
 
-![Team collaborating around a whiteboard during a meeting](https://images.unsplash.com/photo-1758873268998-2f77c2d38862?auto=format&fit=crop&w=800&q=80)
+1. Open Claude on web or desktop and start a new chat, or go to the Artifacts tab and select the Whiteboard tile.
+2. Type or dictate your request. Example: "Start a whiteboard to plan our product launch with owners and dates."
+3. Claude generates the board. Rearrange shapes yourself or ask it to reorganize by theme or convert to a timeline.
+4. Share the board via the Share button. Invite teammates by email. On Team plans this works by default.
+5. Focus on one area by dragging a selection box, then ask Claude what is missing between two steps.
+6. When the structure is solid, ask Claude to turn the board into a project plan document.
 
-## Work on the board with Claude and your team
+Dictation works in many languages including English, Spanish, French, German, Hindi, and more. Click the microphone next to the send button.
 
-Once the board exists, refine it in the same conversation:
+## Step-by-Step: Build a Sheet
 
-- Ask Claude to regroup by theme or turn the board into a timeline.
-- Ask what is missing between two steps. Claude adds suggestions for you to check.
-- Drag a box around any region and ask Claude only about that part.
+1. In any chat, ask Claude for a sheet. Example: "Build a hiring budget by team and quarter with status drop-downs."
+2. Or open the Artifacts tab, select the Sheets tile, and describe what you need.
+3. Claude creates the sheet with tabs and formulas. Review the outlined edits.
+4. Select a range of cells and ask Claude questions about them, such as why a total differs from last month.
+5. Edit cells directly, add comments, or request changes like "Add a column for budget remaining and highlight overdue items."
+6. Share the sheet so teammates and Claude work in the same cells.
 
-To collaborate, open the board and click Share. Invite teammates by email. On Team and Enterprise plans, external email invitations must be enabled in Organization settings > Artifacts. Everyone works live on the same board and can follow a teammate’s view.
+Import data from CSV, Google Sheets, or Excel. Export anytime as .xlsx or CSV.
 
-When the structure is settled, ask Claude to turn the board into a project plan document or a slide deck. You can also use “Send to” to continue in Lucid, Miro, or Zoho Vani, or export a PNG.
+![Person reviewing spreadsheet data on a laptop](https://images.unsplash.com/photo-1762558978967-709b17a00415?auto=format&fit=crop&w=800&q=80)
 
-## Build a Claude Sheet
+## Tips for Better Results
 
-Sheets work the same way. From any chat, ask for one:
+Give Claude clear context. State the purpose of the board or sheet and list the fields you want to track. Supply existing numbers so Claude builds from your data rather than inventing them.
 
-- “Build a campaign tracker with owners, dates, and status.”
-- “Make a hiring budget by team and quarter.”
-- “Forecast next quarter from these deals and flag what’s at risk.”
+On Enterprise plans, Whiteboards and Sheets start off by default. An admin turns them on under Organization settings > Artifacts. Team plans enable them automatically.
 
-You can also start from the Artifacts tab and select the Sheets tile. Claude creates tabs, formulas, formatting, and drop-downs. It outlines each edit so you can see what changed.
+Both features count against your plan’s usage limits. Check the usage page if you hit a cap during a long session.
 
-Edit cells yourself or ask Claude: “Add a column for budget remaining” or “Highlight anything that’s overdue.” Select a range and ask why a total changed. Share the sheet so your team and Claude work on it together.
+For Android developers comparing AI tools, see our guide on [adding Gemini 4 Hydrogen to Android with Firebase AI Logic](/blog/add-gemini-4-hydrogen-android-firebase-ai-logic/).
 
-Sheets currently have simpler functionality than full Excel. When you need advanced features, export to .xlsx or CSV, or continue in Claude for Excel or partner tools such as Airtable, Asana, monday.com, or Smartsheet.
+## Current Limitations
 
-![Person working at a desk with a laptop](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80)
+Whiteboards and Sheets are in beta. Whiteboards do not pull context from connected apps yet. Sheets hold up to 100,000 cells and lack pivot tables, protected ranges, and multi-select drop-downs at launch. Neither feature supports HIPAA-ready configurations at this time.
 
-## Tips for better results
+Mobile access for Sheets is currently read-only. Full editing works on web and desktop.
 
-Give Claude the purpose and the data you already have. A prompt that names the columns, the formula you want, and the status options produces a cleaner first draft than a vague request.
-
-Keep the work in one conversation when possible. Claude carries context from a whiteboard into a sheet in the same chat, so you do not repeat details.
-
-For Enterprise teams, enable the features first and decide whether external sharing is allowed. Whiteboards and Sheets are not available in Claude for Teachers or in HIPAA-ready configurations.
-
-If you also use Google tools, the same planning habits transfer. See our guide to [building with Gemini 4 Carbon in AI Studio](/blog/how-to-build-with-gemini-4-carbon/) for a related agent workflow.
-
-## Turn the result into something durable
-
-A whiteboard is useful while the plan is still fluid. Once decisions are made, convert it to a document or deck, or send it to a dedicated whiteboard tool. A sheet is useful for ongoing tracking; export it when the model grows beyond the current feature set.
-
-Both features are still in beta, so expect refinements. Anthropic has said sheets will gain more spreadsheet functionality over time.
-
-## Watch the official introduction
+## Watch the Official Demo
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/YewAJPawE7I"
@@ -91,11 +81,11 @@ Both features are still in beta, so expect refinements. Anthropic has said sheet
 
 ## Conclusion
 
-Claude Whiteboards and Claude Sheets remove the copy-paste step between thinking and tracking. Start a board from a spoken plan, refine it with your team, then build the matching tracker as a sheet in the same conversation. Export or send to partner tools when you need more power. The features are available now on paid plans.
+Claude Whiteboards and Sheets keep planning and tracking inside one app. Teams brainstorm live, build trackers with formulas, and share results without switching tools. Start with a simple launch plan or budget tracker to see how the features fit your workflow.
 
-## Sources
+Official details live in Anthropic’s announcement and the Claude Help Center guides for Whiteboards and Sheets.
 
-- [Introducing Claude Whiteboards, Claude Sheets, and Claude Data](https://claude.com/resources/articles/sheets-whiteboards-data) — Anthropic, 10 November 2026
-- [Get started with Claude Whiteboards](https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards) — Claude Help Center
-- [Get started with Claude Sheets](https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets) — Claude Help Center
-- [More ways to work with Claude: Sheets, Whiteboards, and Interactive Connectors](https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors) — Anthropic, 10 November 2026
+**Sources**
+- [Introducing Claude Whiteboards, Claude Sheets, and Claude Data](https://claude.com/resources/articles/sheets-whiteboards-data)
+- [Get started with Claude Whiteboards](https://support.claude.com/en/articles/18324319-get-started-with-claude-whiteboards)
+- [Get started with Claude Sheets](https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets)
