@@ -1,99 +1,86 @@
 ---
-title: "How to Use Gemini Call Screen on Pixel 11"
-description: "Step-by-step guide to setting up and using the upgraded Gemini-powered Call Screen on Pixel 11 for conversational unknown caller screening."
-pubDate: 2026-11-13T16:00:00
-heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["pixel", "gemini", "tutorials", "how-to", "android"]
+title: "How to Use the New Gemini Call Screen on Pixel 11"
+description: "Step-by-step guide to the upgraded Gemini Call Screen on Pixel 11 from the November 2026 Pixel Drop. Screen unknown callers with live transcripts."
+pubDate: 2026-11-16T14:00:00
+heroImage: "https://images.unsplash.com/photo-1764406562219-105937cc3f95?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["pixel", "gemini", "android", "how-to", "tutorials"]
 noindex: false
 ---
 
-Unknown calls interrupt your day. On the Pixel 11 series, Google’s November Pixel Drop upgrades Call Screen so Gemini handles the opening exchange in a more natural way. You see a live transcript and decide when to join or end the call.
+**How to Use the New Gemini Call Screen on Pixel 11**
 
-This guide shows how to enable the feature, screen a call, and get the most from the conversational responses. It works on Pixel 11, Pixel 11 Pro, Pixel 11 Pro XL, and Pixel 11 Pro Fold in the United States.
+The November 2026 Pixel Drop upgrades Call Screen on Pixel 11 series phones in the US. Gemini now handles the opening exchange with unknown callers in a more conversational way, showing a live transcript so you can decide when to join or end the call.
 
-## What the Gemini Call Screen Upgrade Does
+This guide covers setup and daily use based on Google’s official Pixel Phone Help and November Pixel Drop announcement. For the full list of features in the drop, see our overview of the [November 2026 Pixel Drop](/blog/november-2026-pixel-drop-gemini-intelligence-pixel-tag/).
 
-Call Screen has answered unknown numbers for years on Pixel phones. The November 2026 update makes the questioning more conversational. When you choose to screen an unknown caller, Gemini asks why they are reaching out and continues the exchange until you step in or hang up. A live transcript appears on your screen the whole time.
+![Person holding a smartphone in their hand](https://images.unsplash.com/photo-1764406562219-105937cc3f95?auto=format&fit=crop&w=800&q=80)
 
-The feature stays limited to U.S. devices and English for now. Google says the same conversational screening is coming soon to Pixel Watch 4 and Pixel Watch 5.
+## What Changed in Gemini Call Screen
 
-Related Pixel features such as task automation and Rambler expanded in the same drop. See our guide to [using Gemini task automation in the UK, India, and Japan](/blog/how-to-use-gemini-task-automation-uk-india-japan/) for another way Gemini reduces busywork.
+Call Screen has existed on Pixel phones for years. It answers unknown or suspicious calls, asks who is calling and why, and shows a transcript. On Pixel 11 and later devices with a US SIM and English as the device language, Gemini now runs a more natural back-and-forth until you take over.
 
-![Person holding a smartphone showing a call interface](https://images.unsplash.com/photo-1787834565306-6cc7169397e3?auto=format&fit=crop&w=800&q=80)
+The feature still runs on-device for the screening itself and does not use Wi-Fi or mobile data for the call audio. You keep full control: join the call, hang up, report spam, or request a callback. Contacts in your list are never screened.
 
-## Check Eligibility and Update Your Phone
+Availability is limited. The conversational Gemini upgrade is available only on Pixel 11 series phones in the United States. Manual screening options appear on more Pixel models and in additional countries, but the Gemini conversation style is Pixel 11 US-only for now. Pixel Watch 4 and 5 will receive the same conversational screening in the coming weeks.
 
-Confirm you own a Pixel 11 series device. Open Settings > System > System update and install the November Pixel Drop if it is available. The rollout continues over several weeks, so check again if the option does not appear immediately.
+## Enable and Configure Call Screen
 
-Your phone language must be set to English and the SIM must be from a U.S. carrier. Open the Phone app and confirm it is the latest version from the Play Store.
+Open the Phone app. Tap the three-dot menu, then Settings, then Spam and Call Screen (or Call Screen). Turn Call Screen on if it is off.
 
-## Enable Call Screen
+Choose your protection level:
 
-1. Open the Phone app.
-2. Tap the menu icon in the top-left corner.
-3. Select Settings.
-4. Tap Call Screen.
-5. Turn on Automatic Call Screen if you want suspicious or unknown numbers screened without tapping each time. Choose the protection level that matches your preference: Basic, Medium, or Maximum.
-6. Manual screening remains available on every incoming unknown call even if automatic is off.
+- Maximum protection screens spam, possibly faked numbers, and first-time callers.
+- Medium and Basic reduce the number of calls that get screened.
+- You can turn automatic screening off entirely if you prefer to screen only when you tap the button.
 
-The new conversational style activates once the Pixel Drop is installed and you select Screen call on an unknown number.
+For Pixel 11 and later with a US SIM and English language, the screen shows call actions after the caller responds. These include answering, hanging up, or reporting the number as spam. The report option ends the call with a short message asking the caller to remove the number.
+
+Update the Phone by Google app and your system software first. The November Pixel Drop features roll out over several weeks, so check Settings > System > Software updates if the new options do not appear immediately.
+
+![Hand touching a smartphone screen](https://images.unsplash.com/photo-1764664281938-3d7b48d267fa?auto=format&fit=crop&w=800&q=80)
 
 ## Screen a Call Step by Step
 
 When an unknown number rings:
 
-1. Tap Screen call on the incoming call screen.
-2. Gemini answers and asks the caller why they are reaching out. The tone is more conversational than earlier fixed prompts.
-3. Watch the live transcript appear on your screen as the exchange continues.
-4. Decide your next action: tap to join the call, end it, or let Gemini finish.
-5. After the call, review the transcript in your call history if needed.
+1. Tap Screen call on the incoming call screen, or let automatic screening answer if you enabled it.
+2. Gemini asks why the person is calling in a conversational style and continues the exchange.
+3. A live transcript appears on your screen so you can read the responses in real time.
+4. Decide your next step: answer the call, hang up, or select a call action such as Report as spam.
+5. If you answer, screening and the transcript stop immediately and the normal call begins.
 
-You can interrupt at any moment. The transcript updates in real time so you stay informed without answering immediately.
-
-![Woman on a video call using a smartphone](https://images.unsplash.com/photo-1758522484827-7fc4957acfc3?auto=format&fit=crop&w=800&q=80)
+You can also start screening from the call log for recent unknown numbers. The transcript of screened calls stays on your device. Call audio and transcripts are not uploaded to your Google Account or Assistant activity.
 
 ## Tips for Better Results
 
-Keep the phone nearby and the screen unlocked if you plan to jump in quickly. Background noise can affect transcription quality, so use the feature in quieter environments when possible.
+Keep the Phone app and system updated. Features from the November Pixel Drop continue rolling out in phases depending on carrier and device.
 
-Contacts you have saved are never screened. Add frequent legitimate callers to your contacts to skip the process.
+Test the feature with a friend or second phone so you know how the transcript and actions look before you rely on it for real calls. Automatic screening skips numbers already in your contacts, so add important numbers first.
 
-If the conversational responses feel limited, check that the Pixel Drop is fully installed and the Phone app is up to date. Restart the phone if the new behavior does not appear after the update.
+If you frequently receive calls from the same unknown number that is legitimate, add it to your contacts or mark it as not spam after screening. This reduces future interruptions.
 
-For outbound calls that Gemini can place on your behalf (Call for Me), the feature remains in limited preview on Pixel 11 devices for paid Gemini subscribers in the U.S. It is separate from Call Screen and requires the Phone by Google public beta in some cases.
+The feature works only with a US SIM and English language setting on Pixel 11 series devices. Users outside the US still have manual Call Screen on supported Pixel phones in listed countries, but without the Gemini conversational upgrade.
 
-## Troubleshooting Common Issues
+Combine Call Screen with other Call Assist tools already on your Pixel, such as Hold for Me or Direct My Call, for a fuller set of call management options.
 
-The Screen call button does not appear: Confirm the November Pixel Drop is installed, the number is unknown, and you are in the United States with an English language setting.
+## Watch the Feature Overview
 
-Transcript is incomplete or delayed: Ensure a stable data or Wi-Fi connection. The feature processes the conversation in real time.
-
-Gemini does not continue the conversation: The upgrade focuses on a more natural opening exchange. Complex multi-turn dialogues beyond the initial reason for the call may still rely on earlier behavior.
-
-Feature missing on Pixel Watch: Google has only said it is coming soon. Check for watch software updates in the coming weeks.
-
-## Privacy and Control Notes
-
-Call Screen runs on your device for the screening process. You choose when to join or end the call. Transcripts remain in your call history under your control.
-
-Google’s November Pixel Drop post states the feature is available on Pixel 11 series devices in the U.S. Availability can vary by carrier and account.
-
-## Conclusion
-
-The upgraded Call Screen on Pixel 11 turns an unknown caller into a short, conversational exchange you can read before you answer. Enable it in the Phone app settings, screen a test call from an unknown number, and use the live transcript to decide your next step.
-
-Install the November Pixel Drop if you have not already, then try the feature on your next unknown call. Combined with other Gemini Intelligence tools on the same devices, it keeps routine interruptions shorter.
-
-## Sources
-
-- [November Pixel Drop: Gemini Intelligence and Pixel Tag](https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/) — Google Blog, 10 November 2026
-- [Gemini Intelligence features and new device support](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/) — Google Blog, 10 November 2026
-- Pixel Phone Help: Call Screen settings and usage (official support documentation)
+The 9to5Google video below covers the November 2026 Pixel Drop, including Gemini Call Screen and other Pixel 11 updates.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/tgbPub4T_vE"
-    title="How to Use Call Screen on Google Pixel (Let AI Answer Your Phone)"
+  <iframe src="https://www.youtube.com/embed/s28nXyUxjbQ"
+    title="November 2026 Android Feature Drop: EVERY new feature!"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
+
+## Conclusion
+
+Gemini Call Screen on the Pixel 11 gives you a clearer picture of who is calling and why before you pick up. The conversational exchange and live transcript let you stay in control while reducing spam and unknown interruptions. Update your Pixel, enable the feature in the Phone app, and try it on the next unknown call.
+
+## Sources
+
+- [November Pixel Drop: Gemini Intelligence and Pixel Tag](https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/) — Google Blog, 10 November 2026
+- [Screen your calls before you answer them](https://support.google.com/pixelphone/answer/9118387) — Google Pixel Phone Help
+- [November 2026 Pixel Drop](https://support.google.com/pixelphone/thread/473666886/november-2026-pixel-drop) — Google Pixel Community
