@@ -1,95 +1,92 @@
 ---
-title: "How to Create Interactive Sites in Gemini Notebook"
-description: "Step-by-step guide to turn Gemini Notebook sources into interactive sites with 'make me a site' for dashboards, explainers, and trackers."
-pubDate: 2026-11-17T14:00:00
-heroImage: "https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "how-to", "ai-tools", "productivity"]
+title: "How to Turn Notes into Interactive Sites with Gemini Notebook"
+description: "Step-by-step guide to create interactive websites from your Gemini Notebook sources using a simple prompt."
+pubDate: 2026-11-17T16:00:00
+heroImage: "https://images.unsplash.com/photo-1759984782211-3a02ca78e6ac?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "gemini", "tutorials", "how-to", "productivity"]
 noindex: false
 ---
 
-Google added a new way to turn research into something you can click and share. Starting November 16, 2026, Gemini Notebook lets you generate interactive sites directly from the sources already in a notebook. Type a short prompt and the tool builds a visual explainer, dashboard, or tracker grounded in your materials.
+Google added a new feature to Gemini Notebook on November 16, 2026. You can now turn the sources in a notebook into an interactive website by typing a short prompt in the chat.
 
-This works on the web for users 18 and older, including Google Workspace accounts. Mobile support is coming soon. The sites open in a new tab so you can interact with them or share the link with others.
+The tool builds visual explainers, data dashboards, or project trackers directly from your uploaded documents, notes, and research. Once ready, open the result in a new tab or share it. The capability is rolling out globally on the web for users 18 and older, including Google Workspace subscribers. Mobile support is coming soon.
 
-## What the feature does
+This guide shows the exact steps to create one today.
 
-Gemini Notebook already answers questions from your uploaded sources and generates Studio outputs such as audio overviews, slides, quizzes, and mind maps. The new interactive sites add a different kind of output. Instead of a static summary, you get a page you can explore.
+## What Interactive Sites Can Do
 
-Google lists three common uses:
+Gemini Notebook already generates audio overviews, slides, quizzes, and reports from your sources. Interactive sites add a clickable interface on top of that material.
+
+Google lists three practical examples:
 
 - Visual explainers for study, such as an interactive periodic table or a historical timeline.
-- Interactive dashboards for data, for example quarterly sales performance.
-- Project management trackers that list tasks and deadlines.
+- Dashboards that let you filter and explore data, for instance quarterly sales figures from uploaded spreadsheets.
+- Project trackers that list tasks and deadlines pulled from your notes and documents.
 
-Everything stays tied to the sources in the notebook. The site does not pull in outside information.
+The site draws only from the sources you added to the notebook. It does not search the open web unless those sources already contain the information. You stay in control of the source material.
 
-![Study desk with open notebook, laptop, and research materials](https://images.unsplash.com/photo-1769794371055-54436b54577e?auto=format&fit=crop&w=800&q=80)
+![Student writing notes beside a laptop](https://images.unsplash.com/photo-1759984782211-3a02ca78e6ac?auto=format&fit=crop&w=800&q=80)
 
-## How to generate an interactive site
+## Step-by-Step: Create Your First Interactive Site
 
-Open Gemini Notebook at notebook.google.com and sign in. Create a new notebook or open one that already contains sources.
+1. Open [notebook.google.com](https://notebook.google.com) and sign in with a Google account.
+2. Create a new notebook or open an existing one that already contains sources.
+3. Add sources if needed. Upload PDFs, paste website or YouTube links, connect Google Drive files, or drop in images and audio. Each notebook is independent; sources do not carry over from other notebooks.
+4. In the chat panel, type: `make me a site` followed by a short description of what you want. Example: `make me a site to help me understand the periodic table with a clickable table and a short quiz`.
+5. Wait while Gemini builds the page. A progress indicator appears.
+6. When the site is ready, select **Open in a new tab** to view and interact with it full screen.
+7. Use the share option to send the link to others if you want them to explore the same material.
 
-Add the materials you want the site to use. These can be PDFs, web pages, Google Docs, YouTube transcripts, notes, or free textbooks from the catalog. Select only the sources that should influence the result.
+Clearer prompts produce closer results. Mention the main sections, interactive elements, and any specific data you want highlighted.
 
-In the chat panel, type a clear request that starts with “make me a site” followed by a description. Examples:
+## Example Prompts That Work
 
-- “Make me a site to help me understand the periodic table from these sources.”
-- “Make me a site that shows quarterly sales by region with filters and a chart.”
-- “Make me a site that tracks the project tasks and deadlines listed in the notes.”
+Try these patterns once your sources are loaded:
 
-Send the prompt. Gemini Notebook builds the site from the selected sources. When it finishes, choose “Open in a new tab” to view and interact with it. You can also share the site with others.
+- Study aid: "Make me a site that turns these chemistry notes into an interactive periodic table with element details and a five-question quiz."
+- Business dashboard: "Make me a site that shows quarterly sales by region with filters and a chart comparing revenue to quota."
+- Project tracker: "Make me a site that lists all open tasks from these meeting notes with deadlines and status columns."
 
-The process uses the same chat interface you already use for questions. No separate tool or export step is required for the basic site.
+After the first version appears you can refine it by describing changes in the same chat. Google notes that creations can be adjusted for layout and visuals inside the notebook.
 
-![Laptop and sticky notes on a sunlit desk for planning](https://images.unsplash.com/photo-1766555766657-ea8f81a67934?auto=format&fit=crop&w=800&q=80)
+![Laptop and notes on a sunlit desk](https://images.unsplash.com/photo-1766555766657-ea8f81a67934?auto=format&fit=crop&w=800&q=80)
 
-## Practical examples
+## Who Can Use It and Current Limits
 
-Students can turn lecture notes and textbook chapters into a quiz site or an interactive timeline. Professionals can convert spreadsheet data or meeting notes into a dashboard that filters by date or category. Teams can generate a shared tracker that lists open items and due dates without building a separate spreadsheet.
+The feature is available to Gemini Notebook users aged 18 and older. Google Workspace subscribers receive it as well. It is live on the web now and scheduled for the mobile app later.
 
-Because the site is grounded in your sources, the content reflects what you uploaded. If a detail is missing, the tool does not invent it. You can iterate by adding a follow-up prompt in the same chat, such as “Add a filter for region” or “Include a summary section at the top.”
+Source limits still apply. A free notebook accepts up to 50 sources, and each source can hold up to 500,000 words or 200 MB. The quality of the interactive site depends on the clarity and completeness of those sources.
 
-The feature pairs well with existing notebook tools. You can first generate a data table or study guide in the Studio panel, then ask for a site based on that output and the original sources. For textbook work, see our earlier guide on [adding free textbooks to Gemini Notebook](/blog/add-free-textbooks-gemini-notebook/).
+Sharing works through the standard notebook share controls. Set access to “Anyone with the link” if you want recipients to view without signing in as editors. Note that viewers may still reach underlying sources depending on the share settings you choose.
 
-## Tips for better results
-
-Be specific in the description. Name the type of interaction you want (filters, quizzes, timelines, sortable tables) and the audience (exam prep, team status, personal review).
-
-Limit the active sources. Uncheck unrelated materials so the site stays focused.
-
-Test the result in a new tab. Click through the elements to confirm the data matches your sources. Share only after you review it.
-
-If the first attempt misses something, refine the prompt. Mention exact columns, sections, or concepts from the sources.
-
-Keep the notebook organized. Collections and clear source names make it easier to reuse the same materials for different sites later.
-
-## Limits to know
-
-The feature is rolling out on the web first. Mobile app support is planned but not available yet. You must be 18 or older.
-
-Sites are generated from the current sources. Adding or changing sources later does not automatically update an existing shared site. Treat each generation as a snapshot.
-
-Source limits still apply. Free accounts support up to 50 sources per notebook. A large textbook or report counts as one source.
-
-The tool stays within your materials. It will not add external data or invent numbers that are not present.
-
-## Conclusion
-
-Gemini Notebook’s interactive sites turn a collection of sources into something you can explore and share in one step. Start with a notebook that already holds the right materials, type “make me a site” plus a clear description, then open the result in a new tab.
-
-The capability launched on November 16, 2026, and is available globally on the web for eligible users. Try it with a study set, a data report, or a project list to see how the sources become interactive.
-
-Watch a full Gemini Notebook walkthrough for the interface and Studio tools:
+If the option does not appear, confirm you are signed in on the web version and that your account meets the age requirement. Rollout continues over the coming days.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/dkNYOlIK7ZI"
-    title="Give Me 12 Minutes, I’ll Make You a Gemini Notebook Pro"
+  <iframe src="https://www.youtube.com/embed/Xc1DWJFOdnU"
+    title="Gemini Notebook Quick Tutorial (Google AI)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## Tips for Better Interactive Sites
+
+Start with a focused notebook. Mix of lecture notes, a textbook PDF, and a relevant YouTube video produces stronger study explainers than a single vague document.
+
+Name the interactive pieces you want. “Include a filterable table and a progress bar” gives clearer direction than “make it nice.”
+
+Check facts against the original sources after the site builds. The tool organizes what you provided; it does not invent missing data.
+
+For developers exploring other Gemini models, our guide on [using Gemini 4 Hydrogen in AI Studio](/blog/gemini-4-hydrogen-ai-studio-guide/) covers a complementary workflow for coding tasks.
+
+Export or bookmark useful sites so you can reopen them later. The notebook history keeps the conversation that generated each site.
+
+## Conclusion
+
+Gemini Notebook’s interactive sites turn static research into something you can click, filter, and share. Open a notebook that already holds your sources, type “make me a site” plus a short description, and open the result in a new tab. Start with one study or project notebook today and refine the prompt until the page matches the way you want to explore the material.
+
 ## Sources
 
-- Google Blog: Turn Gemini Notebook sources into interactive sites (November 16, 2026)
-- Official Gemini Notebook and Google announcements confirming the “make me a site” prompt and web rollout
+- [Turn Gemini Notebook sources into interactive sites](https://blog.google/innovation-and-ai/products/gemini-notebook/interactive-sites/)
+- [Gemini Notebook Help – public notebooks](https://support.google.com/gemininotebook)
+- [notebook.google.com](https://notebook.google.com)
