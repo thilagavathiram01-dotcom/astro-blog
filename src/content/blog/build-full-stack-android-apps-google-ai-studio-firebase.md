@@ -91,7 +91,7 @@ If you have already experimented with basic Android generation, the full-stack a
 
 The November 17, 2026 update in Google AI Studio removes several manual steps that previously sat between a prompt and a usable Android app. Firestore, Authentication, secure Gemini calls, a better emulator, and personal Play publishing are now part of the same flow.
 
-Start with a clear prompt at aistudio.google.com, confirm the backend setup, and iterate. For earlier foundational steps, see our guide on building a native Android app in Google AI Studio.
+Start with a clear prompt at aistudio.google.com, confirm the backend setup, and iterate. For earlier foundational steps, see our guide on [building a native Android app in Google AI Studio](/blog/how-to-build-a-native-android-app-in-google-ai-studio/).
 
 Sources:
 - Google Developers Blog: Build full-stack Android apps with Gemini in Google AI Studio (Nov 17, 2026)
