@@ -1,81 +1,36 @@
 ---
 title: "How to Use GPT-6.2 Astra and Sol in ChatGPT and API"
-description: "Step-by-step guide to accessing and using OpenAI's GPT-6.2 Astra and Sol models in ChatGPT Work, Codex, and the API with pricing and tips."
-pubDate: 2026-11-18T14:00:00
+description: "Access GPT-6.2 Astra and Sol in ChatGPT Work, Codex, and the OpenAI API. Pricing, availability, and practical tips for developers."
+pubDate: 2026-11-18T10:00:00
 heroImage: "https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "chatgpt", "tutorials", "how-to", "developer", "ai"]
+tags: ["ai-tools", "chatgpt", "tutorials", "how-to"]
 noindex: false
 ---
 
-OpenAI released GPT-6.2 Astra and GPT-6.2 Sol on November 17, 2026. Astra targets complex professional and scientific work. Sol handles everyday coding, writing, and agent tasks at lower cost. Both are available now in ChatGPT Work, Codex, and the OpenAI API for eligible users.
+OpenAI released GPT-6.2 Astra and GPT-6.2 Sol on November 17, 2026. Astra targets complex professional, scientific, and agentic work. Sol handles everyday coding, writing, and agent loops at lower cost. Both are available now to eligible ChatGPT users and through the OpenAI API.
 
-This guide shows how to access them, choose the right model, and start using them effectively.
+This guide shows how to access the models in ChatGPT Work and Codex, call them from the API, and choose between them based on your workload.
 
 ## What GPT-6.2 Astra and Sol Offer
 
-Astra is OpenAI's frontier model for hard, multi-step projects. It improves on GPT-6 Astra with better results on professional benchmarks at roughly one-third the cost per task. Sol is the efficient everyday model. Many OpenAI employees use Sol as their default for technical and non-technical work.
+GPT-6.2 Astra is OpenAI’s new frontier model. It improves on GPT-6 Astra across professional workflows and scientific research while cutting cost per task. OpenAI reports a 5.2-point gain on Agents’ Last Exam at less than half the cost per task of its predecessor. It also posts stronger results on coding and cybersecurity evaluations.
 
-Both models support a large context window. API pricing is $8 input / $40 output per million tokens for Astra (20% lower than previous Astra) and $2 input / $10 output for Sol. Cached input is much cheaper on both.
+GPT-6.2 Sol is the efficient counterpart. It nearly matches Astra on merge-ready coding changes (FrontierCode 2.0) at roughly one-fifth the cost. Many OpenAI employees use Sol as their default for mixed technical and non-technical work.
 
-![Laptop screen showing code with coffee nearby](https://images.unsplash.com/photo-1763568258557-515962e11f38?auto=format&fit=crop&w=800&q=80)
+Both models support Ultrafast mode. Pro 500 subscribers can use it with either model. Pro 200 subscribers gain Ultrafast access for the first time, starting with Sol.
 
-## How to Access GPT-6.2 in ChatGPT Work and Codex
+![Person coding on laptop at night with city lights in background](https://images.unsplash.com/photo-1764452008254-eed469a4fad3?auto=format&fit=crop&w=800&q=80)
 
-You need a Plus, Pro, Enterprise, or Edu plan. Enterprise and Edu workspaces require an admin to enable the models first.
+## Access the Models in ChatGPT Work and Codex
 
-1. Open ChatGPT and switch to Work mode (or open the Codex app/CLI).
-2. In the model picker, select GPT-6.2 Astra or GPT-6.2 Sol.
-3. For new Work chats on supported plans, the default is often Sol at Light or Medium reasoning effort. Use Advanced settings to switch models or raise reasoning.
-4. In Codex, use the model picker or `/model` command.
+GPT-6.2 Astra and Sol are available to Plus, Pro, Enterprise, and Edu users in ChatGPT Work and Codex. They are not added to the regular Chat interface in this rollout.
 
-Pro 500 subscribers get Ultrafast on both models. Pro 200 subscribers get Ultrafast on Sol at launch. Usage is shared between ChatGPT Work and Codex.
+1. Open the ChatGPT desktop app or go to chatgpt.com.
+2. Switch to a Work or Codex project (or create one).
+3. Select the model picker and choose GPT-6.2 Astra or GPT-6.2 Sol.
+4. For Ultrafast, confirm your plan supports it (Pro 500 for both; Pro 200 for Sol).
 
-For Android or Firebase integrations with other models, see our guide on [adding Gemini 4 Hydrogen to Android with Firebase AI Logic](/blog/add-gemini-4-hydrogen-android-firebase-ai-logic/).
-
-## Using GPT-6.2 via the OpenAI API
-
-Developers can call `gpt-6.2-astra` and `gpt-6.2-sol` immediately. Ultrafast is available for both at launch.
-
-Install the official Python SDK if needed:
-
-```bash
-pip install openai
-```
-
-Basic request example:
-
-```python
-from openai import OpenAI
-
-client = OpenAI()
-
-response = client.responses.create(
-    model="gpt-6.2-sol",
-    input="Summarize the key differences between Astra and Sol for a coding team."
-)
-
-print(response.output_text)
-```
-
-Switch to `gpt-6.2-astra` for deeper research or long-horizon agent work. Keep prompt prefixes stable to maximize cache hits and lower costs.
-
-![Smartphone showing AI chat apps including Gemini](https://images.unsplash.com/photo-1738640679960-58d445857945?auto=format&fit=crop&w=800&q=80)
-
-## Choosing Between Astra and Sol
-
-Use Sol for most daily coding reviews, drafting, and routine agent loops. It matches Astra closely on many coding benchmarks at about one-fifth the cost.
-
-Switch to Astra when you need stronger performance on scientific research, complex professional deliverables, 3D design, or multi-step agent workflows where accuracy and completeness matter more than speed.
-
-Both ship with tighter safeguards for higher-risk cybersecurity assistance. OpenAI rates them carefully under its Preparedness Framework.
-
-## Practical Tips
-
-- Start with Sol for most tasks and escalate to Astra only when results fall short.
-- Raise reasoning effort in Advanced settings for harder problems.
-- Monitor token usage. Fewer output tokens on the new models help stay within plan limits.
-- Test on your own workloads. Early independent checks show mixed results on writing style and full end-to-end builds.
-- Enable Ultrafast where available for lower latency on supported plans.
+In Codex, the models appear in the same selector. Use them for repository-wide changes, agentic coding sessions, or multi-step professional tasks. Start with Sol for most coding work and escalate to Astra when you need deeper reasoning or longer-horizon agent runs.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/C1zYX5jwqq4"
@@ -85,14 +40,56 @@ Both ship with tighter safeguards for higher-risk cybersecurity assistance. Open
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## Call the Models from the OpenAI API
+
+Developers can use the models immediately via the OpenAI API. The model IDs are `gpt-6.2-astra` and `gpt-6.2-sol`. Ultrafast is available on the API as well.
+
+Example Python call with the official library:
+
+```python
+from openai import OpenAI
+client = OpenAI()
+
+response = client.chat.completions.create(
+    model="gpt-6.2-sol",
+    messages=[
+        {"role": "system", "content": "You are a helpful coding assistant."},
+        {"role": "user", "content": "Write a Python function that retries an API call with exponential backoff."}
+    ],
+    max_tokens=1024
+)
+print(response.choices[0].message.content)
+```
+
+Switch the model string to `gpt-6.2-astra` for harder tasks. Keep stable prompt prefixes so the API can reuse cached input tokens and reduce cost.
+
+![Programmer working at a multi-monitor desk setup](https://images.unsplash.com/photo-1753715613434-9c7cb58876b9?auto=format&fit=crop&w=800&q=80)
+
+## Pricing
+
+API pricing (per million tokens):
+
+- GPT-6.2 Astra: $8.00 input, $0.40 cached input, $40.00 output
+- GPT-6.2 Sol: $2.00 input, $0.10 cached input, $10.00 output
+
+Astra’s input and output rates are 20 percent lower than GPT-6 Astra. Cached input is 60 percent cheaper. Sol keeps the same rates as GPT-6.1 Sol. OpenAI notes that both models often complete tasks with fewer output tokens, which further lowers effective cost.
+
+For comparison, Google’s Gemini 4 Hydrogen is priced at $1.50 input and $7.50 output. See our guide on [adding Gemini 4 Hydrogen to Android with Firebase AI Logic](/blog/add-gemini-4-hydrogen-android-firebase-ai-logic/) if you build client-side apps.
+
+## Tips for Better Results
+
+- Start with Sol for coding, drafting, and routine agent loops. Move to Astra for scientific analysis, complex legal or financial work, or long multi-step agents.
+- Enable Ultrafast when latency matters and your plan allows it.
+- Reuse conversation prefixes to maximize cache hits.
+- Review safety ratings on cybersecurity-related prompts. Both models ship with tighter safeguards for higher-risk assistance.
+- Test on your own workloads. Independent benchmarks show strong gains, but real tasks can differ.
+
 ## Conclusion
 
-GPT-6.2 Astra and Sol are live for Plus, Pro, Enterprise, and Edu users in ChatGPT Work and Codex, plus the API. Astra delivers frontier capability for demanding work at lower cost per task. Sol gives most teams a strong, efficient default.
-
-Check official OpenAI documentation for the latest model availability, pricing, and system card details before production use.
+GPT-6.2 Astra and Sol give ChatGPT Work, Codex, and API users stronger performance at lower cost per task. Astra leads on frontier professional and scientific work. Sol covers everyday needs efficiently. Check your plan eligibility, select the model in the Work or Codex interface, or call the new IDs from the API today.
 
 **Sources**
 
-- OpenAI Developer Community and ChatGPT Learn: GPT-6.2 Astra and Sol announcement (November 17, 2026)
+- OpenAI Developer Community: GPT-6.2 Astra and Sol are now available (November 17, 2026)
 - OpenAI API pricing and model documentation
-- Official OpenAI YouTube launch video
+- Related: [Add Gemini 4 Hydrogen to Android with Firebase AI Logic](/blog/add-gemini-4-hydrogen-android-firebase-ai-logic/)
