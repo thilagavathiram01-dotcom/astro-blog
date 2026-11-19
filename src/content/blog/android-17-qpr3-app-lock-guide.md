@@ -24,7 +24,7 @@ Google’s on-device prompt lists the main effects:
 
 The lock targets casual snooping when you hand over an unlocked phone. It does not encrypt the app’s files or block skilled attackers.
 
-![Person holding a black Android smartphone](https://images.unsplash.com/photo-1592890288564-76628a30a657?auto=format&fit=crop&w=800&q=80)
+![Person holding a smartphone with a colorful gradient screen](https://images.unsplash.com/photo-1721988348117-01a350266d26?auto=format&fit=crop&w=800&q=80)
 
 ## Requirements and beta status
 
