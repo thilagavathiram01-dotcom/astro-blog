@@ -1,82 +1,63 @@
 ---
-title: "How to Create Custom Widgets on Pixel"
-description: "Step-by-step guide to building personalized home screen widgets on Pixel 10 and 11 with Create My Widget from the November 2026 Drop."
-pubDate: 2026-11-16T11:00:00
+title: "How to Create Custom Widgets on Pixel with Create My Widget"
+description: "Step-by-step guide to using Google's Create My Widget on Pixel 10 and 11 phones to build personalized home screen widgets from natural language prompts."
+pubDate: 2026-11-20T14:00:00
 heroImage: "https://images.unsplash.com/photo-1760900051041-90417b9c110e?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["pixel", "android", "how-to", "tutorials"]
+tags: ["pixel", "gemini", "tutorials", "how-to"]
 noindex: false
 ---
 
-Google’s November 2026 Pixel Drop introduced Create My Widget. This tool lets you generate custom home screen widgets by describing them in plain language. On supported Pixel phones, you can build widgets for countdowns, spending trackers, sports scores, or daily briefs without coding.
+Google rolled out Create My Widget with the November 2026 Pixel Drop. Eligible Pixel 10 and Pixel 11 series owners can now describe a widget in plain English and have Gemini build it for the home screen.
 
-The feature uses Gemini to turn your prompt into a Material-style widget. It appears in the widget picker and updates with the information you request.
+This guide covers eligibility, setup (including early access), creation steps, editing, and practical tips. It draws from official Google announcements and verified user reports.
 
-## Who can use Create My Widget
+## Check eligibility and get access
 
-Create My Widget works on Pixel 10 and newer devices, except the Pixel 10a. You must be 18 or older. It is available in English in Australia, Canada, India, the United States, and the United Kingdom.
+Create My Widget requires a Pixel 10, Pixel 10 Pro, Pixel 10 Pro XL, Pixel 10 Pro Fold, or any Pixel 11 series model. The Pixel 10a is excluded. You must be 18 or older, use English, and be in Australia, Canada, India, the United Kingdom, or the United States.
 
-Gemini Connected Apps integration is not available in the UK. Some advanced usage may require a subscription. Always verify the information the widget displays.
+The feature arrives with the November Pixel Drop or via a Play Store beta. If the update has not reached your device yet, open the Create My Widget listing in the Play Store, join the beta, wait a few minutes, then update the app.
 
-If your phone supports the feature, it rolls out with the November Pixel Drop over several weeks.
+Once installed, the Create button appears in the Widgets picker.
 
-![Android phone showing a custom home screen interface](https://images.unsplash.com/photo-1760900051041-90417b9c110e?auto=format&fit=crop&w=800&q=80)
+![Close-up of a Pixel phone screen](https://images.unsplash.com/photo-1724322664367-5cc0f47b5d9d?auto=format&fit=crop&w=800&q=80)
 
-## How to create a widget with a prompt
+## Create a widget from a prompt
 
-Start by describing what you want the widget to show.
+1. Long-press an empty area on your home screen.
+2. Tap Widgets, then tap Create in the top-right corner.
+3. Choose whether the widget should use data from connected Google apps (Gmail, Calendar, and others) or web data and location only.
+4. Tap Describe your widget.
+5. Type a clear request, such as “Show my monthly shopping spend for November” or “Countdown to my trip on 15 December with flight details.”
+6. Tap Send. Gemini generates a preview, which can take a minute or two. A progress indicator appears.
+7. Review the preview. Tap Add to place it on the home screen, Edit to refine it, or Create new to start over.
 
-1. Touch and hold an empty space on your Home screen.
-2. Tap **Widgets**, then tap **Create**.
-3. Tap **Describe your widget**.
-4. Type your request. Examples include “Show me my monthly shopping spend” or “Countdown to my vacation on July 15.”
-5. Tap **Send**.
-6. Review the preview. Tap **+ Add** to place the widget on your Home screen.
+Be specific in your prompt. Include the information source, update frequency, and preferred layout if you have one in mind. Gemini may ask follow-up questions.
 
-The preview screen also offers **Edit** and **Create new** options. If the widget needs access to device or app data, tap **Allow** when prompted.
+## Use templates for faster starts
 
-## Create a widget from a template
+If you prefer not to write a prompt from scratch, select a category such as Important dates, Sports & fitness, Finance, Weather alerts, or Daily Brief. Pick a suggestion and tap Try it or Add. You can still edit the result afterward.
 
-Templates provide a starting point if you prefer not to write a prompt.
-
-1. Touch and hold an empty space on your Home screen.
-2. Tap **Widgets**, then tap **Create**.
-3. Select a category such as **Important dates**, **Sports & fitness**, or **Finance**.
-4. Optionally customize the details.
-5. Tap **Add**.
-
-Templates cover common needs and can be adjusted before or after placement.
-
-![Multiple smartphones displaying customizable home screens with widgets](https://images.unsplash.com/photo-1744692149281-3613ee79a188?auto=format&fit=crop&w=800&q=80)
+Templates pull from the same data sources as custom prompts.
 
 ## Edit an existing widget
 
-You can refine a widget during creation or after it is on your Home screen.
+Long-press the widget on your home screen and choose Edit, or use the Edit button on the preview screen. Describe the change (“Add team news headlines” or “Make the countdown larger”) and send it. Gemini updates the widget without starting from zero.
 
-From the preview:
+You can also resize and reposition the finished widget like any other Android widget. It adapts to Material You theming and wallpaper colors.
 
-1. Tap **Edit**.
-2. Describe the changes you want.
-3. Tap **Send**.
-4. Tap **+ Add** when the result looks correct.
-
-From the Home screen:
-
-1. Touch and hold the custom widget.
-2. Tap **Edit**.
-3. Enter updates in the text box on the “Edit your widget” screen.
-4. Tap **Send**.
-
-Changes apply immediately. You can also long-press to resize or move the widget like any other Android widget.
+![Smartphone showing customized home screen interface](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
 
 ## Tips for better results
 
-Be specific in your prompt. Include the exact metric, date, or data source you want. For personal data such as calendar events or spending, connect Google Workspace during setup. Manage connections later in the Create My Widget app settings.
+- Start with a simple, verifiable request so you can check accuracy (for example, a date you already know).
+- Connect Google Workspace apps only when the widget needs personal data such as calendar events or email details.
+- Prefer web data for public information like sports scores or weather to limit data access.
+- Test on a secondary home screen page first so you can rearrange freely.
+- If the preview looks wrong, edit rather than delete and recreate; iterative prompts often improve the result.
 
-Check the displayed information. Gemini-generated widgets can make mistakes, so verify numbers, dates, and scores before relying on them.
+Create My Widget is still rolling out and may feel basic compared with dedicated third-party widget apps. It works best for glanceable information that does not require complex interactions.
 
-Start with simple requests. A countdown or weather-style display is easier to validate than a complex multi-source dashboard. Once it works, add more detail through the Edit option.
-
-The feature is rolling out gradually. If Create does not appear in the widget picker, check for system updates and wait a few days.
+For related adaptive Android experiences, see our guide on [building adaptive layouts with mediaQuery in Jetpack Compose](/blog/adaptive-layouts-mediaquery-jetpack-compose-guide/).
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/pkPah7KU8O4"
@@ -88,12 +69,11 @@ The feature is rolling out gradually. If Create does not appear in the widget pi
 
 ## Conclusion
 
-Create My Widget turns natural language into usable Home screen widgets on supported Pixel phones. Follow the steps above to generate one from a prompt or template, then edit it as needed. Combine it with other Pixel tools such as the [Pixel Tag setup guide](/blog/how-to-set-up-google-pixel-tag-android/) for a more personalized device experience.
-
-Test a few ideas this week. A spending tracker or event countdown can save you from opening multiple apps.
+Create My Widget turns natural language into usable home screen tools on supported Pixel phones. Check eligibility, join the beta if needed, describe what you want, and refine the result. It is a practical way to surface the exact information you care about without hunting for a third-party app.
 
 ## Sources
 
-- [Create custom widgets on Pixel](https://support.google.com/pixelphone/answer/18835879) — Pixel Phone Help
-- [November Pixel Drop: Gemini Intelligence and Pixel Tag](https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/) — Google Blog, November 10, 2026
-- [Gemini Intelligence features and new device support](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/) — Google Blog, November 10, 2026
+- [November Pixel Drop: Gemini Intelligence and Pixel Tag](https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/) — Google
+- [Gemini Intelligence features and new device support](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/) — Google
+- [How to make the most of Google's Create My Widget feature](https://www.androidauthority.com/how-to-create-custom-widgets-on-pixel-3735795/) — Android Authority
+- [Create My Widget on Pixel: How to Build Your Own Gemini Widget](https://www.androidpure.com/pixel-create-my-widget-how-to/) — AndroidPure
