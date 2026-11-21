@@ -13,7 +13,7 @@ This builds on the September 30, 2026 protections that applied to participating 
 
 If you have not completed verification and package registration, finish it now. The process takes less than ten minutes per app and keeps installs working without interruptions.
 
-![Android smartphone on a wooden surface](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
+![Android phone showing home screen apps](https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80)
 
 ## What changes in 2027
 
