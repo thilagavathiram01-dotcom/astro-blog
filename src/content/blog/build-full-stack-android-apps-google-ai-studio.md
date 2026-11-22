@@ -1,74 +1,72 @@
 ---
 title: "How to Build Full-Stack Android Apps in AI Studio"
-description: "Step-by-step tutorial to generate production-ready Kotlin Android apps with Firebase Firestore, Google Sign-In, and secure Gemini calls from one prompt."
-pubDate: 2026-11-21T10:00:00
-heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "firebase", "ai-tools", "tutorials", "how-to", "gemini", "google", "developer"]
+description: "Step-by-step guide to create production-ready Android apps with Firebase Firestore, Google Sign-In, and publish to personal Play from Google AI Studio."
+pubDate: 2026-11-22T16:00:00
+heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "ai-tools", "tutorials", "firebase", "google", "developer"]
 noindex: false
 ---
 
-Google AI Studio now turns a single prompt into a full-stack Kotlin Android app. The Build agent provisions Cloud Firestore, sets up Google Sign-In, secures Gemini calls with Firebase AI Logic and App Check, and lets you publish directly to your personal Google Play library.
+Google AI Studio now turns a plain-language prompt into a complete Android app with persistent storage, user sign-in, and secure Gemini calls. The Build agent, powered by Gemini 4 Carbon and Hydrogen, provisions Cloud Firestore, sets up Google Sign-In, and lets you publish the signed bundle straight to your personal Google Play library.
 
-This update, announced on November 17, 2026, removes the previous limits of local session storage. You can now create apps that store data across devices, authenticate users, and call Gemini models without exposing API keys in the APK.
-
-
-![Developer coding on a laptop with code displayed on the screen](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+You no longer need to manage keystores or cable a phone just to test a personal app. Describe the features you want, confirm the Firebase setup, and install the result from Play on your device in minutes.
 
 
-## What the Build agent handles automatically
-
-When your prompt describes an app that needs persistent data, user accounts, or generative AI features, the agent detects the requirements. After you confirm, it:
-
-- Provisions a Cloud Firestore database with Security Rules tailored to your data model.
-- Configures Firebase Authentication with Google Sign-In and per-user access rules.
-- Routes Gemini API calls through Firebase AI Logic with App Check enforced, so credentials stay server-side.
-- Builds and signs an Android App Bundle for publishing to your personal Play library.
-
-The agent uses Gemini 4 Carbon and Hydrogen. No local Android Studio install, no manual SDK setup, and no credit card is required to start. Projects remain client-side Kotlin and Jetpack Compose apps.
-
-Previously generated Android apps in AI Studio could only keep data in the browser session. The new integration adds offline caching that syncs when connectivity returns, so users can start on a tablet and continue on a phone.
-
-## Step-by-step: Build your first full-stack Android app
-
-1. Open [Google AI Studio](https://aistudio.google.com/apps?features=build_android_app) and sign in with your Google account.
-2. Select Build mode and choose the Android platform.
-3. Enter a prompt that includes storage, sign-in, or AI features. Example: "Build an Android workout coach app that uses the Gemini API to generate personalized daily routines, reads cues aloud with audio, and saves workout history across devices using Cloud Firestore and Google Sign-In."
-4. Click Build. The agent scaffolds the project, launches the browser emulator, and shows a Firebase setup card when needed.
-5. Click Enable Firebase. Choose or create a project and confirm the location. The agent adds the Firebase BoM, generates google-services.json, Security Rules, and the Kotlin data and AI layers.
-
-The emulator now boots faster and supports a 1200p HD stream toggle plus real-time audio output. Use the one-click screenshot button to attach the live screen to your next prompt for precise UI changes.
+![Person holding a smartphone next to a laptop with code](https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80)
 
 
-![Smartphone showing mobile app interface next to coding setup](https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80)
+## What the full-stack Android update adds
+
+Previous Android apps generated in AI Studio used only local session storage. The November 17, 2026 update changes that. When your prompt mentions data that should survive app restarts, user accounts, or generative AI features, the agent detects the requirements and offers to provision the backend.
+
+With your confirmation it:
+
+- Creates a Cloud Firestore database and generates Security Rules matched to your data model
+- Enables Firebase Authentication with Google Sign-In and per-user access rules
+- Routes Gemini calls through Firebase AI Logic and App Check so no API key ends up in the APK
+
+The same flow also upgrades the browser emulator. You get faster boot times, a 1200p HD stream toggle, live audio output, and a one-click screenshot button that attaches the current screen to your next prompt for visual UI fixes. Custom fonts are supported in Jetpack Compose themes, and the underlying Android CLI handles scaffolding and builds.
+
+## Start a new full-stack Android app
+
+1. Open [Google AI Studio](https://aistudio.google.com/apps) and switch to Build mode.
+2. Select the Android chip in the platform picker.
+3. Enter a prompt that includes persistence or AI. Example from Google: "Build an Android workout coach app that uses the Gemini API to generate personalized daily routines, reads cues aloud with audio, and saves workout history across devices using Cloud Firestore and Google Sign-In."
+4. Click Build. The agent scaffolds the Kotlin and Jetpack Compose project and opens the emulator.
+
+A Firebase integration card appears when the agent detects the need for a database, sign-in, or Gemini features. Click the settings icon if you want to pick an existing Google Cloud project or region, then choose Enable Firebase. The agent provisions the services, adds google-services.json, writes the Security Rules, and updates the Kotlin code.
+
+You can keep chatting to refine the UI, data model, or prompts. Ask for tighter padding, different colors, or additional screens. Use the screenshot tool when a visual change is easier to show than to describe.
 
 
-## Secure Gemini calls and App Check
+![Smartphone showing an app interface on a desk](https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80)
 
-Hardcoding API keys in a client APK is risky. The Build agent automatically configures Firebase AI Logic so Gemini requests go through a secure backend. Firebase App Check verifies that requests come from your authentic app.
-
-During local testing in the emulator or via USB, App Check uses a managed debug token. When you publish to Google Play, it switches to Google Fraud Defense (formerly reCAPTCHA Enterprise). This blocks quota abuse from modified or unauthorized clients.
-
-You can ask the agent to add features like generating content and saving it to a Firestore collection with an ownerId and server timestamp. The generated code stays idiomatic Kotlin.
 
 ## Publish to your personal Google Play library
 
-Testing in the emulator is fast, but real-device checks matter. From the publish panel in AI Studio you can set up a Play account in a few clicks. AI Studio builds and signs the .aab in the background. The app appears in your personal Google Play library, ready to install on your phone.
+Testing no longer requires a USB cable or a local keystore. From the publish panel in AI Studio you set up a Play account with a standard Google account in a few clicks. AI Studio builds and signs the Android App Bundle in the background and places the app in your personal Google Play library.
 
-No USB cable, no local keystore management, and no full developer console account is required for personal library publishing. Supported regions let you download and run the app directly from the Play Store app.
+Open the Play Store app on your phone, find the personal library section, and install the app. The process is free for personal testing and does not require a paid developer console account for this private library flow.
 
-For broader distribution you can still export the ZIP and continue in Android Studio, then upload through the Play Console.
+If you later need broader distribution, you can still export the ZIP and continue in Android Studio, or use the existing internal-testing path that requires a Play Console account.
 
-## Tips for better prompts and iteration
+## Review Security Rules and quota
 
-Start with one clear main screen and the data you need to persist. Mention Firestore, Google Sign-In, or Gemini explicitly if the setup card does not appear.
+The generated Firestore Security Rules start as default-deny. Users can only read and write documents they own. Test with a second Google account before you share the app to confirm the rules work as expected.
 
-After the initial build, iterate in the chat: "Add a history list that shows previous workouts from Firestore" or "Change the font to a custom serif and tighten the card padding." Use the screenshot tool for visual fixes.
+If you edit rules directly in the Firebase console, the next agent iteration may overwrite them. Prefer asking the agent to adjust the rules so the changes stay inside the project.
 
-Review the generated Security Rules before sharing. They default to deny so users only access their own documents. Ask the agent to update rules rather than editing them only in the Firebase console, because later agent runs can overwrite manual changes.
+Firestore databases created this way share a no-cost daily quota group: 1 GiB of stored data, 40,000 writes, 50,000 reads, and 10 GiB of network egress per month. The limits reset daily. No credit card is required to start. Upgrade later from the Projects page in AI Studio if you need more capacity.
 
-Test with a second Google account to confirm isolation. Stay within the shared no-cost Firestore quota (1 GiB storage, daily read/write limits) while prototyping.
+## Limitations that still apply
 
-For more on Firebase setup in earlier AI Studio Android flows, see our guide on [adding Firebase to Android apps in Google AI Studio](/blog/add-firebase-to-android-apps-google-ai-studio/).
+- Projects remain single-activity and single-module
+- Kotlin and Jetpack Compose only; no Wear OS or Android TV
+- Emulator does not support camera, NFC, Bluetooth, or full Play services
+- Client-side only; no built-in server runtime for complex secrets or multiplayer
+- ZIP export is available; GitHub sync for Android is not yet offered
+
+For deeper Gemini model choices after the initial build, see our guide on [adding Gemini 4 models to Android apps with Firebase AI Logic](/blog/add-gemini-4-hydrogen-android-firebase-ai-logic/).
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/ms3vRyTM8w0"
@@ -78,20 +76,26 @@ For more on Firebase setup in earlier AI Studio Android flows, see our guide on 
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Limitations and next steps
+## Tips for cleaner results
 
-Generated apps are single-activity, single-module Kotlin projects. There is no built-in server runtime for complex secrets or multiplayer logic beyond what Firebase provides. Wear OS and Android TV are not supported. GitHub export is not yet available for Android projects; use the ZIP download instead.
+Start with one main user flow and the data you need to persist. Add extra screens and AI features in later prompts so the agent does not over-generate on the first pass.
 
-When you need custom native modules, multiple activities, or production Play features beyond the personal library, export the project and open it in Android Studio. The Firebase configuration and App Check setup carry over.
+Mention "Firestore", "Google Sign-In", or "Firebase AI Logic" explicitly if the setup card does not appear. You can also enable the integration from Settings > Integrations at any time.
+
+Use the HD toggle and audio output in the emulator when the app includes text-to-speech or media. Capture screenshots of layout issues and attach them directly so the agent sees the exact spacing or contrast problem.
+
+Check the personal library in the Play Store app after publishing. Installation is immediate once the bundle is signed and uploaded.
 
 ## Conclusion
 
-Google AI Studio’s November 2026 update lets you go from a plain-English prompt to a production-ready Android app with persistent storage, user sign-in, and secure Gemini features in minutes. The Build agent provisions Firestore, Authentication, and Firebase AI Logic, then helps you publish to your personal Play library without manual keystores or USB debugging for basic tests.
+Google AI Studio now produces production-ready Android apps that include persistent data, Google Sign-In, and protected Gemini calls, then ships them to your personal Play library for instant device testing. The Build agent handles the Firebase provisioning and signing so you can focus on the prompt and the iteration.
 
-Open AI Studio, describe the app you want, enable Firebase when prompted, iterate with screenshots and chat, then install from Play. Review Security Rules and stay within the free quota while you prototype. Export when you are ready for deeper Android Studio work.
+Open Build mode, select Android, describe an app that needs storage or AI, enable Firebase when prompted, and publish to Play. Review the Security Rules, stay within the shared quota while you prototype, and export the ZIP when you need features beyond the current single-module limit.
 
 ## Sources
 
-- [Build full-stack Android apps with Gemini in Google AI Studio](https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/) — Google Developers Blog
+- [Build full-stack Android apps with Gemini in Google AI Studio](https://developers.googleblog.com/build-full-stack-android-apps-with-gemini-in-google-ai-studio/) — Google Developers Blog, November 17, 2026
+- [Build Android apps in Google AI Studio](https://ai.google.dev/gemini-api/docs/aistudio-android) — Google AI for Developers
+- [Add Firebase to your Google AI Studio app](https://firebase.google.com/docs/ai-assistance/ai-studio-integration) — Firebase documentation
 - [Build full-stack Android apps with AI features using Google AI Studio and Firebase](https://firebase.blog/posts/2026/11/full-stack-android-apps-ai-studio-integration/) — Firebase Blog
 - Official Firebase video: Build secure AI Android apps in Google AI Studio with Firebase AI Logic & App Check
