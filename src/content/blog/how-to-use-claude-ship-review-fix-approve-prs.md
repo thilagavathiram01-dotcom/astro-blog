@@ -1,65 +1,73 @@
 ---
 title: "How to Use Claude Ship for PR Reviews and Approvals"
-description: "Step-by-step guide to Claude Ship: review, fix, and approve GitHub pull requests with Anthropic's beta agents on Team and Enterprise plans."
-pubDate: 2026-11-24T14:00:00
+description: "Step-by-step guide to Claude Ship: review, fix, and approve GitHub pull requests with Anthropic agents on Team and Enterprise plans."
+pubDate: 2026-11-24T15:00:00
 heroImage: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["ai-tools", "tutorials", "how-to", "developer"]
+tags: ["ai-tools", "tutorials", "developer", "ai"]
 noindex: false
 ---
 
-Developers open a pull request and then switch context. They dig into old code, push a fix, and wait for approval. Anthropic built Claude Ship to compress those steps. The beta feature, announced on 23 November 2026, lets Claude review pull requests, push fixes, and approve routine changes when a team policy allows it.
+Opening a pull request often means waiting. Reviewers reply, CI fails, conflicts appear, and someone has to approve. Anthropic's Claude Ship, launched in beta on 23 November 2026, aims to shrink that loop for teams that already use coding agents.
 
-Claude Ship runs on Claude Team and Enterprise plans for GitHub repositories. Code Review is generally available. PR Steward and Claude Approvals are in beta. Usage is billed on tokens. Admins can set spend limits. Organizations with Zero Data Retention, the HIPAA configuration, or customer-managed encryption keys cannot use it.
+Claude Ship combines three agents for GitHub repositories on Claude Team and Enterprise plans. Code Review is generally available. PR Steward and Claude Approvals are in public beta. Usage is billed on tokens. Organizations with Zero Data Retention, the HIPAA configuration, or customer-managed encryption keys cannot use it.
 
-This guide shows how individual developers start with the `/ship` command and how admins enable the full set of agents for a repository.
+This guide follows the official Claude Ship documentation and announcement. It covers what each agent does, how to enable them, the `/ship` command, and policy setup. It does not replace your GitHub branch protection rules.
 
 ## What the three agents do
 
-Claude Ship combines three agents:
+Code Review reads a pull request against the surrounding codebase. It collects findings, adversarially verifies them, ranks them by severity, and posts inline comments. Teams pick Quick, Standard, or Deep for each repository. On Anthropic's Claude Code team, where Claude's review is one layer among others, merged pull requests more than doubled from June to September 2026 while the share of reverted changes fell by more than 40 percent. Those numbers come from Anthropic's own measurements.
 
-**Code Review** reads a change against the surrounding codebase through multiple lenses. It collects findings, adversarially verifies them, categorizes them, and posts them as inline comments. Teams choose Quick, Standard, or Deep review levels per repository. On the Claude Code team, where Claude's review is one layer of a broader process, merged PRs more than doubled from June to September 2026 while the share of reverted changes fell by more than 40%.
+PR Steward works to keep a pull request green. It responds to failing CI checks, merge conflicts, and review feedback from Code Review, other tools, or people. After every push it comments with what changed and how to undo it. Developers can reply with `@claude` to steer it or `@claude stop` to have it step back. It is designed not to approve or merge.
 
-**PR Steward** keeps a pull request green. It acts on failing CI checks, merge conflicts, and review feedback from Code Review, other tools, or teammates. After every push it comments with what it changed and how to undo it. It is designed not to approve or merge. Developers can comment `@claude` with an instruction or `@claude stop` to have it step back.
+Claude Approvals applies an approval policy that the team writes as a file in the repository (typically `.claude/approvals.yml` on the default branch). It can approve routine changes when the policy allows, or require human sign-off for others. Anthropic compares it to a smarter CODEOWNERS file. Teams can include signals such as Code Review findings or their own natural-language classifiers. Official guidance recommends starting in observe-only mode before making the check required in GitHub.
 
-**Claude Approvals** applies a policy the team writes as a file in the repository. It can approve routine changes if the policy allows, or require deeper human sign-off for certain paths or scenarios. Anthropic compares it to a smarter CODEOWNERS file. Teams can include Code Review findings or their own natural-language classifiers as signals. Anthropic recommends starting in observe-only mode before making Claude Approvals a required check in GitHub branch protection.
+Your GitHub branch rules still decide what can merge. Claude Ship does not override them.
 
-GitHub branch rules and the developer's permissions still control what actually merges. Claude Ship does not override those.
+![Developer reviewing code on dual monitors](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80)
 
-![Laptop screen showing lines of code in a dark workspace](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80)
+## Two ways to start
 
-## Use `/ship` from Claude Code
+### For individual developers: the `/ship` command
 
-Individual developers can try the flow on their own changes without waiting for an organization-wide rollout. Update Claude Code, then run the command when a change is ready.
+Update Claude Code. When a change is ready, run `/ship`. Claude pushes the branch, opens the pull request, reviews it, and works on feedback and failing checks. What can merge still depends on your permissions and the repository's branch rules. Running `/ship` counts as regular Claude Code usage.
 
-1. Finish the change in your local clone.
-2. Open Claude Code in the repository directory.
-3. Run `/ship`.
-4. Claude commits (if needed), pushes the branch, opens the pull request, and starts a review.
-5. It then works on feedback and failing checks, pushing fixes and commenting on each push.
+### For admins: enable per repository
 
-What can merge depends on your GitHub permissions and the repository's branch protection rules. The command counts as regular Claude Code usage. It is rolling out in the CLI and the desktop app.
+Go to Organization settings > Claude Ship. You need an Owner role. Turn agents on one repository at a time, in this order:
 
-If the pull request is already open and you only want fixes, run `/steward` instead. It skips the initial review and starts the watch on feedback and checks.
+1. Set up Code Review. Connect GitHub and choose the review level and when reviews run.
+2. Set up PR Steward. Start with Manual (`@claude steward`) so it only acts when asked. Set a spend limit.
+3. Set up Claude Approvals. Add a policy file on the default branch. Begin in observe mode so the check reports what the policy would decide without blocking merges.
 
-## Enable Claude Ship for a repository
+Admins can set monthly spend limits for Code Review and PR Steward. Claude Approvals has no base charge, but classifiers and any Code Reviews it triggers are billed on tokens.
 
-Admins turn the agents on one repository at a time. You need an Owner role. Go to Organization settings > Claude Ship.
+Eligible Enterprise organizations can claim at least $10,000 in Claude Ship credits to use within 30 days of claiming. Claim by 15 January 2027. Terms apply.
 
-Recommended order:
+## Write a simple approval policy
 
-1. Set up Code Review. Connect the GitHub repository and choose the review level and when reviews run.
-2. Set up PR Steward. Start with the Manual setting (triggered by `@claude steward`) so the team controls when it acts. Set a spend limit.
-3. Add an approval policy file (`.claude/approvals.yml`) on the default branch. Start in observe mode. The Claude Approvals check reports what the policy would decide without blocking merges.
+The policy file lives in the repository. It defines rules for paths and when Claude may approve. Official docs describe starting in observe mode so you can see decisions before you rely on them for branch protection.
 
-Once the policy file exists, automatic Code Review behavior can change. To keep reviews on paths the policy covers, add `claude/code_review` to a rule. Admins can also set monthly spend limits for Code Review and PR Steward.
+A minimal approach is to require human approval for sensitive paths and allow Claude for routine ones. After you observe the check's behavior, you can make Claude Approvals a required status check in GitHub if your branch protection rules allow it.
 
-Teams can start with one repository, run the policy in observe mode, and expand only after they trust the results. Claude Ship works alongside existing branch protection and required checks.
+Keep the policy under version control so changes are reviewed like any other code.
 
-![Developer reviewing code on dual monitors](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+![Team collaborating around a laptop with code visible](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
 
-## Watch a walkthrough of the agents
+## Practical tips from the docs
 
-This short explainer covers the three agents, the `/ship` command, and the points teams should check before enabling approvals.
+- Enable agents one repository at a time. Do not turn everything on across the organization at once.
+- Use observe mode for Claude Approvals until you trust the decisions.
+- Set spend limits early. Token usage depends on PR size, review level, and how much PR Steward does.
+- PR Steward comments after every push with undo instructions. Read those comments before accepting the fixes.
+- Branch protection still matters. Require the checks and approvals your team wants.
+- `/ship` in Claude Code is available to developers even if full repository automation is not yet enabled.
+- Claude Ship is not available with Zero Data Retention, HIPAA configuration, or customer-managed keys.
+
+If you already use coding agents for other tasks, the pattern is similar to hosted tools that need explicit approval gates. See [how to run browser tasks with Agents API computer use](/blog/agents-api-computer-use-browser-tasks/) for another example of controlled agent access.
+
+## Watch a breakdown of the agents
+
+This short explainer covers the three parts of Claude Ship, the `/ship` command, and the main caveats from the 23 November announcement.
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/pSt3TfnaDdU"
@@ -69,26 +77,15 @@ This short explainer covers the three agents, the `/ship` command, and the point
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Tips before you turn it on
-
-- Begin with observe mode for Claude Approvals. Review the check results before you require them in branch protection.
-- Set spend limits early. Token billing scales with review depth, pull-request size, and how much PR Steward does.
-- Keep a human in the loop for sensitive paths. Write the policy so high-risk changes still need a person.
-- Use `@claude stop` if PR Steward heads in the wrong direction.
-- Confirm the repository is on GitHub and the organization is not under Zero Data Retention, HIPAA, or customer-managed keys.
-- Eligible Enterprise organizations can claim at least $10,000 in Claude Ship credits (claim by 15 January 2027, use within 30 days). Check the credit terms before you assume they apply.
-
-If you already use agent workflows, Claude Ship targets the handoff after the code is written. For other agent patterns, see [how to run browser tasks with the Agents API computer use tool](/blog/agents-api-computer-use-browser-tasks/).
-
 ## Conclusion
 
-Claude Ship moves the post-write steps of a pull request into agents that review, fix, and (when the policy allows) approve. Developers start with `/ship` in Claude Code. Admins enable the agents repository by repository, beginning with Code Review, then PR Steward, then an approval policy in observe mode.
+Claude Ship moves part of the pull-request cycle into agents that review, fix, and (under a team-written policy) approve. Code Review is generally available. PR Steward and Claude Approvals are in beta and billed on tokens. Start with one repository, begin Approvals in observe mode, keep your GitHub branch rules, and measure the effect on your own queue before expanding.
 
-The feature is in beta on Team and Enterprise plans. GitHub rules still decide the final merge. Start small, watch the results, and expand only after the policy matches how your team wants to ship.
+The goal Anthropic states is to ship code as fast as teams write it. The controls are the policy file, spend limits, and existing branch protection.
 
 ## Sources
 
 - [Introducing Claude Ship](https://claude.com/resources/articles/introducing-claude-ship) — Anthropic, 23 November 2026
-- [Claude Ship documentation](https://code.claude.com/docs/en/claude-ship) — Claude Code Docs
-- [Get a pull request ready with /ship and /steward](https://code.claude.com/docs/en/ship-command) — Claude Code Docs
+- [Claude Ship documentation](https://code.claude.com/docs/en/claude-ship) — Anthropic Claude Code docs
 - [Claude Ship product page](https://claude.com/product/claude-ship) — Anthropic
+- [Claude Ship: AI That Reviews, Fixes and Approves Your Pull Requests](https://www.youtube.com/watch?v=pSt3TfnaDdU) — YouTube explainer, 24 November 2026
