@@ -1,80 +1,84 @@
 ---
-title: "How to Use Gemini Overlay to Compare Prices on Android"
-description: "Use Gemini’s floating overlay on Android to compare prices, check warranties, and get shopping help from the screen in front of you."
+title: "How to Compare Prices with Gemini Overlay on Android"
+description: "Use Gemini overlay on Android to compare prices, check warranties, and get shopping help directly over product pages in apps like Amazon."
 pubDate: 2026-11-25T16:00:00
-heroImage: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "android", "how-to", "tutorials"]
+heroImage: "https://images.unsplash.com/photo-1768987439370-bd60d3d0b28b?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "android", "how-to", "tutorials", "ai-tools"]
 noindex: false
 ---
 
-Shopping on your phone often means jumping between apps or tabs to check prices. Gemini’s floating overlay on Android now helps close that gap.
+Shopping on your phone often means jumping between apps to check prices or return policies. Google just made that faster with the Gemini overlay on Android.
 
-When you open the overlay over a product page, it can suggest ready-made prompts such as “Compare prices,” “Help me pick,” or “Check warranty and returns.” Tapping one captures a screenshot of the current screen and uses it as context so Gemini can compare the listing against other retailers.
+When you open the floating Gemini panel over a product page, it now suggests prompts such as “Help me pick,” “Compare prices,” or “Check warranty and returns.” Tap one and Gemini grabs a screenshot of the visible screen as context. Reports confirm this works on Amazon, Flipkart, Blinkit, and other shopping apps with Google app version 17.78.13 and later. The rollout is server-side, so update the Google app and open Gemini over a product page to check.
 
-Reports confirm it works with Amazon, Flipkart, and quick-commerce apps such as Blinkit. The change is rolling out with recent Google app versions (including 17.78.13) as a server-side update, so update the Google app and open Gemini over a product page to check whether the prompts appear.
+This is the same overlay that already reads screen context for YouTube videos or PDFs. The new part is the shopping-specific chips that appear automatically.
 
-## Set Gemini as the default assistant first
+## Set up the Gemini overlay
 
-The overlay only appears when Gemini is the digital assistant.
+The overlay only appears when Gemini is your default digital assistant and has the right permissions.
 
-1. Open **Settings** and search for **Digital assistant app**.
-2. Choose **Gemini** (or the Google entry that now points to Gemini).
-3. On Pixel and many other phones, go to **Settings → System → Gestures → Press and hold power button** and set it to the digital assistant.
-4. Open the Gemini app once and accept the prompts for microphone, notifications, and appear-on-top if they appear.
+1. Open **Settings** and search for **Digital assistant app**. Select **Gemini**.
+2. On Pixel and many Galaxy phones, go to **Settings → System → Gestures → Press and hold power button** and choose the digital assistant.
+3. Open the **Gemini** app. Grant microphone, notifications, and **Appear on top** (Display over other apps) when prompted.
+4. In the **Google** app, confirm Gemini is active under Settings → Google Assistant features.
+5. Enable screen context: Gemini app → profile → Settings → Screen context. Turn on **Use text from screen** and **Use screenshot**.
 
-After that, a long press on the power button (or “Hey Google” if enabled) opens the compact overlay instead of the full app. You can still open the full Gemini app from the launcher when you need history or settings.
+Test it from any open app with a long-press on the power button. The compact overlay should appear without leaving the current screen. If it opens the full app instead, force-stop the Google app once and retry.
 
-
-
-![Person holding a smartphone showing an app interface](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
-
+You can also minimize the overlay into a floating bubble so it stays out of the way while you continue shopping. See our guide on [how to minimize the Gemini overlay on Android](/blog/gemini-overlay-minimize-android/).
 
 
-## Open the overlay over a product page
 
-1. Open a shopping app or browser tab that shows a clear product page (title, price, and key details visible).
-2. Long-press the power button or say “Hey Google.”
-3. The overlay appears over the current app. Look for suggested chips such as **Compare prices**, **Help me pick**, or **Check warranty and returns**.
+![Person scrolling through online shopping on a smartphone](https://images.unsplash.com/photo-1768987439370-bd60d3d0b28b?auto=format&fit=crop&w=800&q=80)
 
-If the chips do not appear, type a direct prompt such as “Compare prices for this product across other stores” or “Check the warranty and return policy for this item.” Gemini takes a screenshot of the visible page and combines it with your text.
 
-This is different from Gemini Live screen sharing. The overlay uses a one-time screenshot for context; it does not require continuous screen sharing.
 
 ## Use the shopping prompts
 
-- **Compare prices**: Gemini looks at the current listing and checks similar offers from other retailers (for example, Amazon versus Walmart or Target in supported regions). It can surface price differences and available deals.
-- **Help me pick**: Useful when several options or variants are on screen. Gemini summarizes key differences using the visible details plus its broader shopping data.
-- **Check warranty and returns**: Extracts or summarizes return windows and warranty terms from the page, then can note what to verify on the merchant site.
+Open a product page in a shopping app. The product name, price, and key details should be visible on screen.
 
-You can also type free-form requests once the screenshot is attached: “Is this a good deal compared with the usual price?” or “Show similar products in a lower price range.”
+1. Long-press the power button (or say “Hey Google”) to bring up the Gemini overlay.
+2. Look for the new suggestion chips: “Help me pick,” “Compare prices,” or “Check warranty and returns.”
+3. Tap a chip. Gemini takes a screenshot of the current page and feeds it to the model along with the prompt text.
+4. Review the reply. For “Compare prices” it checks the listing against other retailers such as Walmart or Target and notes current deals.
+5. Ask follow-up questions in the same overlay conversation. Everything stays in your Gemini chat history.
 
-Results draw on Google’s Shopping Graph for listings and prices. Always open the merchant page and confirm the final price, shipping, and availability before you buy. Prices change quickly, especially during sales periods.
+The analysis is limited to what is visible on screen. Scrolling down in the shopping app before you invoke Gemini gives the model more product details, specs, or reviews. It does not automatically read the full scrolled page.
+
+Conversations appear in the main Gemini app, so you can return later without reopening the overlay.
+
+## Practical prompts that work
+
+The chips cover the common cases, but you can type your own once the overlay is open:
+
+- “Is this worth buying compared with the similar model from another brand?”
+- “What are the return and warranty terms for this item?”
+- “Show me the current price at Walmart and Target for this exact model.”
+- “Summarize the top reviews and any common complaints.”
+
+Keep the request focused on the visible product. Broad questions without screen context produce generic answers.
+
+After Gemini replies, minimize the overlay if you want to finish the purchase in the original app. The bubble stays available for more questions.
+
+
+
+![Woman using a credit card and smartphone for online shopping](https://images.unsplash.com/photo-1758876201966-a680772a41ef?auto=format&fit=crop&w=800&q=80)
+
+
 
 ## Tips for better results
 
-Keep the product page fully visible and scrolled to the main title and price before you open the overlay. Hidden details behind “see more” or tabs are not captured.
+- Zoom or scroll so the product title, price, and key specs fill the screen before you invoke Gemini.
+- Confirm the model number or variant yourself. Screen context helps, but it is not a substitute for checking the merchant page.
+- The feature is useful during sales. Pair it with manual checks of stock and shipping costs, because Gemini only sees the snapshot you gave it.
+- Update the Google app to version 17.78.13 or newer. The shopping chips are part of a server-side rollout, so they may appear gradually.
+- Mute Gemini Live voice replies if you prefer captions while shopping in public. The latest Google app adds a speaker icon for that.
 
-Be specific in follow-ups. Name the exact model or variant if the screenshot is ambiguous. Ask Gemini to list the source of each price so you can check it yourself.
-
-If you want to keep using the shopping app while Gemini answers, tap **Minimize** on the overlay. It collapses to a floating bubble you can tap later. Full details on that control are in [How to Minimize Gemini Overlay on Android](/blog/gemini-overlay-minimize-android/).
-
-Update both the Google app and the Gemini app from the Play Store. Force-stop the Google app once if the new prompts still do not appear after an update.
-
-
-
-![Smartphone and laptop on a desk ready for online shopping](https://images.unsplash.com/photo-1484788984921-03950022c9ef?auto=format&fit=crop&w=800&q=80)
-
-
-
-## Privacy and limits
-
-The screenshot stays within the Gemini session for that prompt. Review your Gemini activity settings if you prefer not to save chats. The feature does not automatically complete purchases; you still confirm any order on the merchant site or through supported payment flows.
-
-Availability depends on the Google app version, your region, and the shopping app. It is not guaranteed on every product page or every device. If prompts never appear, fall back to typing the request after the overlay opens.
+If the chips do not appear, force-stop the Google app, clear its cache, and reopen a product page. Screen context must be enabled.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/GDBFN00kV-M"
-    title="Tis the season for holiday shopping with our latest AI shopping updates"
+  <iframe src="https://www.youtube.com/embed/hZv3Y8xIBek"
+    title="Android: Google I/O Gemini Demo"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
@@ -82,12 +86,12 @@ Availability depends on the Google app version, your region, and the shopping ap
 
 ## Conclusion
 
-The Gemini overlay turns the product page already on your screen into context for a quick price check or warranty summary. Set Gemini as the default assistant, open it over a clear listing, and try the suggested chips or a direct prompt.
+The Gemini overlay now surfaces shopping help exactly where you need it: on top of the product page. Open a listing, invoke the overlay, tap a suggestion or type a focused question, and get a comparison or warranty check without switching apps.
 
-Confirm every price and term on the retailer site before you buy. For longer research or multi-step orders, switch to the full Gemini app or Tasks mode. The overlay is the fast path when you are already looking at the item.
+Set Gemini as the default assistant, enable screen context, and update the Google app. Then try it on the next item you research. The overlay keeps the original app visible, and you can minimize it into a bubble when you are ready to buy.
 
 ## Sources
 
-- [Gemini’s floating overlay now helps you compare prices, check warranty terms across shopping apps](https://www.androidauthority.com/google-gemini-overlay-shopping-context-suggestions-3739210/) — Android Authority (25 November 2026)
-- [Get started with the Gemini mobile app](https://support.google.com/android/answer/14554984) — Google Help
-- [Shopping made easier with the Gemini app](https://blog.google) — Google Blog (shopping features)
+- [Gemini’s floating overlay now helps you compare prices, check warranty terms across shopping apps](https://www.androidauthority.com/google-gemini-overlay-shopping-context-suggestions-3739210/) — Android Authority, 25 November 2026
+- [Get started with the Gemini mobile app](https://support.google.com/android/answer/14554984) — Android Help
+- [Gemini Apps Help](https://support.google.com/gemini) — Google
