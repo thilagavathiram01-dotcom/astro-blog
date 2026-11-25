@@ -7,7 +7,7 @@ tags: ["ai-tools", "gemini", "tutorials", "how-to", "developer"]
 noindex: false
 ---
 
-Google DeepMind launched Humanity’s First Exam (HFE) on 24 November 2026. The benchmark measures whether large language models answer simple, everyday questions correctly every time, not just once.<grok type="render_inline_citation" citation_id="456" />
+Google DeepMind launched Humanity’s First Exam (HFE) on 24 November 2026. The benchmark measures whether large language models answer simple, everyday questions correctly every time, not just once.
 
 Frontier models score high on complex math and coding tests. They still miss basic visual counting or color sequences across slight variations. HFE targets that reliability floor.
 
@@ -15,11 +15,11 @@ This guide shows how to access the public dataset, run evaluations against Gemin
 
 ## What Humanity’s First Exam Measures
 
-HFE contains 544 text and image prompts across 20 foundational capabilities. These include object counting, color identification, spatial reasoning, basic arithmetic, constraint following, and false-premise detection.<grok type="render_inline_citation" citation_id="458" />
+HFE contains 544 text and image prompts across 20 foundational capabilities. These include object counting, color identification, spatial reasoning, basic arithmetic, constraint following, and false-premise detection.
 
 Prompts are grouped into 136 families. Each family has one seed prompt and three controlled variants that change entities, word order, or visual details while keeping the core task the same.
 
-The headline metric is family pass^4. It estimates the probability that a model answers all four prompts in a family correctly across the required samples. Top models reach 96–98% on single-shot pass@1 yet average around 85.6% on family pass^4.<grok type="render_inline_citation" citation_id="431" />
+The headline metric is family pass^4. It estimates the probability that a model answers all four prompts in a family correctly across the required samples. Top models reach 96–98% on single-shot pass@1 yet average around 85.6% on family pass^4.
 
 Visual perception accounts for roughly 74% of errors. Extra reasoning time helps less on image tasks than on pure text.
 
@@ -29,7 +29,7 @@ One public example asks for the color of the third letter in each word of a neon
 
 ## Access the Public Dataset on Kaggle
 
-DeepMind released a stratified 20% public split of 112 prompts (28 complete families) under CC-BY-4.0.<grok type="render_inline_citation" citation_id="457" />
+DeepMind released a stratified 20% public split of 112 prompts (28 complete families) under CC-BY-4.0.
 
 1. Go to the Kaggle dataset page: https://www.kaggle.com/datasets/deepmind/hfe-public
 2. Download `hfe_public_112.jsonl` or the CSV version.
@@ -37,7 +37,7 @@ DeepMind released a stratified 20% public split of 112 prompts (28 complete fami
 
 The remaining 432 prompts stay private to limit contamination. Official scores appear on the Kaggle leaderboard at https://www.kaggle.com/benchmarks/deepmind/hfe.
 
-A companion competition runs until 15 December 2026. Participants can submit everyday questions that current models still get wrong. The prize pool includes $50,000 in Kaggle swag.<grok type="render_inline_citation" citation_id="456" />
+A companion competition runs until 15 December 2026. Participants can submit everyday questions that current models still get wrong. The prize pool includes $50,000 in Kaggle swag.
 
 ## Evaluate Gemini Models with the Gemini API
 
@@ -77,7 +77,7 @@ for item in prompts[:5]:  # start with a small sample
 print(json.dumps(results, indent=2))
 ```
 
-For full family pass^4 scoring, sample each prompt multiple times (the paper uses 6 draws) and check semantic equivalence against the gold answer. An LLM judge such as Gemini 3.1 Pro can grade free-form answers when exact string match is insufficient.<grok type="render_inline_citation" citation_id="457" />
+For full family pass^4 scoring, sample each prompt multiple times (the paper uses 6 draws) and check semantic equivalence against the gold answer. An LLM judge such as Gemini 3.1 Pro can grade free-form answers when exact string match is insufficient.
 
 ![Developer analyzing model evaluation results](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
 
@@ -88,7 +88,7 @@ Track both pass@1 (any correct sample) and family pass^4 (all variants correct).
 - Use temperature 1.0 for sampling diversity, matching the official protocol.
 - Separate text-only and multimodal results. Visual tasks drive most failures.
 - Avoid contaminating the private holdout. Stick to the public 112 prompts for local experiments.
-- Compare against the live Kaggle leaderboard. GPT-6.2 Astra currently leads at roughly 90.7% family pass^4, followed by GPT-6.2 Sol and Gemini 4 Neon.<grok type="render_inline_citation" citation_id="461" />
+- Compare against the live Kaggle leaderboard. GPT-6.2 Astra currently leads at roughly 90.7% family pass^4, followed by GPT-6.2 Sol and Gemini 4 Neon.
 - For production agents, treat high single-shot scores as insufficient. Require consistent success across variants.
 
 If you already evaluate models on other Android-related benchmarks, see our guide on [choosing AI models with Android Bench 2.0](/blog/android-bench-2-0-choose-ai-models/).
