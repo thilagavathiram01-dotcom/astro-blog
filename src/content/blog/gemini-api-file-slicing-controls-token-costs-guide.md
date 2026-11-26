@@ -110,6 +110,14 @@ In agent workflows, let the model request slices inside tool responses. This avo
 
 Test resolution choices. Low or medium often suffices for text-heavy pages. Reserve high for charts and dense layouts. Check official document processing docs for exact token estimates per resolution.
 
+## Common Use Cases
+
+Document analysis benefits most. Extract key figures from annual reports without loading every appendix. Process contracts by targeting signature pages and defined terms. For research papers, skim abstracts and methods as text, then inspect figures at high resolution.
+
+Spreadsheet workflows gain focus. Audit a specific range in a financial model or compare formulas across tabs without ingesting unused sheets. Video and audio clips let you summarize a meeting segment or extract dialogue from a recorded demo without full-file processing.
+
+Agents become more efficient. A tool-using agent can decide the next page or time range based on prior results and request it in the function response. This keeps context windows tighter and costs lower across multi-step tasks.
+
 ## Conclusion
 
 File slicing controls make large-file processing practical in the Gemini API. Upload once, inspect only what you need, and pay tokens for the relevant parts. The feature works with Gemini 4 models today in Google AI Studio and the Gemini platform, with native Office and OpenDocument support.
