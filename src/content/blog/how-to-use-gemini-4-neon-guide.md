@@ -1,97 +1,119 @@
 ---
-title: "How to Use Gemini 4 Neon for Complex Tasks"
-description: "Switch to Gemini 4 Neon in the Gemini app, set thinking levels, and apply it to coding and analysis. Available for Google AI Pro and Ultra."
-pubDate: 2026-11-24T10:00:00
-heroImage: "https://images.unsplash.com/photo-1746286720965-cccf57e56c68?auto=format&fit=crop&w=1200&h=630&q=80"
+title: "How to Use Gemini 4 Neon: Setup and Tips"
+description: "Learn how to access and use Gemini 4 Neon in Google AI Studio and the API for complex coding and knowledge work, with pricing and thinking levels."
+pubDate: 2026-11-26T15:00:00
+heroImage: "https://images.unsplash.com/photo-1759661990336-51bd4b951fea?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["gemini", "ai-tools", "tutorials", "how-to", "google"]
 noindex: false
 ---
 
-Google released Gemini 4 Neon on 18 November 2026. It sits between Gemini 4 Hydrogen for everyday speed and Gemini 4 Carbon for the longest, hardest projects. Neon targets complex coding, knowledge work, and science tasks that need strong reasoning without the full cost or latency of the top model.
+Google released Gemini 4 Neon on November 18, 2026. It sits between the everyday Hydrogen model and the deeper Carbon model in the Gemini 4 family.
 
-This guide shows exactly how to select Neon in the Gemini app, choose a thinking level, and write prompts that play to its strengths. All details come from Google’s official blog post and model documentation.
+Neon brings frontier-level reasoning to complex software engineering, knowledge work, and science tasks while finishing faster and at lower cost per task than larger alternatives. It runs on a shared 1 million token context window.
 
-## What Gemini 4 Neon offers
+You can try it today in Google AI Studio on the paid tier, in the Gemini API, for Google AI Pro and Ultra subscribers in Google Antigravity, and for Pro and Ultra users in the Gemini app. There is no free tier.
 
-Neon carries a 1-million-token context window shared across input, thinking, and output. Pricing is $3 per million input tokens and $15 per million output tokens, with cached input at $0.15 per million (a 95 percent discount). It supports four thinking levels: low, medium, high (default), and xhigh.
+This guide shows how to access it, pick a thinking level, and apply it to real coding and analysis work. If you already use the faster everyday model, see our guide on [using Gemini 4 Hydrogen](/blog/how-to-use-gemini-4-hydrogen-guide/).
 
-Google positions Neon for multi-step instruction following, dense document analysis, multi-file coding edits, and scientific reasoning. Independent benchmarks place it near the top of its class on coding-agent and agentic indexes while remaining faster and cheaper than larger frontier models for many workloads.
+## What Gemini 4 Neon Does Well
 
-You need a Google AI Pro or Ultra subscription to use Neon in the Gemini app or Google Antigravity. Developers can call it on the paid Gemini API tier in Google AI Studio.
+Neon handles multi-file debugging, repository refactoring, and long-horizon agent workflows. It produces targeted edits rather than full rewrites and maintains context across tool calls.
 
-![Laptop screen showing code and an AI coding interface](https://images.unsplash.com/photo-1763568258143-497992aa73da?auto=format&fit=crop&w=800&q=80)
+On independent evaluations it scores 61 on the Artificial Analysis Intelligence Index at the xhigh thinking level and ranks near the top on coding-agent and knowledge-work benchmarks. It processes text, images, audio, video, PDFs, and charts inside the same 1 million token window.
 
-## How to switch to Neon in the Gemini app
+It also shows stronger multi-step instruction following and lower fabrication rates than earlier Gemini models in internal testing. Four thinking levels let you control depth versus speed and token spend.
 
-Follow these steps on gemini.google.com or the Gemini mobile app:
+## How to Access Gemini 4 Neon
 
-1. Sign in with the Google account that holds your AI Pro or Ultra plan.
-2. Open a new chat or existing conversation.
-3. Look below or beside the prompt box for the current model name (often “Auto” or “Hydrogen”).
-4. Tap or click the model name to open the picker.
-5. Select **Gemini 4 Neon** or the label “Deeper analysis (4 Neon)”. A lock icon means your plan does not include it.
-6. Choose a thinking level if the menu appears: Low, Medium, High, or Extra High (xhigh). High is the default.
-7. Type your prompt and submit.
+### In Google AI Studio
 
-The selected model and thinking level stay active for that conversation. Start a fresh chat when you change topics so the context stays focused.
+1. Go to [aistudio.google.com](https://aistudio.google.com) and sign in with a paid account.
+2. Start a new prompt or open Build mode.
+3. Select Gemini 4 Neon from the model picker.
+4. In Run settings choose a thinking level (High is the default).
+5. Enter your prompt and run it.
 
-## Set the right thinking level
+Paid API usage is required. You can also reach the same model through the model dropdown in Gemini for business.
 
-Thinking level controls how much internal reasoning the model performs before answering.
+### Via the API
 
-- **Low** produces fast, concise replies for straightforward questions.
-- **Medium** balances speed and depth for most everyday analysis.
-- **High** (default) suits complex multi-step work such as long reports or multi-file code reviews.
-- **Xhigh** is reserved for the hardest problems where high is not enough; it uses more tokens and time.
+Use the model ID `gemini-4-neon` with the Google Gen AI SDK or REST. Set the thinking level in the generation config. Upgrade to a recent SDK for long-decode support up to the full window.
 
-For a 40-page PDF or a large codebase, start with High. Switch to Xhigh only if the first answer misses important connections. Lower the level when you only need a quick summary.
+Here is a minimal Python example:
 
-## Practical prompts that work well
+```python
+from google import genai
 
-Neon handles longer, structured requests better than short questions. Include the goal, the sources, and any constraints.
+client = genai.Client()
+response = client.models.generate_content(
+    model="gemini-4-neon",
+    contents="Refactor this function to handle retries with exponential backoff.",
+    config={"thinking_config": {"thinking_level": "high"}}
+)
+print(response.text)
+```
 
-Example for analysis:
-“Read the attached quarterly report. List the three largest cost increases, quote the exact page and line for each, and suggest one concrete action for each increase.”
+### In Google Antigravity and the Gemini App
 
-Example for coding:
-“Review the three uploaded source files. Identify the bug that causes the race condition on line 142 of utils.py, propose a minimal fix, and explain why the change is safe.”
+Paid Pro and Ultra subscribers can select Neon in Google Antigravity for agentic coding sessions. In the Gemini app it appears for the same paid tiers when you need stronger reasoning than Hydrogen.
 
-Attach files with the plus button. Neon reads PDFs, spreadsheets, images, and code repositories more precisely than earlier models and can pull context from connected Google apps when you allow it.
+## Choosing the Right Thinking Level
 
-You can also hand multi-step work to [Tasks in Gemini](/blog/how-to-use-tasks-in-gemini/) and let Neon run the heavier reasoning inside those tasks if your plan supports it.
+Neon offers four levels:
 
-![Smartphone showing popular AI app icons including Gemini](https://images.unsplash.com/photo-1757310998309-87a97e562ee5?auto=format&fit=crop&w=800&q=80)
+- **Low**: Fastest responses and lowest token use. Suitable for quick checks or high-volume preprocessing.
+- **Medium**: Good balance for interactive coding and latency-sensitive tool calls.
+- **High** (default): Recommended starting point for most coding, agent, and knowledge-work tasks.
+- **xhigh**: Deepest multi-step reasoning. Use when High returns incomplete results on hard engineering or analysis problems. It consumes more output tokens.
 
-## Use Neon in Google AI Studio
+Start with High. Move to xhigh only after testing. Drop to Medium or Low once you confirm quality remains acceptable for the task.
 
-Developers can try Neon without a consumer subscription on the paid API tier:
+![Multiple computer screens showing code under neon lighting](https://images.unsplash.com/photo-1759661990336-51bd4b951fea?auto=format&fit=crop&w=800&q=80)
 
-1. Go to aistudio.google.com and sign in.
-2. Enable billing on your Google Cloud project.
-3. Create or select an API key.
-4. In the playground, open the model dropdown and choose gemini-4-neon.
-5. Set the thinking level in the configuration panel.
-6. Test prompts, then copy the code snippet for your preferred language.
+## Step-by-Step: Run a Coding Task
 
-The request schema matches other Gemini 4 models, so you only change the model ID if you already call Hydrogen or Carbon.
+Try this in AI Studio or via the API.
 
-## Tips for better results
+1. Select Gemini 4 Neon and set Thinking level to High.
+2. Paste a concrete prompt: “Debug this Python payment retry queue for race conditions. Show the fixed code and explain the changes.”
+3. Review the output. It should return focused edits and a short explanation.
+4. Follow up with: “Add unit tests that cover concurrent retries.”
+5. Copy the result into your editor and run the tests.
 
-- Keep the conversation focused. Long histories increase cost because the model re-reads prior turns.
-- Ask for structured output (tables, numbered lists, or specific file diffs) when you need to verify the answer.
-- Review citations and page numbers Neon provides; it reduces fabrication but does not eliminate the need to check sources.
-- For agent workflows in Google Antigravity, Neon works well as a fast orchestrator that directs smaller Hydrogen sub-agents.
-- Monitor token usage on the first few runs so you understand the cost of xhigh versus high.
+Neon tends to share progress and avoid redundant file reads on larger jobs. For multi-file work you can attach a repository snapshot or relevant files within the context window.
 
-## Limitations to know
+## Pricing and Cost Control
 
-Neon is not available on the free tier. Work and school Google accounts may have different access rules. Sampling parameters such as temperature are ignored. The model is strong on multi-step tasks but still requires human review for high-stakes decisions such as legal, medical, or production code changes.
+On the standard paid tier Neon costs $3 per million input tokens and $15 per million output tokens (including thinking tokens). Cached input is $0.15 per million. Batch and Flex tiers are half price; Priority is higher.
 
-## Watch a quick overview
+There is no free tier. Thinking level does not change the per-token rate, but higher levels produce more output tokens and raise the bill. Google notes that Neon at the default High setting can cost less per completed task than Carbon because it finishes work more efficiently.
+
+Monitor usage in AI Studio or via the API dashboard. Start with High and only raise the level when results are incomplete.
+
+![Laptop screen displaying code with warm lighting](https://images.unsplash.com/photo-1763568258244-9d5aa9c3ce45?auto=format&fit=crop&w=800&q=80)
+
+## Practical Tips for Better Results
+
+- State the desired format. Ask for “a table of findings” or “bullet points with file names” so output stays structured.
+- Attach relevant files. Neon handles PDFs, spreadsheets, charts, and code within the 1 million token window.
+- Use multi-turn conversation. It maintains context and improves tool use across turns.
+- Pair it with Hydrogen. In Antigravity the orchestrator can route planning to Neon and fast execution to Hydrogen sub-agents.
+- Verify critical facts. It reduces fabrication relative to earlier models, yet still benefits from source checks on high-stakes work.
+- Watch long-context cost. The flat pricing helps, yet large inputs plus high thinking still increase spend.
+
+## Common Limits to Remember
+
+Neon is paid-only. Synchronous output defaults to 65,536 tokens; longer generations use long-decode continuation in supported clients. Knowledge cutoff is around early 2026; enable grounding or Search when you need current information.
+
+It supports implicit caching only. Explicit caching is not available on this model.
+
+## Watch a Short Demo
+
+This video shows real outputs from early testing of Gemini 4 Neon on coding and creative tasks.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/JvIcxJIzonA"
-    title="How to Use Gemini 4 Neon in Gemini"
+  <iframe src="https://www.youtube.com/embed/Q0ShBenKyqo"
+    title="Gemini 4 Neon Is Here, And It’s a Beast!"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
@@ -99,10 +121,12 @@ Neon is not available on the free tier. Work and school Google accounts may have
 
 ## Conclusion
 
-Gemini 4 Neon gives Pro and Ultra subscribers a practical middle ground: frontier-level reasoning on complex coding and analysis tasks at a lower cost and higher speed than the largest models. Switch to it from the model picker, match the thinking level to the job, and write clear multi-step prompts. Test it on one real document or code review this week and compare the result with your usual model.
+Gemini 4 Neon gives developers a practical middle path: frontier-level reasoning on complex coding and knowledge work without always paying the highest token prices of the largest models. Set the thinking level to High, start in AI Studio or the API, and test it on one real task today.
+
+Check the official model card and pricing page for any updates after launch.
 
 ## Sources
 
-- [Introducing Gemini 4 Neon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/) — Google Blog, 18 November 2026
-- [Gemini 4 Neon model card](https://deepmind.google/models/model-cards/gemini-4-neon/) — Google DeepMind
-- Gemini Apps Help: models and thinking levels (official documentation)
+- [Introducing Gemini 4 Neon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/) — Google, November 18, 2026
+- [Gemini 4 Neon in Google AI Studio](https://aistudio.google.com)
+- [Gemini API documentation](https://ai.google.dev)
