@@ -1,102 +1,122 @@
 ---
-title: "How to Use Genie 4 for Interactive Worlds in Gemini API"
-description: "Step-by-step guide to generating and steering real-time interactive worlds with Genie 4 via Google AI Studio and the Gemini API."
-pubDate: 2026-11-21T10:00:00
-heroImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials", "how-to", "developer", "ai"]
+title: "How to Use Genie 4 Interactive Worlds in AI Studio"
+description: "Step-by-step guide to Genie 4 in Google AI Studio and Gemini API for real-time 720p worlds with native audio and keyboard controls."
+pubDate: 2026-11-26T17:00:00
+heroImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["ai-tools", "tutorials", "how-to", "gemini", "developer"]
 noindex: false
 ---
 
-Google made Genie 4 available to developers through the Gemini API and Google AI Studio on 19 November 2026. The model generates continuous 720p worlds at 24 frames per second with synchronized native audio. You start from a text prompt, a reference image, or both, then navigate and change the world in real time.
+Google opened Genie 4 to developers on 19 November 2026 through the Gemini API and Google AI Studio. The model generates continuous interactive 720p worlds at 24 frames per second with synchronized native audio.
 
-This guide shows how to access Genie 4, seed a world, control movement, and steer events. All details come from Google’s official announcement and documentation.
+You seed a scene from a text prompt, a 16:9 reference image, or both. Then you navigate with keyboard controls and send mid-session text commands to change weather, objects, or events. Gemini reasoning keeps the world consistent.
 
-## What Genie 4 Does
+This guide walks through access requirements, the AI Studio playground, and the basic API flow. All facts come from the official Google Blog announcement and the Genie 4 documentation on Google AI for Developers.
 
-Genie 4 is a real-time interactive world model. It produces 16:9 video at 720p and 24 fps together with 48 kHz stereo audio. Ambient sounds, sound effects, and character dialogue stay in sync with the visuals. Gemini reasoning maintains consistency as you explore.
+## What You Need Before Starting
 
-Sessions last up to 120 seconds. Visual coherence is strongest in the first 45–90 seconds. Every output carries an imperceptible SynthID watermark. The model ID is `genie-4` (or `models/genie-4`). It requires a paid-tier Gemini API key. Pricing is approximately $0.10 per second of streamed output.
+Genie 4 requires a paid-tier Gemini API key. It is not available on the free tier. Billing runs on video output tokens at roughly $0.10 per second under standard pricing, with audio included.
 
-You can prototype interactive experiences, visualize spatial designs, or create training environments for robotics and agents. For offline fixed clips or higher-resolution upsampling, use other Gemini models instead.
+Sessions last up to 120 seconds. Visual coherence is strongest in the first 45–90 seconds. The model serves from data centers in the United States, Western Europe, and Japan. Expect the best responsiveness if you are near those regions.
 
-![Person interacting with a digital interface on a large screen](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80)
+Every output includes SynthID watermarking. For fixed offline video clips or higher resolutions, Google recommends Gemini Omni 1.2 Flash instead.
 
-## Access Genie 4 in Google AI Studio
+![Developer working on a laptop with code and AI tools](https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80)
 
-The fastest way to try Genie 4 is the Live playground in Google AI Studio. Open [aistudio.google.com/live?model=genie-4](https://aistudio.google.com/live?model=genie-4) while signed in with a paid-tier account.
+## Try Genie 4 in Google AI Studio
 
-The playground loads starter worlds such as a living oil painting or a wine cellar. Click the video viewport to focus keyboard capture. Use WASD to move forward, backward, and strafe. Arrow keys pan and tilt the camera. Response time is roughly 0.2–0.5 seconds.
+The fastest way to experiment is the official Live playground.
 
-You can bind custom keys (for example E, Q, or R) to short text prompts that change the world. AI Studio enforces a 2-second cooldown on custom bindings so overlapping events do not collide. Mid-session text events should be short and describe a global change, such as “Heavy rain starts falling.” These typically appear within 1–2 seconds.
+1. Sign in to Google AI Studio with an account that has a paid API key.
+2. Open the Genie 4 Live session at aistudio.google.com/live?model=genie-4.
+3. Choose a starter world or write your own world_setup prompt. Include first-person point of view, concrete visual details, and physical sound descriptions.
+4. Optionally upload a single 16:9 reference image under 48 KB for WebRTC compatibility.
+5. Connect and wait 5–9 seconds for the first frames.
+6. Use WASD and arrow keys for movement. Send short text events to steer the scene (for example, “Heavy rain starts falling”).
+7. End the session cleanly so billing stops.
 
-Test prompts here before writing code. Google’s prompt guide recommends first-person, grounded language. Start by stating what you are standing on or holding and what you face. Add concrete visual and audio details. Embed cause-and-effect rules with “Rule:” clauses so interacting with an object changes the world.
+The playground also includes tested patterns such as causal rules (“Rule: when I reach the door, the light turns on”) and custom key bindings.
 
-## Generate Worlds via the Gemini API
+## Use Genie 4 Through the Gemini API
 
-Developers use the Interactions API on the v1beta endpoint. Create a session on your server with a paid-tier key, then connect a live client.
+The Interactions API handles Genie 4 sessions. The recommended flow keeps your long-lived API key on the server.
 
-Basic lifecycle:
+High-level steps:
 
-1. Call `interactions.create` with `model: "genie-4"`.
-2. For browser clients, mint a single-session ephemeral `auth_token` so the long-lived key never leaves the server.
-3. Connect with `interactions.connect` over WebRTC (browsers) or WebSocket (Python/Node).
-4. Send exactly one `world_setup` event containing a text `world_prompt` and, optionally, a 16:9 reference image.
-5. Stream `user_action` events for keyboard movement and `input` events for text steering.
-6. Call `session.complete()` when finished so generation and billing stop.
+1. Create an interaction on your backend with model “genie-4” using the v1beta endpoint.
+2. For browser clients, mint a single-session ephemeral auth token. Never send the permanent key to the client.
+3. Connect over WebRTC (recommended for browsers) or WebSocket.
+4. Send one world_setup event containing the initial prompt (and optional reference image).
+5. Stream video and audio while sending user_action events for keys and input events for text steering.
+6. Call complete() when finished. Closing the tab alone does not stop server-side generation or billing.
 
-Install the latest `google-genai` (Python) or `@google/genai` (JavaScript) SDK. Sessions start producing frames after roughly 5–9 seconds of setup.
+Official documentation provides JavaScript (WebRTC and WebSocket) and Python (WebSocket) examples. Always use the latest google-genai or @google/genai SDK.
 
-Example world_setup prompt pattern:
+![Abstract digital network representing real-time AI generation](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
 
-“I am standing on a narrow wooden pier at dawn, holding a lantern, looking toward a small lighthouse at the far end. Mist on the water, gulls on the posts, wet planks. I hear waves slapping the posts and my boots on the wood. Rule: when I reach the lighthouse door, the lamp at the top switches on and sweeps across the water.”
+## Prompt Tips That Improve Results
 
-Keep the first sentence grounded in the camera’s position. Avoid trailer-style language such as “quick cuts” or “upbeat soundtrack,” which can produce unintended Foley or fractured continuity.
+Official guidance highlights a few patterns that reduce common problems:
 
-![Close-up of hands on a keyboard during a coding or gaming session](https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80)
+- Start with immersive first-person POV and specific landmarks.
+- Add audio cues in the world_setup (“Audio: waves on the shore, footsteps on wood”).
+- Embed causal rules so objects react when approached.
+- Keep mid-session text events short. They typically take 1–2 seconds to appear.
+- Avoid prompts that force immediate room-wide changes at frame one or request background music as pure Foley.
 
-## Control Movement and Steer the World
+Test ideas first in AI Studio before integrating them into an application.
 
-Movement uses standard keys: W/A/S/D for translation and arrow keys for camera. Send these as `user_action` events. Text steering uses short `input` events. The model applies Gemini reasoning to keep object permanence and causal rules consistent across frames.
+## Practical Limits and Costs
 
-You can change weather, lighting, objects, or events on the fly. Character dialogue emerges from the same generation process and adapts to scene changes. For client-side retrieval or large tool libraries in agent workflows, see our guide on [Tool Retrieval in the Gemini API](/blog/gemini-api-tool-retrieval-guide/).
+Confirm the current pricing and rate limits on the official Genie 4 model page before heavy use. Output is billed at 240 video tokens per frame (5,760 tokens per second at 24 fps). Audio is bundled into that rate.
 
-Prefix caching works with deferred content, but Genie 4 sessions are short by design. Measure token use: each frame costs 240 video output tokens (5,760 tokens per second at 24 fps).
+Regional latency above 150 ms can reduce frame rate and delay steering. Place relays near serving regions if you deploy globally.
 
-## Practical Tips
+For earlier access notes and the original Project Genie waitlist path, see our guide on [how to access Google Genie 4 interactive worlds](/blog/access-google-genie-4-interactive-worlds/).
 
-Start every session with a clear first-person setup sentence. This gives the camera a stable reference. Add two or three concrete visual details and at least one physical sound.
+## Watch a Quick Demo
 
-Use “Rule:” clauses for reliable interactions. Place the trigger object far enough ahead that the player reaches it after a few seconds of movement. Avoid room-wide triggers that fire on frame 1.
-
-Keep mid-session text short. Long instructions or camera-cut language reduce reliability. Test custom key bindings in AI Studio first; the 2-second cooldown prevents overlapping impulses.
-
-Always call `complete()` at the end. Sessions bill for the full duration of streamed output. For browser apps, never expose the long-lived API key; use ephemeral tokens.
-
-Review outputs carefully. Worlds remain coherent for roughly the first minute. Later frames can drift. SynthID watermarking is present on every output for identification.
-
-If you also work with Gemini 4 models for coding agents, the same paid-tier key and Interactions API patterns apply. Check our earlier post on [using Gemini 4 Neon for coding projects](/blog/how-to-use-gemini-4-neon-coding-knowledge-work/).
-
-## Watch the Official Demo
+This short video shows Genie 4 running through the Gemini API with live keyboard and text steering.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/EDp4IoAUsXY"
-    title="Introducing the new Project Genie, powered by Genie 4"
+  <iframe src="https://www.youtube.com/embed/hayDjOUkHJY"
+    title="Genie 4 now on Gemini API!"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-The Google DeepMind video shows real-time interaction, native audio, and mid-session steering. It complements the API documentation.
+## Building a Simple Prototype
 
-## Conclusion
+Once the playground session works, move the same prompt into a small backend script. Create the interaction, connect, send the world_setup, log the first few frames, then call complete(). This verifies billing stops and confirms latency from your region.
 
-Genie 4 gives developers a blank canvas for real-time interactive worlds inside the Gemini API and AI Studio. Seed a world with a grounded prompt, move with WASD and arrows, and change conditions with short text events. Sessions stay short and bill by the second, so precise prompts and clean session management matter.
+For browser demos, the ephemeral token pattern keeps keys safe. Serve the token from an endpoint that checks the user’s session, then let the client open the WebRTC connection and attach the video element.
 
-Start in the AI Studio Live playground to test ideas, then move to the Interactions API for custom clients. Official documentation remains the source of truth for parameters, pricing, and limits.
+Developers training agents or robotics can feed the stream into their own control loop by reading the user_action events and injecting new text inputs. The official docs note that visual coherence holds best early in the session, so plan short evaluation runs.
+
+Always check the latest rate limits. Concurrent sessions are restricted, and the model does not support batch, flex, or priority inference modes.
+
+## Common Questions
+
+**Can I use Genie 4 for free?**  
+No. It requires a paid-tier key and charges per second of video output.
+
+**How long can a session run?**  
+Up to 120 seconds. Plan experiments that finish well inside that window.
+
+**Does it work worldwide?**  
+Yes, but latency is lowest near the United States, Western Europe, and Japan serving regions.
+
+**What about offline video?**  
+Use Gemini Omni 1.2 Flash for fixed-duration clips and higher resolutions.
+
+These constraints keep the model practical for prototyping while you explore interactive world generation.
 
 ## Sources
 
-- [Genie 4 is now available on the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/) — Google Blog, 19 November 2026
-- [Genie 4 is now available (Project Genie)](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/) — Google Blog, 18 November 2026
-- [Interactive world generation with Genie 4](https://aistudio.google.com/docs/genie) and [Genie 4 prompt and controls guide](https://aistudio.google.com/docs/genie-prompting) — Google AI for Developers
-- [Genie 4 model card](https://deepmind.google/models/model-cards/genie-4/) — Google DeepMind
+- [Genie 4 now available through the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/genie-4-in-gemini-api/) — Google Blog, 19 November 2026
+- [Genie 4 model page](https://aistudio.google.com/docs/models/genie-4) — Google AI for Developers
+- [Interactive world generation with Genie 4](https://aistudio.google.com/docs/genie) — Google AI for Developers
+- [Genie 4 prompt and controls guide](https://aistudio.google.com/docs/genie-prompting) — Google AI for Developers
+
+Genie 4 turns text and images into steerable audiovisual worlds you can explore in real time. Start in the AI Studio playground, then move to the Interactions API once your prompts and controls are solid. Always end sessions with complete() to keep costs predictable.
