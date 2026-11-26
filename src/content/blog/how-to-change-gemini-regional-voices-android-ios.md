@@ -1,90 +1,80 @@
 ---
-title: "How to Change Gemini Regional Voices on Android and iOS"
-description: "Step-by-step guide to select from 66 new regional voices in the Gemini app for natural speech on Android and iOS."
-pubDate: 2026-11-26T11:30:00
-heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "how-to", "ai-tools", "android"]
+title: "How to Change Gemini’s Regional Voices on Android and iOS"
+description: "Step-by-step guide to select one of Gemini’s 66 new regional voices for Live chats and read-aloud replies on Android and iPhone."
+pubDate: 2026-11-26T16:30:00
+heroImage: "https://images.unsplash.com/photo-1712002641088-9d76f9080889?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "how-to", "tutorials", "ai-tools"]
 noindex: false
 ---
 
-Google rolled out 66 new regional voices for the Gemini app on Android and iOS on 16 November 2026. These options cover U.S. English, U.K. English, India English, Hindi, Brazilian Portuguese, Indonesian, and Korean. Each voice aims for natural rhythm and clarity instead of exaggerated accents.
+Google began rolling out 66 new regional voices in the Gemini app on 16 November 2026. These cover U.S. English, U.K. English, India English, Hindi, Brazilian Portuguese, Indonesian, and Korean. Each voice is tuned for natural cadence, pitch, and everyday clarity rather than exaggerated accents.
 
-The selected voice applies across the app. It works in Gemini Live conversations, language practice, and when you tap the Listen icon to hear a chat response read aloud. This change makes spoken interactions feel more personal without altering the content of the replies.
+Your choice applies across the whole app. It is used in Gemini Live conversations, language practice, and when you tap the Listen icon under a chat response to hear it read aloud. The voices do not change the written text Gemini produces.
 
-## Why Regional Voices Matter
+This guide shows how to preview and select a voice on Android and iOS, what to expect during the rollout, and practical tips for getting the most from the new options.
 
-Previous Gemini voices used a more generic tone. The new set captures local pitch, inflection, and everyday cadence. For users in the UK, reports note more than 10 English options, including Geordie, Scouse, Brummie, Scottish, Welsh, and Northern Irish variants. Similar tailored choices exist for the other listed locales.
+## What the Regional Voices Cover
 
-The rollout started gradually. Not every account sees the full list on the first day. Google confirmed the update in its official blog post by Neel Joshi, Director of Product Management for Gemini Live.
+Google announced the expansion in a Keyword blog post on 16 November. The 66 voices are distributed across seven language and locale groups, with tailored options for each. U.K. English alone includes more than ten choices, among them Geordie, Scouse, Brummie, Scottish, Welsh, Northern Irish, Modern Received Pronunciation, and Multicultural London English.
 
+The voices capture familiar local rhythms without filling replies with local slang. Google worked with native speakers so the results stay clear and usable for directions, recipes, emails, or longer explanations.
 
-![Person holding a smartphone](https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=800&q=80)
+The selected voice stays consistent. You do not pick a different voice for Live versus written replies. One setting covers both.
 
+![Professional studio microphone with pop filter ready for voice recording](https://images.unsplash.com/photo-1779905980727-9ed38a0daeea?auto=format&fit=crop&w=800&q=80)
 
-## How to Preview and Select a Voice
+## How to Change the Voice on Android
 
-You can change the voice in two places. Both methods let you preview options before confirming.
+1. Open the Gemini app on your Android phone or tablet.
+2. Tap the menu icon (three lines) at the top left, then tap your profile picture or initial.
+3. Tap Settings.
+4. Tap Gemini’s Voice.
+5. Tap any voice name to hear a short sample. Try several before you decide.
+6. Select the voice you prefer and tap Confirm.
 
-**From Gemini Live:**
+The change takes effect immediately for Gemini Live and for the Listen button under replies.
 
-1. Open the Gemini app on your Android phone or iOS device.
-2. Start or enter Gemini Live (tap Live or swipe).
-3. Tap the three-dot menu.
-4. Browse the voice options and play previews.
-5. Select the one that matches your preference. It applies immediately.
+If the Gemini’s Voice option is missing, check that the Gemini app is updated from the Play Store and that your display language is one of the supported locales. The number of available voices varies by language.
 
-**From app settings:**
+## How to Change the Voice on iPhone and iPad
 
 1. Open the Gemini app.
-2. Tap your profile photo or the menu, then Settings.
-3. Look for Gemini’s voice (or similar label under voice or Live settings).
-4. Tap it, preview the available voices, and choose one.
+2. Tap your profile picture or the menu.
+3. Tap Settings.
+4. Tap Gemini’s Voice.
+5. Tap voices to preview them.
+6. Choose one and tap Confirm.
 
-The menu does not always label voices by exact region or city. You may need to listen to a few samples to find the one that fits. Once chosen, the voice carries over to Live sessions and Listen playback.
+The same voice applies to Live sessions and read-aloud responses. Update the app from the App Store if the setting does not appear.
 
-If the new voices do not appear, update the Gemini app from the Play Store or App Store and check again later. Availability depends on your account, region, and the phased rollout.
+You can also open the voice picker from inside a Gemini Live session by tapping the three-dot menu. This is useful for quick comparisons without leaving the conversation.
 
-## Languages and Locales Covered
+## Finding a Specific Accent
 
-Google lists these supported groups:
+The voice list does not label options by city or region. Gemini will not tell you which accent it is using if you ask. You identify the ones you want by listening to the samples.
 
-- U.S. English
-- U.K. English (with multiple regional options)
-- India English
-- Hindi
-- Brazilian Portuguese
-- Indonesian
-- Korean
+Google suggests asking Gemini for a recommendation about local food or a local sport to hear how the cadence comes through in longer replies. Clarity on numbers, names, and instructions matters more than novelty for everyday use.
 
-Each has tailored voices. The UK receives the broadest set of English dialects according to early coverage. Other languages receive options matched to local speaking patterns.
+The rollout is staged. Some accounts see the full set of 66 voices right away; others see fewer options for a few days. Check again if your preferred locale is not yet listed.
 
-The voices focus on natural everyday speech. They avoid heavy stereotypes or slang that would sound forced.
+![Person wearing headphones and speaking into a microphone](https://images.unsplash.com/photo-1662838358778-9289374ba1d3?auto=format&fit=crop&w=800&q=80)
 
+## Practical Tips
 
-![Smartphone showing an app interface](https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80)
+- Update the Gemini app before looking for the new voices. Older versions may still show only the previous set of presets.
+- The voice setting lives only in the mobile Gemini app on Android and iOS. It does not appear in the web version or in Gemini on Chrome desktop at the time of the November rollout.
+- Your choice is account-based, so the same voice follows you when you sign in on another supported phone.
+- If you use Gemini for language practice, a regional voice from the target locale can make listening exercises feel more natural. Pair it with the Listen button on written replies.
+- Volume and background noise affect how well you hear differences between voices. Preview them in a quiet place.
+- The voices do not change Gemini’s written answers or its reasoning. They only affect how spoken replies sound.
 
+For related privacy controls that arrived around the same time, see our guide on keeping Gemini chat history while opting out of AI training: [Gemini Privacy: Keep History Without AI Training](/blog/gemini-privacy-history-training-controls-2026/).
 
-## Using the Voice in Practice
-
-Once selected, try it in a Gemini Live session. Ask a short question and listen to the reply. Then open a regular chat, tap the Listen icon on a response, and confirm the same voice plays.
-
-You can switch voices anytime. The change does not require a subscription. Free and paid Gemini users receive the same voice options when the rollout reaches their account.
-
-For language practice, the regional options help match the accent you want to hear. Pair this with other Gemini features such as Personal Intelligence if you want context from your apps. See our guide on [turning on Personal Intelligence settings](/blog/gemini-personal-intelligence-setup/) for the connection steps.
-
-## Tips and Limits
-
-- Update the app if the voice list looks short.
-- Preview several options. Labels may be limited, so listening is the reliable way to choose.
-- The voice affects how Gemini speaks, not the accuracy or content of its answers.
-- Rollout is gradual. Check back if your preferred locale is missing.
-- Settings apply to the mobile app on Android and iOS. Web behavior may differ.
-
-Google notes that the selected voice works across brainstorming in Live, language practice, and read-aloud chat responses.
+## Watch the Steps
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/va91wTJHFAg"
-    title="VP of Gemini Josh Woodward breaks down Personal Intelligence in the Gemini App"
+  <iframe src="https://www.youtube.com/embed/5nNBhnArfvs"
+    title="How to Change Gemini Voice (2026): Pick a New Voice in 4 Steps"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
@@ -92,10 +82,12 @@ Google notes that the selected voice works across brainstorming in Live, languag
 
 ## Conclusion
 
-The 66 regional voices give Gemini a more local sound on Android and iOS. Open Gemini Live or the voice settings, preview the options for your language, and select the one that feels natural. The change is free, reversible, and applies to Live conversations and Listen playback. Check the official sources for any further expansion of locales or dialects.
+The 66 regional voices make Gemini Live and spoken replies sound closer to everyday speech in more places. Open the Gemini app, go to Settings then Gemini’s Voice, preview a few samples, and confirm the one that feels clearest for your usual tasks. The same choice covers Live conversations and the Listen button under chat replies.
+
+Update the app, try a few samples, and pick the voice that works best for you. The options continue to roll out, so check again if the full set is not visible yet.
 
 ## Sources
 
-- [Regional voices are rolling out in the Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/regional-voices/) — Google Blog, 16 November 2026
-- Gemini Apps Help pages on Gemini Live and voice settings
-- Early coverage confirming UK dialect variety and rollout timing
+- Google Keyword blog: Regional voices are rolling out in the Gemini app (16 November 2026)
+- Gemini Apps Help: Change Gemini’s voice
+- Coverage from 9to5Google and Android Authority on the U.K. options and rollout
