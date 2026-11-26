@@ -1,86 +1,103 @@
 ---
-title: "How to Use Gemini Computer Use on Mac for Background Tasks"
-description: "Step-by-step guide to enable and use Gemini computer use on Mac to automate multi-step tasks across apps and the web in a background window."
-pubDate: 2026-11-23T14:00:00
-heroImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "tutorials", "how-to", "ai-tools", "productivity", "google"]
+title: "How to Use Gemini Computer Use on Mac"
+description: "Step-by-step guide to Gemini computer use on Mac: enable it, prompt with @Computer use, control apps safely, and automate multi-step tasks."
+pubDate: 2026-11-26T16:00:00
+heroImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "tutorials", "how-to", "ai-tools", "productivity"]
 noindex: false
 ---
 
-Gemini on Mac can now handle repetitive multi-step work across your local files, desktop apps, and websites while you keep using your main screen. Announced on November 19, 2026, the computer use feature runs tasks in an isolated background window with a live preview in your chat.
+Google added computer use to the Gemini app for Mac on November 19, 2026. You describe a multi-step task in plain language. Gemini clicks, types, navigates menus, and fills forms across your desktop apps and the web while you keep working on your own screen.
 
-You describe the job, choose which apps Gemini may access, and approve key actions. It is available in English in the US for personal Google accounts on Google AI Plus, Pro, or Ultra plans. You need an Apple Silicon Mac running macOS Sequoia 15.0 or later.
+It runs in an isolated background window. A live preview appears in the chat. Your cursor and main display stay free. You choose which apps it can touch, watch every step, pause anytime, and approve sensitive actions.
 
-![Person working at a Mac desk setup](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80)
+## What You Need
 
-## Requirements and Setup
+Computer use requires an Apple Silicon Mac (M1 or later) running macOS Sequoia 15.0 or later. Sign in with a personal Google account. You must be 18 or older. It works on Google AI Plus, Pro, or Ultra plans. Free accounts do not get it. Work and school accounts are excluded.
 
-Confirm your hardware and subscription first. The feature requires Apple Silicon (M-series chips) and macOS Sequoia 15.0 or later. Intel Macs are not supported. You must be 18 or older with a personal Google Account on a paid Google AI Plus, Pro, or Ultra plan. Work and school accounts are excluded at launch.
+At launch it rolled out in English in the United States. Google’s support page later listed availability in English for India, Japan, Korea, and the United States. Check your app for the Computer use option if you are outside those regions.
 
-Download the Gemini app for Mac from gemini.google/mac if you do not already have it. Open the app and sign in. Then enable computer use:
+Download the native Gemini app from gemini.google/mac if you do not already have it. The app itself is free. Computer use sits inside the paid Task mode.
 
-1. Click Gemini in the menu bar and choose Settings, or press Command + comma.
-2. Select Computer use in the sidebar.
-3. Turn on Allow Gemini to work with your Mac.
-4. Grant Accessibility and Screen & System Audio Recording permissions if prompted.
 
-You can also manage allowed and blocked apps from the same settings page. Add apps you want Gemini to use freely, or block ones you never want it to touch.
 
-## Start a Computer Use Task
+![MacBook Pro open on a clean desk](https://images.unsplash.com/photo-1559163479-98365644374a?auto=format&fit=crop&w=800&q=80)
 
-Switch to Task mode and include the special tag. Open the Gemini app. Below the chat box, click Task. Type your request and add @Computer use at the end or where it fits naturally.
 
-Example prompts include:
-- Extract shipping details from the PDFs in Downloads and fill the quote form on the carrier site. @Computer use
-- Batch color-grade the photos in the Project folder using my preferred preset in the design app. @Computer use
-- Pull the latest dashboard metrics and build a summary slide deck in Google Slides. @Computer use
 
-Gemini plans the steps, opens the needed apps in its background window, and shows a live preview in the chat. Your main cursor and screen stay free. You can pause, stop, or add instructions mid-task.
+## Turn On Computer Use
 
-The first time Gemini needs a new app, it asks whether to deny access, allow once, or allow always. Allow always adds the app to your permitted list.
+1. Open the Gemini app on your Mac.
+2. Click Gemini in the menu bar, then Settings, or press Command + comma.
+3. Select Computer use in the sidebar.
+4. Switch on Allow Gemini to work with your Mac.
+5. Grant Accessibility and Screen & System Audio Recording permissions when macOS asks. You can manage these later in System Settings > Privacy & Security.
 
-## Practical Examples That Save Time
+Optional but recommended: turn on Use on-demand file backups. Gemini tries to create temporary backups of files it changes. Backups last 24 hours or until the next prompt. You can view them from the chat.
 
-Creative work benefits quickly. Upload a sketch and ask Gemini to model and rig it in Blender, then export a simple animation. The official demo shows this exact flow for a butterfly drawing.
+You can also build Allowed apps and Blocked apps lists in the same settings pane. Adding an app to Allowed means Gemini will not ask for permission every time. Blocked apps are never opened.
 
-Form filling and data entry shrink. Point Gemini at a folder of receipts or product sheets and have it populate multi-field web forms. It extracts text, switches windows, and pauses for your confirmation on sensitive fields.
+## Start a Task
 
-Research and presentation assembly also improve. Ask it to visit several regional dashboards, capture screenshots, and assemble them into a Google Slides deck with labels. You review the final result before sharing.
+1. Open the Gemini app.
+2. Below the chat box, click Task.
+3. Type your request and include @Computer use. Example: “Take the butterfly sketch in my Downloads folder, model and rig it in Blender, then export a short animation. @Computer use”
+4. Send it.
 
-For Android users who already automate on-device tasks, this Mac feature complements the mobile experience described in our guide on [using Gemini Intelligence on Android](/blog/how-to-use-gemini-intelligence-on-android/).
+The first time Gemini needs a new app it asks whether to deny, allow once, or always allow. Choosing always allow adds the app to your Allowed list. While it works you see a live preview of the background window. Click Full screen for a larger view. Click Stop task to end it immediately.
 
-![Modern Mac workspace with laptop and monitor](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
+Gemini pauses for logins, payments, and other sensitive steps. It asks for confirmation before those actions. You stay in control the entire time.
 
-## Safety Controls and Limits
+## Practical Examples
 
-You remain in charge. Gemini works only in the isolated window. You watch every step in the live preview, pause at any moment, and must approve critical actions such as logins, payments, or sending messages. It is designed to stop and check before irreversible steps.
+Google’s own demos show several everyday uses.
 
-Start with small, reversible tasks. Review the list of allowed apps regularly. You can remove apps from the allowed list or add them to the blocked list in Settings. Remote browser data and cookies used during tasks can be cleared from the same panel.
+Batch color-grade a folder of photos in your editing app, or set up a complex 3D scene from a sketch. Extract weights, dimensions, and addresses from local PDFs and paste them into multi-box shipping quote forms. Pull live metrics and screenshots from dashboards and assemble a ready Google Slides deck. Analyze clothing photos, research prices, and stage resale listings.
 
-The feature is currently limited to English in the US. Availability and language support may expand later. Always verify results, especially numbers, addresses, or anything that leaves your computer.
+A simple test: ask it to open a browser, find a seasonal wallpaper, and set it as your desktop background. Or point it at receipts in Downloads and have it fill an expense report in your tracking software.
+
+Because it works across apps, you can move data from one program into another without copying and pasting by hand. Meeting notes can become an email draft. Spreadsheet rows can become form entries.
+
+
+
+![MacBook Pro beside a monitor on a desk](https://images.unsplash.com/photo-1497296805880-3b37686c87ea?auto=format&fit=crop&w=800&q=80)
+
+
+
+## Safety and Limits
+
+Agentic tools can make mistakes or act on untrusted content visible on screen. Google lists several risks: Gemini can reach logged-in sessions inside native Mac apps, some actions cannot be undone even with backups, and content in one app could influence actions in another. Granting access to code editors or developer tools may allow broader file changes. You are responsible for the apps you allow and for following their terms of service.
+
+Keep the Allowed list short. Review the live preview. Stop the task if it drifts. Enable backups. Never leave sensitive accounts open if you plan long unattended runs.
+
+Computer use currently lives only in the Mac app. It does not appear in the web or mobile versions. Windows support has not been announced.
+
+## Tips for Better Results
+
+Be specific in the prompt. Name the source folder, the target app, and the final output. “Color-grade every photo in the Wedding folder and export 4K PNGs to Desktop” works better than “fix my photos.”
+
+Start with a small test task before larger jobs. Confirm permissions early so the first run does not pause on every app.
+
+Combine it with other Gemini tools. Canvas is useful when you need to build or refine supporting documents. See our guide on [using Gemini Canvas for productivity](/blog/how-to-use-gemini-canvas-for-productivity/).
+
+Watch the preview on longer tasks. You can give feedback mid-run if the model goes off track.
+
+## Watch the Official Demo
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/WiFGJdfO-MM"
-    title="Gemini can now use your Mac apps for you"
+  <iframe src="https://www.youtube.com/embed/dp9x8EMAE9I"
+    title="Turn a Sketch Into a Rigged 3D Model With Computer Use in the Gemini App for Mac"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Tips for Better Results
-
-Write clear, complete instructions. Specify the source files, the target app, the exact outcome, and any constraints. Vague requests lead to follow-up questions.
-
-Prefer Gemini 4 Hydrogen or later models when available for higher quality on complex desktop workflows. Keep the Gemini app updated.
-
-Test with non-critical work first. Watch the live preview the first few times so you learn how Gemini interprets menus and form fields. Give thumbs-down feedback when a step goes wrong so the system improves.
-
-Combine computer use with regular Gemini Tasks for scheduled or recurring work that does not need a live desktop session.
-
 ## Conclusion
 
-Gemini computer use on Mac turns the assistant into a background operator for multi-step desktop and web chores. Enable the feature, grant only the apps you trust, describe the job with @Computer use, and stay in the preview loop for approvals.
+Gemini computer use turns multi-step desktop chores into a single prompt. Enable it in Settings, switch to Task mode, add @Computer use, and describe the work. The background window keeps your screen free while you monitor progress and approve key steps. It requires a paid plan and an Apple Silicon Mac on Sequoia, and it is available in English in several countries. Start with one clear, low-risk task and expand from there.
 
-The capability is still rolling out, so check the Gemini Mac app settings if the option is missing. Official documentation from Google provides the latest availability details.
+## Sources
 
-Sources: Google Blog, Automate Mac tasks with Gemini computer use (November 19, 2026); Gemini Apps Help, Use Gemini to work with apps on your Mac.
+- Google Blog: Automate Mac tasks with Gemini computer use (November 19, 2026)
+- Google Support: Use Gemini to work with apps on your Mac
+- Official Gemini YouTube: Turn a Sketch Into a Rigged 3D Model With Computer Use
