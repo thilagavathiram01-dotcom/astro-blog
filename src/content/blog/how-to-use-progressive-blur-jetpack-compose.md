@@ -1,80 +1,97 @@
 ---
 title: "How to Use Progressive Blur in Jetpack Compose 1.13"
-description: "Step-by-step guide to progressive blur with BlurRadiusSpec in Jetpack Compose 1.13 for depth effects on Android."
+description: "Learn how to apply progressive blur effects in Jetpack Compose 1.13 using BlurRadiusSpec for gradient and multi-stop blurs."
 pubDate: 2026-11-26T18:00:00
-heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
+heroImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&h=630&q=80"
 tags: ["android", "tutorials", "how-to", "developer"]
 noindex: false
 ---
 
-Jetpack Compose 1.13 adds progressive blur so you can fade content from sharp to soft across a surface with one modifier. This replaces earlier custom shader workarounds for depth-of-field effects in Android UIs.
+Jetpack Compose 1.13, released as stable in the November 2026 BOM (2026.11.01), adds progressive blur. This lets you vary the blur radius across a composable instead of applying a uniform amount everywhere.
 
-The feature shipped as stable on 18 November 2026 in the November Compose BOM. It sits alongside polygon shapes and dialog blur controls. Developers who build polished screens gain a native way to blend headers, spotlight focal areas, or soften list edges without extra libraries.
+Progressive blur creates smooth transitions from sharp to blurred regions. It works well for header images that fade into the background, list edges that soften as content scrolls, or spotlight effects that keep the center sharp.
+
+The feature requires Android 13 (API 33) or higher for spatially varying radii. On older devices the modifier leaves content unblurred. Update your project to Compose BOM 2026.11.01, Kotlin 2.2+, and compileSdk 37.1.
+
+![Android developer coding on laptop](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
 
 ## Update your project
 
-Switch to Compose BOM 2026.11.01. The upgrade requires Kotlin 2.2 or newer and compileSdk 37.1.
+Add the BOM to your module-level build.gradle.kts:
 
-Add this line to your app module:
-
-```
+```kotlin
 implementation(platform("androidx.compose:compose-bom:2026.11.01"))
+implementation("androidx.compose.ui:ui")
+implementation("androidx.compose.foundation:foundation")
 ```
 
-Sync the project. Progressive blur lives in the compose.ui package, so no extra dependency is needed. On devices below API 31 the modifier falls back gracefully or skips the effect depending on the RenderEffect path.
+Sync the project. Progressive blur lives in the `androidx.compose.ui.draw.blur` modifier and `androidx.compose.ui.graphics.blur` package.
 
-## Apply a simple vertical progressive blur
+## Apply a vertical gradient blur
 
-Pass a BlurRadiusSpec to Modifier.blur. The verticalGradient factory keeps the top of an image sharp and ramps the radius toward the bottom.
+The simplest progressive blur uses `BlurRadiusSpec.verticalGradient`. The top stays sharp (0.dp) while the bottom blurs to a chosen radius.
 
-Here is the minimal example from the official docs:
+```kotlin
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.size
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
+import androidx.compose.ui.graphics.blur.BlurRadiusSpec
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.draw.BlurredEdgeTreatment
+import androidx.compose.foundation.shape.RoundedCornerShape
 
+@Composable
+fun ProgressiveBlurExample() {
+    Image(
+        painter = painterResource(id = R.drawable.header),
+        contentDescription = "Header image",
+        contentScale = ContentScale.Crop,
+        modifier = Modifier
+            .size(300.dp, 200.dp)
+            .blur(
+                blurRadiusSpec = BlurRadiusSpec.verticalGradient(
+                    startRadius = 0.dp,
+                    endRadius = 16.dp
+                ),
+                edgeTreatment = BlurredEdgeTreatment(RoundedCornerShape(12.dp))
+            )
+    )
+}
 ```
-Image(
-    painter = painterResource(id = R.drawable.dog),
-    contentDescription = null,
-    contentScale = ContentScale.Crop,
-    modifier = Modifier
-        .size(150.dp)
-        .blur(
-            blurRadiusSpec = BlurRadiusSpec.verticalGradient(
-                startRadius = 0.dp,
-                endRadius = 6.dp,
-            ),
-            edgeTreatment = BlurredEdgeTreatment(RoundedCornerShape(8.dp)),
-        ),
-)
-```
 
-The startRadius of 0.dp leaves the top edge crisp. The endRadius of 6.dp softens the bottom. Edge treatment clips the result to rounded corners so blur does not bleed outside the bounds.
+The top of the image remains sharp. Blur increases linearly toward the bottom. Use `BlurredEdgeTreatment.Unbounded` if you want the blur to extend past the composable bounds without clipping.
 
-![Android phone showing a blurred photo header](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80)
+## Use multi-stop gradients
 
-## Use multi-stop gradients for more control
+For more control, pass a list of `BlurStop` entries. Each stop defines a fraction (0f to 1f) and a radius. This keeps the middle of a list or image sharp while blurring the edges.
 
-A single linear ramp is useful, but many designs need a sharp band in the middle with soft edges. Pass a list of BlurStop entries. Each stop sets a fraction from 0.0f to 1.0f and a radius in Dp.
-
-```
+```kotlin
 .blur(
     blurRadiusSpec = BlurRadiusSpec.verticalGradient(
         stops = listOf(
             BlurStop(fraction = 0.0f, radius = 20.dp),
             BlurStop(fraction = 0.3f, radius = 0.dp),
             BlurStop(fraction = 0.7f, radius = 0.dp),
-            BlurStop(fraction = 1.0f, radius = 20.dp),
-        ),
+            BlurStop(fraction = 1.0f, radius = 20.dp)
+        )
     ),
-    edgeTreatment = BlurredEdgeTreatment.Unbounded,
+    edgeTreatment = BlurredEdgeTreatment.Unbounded
 )
 ```
 
-Stops are sorted automatically. This pattern keeps the center of a photo sharp while the top and bottom fade, which works well for profile headers or hero images that overlay text.
+Stops are sorted automatically. You can use up to 16 stops. The same pattern works with `horizontalGradient`, `linearGradient`, and `radialGradient`.
 
-## Configure with the BlurScope lambda
+![Smartphone showing code](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80)
 
-You can also open a configuration block on Modifier.blur. The block runs in BlurScope during the graphics layer phase, so you can read the measured size without recomposing.
+## Access size inside BlurScope
 
-```
+The lambda form of `Modifier.blur { }` gives you a `BlurScope`. Inside it you can read the measured `size` of the layer and set `blurRadiusSpec`, `edgeTreatment`, and `alpha` at draw time without recomposition.
+
+```kotlin
 Modifier.blur {
     blurRadiusSpec = BlurRadiusSpec.linearGradient(
         start = DpOffset.Zero,
@@ -83,35 +100,44 @@ Modifier.blur {
             BlurStop(fraction = 0f, radius = 0.dp),
             BlurStop(fraction = 0.5f, radius = 0.dp),
             BlurStop(fraction = 0.75f, radius = 14.dp),
-            BlurStop(fraction = 1f, radius = 28.dp),
-        ),
+            BlurStop(fraction = 1f, radius = 28.dp)
+        )
     )
+    edgeTreatment = BlurredEdgeTreatment.Unbounded
 }
 ```
 
-Size is available as a DpSize. Use it to build diagonal or custom linear gradients that match the exact bounds of the composable. Alpha and edgeTreatment can also be set inside the same block.
+This diagonal gradient keeps the top-left sharp and blurs toward the bottom-right. Because the block runs during the graphics layer phase, changing the radius based on size does not cause extra recompositions.
 
-![Developer workspace with code on laptop and phone](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80)
+## Available BlurRadiusSpec factories
 
-## Choose the right gradient type
+- `verticalGradient` / `horizontalGradient`: linear change along one axis.
+- `linearGradient`: any direction defined by two `DpOffset` points.
+- `radialGradient`: blur increases outward from a center point up to a fall-off radius.
+- `uniform`: constant radius (works on API 31+).
+- `shader`: custom AGSL RuntimeShader whose alpha channel drives the radius (API 33+).
 
-BlurRadiusSpec offers several factories:
+Spatially varying blurs are capped at 150 pixels after density conversion. Uniform blur has no such limit.
 
-- verticalGradient and horizontalGradient for axis-aligned fades
-- linearGradient for any direction defined by two DpOffsets
-- radialGradient for spotlight effects centered on a point
-- uniform for a constant radius
-- shader for full control via a custom AGSL RuntimeShader alpha channel
+## Edge treatment options
 
-Radial gradients shine when you want a sharp focus that softens outward, for example a touch-following spotlight. Spatially varying blurs cap at 150 pixels after density conversion; uniform has no such cap.
+`BlurredEdgeTreatment` controls how pixels outside the content bounds are sampled:
 
-## Handle edges and performance
+- `Rectangle` (default): clamps to the rectangular bounds.
+- `BlurredEdgeTreatment(shape)`: clamps to a custom shape such as rounded corners.
+- `Unbounded`: samples transparent black outside the bounds so the blur fades naturally past the edges.
 
-BlurredEdgeTreatment.Rectangle (default) clamps to the content bounds and samples edge pixels. Passing a Shape clips to that outline. Unbounded lets the blur extend into transparent areas, which helps when blending into a background.
+Use Unbounded when you want a header image to blend into the page background.
 
-Because the modifier creates a separate graphics layer, avoid applying it to large scrolling containers that recompose often. Prefer it on static headers, cards, or overlays. The official docs note that progressive blur requires Android 13 (API 33) or newer for full spatial variation in some paths; test on your minSdk.
+## Practical tips
 
-## Watch the official walkthrough
+Apply progressive blur to images, text, or whole layout containers. For scrolling lists, place the blur modifier on the LazyColumn or LazyRow so the edges soften while the center stays sharp.
+
+Test on API 33+ devices. On older versions the progressive effect is ignored. For dialogs and popups, Compose 1.13 also adds `blurBehindRadius` and related properties on DialogProperties and PopupProperties.
+
+Pair progressive blur with the new PolygonShape and MorphPolygonShape APIs when you need both custom shapes and depth. See the adaptive layouts guide for related Compose layout techniques.
+
+## Watch the official demo
 
 <div class="video-embed">
   <iframe src="https://www.youtube.com/embed/R2425qOL7Fg"
@@ -121,20 +147,15 @@ Because the modifier creates a separate graphics layer, avoid applying it to lar
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Tips for production use
-
-Start with a vertical gradient on a header image and measure the visual result on a Pixel device. Combine with Material 3 surface colors so the blur blends naturally. If you already use adaptive layouts, progressive blur can highlight the focused pane on foldables or large screens. See our guide on [adaptive layouts with MediaQuery in Jetpack Compose](/blog/adaptive-layouts-mediaquery-jetpack-compose-guide/).
-
-Test edge cases: zero radius should leave content unchanged, and very large radii should stay within the 150-pixel spatial cap. Prefer BlurredEdgeTreatment.Unbounded only when the composable sits over a solid background.
-
 ## Conclusion
 
-Progressive blur in Compose 1.13 gives Android developers a clean, performant way to add depth without custom shaders. Update the BOM, apply BlurRadiusSpec.verticalGradient or multi-stop lists, and tune edge treatment for your design. The result is softer transitions that feel native on modern devices.
-
-Start with one header image this week. Once the effect looks right, expand it to lists or dialogs using the new DialogProperties blur options also added in this release.
+Progressive blur in Jetpack Compose 1.13 replaces many custom shader workarounds with a simple modifier. Start with a vertical gradient, then experiment with multi-stop lists and the BlurScope lambda for more precise control. Update to BOM 2026.11.01 and test the effect on recent Android devices.
 
 ## Sources
 
-- [What's new in the Jetpack Compose November '26 release](https://developer.android.com/blog/posts/jetpack-compose-november-2026-release) — Android Developers Blog, 18 November 2026
-- [Blurring in Compose](https://developer.android.com/develop/ui/compose/graphics/blur/overview) — Android Developers documentation
-- [Common blur use cases](https://developer.android.com/develop/ui/compose/graphics/blur/examples) — Android Developers documentation
+- [Blurring in Compose – Android Developers](https://developer.android.com/develop/ui/compose/graphics/blur/overview)
+- [What's new in the Jetpack Compose November '26 release](https://developer.android.com/blog/posts/jetpack-compose-november-2026-release)
+- [BlurRadiusSpec API reference](https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/blur/BlurRadiusSpec)
+- [Common blur use cases](https://developer.android.com/develop/ui/compose/graphics/blur/examples)
+
+Related reading: [Adaptive layouts with MediaQuery in Jetpack Compose](/blog/adaptive-layouts-mediaquery-jetpack-compose-guide/)
