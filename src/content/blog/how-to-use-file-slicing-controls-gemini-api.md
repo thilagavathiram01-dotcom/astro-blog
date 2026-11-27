@@ -1,73 +1,85 @@
 ---
 title: "How to Use File Slicing Controls in the Gemini API"
-description: "Step-by-step guide to Gemini API file slicing for targeting pages, spreadsheet cells, and media segments to reduce token costs on large files."
-pubDate: 2026-11-27T12:00:00
+description: "Cut token costs with Gemini API file slicing: select pages, sheets, and clips from PDFs, Office files, audio, and video. Step-by-step Python examples."
+pubDate: 2026-11-27T16:30:00
 heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "developer", "tutorials", "ai-tools", "google"]
+tags: ["gemini", "ai-tools", "tutorials", "how-to", "developer"]
 noindex: false
 ---
 
-Google added native file slicing controls to the Gemini API on November 23, 2026. Developers can now upload PDFs, Microsoft Office files, OpenDocument formats, audio, and video once, then request only specific pages, spreadsheet cells, or media segments. Tokens are billed only for the parts the model inspects.<grok type="render_inline_citation" citation_id="154" />
+Agents that process long PDFs, multi-tab workbooks, or hour-long recordings used to burn tokens on every page and every second. Google fixed that on November 23, 2026, with native file slicing controls in the Gemini API.
 
-This cuts costs and latency for agents that process long reports, multi-tab workbooks, or recordings. It also removes the need to run local PDF renderers or ffmpeg inside your harness. The controls work across all Gemini 4 models in Google AI Studio and the Gemini platform (Vertex AI).
+You upload a file once through the Files API. Then you tell the model exactly which pages, cell ranges, or time segments to inspect. Tokens are billed only for the slices Gemini actually sees. Early tests from LiteLLM showed 67 percent fewer prompt tokens on PDFs and 33 percent fewer on workbooks.
 
-## Why file slicing matters
+This guide shows how to use the controls with the official Python SDK, including a skim-then-zoom pattern that keeps costs low while preserving detail where it matters.
 
-Dense documents and media waste tokens when you send the entire file for a focused question. Server-side slicing keeps context tight. You upload once via the Files API, then reuse the URI across turns or function responses. Skim cheaply with text or low-resolution previews, then zoom into charts or frames only where needed.
+## What file slicing supports
 
-Existing file size and page limits still apply. Defaults preserve layout for documents (page images) and include values plus formulas for spreadsheets when you omit options.
+The feature works across all Gemini 4 models (Carbon, Neon, Hydrogen, Argon) and also Gemini 3 models for documents. It covers:
 
-![Laptop showing code on a desk](https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80)
+- PDFs, Word, PowerPoint, and OpenDocument text/slides: page ranges (`start_page`, `end_page`), resolution (low/medium/high), and layers (`page_text` or `page_image`).
+- Spreadsheets (`.xlsx`, `.xls`, `.ods`): sheet index and A1-style cell ranges (`visible_cells`), plus data, formula, or visual layers.
+- Video: start/end offsets, frame rate, resolution, and layers (transcript, frames, or audio).
+- Audio: time interval offsets.
 
-## Supported controls by media type
+Limits still apply to the full uploaded file (50 MB, up to 2,000 pages for Office files, 1,000 for PDFs). Slicing happens server-side, so you avoid local PDF rendering or ffmpeg work.
 
-**Documents and slides** (PDF, Office, OpenDocument): Set start_page and end_page (1-indexed, inclusive), resolution (low, medium, or high), and content layers (page_text or page_image).
+![Laptop showing code next to stacked documents](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
 
-**Spreadsheets** (.xlsx, .xls, .ods): Choose sheet_index, visible_cells range, resolution, and layers (data, formulas, visuals).
+## Set up the SDK
 
-**Video**: Specify start_offset and end_offset, fps, resolution (low or high), and layers (transcript, frames, or audio).
+Install the latest `google-genai` package and set your API key:
 
-**Audio**: Clip with start_offset and end_offset.
+```bash
+pip install -U google-genai
+export GEMINI_API_KEY="your-key-here"
+```
 
-You can pass the Files API URI on a user turn or inside a function_result so agents decide slices dynamically.
+Use the Interactions API. Initialize the client normally; slicing parameters go inside the input content blocks.
 
-## Step-by-step: skim then zoom
+## Upload once, slice across turns
 
-1. Install the Google GenAI SDK and set your API key.
-2. Upload the file once:
+Upload the file with the Files API. Reuse the returned URI in later calls or even inside tool results.
+
 ```python
 from google import genai
+
 client = genai.Client()
-doc = client.files.upload(file="quarterly_report.docx")
+doc = client.files.upload(file="quarterly_report.pdf")
+print(doc.uri)  # reuse this
 ```
-3. Skim as extracted text to locate the section:
+
+## Skim cheaply, then zoom in
+
+A practical pattern is to first extract text from every page (cheap), locate the relevant section, then request a high-resolution image of only those pages.
+
 ```python
+# Skim as text
 skim = client.interactions.create(
     model="gemini-4-hydrogen",
     input=[
         {
             "type": "document",
             "uri": doc.uri,
-            "mime_type": doc.mime_type,
+            "mime_type": "application/pdf",
             "processing": {
                 "type": "static",
                 "page_options": {"content_layers": ["page_text"]},
             },
         },
-        {"type": "text", "text": "Which page has the revenue bridge chart?"},
+        {"type": "text", "text": "Which page contains the revenue bridge chart?"},
     ],
 )
 print(skim.output_text)
-```
-4. Reuse the same URI and inspect only the target page at high resolution:
-```python
-detail = client.interactions.create(
+
+# Zoom on page 3 at high resolution
+zoom = client.interactions.create(
     model="gemini-4-neon",
     input=[
         {
             "type": "document",
             "uri": doc.uri,
-            "mime_type": doc.mime_type,
+            "mime_type": "application/pdf",
             "resolution": "high",
             "processing": {
                 "type": "static",
@@ -78,43 +90,78 @@ detail = client.interactions.create(
                 },
             },
         },
-        {"type": "text", "text": "Read the revenue bridge chart and footnotes on page 3."},
+        {"type": "text", "text": "Describe the revenue bridge chart and its footnotes."},
     ],
 )
-print(detail.output_text)
+print(zoom.output_text)
 ```
 
-This pattern works for spreadsheets (limit to one sheet and cell range) and video (clip a time interval and choose transcript or frames).
+The first call sees only extracted text. The second call bills only the tokens for one high-resolution page image.
 
-![Charts and data visualization](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
+## Slice spreadsheets and media
+
+For a workbook, target a specific sheet and cell range:
+
+```python
+{
+    "type": "document",
+    "uri": workbook.uri,
+    "processing": {
+        "type": "static",
+        "spreadsheet_options": {
+            "sheet_index": 2,
+            "visible_cells": "A1:H40",
+            "content_layers": ["data", "formulas"],
+        },
+    },
+}
+```
+
+For video, clip a short segment:
+
+```python
+{
+    "type": "video",
+    "uri": video.uri,
+    "processing": {
+        "type": "static",
+        "start_offset": "420s",
+        "end_offset": "455s",
+        "fps": 2.0,
+        "content_layers": ["frames", "audio"],
+    },
+}
+```
+
+You can return these sliced blocks inside a `function_result` so an agent decides the next range itself. The model automatically receives total page counts and sheet names, so it can request narrower slices on later turns.
+
+![Developer workspace with code on screen](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
 
 ## Tips for lower token use
 
-- Start with page_text or transcripts for discovery, then switch to page_image or frames only for visual detail.
-- Prefer low or medium resolution unless charts or dense layouts require high.
-- For agents, let the model request additional slices in later turns via function responses.
-- Check official docs for exact parameter names and MIME types, as defaults can change.
+- Prefer `page_text` or transcript layers for discovery, then switch to high-resolution images only for the pages that need visual detail.
+- Keep frequent small tools undeferred if you also use Tool Retrieval; pair both features for large agent systems.
+- Measure actual token counts in your traffic. Defaults process more than a requested slice when options are omitted.
+- Reuse the same Files API URI across an entire conversation or agent loop.
 
-If you are already using Gemini 4 models, see our guide on [how to use Gemini 4 Neon](/blog/how-to-use-gemini-4-neon/) for coding workflows that pair well with these file controls.
-
-## Limitations and best practices
-
-File slicing does not remove upload limits or support every format. Always validate results against the source, especially when footnotes or cross-references span pages outside your slice. Test with your own documents before production. Usage still counts against your Gemini API quotas.
-
-## Conclusion
-
-File slicing controls give developers precise control over what Gemini sees. Upload once, inspect only what matters, and pay only for those tokens. The feature is available today in the Gemini API and Google AI Studio for all Gemini 4 models.
-
-## Sources
-
-- Google Blog: [Introducing file slicing controls in the Gemini API](https://blog.google/innovation-and-ai/technology/developers-tools/file-slicing-controls/)
-- Google AI for Developers: [Document understanding](https://ai.google.dev/gemini-api/docs/document-processing)
-- YouTube: [Gemini API File Slicing Controls](https://www.youtube.com/watch?v=3C9K7B1dnGw)
+If you are building multi-step agents, see our guide to [building your first agent with ADK](/blog/build-first-agent-adk-agents-cli-gemini-platform/).
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/3C9K7B1dnGw"
-    title="Gemini API File Slicing Controls"
+  <iframe src="https://www.youtube.com/embed/mVXrdvXplj0"
+    title="Function calling with the Gemini API"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
+
+## Conclusion
+
+File slicing controls turn large multimodal files into targeted, pay-only-for-what-you-inspect inputs. Upload once, skim with text layers, then zoom with high-resolution slices. The pattern works today in Google AI Studio and the Gemini platform across all Gemini 4 models.
+
+Start with a single PDF or workbook in your existing agent and compare token usage before and after. The savings compound quickly once agents start chaining multiple files.
+
+## Sources
+
+- Google blog: Introducing file slicing controls in the Gemini API (November 23, 2026)
+- Google AI Studio documentation on document processing and file inspection options
+- Google for Developers announcement and customer reports (Vercel, LiteLLM)
