@@ -102,6 +102,8 @@ In Perfetto or Android Studio’s profiler:
 
 Double-clicking a composable slice inside Android Studio jumps straight to the corresponding source file. If the CLI prints a warning and drops the Compose options, the app is missing the `runtime-tracing` 1.13 dependency or is still on an earlier pre-release.
 
+![Code editor and terminal on a developer desk](https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80)
+
 ## Common pitfalls
 
 A few issues appear often when people first try the feature. The most frequent is forgetting the runtime-tracing dependency. Without it the CLI silently ignores the `--enable` flags. Another is recording for too long with recomposition tracing enabled; the resulting file becomes large and slow to open. Finally, some developers expect the traces to appear in the default system-trace presets. They do not; you must pass the Compose flags explicitly.
