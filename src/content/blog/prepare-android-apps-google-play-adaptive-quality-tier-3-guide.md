@@ -1,99 +1,105 @@
 ---
-title: "Prepare Android Apps for Google Play Adaptive Quality Tier 3 by 2027"
-description: "Step-by-step guide to meet Google Play Tier 3 adaptive ready requirements for foldables by April 2027 with screenshots and testing."
-pubDate: 2026-11-25T14:00:00
-heroImage: "https://images.unsplash.com/photo-1763568258266-3794097e5837?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["android", "developer", "tutorials", "how-to"]
+title: "Prepare Android Apps for Google Play Adaptive Quality Tier 3 by April 2027"
+description: "Meet Google Play Tier 3 adaptive app quality standards for foldables by April 2027. Steps for full-screen layouts, state preservation, and multi-window support."
+pubDate: 2026-11-28T12:00:00
+heroImage: "https://images.unsplash.com/photo-1763107228544-2ad5d71c21f0?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["android", "tutorials", "how-to"]
 noindex: false
 ---
 
-Google Play announced on November 18, 2026 that apps must meet baseline adaptive quality standards for foldables starting April 2027. Apps that fall short can no longer publish or update and may see reduced visibility in the store. Existing un-updated apps stay downloadable, but any new submission or update faces the new bar.
+Google Play will require apps to meet Tier 3 adaptive quality standards for foldables starting April 2027. Apps that fall short cannot publish new versions or updates and may lose store visibility. Existing un-updated apps stay downloadable, but new submissions face the block.
 
-This guide explains exactly what Tier 3 requires, the screenshot rules, the full timeline including the August 2027 API 37 target, and concrete steps to prepare your app today using Jetpack Compose and official tools.
+This guide explains the requirements, shows practical steps with Jetpack Compose, and covers testing. Pair it with our [adaptive layouts mediaQuery guide](/blog/adaptive-layouts-mediaquery-jetpack-compose-guide/) for window posture queries.
 
-## What Tier 3 adaptive ready means
+## What Tier 3 requires
 
-Tier 3 is called Adaptive ready. It is the mandatory baseline for foldables on Google Play from April 2027.
+Tier 3 is called Adaptive ready. It is the baseline. Apps must fill the available display area on foldables without letterboxing or compatibility mode. They must preserve scroll position, text input, and media playback during rotation, folding, unfolding, and resizing. They must also support multi-window environments.
 
-Your app must fill the available display area without letterboxing or compatibility mode. Content must not overflow the window. The app must preserve state during rotation, folding and unfolding, and window resizing. That includes scroll position, text entered in fields, keyboard state, and media playback position. Multi-window environments must also work.
+Higher tiers exist. Tier 2 evaluates responsive multi-pane layouts and basic external input support. Tier 1 covers tabletop and book postures, camera continuity, and multi-instance features. Google Play will expand requirements later to tablets, Googlebooks, and Android XR. Meeting Tier 3 now positions your app for those changes.
 
-Higher tiers build on this foundation. Tier 2 (Adaptive optimized) adds responsive multi-pane layouts that avoid stretched elements plus basic support for external keyboard, mouse, trackpad, and stylus. Tier 1 (Adaptive differentiated) covers tabletop and book postures, camera continuity, interactive picture-in-picture, and multi-instance support.
+Foldable screenshots become required too. From April 2027, listings need three foldable screenshots plus the standard two phone screenshots. You can upload them in Play Console today.
 
-Apps that reach Tier 2 or Tier 1 can already apply for Google Play badging and enhanced merchandising. The quality framework will later expand Tier 2 and Tier 1 requirements across foldables, tablets, Googlebooks, and Android XR devices.
+![Two foldable smartphones side by side showing different app layouts](https://images.unsplash.com/photo-1784969330482-edd995d4edec?auto=format&fit=crop&w=800&q=80)
 
-![Laptop and phone workspace for Android development](https://images.unsplash.com/photo-1753715613434-9c7cb58876b9?auto=format&fit=crop&w=800&q=80)
+## Audit your current app
 
-## Timeline and milestones
+Open your AndroidManifest.xml. Remove any `android:screenOrientation` locks that force portrait or landscape. Delete `android:resizeableActivity="false"` if present. These flags block resizing and trigger compatibility modes on large screens.
 
-The changes roll out in stages:
+Check for fixed dimensions in layouts. Hard-coded widths or heights that assume a phone-sized screen cause letterboxing. Use flexible constraints, weights, or Compose modifiers like `fillMaxSize` and `weight` instead.
 
-- November 2026 (live now): You can upload foldable screenshots in Play Console. They begin appearing in store listings over the coming weeks. Apps meeting Tier 2 or Tier 1 can apply for badging and enhanced merchandising.
-- April 2027: New apps and updates must include dedicated foldable screenshots. Baseline Tier 3 adaptive quality support becomes mandatory for standard applications. Un-updated existing apps remain downloadable.
-- August 2027: New and updated apps must target API level 37 (Android 17). This removes developer opt-outs for orientation and resizability restrictions on large screens.
+Test configuration changes. Rotate the device or emulator, fold and unfold a foldable emulator, and resize the window in multi-window mode. Confirm that lists keep their scroll position, form fields retain typed text, and videos continue playback without restarting.
 
-Games follow a parallel track with their own large-screen quality requirements. Games need Tier 3 baseline support from August 2027 and foldable screenshots from April 2027.
+## Build adaptive layouts with Jetpack Compose
 
-## Foldable screenshot requirements
+Jetpack Compose handles resizing well when you avoid fixed sizes. Use `WindowSizeClass` or the mediaQuery API to switch layouts based on available space.
 
-Starting April 2027 you must provide three foldable screenshots in addition to the standard two phone screenshots when you publish a new app or update a store listing.
+For list-detail patterns, the Material 3 adaptive library provides `ListDetailPaneScaffold`. It shows one or two panes automatically as the window grows.
 
-Play Console accepts screenshots from physical devices or the Android Emulator. The supported formats cover the ecosystem:
+```kotlin
+val navigator = rememberListDetailPaneScaffoldNavigator<Any>()
 
-- Standard phone landscape: Optional 16:9 landscape screenshot in addition to the required 9:16 portrait screenshots. Examples include Samsung Galaxy S26 and Google Pixel 11 Pro.
-- Foldable 1:1 inner display: At least one screenshot of the unfolded inner screen at 1:1 aspect ratio. Devices include Samsung Galaxy Z Fold8 Ultra and Google Pixel 11 Pro Fold.
-- Foldable 4:3 inner display: At least one unfolded inner screen screenshot at 4:3, plus at least one portrait screenshot of the folded outer screen at 10:16. Optional 16:10 landscape is allowed. Example device: Samsung Galaxy Z Fold8.
+NavigableListDetailPaneScaffold(
+    navigator = navigator,
+    listPane = { ListContent(onItemClick = { navigator.navigateTo(it) }) },
+    detailPane = { DetailContent() }
+)
+```
 
-Screenshots captured on the official Foldable (1:1 inner display) and Foldable (4:3 inner display) emulators are fully compliant. You can upload them today under Grow > Store presence > Store listings in Play Console.
+This preserves navigation state across size changes. For foldables, query posture with mediaQuery so content avoids the hinge in tabletop or book modes.
 
-## Steps to meet Tier 3
+Preserve state with ViewModels. Configuration changes recreate activities, but ViewModels survive. Store scroll indices, form values, and media position there. Restore them in `onCreate` or with Compose state holders.
 
-Start with these actions based on official guidance:
+## Support multi-window and freeform
 
-1. Review the adaptive app quality guidelines and UI design guidelines on developer.android.com. Confirm your app fulfills core app quality requirements first, especially user experience rules.
+Users on foldables and tablets open apps side by side. Your activity must respond to `onConfigurationChanged` or rely on Compose recomposition. Avoid locking the orientation.
 
-2. Remove orientation locks and resizability opt-outs. Delete or avoid `android:screenOrientation` restrictions and `android:resizeableActivity="false"` in the manifest. Android 17 (API 37) will ignore these on large screens anyway.
+In multi-window, the app receives a smaller window. Layouts that use `fillMaxWidth` and responsive grids expand or collapse cleanly. Test with the resizable emulator in Android Studio. Drag the window divider and confirm no content is cut off or letterboxed.
 
-3. Preserve state across configuration changes. Use `rememberSaveable` in Jetpack Compose for scroll positions, text input, and custom state. Ensure media playback resumes correctly. Test combinations of resize followed by fold or rotation.
+For media apps, keep playback continuous. Use Media3 or ExoPlayer with a retained player instance. When the window resizes, update the surface size without stopping the stream.
 
-4. Make the UI fill the window. Prefer Jetpack Compose adaptive layouts. Use window size classes, MediaQuery, or similar APIs so content expands to the available space without letterboxing. Support multi-window mode even if the app previously opted out.
+## Test on foldable emulators
 
-5. Test on the right devices. Use physical foldables, Android Device Streaming, or the resizable emulator. Specifically test Foldable (1:1 inner display) and Foldable (4:3 inner display) emulators running Android 12 (API 31) or higher. Verify all orientations, multi-window, and state retention on screens with sw >= 600 dp.
+Android Studio includes foldable device definitions. Create an AVD with a horizontal or vertical fold. Switch between flat, half-opened, and tabletop postures.
 
-6. Capture and upload screenshots. Use the Android CLI and emulator to generate Play Console-ready images for the required foldable formats. Upload them now to get ahead of the April deadline.
+Run the app and fold the device while a list is scrolled or a form is half-filled. Confirm the state survives. Open the app in split-screen with another app and resize the panes.
 
-For faster adaptation of existing Compose apps, use the Compose adaptive skill with your AI agent. It guides Navigation 3 multi-pane layouts, Grid and Flexbox, state preservation, and form-factor previews. See the detailed walkthrough in the [adaptive Compose skill guide](/blog/adaptive-compose-skill-googlebook-foldables-guide/).
+Use Device Streaming or Firebase Test Lab for real Pixel Fold and Galaxy Fold hardware if available. Capture the three required foldable screenshots from the inner and outer displays.
 
-![Developer coding on laptop showing code](https://images.unsplash.com/photo-1756946565798-382eb6bfeda2?auto=format&fit=crop&w=800&q=80)
+![Hands holding an open foldable smartphone with multiple apps visible](https://images.unsplash.com/photo-1784877266295-b24584eea879?auto=format&fit=crop&w=800&q=80)
 
-## Tips for higher tiers and long-term compliance
+## Timeline and next steps
 
-Aim beyond Tier 3 if you want badging and better store placement. Implement multi-pane list-detail or supporting-pane layouts for Tier 2. Add external input support and avoid stretched UI elements. For Tier 1, handle foldable postures such as tabletop and book, plus camera continuity where relevant.
+November 2026: upload foldable screenshots in Play Console. Apps that already meet Tier 2 or Tier 1 can apply for badging and enhanced merchandising.
 
-Test early and often. Add Compose previews for phone, foldable, tablet, and desktop form factors. Run screenshot tests so layout changes do not introduce regressions. Use the Android Emulator’s resizable mode to simulate window size changes quickly.
+April 2027: Tier 3 becomes mandatory for new apps and updates. Three foldable screenshots are required.
 
-Keep the target SDK current. Planning for API 37 now means fewer last-minute changes in August 2027. Modern UI toolkits like Jetpack Compose make the same codebase scale from phones to foldables, tablets, Googlebook, and XR devices.
+August 2027: new and updated apps must target API level 37 (Android 17). This removes remaining developer opt-outs for orientation and resizability on large screens.
 
-## Watch adaptive Compose guidance
+Start the audit this week. Remove orientation locks, add state preservation, and test multi-window. Apps that ship updates before the deadline keep publishing rights and visibility.
 
-Android Developers published a short overview on building adaptive UI with Jetpack Compose. It emphasizes driving UI decisions from current window size, posture, and capabilities rather than static device categories.
+## Tips for faster compliance
+
+- Prefer Compose over XML for new screens. Its recomposition model handles size changes with less boilerplate.
+- Use the official adaptive app quality checklist in the Android documentation to score your current tier.
+- Add a large-screen preview in Android Studio and review it before each release.
+- For games, note the separate large-screen requirements with a later August 2027 Tier 3 date.
+- Monitor the Android Developers blog for further tier expansions to tablets and XR.
+
+## Conclusion
+
+Meeting Tier 3 by April 2027 keeps your app publishable on Google Play and improves the experience for foldable users. Remove fixed orientations, preserve state across configuration changes, and fill the available window. Combine these steps with adaptive layout tools such as mediaQuery and ListDetailPaneScaffold. Test thoroughly on foldable emulators and capture the required screenshots. The work you do now avoids blocked updates later and prepares the app for higher tiers.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/pvCINAW2-z4"
-    title="How to build adaptive UI using Jetpack Compose"
+  <iframe src="https://www.youtube.com/embed/bfqd9Y8jztk"
+    title="Is your Android app ready for foldable devices?"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Conclusion
-
-Meeting Tier 3 by April 2027 keeps your app publishable and visible on Google Play while improving the experience for users on foldables and large screens. Start by removing orientation locks, preserving state, filling the window, and capturing the required screenshots. Then move toward Tier 2 and Tier 1 for badging and stronger merchandising.
-
-The tools and guidelines are available today. Review the official adaptive quality docs, test on the recommended foldable emulators, and update your store listing. Your users on the growing foldable base will notice the difference immediately.
-
 ## Sources
 
-- Android Developers Blog: Elevating apps: New adaptive quality standards on Google Play (November 18, 2026)
-- Android Developers: Adaptive app quality guidelines and Tier 3 — Adaptive ready
-- Android Developers: Get started with adaptive apps
-- Android Developers YouTube: How to build adaptive UI using Jetpack Compose
+- [Elevating apps: New adaptive quality standards on Google Play](https://developer.android.com/blog/posts/google-play-adaptive-quality-standards) — Android Developers Blog, 18 November 2026
+- [Adaptive app quality guidelines](https://developer.android.com/docs/quality-guidelines/adaptive-app-quality) — Android Developers
+- [Is your Android app ready for foldable devices?](https://www.youtube.com/watch?v=bfqd9Y8jztk) — Android Developers
+- [Build adaptive layouts with mediaQuery](/blog/adaptive-layouts-mediaquery-jetpack-compose-guide/) — Yum News
