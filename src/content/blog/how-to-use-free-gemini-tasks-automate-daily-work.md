@@ -1,97 +1,111 @@
 ---
 title: "How to Use Free Gemini Tasks to Automate Daily Work"
-description: "Step-by-step guide to Gemini Tasks (formerly Spark) free in US, India, Canada and more. Automate calls, shopping, schedules with controls."
-pubDate: 2026-11-23T12:00:00
-heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials", "how-to", "productivity", "google"]
+description: "Step-by-step guide to using Gemini Tasks free in the US, India and 4 other countries. Book calls, shop, manage calendar and more."
+pubDate: 2026-11-28T10:00:00
+heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "tutorials", "ai-tools", "productivity"]
 noindex: false
 ---
 
-Google made Gemini Tasks free for adults in the US, Japan, Korea, Canada, Australia and India on 17 November 2026. The feature, previously called Spark and limited to paid Google AI plans, now runs on Gemini 4 Hydrogen and handles multi-step work in the background.
+Google made Gemini Tasks free for hundreds of millions of people on November 17, 2026. The feature, previously called Spark, lets you hand off multi-step jobs so Gemini works in the background while you focus on other things. It runs on the Gemini 4 Hydrogen model.
 
-You flip a toggle, describe the job, and Gemini works through connected apps, a remote browser and (in the US) phone calls or Google Pay purchases. It pauses for confirmation on critical steps. This guide covers eligibility, setup, practical use, limits and safety controls drawn only from Google’s official announcement and help materials.
+You no longer need a paid Google AI Pro or Ultra plan in the United States, India, Canada, Australia, Japan, and South Korea. In the US, Tasks can also call businesses, check out with Google Pay, and accept requests by text or email.
 
-![Person working at a desk with laptop and notebook](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80)
+This guide shows exactly how to start using it today.
 
-## Who can use free Gemini Tasks
+## What Gemini Tasks does
 
-Tasks is free without a Google AI subscription in six countries: the United States, Japan, South Korea, Canada, Australia and India. You must be 18 or older and signed in with a personal Google Account (work and school accounts are excluded for now). Gemini History must be turned on. The feature appears in the Gemini mobile app (Android and iOS), the Mac app, and gemini.google.com.
+Gemini Tasks turns the Gemini app into a personal agent. In Chat mode, Gemini answers questions. In Task mode, you describe a finished outcome and it plans and executes the steps across Gmail, Calendar, Drive, Docs, Sheets, and the web.
 
-Outside those countries it remains available only to Google AI Pro or Ultra subscribers, except in the European Economic Area, the UK, Switzerland and Nigeria where it is not offered. US users get extra capabilities: business calling (unavailable in Indiana, Louisiana, Minnesota, Montana and Nebraska), Google Pay purchases, Password Manager sign-ins, and starting tasks by text or by emailing gemini@google.com.
+Examples from Google include booking service appointments by calling dealerships, analyzing utility bills to find peak-pricing waste, comparing products and checking out, adding items to grocery orders from photos, and turning school emails into calendar events with conflict alerts.
 
-## Turn on Task mode
+The agent works in a hardware-isolated virtual machine dedicated to your account. It pauses for confirmation before critical actions such as purchases. You can jump in with more instructions at any time or stop the task.
 
-Open the Gemini app or go to gemini.google.com and sign in.
+![Team collaborating around a laptop](https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80)
 
-1. Locate the Chat / Task toggle. On mobile it sits above the prompt box; on the web it is below the box.
-2. Switch it to Task.
-3. Describe the outcome you want in plain language. Include dates, budgets, locations or constraints. Example: “Book an oil change at the nearest Honda dealer that has Friday morning availability next month and add it to my calendar.”
-4. Answer any clarifying questions Gemini asks.
-5. Approve the steps it pauses on (purchases, form submissions, sending messages).
+## Who can use it free
 
-If the toggle is missing, the rollout has not reached your account yet. Google says the free expansion is gradual.
+Adults 18 or over with a personal Google Account (not work or school) and Gemini History turned on can use Tasks free in six countries: the US, India, Canada, Australia, Japan, and South Korea.
 
-You can also create recurring schedules. Ask inside the thread (“do this every Monday morning”) or manage them on the Scheduled page. Free and AI Plus users get up to 10 active schedules that run once a day in a general time window. Pro and Ultra users get 50 schedules with hourly or exact timing, plus Gmail and topic monitors.
+In other countries where Gemini works, you still need Google AI Pro or Ultra. Tasks is not available at all in the European Economic Area, the UK, Switzerland, or Nigeria.
 
-## What Tasks can actually do
+In the US only, additional features are available: Gemini can call businesses (except in Indiana, Louisiana, Minnesota, Montana, and Nebraska), complete purchases with Google Pay on supported cards (with your approval and a spending cap), receive texts from a verified US phone number, and process emails forwarded to gemini@google.com.
 
-Gemini works in a hardware-isolated virtual machine dedicated to your account. It can reach Gmail, Calendar, Drive, Docs, Sheets, Keep, Contacts, Maps, Search, Flights, Hotels and more than 60 connected apps. It can draft replies, add calendar events, compare shopping options via Google’s Shopping Graph, and (in the US) call businesses or complete supported purchases with Google Pay using the Agent Payments Protocol.
+If you do not see the Chat/Task toggle yet, the gradual rollout has not reached your account. Check again in a few days.
 
-Real examples from Google’s November 17 post:
+## How to start a task
 
-- Call two nearby dealerships, check calendar availability, and book a service appointment.
-- Analyse utility bill PDFs from email after you grant Password Manager access and identify the source of a high charge.
-- Compare USB-C chargers, apply a discount code, and check out with a spending cap you set.
-- Add items to an Instacart order from a text message and a photo, then hand off for final confirmation.
-- Extract dates from forwarded school emails and place them on a shared calendar, flagging conflicts.
+Open the Gemini app on Android or iOS, or go to gemini.google.com. Sign in with your personal account.
 
-It discloses that it is an AI when calling businesses. Businesses can opt out. Gemini does not share payment or private account details unless you explicitly approve.
+Look for the Chat / Task toggle. On mobile it sits above the prompt box. On the web and Mac app it sits below the box.
 
-![Close-up of hands typing on a laptop keyboard with code on screen](https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80)
+Switch to Task. The prompt changes to something like “Describe a task.”
 
-## Safety controls and spending limits
+Write the job as an outcome, not a question. Include constraints: dates, budget, preferred stores, or things it must not do. For example: “Book an oil change at the nearest Honda dealer for early Friday morning in the next four weeks. Check my Calendar for free slots and add the appointment.”
 
-Gemini is designed to pause and ask before critical actions such as clicking “Buy,” submitting forms, or deleting data. You can set a hard spending cap at the start of a shopping task. For routine low-risk steps (adding a known item to a grocery cart) you can choose “Always allow.”
+Submit and monitor the work panel. Gemini shows progress, asks clarifying questions when needed, and pauses before irreversible steps.
 
-Additional controls:
+You can run multiple tasks at once (up to 15). Scheduled tasks appear in the sidebar.
 
-- Adjust task settings, disconnect apps, or delete chat history at any time.
-- Delete remote browser data (cookies and sign-ins) from Settings → Browser.
-- Turn Task mode off completely under Task settings (this also clears remote browser data; past tasks and chats remain).
-- Give thumbs-down feedback when a task fails or misses the mark so Google can improve it.
+## Practical examples
 
-Google notes that mistakes still happen. Sites are still adapting to personal assistants, so Gemini may complete most of a flow and hand the final click back to you.
+**Appointment booking (US).** Tell Gemini your vehicle and preferred time window. It finds nearby dealers on Maps, calls them (disclosing it is an AI), checks your Calendar, and adds the appointment. Businesses can opt out of AI calls.
 
-## Practical tips for better results
+**Bill analysis.** Grant access via Google Password Manager to a utility portal and point it at past bills in Gmail. Gemini identifies the cause of high charges, such as a heat pump running during peak rates.
 
-Write the job, not a question. “Compare the three cheapest flights to Tokyo in March under $900 and put them in a Sheet” works better than “flights to Tokyo?”
+**Shopping.** Ask for the best USB-C charger under a certain price and wattage. Gemini compares options using Shopping Graph, applies discount codes, and checks out with Google Pay. Receipts go to Google Wallet. Set a hard spending cap first.
 
-Start a fresh task when the topic changes so the context window stays focused. Free users have a 32k-token context; Pro and Ultra reach 1 million.
+**Grocery and email.** Text a photo of an empty box and say “add this to the Instacart order,” or forward school emails to gemini@google.com so dates land on your Calendar with invites.
 
-US users: set up Channels in Settings to text Gemini or forward emails to gemini@google.com. Verify your number for texting (requires a US number on an eligible carrier).
+![Person reviewing data charts on a laptop](https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80)
 
-Pair Tasks with existing Gemini features. For on-device Android automation such as Rambler voice cleanup or custom widgets, see our guide on [using Gemini Intelligence on Android](/blog/how-to-use-gemini-intelligence-on-android/).
+## US-only features and setup
 
-Monitor the work panel while a task runs. You can inject extra instructions at any time without losing progress.
+To text Gemini: open the app, go to Settings > Channels, tap Set up under Text with Gemini, and verify your US phone number on an eligible carrier.
 
-## Limits you should know
+To use email: forward messages to gemini@google.com. Gemini replies with a link to the new task.
 
-Simultaneous running tasks are capped at 15 across plans. Free and AI Plus users have standard usage limits that reset every five hours and weekly; Pro gets 4× and Ultra 5× or 20×. Calling, Google Pay and Password Manager features are US-only for now. English is required for several of the advanced US features.
+Phone calls and Google Pay checkout are US-only for now. American Express support is coming soon. You still earn card points and protections. Gemini will not share private account details unless you approve.
+
+## Safety, limits, and controls
+
+Tasks run in sandboxed virtual machines tested by Google’s security teams. Prompt-injection filters and Safe Browsing limit which links it opens.
+
+You control permissions: disconnect apps, adjust task settings, or delete history anytime. New History controls let you keep chat history while opting out of model training.
+
+Usage limits are compute-based and higher on paid plans. Free users get fewer scheduled tasks (roughly 10 daily-window schedules versus 50 hourly on Pro/Ultra). Always review before approving purchases or calls.
+
+Give feedback with thumbs-down when a task misses the mark. Google notes that some websites still require you to finish the final click.
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/BcSGxlw6dSg"
-    title="Go From Chaos to Calm with Tasks in Gemini"
+  <iframe src="https://www.youtube.com/embed/N4ItqZF0MCo"
+    title="Gemini Tasks Is FREE in India: Full Tutorial (Gmail, Sheets, Calendar)"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
+## Tips for better results
+
+Start small. Use Tasks for research, calendar updates, or product comparisons before giving it payment or call access.
+
+Write clear outcomes: “Compare three flights to Tokyo under $900 in March, put details in a Sheet, do not book.”
+
+Turn one-off jobs into schedules: “Do this every Monday morning.”
+
+Pair Tasks with Personal Intelligence so Gemini already knows your location, vehicles, and preferences.
+
+For developers building with the underlying model, see our guide on [adding Gemini 4 Hydrogen to Android with Firebase AI Logic](/blog/add-gemini-4-hydrogen-android-firebase-ai-logic/).
+
 ## Conclusion
 
-Gemini Tasks turns the Gemini app into a background agent that can book appointments, compare prices, organise calendars and handle routine multi-step chores while you do other things. It is free in six major markets as of mid-November 2026, with clear confirmation steps and spending caps. Start with a simple, low-risk job, review the first few results carefully, then expand to schedules and connected apps once you trust the controls.
+Gemini Tasks is now free in six countries and turns Gemini into a practical background agent for everyday work. Open the app, flip the toggle to Task, and describe one job you usually postpone. Monitor the first few runs closely, set spending limits, and expand as you gain confidence.
 
-## Sources
+The feature continues to roll out. Check gemini.google.com or the Gemini app for the latest availability in your region.
 
-- Google Blog: How to use Tasks in Gemini for personal assistance (17 November 2026) — https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/
-- Google Gemini YouTube: Go From Chaos to Calm with Tasks in Gemini — https://www.youtube.com/watch?v=BcSGxlw6dSg
-- Gemini Help materials referenced in the official post for channels, task settings and security details
+**Sources**
+
+- Blog.google: Put Gemini to work for you / How to use Tasks in Gemini (November 17, 2026)
+- Google AI Studio and Gemini app release notes
+- 9to5Google coverage of the free rollout and US features
+- Official Gemini help documentation on Task mode eligibility and channels
