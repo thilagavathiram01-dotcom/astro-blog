@@ -1,101 +1,104 @@
 ---
-title: "How to Use Gemini 4 Neon for Deeper Analysis in the Gemini App"
-description: "Step-by-step guide to select and use Gemini 4 Neon for complex coding, research, and multi-step tasks in the Gemini app."
-pubDate: 2026-11-19T15:30:00
-heroImage: "https://images.unsplash.com/photo-1763568258177-4ea94966595a?auto=format&fit=crop&w=1200&h=630&q=80"
-tags: ["gemini", "ai-tools", "tutorials", "how-to", "ai", "productivity", "google"]
+title: "How to Use Gemini 4 Neon for Deeper Analysis"
+description: "Step-by-step guide to accessing Gemini 4 Neon in the Gemini app, setting thinking levels, and using it for complex tasks."
+pubDate: 2026-11-28T10:00:00
+heroImage: "https://images.unsplash.com/photo-1746608943132-065d1d4b3c5d?auto=format&fit=crop&w=1200&h=630&q=80"
+tags: ["gemini", "ai-tools", "tutorials"]
 noindex: false
 ---
 
-Google AI Pro and Ultra subscribers can now select Gemini 4 Neon in the Gemini app for stronger reasoning on complex coding, research, and multi-step tasks. Neon launched on November 18, 2026, and sits between the fast everyday Hydrogen model and the heavier long-horizon Carbon model.
+Google released Gemini 4 Neon on November 18, 2026. It targets complex software engineering, knowledge work, and science tasks with a 1 million-token context window. Pro and Ultra subscribers can select it in the Gemini app for deeper analysis.
 
-It brings frontier-level performance with faster end-to-end completion and a 1 million-token context window. In the app it appears as “Deeper analysis.” This guide shows exactly how to switch to it, when to use it, and how to get better results on real work.
+This guide shows how to access Neon, choose thinking levels, and apply it to real work. It draws only from Google's official announcement and related documentation.
 
-## Who gets Gemini 4 Neon and where
+## What Gemini 4 Neon Delivers
 
-Neon is available to Google AI Pro and Ultra subscribers in the Gemini app (mobile, desktop, and web). Developers can also use it through the paid Gemini API in Google AI Studio and Android Studio, and in Google Antigravity. Enterprises access it via Gemini for business.
+Neon ranks high on independent benchmarks. It scores 61 on the Artificial Analysis Intelligence Index at its xhigh thinking level. It places second on the Vals Index and on the Agent Arena Index for steerability.
 
-Free users and Google AI Plus subscribers do not see Neon in the model picker. In the app, Pro users see Auto, Everyday help (Hydrogen), Deeper analysis (Neon), and (on Ultra) Code & complex work (Carbon). Neon replaces the previous Argon slot for many Pro accounts.
+The model costs $3 per million input tokens and $15 per million output tokens. Cached input tokens drop to $0.15 per million. Google positions it as a faster, lower-cost option relative to larger models while maintaining frontier-level reasoning.
 
-Pricing on the API is $3 per million input tokens, $0.15 per million cached input tokens, and $15 per million output tokens. The app uses the subscription limits rather than direct token billing.
+In the Gemini app it appears under the label Deeper analysis. It handles multi-step instruction following and produces structured outputs from mixed inputs such as PDFs, spreadsheets, charts, and code.
 
-![Laptop displaying code on a wooden desk with a mug nearby](https://images.unsplash.com/photo-1763568258177-4ea94966595a?auto=format&fit=crop&w=800&q=80)
+![Person holding a smartphone showing an AI assistant interface](https://images.unsplash.com/photo-1746608943132-065d1d4b3c5d?auto=format&fit=crop&w=800&q=80)
 
-## How to select Gemini 4 Neon in the Gemini app
+## How to Access Gemini 4 Neon in the Gemini App
 
-1. Open the Gemini app or go to gemini.google.com and sign in with the account that has Google AI Pro or Ultra.
-2. Update the app from the Play Store or App Store if the new option does not appear.
-3. Tap the model selector at the bottom of the chat box (it shows the current model name).
-4. Choose **Deeper analysis** (Gemini 4 Neon).
-5. Optionally open the thinking level control in the same menu and set it higher than the default Low for harder work.
-6. Start a new chat or continue an existing one. The selection stays for the whole conversation.
+You need a Google AI Pro or Ultra subscription. Free users do not see Neon in the model picker.
 
-Google notes that Tasks in Gemini can also run on Neon, which helps with multi-step jobs while stretching usage limits further. You can switch models mid-session if needed, but the thinking level and model apply to the current conversation until you change them.
+1. Open the Gemini app on Android or iOS, or go to gemini.google.com on the web.
+2. Sign in with the Google account that holds your Pro or Ultra plan.
+3. Look below or beside the prompt box for the current model name. It often shows Auto or Everyday help.
+4. Tap or click the model name to open the picker.
+5. Select Deeper analysis (4 Neon). A lock icon means your plan does not include it.
+6. Choose a thinking level if the option appears: Low, Medium, High, or Extra high. High is the default.
 
-## When Neon is the right choice
+Neon stays selected for the rest of the conversation. You can switch models mid-thread if needed.
 
-Use Neon when Hydrogen feels too light and Carbon is slower or more expensive than you need. Google positions it for complex coding, analytical reasoning, production-grade enterprise workflows, knowledge work, and science tasks.
+The same model is available in Google AI Studio on the paid API tier, in Google Antigravity for Pro and Ultra subscribers, and via the Gemini API with the model ID gemini-4-neon.
 
-Concrete cases that fit well:
-- Multi-file debugging and targeted refactoring across a codebase.
-- Turning spreadsheets, PDFs, and photos into structured reports or summaries.
-- Cross-checking receipts or billing statements to explain a charge spike.
-- Research briefs that pull current web data plus connected Google apps (Gmail, Docs).
-- Longer agentic or multi-step jobs where you want progress updates and reliable follow-through.
+## Set Thinking Levels for Speed and Depth
 
-Neon ranks #3 overall (score 61) on the Artificial Analysis Intelligence Index at its xhigh thinking level and #2 on the Vals Index. It also ranks #1 on the Artificial Analysis Coding Agent Index (58.6) and shows strong results on legal research, tax, finance, and science benchmarks. It records a low fabrication rate in internal testing and ranks #2 on steerability (handling mid-task corrections).
+Neon offers four thinking levels that scale reasoning effort and token use.
 
-![Close-up of code on a computer monitor](https://images.unsplash.com/photo-1753998943619-b9cd910887e5?auto=format&fit=crop&w=800&q=80)
+- Low produces fast, concise answers for straightforward questions.
+- Medium balances speed and reasoning for everyday multi-step tasks.
+- High is the default. It handles most complex coding, analysis, and research jobs.
+- Extra high (xhigh) adds deeper multi-step reasoning for the hardest engineering and scientific workloads.
 
-## Thinking levels and practical settings
+Google notes that higher levels consume more thinking tokens, which are billed at the output rate. Start at High for most work. Drop to Medium for interactive sessions. Reserve Extra high for cases where High falls short.
 
-Neon offers four thinking levels: low, medium, high (default on the API), and xhigh. Higher levels give deeper multi-step reasoning but use more tokens and time.
+At the default High level, Neon delivers a strong Intelligence Index score while costing roughly 32 percent less per task than Gemini 4 Carbon on third-party benchmarks.
 
-In the Gemini app the picker defaults to Low when you select a model manually. Raise it to Medium or High for most analytical or coding work. Use xhigh only for the hardest engineering, math, or scientific problems. Google reports that at the default high level Neon already delivers a high intelligence score with roughly 32 % lower cost per task than Carbon on third-party benchmarks.
+## Practical Steps for Complex Tasks
 
-Start at High for most Pro users. Drop to Medium or Low only when speed matters more than depth and your tests still pass. The 1 million-token context window covers long documents, tables, charts, and multi-file codebases in one session.
+Write clear, complete instructions. Neon performs best when you specify the goal, constraints, and desired output format.
 
-## Tips for stronger results
+Example for document analysis: attach a PDF and ask Neon to extract every deadline, list the responsible parties, and place the results in a table with page numbers.
 
-Write clear prompts that state the goal, constraints, and desired output format. Upload the actual files (spreadsheets, PDFs, photos) rather than describing them. Ask Neon to show its plan or intermediate steps on long tasks so you can correct course early.
+Example for code review: paste a function or attach a file and request a bug review plus suggested fixes, with explanations for each change.
 
-For coding, request surgical edits and ask it to verify edge cases. For research or finance work, tell it to cite sources or flag uncertainty. Because Neon handles mid-task corrections well, you can refine in the same chat instead of starting over.
+Example for research synthesis: provide several sources and ask Neon to compare claims, note supporting evidence, and flag contradictions.
 
-Tasks mode is especially useful: hand it a multi-step job (analyze statements, compare vendors, prepare a brief) and let it run. Combine it with connected Google apps when you want live data from Gmail or Docs.
+You can attach files, images, and screenshots. Neon reads them within its 1 million-token window. In the Gemini app it can also draw on connected Google services when you grant permission.
 
-If you are building Android apps, you can also call Neon (or Hydrogen) through Firebase AI Logic. See our related guide on [adding Gemini 4 Hydrogen to Android with Firebase AI Logic](/blog/add-gemini-4-hydrogen-android-firebase-ai-logic/) for the client-side pattern.
+Monitor the response. Neon is trained to pause for clarification on ambiguous steps and to avoid fabricating results. Provide feedback with a thumbs-down if a task misses the mark.
+
+![Close-up of a smartphone screen displaying multiple AI app icons including Gemini](https://images.unsplash.com/photo-1757310998309-87a97e562ee5?auto=format&fit=crop&w=800&q=80)
+
+## Tips for Better Results
+
+Keep the task description specific. Include the audience, the required format, and any limits on length or sources.
+
+Use High thinking for multi-file code work or dense chart analysis. Switch to Extra high only after High produces incomplete reasoning.
+
+Combine Neon with Gemini Canvas for side-by-side editing of generated text or code. Canvas lets you highlight sections and request targeted revisions.
+
+For developers building agents, Neon works as an orchestrator in Google Antigravity. It can direct cheaper Hydrogen subagents on parallel subtasks while retaining high-judgment control.
+
+Check usage limits on your Pro or Ultra plan. Higher thinking levels consume the shared allowance faster.
+
+If you also use coding workflows, see our guide to [using Gemini 4 Neon for coding and analysis](/blog/how-to-use-gemini-4-neon-for-coding-and-analysis/).
+
+## Watch a Short Setup Walkthrough
 
 <div class="video-embed">
-  <iframe src="https://www.youtube.com/embed/Q0ShBenKyqo"
-    title="Gemini 4 Neon Is Here, And It’s a Beast!"
+  <iframe src="https://www.youtube.com/embed/JvIcxJIzonA"
+    title="How to Use Gemini 4 Neon in Gemini"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen loading="lazy"></iframe>
 </div>
 
-## Common questions
-
-**Does Neon replace Argon?**  
-Yes for most Pro users in the Gemini app. Argon no longer appears in the picker for those accounts.
-
-**Can free users try it?**  
-No. It requires Google AI Pro or Ultra.
-
-**Is it available in Google Antigravity?**  
-Yes for paid Pro and Ultra subscribers. Orchestrator can pair Neon as planner with Hydrogen as executor.
-
-**What about cybersecurity?**  
-A specialized Neon-for-cyber variant is rolling out to trusted defenders via the Fairwind Program, not the general consumer app.
-
 ## Conclusion
 
-Gemini 4 Neon gives Pro and Ultra subscribers a practical middle ground: stronger reasoning and coding performance than Hydrogen, with better speed and cost efficiency than Carbon for many real workflows. Select “Deeper analysis” in the model menu, raise the thinking level for harder tasks, upload your files, and start with a clear multi-step prompt.
+Gemini 4 Neon gives Pro and Ultra subscribers a practical way to handle complex analysis and multi-step work inside the Gemini app. Select Deeper analysis, set an appropriate thinking level, and describe the full outcome you need.
 
-The rollout continues, so update the app if the option is missing. Official details and the model card are on the Google blog and AI Studio documentation.
+The model’s 1 million-token window, structured output strength, and controllable reasoning depth make it suitable for document review, code exploration, and research synthesis. Official benchmarks place it near the top of its class while keeping costs lower than larger alternatives.
 
-**Sources**
+Start with a single high-value task today and adjust the thinking level based on the quality of the first result.
 
-- Blog.google: Introducing Gemini 4 Neon (November 18, 2026)
-- Google Gemini (@GeminiApp) announcement on availability and Tasks
-- Artificial Analysis Intelligence Index and related benchmark reports cited by Google
+## Sources
+
+- Google blog: Introducing Gemini 4 Neon (November 18, 2026, updated November 23)
 - Google AI Studio and Gemini app model documentation
+- Artificial Analysis and Vals Index public leaderboards referenced in the announcement
